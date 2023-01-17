@@ -78,22 +78,22 @@
                         <!-- Authentication Links -->
 
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link text-white" href="{{ url('/') }}">&nbsp;Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}">News & Updates</a>
+                            <a class="nav-link text-white" href="{{ url('/') }}">&nbsp;News & Updates</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}">LGRRC</a>
+                            <a class="nav-link text-white" href="{{ url('/') }}">&nbsp;LGRRC</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}">Issuances</a>
+                            <a class="nav-link text-white" href="{{ url('/') }}">&nbsp;Issuances</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}">LGU's</a>
+                            <a class="nav-link text-white" href="{{ url('/') }}">&nbsp;LGU's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}">Contact Information</a>
+                            <a class="nav-link text-white" href="{{ url('/') }}">&nbsp;Contact Information</a>
                         </li>
 
                         <div class="dropdown" style="margin-top:2px;">
@@ -131,21 +131,19 @@
                         </div>
 
 
-
-
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
+                                <a href="{{ route('login') }}" class="btn btn-sm btn-dark text-light"
+                                    style=" margin-top: 5px; margin-left: 2px; margin-right:2px; height:30px;">Login
+                                    <span class="fas fa-sign-in-alt"></span></a>
                             @endif
 
-                            @if (Route::has('register'))
+                            {{-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link text-white"
                                         href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                                </li
+                            @endif --}}
 
                         @endguest
                     </ul>
