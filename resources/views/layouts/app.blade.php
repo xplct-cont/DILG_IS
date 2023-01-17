@@ -169,10 +169,13 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
-        </main>
-        
+        </main>        
+   <div class="header" style=" padding: 60px; text-align: center; background: #DCDCDC; color: #030303; font-size: 30px;">
+    <h1>Header</h1>
+    <p>My supercool header</p>
+  </div>
     </div>
 </body>
 
