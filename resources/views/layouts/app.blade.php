@@ -197,6 +197,17 @@
         </main>
 
     </div>
+
+    <div class="d-flex justify-content-center" style=" padding: 20px; background: #C9282D;; color: #DCDCDC;">
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="copyright text-center">
+                   <p class="text-center" style="font-size: 17px; color:#DCDCDC;">Department of the Interior and Local Government</p>
+                   <p  class="text-center" style="font-size: 12px; color:#DCDCDC; font-weight: 400; margin-top: -20px;">BOHOL PROVINCE</p>
+                </div>
+            </div>
+        </footer>
+       </div>
 </body>
 
 </html>
