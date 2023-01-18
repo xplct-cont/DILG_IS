@@ -253,7 +253,7 @@
 <style>
     .bg {
         animation: slide 3s ease-in-out infinite alternate;
-        background-image: linear-gradient(-60deg, rgb(192, 191, 191) 50%, white 50%);
+        background-image: linear-gradient(-60deg, rgb(226, 217, 217) 50%, white 50%);
         bottom: 0;
         left: -50%;
         opacity: .5;
