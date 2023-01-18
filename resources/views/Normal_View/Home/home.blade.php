@@ -31,9 +31,13 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                            <button class="btn btn" style="background-color: #C9282D"></button>
-                </div>
+                <div class="col-md-6 mt-5 mb-5">
+
+                            <button class="btn btn-md" style="background-color: #C9282D; color: white; padding-right: 60px; border-radius:10px;">THE DIRECTOR <span class="fas fa-arrow-right"></span></button><br><br>
+                            <button class="btn btn-md" style="background-color: #C9282D; color: white; padding-right: 60px; border-radius:10px;">THE DIRECTOR <span class="fas fa-arrow-right"></span></button><br><br>
+                            <button class="btn btn-md" style="background-color: #C9282D; color: white; padding-right: 60px; border-radius:10px;">THE DIRECTOR <span class="fas fa-arrow-right"></span></button>
+
+                        </div>
                 <div class="col-md-6">
 
                 </div>
