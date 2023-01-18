@@ -17,16 +17,5 @@
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
-    {{-- <div class="row mt-5">
-        <div class="col-sm-12">
-          <div class="card">
-            <h4 class="card-title fw-bold text-center">OUR MISSION</h4>
-            <div class="card-body d-flex">
-            <img style=" width: 100%; height: auto;" src="{{ asset('/img/goal.png') }}" class="">
-              <p class="card-text">The Department shall promote peace and order, ensure public safety, and strengthen capability of Local Government Units through active people's participation and professionalized corps of civil servants.</p>
-            </div>
-          </div>
-        </div>
-      </div> --}}
 </div>
 @endsection
