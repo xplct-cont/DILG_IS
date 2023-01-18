@@ -21,7 +21,9 @@ Route::get('/', function () {
 
 
 
-
+Route::get('/news-update',function(){
+    return view('Normal_View.News.news');
+});
 
 Auth::routes();
 
