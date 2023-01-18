@@ -162,7 +162,9 @@
     </div>
 
     <div class="d-flex justify-content-center mb-5 mt-3">
-        <a href="{{ url('/news-update') }}" type="button" class="btn btn-sm" style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;" href="#">See more...</a>
+        <a href="{{ url('/news-update') }}" type="button" class="btn btn-sm"
+            style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
+            href="#">See more...</a>
     </div>
 
 

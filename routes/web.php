@@ -42,7 +42,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/news-update',function(){
     return view('Normal_View.News.news');
 });
-
+Route::get("/sigle-news-update",function(){
+    return view('Normal_View.News.single_news');
+});
 
 
 
