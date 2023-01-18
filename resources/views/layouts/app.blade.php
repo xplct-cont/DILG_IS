@@ -110,7 +110,7 @@
                             <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGU's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;Contact</a>
+                            <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
                         </li>
 
 
@@ -208,7 +208,7 @@
                         style="font-size: 12px; color:#DCDCDC; font-weight: 400; margin-top: -20px;">BOHOL PROVINCE</p>
                 </div>
 
-                
+
 
                 <form action="">
                     <div class="input-group mx-auto" style="width: 300px;">
@@ -234,7 +234,7 @@
                             <img src="/img/lga.png" alt="" style="height: 50px;">
                             <img src="/img/lga.png" alt="" style="height: 50px;">
                             <img src="/img/lga.png" alt="" style="height: 50px;">
-                           
+
                         </div>
                     </div>
                 </div>
