@@ -64,6 +64,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     {{-- slider script --}}
     <!-- Scripts -->
 </head>
@@ -97,7 +98,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;News</a>
+                            <a class="nav-link text-white" href="{{ url('/news-update') }}"> &nbsp;News</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGRRC</a>
@@ -119,7 +120,7 @@
                                 About
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
@@ -150,7 +151,8 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">&nbsp;{{ __('Login') }} <span class="fas fa-sign-in-alt"></span> </a>
+                                    <a class="nav-link" href="{{ route('login') }}">&nbsp;{{ __('Login') }} <span
+                                            class="fas fa-sign-in-alt"></span> </a>
                                 </li>
                             @endif
 
