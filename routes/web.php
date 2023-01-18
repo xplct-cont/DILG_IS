@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +53,8 @@ Route::get("/sigle-news-update",function(){
 
 
 //Routes for Vienna
-Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/jobs', [JobsController::class, 'index']);
 
 
 

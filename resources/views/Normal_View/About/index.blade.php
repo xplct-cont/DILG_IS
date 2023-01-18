@@ -8,6 +8,7 @@
         <h1 class="text-center">ABOUT US</h1>
     </div>
 
+
     <div class="row mt-2">
         <div class="col-md-12">
           <div class="card border border-0">
@@ -42,8 +43,8 @@
         </div>
     </div>
     <div class="text-center m-2 mb-4">
-        <h1 class="fw-bold">Our Slogan</h1>
-        <h1 class="fw-bold">Matino | Mahusay | Maaasahan</h1>
+        <h4 class="fw-bold">Our Slogan</h4>
+        <h5 class="fw-bold">Matino | Mahusay | Maaasahan</h5>
     </div>
 </div>
 @endsection
