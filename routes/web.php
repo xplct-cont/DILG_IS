@@ -18,6 +18,24 @@ Route::get('/', function () {
 });
 
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+//Routes for Kenn
+
+
+
+
+
+
+
+
+
+
+//Routes for Chadie
 
 
 
@@ -25,7 +43,34 @@ Route::get('/news-update',function(){
     return view('Normal_View.News.news');
 });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+//Routes for Vienna
+
+
+
+
+
+
+
+
+
+
+//Routes for Franklin
+
+
+
+
+
+
+
+
+
+
+
+//End here
+
 
