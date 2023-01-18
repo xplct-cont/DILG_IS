@@ -8,14 +8,42 @@
         <h1 class="text-center">ABOUT US</h1>
     </div>
 
-
-    <div class="card" style="width: 18rem;">
-        <img src="{{ asset('/img/goal.png') }}"class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="row mt-2">
+        <div class="col-md-12">
+          <div class="card border border-0">
+            <h4 class=" fw-bold text-center mt-5">OUR MISSION</h4>
+            <div class="card-body d-flex">
+            <img style=" width: 100%; height: auto;" src="{{ asset('/img/goal.png') }}">
+              <h4 style="font-size:3vw;" class="ms-5 text-justify">The Department shall promote peace and order, ensure public safety, and strengthen capability of Local Government Units through active people's participation and professionalized corps of civil servants.</h4>
+            </div>
+          </div>
         </div>
       </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+          <div class="card border border-0">
+            <h4 class="fw-bold text-center mt-5">OUR VISION</h4>
+            <div class="card-body d-flex">
+                <h4 style="font-size:3vw;" class="text-justify">A strongly determined and highly trusted Department committed to capacitate and nurture local government units, public order and safety institutions to sustain peaceful, progressive, nand resilient communities where people live happily.</h4>
+              <img style=" width: 100%; height: auto;" src="{{ asset('/img/lightbulb.png') }}" class="p-4">
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+          <div class="card border border-0">
+            <h4 class="fw-bold text-center mt-5">OUR GOALS</h4>
+            <div class="card-body d-flex">
+                <img style=" width: 100%; height: auto;" src="{{ asset('/img/star.png') }}" class="p-4">
+                <h4 style="font-size:3vw;" class="text-justify">Peaceful, safe, self-reliant and development-dominated communities. Improve performance of local governments in governance, administration, social and economic development and environmental management; Sustain peace and order condition and ensure public safety.​​​​​</h4>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="text-center m-2 mb-4">
+        <h1 class="fw-bold">Our Slogan</h1>
+        <h1 class="fw-bold">Matino | Mahusay | Maaasahan</h1>
+    </div>
 </div>
 @endsection
