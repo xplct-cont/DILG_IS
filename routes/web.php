@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
+use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,6 +56,7 @@ Route::get("/sigle-news-update",function(){
 //Routes for Vienna
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/jobs', [JobsController::class, 'index']);
+Route::get('/contacts', [ContactsController::class, 'index']);
 
 
 

@@ -110,7 +110,7 @@
                             <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGU's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;Contact</a>
+                            <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
                         </li>
 
 
@@ -228,11 +228,20 @@
                     <div class="row ">
                         <div class="col-md-8 d-flex justify-content-between" style="gap:10px;">
                             <img src="/img/lga.png" alt="" style="height: 50px;">
+<<<<<<< HEAD
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+
+=======
                             <img src="/img/napolcom.png" alt="" style="height: 50px;">
                             <img src="/img/bfp.png" alt="" style="height: 50px;">
                             <img src="/img/bjmp.png" alt="" style="height: 50px;">
                             <img src="/img/ppsc.png" alt="" style="height: 50px;">
                             <img src="/img/pnp.png" alt="" style="height: 50px;">
+>>>>>>> 1aa1d97c4e82bef2f06fd4e4527d9ebafbb4e3c6
                         </div>
                     </div>
                 </div>
