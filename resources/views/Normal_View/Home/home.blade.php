@@ -6,8 +6,8 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            {{-- <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li> --}}
         </ol>
         <div class="carousel-inner" style="height:450px;">
             <div class="carousel-item active">
@@ -17,7 +17,7 @@
                 <img src="{{ asset('img/img5.png') }}" class="d-block w-100" alt="..." style="height: 450px;" />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img3.jpg') }}" class="d-block w-100" alt="..." style="height: 450px;"/>
+                <img src="{{ asset('img/img3.jpg') }}" class="d-block w-100" alt="..." style="height: 450px;" />
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -31,20 +31,143 @@
     </div>
 
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mt-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-5 mb-5 ">
 
-                            <button class="btn btn-md" style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">THE DIRECTOR <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></button><br><br>
-                            <button class="btn btn-md" style="background-color: #C9282D; color: white; padding-right: 60px; border-radius:10px;">THE DIRECTOR <span class="fas fa-arrow-right"></span></button><br><br>
-                            <button class="btn btn-md" style="background-color: #C9282D; color: white; padding-right: 60px; border-radius:10px;">THE DIRECTOR <span class="fas fa-arrow-right"></span></button>
-
-                        </div>
-                <div class="col-md-6">
-
-                </div>
+                <a href="#" type="button" class="btn btn-md"
+                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">THE DIRECTOR
+                    <span class="fas fa-arrow-right" style="margin-left: 131px;"></span></a><br><br>
+                <a href="#" type="button" class="btn btn-md"
+                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">VISION &
+                    MISSION <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a><br><br>
+                <a href="#" type="button" class="btn btn-md"
+                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">GOALS &
+                    OBJECTIVES <span class="fas fa-arrow-right" style="margin-left: 81px;"></span></a>
 
             </div>
+            <div class="col-md-6 mt-5 mb-5">
+                <h1 class="text-left" style="font-size: 22px; font-weight: 500;">Department of the Interior and Local
+                    Government</h1>
+                <p class="text-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    The DILG is the executive department of the Philippine government responsible for promoting peace and
+                    order, ensuring public safety and strengthening local government capability aimed towards the effective
+                    delivery of basic services to the citizenry.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="header" style=" height: 60px;; padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
+        <p class="text-center" style="font-size: 16px; font-weight: 500;">News & Updates</p>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="#" style="text-decoration: none; color:#030303;">
+                    <div class="card elevation-4">
+                        <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
+                            <div class="col-md-6 ">
+                                <h1 style="font-size: 15px;">December 15, 2022</h1><br>
+                                <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local
+                                    Governance
+                                    (SGLG) Award to LGU Alburquerque </p>
+                                <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
+                                    attended
+                                    by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director
+                                    Maria
+                                    Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
+                                    Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="card " style="height: 300px;">
+                                    <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                        style="height: 300px; width:auto;">
+                                </div>
+                            </div>
+                        </div>
+                </a>
+            </div>
+
+
+            <a href="#" style="text-decoration: none; color:#030303;">
+                <div class="card elevation-4">
+                    <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
+                        <div class="col-md-6 ">
+                            <h1 style="font-size: 15px;">December 15, 2022</h1><br>
+                            <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local Governance
+                                (SGLG) Award to LGU Alburquerque </p>
+                            <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also attended
+                                by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director Maria
+                                Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
+                                Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card" style="height: 300px;">
+                                <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                    style="height: 300px; width:auto;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
 
+        <div class="col-md-6">
+            <a href="#" style="text-decoration: none; color:#030303;">
+                <div class="card elevation-4">
+                    <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
+                        <div class="col-md-6 ">
+                            <h1 style="font-size: 15px;">December 15, 2022</h1><br>
+                            <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local Governance
+                                (SGLG) Award to LGU Alburquerque </p>
+                            <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
+                                attended by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director
+                                Maria Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
+                                Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card" style="height: 300px;">
+                                <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                    style="height: 300px; width:auto;">
+                            </div>
+                        </div>
+                    </div>
+            </a>
+
+        </div>
+
+        <a href="#" style="text-decoration: none; color:#030303;">
+            <div class="card elevation-4">
+                <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
+                    <div class="col-md-6 ">
+                        <h1 style="font-size: 15px;">December 15, 2022</h1><br>
+                        <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local Governance
+                            (SGLG) Award to LGU Alburquerque </p>
+                        <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
+                            attended by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director
+                            Maria Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
+                            Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card" style="height: 300px;">
+                            <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    </div>
+    </div>
+
+    <div class="d-flex justify-content-center mb-5 mt-3">
+        <a href="{{ url('/news-update') }}" type="button" class="btn btn-sm" style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;" href="#">See more...</a>
+    </div>
+
+
+
+    <style scoped>
+
+    </style>
 @endsection
