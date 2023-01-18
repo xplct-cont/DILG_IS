@@ -168,8 +168,6 @@
             href="#">See more...</a>
     </div>
 
-
-
     <style scoped>
 
     </style>
