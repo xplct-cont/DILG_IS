@@ -222,27 +222,72 @@
                     </div>
                 </form>
 
-
                 <p class="text-center" style="font-size: 16px; font-weight: 400;">Attached Agencies</p>
 
                 <div class="container d-flex justify-content-center">
                     <div class="row ">
-                        <div class="col-md-8 d-flex justify-content-between">
+                        <div class="col-md-8 d-flex justify-content-between" style="gap:10px;">
                             <img src="/img/lga.png" alt="" style="height: 50px;">
+<<<<<<< HEAD
                             <img src="/img/lga.png" alt="" style="height: 50px;">
                             <img src="/img/lga.png" alt="" style="height: 50px;">
                             <img src="/img/lga.png" alt="" style="height: 50px;">
                             <img src="/img/lga.png" alt="" style="height: 50px;">
                             <img src="/img/lga.png" alt="" style="height: 50px;">
 
+=======
+                            <img src="/img/napolcom.png" alt="" style="height: 50px;">
+                            <img src="/img/bfp.png" alt="" style="height: 50px;">
+                            <img src="/img/bjmp.png" alt="" style="height: 50px;">
+                            <img src="/img/ppsc.png" alt="" style="height: 50px;">
+                            <img src="/img/pnp.png" alt="" style="height: 50px;">
+>>>>>>> 1aa1d97c4e82bef2f06fd4e4527d9ebafbb4e3c6
                         </div>
                     </div>
                 </div>
-
-
+                <p class="text-center mt-3" style="color:silver; font-size: 8px;">&copy;DILG-BOHOL PROVINCE</p>
             </div>
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
         </footer>
+
     </div>
+
+
 </body>
 
 </html>
+
+<style>
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, rgb(192, 191, 191) 50%, white 50%);
+        bottom: 0;
+        left: -50%;
+        opacity: .5;
+        position: fixed;
+        right: -50%;
+        top: 0;
+        z-index: -1;
+    }
+
+    .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+
+    .bg3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+    }
+</style>
