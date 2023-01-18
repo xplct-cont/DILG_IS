@@ -18,12 +18,56 @@ Route::get('/', function () {
 });
 
 
-
-
-
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//Routes for Kenn
+
+
+
+
+
+
+
+
+
+
+//Routes for Chadie
+
+
+
+
+
+
+
+
+
+
+//Routes for Vienna
+
+
+
+
+
+
+
+
+
+
+//Routes for Franklin
+
+
+
+
+
+
+
+
+
+
+
+//End here
+
 
