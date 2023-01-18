@@ -14,102 +14,110 @@
             </div>
         </div>
 
-        <div class="main-content mt-4">
-            <div class="container">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="#" style="text-decoration: none; color:#030303;">
+                        <div class="card elevation-4">
+                            <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
+                                <div class="col-md-6 ">
+                                    <h1 style="font-size: 15px;">December 15, 2022</h1><br>
+                                    <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local
+                                        Governance
+                                        (SGLG) Award to LGU Alburquerque </p>
+                                    <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
+                                        attended
+                                        by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director
+                                        Maria
+                                        Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED
+                                        Chief
+                                        Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="card " style="height: 300px;">
+                                        <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                            style="height: 300px; width:auto;">
+                                    </div>
+                                </div>
+                            </div>
+                    </a>
+                </div>
 
-                <div class="row equal">
-                    <div class="col-sm-4 d-flex pb-3">
-                        <div class="card card-inverse card-danger">
-                            <div class="card-block">
-                                <h3 class="card-title">Danger</h3>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                                </p>
-                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+
+                <a href="#" style="text-decoration: none; color:#030303;">
+                    <div class="card elevation-4">
+                        <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
+                            <div class="col-md-6 ">
+                                <h1 style="font-size: 15px;">December 15, 2022</h1><br>
+                                <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local
+                                    Governance
+                                    (SGLG) Award to LGU Alburquerque </p>
+                                <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
+                                    attended
+                                    by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director
+                                    Maria
+                                    Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
+                                    Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card" style="height: 300px;">
+                                    <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                        style="height: 300px; width:auto;">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4 d-flex pb-3">
-                        <div class="card card-inverse card-danger">
-                            <div class="card-block">
-                                <h3 class="card-title">Danger</h3>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                                </p>
-                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="#" style="text-decoration: none; color:#030303;">
+                    <div class="card elevation-4">
+                        <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
+                            <div class="col-md-6 ">
+                                <h1 style="font-size: 15px;">December 15, 2022</h1><br>
+                                <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local
+                                    Governance
+                                    (SGLG) Award to LGU Alburquerque </p>
+                                <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
+                                    attended by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional
+                                    Director
+                                    Maria Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED
+                                    Chief
+                                    Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card" style="height: 300px;">
+                                    <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                        style="height: 300px; width:auto;">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-4 d-flex pb-3">
-                        <div class="card card-inverse card-danger">
-                            <div class="card-block">
-                                <h3 class="card-title">Danger</h3>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                                </p>
-                                <a href="#" class="btn btn-outline-secondary">Outline</a>
-                            </div>
+                </a>
+
+            </div>
+
+            <a href="#" style="text-decoration: none; color:#030303;">
+                <div class="card elevation-4">
+                    <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
+                        <div class="col-md-6 ">
+                            <h1 style="font-size: 15px;">December 15, 2022</h1><br>
+                            <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local Governance
+                                (SGLG) Award to LGU Alburquerque </p>
+                            <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
+                                attended by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director
+                                Maria Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
+                                Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
                         </div>
-                    </div>
-                    <div class="col-sm-4 d-flex pb-3">
-                        <div class="card card-inverse card-danger">
-                            <div class="card-block">
-                                <h3 class="card-title">Danger</h3>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                                </p>
-                                <a href="#" class="btn btn-outline-secondary">Outline</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 d-flex pb-3">
-                        <div class="card card-inverse card-danger">
-                            <div class="card-block">
-                                <h3 class="card-title">Danger</h3>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                                </p>
-                                <a href="#" class="btn btn-outline-secondary">Outline</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 d-flex pb-3">
-                        <div class="card card-inverse card-danger">
-                            <div class="card-block">
-                                <h3 class="card-title">Danger</h3>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                                </p>
-                                <a href="#" class="btn btn-outline-secondary">Outline</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 d-flex pb-3">
-                        <div class="card card-inverse card-danger">
-                            <div class="card-block">
-                                <h3 class="card-title">Danger</h3>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                                </p>
-                                <a href="#" class="btn btn-outline-secondary">Outline</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 d-flex pb-3">
-                        <div class="card card-inverse card-danger">
-                            <div class="card-block">
-                                <h3 class="card-title">Danger</h3>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                                </p>
-                                <a href="#" class="btn btn-outline-secondary">Outline</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 d-flex pb-3">
-                        <div class="card card-inverse card-danger">
-                            <div class="card-block">
-                                <h3 class="card-title">Danger</h3>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                                </p>
-                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                        <div class="col-md-6">
+                            <div class="card" style="height: 300px;">
+                                <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
+
     </div>
 @endsection

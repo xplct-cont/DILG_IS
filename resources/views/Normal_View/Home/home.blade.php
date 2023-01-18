@@ -112,6 +112,8 @@
                 </div>
             </a>
         </div>
+<<<<<<< HEAD
+=======
 
         <div class="col-md-6">
             <a href="#" style="text-decoration: none; color:#030303;">
@@ -162,7 +164,9 @@
     </div>
 
     <div class="d-flex justify-content-center mb-5 mt-3">
-        <a href="{{ url('/news-update') }}" type="button" class="btn btn-sm" style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;" href="#">See more...</a>
+        <a href="{{ url('/news-update') }}" type="button" class="btn btn-sm"
+            style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
+            href="#">See more...</a>
     </div>
 
 
@@ -170,4 +174,5 @@
     <style scoped>
 
     </style>
+>>>>>>> 1002d698349c8b7098b91eae6df4294b4d225dbe
 @endsection
