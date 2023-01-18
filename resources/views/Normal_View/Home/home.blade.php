@@ -7,15 +7,15 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
-        <div class="carousel-inner" style="height:400px;">
+        <div class="carousel-inner" style="height:450px;">
             <div class="carousel-item active">
-                <img src="{{ asset('img/img1.jpg') }}" class="d-block w-100" alt="..." />
+                <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" alt="..." style="height: 450px;" />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img2.jpg') }}" class="d-block w-100" alt="..." />
+                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" alt="..." style="height: 450px;" />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img3.jpg') }}" class="d-block w-100" alt="..." />
+                <img src="{{ asset('img/img3.jpg') }}" class="d-block w-100" alt="..." style="height: 450px;"/>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -27,4 +27,18 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                            <button class="btn btn" style="background-color: #C9282D"></button>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+
+            </div>
+        </div>
+
 @endsection
