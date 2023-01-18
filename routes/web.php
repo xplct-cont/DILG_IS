@@ -24,6 +24,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+
 //Routes for Kenn
 
 
@@ -39,7 +40,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-
+Route::get('/news-update',function(){
+    return view('Normal_View.News.news');
+});
 
 
 
