@@ -202,12 +202,47 @@
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
-                   <p class="text-center" style="font-size: 17px; color:#DCDCDC;">Department of the Interior and Local Government</p>
-                   <p  class="text-center" style="font-size: 12px; color:#DCDCDC; font-weight: 400; margin-top: -20px;">BOHOL PROVINCE</p>
+                    <p class="text-center" style="font-size: 18px; color:#DCDCDC;">Department of the Interior and
+                        Local Government</p>
+                    <p class="text-center"
+                        style="font-size: 12px; color:#DCDCDC; font-weight: 400; margin-top: -20px;">BOHOL PROVINCE</p>
                 </div>
+
+                
+
+                <form action="">
+                    <div class="input-group mx-auto" style="width: 300px;">
+
+                        <input type="text" name="email" style="height: 30px;" class="form-control" required>
+                        <label for="" style="color:dimgray;">
+                            <button type="submit" class="btn btn-sm bg-dark " style="margin-left:1px;">
+                                <span class="" style="font-size: 12px; font-weight: 400;">EMAIL US</span>
+                            </button>
+                        </label>
+                    </div>
+                </form>
+
+
+                <p class="text-center" style="font-size: 16px; font-weight: 400;">Attached Agencies</p>
+
+                <div class="container d-flex justify-content-center">
+                    <div class="row ">
+                        <div class="col-md-8 d-flex justify-content-between">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                           
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </footer>
-       </div>
+    </div>
 </body>
 
 </html>
