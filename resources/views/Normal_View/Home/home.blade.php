@@ -173,5 +173,5 @@
     <style scoped>
 
     </style>
->>>>>>> 1002d698349c8b7098b91eae6df4294b4d225dbe
+
 @endsection
