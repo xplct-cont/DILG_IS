@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class AboutController extends Controller
 {
     public function index(){
-        view('Normal_View.About.index');
+        return view('Normal_View.About.index');
+
     }
 }

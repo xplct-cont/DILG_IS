@@ -112,6 +112,8 @@
                 </div>
             </a>
         </div>
+<<<<<<< HEAD
+=======
 
         <div class="col-md-6">
             <a href="#" style="text-decoration: none; color:#030303;">
@@ -172,4 +174,5 @@
     <style scoped>
 
     </style>
+>>>>>>> 1002d698349c8b7098b91eae6df4294b4d225dbe
 @endsection
