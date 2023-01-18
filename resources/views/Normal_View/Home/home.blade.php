@@ -112,8 +112,7 @@
                 </div>
             </a>
         </div>
-<<<<<<< HEAD
-=======
+
 
         <div class="col-md-6">
             <a href="#" style="text-decoration: none; color:#030303;">
