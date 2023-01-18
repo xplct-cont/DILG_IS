@@ -57,7 +57,7 @@
     </div>
 
     <div class="header" style=" height: 60px;; padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
-        <p class="text-center" style="font-size: 16px; font-weight: 500;">News & Updates</p>
+        <p class="text-center" style="font-size: 16px; font-weight: 500;">News and Updates</p>
     </div>
 
     <div class="container mt-5">
