@@ -5,48 +5,108 @@
     </div>
 
     <div class="main">
-        <div>
-            <div class="date d-flex align-items-center justify-content-around">
-                <input type="date" name="" id="" class='w-25 rounded'>
-                <input type="search" name="" id="" class="w-50 rounded" placeholder="search">
+        <div class="d-flex align-items-center justify-content-around p-4">
+            <input type="date" name="" id="" class='rounded form-control datetime-local input-date'
+                style="margin-left: 95px;">
+            <div class="form-group has-search w-50" style="margin:auto;">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" class="form-control input" placeholder="Search">
             </div>
         </div>
-        <div class="main-content m-2">
-            <div class="container d-flex align-items-center justify-content-around">
-                <div class="card ">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            Developer Guy
-                        </h4>
 
-                        <p class="card-text">
-                            Developer Guy love to develop
-                            front-end and back-end
-                        </p>
-                        <a href="#" class="btn btn-primary">
-                            See Profile
-                        </a>
-                    </div>
-                    <div class="image-grid-container">
-                        <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png">
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="image-grid-container">
-                        <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            Developer Guy
-                        </h4>
+        <div class="main-content mt-4">
+            <div class="container">
 
-                        <p class="card-text">
-                            Developer Guy love to develop
-                            front-end and back-end
-                        </p>
-                        <a href="#" class="btn btn-primary">
-                            See Profile
-                        </a>
+                <div class="row equal">
+                    <div class="col-sm-4 d-flex pb-3">
+                        <div class="card card-inverse card-danger">
+                            <div class="card-block">
+                                <h3 class="card-title">Danger</h3>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                                </p>
+                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 d-flex pb-3">
+                        <div class="card card-inverse card-danger">
+                            <div class="card-block">
+                                <h3 class="card-title">Danger</h3>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                                </p>
+                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 d-flex pb-3">
+                        <div class="card card-inverse card-danger">
+                            <div class="card-block">
+                                <h3 class="card-title">Danger</h3>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                                </p>
+                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 d-flex pb-3">
+                        <div class="card card-inverse card-danger">
+                            <div class="card-block">
+                                <h3 class="card-title">Danger</h3>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                                </p>
+                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 d-flex pb-3">
+                        <div class="card card-inverse card-danger">
+                            <div class="card-block">
+                                <h3 class="card-title">Danger</h3>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                                </p>
+                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 d-flex pb-3">
+                        <div class="card card-inverse card-danger">
+                            <div class="card-block">
+                                <h3 class="card-title">Danger</h3>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                                </p>
+                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 d-flex pb-3">
+                        <div class="card card-inverse card-danger">
+                            <div class="card-block">
+                                <h3 class="card-title">Danger</h3>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                                </p>
+                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 d-flex pb-3">
+                        <div class="card card-inverse card-danger">
+                            <div class="card-block">
+                                <h3 class="card-title">Danger</h3>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                                </p>
+                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 d-flex pb-3">
+                        <div class="card card-inverse card-danger">
+                            <div class="card-block">
+                                <h3 class="card-title">Danger</h3>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                                </p>
+                                <a href="#" class="btn btn-outline-secondary">Outline</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
