@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="text-center" style="background-color:#DCDCDC; height: 40px;">
-        <h1 style="font-size: 22px; padding-top: 5px;">NEWS AND UPDATES</h1>
+        <h1 style="font-size: 22px; padding-top: 5px;">NEWS & UPDATES</h1>
     </div>
 
 

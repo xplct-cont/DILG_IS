@@ -5,7 +5,7 @@
     <img style=" width: 100%; height: auto;" src="{{ asset('/img/facade.png') }}">
     <p></p>
     <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
-        <h1 class="text-center">ABOUT US</h1>
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">ABOUT US</h1>
     </div>
 
 
