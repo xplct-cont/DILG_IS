@@ -8,7 +8,6 @@
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">ABOUT US</h1>
     </div>
 
-
     <div class="row mt-2">
         <div class="col-md-12">
           <div class="card border border-0">

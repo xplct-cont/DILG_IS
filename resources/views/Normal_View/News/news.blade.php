@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('content')
-    <div class="text-center" style="background-color:#DCDCDC; height: 40px;">
-        <h1 style="font-size: 22px; padding-top: 5px;">NEWS & UPDATES</h1>
+   
+    <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
     </div>
-
-
    
     <div class="container d-flex justify-content-center">
         <div class="row">

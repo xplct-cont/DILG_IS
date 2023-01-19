@@ -2,9 +2,9 @@
 
 @section('content')
 <div>
-    <p></p>
+    
     <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
-        <h1 class="text-center">JOB VACANCIES</h1>
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">JOB VACANCIES</h1>
     </div>
 
     <div class="row mx-auto">
@@ -15,13 +15,13 @@
                         <img style="width: 100%; height: auto;" src="{{ asset('/img/hiring.jpg') }}">
                     </div>
                     <div class="col-sm-8 text-center">
-                        <h2 class="text-center">We are hiring the following positions:</h2>
+                        <h2 class="text-center" style="font-size: 30px;">We are hiring the following positions:</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Planning Officer</li>
                             <li class="list-group-item">Engineers</li>
                             <li class="list-group-item">Developers</li>
                           </ul>
-                        <a href="#" class="btn btn-dark text-white col-sm-2 mx-auto text-center">View Details</a>
+                        <a href="#" class="btn text-white col-sm-2 mx-auto text-center" style="background-color: #C9282D">View Details</a>
                     </div>
                 </div>
             </div>
@@ -35,13 +35,13 @@
                         <img style="width: 100%; height: auto;" src="{{ asset('/img/hiring.jpg') }}">
                     </div>
                     <div class="col-sm-8 text-center">
-                        <h2 class="text-center">We are hiring the following positions:</h2>
+                        <h2 class="text-center" style="font-size: 30px;">We are hiring the following positions:</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Planning Officer</li>
                             <li class="list-group-item">Engineers</li>
                             <li class="list-group-item">Developers</li>
                           </ul>
-                        <a href="#" class="btn btn-dark text-white col-sm-2 mx-auto text-center">View Details</a>
+                        <a href="#" class="btn text-white col-sm-2 mx-auto text-center" style="background-color: #C9282D">View Details</a>
                     </div>
                 </div>
             </div>
@@ -55,13 +55,13 @@
                         <img style="width: 100%; height: auto;" src="{{ asset('/img/hiring.jpg') }}">
                     </div>
                     <div class="col-sm-8 text-center">
-                        <h2 class="text-center">We are hiring the following positions:</h2>
+                        <h2 class="text-center" style="font-size: 30px;">We are hiring the following positions:</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Planning Officer</li>
                             <li class="list-group-item">Engineers</li>
                             <li class="list-group-item">Developers</li>
                           </ul>
-                        <a href="#" class="btn btn-dark text-white col-sm-2 mx-auto text-center">View Details</a>
+                        <a href="#" class="btn text-white col-sm-2 mx-auto text-center" style="background-color: #C9282D">View Details</a>
                     </div>
                 </div>
             </div>
@@ -75,13 +75,13 @@
                         <img style="width: 100%; height: auto;" src="{{ asset('/img/hiring.jpg') }}">
                     </div>
                     <div class="col-sm-8 text-center">
-                        <h2 class="text-center">We are hiring the following positions:</h2>
+                        <h2 class="text-center" style="font-size: 30px;">We are hiring the following positions:</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Planning Officer</li>
                             <li class="list-group-item">Engineers</li>
                             <li class="list-group-item">Developers</li>
                           </ul>
-                        <a href="#" class="btn btn-dark text-white col-sm-2 mx-auto text-center">View Details</a>
+                        <a href="#" class="btn text-white col-sm-2 mx-auto text-center" style="background-color: #C9282D">View Details</a>
                     </div>
                 </div>
             </div>

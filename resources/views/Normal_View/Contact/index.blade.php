@@ -9,8 +9,6 @@
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">CONTACT INFORMATION</h1>
     </div>
     
-
-
     <div class="">
         <div class="card p-5">
         <div class="row">
