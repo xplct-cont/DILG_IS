@@ -15,7 +15,7 @@
                         <img style="width: 100%; height: auto;" src="{{ asset('/img/hiring.jpg') }}">
                     </div>
                     <div class="col-sm-8 text-center">
-                        <h2 class="text-center" style="font-size: 30px;">We are hiring the following positions:</h2>
+                        <h2 class="text-center" style="font-size: 25px;">We are hiring the following positions:</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Planning Officer</li>
                             <li class="list-group-item">Engineers</li>
@@ -35,7 +35,7 @@
                         <img style="width: 100%; height: auto;" src="{{ asset('/img/hiring.jpg') }}">
                     </div>
                     <div class="col-sm-8 text-center">
-                        <h2 class="text-center" style="font-size: 30px;">We are hiring the following positions:</h2>
+                        <h2 class="text-center" style="font-size: 25px;">We are hiring the following positions:</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Planning Officer</li>
                             <li class="list-group-item">Engineers</li>
@@ -55,7 +55,7 @@
                         <img style="width: 100%; height: auto;" src="{{ asset('/img/hiring.jpg') }}">
                     </div>
                     <div class="col-sm-8 text-center">
-                        <h2 class="text-center" style="font-size: 30px;">We are hiring the following positions:</h2>
+                        <h2 class="text-center" style="font-size: 25px;">We are hiring the following positions:</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Planning Officer</li>
                             <li class="list-group-item">Engineers</li>
@@ -75,7 +75,7 @@
                         <img style="width: 100%; height: auto;" src="{{ asset('/img/hiring.jpg') }}">
                     </div>
                     <div class="col-sm-8 text-center">
-                        <h2 class="text-center" style="font-size: 30px;">We are hiring the following positions:</h2>
+                        <h2 class="text-center" style="font-size: 25px;">We are hiring the following positions:</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Planning Officer</li>
                             <li class="list-group-item">Engineers</li>
