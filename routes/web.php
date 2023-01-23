@@ -36,7 +36,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 //Routes for Kenn
-
+ 
 
 
 
@@ -57,6 +57,9 @@ Route::get("/sigle-news-update",function(){
     return view('Normal_View.News.single_news');
 });
 
+Route::get("/project",function(){
+    return view('Normal_View.Projects.project');
+});
 
 
 
@@ -76,7 +79,9 @@ Route::get('/admin/news', [NewsController::class, 'index']);
 
 
 //Routes for Franklin
-
+Route::get('/organizations',function(){
+    return view('Normal_View.Organization.organization');
+});
 
 
 
