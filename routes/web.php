@@ -35,7 +35,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 //Routes for Kenn
-
+ 
 
 
 
@@ -77,7 +77,9 @@ Route::get('/contacts', [ContactsController::class, 'index']);
 
 
 //Routes for Franklin
-
+Route::get('/organizations',function(){
+    return view('Normal_View.Organization.organization');
+});
 
 
 

@@ -113,36 +113,37 @@
 </head>
 <body>
      
-<div class="container" style="margin-top:50px;">
+<div class="container" style="margin-top:60px;">
+    <div class=" rounded d-flex justify-content-between" >
+        <img src="/img/dilg-main.png" class=" shadow-lg rounded-circle" style="height: 150px; width:150px; margin:auto;">
     
-    <div class="d-flex justify-content-center">
-        <h3 class="text-center" style="font-size: 26px;">Department of the Interior and Local Government<br>
+    </div>
+    <div class="d-flex justify-content-center" style="margin-top: 30px">
+        <h3 class="text-center" style="font-size: 28px;">Department of the Interior and Local Government 
+            <p class="text-center" style="font-weight:450; font-size: 25px; margin-top: -5px;">Bohol Province</p>
             <br>
          </h3>
     </div>
 
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="margin-top: -10px">
         <div class="col-md-6">
 
-            
+          
             <div class="card shadow-lg rounded" >
-                <div class=" rounded d-flex justify-content-between" >
-                    <img src="/img/dilg-main.png" class=" shadow-lg rounded-circle" style="height: 100px; width:100px; margin:auto;">
-                    <h3 class="text-center" style="font-size: 20px; font-weight: 400; margin:auto;color: white ">DILG-BOHOL PROVINCE<br>
-                        <p class="text-center" style="font-size: 15px; color: whitesmoke;"></p> 
-                    </h3>
-                
-                </div>
 
-                <div class="card-body">
+
+                <h3 class="text-center p-3" style="font-size: 25px; font-weight: 300; margin:auto;color: dark-grey ">Sign in to your Account<br>
+                    <p class="text-center" style="font-size: 15px; color: whitesmoke;"></p> 
+                </h3>
+                <div class="card-body" style="margin-top:-20px;">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                        <div class="row mb-3"> 
+                            <label for="email" style="font-size: 20px" class="col-md-3 col-form-label text-md-end">{{ __('Email') }}</label>
                             <div class="col-md-6"> 
-                                <input id="email" type="email" class="form-control  @error('email') is-invalid @enderror" placeholder="example@gmail.com" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control  @error('email') is-invalid @enderror" placeholder="Enter your e-mail address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -152,10 +153,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" style="font-size: 20px"  class="col-md-3 col-form-label">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password" name="password" required autocomplete="current-password">
                                 <span class="d-flex justify-content-end mt-1"><i class="fas fa-eye text-danger" aria-hidden="true" id="eye" onclick="toggle()"></i></span>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -165,12 +166,12 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="row mb-0">
+                            <div class="col-md-6 offset-md-3">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-label" style="font-size: 18px" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                    
@@ -192,15 +193,19 @@
                         
                                
                         </div>
-                        @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                            {{ __('Forgot Your Password?') }}
-                        </a>
-                    @endif
-                        <p class="mb-0 d-flex justify-content-center">
-                            <a href="{{ route('register') }}" class="text-center" style="color:black; font-size: 14px; margin:auto;">Register an account</a>
+                       
+                        <p class=" d-flex justify-content-center " style="margin-top: -45px">
+                            <a href="{{ route('register') }}" class="text-center" style="color:black; font-size: 19px; margin:auto;">Register an account</a>
                            
                         </p>
+                        <div class="row ">
+                            @if (Route::has('password.request'))
+                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                        @endif
+                        </div>
+                            
                     </div>
                     </form>
                 </div>
@@ -212,7 +217,7 @@
 <footer class="sticky-footer">
     <div class="container ">
         <div class="copyright text-center">
-            <span style="color:dimgray;">&copy; Pangangan National High School 2022</span>
+            <span style="color:dimgray;">&copy; DILG-Bohol Province 2023</span>
         </div>
     </div>
 </footer>
