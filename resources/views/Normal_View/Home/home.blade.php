@@ -57,6 +57,7 @@
     </div>
 
 
+<<<<<<< HEAD
     <div class="header mt-4" style=" padding: 7px; background: #dee0e4; color: #FFFFFF; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">Projects</h1>
         <div>
@@ -100,6 +101,19 @@
                     </a>
                 </div>
 
+=======
+
+    <div class="header mt-4" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">PROJECTS</h1>
+    </div>
+    <div><x-projects /></div>
+    <div class="d-flex justify-content-center mb-5 mt-3">
+        <a href="{{ url('/project') }}" type="button" class="btn btn-sm"
+            style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
+            href="#">See more...</a>
+
+    </div>
+>>>>>>> 87e09c2d6a646f8b396458c4afbae584dda9b4ab
 
                 <a href="#" style="text-decoration: none; color:#030303;">
                     <div class="card elevation-4">
