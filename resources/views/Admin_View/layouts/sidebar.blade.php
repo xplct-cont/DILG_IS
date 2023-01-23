@@ -1,9 +1,9 @@
 <aside class="main-sidebar sidebar-dark-primary ">
-    <a href="{{ route('home') }}" class="brand-link" style="background-color: #C9282D;">
+    <a href="{{ route('home') }}" class="brand-link" style="background-color: #C9282D; text-decoration:none;">
         <img src="{{url('/img/dilg-main.png')}}"
              alt="{{ config('app.name') }} Logo"
              class="brand-image img-circle elevation-3">
-        <span class="brand-text font-weight-light" style="font-size: 18px;">DILG-BOHOL PROVINCE</span>
+        <span class="" style="font-size: 16px; text-decoration:none;">DILG-BOHOL PROVINCE</span>
     </a>
 
     <div class="sidebar">

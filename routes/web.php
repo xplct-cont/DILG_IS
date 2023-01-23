@@ -65,10 +65,10 @@ Route::get("/project",function(){
 
 
 //Routes for Vienna
-Route::get('/about', [AboutController::class, 'index']);
-Route::get('/jobs', [JobsController::class, 'index']);
-Route::get('/contacts', [ContactsController::class, 'index']);
-Route::get('/admin/news', [NewsController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index'])->name('/about');
+Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
+Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
+Route::get('/admin/news', [NewsController::class, 'index'])->name('/admin/news');
 
 
 
