@@ -3,7 +3,7 @@
     <div>
         <img style=" width: 100%; height: auto;" src="{{ asset('/img/facade.png') }}">
         <p></p>
-        <div class="header" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+        <div class="header ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
             <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">ABOUT US</h1>
         </div>
 
@@ -45,14 +45,14 @@
                         the
                         President in the
                         exercise of general supervision over local
-                        governments;
+                        governments
                     </li>
                     <li class="list-group-item"> <span class="fas fa-arrow-right mr-3" style="color:#002c76"></span> Advise
                         the
                         President in the
                         promulgation of policies, rules, regulations and
                         other issuances on the
-                        general supervision over local governments and on public order and safety;
+                        general supervision over local governments and on public order and safety
                     </li>
                     <li class="list-group-item"> <span class="fas fa-arrow-right mr-3" style="color:#002c76"></span>
                         Establish and prescribe rules, regulations and other issuances implementing laws on public order and
@@ -102,7 +102,6 @@
 
         <div class="container d-flex align-items-center justify-content-around mt-5">
             <div class="row m-1">
-
                 <a href="#" style="text-decoration: none; color:#030303;">
                     <div class="card elevation-4">
                         <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
