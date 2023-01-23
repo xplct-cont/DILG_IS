@@ -192,7 +192,7 @@
 
         <main class="">
             <div class="header" style=" padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
-                <img style=" width: 40%; margin-left: 10px;
+                <img style=" width: 50%; margin-left: 10px;
                 height: auto;"
                     src="{{ asset('/img/dilg-bohol.png') }}">
             </div>
@@ -246,8 +246,10 @@
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
         </footer>
-
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><i
+                class="fas fa-chevron-up"></i></a>
     </div>
+
 
 
 </body>

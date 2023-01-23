@@ -3,8 +3,8 @@
 @section('content')
 <div>
     
-    <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
-        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">JOB VACANCIES</h1>
+    <div class="header  ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px; ">JOB VACANCIES</h1>
     </div>
 
     <div class="row mx-auto">
