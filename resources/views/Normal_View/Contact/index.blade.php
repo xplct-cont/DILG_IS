@@ -5,7 +5,7 @@
         <img style=" width: 100%; height: auto;" src="{{ asset('/img/facade.png') }}">
         <p></p>
 
-        <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
+        <div class="header ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF;  margin-bottom: 5px;">
             <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">CONTACT INFORMATION</h1>
         </div>
 
