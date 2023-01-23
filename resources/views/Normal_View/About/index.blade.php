@@ -45,14 +45,14 @@
                         the
                         President in the
                         exercise of general supervision over local
-                        governments;
+                        governments
                     </li>
                     <li class="list-group-item"> <span class="fas fa-arrow-right mr-3" style="color:#002c76"></span> Advise
                         the
                         President in the
                         promulgation of policies, rules, regulations and
                         other issuances on the
-                        general supervision over local governments and on public order and safety;
+                        general supervision over local governments and on public order and safety
                     </li>
                     <li class="list-group-item"> <span class="fas fa-arrow-right mr-3" style="color:#002c76"></span>
                         Establish and prescribe rules, regulations and other issuances implementing laws on public order and

@@ -70,7 +70,7 @@
     </div>
 
     <div class="mt-4" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
-        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATE</h1>
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
     </div>
     <div class=" mt-5">
         <div class="row">
