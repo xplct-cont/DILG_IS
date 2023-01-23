@@ -102,7 +102,6 @@
 
         <div class="container d-flex align-items-center justify-content-around mt-5">
             <div class="row m-1">
-
                 <a href="#" style="text-decoration: none; color:#030303;">
                     <div class="card elevation-4">
                         <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
