@@ -149,12 +149,12 @@
                         </div>
 
                         @guest
-                            @if (Route::has('login'))
+                            {{-- @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">&nbsp;{{ __('Login') }} <span
                                             class="fas fa-sign-in-alt"></span> </a>
                                 </li>
-                            @endif
+                            @endif --}}
 
                             {{-- @if (Route::has('register'))
                                 <li class="nav-item">
