@@ -110,6 +110,9 @@
                             <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGU's</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url('/organizations') }}"> &nbsp;Organization</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
                         </li>
 
@@ -131,7 +134,7 @@
                                 Programs & Services
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/project') }}">Projects </a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
@@ -149,12 +152,12 @@
                         </div>
 
                         @guest
-                            @if (Route::has('login'))
+                            {{-- @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">&nbsp;{{ __('Login') }} <span
                                             class="fas fa-sign-in-alt"></span> </a>
                                 </li>
-                            @endif
+                            @endif --}}
 
                             {{-- @if (Route::has('register'))
                                 <li class="nav-item">
@@ -189,7 +192,7 @@
 
         <main class="">
             <div class="header" style=" padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
-                <img style=" width: 40%; margin-left: 10px;
+                <img style=" width: 50%; margin-left: 10px;
                 height: auto;"
                     src="{{ asset('/img/dilg-bohol.png') }}">
             </div>

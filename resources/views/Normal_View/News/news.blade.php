@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-hello-world></x-hello-world>
     <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
     </div>

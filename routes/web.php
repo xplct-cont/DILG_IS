@@ -4,12 +4,13 @@ use Carbon\Carbon;
 
 //Normal View
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin_View\NewsController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
-use App\Http\Controllers\Normal_View\About\AboutController;
-use App\Http\Controllers\Normal_View\Contacts\ContactsController;
+use App\Http\Controllers\Admin_View\layouts\HomeController;
 
 //Admin View
-use App\Http\Controllers\Admin_View\layouts\HomeController;
+use App\Http\Controllers\Normal_View\About\AboutController;
+use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 
 
 /*
@@ -35,7 +36,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 //Routes for Kenn
-
+ 
 
 
 
@@ -56,14 +57,18 @@ Route::get("/sigle-news-update",function(){
     return view('Normal_View.News.single_news');
 });
 
+Route::get("/project",function(){
+    return view('Normal_View.Projects.project');
+});
 
 
 
 
 //Routes for Vienna
-Route::get('/about', [AboutController::class, 'index']);
-Route::get('/jobs', [JobsController::class, 'index']);
-Route::get('/contacts', [ContactsController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index'])->name('/about');
+Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
+Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
+Route::get('/admin/news', [NewsController::class, 'index'])->name('/admin/news');
 
 
 
@@ -74,7 +79,9 @@ Route::get('/contacts', [ContactsController::class, 'index']);
 
 
 //Routes for Franklin
-
+Route::get('/organizations',function(){
+    return view('Normal_View.Organization.organization');
+});
 
 
 

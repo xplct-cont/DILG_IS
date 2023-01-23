@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
-        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">PROJECT</h1>
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">PROJECTS</h1>
     </div>
 
     <div class="container d-flex justify-content-center">
