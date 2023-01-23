@@ -4,12 +4,13 @@ use Carbon\Carbon;
 
 //Normal View
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin_View\NewsController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
-use App\Http\Controllers\Normal_View\About\AboutController;
-use App\Http\Controllers\Normal_View\Contacts\ContactsController;
+use App\Http\Controllers\Admin_View\layouts\HomeController;
 
 //Admin View
-use App\Http\Controllers\Admin_View\layouts\HomeController;
+use App\Http\Controllers\Normal_View\About\AboutController;
+use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 
 
 /*
@@ -64,6 +65,7 @@ Route::get("/sigle-news-update",function(){
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/jobs', [JobsController::class, 'index']);
 Route::get('/contacts', [ContactsController::class, 'index']);
+Route::get('/admin/news', [NewsController::class, 'index']);
 
 
 
