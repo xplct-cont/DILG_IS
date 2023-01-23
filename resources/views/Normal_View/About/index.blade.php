@@ -100,8 +100,8 @@
             </div>
         </div>
 
-        <div class="container d-flex align-items-center justify-content-around mt-4">
-            <div class="row">
+        <div class="container d-flex align-items-center justify-content-around mt-5">
+            <div class="row m-1">
 
                 <a href="#" style="text-decoration: none; color:#030303;">
                     <div class="card elevation-4">
