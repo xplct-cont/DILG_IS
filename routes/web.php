@@ -56,6 +56,9 @@ Route::get("/sigle-news-update",function(){
     return view('Normal_View.News.single_news');
 });
 
+Route::get("/project",function(){
+    return view('Normal_View.Projects.project');
+});
 
 
 

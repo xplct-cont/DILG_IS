@@ -40,11 +40,11 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
     <!-- Main Header -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav class="main-header navbar navbar-expand text-light" style="background-color: #C9282D;">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                <a class="nav-link text-light" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
         </ul>
 
@@ -53,7 +53,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                     <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
                          class="user-image img-circle elevation-2" alt="User Image">
-                    <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
+                    <span class="d-none d-md-inline text-light">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
@@ -93,12 +93,15 @@
     </div>
 
     <!-- Main Footer -->
-    <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-           
-        </div>
-        &copy;DILG-BOHOL 2023 
-    </footer>
+    <div class="d-flex justify-content-end">
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="copyright text-center">
+                    <span style="color: dimgray;">&copy;DILG-BOHOL 2023</span>
+                </div>
+            </div>
+        </footer>
+       </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"

@@ -134,7 +134,7 @@
                                 Programs & Services
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/project') }}">Projects </a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
@@ -152,12 +152,12 @@
                         </div>
 
                         @guest
-                            @if (Route::has('login'))
+                            {{-- @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">&nbsp;{{ __('Login') }} <span
                                             class="fas fa-sign-in-alt"></span> </a>
                                 </li>
-                            @endif
+                            @endif --}}
 
                             {{-- @if (Route::has('register'))
                                 <li class="nav-item">
