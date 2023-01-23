@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div>
         <img style=" width: 100%; height: auto;" src="{{ asset('/img/facade.png') }}">
