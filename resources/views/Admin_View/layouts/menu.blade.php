@@ -1,13 +1,13 @@
 
-<li class="nav-item mt-4">
-    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? 'bg-info active' : '' }}">
+<li class="nav-item mt-2">
+    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Dashboard</p>
         <i class="fas fa-tachometer-alt fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="{{ url('/admin/news') }}" class="nav-link {{ Request::is('users') ? 'bg-info active' : '' }}">
+    <a href="{{ route('/admin/news') }}" class="nav-link {{ Request::is('admin/news*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">News</p>
         <i class="fas fa-exclamation-circle fa-pull-left fa-md text-white"></i>
     </a>
