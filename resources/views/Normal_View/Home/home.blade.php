@@ -55,13 +55,18 @@
             </div>
         </div>
     </div>
-    <x-hello-world></x-hello-world>
 
-    <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
-        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
+
+    <div class="header mt-4" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">Projects</h1>
     </div>
 
-    <div class="container mt-5">
+    <x-projects />
+
+    <div class="mt-4" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
+    </div>
+    <div class=" mt-5">
         <div class="row">
             <div class="col-md-6">
                 <a href="#" style="text-decoration: none; color:#030303;">
@@ -97,7 +102,8 @@
                             <h1 style="font-size: 15px;">December 15, 2022</h1><br>
                             <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local Governance
                                 (SGLG) Award to LGU Alburquerque </p>
-                            <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also attended
+                            <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
+                                attended
                                 by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director Maria
                                 Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
                                 Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
