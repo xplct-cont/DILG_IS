@@ -1,8 +1,17 @@
 <?php
 
 use Carbon\Carbon;
+
+//Normal View
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
+use App\Http\Controllers\Normal_View\Contacts\ContactsController;
+
+//Admin View
+use App\Http\Controllers\Admin_View\layouts\HomeController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +30,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 
@@ -52,7 +61,9 @@ Route::get("/sigle-news-update",function(){
 
 
 //Routes for Vienna
-Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/jobs', [JobsController::class, 'index']);
+Route::get('/contacts', [ContactsController::class, 'index']);
 
 
 

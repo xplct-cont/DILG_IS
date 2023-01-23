@@ -110,7 +110,7 @@
                             <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGU's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;Contact</a>
+                            <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
                         </li>
 
 
@@ -133,7 +133,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -202,12 +202,84 @@
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
-                   <p class="text-center" style="font-size: 17px; color:#DCDCDC;">Department of the Interior and Local Government</p>
-                   <p  class="text-center" style="font-size: 12px; color:#DCDCDC; font-weight: 400; margin-top: -20px;">BOHOL PROVINCE</p>
+                    <p class="text-center" style="font-size: 18px; color:#DCDCDC;">Department of the Interior and
+                        Local Government</p>
+                    <p class="text-center"
+                        style="font-size: 12px; color:#DCDCDC; font-weight: 400; margin-top: -20px;">BOHOL PROVINCE</p>
                 </div>
+
+
+
+                <form action="">
+                    <div class="input-group mx-auto" style="width: 300px;">
+
+                        <input type="text" name="email" style="height: 30px;" class="form-control" required>
+                        <label for="" style="color:dimgray;">
+                            <button type="submit" class="btn btn-sm bg-dark " style="margin-left:1px;">
+                                <span class="" style="font-size: 12px; font-weight: 400;">EMAIL US</span>
+                            </button>
+                        </label>
+                    </div>
+                </form>
+
+                <p class="text-center" style="font-size: 16px; font-weight: 400;">Attached Agencies</p>
+
+                <div class="container d-flex justify-content-center">
+                    <div class="row ">
+                        <div class="col-md-8 d-flex justify-content-between" style="gap:10px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/napolcom.png" alt="" style="height: 50px;">
+                            <img src="/img/bfp.png" alt="" style="height: 50px;">
+                            <img src="/img/bjmp.png" alt="" style="height: 50px;">
+                            <img src="/img/ppsc.png" alt="" style="height: 50px;">
+                            <img src="/img/pnp.png" alt="" style="height: 50px;">
+
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center mt-3" style="color:silver; font-size: 8px;">&copy;DILG-BOHOL PROVINCE</p>
             </div>
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
         </footer>
-       </div>
+
+    </div>
+
+
 </body>
 
 </html>
+
+<style>
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, rgb(226, 217, 217) 50%, white 50%);
+        bottom: 0;
+        left: -50%;
+        opacity: .5;
+        position: fixed;
+        right: -50%;
+        top: 0;
+        z-index: -1;
+    }
+
+    .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+
+    .bg3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+    }
+</style>

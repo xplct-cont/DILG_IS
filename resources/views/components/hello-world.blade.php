@@ -1,9 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
-    <x-hello-world></x-hello-world>
+<div>
     <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
-        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">PROJECT</h1>
     </div>
 
     <div class="container d-flex justify-content-center">
@@ -68,7 +65,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="card" style="height: 300px;">
-                                <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
+                                <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                    style="height: 300px; width:auto;">
                             </div>
                         </div>
                     </div>
@@ -91,7 +89,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="card" style="height: 300px;">
-                                <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
+                                <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                    style="height: 300px; width:auto;">
                             </div>
                         </div>
                     </div>
@@ -114,7 +113,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="card" style="height: 300px;">
-                                <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
+                                <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                    style="height: 300px; width:auto;">
                             </div>
                         </div>
                     </div>
@@ -188,7 +188,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card" style="height: 300px;">
-                            <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
+                            <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                style="height: 300px; width:auto;">
                         </div>
                     </div>
                 </div>
@@ -208,7 +209,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card" style="height: 300px;">
-                            <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
+                            <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                style="height: 300px; width:auto;">
                         </div>
                     </div>
                 </div>
@@ -228,7 +230,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card" style="height: 300px;">
-                            <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
+                            <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                style="height: 300px; width:auto;">
                         </div>
                     </div>
                 </div>
@@ -248,13 +251,12 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card" style="height: 300px;">
-                            <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
+                            <img src="{{ asset('/img/img3.jpg') }}" alt=""
+                                style="height: 300px; width:auto;">
                         </div>
                     </div>
                 </div>
             </div>
         </a>
     </div>
-    </div>
-    </div>
-@endsection
+</div>

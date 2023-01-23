@@ -6,18 +6,17 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            {{-- <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li> --}}
+
         </ol>
-        <div class="carousel-inner" style="height:450px;">
+        <div class="carousel-inner" style="height:400px;">
             <div class="carousel-item active">
-                <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" alt="..." style="height: 450px;" />
+                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 400px;" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" alt="..." style="height: 450px;" />
+                <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" style="height: 400px;" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img3.jpg') }}" class="d-block w-100" alt="..." style="height: 450px;" />
+                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 400px;" alt="..." />
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -56,9 +55,10 @@
             </div>
         </div>
     </div>
+    <x-hello-world></x-hello-world>
 
-    <div class="header" style=" height: 60px;; padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
-        <p class="text-center" style="font-size: 16px; font-weight: 500;">News & Updates</p>
+    <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
     </div>
 
     <div class="container mt-5">
@@ -168,10 +168,7 @@
             href="#">See more...</a>
     </div>
 
-
-
     <style scoped>
 
     </style>
-
 @endsection
