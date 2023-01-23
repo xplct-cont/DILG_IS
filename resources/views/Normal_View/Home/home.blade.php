@@ -13,10 +13,10 @@
                 <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 400px;" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" style="height: 400px;"  alt="..." />
+                <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" style="height: 400px;" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 400px;"  alt="..." />
+                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 400px;" alt="..." />
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -55,6 +55,7 @@
             </div>
         </div>
     </div>
+    <x-hello-world></x-hello-world>
 
     <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
