@@ -34,7 +34,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     @yield('third_party_stylesheets')
-
+    @livewireStyles
     @stack('page_css')
 </head>
 
@@ -155,7 +155,7 @@
 </script>
 
 @yield('third_party_scripts')
-
+@livewireScripts
 @stack('page_scripts')
 </body>
 </html>
