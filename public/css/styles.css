@@ -1,16 +1,14 @@
 /* Styles for wrapping the search box */
 
 .main {
-    /* width: 50%; */
-    /* margin: 50px auto; */
-    margin: auto;
+    width: 100%;
+    margin: 50px auto;
 }
 
 /* Bootstrap 4 text input with search icon */
 
 .has-search .form-control {
     padding-left: 2.375rem;
-    margin: auto;
 }
 
 .has-search .form-control-feedback {
@@ -23,5 +21,8 @@
     text-align: center;
     pointer-events: none;
     color: #aaa;
-    border: 1 px solid red;
+}
+
+.input-date {
+    width: 500px;
 }

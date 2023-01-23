@@ -64,6 +64,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     {{-- slider script --}}
     <!-- Scripts -->
 </head>
@@ -97,7 +98,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;News</a>
+                            <a class="nav-link text-white" href="{{ url('/news-update') }}"> &nbsp;News</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGRRC</a>
@@ -109,7 +110,10 @@
                             <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGU's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;Contact</a>
+                            <a class="nav-link text-white" href="{{ url('/organizations') }}"> &nbsp;Organization</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
                         </li>
 
 
@@ -119,7 +123,7 @@
                                 About
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
@@ -130,9 +134,9 @@
                                 Programs & Services
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/project') }}">Projects </a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -148,11 +152,12 @@
                         </div>
 
                         @guest
-                            @if (Route::has('login'))
+                            {{-- @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">&nbsp;{{ __('Login') }} <span class="fas fa-sign-in-alt"></span> </a>
+                                    <a class="nav-link" href="{{ route('login') }}">&nbsp;{{ __('Login') }} <span
+                                            class="fas fa-sign-in-alt"></span> </a>
                                 </li>
-                            @endif
+                            @endif --}}
 
                             {{-- @if (Route::has('register'))
                                 <li class="nav-item">
@@ -187,7 +192,7 @@
 
         <main class="">
             <div class="header" style=" padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
-                <img style=" width: 40%; margin-left: 10px;
+                <img style=" width: 50%; margin-left: 10px;
                 height: auto;"
                     src="{{ asset('/img/dilg-bohol.png') }}">
             </div>
@@ -195,6 +200,91 @@
         </main>
 
     </div>
+
+    <div class="d-flex justify-content-center" style=" padding: 20px; background: #C9282D;; color: #DCDCDC;">
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p class="text-center" style="font-size: 18px; color:#DCDCDC;">Department of the Interior and
+                        Local Government</p>
+                    <p class="text-center"
+                        style="font-size: 12px; color:#DCDCDC; font-weight: 400; margin-top: -20px;">BOHOL PROVINCE</p>
+                </div>
+
+
+
+                <form action="">
+                    <div class="input-group mx-auto" style="width: 300px;">
+
+                        <input type="text" name="email" style="height: 30px;" class="form-control" required>
+                        <label for="" style="color:dimgray;">
+                            <button type="submit" class="btn btn-sm bg-dark " style="margin-left:1px;">
+                                <span class="" style="font-size: 12px; font-weight: 400;">EMAIL US</span>
+                            </button>
+                        </label>
+                    </div>
+                </form>
+
+                <p class="text-center" style="font-size: 16px; font-weight: 400;">Attached Agencies</p>
+
+                <div class="container d-flex justify-content-center">
+                    <div class="row ">
+                        <div class="col-md-8 d-flex justify-content-between" style="gap:10px;">
+                            <img src="/img/lga.png" alt="" style="height: 50px;">
+                            <img src="/img/napolcom.png" alt="" style="height: 50px;">
+                            <img src="/img/bfp.png" alt="" style="height: 50px;">
+                            <img src="/img/bjmp.png" alt="" style="height: 50px;">
+                            <img src="/img/ppsc.png" alt="" style="height: 50px;">
+                            <img src="/img/pnp.png" alt="" style="height: 50px;">
+
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center mt-3" style="color:silver; font-size: 8px;">&copy;DILG-BOHOL PROVINCE</p>
+            </div>
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+        </footer>
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><i
+                class="fas fa-chevron-up"></i></a>
+    </div>
+
+
+
 </body>
 
 </html>
+
+<style>
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, rgb(226, 217, 217) 50%, white 50%);
+        bottom: 0;
+        left: -50%;
+        opacity: .5;
+        position: fixed;
+        right: -50%;
+        top: 0;
+        z-index: -1;
+    }
+
+    .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+
+    .bg3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+    }
+</style>
