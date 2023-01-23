@@ -1,77 +1,3 @@
-{{-- @extends('auth.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection --}}
-
 
 @extends('auth.layout')
 
@@ -114,7 +40,7 @@
     <body>
       
             <a href="{{ url('/') }}" class="text-start ml-4"
-                style="color:black; font-size: 19px; margin:auto;">Back to home</a>
+                style="color:black; font-size: 19px; margin:auto;"><span class="fas fa-arrow-left"></span> Back to home</a>
 
         <div class="container" style="margin-top: -5px;">
             <div class=" rounded d-flex justify-content-between">
@@ -123,14 +49,14 @@
 
             </div>
             <div class="d-flex justify-content-center" style="margin-top: 30px">
-                <h3 class="text-center" style="font-size: 28px;">Department of the Interior and Local Government
-                    <p class="text-center" style="font-weight:450; font-size: 25px; margin-top: -5px;">Bohol Province</p>
+                <h3 class="text-center" style="font-size: 27px;">Department of the Interior and Local Government
+                    <p class="text-center" style="font-weight:450; font-size: 20px; margin-top: -5px;">Bohol Province</p>
                     <br>
                 </h3>
             </div>
 
             <div class="row justify-content-center" style="margin-top: -30px">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <div class="card shadow-lg rounded">
                         <h3 class="text-center p-3"
                             style="font-size: 20px; font-weight: 300; margin:auto;color: dark-grey ">Sign in to your
@@ -142,7 +68,7 @@
                                 @csrf
 
                                 <div class="row mb-3">
-                                    <label for="email" style="font-size: 20px"
+                                    <label for="email" style="font-size: 19px font-weight: 500;"
                                         class="col-md-3 col-form-label text-md-end">{{ __('Email') }}</label>
                                     <div class="col-md-6">
                                         <input id="email" type="email"
@@ -158,7 +84,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="password" style="font-size: 20px"
+                                    <label for="password" style="font-size: 19px font-weight: 500;"
                                         class="col-md-3 col-form-label">{{ __('Password') }}</label>
 
                                     <div class="col-md-6">
@@ -291,4 +217,5 @@
             transform: translateX(25%);
         }
     }
+
 </style>

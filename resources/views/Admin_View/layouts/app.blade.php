@@ -94,15 +94,8 @@
     </div>
 
     <!-- Main Footer -->
-<<<<<<< HEAD
-    <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
 
-        </div>
-        &copy;DILG-BOHOL 2023
-    </footer>
-=======
-    <div class="d-flex justify-content-end">
+   <div class="d-flex justify-content-end">
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
@@ -110,8 +103,8 @@
                 </div>
             </div>
         </footer>
-       </div>
->>>>>>> 2d05e208991acdede03ff2197729faa6a0345114
+       </div> 
+
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
