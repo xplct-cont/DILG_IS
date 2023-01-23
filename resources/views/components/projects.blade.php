@@ -1,9 +1,5 @@
-<div>
-    <div class="header" style=" padding: 7px; background: #DCDCDC; color: #030303; margin-bottom: 5px;">
-        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">PROJECTS</h1>
-    </div>
-
-    <div class="container d-flex justify-content-center">
+<div class="mt-3 p-3">
+    <div class="d-flex justify-content-center">
         <div class="row">
             <div class="col-md-6 mt-5">
                 <input style="border-radius: 20px;" type="date" name="" id="" class="form-control">
@@ -18,7 +14,7 @@
         </div>
     </div>
 
-    <div class="container mt-4">
+    <div class="mt-4 p-3">
         <div class="row">
             <div class="col-md-6">
                 <a href="#" style="text-decoration: none; color:#030303;">
