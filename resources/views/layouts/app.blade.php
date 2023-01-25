@@ -246,13 +246,14 @@
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
         </footer>
-        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><i
+        <a id="back-to-top" href="#" class="btn btn-md back-to-top" style="background: #002C76; color:white;" role="button"><i
                 class="fas fa-chevron-up"></i></a>
     </div>
 
 
 
 </body>
+<script></script>
 
 </html>
 
