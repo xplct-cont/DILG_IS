@@ -40,7 +40,7 @@
                                 <label class="form-label">Image Upload</label>
                                 <input type="file" class="form-control" wire:model="image" multiple>
                                 <div wire:loading wire:target="image">Uploading...</div>
-                                @error('image.*') <span class="error">{{ $message }}</span> @enderror
+                                @error('image') <span class="error">{{ $message }}</span> @enderror
                             </div>
                             <button type="submit" class="btn btn-primary">Save Image</button>
                             <div wire:loading wire:target="save">process...</div>

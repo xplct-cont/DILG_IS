@@ -29,15 +29,9 @@
                 <td>{{$new->id}}</td>
                 <td>{{$new->title}}</td>
                 <td>{{$new->caption}}</td>
-                <td>
-                <div class="row">
-                    @foreach ($new->image as $images)
-                    <div class="col-3 card me-1 mb-1">
-                        <img src="{{asset('storage')}}/{{$new->image}}">
-                    </div>
-                    @endforeach
-                </div></td>
-                {{-- <td><img src="{{asset('storage')}}/{{$new->image}}" style="width: 70px;height:70px;" alt=""></td> --}}
+                @foreach ((array)$new->image as $img)
+                    <td><img src="{{asset('app/images')}}/{{$img}}" style="width: 70px;height:70px;" alt=""></td>
+                @endforeach
                 <td>{{$new->timestamps}}</td>
              </tr>
               @endforeach

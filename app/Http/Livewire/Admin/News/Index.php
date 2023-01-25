@@ -10,7 +10,7 @@ class Index extends Component
 {
     use WithFileUploads;
     public $title, $caption, $image = [];
-    public $news = [];
+
 
     // public function addNews(){
     //     $news = new News();

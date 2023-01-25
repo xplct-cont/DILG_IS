@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'image'=>'array',
+        'timestamps' => 'datetime'];
+    protected $guarded = [];
+    protected $table = 'news';
 }
