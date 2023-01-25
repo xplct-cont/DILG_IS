@@ -21,7 +21,7 @@
     </div>
 
   
-    <div class="container d-flex align-items-center justify-content-around mt-5">
+    <div class=" mx-auto col-md-11 d-flex align-items-center justify-content-around mt-5">
         <div class="row m-1">
             <a href="#" style="text-decoration: none; color:#030303;">
                 <div class="card elevation-4">
