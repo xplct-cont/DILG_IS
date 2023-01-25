@@ -40,7 +40,7 @@
     <body>
       
             <a href="{{ url('/') }}" class="text-start ml-4"
-                style="color:black; font-size: 19px; margin:auto;"><span class="fas fa-arrow-left"></span> Back to home</a>
+                style="color:#C9282D; font-size: 19px; margin:auto;"><span class="fas fa-arrow-left"></span> Back to home</a>
 
         <div class="container" style="margin-top: -5px;">
             <div class=" rounded d-flex justify-content-between">
@@ -70,7 +70,7 @@
                                 <div class="row mb-3">
                                     <label for="email" style="font-size: 19px font-weight: 500;"
                                         class="col-md-3 col-form-label text-md-end">{{ __('Email') }}</label>
-                                    <div class="col-md-6">
+                                    <div class="col-md-8">
                                         <input id="email" type="email"
                                             class="form-control  @error('email') is-invalid @enderror"
                                             placeholder="Enter your e-mail address" name="email"
@@ -87,12 +87,12 @@
                                     <label for="password" style="font-size: 19px font-weight: 500;"
                                         class="col-md-3 col-form-label">{{ __('Password') }}</label>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-8">
                                         <input id="password" type="password"
                                             class="form-control @error('password') is-invalid @enderror"
                                             placeholder="Enter your password" name="password" required
                                             autocomplete="current-password">
-                                        <span class="d-flex justify-content-end mt-1"><i class="fas fa-eye text-danger"
+                                        <span class="d-flex justify-content-end mt-1"><i class="fas fa-eye" style="color: #C9282D;"
                                                 aria-hidden="true" id="eye" onclick="toggle()"></i></span>
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
@@ -117,8 +117,8 @@
                                 </div>
 
                                 <div class="row mb-0 ">
-                                    <div class="col-md-6 offset-md-4 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary ">
+                                    <div class="col-md-6 offset-md-5 d-flex justify-content-end">
+                                        <button type="submit" class="btn " style="background: #C9282D; color:white;">
                                             {{ __('Login') }} <span class="fas fa-sign-in-alt"></span>
                                         </button>
                                     </div>
