@@ -39,7 +39,7 @@ Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 
 //Routes for Kenn
 //Admin_View Routes
-Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('/admin/jobs');
+Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/jobs');
 
 //Normal_View Routes
 
@@ -70,7 +70,7 @@ Route::get("/project",function(){
 
 //Routes for Vienna
 //Admin_View Routes
-Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('/admin/news');
+Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/news');
 
 //Normal_View Routes
 Route::get('/about', [AboutController::class, 'index'])->name('/about');
