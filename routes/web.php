@@ -40,7 +40,8 @@ Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 //Routes for Kenn
 //Admin_View Routes
 Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/jobs');
-
+Route::post('/add-new-job', [Admin_JobsController::class, 'store']);
+Route::get('/delete_jobs/{id}', [Admin_JobsController::class, 'delete_jobs']);
 //Normal_View Routes
 
 
