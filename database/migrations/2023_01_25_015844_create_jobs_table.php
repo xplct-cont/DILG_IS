@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
+            $table->string('hiring_img')->nullable();
+            $table->string('position')->nullable();
+            $table->string('details')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin_View\layouts;
+namespace App\Http\Controllers\Admin_View;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class Admin_HomeController extends Controller
 {
     /**
      * Create a new controller instance.

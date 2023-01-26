@@ -1,34 +1,34 @@
 
 <li class="nav-item mt-2">
-    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? 'bg-secondary active' : '' }}">
+    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? '' : '' }}">
         <p class="text-white">Dashboard</p>
         <i class="fas fa-tachometer-alt fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('/admin/news') }}" class="nav-link {{ Request::is('admin/news*') ? 'bg-secondary active' : '' }}">
+    <a href="{{ route('/admin/news') }}" class="nav-link {{ Request::is('admin/news*') ? '' : '' }}">
         <p class="text-white">News</p>
         <i class="fas fa-exclamation-circle fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? 'bg-secondary active' : '' }}">
+    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? '' : '' }}">
         <p class="text-white">Projects</p>
         <i class="fas fa-exclamation-circle fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? 'bg-secondary active' : '' }}">
+    <a href="{{ route('/admin/jobs') }}" class="nav-link {{ Request::is('/admin/jobs*') ? '' : '' }}">
         <p class="text-white">Job Vacancies</p>
         <i class="fas fa-exclamation-circle fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? 'bg-secondary active' : '' }}">
+    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? '' : '' }}">
         <p class="text-white">Organization</p>
         <i class="fas fa-exclamation-circle fa-pull-left fa-md text-white"></i>
     </a>
