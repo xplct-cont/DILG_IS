@@ -47,8 +47,24 @@ Route::put('/update_jobs/{id}', [Admin_JobsController::class, 'update_jobs']);
 
 Route::get('/admin/organization', [Admin_OrganizationController::class, 'index'])->name('admin/organization');
 Route::post('/add-org', [Admin_OrganizationController::class, 'store']);
+
 Route::get('/admin/pdmu', [Admin_PdmuController::class, 'index'])->name('admin/pdmu');
+Route::post('/add-pdmu', [Admin_PdmuController::class, 'store']);
+
 //Normal_View Routes
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Routes for Chadie
@@ -70,6 +86,19 @@ Route::get("/project",function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Routes for Vienna
 //Admin_View Routes
 Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/news');
@@ -78,6 +107,17 @@ Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/n
 Route::get('/about', [AboutController::class, 'index'])->name('/about');
 Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
+
+
+
+
+
+
+
+
+
+
+
 
 
 

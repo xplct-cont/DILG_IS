@@ -20,7 +20,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #C9282D; color:white;">
-                        <h5 class="modal-title" id="exampleModalLabel">Adding a Member to Organizational Structure</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Adding to Organizational Structure</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -54,7 +54,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Profile Image:</label>
-                                            <input type="file" class="form-control" name="profile_img" >
+                                            <input type="file" class="form-control" name="profile_img">
                                         </div>
                                     </div>
                                     <div class="col-md-12 text-center">
@@ -79,7 +79,7 @@
     <a href="{{ route('admin/pdmu') }}" style="text-decoration:none; font-size: 16px;" class="text-dark"><span
             class="text-danger fas fa-arrow-right" style="font-size: 15px;"></span> Go to PDMU Profile</a>
     <div class="elevation-1 p-3 rounded mt-2">
-        <div class="card-header d-flex justify-content-between">
+        <div class="card-header d-flex justify-content-between mb-1">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
             <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-users"
                     style="color:#C9282D;"></span> ORGANIZATIONAL PROFILE</h1>
@@ -101,18 +101,17 @@
             </thead>
             <tbody class=" text-dark">
                 @foreach ($orgs as $org_member)
-                    
-                        <tr>
-                          <td><img src="{{ asset('org_profile_images/' . $org_member->profile_img) }} " alt="Image"
-                            style="border-radius: 50%; height: 50px; width: 50px;"></td>
-                          <td>{{$org_member->fname}}</td>
-                          <td>{{$org_member->mid_initial}}</td>
-                          <td>{{$org_member->lname}}</td>
-                          <td>{{$org_member->position}}</td>
-                          <td>Edit</td>
-                          <td><a href="{{ url('delete_org/' . $org_member->id) }}" class="btn btn-xs "><i
-                            class="text-danger fas fa-trash-alt"></i></a></td>
-                        </tr>
+                    <tr>
+                        <td><img src="{{ asset('org_profile_images/' . $org_member->profile_img) }} " alt="Image"
+                                style="border-radius: 50%; height: 50px; width: 50px;"></td>
+                        <td>{{ $org_member->fname }}</td>
+                        <td>{{ $org_member->mid_initial }}</td>
+                        <td>{{ $org_member->lname }}</td>
+                        <td>{{ $org_member->position }}</td>
+                        <td>Edit</td>
+                        <td><a href="{{ url('delete_org/' . $org_member->id) }}" class="btn btn-xs "><i
+                                    class="text-danger fas fa-trash-alt"></i></a></td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
