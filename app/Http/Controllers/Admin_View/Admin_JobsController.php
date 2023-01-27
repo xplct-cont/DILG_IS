@@ -44,8 +44,35 @@ class Admin_JobsController extends Controller
 
         $admin_jobs->save();
 
-        return redirect()->back()->with('message', 'Added job vacancy successfully!');
+        return redirect()->back()->with('message', 'Added Vacant Position Successfully!');
      
+    }
+
+    public function update_jobs(Request $request, $id){
+        $admin_jobs = Job::find($id);
+
+        $admin_jobs->position = $request->input('position');
+        $admin_jobs->link = $request->input('link');
+        $admin_jobs->details = $request->input('details');
+
+        if($request->hasFile('hiring_img')){
+      
+            $destination = 'hiring_images/'.$admin_jobs->hiring_images;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+
+            $file = $request->file('hiring_img');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'. $extention;
+            $file->move('hiring_images/', $filename);
+            $admin_jobs->hiring_img = $filename;
+
+    }
+
+    $admin_jobs->update();
+    return redirect()->back()->with('status', 'Vacant Position Updated Successfully!');
+
     }
 
     public function delete_jobs(Request $request, $id) 
@@ -61,7 +88,7 @@ class Admin_JobsController extends Controller
              }
             $admin_jobs->delete();
            
-        return redirect()->back()->with('message', 'Jobs Deleted Successfully!');
+        return redirect()->back()->with('message', 'Vacant Position Deleted Successfully!');
     }
 
 }

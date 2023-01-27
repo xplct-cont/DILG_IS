@@ -42,6 +42,7 @@ Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/jobs');
 Route::post('/add-new-job', [Admin_JobsController::class, 'store']);
 Route::get('/delete_jobs/{id}', [Admin_JobsController::class, 'delete_jobs']);
+Route::put('/update_jobs/{id}', [Admin_JobsController::class, 'update_jobs']);
 //Normal_View Routes
 
 
