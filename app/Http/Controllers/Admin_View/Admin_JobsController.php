@@ -37,7 +37,7 @@ class Admin_JobsController extends Controller
             $file = $request->file('hiring_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save(storage_path('/app/public/hiring_images/' . $filename));
+            Image::make($file)->save(public_path('/hiring_images/' . $filename));
             $admin_jobs->hiring_img = $filename;
           
           }
@@ -55,7 +55,7 @@ class Admin_JobsController extends Controller
         // Job::whereIn('id', $ids)->delete();
 
             $admin_jobs = Job::find($id);
-            $destination = storage_path('/app/public/hiring_images/'.$admin_jobs->hiring_img);
+            $destination = public_path('hiring_images/'.$admin_jobs->hiring_img);
              if(File::exists($destination)){
                  File::delete($destination);
              }

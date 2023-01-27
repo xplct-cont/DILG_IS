@@ -85,7 +85,7 @@
                     <tr>
                         <th scope="col">Image</th>
                         <th scope="col">Position</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Document Link</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
                     </tr>
@@ -93,11 +93,12 @@
                 <tbody class="text-center">
                     @foreach ($admin_jobs as $ad_jobs)
                         <tr>
-                            <td> <img src="{{ asset('storage/hiring_images/' . $ad_jobs->hiring_img) }} " alt="Image"
+                            <td> <img src="{{ asset('hiring_images/' . $ad_jobs->hiring_img) }} " alt="Image"
                                     style="border-radius: 5px; height: 70px; width: 80px;"></td>
                             <td>{{ $ad_jobs->position }}</td>
-                            <td>{{ $ad_jobs->details }}</td>
-                            <td>Edit</td>
+                            <td><a class="btn " href="{{ $ad_jobs->link }}"><span
+                                        class="btn btn-sm btn-success">Details</span></a></td>
+                            <td><a href="#" class="btn btn-xs "><i class="text-warning fas fa-edit"></i></a></td>
                             <td><a href="{{ url('delete_jobs/' . $ad_jobs->id) }}" class="btn btn-xs "><i
                                         class="text-danger fas fa-trash-alt"></i></a></td>
 
