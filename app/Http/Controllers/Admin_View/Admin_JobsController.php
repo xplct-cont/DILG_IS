@@ -71,7 +71,7 @@ class Admin_JobsController extends Controller
     }
 
     $admin_jobs->update();
-    return redirect()->back()->with('status', 'Vacant Position Updated Successfully!');
+    return redirect()->back()->with('message', 'Vacant Position Updated Successfully!');
 
     }
 

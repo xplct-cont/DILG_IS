@@ -72,7 +72,8 @@
 
         <div class="card-header d-flex justify-content-between">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-address-book" style="color:#C9282D;"></span> JOB VACANCIES</h1>
+            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-address-book"
+                    style="color:#C9282D;"></span> JOB VACANCIES</h1>
 
         </div>
         <div>
@@ -96,7 +97,7 @@
                             <td><a class="btn " href="{{ $ad_jobs->link }}"><span
                                         class="btn btn-sm btn-success">Details</span></a></td>
 
-                            <td><a href="#" data-toggle="modal" id="education_edit_link" class="btn"
+                            <td><a href="#" data-toggle="modal" id="job_edit_link" class="btn"
                                     data-target="#job_id{{ $ad_jobs->id }}"><span
                                         class="text-warning fas fa-edit"></span></a></td>
 

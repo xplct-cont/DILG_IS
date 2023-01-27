@@ -47,6 +47,7 @@ Route::put('/update_jobs/{id}', [Admin_JobsController::class, 'update_jobs']);
 
 Route::get('/admin/organization', [Admin_OrganizationController::class, 'index'])->name('admin/organization');
 Route::post('/add-org', [Admin_OrganizationController::class, 'store']);
+Route::put('/update-org/{id}', [Admin_OrganizationController::class, 'update_org']);
 
 Route::get('/admin/pdmu', [Admin_PdmuController::class, 'index'])->name('admin/pdmu');
 Route::post('/add-pdmu', [Admin_PdmuController::class, 'store']);
