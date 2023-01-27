@@ -23,14 +23,14 @@
 <li class="nav-item">
     <a href="{{ route('admin/jobs') }}" class="nav-link {{ Request::is('admin/jobs*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Job Vacancies</p>
-        <i class="fas fa-exclamation-circle fa-pull-left fa-md text-white"></i>
+        <i class="fas fa-address-book fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? '' : '' }}">
-        <p class="text-white">Organization</p>
-        <i class="fas fa-exclamation-circle fa-pull-left fa-md text-white"></i>
+    <a href="{{ route('admin/organization') }}" class="nav-link {{ Request::is('admin/organization*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">Organization/PDMU</p>
+        <i class="fas fa-users fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 

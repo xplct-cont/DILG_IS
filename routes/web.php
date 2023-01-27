@@ -14,7 +14,8 @@ use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 use App\Http\Controllers\Admin_View\Admin_HomeController;
 use App\Http\Controllers\Admin_View\Admin_NewsController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
-
+use App\Http\Controllers\Admin_View\Admin_OrganizationController;
+use App\Http\Controllers\Admin_View\Admin_PdmuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,12 +44,11 @@ Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/j
 Route::post('/add-new-job', [Admin_JobsController::class, 'store']);
 Route::get('/delete_jobs/{id}', [Admin_JobsController::class, 'delete_jobs']);
 Route::put('/update_jobs/{id}', [Admin_JobsController::class, 'update_jobs']);
+
+Route::get('/admin/organization', [Admin_OrganizationController::class, 'index'])->name('admin/organization');
+Route::get('/admin/pdmu', [Admin_PdmuController::class, 'index'])->name('admin/pdmu');
+
 //Normal_View Routes
-
-
-
-
-
 
 
 //Routes for Chadie
