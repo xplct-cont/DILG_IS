@@ -18,6 +18,33 @@ class Admin_OrganizationController extends Controller
     }
 
     public function index(){
-        return view('Admin_View.organization.index');
+
+        $orgs = DB::table('orgs')->get();
+        return view('Admin_View.organization.index', compact('orgs'));
+    }
+
+    public function store(Request $request){
+        
+        $orgs = new Org;
+       
+        $orgs->fname = $request->input('fname');
+        $orgs->mid_initial = $request->input('mid_initial');
+        $orgs->lname = $request->input('lname');
+        $orgs->position = $request->input('position');
+
+        if($request->hasFile('profile_img')){
+
+            $file = $request->file('profile_img');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'. $extention;
+            Image::make($file)->save(public_path('/org_profile_images/' . $filename));
+            $orgs->profile_img = $filename;
+          
+          }
+
+        $orgs->save();
+
+        return redirect()->back()->with('message', 'Added to Organizational Structure Successfully!');
+     
     }
 }

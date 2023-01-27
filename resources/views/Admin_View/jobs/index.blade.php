@@ -72,14 +72,12 @@
 
         <div class="card-header d-flex justify-content-between">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-            <h1 class="" style="font-size: 21px; font-weight: 450;">JOB VACANCIES</h1>
+            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-address-book" style="color:#C9282D;"></span> JOB VACANCIES</h1>
 
         </div>
-
         <div>
 
-
-            <table class="table table-striped">
+            <table class="table table-bordered text-center">
                 <thead class="text-center" style="background-color:#343a40; color:white;">
                     <tr>
                         <th scope="col">Image</th>

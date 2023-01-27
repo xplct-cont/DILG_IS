@@ -46,8 +46,8 @@ Route::get('/delete_jobs/{id}', [Admin_JobsController::class, 'delete_jobs']);
 Route::put('/update_jobs/{id}', [Admin_JobsController::class, 'update_jobs']);
 
 Route::get('/admin/organization', [Admin_OrganizationController::class, 'index'])->name('admin/organization');
+Route::post('/add-org', [Admin_OrganizationController::class, 'store']);
 Route::get('/admin/pdmu', [Admin_PdmuController::class, 'index'])->name('admin/pdmu');
-
 //Normal_View Routes
 
 
