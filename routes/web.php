@@ -47,10 +47,12 @@ Route::put('/update_jobs/{id}', [Admin_JobsController::class, 'update_jobs']);
 
 Route::get('/admin/organization', [Admin_OrganizationController::class, 'index'])->name('admin/organization');
 Route::post('/add-org', [Admin_OrganizationController::class, 'store']);
+Route::get('/delete_org/{id}', [Admin_OrganizationController::class, 'delete_org']);
 Route::put('/update-org/{id}', [Admin_OrganizationController::class, 'update_org']);
 
 Route::get('/admin/pdmu', [Admin_PdmuController::class, 'index'])->name('admin/pdmu');
 Route::post('/add-pdmu', [Admin_PdmuController::class, 'store']);
+Route::get('/delete_pdmu/{id}', [Admin_PdmuController::class, 'delete_pdmu']);
 Route::put('/update-pdmu/{id}', [Admin_PdmuController::class, 'update_pdmu']);
 //Normal_View Routes
 

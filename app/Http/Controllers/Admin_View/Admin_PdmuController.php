@@ -75,4 +75,21 @@ class Admin_PdmuController extends Controller
     return redirect()->back()->with('message', 'Profile Updated Successfully!');
 
     }
+
+    public function delete_pdmu(Request $request, $id) 
+    {
+
+        // $ids = $request->ids;
+        // Pdmu::whereIn('id', $ids)->delete();
+
+            $pdmus = Pdmu::find($id);
+            $destination = public_path('pdmu_profile_images/'.$pdmus->profile_img);
+             if(File::exists($destination)){
+                 File::delete($destination);
+             }
+            $pdmus->delete();
+           
+        return redirect()->back()->with('message', 'Profile Deleted Successfully!');
+    }
+
 }

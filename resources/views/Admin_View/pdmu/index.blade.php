@@ -185,7 +185,7 @@
                         </div>
 
                         <td><a href="{{ url('delete_pdmu/' . $pdmu_member->id) }}" class="btn btn-xs "><i
-                                    class="text-danger fas fa-trash-alt"></i></a></td>
+                            class="text-danger fas fa-trash-alt"></i></a></td>
                     </tr>
                 @endforeach
 

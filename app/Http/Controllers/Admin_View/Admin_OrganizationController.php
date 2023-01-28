@@ -76,4 +76,20 @@ class Admin_OrganizationController extends Controller
 
     }
 
+    public function delete_org(Request $request, $id) 
+    {
+
+        // $ids = $request->ids;
+        // Org::whereIn('id', $ids)->delete();
+
+            $orgs = Org::find($id);
+            $destination = public_path('org_profile_images/'.$orgs->profile_img);
+             if(File::exists($destination)){
+                 File::delete($destination);
+             }
+            $orgs->delete();
+           
+        return redirect()->back()->with('message', 'Profile Deleted Successfully!');
+    }
+
 }
