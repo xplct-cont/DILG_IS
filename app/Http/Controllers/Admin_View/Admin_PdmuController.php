@@ -48,4 +48,31 @@ class Admin_PdmuController extends Controller
      
     }
 
+    public function update_pdmu(Request $request, $id){
+        $pdmus = Pdmu::find($id);
+
+        $pdmus->fname = $request->input('fname');
+        $pdmus->mid_initial = $request->input('mid_initial');
+        $pdmus->lname = $request->input('lname');
+        $pdmus->position = $request->input('position');
+
+        if($request->hasFile('profile_img')){
+      
+            $destination = 'pdmu_profile_images/'.$pdmus->profile_img;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+
+            $file = $request->file('profile_img');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'. $extention;
+            $file->move('pdmu_profile_images/', $filename);
+            $pdmus->profile_img = $filename;
+
+    }
+
+    $pdmus->update();
+    return redirect()->back()->with('message', 'Profile Updated Successfully!');
+
+    }
 }

@@ -109,12 +109,12 @@
                         <td>{{ $org_member->lname }}</td>
                         <td>{{ $org_member->position }}</td>
                         <td><a href="#" data-toggle="modal" id="org_edit_link" class="btn"
-                                data-target="#job_id{{ $org_member->id }}"><span
+                                data-target="#org_id{{ $org_member->id }}"><span
                                     class="text-warning fas fa-edit"></span></a></td>
 
 
                         <!-- Modal -->
-                        <div class="modal fade" id="job_id{{ $org_member->id }}" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="org_id{{ $org_member->id }}" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">

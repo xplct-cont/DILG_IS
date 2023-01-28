@@ -54,10 +54,11 @@ class Admin_JobsController extends Controller
         $admin_jobs->position = $request->input('position');
         $admin_jobs->link = $request->input('link');
         $admin_jobs->details = $request->input('details');
+    
 
         if($request->hasFile('hiring_img')){
       
-            $destination = 'hiring_images/'.$admin_jobs->hiring_images;
+            $destination = 'hiring_images/'.$admin_jobs->hiring_img;
             if(File::exists($destination)){
                 File::delete($destination);
             }

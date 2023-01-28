@@ -51,7 +51,7 @@ Route::put('/update-org/{id}', [Admin_OrganizationController::class, 'update_org
 
 Route::get('/admin/pdmu', [Admin_PdmuController::class, 'index'])->name('admin/pdmu');
 Route::post('/add-pdmu', [Admin_PdmuController::class, 'store']);
-
+Route::put('/update-pdmu/{id}', [Admin_PdmuController::class, 'update_pdmu']);
 //Normal_View Routes
 
 
