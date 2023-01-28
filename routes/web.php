@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Normal_View\Contacts\ContactsController;
-
+use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 
 //Admin View
 use App\Http\Controllers\Admin_View\Admin_HomeController;
@@ -132,9 +132,7 @@ Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts')
 
 
 //Routes for Franklin
-Route::get('/organizations',function(){
-    return view('Normal_View.Organization.organization');
-});
+Route::get('/organization',[OrganizationController::class, 'index']);
 
 
 
