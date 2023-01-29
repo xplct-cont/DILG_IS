@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Org extends Model
+class Pdmu extends Model
 {
     use HasFactory;
 
@@ -20,7 +20,7 @@ class Org extends Model
 
     ];
 
-    protected $table = "orgs";
+    protected $table = "pdmus";
 
 
     protected $casts = [

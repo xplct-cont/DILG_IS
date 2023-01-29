@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jobs', function (Blueprint $table) {
+        Schema::create('pdmus', function (Blueprint $table) {
             $table->id();
-            $table->string('hiring_img')->default('hiring_img.jpg')->nullable();
-            $table->string('position')->nullable();
-            $table->string('details')->nullable();
-            $table->string('link')->nullable();
+            $table->string('profile_img')->default('pdmu_icon.png');
+            $table->string('fname');
+            $table->string('mid_initial');
+            $table->string('lname');
+            $table->string('position');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jobs');
+        Schema::dropIfExists('pdmus');
     }
 };

@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('orgs', function (Blueprint $table) {
             $table->id();
+            $table->string('profile_img')->default('org_icon.png');
+            $table->string('fname');
+            $table->string('mid_initial');
+            $table->string('lname');
+            $table->string('position');
             $table->timestamps();
         });
     }
