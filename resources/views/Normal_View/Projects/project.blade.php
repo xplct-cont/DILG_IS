@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="container mt-4">
+    <div class=" ml-3 mr-3 mt-4">
         <div class="row">
             <div class="col-md-6">
                 <a href="#" style="text-decoration: none; color:#030303;">

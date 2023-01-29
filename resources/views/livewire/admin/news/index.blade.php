@@ -29,16 +29,16 @@
                 <td>{{$new->id}}</td>
                 <td>{{$new->title}}</td>
                 <td>{{$new->caption}}</td>
+
                 <td>
-                <div class="row">
-                    @foreach ($new->image as $images)
-                    <div class="col-3 card me-1 mb-1">
-                        <img src="{{asset('storage')}}/{{$new->image}}">
-                    </div>
-                    @endforeach
-                </div></td>
-                {{-- <td><img src="{{asset('storage')}}/{{$new->image}}" style="width: 70px;height:70px;" alt=""></td> --}}
-                <td>{{$new->timestamps}}</td>
+                @php $images = json_decode($new->image,true); @endphp
+                  @if(is_array($images) && !empty($images))
+                  @foreach ($images as $image)
+                    <img src="{{asset('app/public/'.$image)}}"/>
+                  @endforeach
+                  @endif
+                </td>
+                <td>{{$new->datetime}}</td>
              </tr>
               @endforeach
             </tbody>
