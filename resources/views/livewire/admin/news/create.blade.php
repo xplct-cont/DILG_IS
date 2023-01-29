@@ -15,12 +15,12 @@
                                     {{ session('success') }}
                                 </div>
                             @endif
-                            @if ($image)
+                            @if(is_array($image) && !empty($image))
                                 Photo Preview:
                                 <div class="row">
                                     @foreach ($image as $image)
                                     <div class="col-3 card me-1 mb-1">
-                                        <img src="{{ $image->temporaryUrl() }}">
+                                        <img src="{{$image->temporaryUrl() }}">
                                     </div>
                                     @endforeach
                                 </div>

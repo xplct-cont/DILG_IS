@@ -29,10 +29,16 @@
                 <td>{{$new->id}}</td>
                 <td>{{$new->title}}</td>
                 <td>{{$new->caption}}</td>
-                @foreach ((array)$new->image as $img)
-                    <td><img src="{{asset('app/images')}}/{{$img}}" style="width: 70px;height:70px;" alt=""></td>
-                @endforeach
-                <td>{{$new->timestamps}}</td>
+
+                <td>
+                @php $images = json_decode($new->image,true); @endphp
+                  @if(is_array($images) && !empty($images))
+                  @foreach ($images as $image)
+                    <img src="{{asset('app/public/'.$image)}}"/>
+                  @endforeach
+                  @endif
+                </td>
+                <td>{{$new->datetime}}</td>
              </tr>
               @endforeach
             </tbody>

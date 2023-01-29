@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('newsimages', function (Blueprint $table) {
             $table->id();
+            $table->string('images');
             $table->timestamps();
         });
     }
