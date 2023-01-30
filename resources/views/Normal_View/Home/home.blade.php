@@ -8,15 +8,15 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 
         </ol>
-        <div class="carousel-inner" style="height:400px;">
+        <div class="carousel-inner" style="height:600px;">
             <div class="carousel-item active">
-                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 400px;" alt="..." />
+                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 600px;" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" style="height: 400px;" alt="..." />
+                <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" style="height: 600px;" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 400px;" alt="..." />
+                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 600px;" alt="..." />
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -74,8 +74,8 @@
     <div class="mt-4" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
     </div>
-  
-    
+
+
     <div class="mx-auto col-md-11 d-flex align-items-center justify-content-around mt-5">
         <div class="row m-1">
             <a href="#" style="text-decoration: none; color:#030303;">
