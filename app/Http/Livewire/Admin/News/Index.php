@@ -34,10 +34,9 @@ class Index extends Component
             'caption' => $this->caption,
             'datetime' => $this->datetime = now(),
             'image' => $this->image]);
-
-        session()->flash('success', 'Images has been successfully Uploaded.');
         $this->resetInput();
         $this->dispatchBrowserEvent('close-modal');
+        session()->flash('success', 'Images has been successfully Uploaded.');
     }
 
     public function resetInput()
