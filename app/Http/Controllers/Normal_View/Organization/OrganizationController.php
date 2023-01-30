@@ -22,13 +22,16 @@ class OrganizationController extends Controller
          ['position','not like', '%AO%']])
         ->orderBy('position', 'desc')->get();
 
-        $admin_ser = DB::table('orgs')->where([['id', '>', 4], ['position','like', '%ADA%'],
-        // ['position','like', '%AAS%'],
-        // ['position','like', '%Admin%'],
-        // ['position','like', '%IO%'],
-        // ['position','like', '%AO%'],])   
-        ])->get();
-
+        $admin_ser = DB::table('orgs')
+        ->where([
+            ['id', '>', 4],
+            ['position', 'LIKE', '%ADA%'],
+            ['position', 'LIKE', '%AAS%'],
+            // ['position', 'like', '%Admin%'],
+            // ['position', 'like', '%IO%'],
+            // ['position', 'like', '%AO%']
+        ])
+        ->get();
         return view('Normal_View.Organization.organization', compact('pd', 'head', 'd_one','admin_ser'));
     }
 
