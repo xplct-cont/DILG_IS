@@ -20,16 +20,8 @@
             <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-address-book"
                     style="color:#C9282D;"></span> NEWS AND UPDATES</h1>
         </div>
-<<<<<<< HEAD
-        <div class="card mt-2">
-            <div class="card-header d-flex justify-content-between">
-                <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-                <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-newspaper"
-                        style="color:#C9282D;"></span> NEWS AND UPDATES</h1>
-            </div>
-            <table class="table table-bordered text-center">
-                <thead class="text-center" style="background-color:#343a40; color:white;">
-=======
+
+
         <table class="table table-bordered text-center">
             <thead class="text-center" style="background-color:#343a40; color:white;">
                 <tr>
@@ -42,7 +34,7 @@
             </thead>
             <tbody class="text-center">
                 @foreach ($news as $new)
->>>>>>> b4289e73ee7b373f097aa57929e783d7431d4c2a
+
                     <tr>
                         <td>{{ $new->title }}</td>
                         <td>{{ $new->caption }}</td>
