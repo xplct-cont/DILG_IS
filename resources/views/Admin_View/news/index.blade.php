@@ -1,5 +1,4 @@
 @extends('Admin_View.layouts.app')
-
 @section('content')
     <livewire:admin.news.index>
 @endsection
