@@ -7,9 +7,9 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('admin/news') }}" class="nav-link {{ Request::is('admin/news*') ? '' : '' }}">
+    <a href="{{ route('admin/news') }}" class="nav-link {{ Request::is('admin/news*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">News</p>
-        <i class="fas fa-exclamation-circle fa-pull-left fa-md text-white"></i>
+        <i class="fas fa-newspaper fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 
