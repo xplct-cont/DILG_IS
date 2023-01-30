@@ -7,12 +7,20 @@
         </div>
     @endif
 
-        <div class="d-flex justify-content-end mt-5">
-            <!-- Button trigger modal -->
-            <button data-bs-toggle="modal" data-bs-target="#NewsModal" class="btn" style="background-color: #343a40; color:white;">
-                <span class="fas fa-plus-circle"></span> Add
-            </button>
+    <div class="d-flex justify-content-end mt-5">
+        <!-- Button trigger modal -->
+        <button data-bs-toggle="modal" data-bs-target="#NewsModal" class="btn"
+            style="background-color: #343a40; color:white;">
+            <span class="fas fa-plus-circle"></span> Add
+        </button>
+    </div>
+    <div class="card mt-2">
+        <div class="card-header d-flex justify-content-between">
+            <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
+            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-address-book"
+                    style="color:#C9282D;"></span> NEWS AND UPDATES</h1>
         </div>
+<<<<<<< HEAD
         <div class="card mt-2">
             <div class="card-header d-flex justify-content-between">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
@@ -21,38 +29,43 @@
             </div>
             <table class="table table-bordered text-center">
                 <thead class="text-center" style="background-color:#343a40; color:white;">
+=======
+        <table class="table table-bordered text-center">
+            <thead class="text-center" style="background-color:#343a40; color:white;">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Caption</th>
+                    <th scope="col">Images</th>
+                    <th scope="col">Date and Time</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach ($news as $new)
+>>>>>>> b4289e73ee7b373f097aa57929e783d7431d4c2a
                     <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Caption</th>
-                        <th scope="col">Images</th>
-                        <th scope="col">Date and Time</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    @foreach ($news as $new )
-                    <tr>
-                        <td>{{$new->title}}</td>
-                        <td>{{$new->caption}}</td>
+                        <td>{{ $new->title }}</td>
+                        <td>{{ $new->caption }}</td>
                         <td>
-                        @php $images = json_decode($new->image,true); @endphp
-                        @if(is_array($images) && !empty($images))
-                        @foreach ($images as $image)
-                            <img src="{{asset('app/public/'.$image)}}"/>
-                        @endforeach
-                        @endif
+                            @php $images = json_decode($new->image,true); @endphp
+                            @if (is_array($images) && !empty($images))
+                                @foreach ($images as $image)
+                                    <img src="{{ asset('app/public/' . $image) }}" />
+                                @endforeach
+                            @endif
                         </td>
-                        <td>{{$new->datetime}}</td>
+                        <td>{{ $new->datetime }}</td>
                         <td><a type="button" data-bs-toggle="modal" data-bs-target="#updateNewsModal">
-                            <i class="fas fa-edit" style="color:rgb(0, 81, 255);"></i>
-                        </a>
-                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteNewsModal">
-                            <i class="fas fa-trash-alt" style="color:red;"></i>
-                        </a></td>
+                                <i class="fas fa-edit" style="color:rgb(0, 81, 255);"></i>
+                            </a>
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#deleteNewsModal">
+                                <i class="fas fa-trash-alt" style="color:red;"></i>
+                            </a>
+                        </td>
                     </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+                @endforeach
+            </tbody>
+        </table>
     </div>
+</div>
 </div>

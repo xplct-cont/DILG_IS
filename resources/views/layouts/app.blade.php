@@ -71,7 +71,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark hadow-sm" style="background-color: #C9282D;">
+        <nav class="navbar navbar-expand-md navbar-dark hadow-sm fixed-top" style="background-color: #C9282D;">
             <div class="container">
                 <a class="navbar-brand" style="font-size: 16px;" href="{{ url('/') }}">
                     {{-- {{ config('app. name', 'Laravel') }} --}}
@@ -190,7 +190,7 @@
             </div>
         </nav>
 
-        <main class="">
+        <main class="mt-4">
             <div class="header" style=" padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
                 <img style=" width: 50%; margin-left: 10px;
                 height: auto;"
@@ -246,8 +246,8 @@
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
         </footer>
-        <a id="back-to-top" href="#" class="btn btn-md back-to-top" style="background: #002C76; color:white;" role="button"><i
-                class="fas fa-chevron-up"></i></a>
+        <a id="back-to-top" href="#" class="btn btn-md back-to-top" style="background: #002C76; color:white;"
+            role="button"><i class="fas fa-chevron-up"></i></a>
     </div>
 
 
