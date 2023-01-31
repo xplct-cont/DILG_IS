@@ -20,8 +20,8 @@
                             voluptatibus voluptas rerum cum perspiciatis nemo!</p>
 
 
-                        <div class="card mx-auto" style="width: 18rem;">
-                            <div class="card-body elevation-3">
+                        <div class="mx-auto mt-5" style="width: 18rem;">
+                            <div class="">
                                 <div class="d-flex justify-content-center">
                                     <img src="/img/place.png" style="height: 100px;" alt="">
                                 </div>
@@ -33,8 +33,8 @@
                         </div>
 
 
-                        <div class="card mx-auto" style="width: 18rem;">
-                            <div class="card-body elevation-3">
+                        <div class=" mx-auto" style="width: 18rem;">
+                            <div class="">
                                 <div class="d-flex justify-content-center">
                                     <img src="/img/phone.png" style="height: 100px;" alt="">
                                 </div>
@@ -49,11 +49,12 @@
                     </div>
                     <div class="col-md-6">
                         <iframe class="col-md-12"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1006178.5514274818!2d123.60298033998527!3d9.90185998774785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa17de1ba154df%3A0x6bc8bf042118d020!2sBohol!5e0!3m2!1sen!2sph!4v1674019267140!5m2!1sen!2sph"
+                            src="https://maps.google.com/maps?q=dampas dilg Bohol&t=&z=9&ie=UTF8&iwloc=&output=embed"
                             height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
                     </div>
                 </div>
             </div>
         </div>
+
     @endsection
