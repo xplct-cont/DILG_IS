@@ -33,14 +33,6 @@
                                     style="height: 400px;">
                                     @php
                                         $images = json_decode($new->image, true);
-                                        $newArray = [];
-
-                                        if (is_array($images) && !empty($images)) {
-                                            foreach ($images as $image) {
-                                                array_push($newArray, $image);
-                                            }
-                                        }
-
                                     @endphp
 
 
@@ -53,7 +45,7 @@
 
                                         </ol>
                                         <div class="carousel-inner" style="height:300px;">
-                                            @foreach ($newArray as $key => $image)
+                                            @foreach ($images as $key => $image)
                                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                                     <img src="{{ asset('app/public/' . $image) }}"
                                                         style="height:300px; width:auto;" />
