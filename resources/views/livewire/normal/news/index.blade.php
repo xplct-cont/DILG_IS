@@ -31,17 +31,7 @@
                             <div class="col-md-6">
                                 <div class=" d-flex flex-row align-items-center justify-content-around "
                                     style="height: 400px;">
-                                    @php
-                                        $images = json_decode($new->image, true);
-                                        $newArray = [];
 
-                                        if (is_array($images) && !empty($images)) {
-                                            foreach ($images as $image) {
-                                                array_push($newArray, $image);
-                                            }
-                                        }
-
-                                    @endphp
 
 
                                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -53,7 +43,10 @@
 
                                         </ol>
                                         <div class="carousel-inner" style="height:350px;">
-                                            @foreach ($newArray as $key => $image)
+                                            @php
+                                                $images = json_decode($new->image, true);
+                                            @endphp
+                                            @foreach ($images as $key => $image)
                                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                                     <img src="{{ asset('app/public/' . $image) }}"
                                                         style="height:350px; width:auto;" />
