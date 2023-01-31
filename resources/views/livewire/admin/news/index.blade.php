@@ -17,7 +17,7 @@
     <div class="card mt-2">
         <div class="card-header d-flex justify-content-between">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-address-book"
+            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-newspaper"
                     style="color:#C9282D;"></span> NEWS AND UPDATES</h1>
         </div>
 
@@ -34,7 +34,6 @@
             </thead>
             <tbody class="text-center">
                 @foreach ($news as $new)
-
                     <tr>
                         <td>{{ $new->title }}</td>
                         <td>{{ $new->caption }}</td>
