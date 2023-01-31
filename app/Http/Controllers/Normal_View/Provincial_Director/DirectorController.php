@@ -11,8 +11,8 @@ class DirectorController extends Controller
 {
     public function index(){
 
-
-        return view('Normal_View.Provincial_Director.index');
+        $pd = DB::table('orgs')->where('position', 'Provincial Director')->get();
+        return view('Normal_View.Provincial_Director.index', compact('pd'));
     }
     
 }

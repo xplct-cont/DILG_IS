@@ -34,7 +34,7 @@
         <div class="row">
             <div class="col-md-6 mt-5 mb-5 ">
 
-                <a href="#" type="button" class="btn btn-md"
+                <a href="{{route('/provincial_director')}}" type="button" class="btn btn-md"
                     style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">THE PROVINCIAL DIRECTOR
                     <span class="fas fa-arrow-right" style="margin-left:38px;"></span></a><br><br>
                 <a href="#" type="button" class="btn btn-md"
