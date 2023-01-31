@@ -54,6 +54,8 @@ Route::get('/admin/pdmu', [Admin_PdmuController::class, 'index'])->name('admin/p
 Route::post('/add-pdmu', [Admin_PdmuController::class, 'store']);
 Route::get('/delete_pdmu/{id}', [Admin_PdmuController::class, 'delete_pdmu']);
 Route::put('/update-pdmu/{id}', [Admin_PdmuController::class, 'update_pdmu']);
+
+
 //Normal_View Routes
 
 
