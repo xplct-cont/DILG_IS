@@ -190,7 +190,7 @@
             </div>
         </nav>
 
-        <main class="mt-4">
+        <main class="mt-5">
             <div class="header" style=" padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
                 <img style=" width: 50%; margin-left: 10px;
                 height: auto;"

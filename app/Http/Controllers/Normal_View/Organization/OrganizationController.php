@@ -25,12 +25,13 @@ class OrganizationController extends Controller
         $admin_ser = DB::table('orgs')
         ->where([
             ['id', '>', 4],
-            ['position', 'like', '%ADA%'],
-            ['position', 'like', '%AAS%'],
-            ['position', 'like', '%Admin%'],
-            ['position', 'like', '%IO%'],
-            ['position', 'like', '%AO%']
-        ])
+
+            ['position', 'LIKE', '%ADA%'],
+            // ['position', 'LIKE', '%AAS%'],
+            // ['position', 'like', '%Admin%'],
+            // ['position', 'like', '%IO%'],
+            // ['position', 'like', '%AO%']
+        ])->orWhere('position', 'LIKE', '%ADA%')
         ->get();
         return view('Normal_View.Organization.organization', compact('pd', 'head', 'd_one','admin_ser'));
     }
