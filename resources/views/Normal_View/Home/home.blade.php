@@ -85,7 +85,7 @@
             @endphp
             @foreach ($show as $new)
                 <a href="#" style="text-decoration: none; color:#030303;">
-                    <div class="card elevation-4">
+                    <div class=" card elevation-4">
                         <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
                             <div class="col-md-6 mx-auto mt-5 ">
 
@@ -228,6 +228,4 @@
             href="#">See more...</a>
     </div>
 
-    <style scoped>
-    </style>
 @endsection
