@@ -79,84 +79,69 @@
         <div class="row m-1">
 
             @php
-                $news = DB::table('news')
+                $show = DB::table('news')
                     ->limit(3)
                     ->get();
             @endphp
+            @foreach ($show as $new)
+                <a href="#" style="text-decoration: none; color:#030303;">
+                    <div class="card elevation-4">
+                        <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
+                            <div class="col-md-6 mx-auto mt-5 ">
 
-            <div class="mx-auto  d-flex align-items-center justify-content-around mt-5">
-                <div class="row m-1">
-                    @foreach ($news as $new)
-                        <a href="#" style="text-decoration: none; color:#030303;">
-                            <div class="card elevation-4">
-                                <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
-                                    <div class="col-md-6 mx-auto mt-5 ">
+                                <h1 style="font-size: 20px;">
+                                    Post: {{ \Carbon\Carbon::parse($new->datetime)->format('M j, Y h:i a') }}</h1><br>
+                                <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
+                                <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ $new->caption }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class=" d-flex flex-row align-items-center justify-content-around "
+                                    style="height: 400px;">
+                                    @php
+                                        $images = json_decode($new->image, true);
+                                        $newArray = [];
+                                        if (is_array($images) && !empty($images)) {
+                                            foreach ($images as $image) {
+                                                array_push($newArray, $image);
+                                            }
+                                        }
+                                    @endphp
 
-                                        <h1 style="font-size: 20px;">
-                                            Post: {{ \Carbon\Carbon::parse($new->datetime)->format('M j, Y h:i a') }}</h1>
-                                        <br>
-                                        <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
-                                        <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ $new->caption }}
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class=" d-flex flex-row align-items-center justify-content-around "
-                                            style="height: 400px;">
-                                            @php
-                                                $images = json_decode($new->image, true);
-                                                $newArray = [];
-                                                
-                                                if (is_array($images) && !empty($images)) {
-                                                    foreach ($images as $image) {
-                                                        array_push($newArray, $image);
-                                                    }
-                                                }
-                                                
-                                            @endphp
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="0"
+                                                class="active"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 
-
-                                            <div id="carouselExampleIndicators" class="carousel slide"
-                                                data-ride="carousel">
-                                                <ol class="carousel-indicators">
-                                                    <li data-target="#carouselExampleIndicators" data-slide-to="0"
-                                                        class="active"></li>
-                                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-
-                                                </ol>
-                                                <div class="carousel-inner" style="height:350px;">
-                                                    @foreach ($newArray as $key => $image)
-                                                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                                            <img src="{{ asset('app/public/' . $image) }}"
-                                                                style="height:350px; width:auto;" />
-                                                        </div>
-                                                    @endforeach
-
+                                        </ol>
+                                        <div class="carousel-inner" style="height:300px;">
+                                            @foreach ($newArray as $key => $image)
+                                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                                    <img src="{{ asset('app/public/' . $image) }}"
+                                                        style="height:300px; width:auto;" />
                                                 </div>
-                                                <button class="carousel-control-prev" type="button"
-                                                    data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                    <span class="visually-hidden">Previous</span>
-                                                </button>
-                                                <button class="carousel-control-next" type="button"
-                                                    data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                    <span class="visually-hidden">Next</span>
-                                                </button>
-                                            </div>
+                                            @endforeach
 
                                         </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                    @endforeach
-                </div>
-            </div>
-
-
+                        </div>
+                    </div>
+                </a>
+            @endforeach
         </div>
-    </div>
     </div>
 
     {{-- <div class="mx-auto col-md-11 d-flex align-items-center justify-content-around mt-5">
@@ -244,6 +229,5 @@
     </div>
 
     <style scoped>
-
     </style>
 @endsection
