@@ -224,4 +224,27 @@
             style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
+
+    <div class="col-md-12 mb-5">
+        <div class="row">
+        <div class="col-md-6">
+            <p class="text-center" style="font-size: 25px; font-weight: 500;">Location Map</p>
+            <iframe class="col-md-12"
+            src="https://maps.google.com/maps?q=dilg rajah sikatuna dampas&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
+        </div>
+        <div class="col-md-6">
+            <p class="text-justify mt-2" style="font-size: 20px; font-weight: 500;">
+                Kapihan sa PIA with the Department of Interior and Local Government (DILG) Bohol</p>
+               
+                <iframe width="500" height="315" src="https://www.youtube.com/embed/l34ZzGSmz1k"></iframe>
+               
+                <p class="text-justify mt-2" style="font-size: 20px; font-weight: 500;">
+                   Cheaptalk</p>
+                <iframe width="500" height="315" src="https://www.youtube.com/embed/UYqe20-iw5w"></iframe>  
+            
+        </div>
+        </div>
+    </div>
 @endsection

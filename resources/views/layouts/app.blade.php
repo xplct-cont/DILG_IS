@@ -251,6 +251,9 @@
                 </div>
                 <p class="text-center mt-3" style="color:silver; font-size: 8px;">&copy;DILG-BOHOL PROVINCE</p>
             </div>
+
+
+
             <div class="bg"></div>
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
@@ -259,6 +262,69 @@
             role="button"><i class="fas fa-chevron-up"></i></a>
     </div>
 
+
+    <div class="" style=" padding: 20px; background-color:#efefef; color: #DCDCDC;">
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-2 text-left">
+                            <img src="/img/govph-seal.jpg" style="height: 100px; width: 100px;" alt="">
+
+                        </div>
+                        <div class="col-md-3 text-justify">
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">REPUBLIC OF THE
+                                PHILIPPINES</p>
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 300;">All content is in the
+                                public domain unless otherwise stated.</p>
+                        </div>
+                        <div class="col-md-3 text-justify">
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">ABOUT GOVPH</p>
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 300;">Learn more about the
+                                Philippine government, its structure, how government works and the people behind it.
+                                <br><br>
+                                GOV.PH <br>
+                                Open Data Portal <br>
+                                Official Gazette
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-justify">
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">GOVERNMENT LINKS</p>
+                            <a href="https://president.gov.ph/">
+                                <p class="text-secondary" style="font-size: 12px; font-weight: 300;">Office of the
+                                    President</p>
+                            </a>
+                            <a href="https://ovp.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Office of the Vice
+                                    President</p>
+                            </a>
+                            <a href="http://legacy.senate.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Senate of the
+                                    Philippines</p>
+                            </a>
+                            <a href="https://www.congress.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">House of
+                                    Representatives</p>
+                            </a>
+                            <a href="https://sc.judiciary.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Supereme Court</p>
+                            </a>
+                            <a href="https://ca.judiciary.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Court of Appeals</p>
+                            </a>
+                            <a href="https://sb.judiciary.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Sandiganbayan</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 </body>
