@@ -52,11 +52,11 @@
                                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 
                                         </ol>
-                                        <div class="carousel-inner" style="height:300px;">
+                                        <div class="carousel-inner" style="height:350px;">
                                             @foreach ($newArray as $key => $image)
                                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                                     <img src="{{ asset('app/public/' . $image) }}"
-                                                        style="height:300px; width:auto;" />
+                                                        style="height:350px; width:auto;" />
                                                 </div>
                                             @endforeach
 
