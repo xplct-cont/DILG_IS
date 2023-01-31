@@ -8,15 +8,15 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 
         </ol>
-        <div class="carousel-inner" style="height:400px;">
+        <div class="carousel-inner" style="height:600px;">
             <div class="carousel-item active">
-                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 400px;" alt="..." />
+                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 600px;" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" style="height: 400px;" alt="..." />
+                <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" style="height: 600px;" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 400px;" alt="..." />
+                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 600px;" alt="..." />
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -74,106 +74,42 @@
     <div class="mt-4" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
     </div>
-    {{-- <div class=" mt-5">
-        <div class="row">
-            <div class="col-md-6">
+
+    <div class="mx-auto col-md-11 d-flex align-items-center justify-content-around mt-5">
+        <div class="row m-1">
+
+            @php $show = DB::table('news')->limit(3)->get(); @endphp
+            @foreach ($show as $new)
                 <a href="#" style="text-decoration: none; color:#030303;">
                     <div class="card elevation-4">
                         <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
-                            <div class="col-md-6 ">
-                                <h1 style="font-size: 15px;">December 15, 2022</h1><br>
-                                <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local
-                                    Governance
-                                    (SGLG) Award to LGU Alburquerque </p>
-                                <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
-                                    attended
-                                    by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director
-                                    Maria
-                                    Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
-                                    Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
+                            <div class="col-md-6 mx-auto mt-5 ">
+
+                                <h1 style="font-size: 20px;">
+                                    Post: {{ \Carbon\Carbon::parse($new->datetime)->format('M j, Y h:i a') }}</h1><br>
+                                <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
+                                <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ $new->caption }}</p>
                             </div>
-                            <div class="col-md-6 ">
-                                <div class="card " style="height: 300px;">
-                                    <img src="{{ asset('/img/img3.jpg') }}" alt=""
-                                        style="height: 300px; width:auto;">
+                            <div class="col-md-6">
+                                <div class=" d-flex flex-row align-items-center justify-content-around "
+                                    style="height: 400px;">
+                                    @php $images = json_decode($new->image,true); @endphp
+                                    @if (is_array($images) && !empty($images))
+                                        @foreach ($images as $image)
+                                            <img src="{{ asset('app/public/' . $image) }}"
+                                                style="height:300px; width:auto;" />
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </a>
-            </div>
-
-
-            <a href="#" style="text-decoration: none; color:#030303;">
-                <div class="card elevation-4">
-                    <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
-                        <div class="col-md-6 ">
-                            <h1 style="font-size: 15px;">December 15, 2022</h1><br>
-                            <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local Governance
-                                (SGLG) Award to LGU Alburquerque </p>
-                            <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
-                                attended
-                                by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director Maria
-                                Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
-                                Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card" style="height: 300px;">
-                                <img src="{{ asset('/img/img3.jpg') }}" alt=""
-                                    style="height: 300px; width:auto;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            @endforeach
         </div>
+    </div>
 
-
-        <div class="col-md-6">
-            <a href="#" style="text-decoration: none; color:#030303;">
-                <div class="card elevation-4">
-                    <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
-                        <div class="col-md-6 ">
-                            <h1 style="font-size: 15px;">December 15, 2022</h1><br>
-                            <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local Governance
-                                (SGLG) Award to LGU Alburquerque </p>
-                            <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
-                                attended by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director
-                                Maria Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
-                                Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card" style="height: 300px;">
-                                <img src="{{ asset('/img/img3.jpg') }}" alt=""
-                                    style="height: 300px; width:auto;">
-                            </div>
-                        </div>
-                    </div>
-            </a>
-
-        </div>
-
-        <a href="#" style="text-decoration: none; color:#030303;">
-            <div class="card elevation-4">
-                <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
-                    <div class="col-md-6 ">
-                        <h1 style="font-size: 15px;">December 15, 2022</h1><br>
-                        <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local Governance
-                            (SGLG) Award to LGU Alburquerque </p>
-                        <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
-                            attended by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional Director
-                            Maria Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED Chief
-                            Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card" style="height: 300px;">
-                            <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div> --}}
-    <div class="container d-flex align-items-center justify-content-around mt-5">
+    {{-- <div class="mx-auto col-md-11 d-flex align-items-center justify-content-around mt-5">
         <div class="row m-1">
             <a href="#" style="text-decoration: none; color:#030303;">
                 <div class="card elevation-4">
@@ -247,7 +183,7 @@
                 </div>
             </a>
         </div>
-    </div>
+    </div> --}}
     </div>
     </div>
 

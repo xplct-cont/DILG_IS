@@ -35,8 +35,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-
-
+        <link rel="stylesheet" href="{{ asset('css/loading.css')}}">
     @yield('third_party_stylesheets')
 
     @stack('page_css')
@@ -58,18 +57,18 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
+                        <img src="/img/icontest.png"
                             class="user-image img-circle elevation-2" alt="User Image">
                         <span class="d-none d-md-inline text-light">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
-                        <li class="user-header bg-primary">
-                            <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
+                        <li class="user-header" style="background-color: #343a40; color:white;">
+                            <img src="/img/icontest.png"
                                 class="img-circle elevation-2" alt="User Image">
                             <p>
                                 {{ Auth::user()->name }}
-                                <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
+                                <small>Role</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->

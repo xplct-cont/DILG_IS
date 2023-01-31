@@ -15,17 +15,6 @@
                                     {{ session('success') }}
                                 </div>
                             @endif
-                            @if ($image)
-                                Photo Preview:
-                                <div class="row">
-                                    @foreach ($image as $image)
-                                    <div class="col-3 card me-1 mb-1">
-                                        <img src="{{ $image->temporaryUrl() }}">
-                                    </div>
-                                    @endforeach
-                                </div>
-                            @endif
-
                             <div class="mb-2">
                                 <label>Title</label>
                                 <input type="text" wire:model='title' class="form-control">
@@ -39,34 +28,60 @@
                             <div class="mb-3">
                                 <label class="form-label">Image Upload</label>
                                 <input type="file" class="form-control" wire:model="image" multiple>
-                                <div wire:loading wire:target="image">Uploading...</div>
-                                @error('image.*') <span class="error">{{ $message }}</span> @enderror
+                                {{-- <div wire:loading wire:target="image">Uploading...</div> --}}
+                                @error('image') <span class="error">{{ $message }}</span> @enderror
+                                @if(is_array($image) && !empty($image))
+                                Photo Preview:
+                                <div class="row">
+                                    @foreach ($image as $image)
+                                    <div class="col-6 card me-1 mb-1">
+                                        <img src="{{$image->temporaryUrl() }}" style="height: 80px; width:auto;">
+                                    </div>
+                                    @endforeach
+                                </div>
+                            @endif
                             </div>
                             <button type="submit" class="btn btn-primary">Save Image</button>
                             <div wire:loading wire:target="save">process...</div>
                         </form>
                     </div>
                 </div>
-                {{-- <div class="mb-2">
-                    <label>Title</label>
-                    <input type="text" wire:model='title' class="form-control">
-                    @error('title') <span class="error text-danger">{{ $message }}</span> @enderror
-                </div>
-                <div class="mb-2">
-                    <label>Caption</label>
-                    <input type="text" wire:model='caption' class="form-control">
-                    @error('caption') <span class="error text-danger">{{ $message }}</span> @enderror
-                </div>
-                <div class="mb-2">
-                    <label>Images</label>
-                    <input type="file" wire:model="image" multiple>
-                    @error('image') <span class="error text-danger">{{ $message }}</span> @enderror
-                </div> --}}
+
             </div>
-            {{-- <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" wire:click='addNews()'>Save Changes</button>
-            </div> --}}
+            <div wire:loading wire:target="image">
+                <div style="display:flex; justify-content:center;
+                align-items:center; background-color:rgb(223, 207, 207); width:100%;
+                position:fixed; top: 10px; left:0px; z-index:9999; height:100%; opacity: .15;">
+                    <div style="color: #00eeff" class="la-ball-spin-clockwise la-2x">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <p class="align-center mt-2">Uploading</p>
+                </div>
+            </div>
+            <div wire:loading wire:target="save">
+                <div style="display:flex; justify-content:center;
+                align-items:center; background-color:rgb(223, 207, 207); width:100%;
+                position:fixed; top: 10px; left:0px; z-index:9999; height:100%; opacity: .15;">
+                    <div style="color: #00eeff" class="la-ball-spin-clockwise la-2x">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <p class="align-center mt-2">Posting</p>
+                </div>
+            </div>
           </div>
         </div>
       </div>
