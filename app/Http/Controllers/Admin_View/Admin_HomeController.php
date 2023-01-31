@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin_View;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DB;
 
 class Admin_HomeController extends Controller
 {
@@ -24,6 +25,12 @@ class Admin_HomeController extends Controller
      */
     public function index()
     {
-        return view('Admin_View.layouts.home');
+
+        $news = DB::table('news')->count();
+        // $projects = DB::table('projects')->count();
+        $jobs = DB::table('jobs')->count();
+        $orgs = DB::table('orgs')->count();
+        $pdmus = DB::table('pdmus')->count();
+        return view('Admin_View.layouts.home',compact('news', 'jobs','orgs', 'pdmus'));
     }
 }

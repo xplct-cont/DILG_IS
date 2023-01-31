@@ -93,6 +93,7 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <section class="content">
+                <div class="text-dark d-flex justify-content-end"><span style="color:#414a4c; font-weight: 600">Current Date:&nbsp;</span><span> {{date('F d,  Y')}}</span></div>
                 @yield('content')
             </section>
         </div>

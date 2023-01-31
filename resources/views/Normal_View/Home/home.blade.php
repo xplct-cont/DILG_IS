@@ -78,10 +78,14 @@
     <div class="mx-auto col-md-11 d-flex align-items-center justify-content-around mt-5">
         <div class="row m-1">
 
-            @php $show = DB::table('news')->limit(3)->get(); @endphp
+            @php
+                $show = DB::table('news')
+                    ->limit(3)
+                    ->get();
+            @endphp
             @foreach ($show as $new)
                 <a href="#" style="text-decoration: none; color:#030303;">
-                    <div class="card elevation-4">
+                    <div class=" card elevation-4">
                         <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
                             <div class="col-md-6 mx-auto mt-5 ">
 
@@ -93,13 +97,44 @@
                             <div class="col-md-6">
                                 <div class=" d-flex flex-row align-items-center justify-content-around "
                                     style="height: 400px;">
-                                    @php $images = json_decode($new->image,true); @endphp
-                                    @if (is_array($images) && !empty($images))
-                                        @foreach ($images as $image)
-                                            <img src="{{ asset('app/public/' . $image) }}"
-                                                style="height:300px; width:auto;" />
-                                        @endforeach
-                                    @endif
+                                    @php
+                                        $images = json_decode($new->image, true);
+                                        $newArray = [];
+                                        if (is_array($images) && !empty($images)) {
+                                            foreach ($images as $image) {
+                                                array_push($newArray, $image);
+                                            }
+                                        }
+                                    @endphp
+
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="0"
+                                                class="active"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+                                        </ol>
+                                        <div class="carousel-inner" style="height:350px;">
+                                            @foreach ($newArray as $key => $image)
+                                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                                    <img src="{{ asset('app/public/' . $image) }}"
+                                                        style="height:350px; width:auto;" />
+                                                </div>
+                                            @endforeach
+
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +228,4 @@
             href="#">See more...</a>
     </div>
 
-    <style scoped>
-
-    </style>
 @endsection

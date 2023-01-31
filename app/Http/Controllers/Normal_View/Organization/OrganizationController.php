@@ -11,7 +11,7 @@ class OrganizationController extends Controller
 {
     public function index(){
 
-       
+
         $pd = DB::table('orgs')->where('position', 'Provincial Director')->get();
         $head = DB::table('orgs')->where('id', '=', 2)
         ->orWhere('id', '=', 3)->orderBy('id', 'asc')->get();
@@ -27,6 +27,7 @@ class OrganizationController extends Controller
       
         $admin_ser = DB::table('orgs')
         ->where([
+
             // ['id', '>', 4],
             // ['position', 'like','%ADA%'],
             ['position', 'like', '%AAS%'],
