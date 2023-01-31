@@ -85,7 +85,7 @@
             @endphp
             @foreach ($show as $new)
                 <a href="#" style="text-decoration: none; color:#030303;">
-                    <div class="card elevation-4">
+                    <div class=" card elevation-4">
                         <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
                             <div class="col-md-6 mx-auto mt-5 ">
 
@@ -99,6 +99,7 @@
                                     style="height: 400px;">
                                     @php
                                         $images = json_decode($new->image, true);
+
                                     @endphp
 
                                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -109,11 +110,11 @@
                                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 
                                         </ol>
-                                        <div class="carousel-inner" style="height:300px;">
+                                        <div class="carousel-inner" style="height:350px;">
                                             @foreach ($images as $key => $image)
                                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                                     <img src="{{ asset('app/public/' . $image) }}"
-                                                        style="height:300px; width:auto;" />
+                                                        style="height:350px; width:auto;" />
                                                 </div>
                                             @endforeach
 
@@ -221,8 +222,4 @@
             style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
-
-    <style scoped>
-
-    </style>
 @endsection
