@@ -27,16 +27,10 @@ class OrganizationController extends Controller
       
         $admin_ser = DB::table('orgs')
         ->where([
-<<<<<<< HEAD
-            ['id', '>', 4],
 
-            ['position', 'LIKE', '%ADA%'],
-            // ['position', 'LIKE', '%AAS%'],
-=======
             // ['id', '>', 4],
             // ['position', 'like','%ADA%'],
             ['position', 'like', '%AAS%'],
->>>>>>> 13bf447c90c5bdbe105f990e74d817c6b76c9af4
             // ['position', 'like', '%Admin%'],
             // ['position', 'like', '%IO%'],
             // ['position', 'like', '%AO%']
