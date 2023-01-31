@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-md-6">
                         <iframe class="col-md-12"
-                            src="https://maps.google.com/maps?q=dampas dilg Bohol&t=&z=9&ie=UTF8&iwloc=&output=embed"
+                            src="https://maps.google.com/maps?q=dilg rajah sikatuna dampas&t=&z=9&ie=UTF8&iwloc=&output=embed"
                             height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
                     </div>

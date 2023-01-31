@@ -8,16 +8,18 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 
         </ol>
-        <div class="carousel-inner" style="height:600px;">
-            <div class="carousel-item active">
-                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 600px;" alt="..." />
+        <div class="carousel-inner text-center" style="height:600px;">
+
+            <div class="carousel-item active ">
+                <img src="{{ asset('img/img4.jpg') }}" class="" style="width: 95%; height: 600px;" alt="..." />
             </div>
-            <div class="carousel-item">
-                <img src="{{ asset('img/img4.jpg') }}" class="d-block w-100" style="height: 600px;" alt="..." />
+            <div class="carousel-item ">
+                <img src="{{ asset('img/img2.jpg') }}" class="" style="width: 95%; height: 600px;" alt="..." />
             </div>
-            <div class="carousel-item">
-                <img src="{{ asset('img/img5.png') }}" class="d-block w-100" style="height: 600px;" alt="..." />
+            <div class="carousel-item ">
+                <img src="{{ asset('img/img5.jpg') }}" class="" style=" width: 95%; height: 600px;" alt="..." />
             </div>
+
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,8 +36,9 @@
         <div class="row">
             <div class="col-md-6 mt-5 mb-5 ">
 
-                <a href="{{route('/provincial_director')}}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">THE PROVINCIAL DIRECTOR
+                <a href="{{ route('/provincial_director') }}" type="button" class="btn btn-md"
+                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">THE PROVINCIAL
+                    DIRECTOR
                     <span class="fas fa-arrow-right" style="margin-left:38px;"></span></a><br><br>
                 <a href="#" type="button" class="btn btn-md"
                     style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">VISION &
