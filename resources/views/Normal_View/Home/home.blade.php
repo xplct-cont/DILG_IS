@@ -234,14 +234,14 @@
                     height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-5">
                 <p class="text-justify mt-2" style="font-size: 20px; font-weight: 500;">
                     DILG R7 - Bohol Province</p>
 
-                <div id="Container mx-auto " style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+                <div id="Container mx-auto" style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
                     <iframe id="UstreamIframe"
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdilgboholprovince&tabs=timeline&width=900&height=300&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId"
-                        width="100%" height="100%" style="position:absolute; top:0; left: 0" allowfullscreen
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdilgboholprovince&tabs=timeline&width=900&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="100%" height="120%" style="position:absolute; top:0; left: 0" allowfullscreen
                         webkitallowfullscreen frameborder="0" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
