@@ -10,13 +10,13 @@
         </ol>
         <div class="carousel-inner text-center" style="height:600px;">
 
-            <div class="carousel-item active ">
+            <div class="carousel-item active zoom">
                 <img src="{{ asset('img/img4.jpg') }}" class="" style="width: 95%; height: 600px;" alt="..." />
             </div>
-            <div class="carousel-item ">
+            <div class="carousel-item zoom">
                 <img src="{{ asset('img/img2.jpg') }}" class="" style="width: 95%; height: 600px;" alt="..." />
             </div>
-            <div class="carousel-item ">
+            <div class="carousel-item zoom">
                 <img src="{{ asset('img/img5.jpg') }}" class="" style=" width: 95%; height: 600px;" alt="..." />
             </div>
 
@@ -119,7 +119,7 @@
                                                 $images = json_decode($new->image, true);
                                             @endphp
                                             @foreach ($images as $key => $image)
-                                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                                <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
                                                     <img src="{{ asset('app/public/' . $image) }}"
                                                         style="height:350px; width:auto;" />
                                                 </div>
@@ -261,3 +261,20 @@
         <script async src="https://app1.weatherwidget.org/js/?id=ww_afa40588f70fd"></script>
     </div>
 @endsection
+
+
+<style scoped>
+    .zoom {
+        transition: transform .2s;
+    }
+
+    .zoom:hover {
+        -ms-transform: scale(1.5);
+        /* IE 9 */
+        -webkit-transform: scale(1.5);
+        /* Safari 3-8 */
+        transform: scale(1.5);
+        text-align: center;
+        font-size: 10px;
+    }
+</style>

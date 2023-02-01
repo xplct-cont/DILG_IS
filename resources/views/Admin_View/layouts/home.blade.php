@@ -69,7 +69,7 @@
                         <div class="inner">
                             <h3>{{ $orgs }}</h3>
 
-                            <p class="text-secondary">Organizational Structure</p>
+                            <p class="text-secondary">Org. Structure</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-address-book text-secondary"></i>
