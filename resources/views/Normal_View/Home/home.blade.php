@@ -8,16 +8,16 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 
         </ol>
-        <div class="carousel-inner text-center" style="height:600px;">
+        <div class="carousel-inner text-center">
 
             <div class="carousel-item active">
-                <img src="{{ asset('img/img4.jpg') }}" class="" style="width: 100%; height: 600px;" alt="..." />
+                <img src="{{ asset('img/img4.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
             </div>
             <div class="carousel-item ">
-                <img src="{{ asset('img/img2.jpg') }}" class="" style="width: 100%; height: 600px;" alt="..." />
+                <img src="{{ asset('img/img2.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img5.jpg') }}" class="" style=" width: 100%; height: 600px;" alt="..." />
+                <img src="{{ asset('img/img5.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
             </div>
 
         </div>
@@ -31,6 +31,18 @@
         </a>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+    
 
     <div class="container">
         <div class="row">
@@ -194,4 +206,9 @@
         text-align: center;
         font-size: 10px;
     }
+
+    .responsive {
+     max-width: 100%;
+      height: auto;
+}
 </style>
