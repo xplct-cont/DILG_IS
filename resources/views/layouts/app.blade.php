@@ -110,9 +110,6 @@
                             <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGU's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/organization') }}"> &nbsp;Organization</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
                         </li>
 
@@ -124,8 +121,8 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/organization')}}">Organizational Structure</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/attached_agencies')}}">Attached Agencies</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -142,7 +139,7 @@
                         <div class="dropdown">
                             <button class="dropdown-toggle btn text-white" style="margin-top: 2px;"
                                 id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Transparency
+                                Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="#">Action</a></li>

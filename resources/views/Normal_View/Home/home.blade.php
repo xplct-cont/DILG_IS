@@ -49,9 +49,14 @@
 
             </div>
             <div class="col-md-6 mt-5 mb-5">
-                <h1 class="text-left" style="font-size: 22px; font-weight: 500;">Department of the Interior and Local
+                <div class="text-center">
+                    <img src="/img/dilg-main.png" style="height: 100px; width: 100px;" alt="">
+                </div>
+
+                <h1 class="text-left" style="font-size: 22px; font-weight: 500;">
+                    Department of the Interior and Local
                     Government</h1>
-                <p class="text-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="text-left mt-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     The DILG is the executive department of the Philippine government responsible for promoting peace and
                     order, ensuring public safety and strengthening local government capability aimed towards the effective
                     delivery of basic services to the citizenry.</p>
@@ -61,7 +66,7 @@
 
 
 
-    <div class="header mt-4 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+    <div class="header mt-1 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">PROJECTS</h1>
     </div>
     <div>

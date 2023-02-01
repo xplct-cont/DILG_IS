@@ -10,6 +10,7 @@ use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
+use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
 
 //Admin View
 use App\Http\Controllers\Admin_View\Admin_HomeController;
@@ -60,7 +61,7 @@ Route::put('/update-pdmu/{id}', [Admin_PdmuController::class, 'update_pdmu']);
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
-
+Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
 
 
 
