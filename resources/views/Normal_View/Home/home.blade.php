@@ -11,13 +11,13 @@
         <div class="carousel-inner text-center" style="height:600px;">
 
             <div class="carousel-item active">
-                <img src="{{ asset('img/img4.jpg') }}" class="" style="width: 95%; height: 600px;" alt="..." />
+                <img src="{{ asset('img/img4.jpg') }}" class="" style="width: 100%; height: 600px;" alt="..." />
             </div>
             <div class="carousel-item ">
-                <img src="{{ asset('img/img2.jpg') }}" class="" style="width: 95%; height: 600px;" alt="..." />
+                <img src="{{ asset('img/img2.jpg') }}" class="" style="width: 100%; height: 600px;" alt="..." />
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('img/img5.jpg') }}" class="" style=" width: 95%; height: 600px;" alt="..." />
+                <img src="{{ asset('img/img5.jpg') }}" class="" style=" width: 100%; height: 600px;" alt="..." />
             </div>
 
         </div>
@@ -84,7 +84,7 @@
     </div>
 
     <div class="mx-auto mt-3 col-md-11">
-        <div class="row m-1">
+        <div class="">
 
             @php
                 $show = DB::table('news')
@@ -126,16 +126,7 @@
                                             @endforeach
 
                                         </div>
-                                        <button class="carousel-control-prev" type="button"
-                                            data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Previous</span>
-                                        </button>
-                                        <button class="carousel-control-next" type="button"
-                                            data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Next</span>
-                                        </button>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +181,7 @@
 
 
 <style scoped>
-    /* .zoom {
+    .zoom {
         transition: transform .2s;
     }
 
@@ -202,5 +193,5 @@
         transform: scale(1.5);
         text-align: center;
         font-size: 10px;
-    } */
+    }
 </style>

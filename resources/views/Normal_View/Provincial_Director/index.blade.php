@@ -13,7 +13,7 @@
                                     <div class="rotate">
                                         <img src="{{ asset('org_profile_images/' . $pdirector->profile_img) }} "
                                             alt="Image" class="shadow-lg border rounded"
-                                            style="height: 450px; width: 450px;">
+                                            style="height: 350px; width: 350px;">
                                     </div>
                                     <p class="text-center mt-2" style="font-size: 25px; font-weight:500;">
                                         {{ $pdirector->fname }}

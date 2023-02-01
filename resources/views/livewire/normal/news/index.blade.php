@@ -16,7 +16,7 @@
 
 
     <div class="mx-auto mt-3 col-md-11">
-        <div class="row m-1">
+        <div class="">
             @foreach ($news as $new)
                 <a href="#" style="text-decoration: none; color:#030303;">
                     <div class="card elevation-4">
@@ -29,8 +29,7 @@
                                 <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ $new->caption }}</p>
                             </div>
                             <div class="col-md-5">
-                                <div class="col-md-12"
-                                    style="height: 400px;">
+                                <div class="col-md-12" style="height: 400px;">
 
                                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                         <ol class="carousel-indicators">
@@ -52,7 +51,7 @@
                                             @endforeach
 
                                         </div>
-                                        <button class="carousel-control-prev" type="button"
+                                        {{-- <button class="carousel-control-prev" type="button"
                                             data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Previous</span>
@@ -61,7 +60,7 @@
                                             data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Next</span>
-                                        </button>
+                                        </button> --}}
                                     </div>
 
                                 </div>
