@@ -224,7 +224,6 @@
             style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
-
     <div class="col-md-12 mb-5">
         <div class="row">
             <div class="col-md-6">
@@ -238,14 +237,22 @@
                 <p class="text-justify mt-2" style="font-size: 20px; font-weight: 500;">
                     DILG R7 - Bohol Province</p>
 
-                <div id="Container mx-auto" style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+                <div id="Container " class="mx-auto"
+                    style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
                     <iframe id="UstreamIframe"
                         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdilgboholprovince&tabs=timeline&width=900&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                         width="100%" height="120%" style="position:absolute; top:0; left: 0" allowfullscreen
                         webkitallowfullscreen frameborder="0" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
+
                 </div>
             </div>
+
         </div>
+        <div class="elevation-4" style="margin-top: 30px;" id="ww_afa40588f70fd" v='1.3' loc='id'
+            a='{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl5320"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
+            Weather for the Following Location: <a href="https://2ua.org/phl/tagbilaran/map/" id="ww_afa40588f70fd_u"
+                target="_blank">Tagbilaran map, Philippines</a></div>
+        <script async src="https://app1.weatherwidget.org/js/?id=ww_afa40588f70fd"></script>
     </div>
 @endsection
