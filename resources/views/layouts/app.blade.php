@@ -81,7 +81,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                   <span style="color:silver">Menu</span> <span class="navbar-toggler-icon"></span>
+                    <span style="color:silver">Menu</span> <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -135,7 +135,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="{{ url('/project') }}">Projects </a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                               
+
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -191,8 +191,8 @@
 
         <main class="mt-5">
             <div class="header" style=" padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
-               <a href="/about"> <img width="500"  height="auto"  style="max-width: 100%; height:auto;"
-                src="{{ asset('/img/dilg-bohol.png') }}"></a>
+                <a href="/about"> <img width="500" height="auto" style="max-width: 100%; height:auto;"
+                        src="{{ asset('/img/dilg-bohol.png') }}"></a>
             </div>
             @yield('content')
         </main>
@@ -257,10 +257,10 @@
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
         </footer>
-       
-          
+
+
     </div>
-  
+
     <div class="" style=" padding: 20px; background-color:#efefef; color: #DCDCDC;">
         <footer class="sticky-footer">
             <div class="container">
@@ -324,10 +324,9 @@
                     </div>
                 </div>
             </div>
+            <button onclick="topFunction()" id="myBtn" title="Go to top"
+                style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
 
-           <div class="d-flex justify-content-end">
-            <button onclick="topFunction()" id="myBtn" class="btn btn-md" title="Back to top" style="background: #002C76; color:white;"><i class="fas fa-chevron-up"></i></button>
-           </div>
 
 
 </body>
@@ -366,23 +365,48 @@
             transform: translateX(25%);
         }
     }
+
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 12px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    #myBtn:hover {
+        background-color: #555;
+    }
 </style>
 
 <script>
     // Get the button
     let mybutton = document.getElementById("myBtn");
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
+
+    // When the user scrolls down 50px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
     function scrollFunction() {
-        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             mybutton.style.display = "block";
         } else {
             mybutton.style.display = "none";
         }
     }
+
+    // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
-    
 </script>
