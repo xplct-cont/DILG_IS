@@ -9,8 +9,11 @@
                         <img src="img/lga-png.png" style="height: 150px;" alt="">
                     </div>
                     <div class="col-md-8">
-                        <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">The Local Government
-                            (LGA)</p>
+                        <a href="https://lga.gov.ph/public/home/5ecb2a1f1476ab4fe1a75cf1" style="text-decoration:none;">
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">The Local
+                                Government
+                                (LGA)</p>
+                        </a>
                         <p class="text-justify" style="font-weight: 400; font-size: 16px;">The Local Government Academy
                             (LGA) is the country’s leading provider of capacity building services to local government units
                             (LGUs) and to the DILG personnel. With our main office and training center located in the heart
@@ -26,8 +29,10 @@
                         <img src="img/napolcom.png" style="height: 150px;" alt="">
                     </div>
                     <div class="col-md-8">
-                        <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">National Police
-                            Commission</p>
+                        <a href="https://r7.napolcom.gov.ph/" style="text-decoration:none;">
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">National Police
+                                Commission</p>
+                        </a>
                         <p class="text-justify" style="font-weight: 400; font-size: 16px;">The promulgation of Republic Act
                             6975, otherwise known as the Department of the Interior and Local Government (DILG) Act of 1990,
                             operationalized and initiated the call for a tangible reform in the country’s public safety
@@ -52,8 +57,10 @@
                         <img src="img/bfp.png" style="height: 150px;" alt="">
                     </div>
                     <div class="col-md-8">
-                        <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Bureau of Fire
-                            Protection</p>
+                        <a href="https://region7.bfp.gov.ph/" style="text-decoration:none;">
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Bureau of Fire
+                                Protection</p>
+                        </a>
                         <p class="text-justify" style="font-weight: 400; font-size: 16px;">The enactment of Republic Act
                             6975, otherwise known as the Department of Interior and Local Government Act of 1990 which took
                             effect on January 1, 1991 paved the way for the establishment of the Philippine National Police
@@ -70,8 +77,10 @@
                         <img src="img/bjmp.png" style="height: 150px;" alt="">
                     </div>
                     <div class="col-md-8">
-                        <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Bureau of Jail
-                            Management and Penology</p>
+                        <a href="https://www.bjmp.gov.ph/" style="text-decoration:none;">
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Bureau of Jail
+                                Management and Penology</p>
+                        </a>
                         <p class="text-justify" style="font-weight: 400; font-size: 16px;">As one of the five pillars of the
                             Criminal Justice System, the Bureau of Jail Management and Penology (BJMP) was created to
                             address growing concern of jail management and penology problem. Primarily, its clients are
@@ -94,8 +103,11 @@
                         <img src="img/ppsc02.png" style="height: 150px;" alt="">
                     </div>
                     <div class="col-md-8">
-                        <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Philippine Public
-                            Safety College</p>
+                        <a href="https://ppsc.gov.ph/" style="text-decoration: none;">
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Philippine
+                                Public
+                                Safety College</p>
+                        </a>
                         <p class="text-justify" style="font-weight: 400; font-size: 16px;">The promulgation of Republic Act
                             6975, otherwise known as the Department of the Interior and Local Government (DILG) Act of 1990,
                             operationalized and initiated the call for a tangible reform in the country’s public safety
@@ -114,8 +126,11 @@
                         <img src="img/pnp.png" style="height: 150px;" alt="">
                     </div>
                     <div class="col-md-8">
-                        <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Philippine National
-                            Police (PNP)</p>
+                        <a href="https://pro7.pnp.gov.ph/" style="text-decoration:none;">
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Philippine
+                                National
+                                Police (PNP)</p>
+                        </a>
                         <p class="text-justify" style="font-weight: 400; font-size: 16px;">The Philippine National Police
                             (PNP) has put in place all necessary safeguards to eliminate every possible situation or
                             opportunity for corruption in the police service.

@@ -121,8 +121,10 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/organization')}}">Organizational Structure</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/attached_agencies')}}">Attached Agencies</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/organization') }}">Organizational
+                                        Structure/PDMU</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
+                                        Agencies</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -280,15 +282,16 @@
                             <p class="text-secondary" style="font-size: 12px; font-weight: 300;">Learn more about the
                                 Philippine government, its structure, how government works and the people behind it.
                                 <br><br>
-                                GOV.PH <br>
-                                Open Data Portal <br>
-                                Official Gazette
+                                <a href="https://www.gov.ph/" style="color:dimgray;">GOV.PH</a> <br>
+                                <a href="https://www.gov.ph/data" style="color: dimgray;"> Open Data Portal</a> <br>
+                                <a href="https://www.officialgazette.gov.ph/" style="color: dimgray;"> Official
+                                    Gazette</a>
                             </p>
                         </div>
                         <div class="col-md-3 text-justify">
                             <p class="text-secondary" style="font-size: 12px; font-weight: 500;">GOVERNMENT LINKS</p>
                             <a href="https://president.gov.ph/">
-                                <p class="text-secondary" style="font-size: 12px; font-weight: 300;">Office of the
+                                <p class="text-secondary" style="font-size: 12px; font-weight: 300; ">Office of the
                                     President</p>
                             </a>
                             <a href="https://ovp.gov.ph/">
