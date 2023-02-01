@@ -10,13 +10,13 @@
         </ol>
         <div class="carousel-inner text-center" style="height:600px;">
 
-            <div class="carousel-item active zoom">
+            <div class="carousel-item active">
                 <img src="{{ asset('img/img4.jpg') }}" class="" style="width: 95%; height: 600px;" alt="..." />
             </div>
-            <div class="carousel-item zoom">
+            <div class="carousel-item ">
                 <img src="{{ asset('img/img2.jpg') }}" class="" style="width: 95%; height: 600px;" alt="..." />
             </div>
-            <div class="carousel-item zoom">
+            <div class="carousel-item">
                 <img src="{{ asset('img/img5.jpg') }}" class="" style=" width: 95%; height: 600px;" alt="..." />
             </div>
 
@@ -83,7 +83,7 @@
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
     </div>
 
-    <div class="mx-auto col-md-11 d-flex align-items-center justify-content-around mt-5">
+    <div class="mx-auto mt-3 col-md-11">
         <div class="row m-1">
 
             @php
@@ -102,8 +102,8 @@
                                 <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
                                 <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ $new->caption }}</p>
                             </div>
-                            <div class="col-md-6">
-                                <div class=" d-flex flex-row align-items-center justify-content-around "
+                            <div class="col-md-5">
+                                <div class="col-md-12"
                                     style="height: 400px;">
 
                                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -146,81 +146,7 @@
         </div>
     </div>
 
-    {{-- <div class="mx-auto col-md-11 d-flex align-items-center justify-content-around mt-5">
-        <div class="row m-1">
-            <a href="#" style="text-decoration: none; color:#030303;">
-                <div class="card elevation-4">
-                    <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
-                        <div class="col-md-6 ">
-                            <h1 style="font-size: 15px;">December 15, 2022</h1><br>
-                            <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local
-                                Governance
-                                (SGLG) Award to LGU Alburquerque </p>
-                            <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
-                                attended by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional
-                                Director
-                                Maria Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED
-                                Chief
-                                Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card" style="height: 300px;">
-                                <img src="{{ asset('/img/img3.jpg') }}" alt="" style="height: 300px; width:auto;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="#" style="text-decoration: none; color:#030303;">
-                <div class="card elevation-4">
-                    <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
-                        <div class="col-md-6 ">
-                            <h1 style="font-size: 15px;">December 15, 2022</h1><br>
-                            <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local
-                                Governance
-                                (SGLG) Award to LGU Alburquerque </p>
-                            <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
-                                attended by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional
-                                Director
-                                Maria Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED
-                                Chief
-                                Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card" style="height: 300px;">
-                                <img src="{{ asset('/img/img3.jpg') }}" alt=""
-                                    style="height: 300px; width:auto;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="#" style="text-decoration: none; color:#030303;">
-                <div class="card elevation-4">
-                    <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
-                        <div class="col-md-6 ">
-                            <h1 style="font-size: 15px;">December 15, 2022</h1><br>
-                            <p class="text-left" style="font-size: 16px;">DILG conferred the Seal of Good Local
-                                Governance
-                                (SGLG) Award to LGU Alburquerque </p>
-                            <p class="text-left" style="font-size: 13px; font-weight: 300;"> The activity was also
-                                attended by DILG 7 Regional Director Leocadio Trovela, CESO III, Assistant Regional
-                                Director
-                                Maria Loisella Lucino, CESO IV, DILG Bohol Provincial Director Jerome Gonzales, LGMED
-                                Chief
-                                Celerino Magto Jr. and SGLG Regional and Provincial Focal Persons.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card" style="height: 300px;">
-                                <img src="{{ asset('/img/img3.jpg') }}" alt=""
-                                    style="height: 300px; width:auto;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div> --}}
+   
     </div>
     </div>
 
@@ -264,7 +190,7 @@
 
 
 <style scoped>
-    .zoom {
+    /* .zoom {
         transition: transform .2s;
     }
 
@@ -276,5 +202,5 @@
         transform: scale(1.5);
         text-align: center;
         font-size: 10px;
-    }
+    } */
 </style>

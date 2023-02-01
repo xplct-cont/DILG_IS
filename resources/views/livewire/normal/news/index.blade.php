@@ -15,7 +15,7 @@
     </div>
 
 
-    <div class="mx-auto col-md-11 d-flex align-items-center justify-content-around mt-5">
+    <div class="mx-auto mt-3 col-md-11">
         <div class="row m-1">
             @foreach ($news as $new)
                 <a href="#" style="text-decoration: none; color:#030303;">
@@ -28,11 +28,9 @@
                                 <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
                                 <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ $new->caption }}</p>
                             </div>
-                            <div class="col-md-6">
-                                <div class=" d-flex flex-row align-items-center justify-content-around "
+                            <div class="col-md-5">
+                                <div class="col-md-12"
                                     style="height: 400px;">
-
-
 
                                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                         <ol class="carousel-indicators">
