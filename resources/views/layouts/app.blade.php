@@ -257,11 +257,10 @@
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
         </footer>
-        <a id="back-to-top" href="#" class="btn btn-md back-to-top" style="background: #002C76; color:white;"
-            role="button"><i class="fas fa-chevron-up"></i></a>
+       
+          
     </div>
-
-
+  
     <div class="" style=" padding: 20px; background-color:#efefef; color: #DCDCDC;">
         <footer class="sticky-footer">
             <div class="container">
@@ -326,6 +325,10 @@
                 </div>
             </div>
 
+           <div class="d-flex justify-content-end">
+            <button onclick="topFunction()" id="myBtn" class="btn btn-md" title="Back to top" style="background: #002C76; color:white;"><i class="fas fa-chevron-up"></i></button>
+           </div>
+
 
 </body>
 <script></script>
@@ -364,3 +367,22 @@
         }
     }
 </style>
+
+<script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    
+</script>
