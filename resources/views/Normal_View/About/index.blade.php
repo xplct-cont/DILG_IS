@@ -64,7 +64,7 @@
                             <h1 class="text-center" style="font-size: 22px;">Our Vision</h1>
                             <p class="text-justify">A highly trusted Department and Partner in nurturing local governments
                                 and sustaining peaceful, safe, progressive, resilient, and inclusive communities towards a
-                                comfortable and secure life for Filipinos by 240.</p>
+                                comfortable and secure life for Filipinos by 2040.</p>
                         </div>
                     </div>
                 </div>
@@ -78,20 +78,14 @@
                     <div class="text-center">
                         <img class="" src="img/star.png" style="height: 150px;" alt="">
                     </div>
-                    <h1 class="text-center" style="font-size: 22px;">Our Goals</h1>
-                    <p class="text-justify">Peaceful, safe, self-reliant and development-dominated communities. Improve
-                        performance of local governments in governance, administration, social and economic development and
-                        environmental management; Sustain peace and order condition and ensure public safety.</p>
+                    <h1 class="text-center" style="font-size: 22px;">Our Shared Values</h1>
+                    <p class="text-center">Ang DILG ay Matino, Mahusay, at Maasahan</p>
                 </div>
 
             </div>
         </div>
     </div>
 
-    </div>
-    <div class="text-center m-2 mb-4 mt-2">
-        <h4 class="fw-bold">Our Slogan</h4>
-        <h5 class="fw-bold">Matino | Mahusay | Maaasahan</h5>
     </div>
     </div>
 @endsection
