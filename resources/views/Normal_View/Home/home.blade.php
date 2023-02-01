@@ -10,13 +10,13 @@
         </ol>
         <div class="carousel-inner text-center">
 
-            <div class="carousel-item active">
+            <div class="carousel-item active zoom">
                 <img src="{{ asset('img/img4.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
             </div>
-            <div class="carousel-item ">
+            <div class="carousel-item zoom">
                 <img src="{{ asset('img/img2.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item zoom">
                 <img src="{{ asset('img/img5.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
             </div>
 
@@ -32,17 +32,6 @@
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-    
 
     <div class="container">
         <div class="row">

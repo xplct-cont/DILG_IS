@@ -81,7 +81,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                   <span style="color:silver;">Menu</span> <span class="navbar-toggler-icon"></span>
+                   <span style="color:silver">Menu</span> <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -135,7 +135,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="{{ url('/project') }}">Projects </a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
+                               
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -146,7 +146,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
                         </div>
 
@@ -191,9 +191,8 @@
 
         <main class="mt-5">
             <div class="header" style=" padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
-                <img style=" width: 50%; margin-left: 10px;
-                height: auto;"
-                    src="{{ asset('/img/dilg-bohol.png') }}">
+               <a href="/about"> <img width="500"  height="auto"  style="max-width: 100%; height:auto;"
+                src="{{ asset('/img/dilg-bohol.png') }}"></a>
             </div>
             @yield('content')
         </main>
@@ -204,7 +203,7 @@
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
-                    <a href="/" style="text-decoration:none;">
+                    <a href="/about" style="text-decoration:none;">
                         <p class="text-center" style="font-size: 18px; color:#DCDCDC;">Department of the Interior and
                             Local Government</p>
                         <p class="text-center"
