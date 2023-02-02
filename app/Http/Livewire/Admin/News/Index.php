@@ -5,11 +5,14 @@ namespace App\Http\Livewire\Admin\News;
 use App\Models\News;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\File;
 
 class Index extends Component
 {
     use WithFileUploads;
     public $title, $caption, $image = [];
+    public  $new_image = [], $old_image = [];
+    public $news_id;
 
     public function closeModal()
     {
@@ -38,6 +41,33 @@ class Index extends Component
         $this->dispatchBrowserEvent('close-modal');
         session()->flash('success', 'Images has been successfully Uploaded.');
     }
+
+
+
+
+    public function deleteNews(int $news_id)
+    {
+        $this->news_id = $news_id;
+    }
+
+    public function destroyNews()
+    {
+        $news = News::find($this->news_id);
+        $destination=public_path('storage\\'.$news->image);
+        if(File::exists($destination)){
+            File::delete($destination);
+        }
+
+        $result=$news->delete();
+        if ($result) {
+            session()->flash('Success', 'Delete Successfully');
+        } else {
+            session()->flash('error', 'Not Delete Successfully');
+        }
+        // session()->flash('message','Appointment Deleted Successfully');
+        $this->dispatchBrowserEvent('close-modal');
+    }
+
 
     public function resetInput()
     {

@@ -1,5 +1,7 @@
 <div>
     @include('livewire.admin.news.create')
+    @include('livewire.admin.news.delete')
+    {{-- @include('livewire.admin.news.edit') --}}
     @if ($message = Session::get('message'))
         <div class="alert alert-success alert-block mt-2">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
@@ -47,10 +49,10 @@
                         </td>
                         <td>{{ $new->datetime }}</td>
                         <td><a type="button" data-bs-toggle="modal" data-bs-target="#updateNewsModal">
-                                <i class="fas fa-edit" style="color:rgb(0, 81, 255);"></i>
+                                <i class="fas fa-edit" style="color:rgb(0, 81, 255);" wire:click="edit({{$new->id}})"></i>
                             </a>
                             <a type="button" data-bs-toggle="modal" data-bs-target="#deleteNewsModal">
-                                <i class="fas fa-trash-alt" style="color:red;"></i>
+                                <i class="fas fa-trash-alt" style="color:red;" wire:click="deleteNews({{$new->id}})"></i>
                             </a>
                         </td>
                     </tr>
