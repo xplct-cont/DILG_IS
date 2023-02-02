@@ -4,7 +4,7 @@
         <div class="d-flex justify-content-center mb-3">
             <img src="/img/dilg-main.png" style="height: 150px; width: 150px;" alt="">
         </div>
-        <h1 class="text-center " style="font-size: 30px; margin-bottom: 90px;">ORGANIZATIONAL STRUCTURE</h1>
+        <h1 class="text-center " style="font-size: 30px; margin-bottom: 50px;">ORGANIZATIONAL STRUCTURE</h1>
     </div>
 
     @foreach ($pd as $pdirector)
@@ -107,11 +107,11 @@
             }
 
             .zoom:hover {
-                -ms-transform: scale(1.5);
+                -ms-transform: scale(1.2);
                 /* IE 9 */
-                -webkit-transform: scale(1.5);
+                -webkit-transform: scale(1.2);
                 /* Safari 3-8 */
-                transform: scale(1.5);
+                transform: scale(1.2);
                 text-align: center;
                 font-size: 10px;
             }

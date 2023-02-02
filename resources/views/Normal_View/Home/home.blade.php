@@ -10,13 +10,13 @@
         </ol>
         <div class="carousel-inner text-center">
 
-            <div class="carousel-item active zoom">
+            <div class="carousel-item active ">
                 <img src="{{ asset('img/img4.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
             </div>
-            <div class="carousel-item zoom">
+            <div class="carousel-item ">
                 <img src="{{ asset('img/img2.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
             </div>
-            <div class="carousel-item zoom">
+            <div class="carousel-item ">
                 <img src="{{ asset('img/img5.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
             </div>
 
@@ -187,11 +187,11 @@
     }
 
     .zoom:hover {
-        -ms-transform: scale(1.5);
+        -ms-transform: scale(1.2);
         /* IE 9 */
-        -webkit-transform: scale(1.5);
+        -webkit-transform: scale(1.2);
         /* Safari 3-8 */
-        transform: scale(1.5);
+        transform: scale(1.2);
         text-align: center;
         font-size: 10px;
     }
