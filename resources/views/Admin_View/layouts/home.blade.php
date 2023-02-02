@@ -82,19 +82,37 @@
                 <!-- ./col -->
                 <div class="col-lg-3 col-6 ">
                     <!-- small box -->
-                    <div class="small-box text-light bg-info elevation-4">
+                    <div class="small-box text-secondary elevation-4">
                         <div class="inner">
                             <h3>{{ $pdmus }}</h3>
 
-                            <p class="text-light">PDMU</p>
+                            <p class="text-secondary">PDMU</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-users text-secondary"></i>
                         </div>
                         <a href="{{ route('admin/pdmu') }}" class="small-box-footer " style="background-color:dimgray;">
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box text-light bg-info elevation-4">
+                        <div class="inner">
+                            <h3>{{ $lgus }}</h3>
+
+                            <p class="text-light">LGU's</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-city text-light"></i>
+                        </div>
+                        <a href="{{ route('admin/lgu') }}" class="small-box-footer "
+                            style="background-color:dimgray;color:whitesmoke;"><span class="text-light">More info</span> <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
             </div>
 
         </div>

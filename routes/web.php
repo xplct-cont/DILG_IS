@@ -11,6 +11,7 @@ use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
+use App\Http\Controllers\Normal_View\Lgu\LguController;
 
 //Admin View
 use App\Http\Controllers\Admin_View\Admin_HomeController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\Admin_View\Admin_NewsController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
+use App\Http\Controllers\Admin_View\Admin_LguController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,11 +59,16 @@ Route::post('/add-pdmu', [Admin_PdmuController::class, 'store']);
 Route::get('/delete_pdmu/{id}', [Admin_PdmuController::class, 'delete_pdmu']);
 Route::put('/update-pdmu/{id}', [Admin_PdmuController::class, 'update_pdmu']);
 
+Route::get('/admin/lgu', [Admin_LguController::class, 'index'])->name('admin/lgu');
+Route::post('/add-lgu', [Admin_LguController::class, 'store']);
+Route::get('/delete_lgu/{id}', [Admin_LguController::class, 'delete_lgu']);
+Route::put('/update-lgu/{id}', [Admin_LguController::class, 'update_lgu']);
 
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
 Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
+Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 
 

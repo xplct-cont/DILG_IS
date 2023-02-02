@@ -16,7 +16,7 @@
 <li class="nav-item">
     <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? '' : '' }}">
         <p class="text-white">Projects</p>
-        <i class="fas fa-exclamation-circle fa-pull-left fa-md text-white"></i>
+        <i class="fas fa-project-diagram fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 
@@ -31,6 +31,13 @@
     <a href="{{ route('admin/organization') }}" class="nav-link {{ Request::is('admin/organization*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Organization/PDMU</p>
         <i class="fas fa-users fa-pull-left fa-md text-white"></i>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('admin/lgu') }}" class="nav-link {{ Request::is('admin/lgu*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">LGU's</p>
+        <i class="fas fa-city fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 

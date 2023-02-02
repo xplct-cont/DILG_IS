@@ -107,7 +107,7 @@
                             <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;Issuances</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGU's</a>
+                            <a class="nav-link text-white" href="{{ url('/lgu') }}"> &nbsp;LGU's</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
