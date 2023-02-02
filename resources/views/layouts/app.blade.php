@@ -71,7 +71,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark hadow-sm" style="background-color: #C9282D;">
+        <nav class="navbar navbar-expand-md navbar-dark hadow-sm fixed-top" style="background-color: #C9282D;">
             <div class="container">
                 <a class="navbar-brand" style="font-size: 16px;" href="{{ url('/') }}">
                     {{-- {{ config('app. name', 'Laravel') }} --}}
@@ -81,7 +81,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <span style="color:silver">Menu</span> <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -107,10 +107,7 @@
                             <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;Issuances</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGU's</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/organization') }}"> &nbsp;Organization</a>
+                            <a class="nav-link text-white" href="{{ url('/lgu') }}"> &nbsp;LGU's</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
@@ -124,8 +121,10 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/organization') }}">Organizational
+                                        Structure/PDMU</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
+                                        Agencies</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -136,18 +135,18 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="{{ url('/project') }}">Projects </a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
+
                             </ul>
                         </div>
                         <div class="dropdown">
                             <button class="dropdown-toggle btn text-white" style="margin-top: 2px;"
                                 id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Transparency
+                                Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
                         </div>
 
@@ -190,11 +189,10 @@
             </div>
         </nav>
 
-        <main class="">
+        <main class="mt-5">
             <div class="header" style=" padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
-                <img style=" width: 50%; margin-left: 10px;
-                height: auto;"
-                    src="{{ asset('/img/dilg-bohol.png') }}">
+                <a href="/about"> <img width="500" height="auto" style="max-width: 100%; height:auto;"
+                        src="{{ asset('/img/dilg-bohol.png') }}"></a>
             </div>
             @yield('content')
         </main>
@@ -205,12 +203,14 @@
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
-                    <p class="text-center" style="font-size: 18px; color:#DCDCDC;">Department of the Interior and
-                        Local Government</p>
-                    <p class="text-center"
-                        style="font-size: 12px; color:#DCDCDC; font-weight: 400; margin-top: -20px;">BOHOL PROVINCE</p>
+                    <a href="/about" style="text-decoration:none;">
+                        <p class="text-center" style="font-size: 18px; color:#DCDCDC;">Department of the Interior and
+                            Local Government</p>
+                        <p class="text-center"
+                            style="font-size: 12px; color:#DCDCDC; font-weight: 400; margin-top: -20px;">BOHOL PROVINCE
+                        </p>
+                    </a>
                 </div>
-
 
 
                 <form action="">
@@ -225,30 +225,107 @@
                     </div>
                 </form>
 
+
+
                 <p class="text-center" style="font-size: 16px; font-weight: 400;">Attached Agencies</p>
 
                 <div class="container d-flex justify-content-center">
                     <div class="row ">
                         <div class="col-md-8 d-flex justify-content-between" style="gap:10px;">
-                            <img src="/img/lga.png" alt="" style="height: 50px;">
-                            <img src="/img/napolcom.png" alt="" style="height: 50px;">
-                            <img src="/img/bfp.png" alt="" style="height: 50px;">
-                            <img src="/img/bjmp.png" alt="" style="height: 50px;">
-                            <img src="/img/ppsc.png" alt="" style="height: 50px;">
-                            <img src="/img/pnp.png" alt="" style="height: 50px;">
-
+                            <a href="https://lga.gov.ph/public/home/5ecb2a1f1476ab4fe1a75cf1"> <img src="/img/lga.png"
+                                    alt="" style="height: 50px;"></a>
+                            <a href="https://r7.napolcom.gov.ph/"> <img src="/img/napolcom.png" alt=""
+                                    style="height: 50px;"></a>
+                            <a href="https://region7.bfp.gov.ph/"> <img src="/img/bfp.png" alt=""
+                                    style="height: 50px;"></a>
+                            <a href="https://www.bjmp.gov.ph/"> <img src="/img/bjmp.png" alt=""
+                                    style="height: 50px;"></a>
+                            <a href="https://ppsc.gov.ph/"> <img src="/img/ppsc.png" alt=""
+                                    style="height: 50px;"></a>
+                            <a href="https://pro7.pnp.gov.ph/"> <img src="/img/pnp.png" alt=""
+                                    style="height: 50px;">
+                            </a>
                         </div>
                     </div>
                 </div>
                 <p class="text-center mt-3" style="color:silver; font-size: 8px;">&copy;DILG-BOHOL PROVINCE</p>
             </div>
+
+
+
             <div class="bg"></div>
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
         </footer>
-        <a id="back-to-top" href="#" class="btn btn-md back-to-top" style="background: #002C76; color:white;" role="button"><i
-                class="fas fa-chevron-up"></i></a>
+
+
     </div>
+
+    <div class="" style=" padding: 20px; background-color:#efefef; color: #DCDCDC;">
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-2 text-left">
+                            <img src="/img/govph-seal.jpg" style="height: 100px; width: 100px;" alt="">
+
+                        </div>
+                        <div class="col-md-3 text-justify">
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">REPUBLIC OF THE
+                                PHILIPPINES</p>
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 300;">All content is in the
+                                public domain unless otherwise stated.</p>
+                        </div>
+                        <div class="col-md-3 text-justify">
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">ABOUT GOVPH</p>
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 300;">Learn more about the
+                                Philippine government, its structure, how government works and the people behind it.
+                                <br><br>
+                                <a href="https://www.gov.ph/" style="color:dimgray;">GOV.PH</a> <br>
+                                <a href="https://www.gov.ph/data" style="color: dimgray;"> Open Data Portal</a> <br>
+                                <a href="https://www.officialgazette.gov.ph/" style="color: dimgray;"> Official
+                                    Gazette</a>
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-justify">
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">GOVERNMENT LINKS</p>
+                            <a href="https://president.gov.ph/">
+                                <p class="text-secondary" style="font-size: 12px; font-weight: 300; ">Office of the
+                                    President</p>
+                            </a>
+                            <a href="https://ovp.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Office of the Vice
+                                    President</p>
+                            </a>
+                            <a href="http://legacy.senate.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Senate of the
+                                    Philippines</p>
+                            </a>
+                            <a href="https://www.congress.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">House of
+                                    Representatives</p>
+                            </a>
+                            <a href="https://sc.judiciary.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Supereme Court</p>
+                            </a>
+                            <a href="https://ca.judiciary.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Court of Appeals</p>
+                            </a>
+                            <a href="https://sb.judiciary.gov.ph/">
+                                <p class="text-secondary"
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Sandiganbayan</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="topFunction()" id="myBtn" title="Go to top"
+                style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
 
 
 
@@ -288,4 +365,48 @@
             transform: translateX(25%);
         }
     }
+
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 12px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    #myBtn:hover {
+        background-color: #555;
+    }
 </style>
+
+<script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 50px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
