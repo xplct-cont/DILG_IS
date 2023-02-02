@@ -31,6 +31,7 @@ class Admin_HomeController extends Controller
         $jobs = DB::table('jobs')->count();
         $orgs = DB::table('orgs')->count();
         $pdmus = DB::table('pdmus')->count();
-        return view('Admin_View.layouts.home',compact('news', 'jobs','orgs', 'pdmus'));
+        $lgus = DB::table('lgus')->count();
+        return view('Admin_View.layouts.home',compact('news', 'jobs','orgs', 'pdmus', 'lgus'));
     }
 }

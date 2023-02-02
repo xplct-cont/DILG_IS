@@ -11,6 +11,7 @@ use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
+use App\Http\Controllers\Normal_View\Lgu\LguController;
 
 //Admin View
 use App\Http\Controllers\Admin_View\Admin_HomeController;
@@ -67,6 +68,7 @@ Route::put('/update-lgu/{id}', [Admin_LguController::class, 'update_lgu']);
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
 Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
+Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 
 
