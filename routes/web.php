@@ -2,24 +2,28 @@
 
 use Carbon\Carbon;
 
-//Normal View
+//Admin View
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin_View\Admin_LguController;
+use App\Http\Controllers\Admin_View\Admin_HomeController;
+use App\Http\Controllers\Admin_View\Admin_JobsController;
+use App\Http\Controllers\Admin_View\Admin_NewsController;
+use App\Http\Controllers\Admin_View\Admin_PdmuController;
+use App\Http\Controllers\Admin_View\Admin_ProjectController;
+use App\Http\Controllers\Admin_View\Admin_OrganizationController;
+use App\Http\Controllers\Admin_View\Admin_ProfileController;
+
+
+//Normal View
+use App\Http\Controllers\Normal_View\Lgu\LguController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
-use App\Http\Controllers\Normal_View\Lgu\LguController;
 
-//Admin View
-use App\Http\Controllers\Admin_View\Admin_HomeController;
-use App\Http\Controllers\Admin_View\Admin_NewsController;
-use App\Http\Controllers\Admin_View\Admin_JobsController;
-use App\Http\Controllers\Admin_View\Admin_OrganizationController;
-use App\Http\Controllers\Admin_View\Admin_PdmuController;
-use App\Http\Controllers\Admin_View\Admin_LguController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +48,9 @@ Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 
 //Routes for Kenn
 //Admin_View Routes
+Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
+Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
+
 Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/jobs');
 Route::post('/add-new-job', [Admin_JobsController::class, 'store']);
 Route::get('/delete_jobs/{id}', [Admin_JobsController::class, 'delete_jobs']);
@@ -82,7 +89,12 @@ Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 
 //Routes for Chadie
+
 //Admin_View Routes
+Route::get('admin/projects',[Admin_ProjectController::class,'index'])->name('admin/projects');
+Route::post('admin/projects-create',[Admin_ProjectController::class,'store']);
+
+
 
 
 //Normal_View Routes
