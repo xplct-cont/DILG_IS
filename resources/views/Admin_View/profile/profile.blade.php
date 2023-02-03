@@ -35,11 +35,9 @@
 
                         <div class="modal-body">
 
-
-
                             <div class="mb-5">
-                                <a href="#" type="btn" class="btn btn-sm btn-danger "><span
-                                        class="fas fa-key"></span>
+                                <a href="{{ url('admin/change-password/' . Auth::user()->id) }}" type="btn"
+                                    class="btn btn-sm btn-danger "><span class="fas fa-key"></span>
                                     Change Password</a>
                             </div>
 
