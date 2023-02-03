@@ -93,6 +93,8 @@ Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 //Admin_View Routes
 Route::get('admin/projects',[Admin_ProjectController::class,'index'])->name('admin/projects');
 Route::post('admin/projects-create',[Admin_ProjectController::class,'store']);
+Route::get('admin/projects-delete/{id}',[Admin_ProjectController::class,'destroy']);
+Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update']);
 
 
 
