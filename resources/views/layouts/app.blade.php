@@ -333,6 +333,7 @@
 </body>
 <script></script>
 @livewireScripts()
+
 </html>
 
 <style>
