@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Jobs;
 
+use App\Models\Job;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -13,12 +14,12 @@ class Index extends Component
 
     public function loadJobs(){
 
-        $query = Jobs::orderBy('position', 'asc')
+        $query = Job::orderBy('position', 'asc')
             ->search($this->search);
 
-        if($this->position){
-            $query->where('position', $this->position);
-        }
+        // if($this->position){
+        //     $query->where('position', $this->position);
+        // }
         if($this->details){
             $query->where('details', $this->details);
         }
