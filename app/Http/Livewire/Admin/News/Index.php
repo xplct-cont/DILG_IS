@@ -36,7 +36,7 @@ class Index extends Component
             $query->whereDate('datetime', '>=', $this->fromDate)
                 ->whereDate('datetime', '<=', $this->toDate);
         }
-        $news = $query->paginate(5);
+        $news = $query->paginate(2);
         return compact('news');
     }
 
@@ -58,9 +58,11 @@ class Index extends Component
             'caption' => $this->caption,
             'datetime' => $this->datetime = now(),
             'image' => $this->image]);
+
+        session()->flash('success', 'Images has been successfully Uploaded.');
         $this->resetInput();
         $this->dispatchBrowserEvent('close-modal');
-        session()->flash('success', 'Images has been successfully Uploaded.');
+
     }
 
     public function editNews(int $news_id)
@@ -85,7 +87,7 @@ class Index extends Component
         ]);
 
         foreach ($this->image as $key => $img) {
-            $this->image[$key] = $img->store('services', 'public');
+            $this->image[$key] = $img->store('images');
         }
 
         $this->image = json_encode($this->image);
@@ -110,10 +112,14 @@ class Index extends Component
     public function destroyNews()
     {
         $news = News::find($this->news_id);
-        $destination= public_path('/images/'.$news->image);
-        if(File::exists($destination)){
-            File::delete($destination);
-        }
+        $destination= public_path('images/'.$news->image);
+
+        // if(File::exists($destination)){
+        //     File::delete($destination);
+
+        // }else{
+        //     dd($news);
+        // }
         $news->delete();
         // if ($result) {
         //     session()->flash('Success', 'Delete Successfully');
@@ -123,7 +129,6 @@ class Index extends Component
         session()->flash('message','News deleted Successfully');
         $this->dispatchBrowserEvent('close-modal');
     }
-
 
     public function resetInput()
     {
@@ -140,7 +145,7 @@ class Index extends Component
 
     public function render()
     {
-        $news = News::get();
-        return view('livewire.admin.news.index', compact('news'));
+        //$news = News::get();
+        return view('livewire.admin.news.index', $this->loadNews(), ['news'=> News::all()]);
     }
 }
