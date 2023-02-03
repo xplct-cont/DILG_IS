@@ -5,26 +5,26 @@ use Carbon\Carbon;
 //Admin View
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Normal_View\Lgu\LguController;
+use App\Http\Controllers\Normal_View\Project\ProjectController;
+use App\Http\Controllers\Normal_View\Jobs\JobsController;
+use App\Http\Controllers\Normal_View\About\AboutController;
+
+
+//Normal View
+use App\Http\Controllers\Admin_View\Admin_ProfileController;
+use App\Http\Controllers\Admin_View\Admin_ProjectController;
+use App\Http\Controllers\Admin_View\Admin_OrganizationController;
+use App\Http\Controllers\Normal_View\Contacts\ContactsController;
+use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
+use App\Http\Controllers\Normal_View\Organization\OrganizationController;
+use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
+use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
 use App\Http\Controllers\Admin_View\Admin_LguController;
 use App\Http\Controllers\Admin_View\Admin_HomeController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
 use App\Http\Controllers\Admin_View\Admin_NewsController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
-use App\Http\Controllers\Admin_View\Admin_ProjectController;
-use App\Http\Controllers\Admin_View\Admin_OrganizationController;
-use App\Http\Controllers\Admin_View\Admin_ProfileController;
-use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
-
-
-//Normal View
-use App\Http\Controllers\Normal_View\Lgu\LguController;
-use App\Http\Controllers\Normal_View\Jobs\JobsController;
-use App\Http\Controllers\Normal_View\About\AboutController;
-use App\Http\Controllers\Normal_View\Contacts\ContactsController;
-use App\Http\Controllers\Normal_View\Organization\OrganizationController;
-use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
-use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -103,6 +103,7 @@ Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update'
 
 
 
+
 //Normal_View Routes
 Route::get('/news-update',function(){
     return view('Normal_View.News.news');
@@ -111,9 +112,7 @@ Route::get("/sigle-news-update",function(){
     return view('Normal_View.News.single_news');
 });
 
-Route::get("/project",function(){
-    return view('Normal_View.Projects.project');
-});
+Route::get("/project",[ProjectController::class,'index']);
 
 
 

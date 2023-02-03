@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     <div class="row">
         <div class="mt-5 col-md-3 mb-3 ms-auto mr-3">
             <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"

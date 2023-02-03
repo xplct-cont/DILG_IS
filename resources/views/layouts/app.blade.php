@@ -289,35 +289,40 @@
                             </p>
                         </div>
                         <div class="col-md-3 text-justify">
-                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">GOVERNMENT LINKS</p>
-                            <a href="https://president.gov.ph/">
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">
+                                GOVERNMENT LINKS</p>
+                            <a href="https://president.gov.ph/" target="_blank">
                                 <p class="text-secondary" style="font-size: 12px; font-weight: 300; ">Office of the
                                     President</p>
                             </a>
-                            <a href="https://ovp.gov.ph/">
+                            <a href="https://ovp.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Office of the Vice
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" ">
+                                    Office of the Vice
                                     President</p>
                             </a>
-                            <a href="http://legacy.senate.gov.ph/">
+                            <a href="http://legacy.senate.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Senate of the
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" >
+                                    Senate of the
                                     Philippines</p>
                             </a>
-                            <a href="https://www.congress.gov.ph/">
+                            <a href="https://www.congress.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">House of
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" >
+                                    House of
                                     Representatives</p>
                             </a>
-                            <a href="https://sc.judiciary.gov.ph/">
+                            <a href="https://sc.judiciary.gov.ph/"  target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">Supereme Court</p>
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">
+                                    Supereme Court</p>
                             </a>
-                            <a href="https://ca.judiciary.gov.ph/">
+                            <a href="https://ca.judiciary.gov.ph/" target="_blank">
                                 <p class="text-secondary"
                                     style="font-size: 12px; font-weight: 300; margin-top: -15px;">Court of Appeals</p>
                             </a>
-                            <a href="https://sb.judiciary.gov.ph/">
+                            <a href="https://sb.judiciary.gov.ph/" target="_blank">
                                 <p class="text-secondary"
                                     style="font-size: 12px; font-weight: 300; margin-top: -15px;">Sandiganbayan</p>
                             </a>
@@ -333,6 +338,7 @@
 </body>
 <script></script>
 @livewireScripts()
+
 </html>
 
 <style>
