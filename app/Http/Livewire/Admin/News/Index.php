@@ -90,14 +90,22 @@ class Index extends Component
             $this->image[$key] = $img->store('images');
         }
 
-        $this->image = json_encode($this->image);
+        $news = News::find($this->news_id);
+        $images = json_decode($news->image,true);
+        if (is_array($images) && !empty($images)){
+            foreach ($images as $image){
+                if(File::exists($image)){
+                    File::delete($image);
+            }
 
+        }
         News::where('id',$this->news_id)->update([
             'title' => $this->title,
             'caption' => $this->caption,
             'datetime' => $this->datetime = now(),
             'image' => $this->image,
         ]);
+    }
 
         session()->flash('message','news Updated Successfully');
         $this->resetInput();
@@ -123,11 +131,6 @@ class Index extends Component
         $news->delete();
         }
 
-        if ($result) {
-            session()->flash('Success', 'Deleted Successfully');
-        } else {
-            session()->flash('error', 'Delete Unsuccessfully');
-        }
         session()->flash('message','News deleted Successfully');
         $this->dispatchBrowserEvent('close-modal');
     }
