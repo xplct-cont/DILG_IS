@@ -29,6 +29,6 @@ class Index extends Component
     }
     public function render()
     {
-        return view('livewire.jobs.index', $this->loadJobs());
+        return view('livewire.jobs.index', $this->loadJobs(), ['jobs'=> Job::latest()->get()]);
     }
 }

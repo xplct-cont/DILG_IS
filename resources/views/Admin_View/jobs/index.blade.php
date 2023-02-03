@@ -1,5 +1,4 @@
 @extends('Admin_View.layouts.app')
-
 @section('content')
     @if ($message = Session::get('message'))
         <div class="alert alert-success alert-block mt-2">
@@ -7,8 +6,6 @@
             <strong>{{ $message }}</strong>
         </div>
     @endif
-
-    <livewire:jobs.index>
     <div class="d-flex justify-content-end mt-5">
         <!-- Button trigger modal -->
         <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
