@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers\Admin_View;
 
-use App\Http\Controllers\Controller;
+use App\Models\Program;
+use App\Models\Project;
+use App\Models\Municipality;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class Admin_ProjectController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +24,9 @@ class Admin_ProjectController extends Controller
      */
     public function index()
     {
-
-        return view('Admin_View.projects.projects');
+        $program = Program::all();
+        $municipalities = Municipality::all();
+        return view('Admin_View.projects.projects',compact('program','municipalities'));
     }
 
     /**
@@ -36,7 +47,24 @@ class Admin_ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $admin_project = new Project;
+
+
+        $admin_project->program_id = $request->input('program_id');
+        $admin_project->municipality_id = $request->input('municipality_id');
+        $admin_project->title = $request->input('title');
+        $admin_project->province = $request->input('province');
+        $admin_project->exact_loc = $request->input('exact_loc');
+        $admin_project->year = $request->input('year');
+        $admin_project->description = $request->input('description');
+        $admin_project->type = $request->input('type');
+        $admin_project->status = $request->input('status');
+        $admin_project->total_cost = $request->input('total_cost');
+        $admin_project->proj_code = $request->input('proj_code');
+
+        $admin_project->save();
+
+        return redirect()->back()->with('message', 'New Project Added Successfully!');
     }
 
     /**

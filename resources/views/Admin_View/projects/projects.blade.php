@@ -28,32 +28,91 @@
                     </div>
                     <div class="modal-body">
 
-                        <form action="{{ url('/add-new-job') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('/admin/projects-create') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="container mx-auto">
                                 <div class="row">
+
+                                    <div class="form-group">
+                                        <label for="program_id">Program Categories:</label>
+
+                                        <select name="program_id" id="program_id" class="form-control"
+                                            style="color:dimgray;">
+                                            <option selected>Select...</option>
+                                            @foreach ($program as $prog)
+                                                <option value="{{ $prog->id }}">{{ $prog->title }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="municipality_id">Municipalities:</label>
+
+                                        <select name="municipality_id" id="municipality_id" class="form-control"
+                                            style="color:dimgray;">
+                                            <option selected>Select...</option>
+                                            @foreach ($municipalities as $municipal)
+                                                <option value="{{ $municipal->id }}">{{ $municipal->municipality }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+
+
+
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Title:</label>
-                                            <input type="text" class="form-control" name="position" required>
+                                            <label for="" style="color:dimgray">Project Code:</label>
+                                            <input type="text" class="form-control" name="proj_code" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Image:</label>
-                                            <input type="file" class="form-control" name="hiring_img">
+                                            <label for="" style="color:dimgray">Title:</label>
+                                            <input type="text" class="form-control" name="title" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="" style="color:dimgray">Province:</label>
+                                            <input type="text" class="form-control" name="province">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="" style="color:dimgray">Description:</label>
+                                            <input type="text" class="form-control" name="description">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="" style="color:dimgray">Type:</label>
+                                            <input type="text" class="form-control" name="type">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="" style="color:dimgray">Status:</label>
+                                            <input type="text" class="form-control" name="status">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="" style="color:dimgray">Total Cost:</label>
+                                            <input type="text" class="form-control" name="total_cost">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Document Link:</label>
-                                            <input type="text" class="form-control" name="link" required>
+                                            <label for="" style="color:dimgray">Complete Location</label>
+                                            <input type="text" class="form-control" name="exact_loc" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Description:</label>
-                                            <textarea id="" type="text" class="form-control" title="" rows="5" required name="details"
-                                                placeholder="Write the description..."></textarea>
+                                            <label for="" style="color:dimgray">Year:</label>
+                                            <input type="text" name="year">
                                         </div>
                                     </div>
                                 </div>
@@ -81,11 +140,17 @@
             <table class="table table-bordered text-center">
                 <thead class="text-center" style="background-color:#343a40; color:white;">
                     <tr>
-                        <th scope="col">Image</th>
-                        <th scope="col">Position</th>
-                        <th scope="col">Document Link</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col">Program Categories</th>
+                        <th scope="col">Municipalites</th>
+                        <th scope="col">Project Code</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Province</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Status </th>
+                        <th scope="col">Total Cost </th>
+                        <th scope="col">Complete Location</th>
+                        <th scope="col">Year</th>
                     </tr>
                 </thead>
 

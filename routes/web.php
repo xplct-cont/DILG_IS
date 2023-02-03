@@ -86,8 +86,11 @@ Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 //Routes for Chadie
 
-Route::get('admin/projects',[Admin_ProjectController::class,'index'])->name('admin/projects');
 //Admin_View Routes
+Route::get('admin/projects',[Admin_ProjectController::class,'index'])->name('admin/projects');
+Route::post('admin/projects-create',[Admin_ProjectController::class,'store']);
+
+
 
 
 //Normal_View Routes
