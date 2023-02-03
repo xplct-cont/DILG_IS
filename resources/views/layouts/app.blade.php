@@ -67,6 +67,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     {{-- slider script --}}
     <!-- Scripts -->
+    @livewireStyles()
 </head>
 
 <body>
@@ -331,7 +332,7 @@
 
 </body>
 <script></script>
-
+@livewireScripts()
 </html>
 
 <style>
