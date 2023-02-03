@@ -44,7 +44,7 @@ class Index extends Component
     public function addNews(){
         $this->validate([
             'title' => 'string',
-            'caption' => 'string',
+            'caption' => 'string|max:255',
             'image.*' => 'image', // 1MB Max
         ]);
         foreach ($this->image as $key => $img) {
