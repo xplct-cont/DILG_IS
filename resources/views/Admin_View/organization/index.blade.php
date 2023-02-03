@@ -188,8 +188,40 @@
                             </div>
                         </div>
 
-                        <td><a href="{{ url('delete_org/' . $org_member->id) }}" class="btn btn-xs "><i
-                            class="text-danger fas fa-trash-alt"></i></a></td>
+                        <td><a href="#" data-toggle="modal" id="org_delete_link" class="btn"
+                                data-target="#delete_org_id{{ $org_member->id }}"><span
+                                    class="text-danger fas fa-trash-alt"></span></a></td>
+
+                        <div class="modal fade" id="delete_org_id{{ $org_member->id }}" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog " role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><span
+                                                class="fas fa-exclamation-circle text-danger"
+                                                style="font-size: 30px;"></span> </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <form action="{{ url('delete_org/' . $org_member->id) }}" method="GET"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            @method('GET')
+
+                                            <div class="container mx-auto">
+                                                Are you sure you want to delete this permanently?
+                                            </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger">Delete Permanently</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </tr>
                 @endforeach
             </tbody>
