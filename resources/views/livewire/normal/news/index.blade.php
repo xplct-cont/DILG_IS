@@ -1,14 +1,26 @@
 <div>
     <div class="container d-flex justify-content-center">
         <div class="row">
-            <div class="col-md-6 mt-5">
-                <input style="border-radius: 20px;" type="date" name="" id="" class="form-control">
+            <div class="col-md-6 mt-5 d-flex">
+                <p class="mt-2">From:</p>
+                <input style="border-radius: 20px;" type="date" name="" id="" wire:model="fromDate" class="form-control ms-2">
+                <p class="mt-2">To:</p>
+                <input style="border-radius: 20px;" type="date" name="" id="" wire:model="toDate" class="form-control ms-2">
 
             </div>
+
+            {{-- <div class="col-md-2">
+                            <label class="ms-3">From:</label>
+                            <input type="date" wire:model="fromDate" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="ms-3">To:</label>
+                            <input type="date" wire:model="toDate" class="form-control">
+                        </div> --}}
             <div class="col-md-6 mt-5">
                 <div class="form-group has-search " style="margin:auto;">
                     <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" style="border-radius: 20px;" class="form-control input" placeholder="Search">
+                    <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input" placeholder="Search">
                 </div>
             </div>
         </div>
@@ -70,7 +82,8 @@
                 </a>
             @endforeach
         </div>
+        <div class="justify-content-between">
+            {{ $news->links() }}
+        </div>
     </div>
-
-
 </div>

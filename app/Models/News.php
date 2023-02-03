@@ -12,10 +12,27 @@ class News extends Model
 
     protected $table = 'news';
 
-    protected $guarded = [];
+    protected $fillable = [
+        'title',
+        'caption',
+    ];
+
+    protected $casts = [
+        'datetime' => 'datetime'
+    ];
 
     // public function newsimage()
     // {
     //     return $this->hasMany(Newsimage::class);
     // }
+
+    public function scopeSearch($query, $terms){
+        collect(explode(" " , $terms))->filter()->each(function($term) use($query){
+            $term = '%'. $term . '%';
+
+            $query->where('title', 'like', $term)
+                ->orWhere('caption', 'like', $term)
+                ->orWhere('datetime', 'like', $term);
+        });
+    }
 }
