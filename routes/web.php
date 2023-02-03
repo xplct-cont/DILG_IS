@@ -5,21 +5,24 @@ use Carbon\Carbon;
 //Normal View
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin_View\Admin_LguController;
+use App\Http\Controllers\Admin_View\Admin_HomeController;
+use App\Http\Controllers\Admin_View\Admin_JobsController;
+use App\Http\Controllers\Admin_View\Admin_NewsController;
+use App\Http\Controllers\Admin_View\Admin_PdmuController;
+use App\Http\Controllers\Admin_View\Admin_ProjectController;
+
+
+//Admin View
+use App\Http\Controllers\Normal_View\Lgu\LguController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
+use App\Http\Controllers\Admin_View\Admin_OrganizationController;
 use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
-use App\Http\Controllers\Normal_View\Lgu\LguController;
 
-//Admin View
-use App\Http\Controllers\Admin_View\Admin_HomeController;
-use App\Http\Controllers\Admin_View\Admin_NewsController;
-use App\Http\Controllers\Admin_View\Admin_JobsController;
-use App\Http\Controllers\Admin_View\Admin_OrganizationController;
-use App\Http\Controllers\Admin_View\Admin_PdmuController;
-use App\Http\Controllers\Admin_View\Admin_LguController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,6 +85,8 @@ Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 
 //Routes for Chadie
+
+Route::get('admin/projects',[Admin_ProjectController::class,'index'])->name('admin/projects');
 //Admin_View Routes
 
 
