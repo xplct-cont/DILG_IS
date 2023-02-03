@@ -1,7 +1,7 @@
 <div>
     @include('livewire.admin.news.create')
     @include('livewire.admin.news.delete')
-    {{-- @include('livewire.admin.news.edit') --}}
+    @include('livewire.admin.news.edit')
     @if ($message = Session::get('message'))
         <div class="alert alert-success alert-block mt-2">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
@@ -10,11 +10,22 @@
     @endif
 
     <div class="d-flex justify-content-end mt-5">
+        <div class="col-md-4 mt-5 d-flex">
+            <p class="mt-2">From:</p>
+            <input style="border-radius: 20px;" type="date" name="" id="" wire:model="fromDate" class="form-control ms-2">
+            <p class="mt-2">To:</p>
+            <input style="border-radius: 20px;" type="date" name="" id="" wire:model="toDate" class="form-control ms-2">
+        </div>
+        <div class="mt-5 col-md-2">
+            <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input" placeholder="Search">
+        </div>
         <!-- Button trigger modal -->
+        <div class="col-md-2 mt-5">
         <button data-bs-toggle="modal" data-bs-target="#NewsModal" class="btn"
             style="background-color: #343a40; color:white;">
             <span class="fas fa-plus-circle"></span> Add
         </button>
+    </div>
     </div>
     <div class="card mt-2">
         <div class="card-header d-flex justify-content-between">
@@ -43,13 +54,13 @@
                             @php $images = json_decode($new->image,true); @endphp
                             @if (is_array($images) && !empty($images))
                                 @foreach ($images as $image)
-                                    <img src="{{ asset('app/public/' . $image) }}" />
+                                    <img src="{{ asset('/' . $image) }}" />
                                 @endforeach
                             @endif
                         </td>
                         <td>{{ $new->datetime }}</td>
                         <td><a type="button" data-bs-toggle="modal" data-bs-target="#updateNewsModal">
-                                <i class="fas fa-edit" style="color:rgb(0, 81, 255);" wire:click="edit({{$new->id}})"></i>
+                                <i class="fas fa-edit" style="color:rgb(0, 81, 255);" wire:click="editNews({{$new->id}})"></i>
                             </a>
                             <a type="button" data-bs-toggle="modal" data-bs-target="#deleteNewsModal">
                                 <i class="fas fa-trash-alt" style="color:red;" wire:click="deleteNews({{$new->id}})"></i>
@@ -59,6 +70,10 @@
                 @endforeach
             </tbody>
         </table>
+
+    </div>
+    <div class="mx-auto justify-content-center">
+        {{ $news->links() }}
     </div>
 </div>
 </div>

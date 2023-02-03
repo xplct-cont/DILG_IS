@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <div class="card">
                     <div class="card-body">
-                        <form wire:submit.prevent="update">
+                        <form wire:submit.prevent="updateNews">
                             @if (session()->has('success'))
                                 <div class="alert alert-success">
                                     {{ session('success') }}
@@ -29,16 +29,16 @@
                                 <input type="file" wire:model='new_image' class="custom-file-input form-control" id="customFile">
                                 {{-- <label class="custom-file-label" for="customFile">Choose file</label> --}}
                             </div>
-                            @if ($new_image)
+                            {{-- @if ($new_image)
                             <img src="{{$new_image->temporaryUrl()}}" style="width: 200px;height:200px;" alt="">
                             @else
                             <img src="{{ asset('storage') }}/{{$old_image}}" style="width: 200px;height:200px;" alt="">
                             @endif
-                            <input type="hidden" wire:model='old_image' name="" id="">
+                            <input type="hidden" wire:model='old_image' name="" id=""> --}}
 
 
 
-                            {{-- <div class="mb-3">
+                            <div class="mb-3">
                                 <label class="form-label">Image Upload</label>
                                 <input type="file" class="form-control" wire:model="image" multiple>
 
@@ -52,7 +52,7 @@
                                     </div>
                                     @endforeach
                                 </div>
-                            @endif --}}
+                            @endif
 
                             {{-- <div class="custom-file mt-3">
                                 <input type="file" wire:model='image' class="custom-file-input form-control" id="customFile">
@@ -90,7 +90,7 @@
                     <p class="align-center mt-2">Uploading</p>
                 </div>
             </div>
-            <div wire:loading wire:target="save">
+            {{-- <div wire:loading wire:target="save">
                 <div style="display:flex; justify-content:center;
                 align-items:center; background-color:rgb(223, 207, 207); width:100%;
                 position:fixed; top: 10px; left:0px; z-index:9999; height:100%; opacity: .15;">
@@ -106,7 +106,7 @@
                     </div>
                     <p class="align-center mt-2">Posting</p>
                 </div>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
