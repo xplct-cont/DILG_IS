@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin_View\Admin_PdmuController;
 use App\Http\Controllers\Admin_View\Admin_ProjectController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
+use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
 
 
 //Normal View
@@ -50,6 +51,9 @@ Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 //Admin_View Routes
 Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
 Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
+
+Route::get('/admin/change-password/{id}', [Admin_ChangePasswordController::class, 'index']);
+Route::post('/admin/change-password', [Admin_ChangePasswordController::class, 'change_password']);   
 
 Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/jobs');
 Route::post('/add-new-job', [Admin_JobsController::class, 'store']);

@@ -90,14 +90,22 @@ class Index extends Component
             $this->image[$key] = $img->store('images');
         }
 
-        $this->image = json_encode($this->image);
+        $news = News::find($this->news_id);
+        $images = json_decode($news->image,true);
+        if (is_array($images) && !empty($images)){
+            foreach ($images as $image){
+                if(File::exists($image)){
+                    File::delete($image);
+            }
 
+        }
         News::where('id',$this->news_id)->update([
             'title' => $this->title,
             'caption' => $this->caption,
             'datetime' => $this->datetime = now(),
             'image' => $this->image,
         ]);
+    }
 
         session()->flash('message','news Updated Successfully');
         $this->resetInput();
@@ -112,20 +120,17 @@ class Index extends Component
     public function destroyNews()
     {
         $news = News::find($this->news_id);
-        $destination= public_path('images/'.$news->image);
-
-        // if(File::exists($destination)){
-        //     File::delete($destination);
-
-        // }else{
-        //     dd($news);
-        // }
+        //$destination= public_path('images/'.$news->image);
+        $images = json_decode($news->image,true);
+        if (is_array($images) && !empty($images)){
+            foreach ($images as $image){
+                if(File::exists($image)){
+                    File::delete($image);
+            }
+        }
         $news->delete();
-        // if ($result) {
-        //     session()->flash('Success', 'Delete Successfully');
-        // } else {
-        //     session()->flash('error', 'Not Delete Successfully');
-        // }
+        }
+
         session()->flash('message','News deleted Successfully');
         $this->dispatchBrowserEvent('close-modal');
     }

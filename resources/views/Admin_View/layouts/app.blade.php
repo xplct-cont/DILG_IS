@@ -35,7 +35,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="{{ asset('css/loading.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/loading.css') }}">
     @yield('third_party_stylesheets')
 
     @stack('page_css')
@@ -56,24 +56,26 @@
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" >
-                        <img src= {{"/user_profile_images/" .Auth::user()->profile_image}}
-                            class="user-image img-circle elevation-2" alt="User Image" style="background-color:white;  padding-top:3px; padding-bottom: 3px; padding-left: 3px; padding-right: 3px;">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                        <img src={{ '/user_profile_images/' . Auth::user()->profile_image }}
+                            class="user-image img-circle elevation-2" alt="User Image"
+                            style="background-color:white;  padding-top:3px; padding-bottom: 3px; padding-left: 3px; padding-right: 3px;">
                         <span class="d-none d-md-inline text-light">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
                         <li class="user-header text-dark" style="background-color: white;">
-                            <img src= {{"/user_profile_images/" .Auth::user()->profile_image}}
-                                class="img-circle elevation-2" alt="User Image" style=" padding-top:5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px;">
+                            <img src={{ '/user_profile_images/' . Auth::user()->profile_image }}
+                                class="img-circle elevation-2" alt="User Image"
+                                style=" padding-top:2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px;">
                             <p class="text-dark">
                                 {{ Auth::user()->name }}
-                                <small>{{Auth::user()->position}}</small>
+                                <small>{{ Auth::user()->position }}</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            <a href="{{route('admin/profile')}}" class="btn btn-default btn-flat">Profile</a>
+                            <a href="{{ route('admin/profile') }}" class="btn btn-default btn-flat">Profile</a>
                             <a href="#" class="btn btn-default btn-flat float-right"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 Sign out
@@ -93,7 +95,8 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <section class="content">
-                <div class="text-dark d-flex justify-content-end"><span style="color:#414a4c; font-weight: 600">Current Date:&nbsp;</span><span> {{date('F d,  Y')}}</span></div>
+                <div class="text-dark d-flex justify-content-end"><span style="color:#414a4c; font-weight: 600">Current
+                        Date:&nbsp;</span><span> {{ date('F d,  Y') }}</span></div>
                 @yield('content')
             </section>
         </div>
