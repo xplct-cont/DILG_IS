@@ -26,7 +26,8 @@ class Admin_ProjectController extends Controller
     {
         $program = Program::all();
         $municipalities = Municipality::all();
-        return view('Admin_View.projects.projects',compact('program','municipalities'));
+        $projectsAll = Project::all();
+        return view('Admin_View.projects.projects',compact('program','municipalities','projectsAll'));
     }
 
     /**
@@ -47,10 +48,12 @@ class Admin_ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $admin_project = new Project;
 
 
-        $admin_project->program_id = $request->input('program_id');
+        // $admin_project->program_id = $request->input('program_id');
+        $admin_project->program_category = $request->input('program_category');
         $admin_project->municipality_id = $request->input('municipality_id');
         $admin_project->title = $request->input('title');
         $admin_project->province = $request->input('province');
@@ -75,7 +78,7 @@ class Admin_ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -98,8 +101,29 @@ class Admin_ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        // dd($request);
+        $admin_project = Project::find($id);
+
+
+        // $admin_project->program_id = $request->input('program_id');
+        $admin_project->program_category = $request->input('program_category');
+        $admin_project->municipality_id = $request->input('municipality_id');
+        $admin_project->title = $request->input('title');
+        $admin_project->province = $request->input('province');
+        $admin_project->exact_loc = $request->input('exact_loc');
+        $admin_project->year = $request->input('year');
+        $admin_project->description = $request->input('description');
+        $admin_project->type = $request->input('type');
+        $admin_project->status = $request->input('status');
+        $admin_project->total_cost = $request->input('total_cost');
+        $admin_project->proj_code = $request->input('proj_code');
+
+        $admin_project->update();
+
+        return redirect()->back()->with('message', 'Details Updated Successfully!');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -109,6 +133,10 @@ class Admin_ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $remove = Project::findOrFail($id);
+
+        $remove -> delete();
+        return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 }
+

@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('program_id');
+            // $table->unsignedBigInteger('program_id');
+            $table->string('program_category');
+            $table->string('municipality');
             $table->string('proj_code')->nullable();
             $table->string('title')->nullable();
             $table->string('province')->default('Bohol');
@@ -28,10 +30,10 @@ return new class extends Migration
             $table->string('total_cost')->nullable();
             $table->timestamps();
 
-            $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade')
-            ->onUpdate('cascade');
-            $table->foreign('municipality_id')->references('id')->on('municipalities')->onDelete('cascade')
-            ->onUpdate('cascade');
+            // $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade')
+            // ->onUpdate('cascade');
+            // $table->foreign('municipality_id')->references('id')->on('municipalities')->onDelete('cascade')
+            // ->onUpdate('cascade');
         });
     }
 

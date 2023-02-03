@@ -8,6 +8,7 @@
         </div>
     @endif
 
+    <livewire:jobs.index>
     <div class="d-flex justify-content-end mt-5">
         <!-- Button trigger modal -->
         <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
@@ -164,7 +165,7 @@
                                     </div>
                                 </div>
                             </div>
-                           
+
                             <td><a href="#" data-toggle="modal" id="job_delete_link" class="btn"
                                     data-target="#delete_job_id{{ $ad_jobs->id }}"><span
                                         class="text-danger fas fa-trash-alt"></span></a></td>

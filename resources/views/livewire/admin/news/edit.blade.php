@@ -22,7 +22,7 @@
                             </div>
                             <div class="mb-2">
                                 <label>Caption</label>
-                                <input type="text" wire:model='caption' class="form-control">
+                                <textarea type="text" wire:model='caption' class="form-control"></textarea>
                                 @error('caption') <span class="error text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="custom-file mt-3">
