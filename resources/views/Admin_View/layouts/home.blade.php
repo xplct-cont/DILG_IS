@@ -39,7 +39,7 @@
                         <div class="icon">
                             <i class="fas fa-exclamation text-secondary"></i>
                         </div>
-                        <a href="" class="small-box-footer"
+                        <a href="{{ route('admin/projects') }}" class="small-box-footer"
                             style="background-color:dimgray;color:whitesmoke;
               "><span class="text-light">More
                                 info</span> <i class="fas fa-arrow-circle-right"></i></a>
