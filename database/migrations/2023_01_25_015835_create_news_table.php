@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->longText('caption');
-            $table->string('image');
+            $table->longText('image');
             $table->string('datetime');
             // $table->unsignedBigInteger('image_id');
             // $table->foreign('image_id')->references('id')->on('newsimages')->onDelete('cascade')->onUpdate('cascade');

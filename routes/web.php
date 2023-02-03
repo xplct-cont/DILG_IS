@@ -53,7 +53,7 @@ Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('a
 Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
 
 Route::get('/admin/change-password/{id}', [Admin_ChangePasswordController::class, 'index']);
-Route::post('/admin/change-password', [Admin_ChangePasswordController::class, 'change_password']);   
+Route::post('/admin/change-password', [Admin_ChangePasswordController::class, 'change_password']);
 
 Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/jobs');
 Route::post('/add-new-job', [Admin_JobsController::class, 'store']);
@@ -139,6 +139,8 @@ Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/n
 Route::get('/about', [AboutController::class, 'index'])->name('/about');
 Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
+
+Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 
 
 
