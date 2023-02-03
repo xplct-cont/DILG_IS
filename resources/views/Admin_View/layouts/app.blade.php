@@ -56,19 +56,19 @@
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <img src="/img/icontest.png"
-                            class="user-image img-circle elevation-2" alt="User Image">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" >
+                        <img src= {{"/img/" .Auth::user()->profile_image}}
+                            class="user-image img-circle elevation-2" alt="User Image" style="background-color:white;">
                         <span class="d-none d-md-inline text-light">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
-                        <li class="user-header" style="background-color: #343a40; color:white;">
-                            <img src="/img/icontest.png"
+                        <li class="user-header text-dark" style="background-color: white;">
+                            <img src= {{"/img/" .Auth::user()->profile_image}}
                                 class="img-circle elevation-2" alt="User Image">
-                            <p>
+                            <p class="text-dark">
                                 {{ Auth::user()->name }}
-                                <small>Role</small>
+                                <small>{{Auth::user()->position}}</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
