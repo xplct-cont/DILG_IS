@@ -112,20 +112,22 @@ class Index extends Component
     public function destroyNews()
     {
         $news = News::find($this->news_id);
-        $destination= public_path('images/'.$news->image);
-
-        // if(File::exists($destination)){
-        //     File::delete($destination);
-
-        // }else{
-        //     dd($news);
-        // }
+        //$destination= public_path('images/'.$news->image);
+        $images = json_decode($news->image,true);
+        if (is_array($images) && !empty($images)){
+            foreach ($images as $image){
+                if(File::exists($image)){
+                    File::delete($image);
+            }
+        }
         $news->delete();
-        // if ($result) {
-        //     session()->flash('Success', 'Delete Successfully');
-        // } else {
-        //     session()->flash('error', 'Not Delete Successfully');
-        // }
+        }
+
+        if ($result) {
+            session()->flash('Success', 'Deleted Successfully');
+        } else {
+            session()->flash('error', 'Delete Unsuccessfully');
+        }
         session()->flash('message','News deleted Successfully');
         $this->dispatchBrowserEvent('close-modal');
     }
