@@ -11,13 +11,13 @@
         <div class="carousel-inner text-center">
 
             <div class="carousel-item active ">
-                <img src="{{ asset('img/img4.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
+                <img src="{{ asset('img/img4.jpg') }}" class="responsive" width="1250" height="400" alt="..." />
             </div>
             <div class="carousel-item ">
-                <img src="{{ asset('img/img2.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
+                <img src="{{ asset('img/img2.jpg') }}" class="responsive" width="1250" height="400" alt="..." />
             </div>
             <div class="carousel-item ">
-                <img src="{{ asset('img/img5.jpg') }}" class="responsive"  width="1250" height="400" alt="..." />
+                <img src="{{ asset('img/img5.jpg') }}" class="responsive" width="1250" height="400" alt="..." />
             </div>
 
         </div>
@@ -104,8 +104,7 @@
                                 <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ $new->caption }}</p>
                             </div>
                             <div class="col-md-5">
-                                <div class="col-md-12"
-                                    style="height: 400px;">
+                                <div class="col-md-12" style="height: 400px;">
 
                                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                         <ol class="carousel-indicators">
@@ -121,13 +120,13 @@
                                             @endphp
                                             @foreach ($images as $key => $image)
                                                 <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
-                                                    <img src="{{ asset('app/public/' . $image) }}"
+                                                    <img src="{{ asset('/' . $image) }}"
                                                         style="height:350px; width:auto;" />
                                                 </div>
                                             @endforeach
 
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +137,7 @@
         </div>
     </div>
 
-   
+
     </div>
     </div>
 
@@ -197,7 +196,7 @@
     }
 
     .responsive {
-     max-width: 100%;
-      height: auto;
-}
+        max-width: 100%;
+        height: auto;
+    }
 </style>
