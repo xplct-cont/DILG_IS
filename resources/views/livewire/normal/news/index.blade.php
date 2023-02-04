@@ -1,29 +1,23 @@
-<div class="">
-    <div class="col-md-12 mt-5">
-        <div class="row">
-            <div class="container col-md-4">
+<div class="container col-md-12">
+    <div class="">
+        <div class="row ">
+            <div class="col-md-4 mx-auto">
 
-              <div class="mx-auto">
-                <p class="col-md-4">From:</p>
+                <p class="mt-2 m-2">From:</p>
                 <input style="border-radius: 20px;" type="date" name="" id="" wire:model="fromDate"
-                    class="form-control ms-2">
-                <p class="col-md-4 mt-2 m-2">To:</p>
+                    class="form-control ">
+                <p class="mt-2 m-2">To:</p>
                 <input style="border-radius: 20px;" type="date" name="" id="" wire:model="toDate"
-                    class="form-control ms-2">
-              </div>
-              
-            </div>
-            <div class="col-md-4 m-2 d-flex">
-                <input style="width: 300px;" type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
-                    placeholder="Search">
-            </div>
-           
-        </div>
-        
-      
-        <!-- Button trigger modal -->
-        <div class="col-md-2">
+                    class="form-control ">
 
+            </div>
+            <div class="col-md-4 mx-auto">
+                <div class="" style="margin-top: 40px;">
+                    <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
+                        placeholder="Search">
+                </div>
+
+            </div>
         </div>
 
     </div>
