@@ -108,7 +108,7 @@ Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update'
 Route::get('/news-update',function(){
     return view('Normal_View.News.news');
 });
-Route::get("/sigle-news-update",function(){
+Route::get("/single-news-update",function(){
     return view('Normal_View.News.single_news');
 });
 
