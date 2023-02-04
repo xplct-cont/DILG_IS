@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="row">
+<div class="col-md-12">
+    <div class="">
         <div class="mt-5 col-md-3 mb-3 ms-auto mr-3">
             <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
                 placeholder="Search">
@@ -7,7 +7,7 @@
     </div>
 
     <div>
-        <div class="header  ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+        <div class="header mb-5 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
             <h1 class="text-center" style="font-size: 18px; margin-top: 10px; ">JOB VACANCIES</h1>
         </div>
         @foreach ($jobs as $job_list)
