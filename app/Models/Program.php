@@ -10,6 +10,8 @@ class Program extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function project(){
         return $this->hasMany(Project::class);
     }
