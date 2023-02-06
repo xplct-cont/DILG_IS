@@ -25,9 +25,11 @@ class Admin_ProjectController extends Controller
     public function index()
     {
         $program = Program::all();
+        $projects = Project::with(['municipality'])->orderBy('municipality_id', 'asc')->get();
+
         $municipalities = Municipality::all();
         $projectsAll = Project::all();
-        return view('Admin_View.projects.projects',compact('program','municipalities','projectsAll'));
+        return view('Admin_View.projects.projects',compact('program','municipalities','projectsAll','projects'));
     }
 
     /**
@@ -52,8 +54,7 @@ class Admin_ProjectController extends Controller
         $admin_project = new Project;
 
 
-        // $admin_project->program_id = $request->input('program_id');
-        $admin_project->program_category = $request->input('program_category');
+        $admin_project->program_id = $request->input('program_id');
         $admin_project->municipality_id = $request->input('municipality_id');
         $admin_project->title = $request->input('title');
         $admin_project->province = $request->input('province');
@@ -103,11 +104,12 @@ class Admin_ProjectController extends Controller
     {
 
         // dd($request);
+
         $admin_project = Project::find($id);
 
 
         // $admin_project->program_id = $request->input('program_id');
-        $admin_project->program_category = $request->input('program_category');
+        $admin_project->program_id = $request->input('program_id');
         $admin_project->municipality_id = $request->input('municipality_id');
         $admin_project->title = $request->input('title');
         $admin_project->province = $request->input('province');
@@ -118,7 +120,6 @@ class Admin_ProjectController extends Controller
         $admin_project->status = $request->input('status');
         $admin_project->total_cost = $request->input('total_cost');
         $admin_project->proj_code = $request->input('proj_code');
-
         $admin_project->update();
 
         return redirect()->back()->with('message', 'Details Updated Successfully!');

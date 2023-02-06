@@ -35,13 +35,13 @@
                                 <div class="row">
 
                                     <div class="form-group">
-                                        <label for="program_category">Program Categories:</label>
+                                        <label for="program_id">Program Categories:</label>
 
-                                        <select name="program_category" id="program_category" class="form-control"
+                                        <select name="program_id" id="program_id" class="form-control"
                                             style="color:dimgray;">
                                             <option selected>Select...</option>
                                             @foreach ($program as $prog)
-                                                <option value="{{ $prog->title }}">{{ $prog->title }}
+                                                <option value="{{ $prog->id }}">{{ $prog->title }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -189,13 +189,13 @@
                                                         <div class="row">
 
                                                             <div class="form-group">
-                                                                <label for="program_category">Program Categories:</label>
+                                                                <label for="program_id">Program Categories:</label>
 
-                                                                <select name="program_category" id="program_category"
+                                                                <select name="program_id" id="program_id"
                                                                     class="form-control" style="color:dimgray;">
                                                                     <option selected>Select...</option>
                                                                     @foreach ($program as $prog)
-                                                                        <option value="{{ $prog->title }}">
+                                                                        <option value="{{ $prog->id }}">
                                                                             {{ $prog->title }}
                                                                         </option>
                                                                     @endforeach
@@ -308,9 +308,9 @@
                                 </div>
                             </div>
 
-                            <td>{{ $all->program_category }}</td>
+                            <td>{{ $all->program->title }}</td>
+                            <td>{{ $all->municipality->municipality }}</td>
                             <td>{{ $all->province }}</td>
-                            <td>{{ $all->proj_code }}</td>
                             <td>{{ $all->title }}</td>
                             <td>{{ $all->province }}</td>
                             <td>{{ $all->description }}</td>
