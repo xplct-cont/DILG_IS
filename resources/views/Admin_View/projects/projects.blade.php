@@ -108,7 +108,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Complete Location</label>
-                                            <input type="text" class="form-control" name="exact_loc" required>
+                                            <input type="text" class="form-control" name="exact_loc" >
                                         </div>
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Year:</label>
@@ -284,7 +284,7 @@
                                                                         Location</label>
                                                                     <input type="text" class="form-control"
                                                                         value="{{ $all->exact_loc }}" name="exact_loc"
-                                                                        required>
+                                                                        >
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for=""

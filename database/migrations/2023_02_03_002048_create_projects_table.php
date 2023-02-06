@@ -23,7 +23,7 @@ return new class extends Migration
             $table->unsignedBigInteger('municipality_id');
             $table->string('exact_loc')->nullable();
             $table->string('year')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('type')->nullable();
             $table->string('status')->nullable();
             $table->string('total_cost')->nullable();

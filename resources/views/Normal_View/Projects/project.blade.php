@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
-    <div class="col-md-12">
+    <div class="col-md-12 mb-5">
         <div class="card-deck">
             @foreach ($projectsAll as $proj)
                 <div class="card col-md-4 m-1">
                     <div class="card-body  text-center">
-                        <div class="card-header bg-secondary">
+                        <div class="card-header" style="background-color:#C9282D; color:white;">
                             <h1 style="font-size: 20px;" class="text-center">Province of {{ $proj->province }}</h1>
                         </div>
                         <p class=" text-justify mt-3" style="font-weight: 500; font-size: 16px;">Program: <span
