@@ -6,6 +6,9 @@ namespace App\Http\Controllers\Normal_View\Home;
 use App\Http\Controllers\Controller;
 use DB;
 use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\Municipality;
+use App\Models\Program;
 
 class HomeController extends Controller
 {
@@ -14,11 +17,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+ 
     /**
      * Show the application dashboard.
      *
@@ -27,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         // $show = DB::table('news')->limit(3)->get();
-        return view('Normal_View.Home.home');
+        $projectsAll = Project::all();
+        return view('Normal_View.Home.home', compact('projectsAll'));
     }
 }
