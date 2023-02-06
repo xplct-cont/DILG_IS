@@ -1,5 +1,4 @@
 @extends('Admin_View.layouts.app')
-
 @section('content')
     @if ($message = Session::get('message'))
         <div class="alert alert-success alert-block mt-2">
@@ -7,7 +6,6 @@
             <strong>{{ $message }}</strong>
         </div>
     @endif
-
     <div class="d-flex justify-content-end mt-5">
         <!-- Button trigger modal -->
         <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
@@ -164,8 +162,43 @@
                                     </div>
                                 </div>
                             </div>
-                            <td><a href="{{ url('delete_jobs/' . $ad_jobs->id) }}" class="btn btn-xs "><i
-                                        class="text-danger fas fa-trash-alt"></i></a></td>
+
+                            <td><a href="#" data-toggle="modal" id="job_delete_link" class="btn"
+                                    data-target="#delete_job_id{{ $ad_jobs->id }}"><span
+                                        class="text-danger fas fa-trash-alt"></span></a></td>
+
+                            <div class="modal fade" id="delete_job_id{{ $ad_jobs->id }}" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog " role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel"><span
+                                                    class="fas fa-exclamation-circle text-danger"
+                                                    style="font-size: 30px;"></span> </h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <form action="{{ url('delete_jobs/' . $ad_jobs->id) }}" method="GET"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                @method('GET')
+
+                                                <div class="container mx-auto">
+                                                    Are you sure you want to delete this permanently?
+                                                </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-danger">Delete Permanently</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
                         </tr>
                     @endforeach
                 </tbody>

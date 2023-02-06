@@ -1,22 +1,30 @@
-<div>
-    <div class="container d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md-6 mt-5">
-                <input style="border-radius: 20px;" type="date" name="" id="" class="form-control">
+<div class="container col-md-12">
+    <div class="">
+        <div class="row ">
+            <div class="col-md-4 mx-auto">
+
+                <p class="mt-2 m-2">From:</p>
+                <input style="border-radius: 20px;" type="date" name="" id="" wire:model="fromDate"
+                    class="form-control ">
+                <p class="mt-2 m-2">To:</p>
+                <input style="border-radius: 20px;" type="date" name="" id="" wire:model="toDate"
+                    class="form-control ">
 
             </div>
-            <div class="col-md-6 mt-5">
-                <div class="form-group has-search " style="margin:auto;">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" style="border-radius: 20px;" class="form-control input" placeholder="Search">
+            <div class="col-md-4 mx-auto">
+                <div class="" style="margin-top: 40px;">
+                    <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
+                        placeholder="Search">
                 </div>
+
             </div>
         </div>
+
     </div>
 
 
-    <div class="mx-auto col-md-11 d-flex align-items-center justify-content-around mt-5">
-        <div class="row m-1">
+    <div class="mx-auto mt-3 col-md-11">
+        <div class="">
             @foreach ($news as $new)
                 <a href="#" style="text-decoration: none; color:#030303;">
                     <div class="card elevation-4">
@@ -28,21 +36,8 @@
                                 <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
                                 <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ $new->caption }}</p>
                             </div>
-                            <div class="col-md-6">
-                                <div class=" d-flex flex-row align-items-center justify-content-around "
-                                    style="height: 400px;">
-                                    @php
-                                        $images = json_decode($new->image, true);
-                                        $newArray = [];
-
-                                        if (is_array($images) && !empty($images)) {
-                                            foreach ($images as $image) {
-                                                array_push($newArray, $image);
-                                            }
-                                        }
-
-                                    @endphp
-
+                            <div class="col-md-5">
+                                <div class="col-md-12" style="height: 400px;">
 
                                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                         <ol class="carousel-indicators">
@@ -53,15 +48,18 @@
 
                                         </ol>
                                         <div class="carousel-inner" style="height:350px;">
-                                            @foreach ($newArray as $key => $image)
+                                            @php
+                                                $images = json_decode($new->image, true);
+                                            @endphp
+                                            @foreach ($images as $key => $image)
                                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                                    <img src="{{ asset('app/public/' . $image) }}"
+                                                    <img src="{{ asset('/' . $image) }}"
                                                         style="height:350px; width:auto;" />
                                                 </div>
                                             @endforeach
 
                                         </div>
-                                        <button class="carousel-control-prev" type="button"
+                                        {{-- <button class="carousel-control-prev" type="button"
                                             data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Previous</span>
@@ -70,7 +68,7 @@
                                             data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Next</span>
-                                        </button>
+                                        </button> --}}
                                     </div>
 
                                 </div>
@@ -80,7 +78,8 @@
                 </a>
             @endforeach
         </div>
+        <div class="justify-content-between">
+            {{ $news->links() }}
+        </div>
     </div>
-
-
 </div>

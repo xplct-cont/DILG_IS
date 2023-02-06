@@ -2,19 +2,28 @@
 
 use Carbon\Carbon;
 
-//Normal View
+//Admin View
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Normal_View\Lgu\LguController;
+use App\Http\Controllers\Normal_View\Project\ProjectController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
-use App\Http\Controllers\Normal_View\Contacts\ContactsController;
-use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 
-//Admin View
-use App\Http\Controllers\Admin_View\Admin_HomeController;
-use App\Http\Controllers\Admin_View\Admin_NewsController;
-use App\Http\Controllers\Admin_View\Admin_JobsController;
+
+//Normal View
+use App\Http\Controllers\Admin_View\Admin_ProfileController;
+use App\Http\Controllers\Admin_View\Admin_ProjectController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
+use App\Http\Controllers\Normal_View\Contacts\ContactsController;
+use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
+use App\Http\Controllers\Normal_View\Organization\OrganizationController;
+use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
+use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
+use App\Http\Controllers\Admin_View\Admin_LguController;
+use App\Http\Controllers\Admin_View\Admin_HomeController;
+use App\Http\Controllers\Admin_View\Admin_JobsController;
+use App\Http\Controllers\Admin_View\Admin_NewsController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +49,12 @@ Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 
 //Routes for Kenn
 //Admin_View Routes
+Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
+Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
+
+Route::get('/admin/change-password/{id}', [Admin_ChangePasswordController::class, 'index']);
+Route::post('/admin/change-password', [Admin_ChangePasswordController::class, 'change_password']);
+
 Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/jobs');
 Route::post('/add-new-job', [Admin_JobsController::class, 'store']);
 Route::get('/delete_jobs/{id}', [Admin_JobsController::class, 'delete_jobs']);
@@ -54,10 +69,17 @@ Route::get('/admin/pdmu', [Admin_PdmuController::class, 'index'])->name('admin/p
 Route::post('/add-pdmu', [Admin_PdmuController::class, 'store']);
 Route::get('/delete_pdmu/{id}', [Admin_PdmuController::class, 'delete_pdmu']);
 Route::put('/update-pdmu/{id}', [Admin_PdmuController::class, 'update_pdmu']);
+
+Route::get('/admin/lgu', [Admin_LguController::class, 'index'])->name('admin/lgu');
+Route::post('/add-lgu', [Admin_LguController::class, 'store']);
+Route::get('/delete_lgu/{id}', [Admin_LguController::class, 'delete_lgu']);
+Route::put('/update-lgu/{id}', [Admin_LguController::class, 'update_lgu']);
+
 //Normal_View Routes
+Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
-
-
+Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
+Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 
 
@@ -71,20 +93,26 @@ Route::put('/update-pdmu/{id}', [Admin_PdmuController::class, 'update_pdmu']);
 
 
 //Routes for Chadie
+
 //Admin_View Routes
+Route::get('admin/projects',[Admin_ProjectController::class,'index'])->name('admin/projects');
+Route::post('admin/projects-create',[Admin_ProjectController::class,'store']);
+Route::get('admin/projects-delete/{id}',[Admin_ProjectController::class,'destroy']);
+Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update']);
+
+
+
 
 
 //Normal_View Routes
 Route::get('/news-update',function(){
     return view('Normal_View.News.news');
 });
-Route::get("/sigle-news-update",function(){
+Route::get("/single-news-update",function(){
     return view('Normal_View.News.single_news');
 });
 
-Route::get("/project",function(){
-    return view('Normal_View.Projects.project');
-});
+Route::get("/project",[ProjectController::class,'index']);
 
 
 
@@ -110,6 +138,8 @@ Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/n
 Route::get('/about', [AboutController::class, 'index'])->name('/about');
 Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
+
+Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 
 
 

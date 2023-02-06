@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Manila',
 
     /*
     |--------------------------------------------------------------------------
@@ -255,7 +255,7 @@ return [
         'Excel' => \MaatWebsite\Excel\Facades\Excel::class,
         'Chatify' => Chatify\Facades\ChatifyMessenger::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-       
+
     ])->toArray(),
-   
+
 ];

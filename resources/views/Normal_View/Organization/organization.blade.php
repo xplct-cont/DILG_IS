@@ -4,7 +4,7 @@
         <div class="d-flex justify-content-center mb-3">
             <img src="/img/dilg-main.png" style="height: 150px; width: 150px;" alt="">
         </div>
-        <h1 class="text-center mb-5" style="font-size: 30px; ">ORGANIZATIONAL STRUCTURE</h1>
+        <h1 class="text-center " style="font-size: 30px; margin-bottom: 50px;">ORGANIZATIONAL STRUCTURE</h1>
     </div>
 
     @foreach ($pd as $pdirector)
@@ -60,10 +60,8 @@
 
             <div class="d-flex row">
                 <div class="col-md-6">
+                    <p class="text-center mt-4" style="font-size: 28px; font-weight: 500;">PROGRAM COORDINATORS</p>
                     <div class="d-flex row">
-
-
-                        <p class="text-center mt-3" style="font-size: 28px; font-weight: 500;">PROGRAM COORDINATORS</p>
 
                         @foreach ($d_one as $d_ones)
                             <div class="col-md-4 text-center d-flex justify-content-center">
@@ -81,9 +79,9 @@
                     </div>
                 </div>
                 <div class="col-md-6">
+                    <p class="text-center mt-3" style="font-size: 28px; font-weight: 500;">ADMIN SERVICES</p>
                     <div class="d-flex row">
-                        <p class="text-center mt-3" style="font-size: 28px; font-weight: 500;">ADMIN SERVICES</p>
-
+                       
                         @foreach ($admin_ser as $ad_ser)
                             <div class="col-md-4 text-center d-flex justify-content-center">
                                 <div class="zoom">
@@ -109,11 +107,11 @@
             }
 
             .zoom:hover {
-                -ms-transform: scale(1.5);
+                -ms-transform: scale(1.2);
                 /* IE 9 */
-                -webkit-transform: scale(1.5);
+                -webkit-transform: scale(1.2);
                 /* Safari 3-8 */
-                transform: scale(1.5);
+                transform: scale(1.2);
                 text-align: center;
                 font-size: 10px;
             }
