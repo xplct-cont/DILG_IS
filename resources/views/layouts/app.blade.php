@@ -330,6 +330,9 @@
                     </div>
                 </div>
             </div>
+           <div class="text-center">
+           <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}</p>
+           </div>
             <button onclick="topFunction()" id="myBtn" title="Go to top"
                 style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
 
@@ -415,7 +418,7 @@
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 26px;
+  height: 23px;
   color: white;
   text-align: left;
 }
