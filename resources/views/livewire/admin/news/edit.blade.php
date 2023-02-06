@@ -2,7 +2,7 @@
     <div wire:ignore.self class="modal fade" id="updateNewsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="updateNewsModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="background-color: #C9282D; font-size: 20px;  color:white;">
               <h1 class="modal-title fs-5" id="updateNewsModalLabel">Edit News</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -66,7 +66,7 @@
                             <input type="hidden" wire:model='old_image' name="" id="">
                         </div> --}}
                             </div>
-                            <button type="submit" class="btn btn-primary">Save Image</button>
+                            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Update</button>
                             <div wire:loading wire:target="save">process...</div>
                         </form>
                     </div>

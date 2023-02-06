@@ -31,7 +31,7 @@
                             <span style="font-size: 16px; font-weight: 400;"> {{ $proj->total_cost }}</span>
                         </p>
                         <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Description:
-                            <span style="font-size: 16px; font-weight: 400;"> {{ $proj->description }}</span>
+                            <span style="font-size: 16px; font-weight: 400;">{{ Illuminate\Support\Str::limit($proj->description, 30) }}</span>
                         </p>
                         <iframe class="col-md-12"
                             src="https://maps.google.com/maps?q=Calape Bohol&t=&z=12&ie=UTF8&iwloc=&output=embed"

@@ -34,7 +34,7 @@
                                 <h1 style="font-size: 20px;">
                                     Post: {{ \Carbon\Carbon::parse($new->datetime)->format('M j, Y h:i a') }}</h1><br>
                                 <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
-                                <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ $new->caption }}</p>
+                                <p class="text-left" style="font-size: 15px; font-weight: 400;">{{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
                             </div>
                             <div class="col-md-5">
                                 <div class="col-md-12" style="height: 400px;">

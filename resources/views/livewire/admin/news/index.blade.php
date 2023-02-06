@@ -59,7 +59,7 @@
                 @foreach ($news as $new)
                     <tr>
                         <td>{{ $new->title }}</td>
-                        <td>{{ $new->caption }}</td>
+                        <td>{{ Illuminate\Support\Str::limit($new->caption, 40) }}</td>
                         <td>
                             @php $images = json_decode($new->image,true); @endphp
                             @if (is_array($images) && !empty($images))
