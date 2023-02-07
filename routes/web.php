@@ -12,6 +12,7 @@ use App\Http\Controllers\Normal_View\About\AboutController;
 
 
 //Normal View
+use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
 use App\Http\Controllers\Admin_View\Admin_ProjectController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
@@ -36,9 +37,7 @@ use App\Http\Controllers\Admin_View\Admin_PdmuController;
 |
 */
 
-Route::get('/', function () {
-    return view('/Normal_View/Home/home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 
 Auth::routes();
@@ -108,7 +107,7 @@ Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update'
 Route::get('/news-update',function(){
     return view('Normal_View.News.news');
 });
-Route::get("/sigle-news-update",function(){
+Route::get("/single-news-update",function(){
     return view('Normal_View.News.single_news');
 });
 

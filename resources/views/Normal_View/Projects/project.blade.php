@@ -1,44 +1,70 @@
 @extends('layouts.app')
 @section('content')
-    <div class="mt-3 p-3">
-        <div class="d-flex justify-content-center">
-            <div class="row">
-                <div class="col-md-6 mt-5">
-                    <input style="border-radius: 20px;" type="date" name="" id="" class="form-control">
-
-                </div>
-                <div class="col-md-6 mt-5">
-                    <div class="form-group has-search " style="margin:auto;">
-                        <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" style="border-radius: 20px;" class="form-control input" placeholder="Search">
+    <div class="col-md-12 mb-5">
+        <div class="card-deck">
+            @foreach ($projectsAll as $proj)
+                <div class="card col-md-4 m-1">
+                    <div class="card-body  text-center">
+                        <div class="card-header" style="background-color:#C9282D; color:white;">
+                            <h1 style="font-size: 20px;" class="text-center">Province of {{ $proj->province }}</h1>
+                        </div>
+                        <p class=" text-justify mt-3" style="font-weight: 500; font-size: 16px;">Program: <span
+                                style="font-size: 16px; font-weight: 400;"> {{ $proj->program->title }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Project
+                            Code: <span style="font-size: 16px; font-weight: 400;"> {{ $proj->proj_code }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Title: <span
+                                style="font-size: 16px; font-weight: 400;"> {{ $proj->title }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                            Municipality: <span style="font-size: 16px; font-weight: 400;">
+                                {{ $proj->municipality->municipality }}</span>
+                        </p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Exact
+                            Location: <span style="font-size: 16px; font-weight: 400;"> {{ $proj->exact_loc }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Type: <span
+                                style="font-size: 16px; font-weight: 400;"> {{ $proj->type }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Year: <span
+                                style="font-size: 16px; font-weight: 400;"> {{ $proj->year }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Status:
+                            <span style="font-size: 16px; font-weight: 400;"> {{ $proj->status }}</span>
+                        </p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Total Cost:
+                            <span style="font-size: 16px; font-weight: 400;"> {{ $proj->total_cost }}</span>
+                        </p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Description:
+                            <span style="font-size: 16px; font-weight: 400;">{{ Illuminate\Support\Str::limit($proj->description, 30) }}</span>
+                        </p>
+                        <iframe class="col-md-12"
+                            src="https://maps.google.com/maps?q=Calape Bohol&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                            height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
+
     </div>
+@endsection
 
-    <div class="container col-md-12">
-        <div class="col-md-12">
-            <div class="row d-flex justify-content-center mb-3">
-                @foreach ($projectsAll as $proj)
-                    <div class="col-md-4 card m-2 p-3 text-justify ">
-                        <p class="text-center mb-3" style="font-weight: 600; font-size: 26px; color:blue;">
-                            {{ $proj->program_category }}</p>
-                        <p class="text-center mb-3" style="font-weight: 600; font-size: 20px; color:black;">
-                            {{ $proj->code }}</p>
-                        <p class="text-center mb-3" style="font-weight: 600; font-size: 19px; color:blue;">
-                            {{ $proj->title }}</p>
-                        <p class="text-center mb-3" style="font-weight: 600; font-size: 19px; color:black;">
-                            {{ $proj->exact_loc }}</p>
-                        <p class="text-center mb-3" style="font-weight: 600; font-size: 19px; color:black;">
-                            {{ $proj->description }}</p>
-                        <p class="text-center mb-3" style="font-weight: 600; font-size: 19px; color:black;">
-                            {{ $proj->exact_loc }}</p>
-                        <img src="{{ asset('img/img4.jpg') }}" alt="project-image">
+<style scoped>
+    .responsive {
+        max-width: 100%;
+        height: auto;
+    }
 
-                    </div>
-                @endforeach
+    .card {
+        --bg-color: #DCE9FF;
+        --bg-color-light: #f1f7ff;
+        --text-color-hover: whitesmoke;
+        --box-shadow-color: silver;
+    }
 
-            </div>
-        </div>
-    @endsection
+    .card:hover {
+        transform: translateY(-5px) scale(1.005) translateZ(0);
+        box-shadow: 0 24px 36px silver,
+            0 24px 46px var(--box-shadow-color);
+    }
+
+    .card:hover .overlay {
+        transform: scale(8) translateZ(0);
+    }
+</style>

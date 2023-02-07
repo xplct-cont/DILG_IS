@@ -126,6 +126,7 @@
                                         Structure/PDMU</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
                                         Agencies</a></li>
+                                <li><a class="dropdown-item" href="#">History</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -330,10 +331,22 @@
                     </div>
                 </div>
             </div>
+           <div class="text-center">
+           <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}</p>
+           </div>
             <button onclick="topFunction()" id="myBtn" title="Go to top"
                 style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
 
-
+                <div class="dropup">
+                    <button class="dropbtn">Developers</button>
+                    <div class="dropup-content">
+                
+                      <a href="#">Vienna Rose Pepito</a>
+                      <a href="#">Kenn Secusana</a>
+                      <a href="#">Chadie Gil Augis</a>
+                      <a href="#">Franklin Pogoy</a>
+                    </div>
+                  </div>
 
 </body>
 <script></script>
@@ -392,6 +405,45 @@
     #myBtn:hover {
         background-color: #555;
     }
+
+    .dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 5px;
+  font-size: 10px;
+  border: none;
+}
+.dropup {
+  /* position: relative;
+  display: inline-block; */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 23px;
+  color: white;
+  text-align: left;
+}
+.dropup-content {
+  display: none;
+  position: absolute;
+  min-width: 155px;
+  bottom: 50px;
+  z-index: 1;
+  background-color: #3498DB;
+}
+.dropup-content a {
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  display: block;
+}
+.dropup-content a:hover {background-color: #ccc}
+.dropup:hover .dropup-content {
+  display: block;
+}
+.dropup:hover .dropbtn {
+  background-color: #2980B9;
+}
 </style>
 
 <script>
