@@ -126,6 +126,7 @@
                                         Structure/PDMU</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
                                         Agencies</a></li>
+                                <li><a class="dropdown-item" href="#">History</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
