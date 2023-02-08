@@ -2,8 +2,8 @@
     <div wire:ignore.self class="modal fade" id="NewsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="NewsModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="NewsModalLabel">Post News</h1>
+            <div class="modal-header" style="background-color: #C9282D; font-size: 20px;  color:white;">
+              <h1 class="modal-title fs-5" id="NewsModalLabel" >Post News</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -41,7 +41,7 @@
                                 </div>
                             @endif
                             </div>
-                            <button type="submit" class="btn btn-primary">Save Image</button>
+                            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Upload</button>
                             <div wire:loading wire:target="save">process...</div>
                         </form>
                     </div>

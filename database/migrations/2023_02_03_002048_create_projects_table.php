@@ -15,25 +15,24 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('program_id');
-            $table->string('program_category');
-            $table->string('municipality');
+            $table->unsignedBigInteger('program_id');
+
             $table->string('proj_code')->nullable();
             $table->string('title')->nullable();
             $table->string('province')->default('Bohol');
             $table->unsignedBigInteger('municipality_id');
             $table->string('exact_loc')->nullable();
             $table->string('year')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('type')->nullable();
             $table->string('status')->nullable();
             $table->string('total_cost')->nullable();
             $table->timestamps();
 
-            // $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade')
-            // ->onUpdate('cascade');
-            // $table->foreign('municipality_id')->references('id')->on('municipalities')->onDelete('cascade')
-            // ->onUpdate('cascade');
+            $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade')
+            ->onUpdate('cascade');
+            $table->foreign('municipality_id')->references('id')->on('municipalities')->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 

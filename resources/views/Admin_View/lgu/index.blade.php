@@ -38,8 +38,8 @@
                                     <div class="form-group">
                                         <label for="municipality_id">Municipality:</label>
 
-                                        <select name="municipality_id" id="municipality_id" class="form-control"
-                                            style="color:dimgray;">
+                                        <select name="municipality_id" id="municipality_id" class="form-control" 
+                                            style="color:dimgray;" required>
                                             <option selected>Select Municipality...</option>
                                             @foreach ($municipalities as $municipality)
                                                 <option value="{{ $municipality->id }}">{{ $municipality->municipality }}

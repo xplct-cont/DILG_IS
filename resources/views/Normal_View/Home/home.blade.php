@@ -38,15 +38,14 @@
             <div class="col-md-6 mt-5 mb-5 ">
 
                 <a href="{{ route('/provincial_director') }}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">THE PROVINCIAL
+                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">THE PROVINCIAL
                     DIRECTOR
                     <span class="fas fa-arrow-right" style="margin-left:38px;"></span></a><br><br>
-                <a href="#" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">VISION &
+                <a href="{{route('/about')}}" type="button" class="btn btn-md"
+                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION &
                     MISSION <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a><br><br>
-                <a href="#" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">GOALS &
-                    OBJECTIVES <span class="fas fa-arrow-right" style="margin-left: 81px;"></span></a>
+                <a href="{{url('/project')}}" type="button" class="btn btn-md"
+                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">PROJECTS <span class="fas fa-arrow-right" style="margin-left: 160px;"></span></a>
 
             </div>
             <div class="col-md-6 mt-5 mb-5">
@@ -69,6 +68,55 @@
 
     <div class="header mt-1 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">PROJECTS</h1>
+    </div>
+
+
+    <div class="col-md-12">
+        <div class="card-deck">
+            @foreach ($projectsAll as $proj)
+                <div class="card col-md-4 m-1">
+                    <div class="card-body  text-center">
+                        <div class="card-header" style="background-color:#C9282D; color:white;">
+                            <h1 style="font-size: 20px;" class="text-center">Province of {{ $proj->province }}</h1>
+                        </div>
+                        <p class=" text-justify mt-3" style="font-weight: 500; font-size: 16px;">Program: <span
+                                style="font-size: 16px; font-weight: 400;"> {{ $proj->program->title }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Project
+                            Code: <span style="font-size: 16px; font-weight: 400;"> {{ $proj->proj_code }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Title: <span
+                                style="font-size: 16px; font-weight: 400;"> {{ $proj->title }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                            Municipality: <span style="font-size: 16px; font-weight: 400;">
+                                {{ $proj->municipality->municipality }}</span>
+                        </p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Exact
+                            Location: <span style="font-size: 16px; font-weight: 400;"> {{ $proj->exact_loc }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Type: <span
+                                style="font-size: 16px; font-weight: 400;"> {{ $proj->type }}</span></p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Year:
+                            <span style="font-size: 16px; font-weight: 400;"> {{ $proj->year }}</span>
+                        </p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Status:
+                            <span style="font-size: 16px; font-weight: 400;"> {{ $proj->status }}</span>
+                        </p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Total
+                            Cost:
+                            <span style="font-size: 16px; font-weight: 400;"> {{ $proj->total_cost }}</span>
+                        </p>
+                        <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                            Description:
+                            <span style="font-size: 16px; font-weight: 400;">{{ Illuminate\Support\Str::limit($proj->description, 30) }}</span>
+                        </p>
+
+                        <iframe class="col-md-12"
+                            src="https://maps.google.com/maps?q=Calape Bohol&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                            height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
     </div>
 
     <div class="d-flex justify-content-center mb-5 mt-3">
@@ -99,7 +147,7 @@
                                 <h1 style="font-size: 20px;">
                                     Post: {{ \Carbon\Carbon::parse($new->datetime)->format('M j, Y h:i a') }}</h1><br>
                                 <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
-                                <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ $new->caption }}</p>
+                                <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
                             </div>
                             <div class="col-md-5">
                                 <div class="col-md-12" style="height: 400px;">
@@ -134,8 +182,6 @@
             @endforeach
         </div>
     </div>
-
-
     </div>
     </div>
 
@@ -196,5 +242,22 @@
     .responsive {
         max-width: 100%;
         height: auto;
+    }
+
+    .card {
+        --bg-color: #DCE9FF;
+        --bg-color-light: #f1f7ff;
+        --text-color-hover: whitesmoke;
+        --box-shadow-color: silver;
+    }
+
+    .card:hover {
+        transform: translateY(-5px) scale(1.005) translateZ(0);
+        box-shadow: 0 24px 36px silver,
+            0 24px 46px var(--box-shadow-color);
+    }
+
+    .card:hover .overlay {
+        transform: scale(8) translateZ(0);
     }
 </style>

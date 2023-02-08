@@ -22,7 +22,7 @@ class ProjectController extends Controller
     {
         $program = Program::all();
         $municipalities = Municipality::all();
-        $projectsAll = Project::all();
+        $projectsAll = Project::orderBy('year','DESC')->get();
         // return view('Normal_View.Projects.project',compact('program','municipalities','projectsAll'));
         return view('Normal_View.Projects.project',compact('program','municipalities','projectsAll'));
     }

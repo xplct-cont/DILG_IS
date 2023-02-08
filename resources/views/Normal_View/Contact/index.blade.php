@@ -3,7 +3,7 @@
 @section('content')
     <div>
         <div class="text-center">
-            <img src="{{ asset('/img/dilg-bohol-people.png') }}" width="1370" style="max-width: 100%; height:auto;">
+            <img src="{{ asset('/img/background.png') }}" width="1370" style="max-width: 100%; height:auto;">
            </div>
         <p></p>
 
@@ -28,8 +28,7 @@
                                     <img src="/img/place.png" style="height: 100px;" alt="">
                                 </div>
                                 <p class="text-center mt-3" style="font-size: 16px; font-weight: 700;">OFFICE ADDRESS</p>
-                                <p class="text-center" style="font-size: 15px; font-weight: 450; margin-top: -15px;">Sen.
-                                    Benigno Aquino Ave, Tagbilaran City, Bohol</p>
+                                <p class="text-center" style="font-size: 15px; font-weight: 450; margin-top: -15px;">Rajah Sikatuna Avenue, Dampas, Tagbilaran City 6300</p>
                                 {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                             </div>
                         </div>
@@ -42,7 +41,9 @@
                                 </div>
                                 <p class="text-center mt-3" style="font-size: 16px; font-weight: 700;">CONTACT US</p>
                                 <p class="text-center" style="font-size: 15px; font-weight: 450; margin-top: -15px;">
-                                    09989878767</p>
+                                    Globe - 09178967572 <br>
+                                    Smart - 09399302989 <br>
+                                    Landline - (038) 422-8038 </p>
                                 {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                             </div>
                         </div>

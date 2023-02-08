@@ -12,6 +12,7 @@ use App\Http\Controllers\Normal_View\About\AboutController;
 
 
 //Normal View
+use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
 use App\Http\Controllers\Admin_View\Admin_ProjectController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
@@ -36,9 +37,7 @@ use App\Http\Controllers\Admin_View\Admin_PdmuController;
 |
 */
 
-Route::get('/', function () {
-    return view('/Normal_View/Home/home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 
 Auth::routes();
