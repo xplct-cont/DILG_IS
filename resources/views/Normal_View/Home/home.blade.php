@@ -38,14 +38,14 @@
             <div class="col-md-6 mt-5 mb-5 ">
 
                 <a href="{{ route('/provincial_director') }}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">THE PROVINCIAL
+                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">THE PROVINCIAL
                     DIRECTOR
                     <span class="fas fa-arrow-right" style="margin-left:38px;"></span></a><br><br>
                 <a href="{{route('/about')}}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">VISION &
+                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION &
                     MISSION <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a><br><br>
                 <a href="{{url('/project')}}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; padding-right: 10px; border-radius:10px;">PROJECTS <span class="fas fa-arrow-right" style="margin-left: 165px;"></span></a>
+                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">PROJECTS <span class="fas fa-arrow-right" style="margin-left: 165px;"></span></a>
 
             </div>
             <div class="col-md-6 mt-5 mb-5">
