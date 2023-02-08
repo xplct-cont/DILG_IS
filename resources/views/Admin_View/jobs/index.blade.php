@@ -79,7 +79,8 @@
             <table class="table table-bordered text-center">
                 <thead class="text-center" style="background-color:#343a40; color:white;">
                     <tr>
-                        <th scope="col">Image</th>
+                        <th scope="col" scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Image</th>
                         <th scope="col">Position</th>
                         <th scope="col">Document Link</th>
                         <th scope="col">Edit</th>
@@ -89,8 +90,9 @@
                 <tbody class="text-center">
                     @foreach ($admin_jobs as $ad_jobs)
                         <tr>
-                            <td> <img src="{{ asset('hiring_images/' . $ad_jobs->hiring_img) }} " alt="Image"
-                                    style="border-radius: 5px; height: 70px; width: 80px;"></td>
+                            <td scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                style="text-align: center"> <img src="{{ asset('hiring_images/' . $ad_jobs->hiring_img) }} "
+                                    alt="Image" style="border-radius: 5px; height: 70px; width: 80px;"></td>
                             <td>{{ $ad_jobs->position }}</td>
                             <td><a class="btn " href="{{ $ad_jobs->link }}"><span
                                         class="btn btn-sm btn-success">Details</span></a></td>
