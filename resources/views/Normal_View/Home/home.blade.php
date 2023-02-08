@@ -45,7 +45,7 @@
                     style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION &
                     MISSION <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a><br><br>
                 <a href="{{url('/project')}}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">PROJECTS <span class="fas fa-arrow-right" style="margin-left: 165px;"></span></a>
+                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">PROJECTS <span class="fas fa-arrow-right" style="margin-left: 160px;"></span></a>
 
             </div>
             <div class="col-md-6 mt-5 mb-5">
