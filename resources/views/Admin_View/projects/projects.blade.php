@@ -106,12 +106,11 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <<<<<<< HEAD <label for="" style="color:dimgray">Complete
+                                            <label for="" style="color:dimgray">Complete
                                                 Location</label>
-                                                =======
-                                                <label for="" style="color:dimgray">Exact Location</label>
-                                                >>>>>>> 674738159aa63e21b12a38ce748557cb3c1aa6d5
-                                                <input type="text" class="form-control" name="exact_loc">
+                                            <label for="" style="color:dimgray">Exact Location</label>
+
+                                            <input type="text" class="form-control" name="exact_loc">
                                         </div>
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Year:</label>
