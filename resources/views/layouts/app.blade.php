@@ -216,7 +216,7 @@
                 </div>
 
 
-                <form action="">
+                {{-- <form action="">
                     <div class="input-group mx-auto" style="width: 300px;">
 
                         <input type="text" name="email" style="height: 30px;" class="form-control" required>
@@ -226,7 +226,7 @@
                             </button>
                         </label>
                     </div>
-                </form>
+                </form> --}}
 
 
 
@@ -299,7 +299,7 @@
                             </a>
                             <a href="https://ovp.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" ">
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     Office of the Vice
                                     President</p>
                             </a>
