@@ -13,6 +13,7 @@ class LguController extends Controller
 
         
         $lgus = Lgu::with(['municipality'])->orderBy('municipality_id', 'asc')->get();
+        
         return view('Normal_View.Lgu.lgu', compact('lgus'));
     }
 }

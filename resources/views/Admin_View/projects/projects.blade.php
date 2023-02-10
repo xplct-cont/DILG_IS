@@ -106,12 +106,6 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Complete
-                                                Location</label>
-                                            <label for="" style="color:dimgray">Exact Location</label>
-
-                                            <input type="text" class="form-control" name="exact_loc">
-
                                             <label for="" style="color:dimgray">Exact Location</label>
 
                                             <input type="text" class="form-control" name="exact_loc">
@@ -148,7 +142,7 @@
                 <thead class="text-center" style="background-color:#343a40; color:white;">
                     <tr>
                         <th scope="col">View/Edit</th>
-                        <th scope="col">Categories</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Municipality</th>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                             style="text-align: center">Project Code</th>
@@ -162,8 +156,6 @@
                             style="text-align: center">Status </th>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                             style="text-align: center">Total Cost </th>
-                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                            style="text-align: center">Exact Location</th>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                             style="text-align: center">Year</th>
                         <th scope="col">Delete</th>
@@ -332,8 +324,7 @@
                                 {{ $all->status }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->total_cost }}</td>
-                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
-                                {{ $all->exact_loc }}</td>
+                           
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->year }}</td>
                             <td><a href="#" data-toggle="modal" id="project_delete_link" class="btn"
