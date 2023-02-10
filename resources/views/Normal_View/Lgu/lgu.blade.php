@@ -81,8 +81,12 @@
                         <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member7 }}</p>
                         <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
-                                style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p>
-                    </div>
+                                style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p> <br>
+                                <p class="text-center" style="color:dimgray; margin-top: -10px; font-size: 15px;"><span
+                                    style="font-weight: 500; color:dimgray">No. of Barangays: </span> {{ $lgu->municipality->num_of_brgys }}</p>
+                            </div>
+                           
+                    
                 @endforeach
 
             </div>

@@ -32,56 +32,22 @@
 
                     <div class="col-md-6 mb-5" style="margin-top: 50px;">
                         <p class="text-justify">
-                            Lorem ipsum dolor sit amet. In unde similique id ratione rerum aut sequi voluptatibus eum
-                            facilis sint in delectus officiis et quam dolores. 33 maiores laboriosam et enim maxime aut odit
-                            odio. Qui labore omnis eos voluptatem nemo eos mollitia culpa aut quas obcaecati.
 
-                            Sed quaerat dolores ex libero ullam est laboriosam galisum ut quia consequatur et suscipit
-                            architecto id minima reprehenderit est sequi earum. Est veniam odit qui rerum ducimus qui
-                            molestias suscipit sed velit laborum qui incidunt dolor ut beatae omnis.
+                            MESSAGE OF THE PROVINCIAL DIRECTOR <br><br>
 
-                            Quo explicabo galisum ea quaerat quas non quisquam autem est omnis aliquam et earum
-                            voluptatibus. Et Quis sequi rem optio quam aut dignissimos voluptas et minus rerum qui natus
-                            ratione.
+                            It has been my great pride and joy to present to you this Accomplishment Report for CY 2022.
+                            This
+                            is made possible through the joint efforts of the active and dedicated men and women of DILG-Bo-
+                            hol. These accomplishments manifest the department’s aspirations through the collaboration and
+                            participation of the different stakeholders. For that, I wholeheartedly laud the men and women
+                            of
+                            DILG-Bohol for a great job. <br><br>
 
-                            Lorem ipsum dolor sit amet. In unde similique id ratione rerum aut sequi voluptatibus eum
-                            facilis sint in delectus officiis et quam dolores. 33 maiores laboriosam et enim maxime aut odit
-                            odio. Qui labore omnis eos voluptatem nemo eos mollitia culpa aut quas obcaecati.
-
-                            Sed quaerat dolores ex libero ullam est laboriosam galisum ut quia consequatur et suscipit
-                            architecto id minima reprehenderit est sequi earum. Est veniam odit qui rerum ducimus qui
-                            molestias suscipit sed velit laborum qui incidunt dolor ut beatae omnis.
-
-                            Quo explicabo galisum ea quaerat quas non quisquam autem est omnis aliquam et earum
-                            voluptatibus. Et Quis sequi rem optio quam aut dignissimos voluptas et minus rerum qui natus
-                            ratione.
-
-                            <br><br>
-
-                            Lorem ipsum dolor sit amet. In unde similique id ratione rerum aut sequi voluptatibus eum
-                            facilis sint in delectus officiis et quam dolores. 33 maiores laboriosam et enim maxime aut odit
-                            odio. Qui labore omnis eos voluptatem nemo eos mollitia culpa aut quas obcaecati.
-
-                            Sed quaerat dolores ex libero ullam est laboriosam galisum ut quia consequatur et suscipit
-                            architecto id minima reprehenderit est sequi earum. Est veniam odit qui rerum ducimus qui
-                            molestias suscipit sed velit laborum qui incidunt dolor ut beatae omnis.
-
-                            Quo explicabo galisum ea quaerat quas non quisquam autem est omnis aliquam et earum
-                            voluptatibus. Et Quis sequi rem optio quam aut dignissimos voluptas et minus rerum qui natus
-                            ratione.
-
-                            <br><br>
-                            Lorem ipsum dolor sit amet. In unde similique id ratione rerum aut sequi voluptatibus eum
-                            facilis sint in delectus officiis et quam dolores. 33 maiores laboriosam et enim maxime aut odit
-                            odio. Qui labore omnis eos voluptatem nemo eos mollitia culpa aut quas obcaecati.
-
-                            Sed quaerat dolores ex libero ullam est laboriosam galisum ut quia consequatur et suscipit
-                            architecto id minima reprehenderit est sequi earum. Est veniam odit qui rerum ducimus qui
-                            molestias suscipit sed velit laborum qui incidunt dolor ut beatae omnis.
-
-                            Quo explicabo galisum ea quaerat quas non quisquam autem est omnis aliquam et earum
-                            voluptatibus. Et Quis sequi rem optio quam aut dignissimos voluptas et minus rerum qui natus
-                            ratione.
+                            This year marks the second year since COVID-19 strikes which limits some of the activities of
+                            the
+                            department. However, the men and women of the department work hand in hand and set aside
+                            their differences to achieve excellence and proficiency. The accomplishments that DILG-Bohol
+                            brought depict the values of a true public servant by being “Matino, Mahusay at Maaasahan”.
                         </p>
                     </div>
 
