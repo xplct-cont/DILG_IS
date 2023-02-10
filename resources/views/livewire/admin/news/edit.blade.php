@@ -16,13 +16,13 @@
                                 </div>
                             @endif
                             <div class="mb-2">
-                                <label>Title</label>
+                                <label>Title: </label>
                                 <input type="text" wire:model='title' class="form-control">
                                 @error('title') <span class="error text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="mb-2">
-                                <label>Caption</label>
-                                <textarea type="text" wire:model='caption' class="form-control"></textarea>
+                                <label>Caption: </label>
+                                <textarea type="text" style="height: 200px;" wire:model='caption' class="form-control"></textarea>
                                 @error('caption') <span class="error text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="custom-file mt-3">
@@ -39,7 +39,7 @@
 
 
                             <div class="mb-3">
-                                <label class="form-label">Image Upload</label>
+                                <label class="form-label">Image Upload: </label>
                                 <input type="file" class="form-control" wire:model="image" multiple>
 
                                 @error('image') <span class="error">{{ $message }}</span> @enderror

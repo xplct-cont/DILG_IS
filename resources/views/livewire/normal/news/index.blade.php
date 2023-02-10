@@ -31,8 +31,8 @@
                         <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
                             <div class="col-md-6 mx-auto mt-5 ">
 
-                                <h1 style="font-size: 20px;">
-                                    Post: {{ \Carbon\Carbon::parse($new->datetime)->format('M j, Y h:i a') }}</h1><br>
+                                <h1 style="font-size: 18px; font-weight: 500;">
+                                    Post: {{ \Carbon\Carbon::parse($new->datetime)->format('M j, Y h:i A') }}</h1><br>
                                 <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
                                 <p class="text-left" style="font-size: 15px; font-weight: 400;">{{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
                             </div>

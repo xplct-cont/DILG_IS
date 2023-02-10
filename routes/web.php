@@ -122,13 +122,6 @@ Route::get("/project",[ProjectController::class,'index']);
 
 
 
-
-
-
-
-
-
-
 //Routes for Vienna
 //Admin_View Routes
 Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/news');

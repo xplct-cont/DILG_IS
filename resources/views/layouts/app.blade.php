@@ -39,6 +39,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -82,7 +83,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span style="color:silver">Menu</span> <span class="navbar-toggler-icon"></span>
+                    <span style="color:silver"></span> <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -340,7 +341,7 @@
                 <div class="dropup">
                     <button class="dropbtn">Developers</button>
                     <div class="dropup-content">
-                
+
                       <a href="#">Vienna Rose Pepito</a>
                       <a href="#">Kenn Secusana</a>
                       <a href="#">Chadie Gil Augis</a>
@@ -407,7 +408,7 @@
     }
 
     .dropbtn {
-  background-color: #3498DB;
+  background-color: #002C76;
   color: white;
   padding: 5px;
   font-size: 10px;
@@ -429,7 +430,7 @@
   min-width: 155px;
   bottom: 50px;
   z-index: 1;
-  background-color: #3498DB;
+  background-color: #002C76;
 }
 .dropup-content a {
   color: white;
@@ -442,7 +443,7 @@
   display: block;
 }
 .dropup:hover .dropbtn {
-  background-color: #2980B9;
+  background-color: #002C76;
 }
 </style>
 

@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
+   <div class="mx-auto">
     <div class="col-md-12 mb-5">
-        <div class="card-deck">
+        <div class="row ">
             @foreach ($projectsAll as $proj)
-                <div class="card col-md-4 m-1">
+                <div class="card col-md-5 m-1 mx-auto">
                     <div class="card-body  text-center">
                         <div class="card-header" style="background-color:#C9282D; color:white;">
                             <h1 style="font-size: 20px;" class="text-center">Province of {{ $proj->province }}</h1>
@@ -34,7 +35,7 @@
                             <span style="font-size: 16px; font-weight: 400;">{{ Illuminate\Support\Str::limit($proj->description, 30) }}</span>
                         </p>
                         <iframe class="col-md-12"
-                            src="https://maps.google.com/maps?q=Calape Bohol&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                            src="{{ $proj->municipality->gmap_url}}"
                             height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
                     </div>
@@ -43,6 +44,7 @@
         </div>
 
     </div>
+   </div>
 @endsection
 
 <style scoped>

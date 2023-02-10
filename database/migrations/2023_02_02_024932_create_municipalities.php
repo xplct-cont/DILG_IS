@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('municipalities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('municipality')->nullable();
+            $table->string('gmap_url')->nullable();
             $table->timestamps();
 
 
