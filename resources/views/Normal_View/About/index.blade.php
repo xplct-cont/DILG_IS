@@ -2,7 +2,7 @@
 @section('content')
     <div>
        <div class="text-center">
-        <img src="{{ asset('/img/background.png') }}" width="1370" style="max-width: 100%; height:auto;">
+        <img src='img/Background.png' width="1370" style="max-width: 100%; height:auto;">
        </div>
         <p></p>
         <div class="header ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">

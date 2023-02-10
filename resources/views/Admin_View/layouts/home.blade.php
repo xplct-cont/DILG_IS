@@ -32,7 +32,7 @@
                     <!-- small box -->
                     <div class="small-box bg-light text-secondary elevation-4">
                         <div class="inner">
-                            <h3>0</h3>
+                            <h3>{{$projects}}</h3>
 
                             <p class="text-secondary">Projects</p>
                         </div>
