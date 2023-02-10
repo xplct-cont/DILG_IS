@@ -94,7 +94,7 @@
                             <select name="" id="" class="form-control">
                                 @php $brgy = json_decode($lgu->municipality->barangays,true); @endphp
                                 <option selected>List of Barangays ⥂ </option>
-                                @foreach ($brgy as $b)
+                                @foreach ((array) $brgy as $b)
                                     <li>
                                         <option value="">{{ $b }}</option>
                                     </li>
