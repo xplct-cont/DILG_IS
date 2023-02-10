@@ -55,13 +55,17 @@
 
     <p class="text-center mt-3" style="color:dimgray; font-size: 22px; font-weight: 600;">LIST OF LOCAL ELECTIVE OFFICIALS
     </p>
+    
+   
     <div class="container col-md-12">
         <div class="col-md-12">
             <div class="row d-flex justify-content-center mb-3">
                 @foreach ($lgus as $lgu)
+                
                     <div class="col-md-3 card m-2 p-3 text-justify ">
                         <p class="text-center mb-3" style="font-weight: 600; font-size: 26px; color:#C9282D;">
                             {{ $lgu->municipality->municipality }}</p>
+                        
                         <p class="mt-2" style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
                                 style="font-weight: 700; color:dimgray ">Mayor: </span> {{ $lgu->mayor }}</p>
                         <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
@@ -82,9 +86,24 @@
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member7 }}</p>
                         <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p> <br>
-                                <p class="text-center" style="color:dimgray; margin-top: -10px; font-size: 15px;"><span
-                                    style="font-weight: 500; color:dimgray">No. of Barangays: </span> {{ $lgu->municipality->num_of_brgys }}</p>
-                            </div>
+                        <p class="text-center" style="color:dimgray; margin-top: -10px; font-size: 15px;"><span
+                                style="font-weight: 500; color:dimgray">No. of Barangays: </span> {{ $lgu->municipality->num_of_brgys }}</p>
+                                 
+                                 
+                                    <div class="form-group mx-auto " style="width: 200px;">
+      
+
+                                        <select name="" class="form-control text-center"
+                                            style="color:dimgray; font-size; 15px;">
+                                            <option selected>List of Barangays ⥂ </option>
+                                            @foreach ($lgus as $lgu)
+                                                <option>{{ $lgu->municipality->barangays}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
+                            
                         
                 @endforeach
 
