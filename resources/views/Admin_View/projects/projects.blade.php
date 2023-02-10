@@ -106,12 +106,6 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Complete
-                                                Location</label>
-                                            <label for="" style="color:dimgray">Exact Location</label>
-
-                                            <input type="text" class="form-control" name="exact_loc">
-
                                             <label for="" style="color:dimgray">Exact Location</label>
 
                                             <input type="text" class="form-control" name="exact_loc">
