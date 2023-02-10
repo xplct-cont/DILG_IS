@@ -408,7 +408,7 @@
     }
 
     .dropbtn {
-  background-color: #3498DB;
+  background-color: #002C76;
   color: white;
   padding: 5px;
   font-size: 10px;
@@ -430,7 +430,7 @@
   min-width: 155px;
   bottom: 50px;
   z-index: 1;
-  background-color: #3498DB;
+  background-color: #002C76;
 }
 .dropup-content a {
   color: white;
@@ -443,7 +443,7 @@
   display: block;
 }
 .dropup:hover .dropbtn {
-  background-color: #2980B9;
+  background-color: #002C76;
 }
 </style>
 

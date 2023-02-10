@@ -50,7 +50,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link text-light" data-widget="pushmenu" href="#" role="button"><i
-                            class="fas fa-bars"></i></a>
+                            class="fas fa-bars"></i> Menu</a>
                 </li>
             </ul>
 
