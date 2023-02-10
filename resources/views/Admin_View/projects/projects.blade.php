@@ -328,6 +328,7 @@
                             <td>{{ $all->total_cost }}</td>
                             <td>{{ $all->exact_loc }}</td>
                             <td>{{ $all->year }}</td>
+                            
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->proj_code }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
