@@ -82,10 +82,9 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="" style="color:dimgray">Description:</label>
-                                            <input type="text" class="form-control" name="description">
-                                        </div>
+                                        <label for="" style="color:dimgray;">Description: </label>
+                                        <textarea style=" height: 150px;" id="" type="text" class="form-control"
+                                            placeholder="Write the description..." title="" name="description"></textarea>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -107,12 +106,17 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Complete Location</label>
-                                            <input type="text" class="form-control" name="exact_loc" >
+                                            <label for="" style="color:dimgray">Complete
+                                                Location</label>
+                                     
+                                                <label for="" style="color:dimgray">Exact Location</label>
+                                              
+                                                <input type="text" class="form-control" name="exact_loc">
                                         </div>
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Year:</label>
-                                            <input type="text" name="year">
+                                            <input type="text" class="form-control" style="width: 100px;"
+                                                name="year">
                                         </div>
                                     </div>
                                 </div>
@@ -131,8 +135,8 @@
 
         <div class="card-header d-flex justify-content-between">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-address-book"
-                    style="color:#C9282D;"></span>Project</h1>
+            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-project-diagram"
+                    style="color:#C9282D;"></span> PROJECTS</h1>
 
         </div>
         <div>
@@ -141,17 +145,24 @@
                 <thead class="text-center" style="background-color:#343a40; color:white;">
                     <tr>
                         <th scope="col">View/Edit</th>
-                        <th scope="col">Program Categories</th>
-                        <th scope="col">Municipalites</th>
-                        <th scope="col">Project Code</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Province</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Status </th>
-                        <th scope="col">Total Cost </th>
-                        <th scope="col">Complete Location</th>
-                        <th scope="col">Year</th>
+                        <th scope="col">Categories</th>
+                        <th scope="col">Municipality</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Project Code</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Title</th>
+
+
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Type</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Status </th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Total Cost </th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Exact Location</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Year</th>
                         <th scope="col">Delete</th>
                     </tr>
                 </thead>
@@ -167,7 +178,7 @@
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header" style="background-color: #C9282D; color:white;">
-                                            <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit Project</h5>
                                             <button type="button" class="close" data-dismiss="modal"
                                                 aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
@@ -245,14 +256,12 @@
                                                                         value="{{ $all->province }}" name="province">
                                                                 </div>
                                                             </div>
+
                                                             <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label for=""
-                                                                        style="color:dimgray">Description:</label>
-                                                                    <input type="text" class="form-control"
-                                                                        value="{{ $all->description }}"
-                                                                        name="description">
-                                                                </div>
+                                                                <label for="" style="color:dimgray;">Description:
+                                                                </label>
+                                                                <textarea style=" height: 150px;" id="" type="text" class="form-control" placeholder="" title=""
+                                                                    name="description">{{ $all->description }}</textarea>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
@@ -280,16 +289,16 @@
                                                             </div>
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="" style="color:dimgray">Complete
+                                                                    <label for="" style="color:dimgray">Exact
                                                                         Location</label>
                                                                     <input type="text" class="form-control"
-                                                                        value="{{ $all->exact_loc }}" name="exact_loc"
-                                                                        >
+                                                                        value="{{ $all->exact_loc }}" name="exact_loc">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for=""
                                                                         style="color:dimgray">Year:</label>
                                                                     <input type="text" name="year"
+                                                                        class="form-control" style="width: 100px;"
                                                                         value="{{ $all->year }}">
                                                                 </div>
                                                             </div>
@@ -309,16 +318,21 @@
                             </div>
 
                             <td>{{ $all->program->title }}</td>
-                            <td>{{ $all->municipality->municipality }}</td>
-                            <td>{{ $all->province }}</td>
-                            <td>{{ $all->title }}</td>
-                            <td>{{ $all->province }}</td>
-                            <td>{{ $all->description }}</td>
-                            <td>{{ $all->type }}</td>
-                            <td>{{ $all->status }}</td>
-                            <td>{{ number_format($all->total_cost, 2) }}</td>
-                            <td>{{ $all->exact_loc }}</td>
-                            <td>{{ $all->year }}</td>
+                            <td>{{ $all->municipality->municipality }}</td>                           
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                {{ $all->proj_code }}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                {{ $all->title }}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                {{ $all->type }}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                {{ $all->status }}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                {{ $all->total_cost }}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                {{ $all->exact_loc }}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                {{ $all->year }}</td>
                             <td><a href="#" data-toggle="modal" id="project_delete_link" class="btn"
                                     data-target="#project_delete_link{{ $all->id }}"><span
                                         class="text-danger fas fa-trash-alt"></span></a></td>

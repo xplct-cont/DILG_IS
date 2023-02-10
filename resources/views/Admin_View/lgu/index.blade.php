@@ -38,7 +38,7 @@
                                     <div class="form-group">
                                         <label for="municipality_id">Municipality:</label>
 
-                                        <select name="municipality_id" id="municipality_id" class="form-control" 
+                                        <select name="municipality_id" id="municipality_id" class="form-control"
                                             style="color:dimgray;" required>
                                             <option selected>Select Municipality...</option>
                                             @foreach ($municipalities as $municipality)
@@ -137,7 +137,8 @@
                 <tr>
                     <th>View/Edit</th>
                     <th>Mayor</th>
-                    <th>Vice Mayor</th>
+                    <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                        style="text-align: center">Vice Mayor</th>
                     <th>Municipality</th>
                     <th>Delete</th>
                 </tr>
@@ -150,7 +151,8 @@
                                 data-target="#lgu_id{{ $lgu_member->id }}"><span
                                     class="text-light btn btn-sm btn-success">View</span></a></td>
                         <td>{{ $lgu_member->mayor }}</td>
-                        <td>{{ $lgu_member->vice_mayor }}</td>
+                        <td scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">{{ $lgu_member->vice_mayor }}</td>
                         <td>{{ $lgu_member->municipality->municipality }}</td>
 
                         <!-- Modal -->

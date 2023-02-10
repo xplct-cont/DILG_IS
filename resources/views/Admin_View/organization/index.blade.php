@@ -90,8 +90,10 @@
             <thead style="background-color:#343a40; color:white;">
                 <tr>
                     <th>Profile Image</th>
-                    <th>First Name</th>
-                    <th>Middle Initial</th>
+                    <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                        style="text-align: center">First Name</th>
+                    <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                        style="text-align: center">Middle Initial</th>
                     <th>Last Name</th>
                     <th>Position</th>
                     <th>Edit</th>
@@ -104,8 +106,10 @@
                     <tr>
                         <td><img src="{{ asset('org_profile_images/' . $org_member->profile_img) }} " alt="Image"
                                 style="border-radius: 50%; height: 50px; width: 50px;"></td>
-                        <td>{{ $org_member->fname }}</td>
-                        <td>{{ $org_member->mid_initial }}</td>
+                        <td scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">{{ $org_member->fname }}</td>
+                        <td scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">{{ $org_member->mid_initial }}</td>
                         <td>{{ $org_member->lname }}</td>
                         <td>{{ $org_member->position }}</td>
                         <td><a href="#" data-toggle="modal" id="org_edit_link" class="btn"
