@@ -87,7 +87,7 @@ class Index extends Component
         ]);
 
         foreach ($this->image as $key => $img) {
-            $this->image[$key] = $img->store('images');
+            $this->image[$key] = $img->store('news');
         }
 
         $news = News::find($this->news_id);
