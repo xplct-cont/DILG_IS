@@ -106,7 +106,14 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label for="" style="color:dimgray">Complete
+                                                Location</label>
                                             <label for="" style="color:dimgray">Exact Location</label>
+
+                                            <input type="text" class="form-control" name="exact_loc">
+
+                                            <label for="" style="color:dimgray">Exact Location</label>
+
                                             <input type="text" class="form-control" name="exact_loc">
                                         </div>
                                         <div class="form-group">
@@ -324,7 +331,7 @@
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->status }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
-                                {{ number_format($all->total_cost, 2) }}</td>
+                                {{ $all->total_cost }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->exact_loc }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">

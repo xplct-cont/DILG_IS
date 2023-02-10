@@ -14,7 +14,7 @@
                         <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Project
                             Code: <span style="font-size: 16px; font-weight: 400;"> {{ $proj->proj_code }}</span></p>
                         <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Title: <span
-                                style="font-size: 16px; font-weight: 400;"> {{ $proj->title }}</span></p>
+                                style="font-size: 16px; font-weight: 400;"> {{ Illuminate\Support\Str::limit($proj->title, 40) }}</span></p>
                         <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
                             Municipality: <span style="font-size: 16px; font-weight: 400;">
                                 {{ $proj->municipality->municipality }}</span>
