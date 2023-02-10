@@ -106,8 +106,12 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Exact Location</label>
-                                            <input type="text" class="form-control" name="exact_loc">
+                                            <<<<<<< HEAD <label for="" style="color:dimgray">Complete
+                                                Location</label>
+                                                =======
+                                                <label for="" style="color:dimgray">Exact Location</label>
+                                                >>>>>>> 674738159aa63e21b12a38ce748557cb3c1aa6d5
+                                                <input type="text" class="form-control" name="exact_loc">
                                         </div>
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Year:</label>
@@ -315,6 +319,15 @@
 
                             <td>{{ $all->program->title }}</td>
                             <td>{{ $all->municipality->municipality }}</td>
+                            <td>{{ $all->province }}</td>
+                            <td>{{ $all->title }}</td>
+                            <td>{{ $all->province }}</td>
+                            <td>{{ $all->description }}</td>
+                            <td>{{ $all->type }}</td>
+                            <td>{{ $all->status }}</td>
+                            <td>{{ $all->total_cost }}</td>
+                            <td>{{ $all->exact_loc }}</td>
+                            <td>{{ $all->year }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->proj_code }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
@@ -324,7 +337,7 @@
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->status }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
-                                {{ number_format($all->total_cost, 2) }}</td>
+                                {{ $all->total_cost }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->exact_loc }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
