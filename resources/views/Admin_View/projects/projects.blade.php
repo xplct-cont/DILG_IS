@@ -108,9 +108,16 @@
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Complete
                                                 Location</label>
+<<<<<<< HEAD
                                             <label for="" style="color:dimgray">Exact Location</label>
 
                                             <input type="text" class="form-control" name="exact_loc">
+=======
+                                     
+                                                <label for="" style="color:dimgray">Exact Location</label>
+                                              
+                                                <input type="text" class="form-control" name="exact_loc">
+>>>>>>> f8315e6c3aaff1b220eb4ca9d908f97ae1292481
                                         </div>
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Year:</label>
@@ -317,17 +324,7 @@
                             </div>
 
                             <td>{{ $all->program->title }}</td>
-                            <td>{{ $all->municipality->municipality }}</td>
-                            <td>{{ $all->province }}</td>
-                            <td>{{ $all->title }}</td>
-                            <td>{{ $all->province }}</td>
-                            <td>{{ $all->description }}</td>
-                            <td>{{ $all->type }}</td>
-                            <td>{{ $all->status }}</td>
-                            <td>{{ $all->total_cost }}</td>
-                            <td>{{ $all->exact_loc }}</td>
-                            <td>{{ $all->year }}</td>
-                            
+                            <td>{{ $all->municipality->municipality }}</td>                           
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->proj_code }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
