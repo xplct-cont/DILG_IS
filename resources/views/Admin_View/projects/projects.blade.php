@@ -108,10 +108,13 @@
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Complete
                                                 Location</label>
-                                     
-                                                <label for="" style="color:dimgray">Exact Location</label>
-                                              
-                                                <input type="text" class="form-control" name="exact_loc">
+                                            <label for="" style="color:dimgray">Exact Location</label>
+
+                                            <input type="text" class="form-control" name="exact_loc">
+
+                                            <label for="" style="color:dimgray">Exact Location</label>
+
+                                            <input type="text" class="form-control" name="exact_loc">
                                         </div>
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Year:</label>
@@ -318,7 +321,7 @@
                             </div>
 
                             <td>{{ $all->program->title }}</td>
-                            <td>{{ $all->municipality->municipality }}</td>                           
+                            <td>{{ $all->municipality->municipality }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->proj_code }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
