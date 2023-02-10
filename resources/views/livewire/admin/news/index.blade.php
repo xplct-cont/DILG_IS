@@ -10,30 +10,30 @@
     @endif
 
     <div class="col-md-12 mt-2 mb-2">
-       
+
         <div class="">
             <div class="row ">
                 <div class="col-md-4 mx-auto">
-    
+
                     <p class="mt-2 m-2">From:</p>
-                    <input style="border-radius: 20px;" type="date" name="" id="" wire:model="fromDate"
-                        class="form-control ">
+                    <input style="border-radius: 20px;" type="date" name="" id=""
+                        wire:model="fromDate" class="form-control ">
                     <p class="mt-2 m-2">To:</p>
                     <input style="border-radius: 20px;" type="date" name="" id="" wire:model="toDate"
                         class="form-control ">
-    
+
                 </div>
                 <div class="col-md-4 mx-auto">
                     <div class="" style="margin-top: 40px;">
-                        <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
-                            placeholder="Search">
+                        <input type="search" style="border-radius: 20px;" wire:model="search"
+                            class="form-control input" placeholder="Search">
                     </div>
-    
+
                 </div>
             </div>
-    
+
         </div>
-    
+
 
     </div>
     <div class="d-flex justify-content-end">
@@ -76,11 +76,10 @@
                         {{-- <td>{{ $new->datetime->format('d-m-y') }}</td> --}}
                         <td>{{ Carbon\Carbon::parse($new->datetime)->format('F d, Y  H:i A') }}</td>
                         <td><a type="button" data-bs-toggle="modal" data-bs-target="#updateNewsModal">
-                                <i class="fas fa-edit text-warning"
-                                    wire:click="editNews({{ $new->id }})"></i>
+                                <i class="fas fa-edit text-warning" wire:click="editNews({{ $new->id }})"></i>
                             </a>
                             <a type="button" data-bs-toggle="modal" data-bs-target="#deleteNewsModal">
-                                <i class="fas fa-trash-alt text-danger" 
+                                <i class="fas fa-trash-alt text-danger"
                                     wire:click="deleteNews({{ $new->id }})"></i>
                             </a>
                         </td>
