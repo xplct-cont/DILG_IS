@@ -85,8 +85,7 @@
                                 <p class="text-center" style="color:dimgray; margin-top: -10px; font-size: 15px;"><span
                                     style="font-weight: 500; color:dimgray">No. of Barangays: </span> {{ $lgu->municipality->num_of_brgys }}</p>
                             </div>
-                           
-                    
+                        
                 @endforeach
 
             </div>
