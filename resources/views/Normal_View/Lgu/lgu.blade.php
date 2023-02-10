@@ -101,6 +101,7 @@
                                 @endforeach
                             </select>
                         </div>
+                    </div>
                 @endforeach
 
             </div>

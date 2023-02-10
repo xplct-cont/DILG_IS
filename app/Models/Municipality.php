@@ -14,6 +14,9 @@ class Municipality extends Model
     protected $fillable =
     [
         'municipality',
+        'gmap_url',
+        'num_of_brgys',
+        'barangays',
 
     ];
 
