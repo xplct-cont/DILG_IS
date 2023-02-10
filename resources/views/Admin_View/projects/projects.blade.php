@@ -108,7 +108,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Complete Location</label>
-                                            <input type="text" class="form-control" name="exact_loc" >
+                                            <input type="text" class="form-control" name="exact_loc">
                                         </div>
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Year:</label>
@@ -283,8 +283,7 @@
                                                                     <label for="" style="color:dimgray">Complete
                                                                         Location</label>
                                                                     <input type="text" class="form-control"
-                                                                        value="{{ $all->exact_loc }}" name="exact_loc"
-                                                                        >
+                                                                        value="{{ $all->exact_loc }}" name="exact_loc">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for=""
@@ -316,7 +315,7 @@
                             <td>{{ $all->description }}</td>
                             <td>{{ $all->type }}</td>
                             <td>{{ $all->status }}</td>
-                            <td>{{ number_format($all->total_cost, 2) }}</td>
+                            <td>{{ $all->total_cost }}</td>
                             <td>{{ $all->exact_loc }}</td>
                             <td>{{ $all->year }}</td>
                             <td><a href="#" data-toggle="modal" id="project_delete_link" class="btn"
