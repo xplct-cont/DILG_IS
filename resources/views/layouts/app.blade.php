@@ -202,7 +202,7 @@
 
     </div>
 
-    <div class="d-flex justify-content-center" style=" padding: 20px; background: #C9282D;; color: #DCDCDC;">
+    <div class="" style=" padding: 20px; background: #C9282D;; color: #DCDCDC;">
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
