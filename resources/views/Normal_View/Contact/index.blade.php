@@ -4,7 +4,7 @@
     <div>
         <div class="text-center">
             <img src='img/Background.png' width="1370" style="max-width: 100%; height:auto;">
-           </div>
+        </div>
         <p></p>
 
         <div class="header ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF;  margin-bottom: 5px;">
@@ -28,7 +28,8 @@
                                     <img src="/img/place.png" style="height: 100px;" alt="">
                                 </div>
                                 <p class="text-center mt-3" style="font-size: 16px; font-weight: 700;">OFFICE ADDRESS</p>
-                                <p class="text-center" style="font-size: 15px; font-weight: 450; margin-top: -15px;">Rajah Sikatuna Avenue, Dampas, Tagbilaran City 6300</p>
+                                <p class="text-center" style="font-size: 15px; font-weight: 450; margin-top: -15px;">Rajah
+                                    Sikatuna Avenue, Dampas, Tagbilaran City 6300</p>
                                 {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                             </div>
                         </div>
@@ -52,12 +53,33 @@
                     </div>
                     <div class="col-md-6">
                         <iframe class="col-md-12"
-                            src="https://maps.google.com/maps?q=dilg rajah sikatuna dampas&t=&z=9&ie=UTF8&iwloc=&output=embed"
+                            src="https://maps.google.com/maps?q=dilg rajah sikatuna avenue&t=&z=13&ie=UTF8&iwloc=&output=embed"
                             height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
+
+                        <div class="elevation-2 p-2 rounded col-md-11 mt-1 mx-auto">
+                            <p class="mt-2" style="font-size: 20px; font-weight: 500; color: dimgray"><span> <img
+                                        style="height: 30px; width: 40px;" src="img/email_logo.png"
+                                        alt=""></span><span class="d-flex justify-content-center"> Email us</span>
+                            </p>
+
+                            <div class="form-group">
+                                <label for="" style="color:dimgray">To:</label>
+                                <input type="text" class="form-control" name="" value="dilg_bohol@gmail.com"
+                                    readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="" style="color:dimgray">Subject:</label>
+                                <input type="text" class="form-control" name="">
+                            </div>
+                            <div class="form-group">
+                                <label for="" style="color:dimgray;">Content: </label>
+                                <textarea style=" height: 150px;" id="" type="text" class="form-control" placeholder="" title=""
+                                    name=""></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     @endsection

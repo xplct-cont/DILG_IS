@@ -42,20 +42,20 @@
             <a href="{{ url('/') }}" class="text-start ml-4"
                 style="color:#C9282D; font-size: 19px; margin:auto;"><span class="fas fa-arrow-left"></span> Back to home</a>
 
-        <div class="container" style="margin-top: -5px;">
+        <div class="container" style="margin-top: -10px;">
             <div class=" rounded d-flex justify-content-between">
                 <img src="/img/dilg-main.png" class=" shadow-lg rounded-circle"
                     style="height: 150px; width:150px; margin:auto;">
 
             </div>
-            <div class="d-flex justify-content-center" style="margin-top: 30px">
+            <div class="d-flex justify-content-center" style="margin-top: 10px">
                 <h3 class="text-center" style="font-size: 27px;">Department of the Interior and Local Government
                     <p class="text-center" style="font-weight:450; font-size: 20px; margin-top: -5px;">Bohol Province</p>
                     <br>
                 </h3>
             </div>
 
-            <div class="row justify-content-center" style="margin-top: -30px">
+            <div class="row justify-content-center" style="margin-top: -50px">
                 <div class="col-md-5">
                     <div class="card shadow-lg rounded">
                         <h3 class="text-center p-3"

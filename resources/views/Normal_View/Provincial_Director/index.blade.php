@@ -37,8 +37,9 @@
 
                             It has been my great pride and joy to present to you this Accomplishment Report for CY 2022.
                             This
-                            is made possible through the joint efforts of the active and dedicated men and women of DILG-Bo-
-                            hol. These accomplishments manifest the department’s aspirations through the collaboration and
+                            is made possible through the joint efforts of the active and dedicated men and women of
+                            DILG-Bohol. These accomplishments manifest the department’s aspirations through the
+                            collaboration and
                             participation of the different stakeholders. For that, I wholeheartedly laud the men and women
                             of
                             DILG-Bohol for a great job. <br><br>

@@ -197,7 +197,7 @@
             <div class="col-md-6">
                 <p class="text-center" style="font-size: 25px; font-weight: 500;">Location Map</p>
                 <iframe class="col-md-12"
-                    src="https://maps.google.com/maps?q=dilg rajah sikatuna dampas street&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=dilg rajah sikatuna avenue&t=k&z=14&ie=UTF8&iwloc=&output=embed"
                     height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
             </div>
