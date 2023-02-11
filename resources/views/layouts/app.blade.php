@@ -305,17 +305,17 @@
                             </a>
                             <a href="http://legacy.senate.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" >
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     Senate of the
                                     Philippines</p>
                             </a>
                             <a href="https://www.congress.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" >
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     House of
                                     Representatives</p>
                             </a>
-                            <a href="https://sc.judiciary.gov.ph/"  target="_blank">
+                            <a href="https://sc.judiciary.gov.ph/" target="_blank">
                                 <p class="text-secondary"
                                     style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     Supereme Court</p>
@@ -333,26 +333,31 @@
                 </div>
             </div>
 
-            <audio controls autoplay>
-                <source src="{{ asset('audio/1 minute Happy Background Music.mp3') }}" type="audio/mpeg">
-              Your browser does not support the audio element.
-              </audio>
-           <div class="text-center">
-           <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}</p>
-           </div>
+
+            <div class="text-center">
+                <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}
+                </p>
+            </div>
             <button onclick="topFunction()" id="myBtn" title="Go to top"
                 style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
 
-                <div class="dropup">
-                    <button class="dropbtn">Developers</button>
-                    <div class="dropup-content">
+            <div class="dropup">
+                <button class="dropbtn">Developers
 
-                      <a href="#">Vienna Rose Pepito</a>
-                      <a href="#">Kenn Secusana</a>
-                      <a href="#">Chadie Gil Augis</a>
-                      <a href="#">Franklin Pogoy</a>
-                    </div>
-                  </div>
+                </button>
+
+                <div class="dropup-content">
+
+                    <a href="#">Vienna Rose Pepito</a>
+                    <a href="#">Kenn Secusana</a>
+                    <a href="#">Chadie Gil Augis</a>
+                    <a href="#">Franklin Pogoy</a>
+                    <audio controls autoplay>
+                        <source src="{{ asset('audio/Doraemon Theme Song Tagalog Parody.mp3') }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
 
 </body>
 <script></script>
@@ -413,43 +418,51 @@
     }
 
     .dropbtn {
-  background-color: #002C76;
-  color: white;
-  padding: 5px;
-  font-size: 10px;
-  border: none;
-}
-.dropup {
-  /* position: relative;
+        background-color: #002C76;
+        color: white;
+        padding: 5px;
+        font-size: 10px;
+        border: none;
+    }
+
+    .dropup {
+        /* position: relative;
   display: inline-block; */
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 23px;
-  color: white;
-  text-align: left;
-}
-.dropup-content {
-  display: none;
-  position: absolute;
-  min-width: 155px;
-  bottom: 50px;
-  z-index: 1;
-  background-color: #002C76;
-}
-.dropup-content a {
-  color: white;
-  padding: 5px 5px;
-  text-decoration: none;
-  display: block;
-}
-.dropup-content a:hover {background-color: #ccc}
-.dropup:hover .dropup-content {
-  display: block;
-}
-.dropup:hover .dropbtn {
-  background-color: #002C76;
-}
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 23px;
+        color: white;
+        text-align: left;
+    }
+
+    .dropup-content {
+        display: none;
+        position: absolute;
+        min-width: 155px;
+        bottom: 50px;
+        z-index: 1;
+        background-color: #002C76;
+    }
+
+    .dropup-content a {
+        color: white;
+        padding: 5px 5px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropup-content a:hover {
+        background-color: #ccc
+    }
+
+    .dropup:hover .dropup-content {
+        display: block;
+    }
+
+    .dropup:hover .dropbtn {
+        background-color: #002C76;
+    }
 </style>
 
 <script>
