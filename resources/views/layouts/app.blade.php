@@ -332,6 +332,11 @@
                     </div>
                 </div>
             </div>
+
+            <audio controls autoplay>
+                <source src="{{ asset('audio/1 minute Happy Background Music.mp3') }}" type="audio/mpeg">
+              Your browser does not support the audio element.
+              </audio>
            <div class="text-center">
            <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}</p>
            </div>
