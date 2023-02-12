@@ -57,8 +57,8 @@
                             height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
 
-                        <div class="elevation-2 p-2 rounded col-md-11 mt-1 mx-auto">
-                            <p class="mt-2" style="font-size: 20px; font-weight: 500; color: dimgray"><span> <img
+                        <div class=" p-2 rounded col-md-12 mt-1 mx-auto">
+                            <p class="mt-1" style="font-size: 20px; font-weight: 500; color: dimgray"><span> <img
                                         style="height: 30px; width: 40px;" src="img/email_logo.png"
                                         alt=""></span><span class="d-flex justify-content-center"> Email us</span>
                             </p>
