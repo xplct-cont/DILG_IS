@@ -5,7 +5,7 @@
             <div class="row ">
                 @foreach ($projectsAll as $proj)
                     <div class="card col-md-5 m-1 mx-auto">
-                        <div class="card-body  text-center">
+                        <div class="card-body">
                             <a href="#" data-toggle="modal" id="project_view_link"
                                 data-target="#project_id{{ $proj->id }}" style="text-decoration:none; color:dimgray">
 
@@ -25,7 +25,7 @@
                                     Municipality: <span style="font-size: 16px; font-weight: 400;">
                                         {{ $proj->municipality->municipality }}</span>
                                 </p>
-                                <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                <p class="" style="margin-top: -12px; font-weight: 500; font-size: 16px;">
                                     Exact
                                     Location: <span style="font-size: 16px; font-weight: 400;">
                                         {{ $proj->exact_loc }}</span></p>
@@ -55,7 +55,7 @@
 
                     <div class="modal fade" id="project_id{{ $proj->id }}" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-md" role="document">
+                        <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header ">
 
@@ -65,11 +65,11 @@
                                 </div>
                                 <div class="modal-body" style="color:dimgray;">
                                     <div class="row">
-                                        <div class="col-md-6 text-center mb-1">
+                                        <div class="col-md-4 text-center mb-1">
                                             <img src="img/bohol_seal.png" class="mx-auto elevation-4"
                                                 style="height: 130px; width: 130px; border-radius: 50%;" alt="">
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
                                             <h1 style="font-size: 22px;" class="text-center">Province of
                                                 {{ $proj->province }}</h1>
 
@@ -92,7 +92,7 @@
                                                 Municipality: <span style="font-size: 16px; font-weight: 400;">
                                                     {{ $proj->municipality->municipality }}</span>
                                             </p>
-                                            <p class=" text-justify "
+                                            <p class=""
                                                 style="margin-top: -12px; font-weight: 500; font-size: 16px;">
                                                 Exact
                                                 Location: <span style="font-size: 16px; font-weight: 400;">
