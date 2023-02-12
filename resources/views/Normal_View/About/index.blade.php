@@ -1,12 +1,16 @@
 @extends('layouts.app')
 @section('content')
     <div>
-       <div class="text-center">
-        <img src='img/Background.png' width="1370" style="max-width: 100%; height:auto;">
-       </div>
+        <div class="text-center">
+            <img src='img/Background.png' width="1370" style="max-width: 100%; height:auto;">
+        </div>
         <p></p>
         <div class="header ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
             <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">ABOUT US</h1>
+            <audio controls autoplay hidden>
+                <source src="{{ asset('audio/Doraemon Theme Song Tagalog Parody.mp3') }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
         </div>
 
         <div class="col-md-11 mx-auto mt-3">
@@ -84,6 +88,7 @@
 
             </div>
         </div>
+
     </div>
 
     </div>
