@@ -352,10 +352,7 @@
                     <a href="#">Kenn Secusana</a>
                     <a href="#">Chadie Gil Augis</a>
                     <a href="#">Franklin Pogoy</a>
-                    <audio controls autoplay>
-                        <source src="{{ asset('audio/Doraemon Theme Song Tagalog Parody.mp3') }}" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
+
                 </div>
             </div>
 
