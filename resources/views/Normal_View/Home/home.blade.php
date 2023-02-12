@@ -38,14 +38,17 @@
             <div class="col-md-6 mt-5 mb-5 ">
 
                 <a href="{{ route('/provincial_director') }}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">THE PROVINCIAL
+                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">THE
+                    PROVINCIAL
                     DIRECTOR
                     <span class="fas fa-arrow-right" style="margin-left:38px;"></span></a><br><br>
-                <a href="{{route('/about')}}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION &
+                <a href="{{ route('/about') }}" type="button" class="btn btn-md"
+                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION
+                    &
                     MISSION <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a><br><br>
-                <a href="{{url('/project')}}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">PROJECTS <span class="fas fa-arrow-right" style="margin-left: 160px;"></span></a>
+                <a href="{{ url('/project') }}" type="button" class="btn btn-md"
+                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">PROJECTS
+                    <span class="fas fa-arrow-right" style="margin-left: 160px;"></span></a>
 
             </div>
             <div class="col-md-6 mt-5 mb-5">
@@ -74,7 +77,7 @@
     <div class="mx-auto">
         <div class="col-md-12">
             <div class="row">
-                @foreach ($projectsAll as $proj)
+                {{-- @foreach ($projectsAll as $proj)
                     <div class="card col-md-5 m-1 mx-auto">
                         <div class="card-body  text-center">
                             <div class="card-header" style="background-color:#C9282D; color:white;">
@@ -115,9 +118,142 @@
                             referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
                         </div>
                     </div>
+                @endforeach --}}
+                @foreach ($projectsAll as $proj)
+                    <div class="card col-md-5 m-1 mx-auto">
+                        <div class="card-body  text-center">
+                            <a href="#" data-toggle="modal" id="project_view_link"
+                                data-target="#project_id{{ $proj->id }}" style="text-decoration:none; color:dimgray">
+
+                                <div class="card-header" style="background-color:#C9282D; color:white;">
+                                    <h1 style="font-size: 20px;" class="text-center">Province of {{ $proj->province }}</h1>
+                                </div>
+                                <p class=" text-justify mt-3" style="font-weight: 500; font-size: 16px;">Program: <span
+                                        style="font-size: 16px; font-weight: 400;"> {{ $proj->program->title }}</span></p>
+                                <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                    Project
+                                    Code: <span style="font-size: 16px; font-weight: 400;"> {{ $proj->proj_code }}</span>
+                                </p>
+                                <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                    Title: <span style="font-size: 16px; font-weight: 400;">
+                                        {{ Illuminate\Support\Str::limit($proj->title, 40) }}</span></p>
+                                <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                    Municipality: <span style="font-size: 16px; font-weight: 400;">
+                                        {{ $proj->municipality->municipality }}</span>
+                                </p>
+                                <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                    Exact
+                                    Location: <span style="font-size: 16px; font-weight: 400;">
+                                        {{ $proj->exact_loc }}</span></p>
+                                <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                    Type: <span style="font-size: 16px; font-weight: 400;"> {{ $proj->type }}</span></p>
+                                <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                    Year: <span style="font-size: 16px; font-weight: 400;"> {{ $proj->year }}</span></p>
+                                <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                    Status:
+                                    <span style="font-size: 16px; font-weight: 400;"> {{ $proj->status }}</span>
+                                </p>
+                                <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                    Total Cost:
+                                    <span style="font-size: 16px; font-weight: 400;"> {{ $proj->total_cost }}</span>
+                                </p>
+                                <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                    Description:
+                                    <span
+                                        style="font-size: 16px; font-weight: 400;">{{ Illuminate\Support\Str::limit($proj->description, 30) }}</span>
+                                </p>
+                                <iframe class="col-md-12" src="{{ $proj->municipality->gmap_url }}" height="450"
+                                    style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="modal fade" id="project_id{{ $proj->id }}" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header ">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" style="color:dimgray;">
+                                    <div class="row">
+                                        <div class="col-md-6 text-center">
+                                            <img src="img/bohol_seal.png" class="mx-auto elevation-4"
+                                                style="height: 130px; width: 130px; border-radius: 50%;" alt="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h1 style="font-size: 22px;" class="text-center">Province of
+                                                {{ $proj->province }}</h1>
+
+                                            <p class=" text-justify mt-3" style="font-weight: 500; font-size: 16px;">
+                                                Program: <span style="font-size: 16px; font-weight: 400;">
+                                                    {{ $proj->program->title }}</span>
+                                            </p>
+                                            <p class=" text-justify "
+                                                style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                                Project
+                                                Code: <span style="font-size: 16px; font-weight: 400;">
+                                                    {{ $proj->proj_code }}</span>
+                                            </p>
+                                            <p class=" text-justify "
+                                                style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                                Title: <span style="font-size: 16px; font-weight: 400;">
+                                                    {{ Illuminate\Support\Str::limit($proj->title, 40) }}</span></p>
+                                            <p class=" text-justify "
+                                                style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                                Municipality: <span style="font-size: 16px; font-weight: 400;">
+                                                    {{ $proj->municipality->municipality }}</span>
+                                            </p>
+                                            <p class=" text-justify "
+                                                style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                                Exact
+                                                Location: <span style="font-size: 16px; font-weight: 400;">
+                                                    {{ $proj->exact_loc }}</span></p>
+                                            <p class=" text-justify "
+                                                style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                                Type: <span style="font-size: 16px; font-weight: 400;">
+                                                    {{ $proj->type }}</span>
+                                            </p>
+                                            <p class=" text-justify "
+                                                style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                                Year: <span style="font-size: 16px; font-weight: 400;">
+                                                    {{ $proj->year }}</span>
+                                            </p>
+                                            <p class=" text-justify "
+                                                style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                                Status:
+                                                <span style="font-size: 16px; font-weight: 400;">
+                                                    {{ $proj->status }}</span>
+                                            </p>
+                                            <p class=" text-justify "
+                                                style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                                Total Cost:
+                                                <span style="font-size: 16px; font-weight: 400;">
+                                                    {{ $proj->total_cost }}</span>
+                                            </p>
+
+
+                                        </div>
+
+                                        <p class=" text-justify "
+                                            style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                            Description:
+                                            <textarea style=" height: 150px; background-color:white;" id="" type="text" class="form-control"
+                                                placeholder="" title="" readonly>{{ $proj->description }}</textarea>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
             </div>
-    
+
         </div>
     </div>
 
@@ -149,7 +285,8 @@
                                 <h1 style="font-size: 20px;">
                                     Post: {{ \Carbon\Carbon::parse($new->datetime)->format('M j, Y h:i a') }}</h1><br>
                                 <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
-                                <p class="text-left" style="font-size: 15px; font-weight: 400;"> {{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
+                                <p class="text-left" style="font-size: 15px; font-weight: 400;">
+                                    {{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
                             </div>
                             <div class="col-md-5">
                                 <div class="col-md-12" style="height: 400px;">
