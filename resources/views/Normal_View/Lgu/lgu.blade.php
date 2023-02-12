@@ -95,7 +95,7 @@
                                 @php $brgy = json_decode($lgu->municipality->barangays,true); @endphp
                                 <option selected>List of Barangays ⥂ </option>
                                 @foreach ((array) $brgy as $b)
-                                    <li class="list-unstyled">
+                                    <li>
                                         <option value="">{{ $b }}</option>
                                     </li>
                                 @endforeach

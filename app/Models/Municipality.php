@@ -32,4 +32,8 @@ class Municipality extends Model
         return $this->hasMany('App\Models\Lgu');
     }
 
+    public function field_officer(){
+        return $this->hasMany('App\Models\Field_Officer');
+    }
+
 }

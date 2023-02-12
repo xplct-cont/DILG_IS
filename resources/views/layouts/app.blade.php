@@ -111,9 +111,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/lgu') }}"> &nbsp;LGU's</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
-                        </li>
+                        </li> --}}
 
 
                         <div class="dropdown">
@@ -125,9 +125,10 @@
                                 <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/organization') }}">Organizational
                                         Structure/PDMU</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
                                         Agencies</a></li>
-                                <li><a class="dropdown-item" href="#">History</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/contacts') }}">Contact Information</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
