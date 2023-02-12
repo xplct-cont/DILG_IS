@@ -85,15 +85,17 @@
                                             </p>
                                             <p class=" text-justify "
                                                 style="margin-top: -12px; font-weight: 500; font-size: 16px;">
-                                                Title: <span style="font-size: 16px; font-weight: 400;">
-                                                    {{ Illuminate\Support\Str::limit($proj->title, 40) }}</span></p>
+                                                Title:
+                                                <textarea style=" height: 90px; background-color:white;" id="" type="text" class="form-control"
+                                                    placeholder="" title="" readonly>{{ $proj->title }}</textarea>
+                                            </p>
+
                                             <p class=" text-justify "
-                                                style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                                style="margin-top: 5px; font-weight: 500; font-size: 16px;">
                                                 Municipality: <span style="font-size: 16px; font-weight: 400;">
                                                     {{ $proj->municipality->municipality }}</span>
                                             </p>
-                                            <p class=""
-                                                style="margin-top: -12px; font-weight: 500; font-size: 16px;">
+                                            <p class="" style="margin-top: -12px; font-weight: 500; font-size: 16px;">
                                                 Exact
                                                 Location: <span style="font-size: 16px; font-weight: 400;">
                                                     {{ $proj->exact_loc }}</span></p>
