@@ -24,9 +24,8 @@
                     <div class="col-md-6">
                         <h1 class="text-left" style="font-size: 28px; font-weight: 700;">Get in touch with us!</h1>
                         <p class="text-justify" style="font-size: 18px;">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab mollitia quibusdam, autem eos
-                            doloremque magnam numquam animi enim quaerat eveniet. Aliquam nisi, labore voluptate
-                            voluptatibus voluptas rerum cum perspiciatis nemo!</p>
+                            If you have any inquiries regarding our programs and services, please do not hesitate to contact us.
+                            We make every effort to answer any questions you may have and provide assistance with any of your needs as much as possible. Please contact us if you require any further information or would like to discuss anything related to our office.</p>
 
 
                         <div class="mx-auto mt-5" style="width: 18rem;">
