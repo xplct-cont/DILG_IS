@@ -8,7 +8,7 @@
     <div class="accordion-item mb-2" >
         <h2 class="accordion-header" id="headingOne{{$fq->id}}" >
           <button class="accordion-button" type="button"
-          data-bs-toggle="collapse" data-bs-target="#collapseOne{{$fq->id}}" aria-expanded="true" aria-controls="collapseOne" style="background-color:#002c76; color:white">
+          data-bs-toggle="collapse" data-bs-target="#collapseOne{{$fq->id}}" aria-expanded="true" aria-controls="collapseOne" style="background-color:#364d74; color:white">
               <strong>{{$fq->questions}}<strong>
           </button>
         </h2>

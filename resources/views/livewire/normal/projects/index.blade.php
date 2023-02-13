@@ -174,7 +174,10 @@
                     </div>
                 @endforeach
             </div>
-
+            <div class="justify-content-between">
+                {{ $projects->links() }}
+            </div>
         </div>
     </div>
+
 </div>
