@@ -14,7 +14,7 @@
         </h2>
         <div id="collapseOne{{$fq->id}}" class="accordion-collapse collapse show"
         aria-labelledby="headingOne{{$fq->id}}" data-bs-parent="#accordionExample">
-          <div class="accordion-body text-wrap">
+          <div class="accordion-body text-wrap fw-light">
             {{$fq->answers}}
           </div>
         </div>
