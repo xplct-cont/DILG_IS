@@ -69,7 +69,7 @@
                             @php $images = json_decode($new->image,true); @endphp
                             @if (is_array($images) && !empty($images))
                                 @foreach ($images as $image)
-                                    <img src="{{ asset('/' . $image) }}" />
+                                    <img src="{{ asset('app/public/' . $image) }}" />
                                 @endforeach
                             @endif
                         </td>
