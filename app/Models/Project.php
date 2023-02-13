@@ -19,4 +19,17 @@ class Project extends Model
     public function municipality() {
         return $this->belongsTo('App\Models\Municipality');
     }
+
+    public function scopeSearch($query, $terms){
+        collect(explode(" " , $terms))->filter()->each(function($term) use($query){
+            $term = '%'. $term . '%';
+
+            $query->where('program_id', 'like', $term)
+                ->orWhere('description', 'like', $term)
+                ->orWhere('municipality_id', 'like', $term)
+                ->orWhere('status', 'like', $term)
+                ->orWhere('type', 'like', $term)
+                ->orWhere('title', 'like', $term);
+        });
+    }
 }

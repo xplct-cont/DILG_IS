@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    {{-- ORGANIZATIONAL STRUCTURE --}}
     <div class="container">
         <div class="d-flex justify-content-center mb-3">
             <img src="/img/dilg-main.png" style="height: 150px; width: 150px;" alt="">
@@ -81,7 +82,7 @@
                 <div class="col-md-6">
                     <p class="text-center mt-3" style="font-size: 28px; font-weight: 500;">ADMIN SERVICES</p>
                     <div class="d-flex row">
-                       
+
                         @foreach ($admin_ser as $ad_ser)
                             <div class="col-md-4 text-center d-flex justify-content-center">
                                 <div class="zoom">
@@ -98,21 +99,131 @@
                     </div>
                 </div>
             </div>
-        @endsection
+
+            {{-- PDMU --}}
+            <hr>
+            <div class="container" style="margin-top: 200px;">
+                <div class="d-flex justify-content-center mb-3">
+                    <img src="/img/dilg-main.png" style="height: 150px; width: 150px;" alt="">
+                </div>
+                <h1 class="text-center " style="font-size: 30px; margin-bottom: 50px;">PROJECT DEVELOPMENT AND MANAGEMENT
+                    UNIT (PDMU)</h1>
+            </div>
 
 
-        <style scoped>
-            .zoom {
-                transition: transform .2s;
-            }
+            @foreach ($pd_pdmu as $pd_pdmudirector)
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="zoom">
+                        <img src="{{ asset('pdmu_profile_images/' . $pd_pdmudirector->profile_img) }} " alt="Image"
+                            class="shadow-lg border border-dark" style="border-radius: 50%; height: 300px; width: 300px;">
 
-            .zoom:hover {
-                -ms-transform: scale(1.2);
-                /* IE 9 */
-                -webkit-transform: scale(1.2);
-                /* Safari 3-8 */
-                transform: scale(1.2);
-                text-align: center;
-                font-size: 10px;
-            }
-        </style>
+                        <p class="text-center" style="font-size: 18px; font-weight:500;">{{ $pd_pdmudirector->fname }}
+                            {{ $pd_pdmudirector->mid_initial }} {{ $pd_pdmudirector->lname }}</p>
+                        <p class="text-center" style="margin-top: -20px; font-size: 13px;">{{ $pd_pdmudirector->position }}
+                        </p>
+            @endforeach
+        </div>
+    </div>
+
+    @foreach ($head_pdmus as $head_pdmu)
+        <div class="d-flex justify-content-center mb-3">
+            <div class="zoom">
+                <img src="{{ asset('pdmu_profile_images/' . $head_pdmu->profile_img) }} " alt="Image"
+                    class="shadow-lg border border-dark" style="border-radius: 50%; height: 250px; width: 250px;">
+
+                <p class="text-center" style="font-size: 18px; font-weight:500;">{{ $head_pdmu->fname }}
+                    {{ $head_pdmu->mid_initial }} {{ $head_pdmu->lname }}</p>
+                <p class="text-center" style="margin-top: -20px; font-size: 13px;">{{ $head_pdmu->position }}</p>
+    @endforeach
+    </div>
+    </div>
+
+    <div class="col-md-12 mx-auto mb-3 mt-3">
+
+        <div class="d-flex row">
+
+            @foreach ($member_pdmus as $member_pdmu)
+                <div class="col-md-6  d-flex justify-content-center">
+                    <div class="zoom">
+                        <img src="{{ asset('pdmu_profile_images/' . $member_pdmu->profile_img) }} " alt="Image"
+                            class="shadow-lg border border-dark" style="border-radius: 50%; height: 200px; width: 200px;">
+                        <p class="text-center" style="font-size: 18px; font-weight:500;">{{ $member_pdmu->fname }}
+                            {{ $member_pdmu->mid_initial }} {{ $member_pdmu->lname }}</p>
+                        <p class="text-center" style="margin-top: -20px; font-size: 13px;">{{ $member_pdmu->position }}
+                        </p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+    <div class=" mx-auto mb-3 mt-3">
+        <div class="d-flex row">
+            @foreach ($member_pdmus_2 as $member_pdmu_2)
+                <div class="col-md-3  d-flex justify-content-center">
+                    <div class="zoom">
+                        <img src="{{ asset('pdmu_profile_images/' . $member_pdmu_2->profile_img) }} " alt="Image"
+                            class="shadow-lg border border-dark" style="border-radius: 50%; height: 200px; width: 200px;">
+                        <p class="text-center" style="font-size: 18px; font-weight:500;">{{ $member_pdmu_2->fname }}
+                            {{ $member_pdmu_2->mid_initial }} {{ $member_pdmu_2->lname }}</p>
+                        <p class="text-center" style="margin-top: -20px; font-size: 13px;">{{ $member_pdmu_2->position }}
+                        </p>
+                    </div>
+                </div>
+            @endforeach
+
+            @foreach ($member_pdmus_3 as $member_pdmu_3)
+                <div class="col-md-6   d-flex justify-content-center">
+                    <div class="zoom">
+                        <img src="{{ asset('pdmu_profile_images/' . $member_pdmu_3->profile_img) }} " alt="Image"
+                            class="shadow-lg border border-dark" style="border-radius: 50%; height: 200px; width: 200px;">
+                        <p class="text-center" style="font-size: 18px; font-weight:500;">{{ $member_pdmu_3->fname }}
+                            {{ $member_pdmu_3->mid_initial }} {{ $member_pdmu_3->lname }}</p>
+                        <p class="text-center" style="margin-top: -20px; font-size: 13px;">{{ $member_pdmu_3->position }}
+                        </p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+    <hr>
+
+    <div class=" col-md-12 mx-auto mb-3 mt-3">
+        <div class="d-flex row">
+            <div class="">
+                <div class="">
+                    @foreach ($engrs as $pdmu_engrs)
+                        <div class="col-md-2 text-center d-flex justify-content-center">
+                            <div class="zoom">
+                                <img src="{{ asset('pdmu_profile_images/' . $pdmu_engrs->profile_img) }} " alt="Image"
+                                    class="shadow-lg border border-dark"
+                                    style="border-radius: 50%; height: 150px; width: 150px;">
+                                <p class="text-center" style=" font-weight:500;">{{ $pdmu_engrs->fname }}
+                                    {{ $pdmu_engrs->mid_initial }} {{ $pdmu_engrs->lname }}</p>
+                                <p class="text-center" style="margin-top: -20px;">
+                                    {{ $pdmu_engrs->position }}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    @endsection
+
+
+    <style scoped>
+        .zoom {
+            transition: transform .2s;
+        }
+
+        .zoom:hover {
+            -ms-transform: scale(1.2);
+            /* IE 9 */
+            -webkit-transform: scale(1.2);
+            /* Safari 3-8 */
+            transform: scale(1.2);
+            text-align: center;
+            font-size: 10px;
+        }
+    </style>

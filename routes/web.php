@@ -28,6 +28,7 @@ use App\Http\Controllers\Admin_View\Admin_JobsController;
 use App\Http\Controllers\Admin_View\Admin_NewsController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
 use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
+use App\Http\Controllers\Admin_View\Admin_FaqsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,13 +77,18 @@ Route::post('/add-lgu', [Admin_LguController::class, 'store']);
 Route::get('/delete_lgu/{id}', [Admin_LguController::class, 'delete_lgu']);
 Route::put('/update-lgu/{id}', [Admin_LguController::class, 'update_lgu']);
 
+Route::get('/admin/faqs', [Admin_FaqsController::class, 'index'])->name('admin/faqs');
+Route::post('/add-faqs', [Admin_FaqsController::class, 'store']);
+Route::get('/delete_faqs/{id}', [Admin_FaqsController::class, 'delete_faqs']);
+Route::put('/update-faqs/{id}', [Admin_FaqsController::class, 'update_faqs']);
+
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
 Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
 Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
-
+Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
 
 
