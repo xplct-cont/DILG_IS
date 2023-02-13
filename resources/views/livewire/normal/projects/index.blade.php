@@ -1,4 +1,28 @@
 <div>
+
+    <div class="col-md-3 mt-3 ms-5">
+        <select class="form-select mt-1" name="program_id" wire:model="program_id">
+            <option value="all">All programs</option>
+            @foreach($programs as $program)
+                <option value="{{$program->id}}">{{$program->title}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="col-md-3 mt-3 ms-5">
+        <select class="form-select mt-1" name="municipality_id" wire:model="municipality">
+            <option value="all">All municipalities</option>
+            @foreach($municipalities as $municipality)
+                <option value="{{$municipality->id}}">{{$municipality->municipality}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="col-md-4 mx-auto">
+        <div class="" style="margin-top: 40px;">
+            <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
+                placeholder="Search">
+        </div>
+
+    </div>
     <div class="mx-auto">
         <div class="col-md-12 mb-5">
             <div class="row ">

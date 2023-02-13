@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<livewire:normal.projects.index>
     {{-- <div class="mx-auto">
         <div class="col-md-12 mb-5">
             <div class="row ">
