@@ -190,11 +190,9 @@
     <hr>
 
     <div class=" col-md-12 mx-auto mb-3 mt-3">
-
         <div class="d-flex row">
-            <div class="col-md-12">
-                <div class="d-flex row">
-
+            <div class="">
+                <div class="">
                     @foreach ($engrs as $pdmu_engrs)
                         <div class="col-md-2 text-center d-flex justify-content-center">
                             <div class="zoom">
@@ -210,21 +208,22 @@
                     @endforeach
                 </div>
             </div>
-        @endsection
+        </div>
+    @endsection
 
 
-        <style scoped>
-            .zoom {
-                transition: transform .2s;
-            }
+    <style scoped>
+        .zoom {
+            transition: transform .2s;
+        }
 
-            .zoom:hover {
-                -ms-transform: scale(1.2);
-                /* IE 9 */
-                -webkit-transform: scale(1.2);
-                /* Safari 3-8 */
-                transform: scale(1.2);
-                text-align: center;
-                font-size: 10px;
-            }
-        </style>
+        .zoom:hover {
+            -ms-transform: scale(1.2);
+            /* IE 9 */
+            -webkit-transform: scale(1.2);
+            /* Safari 3-8 */
+            transform: scale(1.2);
+            text-align: center;
+            font-size: 10px;
+        }
+    </style>

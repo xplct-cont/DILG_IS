@@ -102,43 +102,64 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/news-update') }}"> &nbsp;News</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGRRC</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;Issuances</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/lgu') }}"> &nbsp;LGU's</a>
                         </li>
-                        {{-- <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
-                        </li> --}}
-
-
                         <div class="dropdown">
                             <button class="dropdown-toggle btn text-white" style="margin-top: 2px;" id="dropdownMenu1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
+                                LGRRC
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item" target="_blank" href="https://library.dilg.gov.ph/">DILG
+                                        E-Library</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle btn text-white" style="margin-top: 2px;" id="dropdownMenu1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Issuances
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/issuances-archive/jc/">Joint Circulars</a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/issuances-archive/mc/">Memo Circulars</a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/issuances-archive/pd/">Presidential Directives</a>
+                                </li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/issuances-archive/draft/">Draft Issuances</a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/issuances-archive/ra/">Republic Acts</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="dropdown-toggle btn text-white" style="margin-top: 2px;"
+                                id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
                                 About
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/organization') }}">Organizational
                                         Structure/PDMU</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a>
+                                </li>
                                 <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
                                         Agencies</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/contacts') }}">Contact Information</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/contacts') }}">Contact Information</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="dropdown">
-                            <button class="dropdown-toggle btn text-white" style="margin-top: 2px;" id="dropdownMenu1"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="dropdown-toggle btn text-white" style="margin-top: 2px;"
+                                id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Programs & Services
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="{{ url('/project') }}">Projects </a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
 
                             </ul>
                         </div>
@@ -148,8 +169,8 @@
                                 Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                {{-- <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li> --}}
                                 <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
                         </div>
@@ -473,7 +494,7 @@
     };
 
     function scrollFunction() {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
             mybutton.style.display = "block";
         } else {
             mybutton.style.display = "none";
