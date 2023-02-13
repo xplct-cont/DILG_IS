@@ -37,7 +37,7 @@
                             <p class="text-secondary">Projects</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-exclamation text-secondary"></i>
+                            <i class="fas fa-project-diagram text-secondary"></i>
                         </div>
                         <a href="{{ route('admin/projects') }}" class="small-box-footer"
                             style="background-color:dimgray;color:whitesmoke;
@@ -72,7 +72,7 @@
                             <p class="text-secondary">Org. Structure</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-address-book text-secondary"></i>
+                            <i class="fas fa-users text-secondary"></i>
                         </div>
                         <a href="{{ route('admin/organization') }}" class="small-box-footer "
                             style="background-color:dimgray;color:whitesmoke;"><span class="text-light">More info</span> <i
@@ -89,7 +89,7 @@
                             <p class="text-secondary">PDMU</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-users text-secondary"></i>
+                            <i class="fas fa-user-friends text-secondary"></i>
                         </div>
                         <a href="{{ route('admin/pdmu') }}" class="small-box-footer " style="background-color:dimgray;">
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
@@ -105,9 +105,26 @@
                             <p class="text-secondary">Field Off.</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-users text-secondary"></i>
+                            <i class="fas fa-people-carry text-secondary"></i>
                         </div>
                         <a href="{{ route('admin/field_officers') }}" class="small-box-footer "
+                            style="background-color:dimgray;">
+                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                 <!-- ./col -->
+                 <div class="col-lg-3 col-6 ">
+                    <!-- small box -->
+                    <div class="small-box text-secondary elevation-4">
+                        <div class="inner">
+                            <h3>{{ $faqs }}</h3>
+
+                            <p class="text-secondary">FAQ's</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-question-circle text-secondary"></i>
+                        </div>
+                        <a href="{{ route('admin/faqs') }}" class="small-box-footer "
                             style="background-color:dimgray;">
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
