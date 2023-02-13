@@ -29,7 +29,7 @@
 <li class="nav-item">
     <a href="{{ route('admin/organization') }}"
         class="nav-link {{ Request::is('admin/organization*') ? 'bg-secondary active' : '' }}">
-        <p class="text-white">Organization/PDMU</p>
+        <p class="text-white">Organizational/PDMU</p>
         <i class="fas fa-users fa-pull-left fa-md text-white"></i>
     </a>
 </li>
