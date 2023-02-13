@@ -12,7 +12,7 @@
               <strong>{{$fq->questions}}<strong>
           </button>
         </h2>
-        <div id="collapseOne{{$fq->id}}" class="accordion-collapse collapse show"
+        <div id="collapseOne{{$fq->id}}" class="accordion-collapse collapse"
         aria-labelledby="headingOne{{$fq->id}}" data-bs-parent="#accordionExample">
           <div class="accordion-body text-wrap fw-light">
             {{$fq->answers}}
