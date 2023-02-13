@@ -111,9 +111,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/lgu') }}"> &nbsp;LGU's</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
-                        </li>
+                        </li> --}}
 
 
                         <div class="dropdown">
@@ -125,9 +125,10 @@
                                 <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/organization') }}">Organizational
                                         Structure/PDMU</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
                                         Agencies</a></li>
-                                <li><a class="dropdown-item" href="#">History</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/contacts') }}">Contact Information</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -202,7 +203,7 @@
 
     </div>
 
-    <div class="d-flex justify-content-center" style=" padding: 20px; background: #C9282D;; color: #DCDCDC;">
+    <div class="" style=" padding: 20px; background: #C9282D;; color: #DCDCDC;">
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
@@ -216,7 +217,7 @@
                 </div>
 
 
-                <form action="">
+                {{-- <form action="">
                     <div class="input-group mx-auto" style="width: 300px;">
 
                         <input type="text" name="email" style="height: 30px;" class="form-control" required>
@@ -226,7 +227,7 @@
                             </button>
                         </label>
                     </div>
-                </form>
+                </form> --}}
 
 
 
@@ -299,23 +300,23 @@
                             </a>
                             <a href="https://ovp.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" ">
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     Office of the Vice
                                     President</p>
                             </a>
                             <a href="http://legacy.senate.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" >
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     Senate of the
                                     Philippines</p>
                             </a>
                             <a href="https://www.congress.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" >
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     House of
                                     Representatives</p>
                             </a>
-                            <a href="https://sc.judiciary.gov.ph/"  target="_blank">
+                            <a href="https://sc.judiciary.gov.ph/" target="_blank">
                                 <p class="text-secondary"
                                     style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     Supereme Court</p>
@@ -332,22 +333,29 @@
                     </div>
                 </div>
             </div>
-           <div class="text-center">
-           <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}</p>
-           </div>
+
+
+            <div class="text-center">
+                <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}
+                </p>
+            </div>
             <button onclick="topFunction()" id="myBtn" title="Go to top"
                 style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
 
-                <div class="dropup">
-                    <button class="dropbtn">Developers</button>
-                    <div class="dropup-content">
+            <div class="dropup">
+                <button class="dropbtn">Developers
 
-                      <a href="#">Vienna Rose Pepito</a>
-                      <a href="#">Kenn Secusana</a>
-                      <a href="#">Chadie Gil Augis</a>
-                      <a href="#">Franklin Pogoy</a>
-                    </div>
-                  </div>
+                </button>
+
+                <div class="dropup-content">
+
+                    <a href="#">Vienna Rose Pepito</a>
+                    <a href="#">Kenn Secusana</a>
+                    <a href="#">Chadie Gil Augis</a>
+                    <a href="#">Franklin Pogoy</a>
+
+                </div>
+            </div>
 
 </body>
 <script></script>
@@ -408,43 +416,51 @@
     }
 
     .dropbtn {
-  background-color: #002C76;
-  color: white;
-  padding: 5px;
-  font-size: 10px;
-  border: none;
-}
-.dropup {
-  /* position: relative;
+        background-color: #002C76;
+        color: white;
+        padding: 5px;
+        font-size: 10px;
+        border: none;
+    }
+
+    .dropup {
+        /* position: relative;
   display: inline-block; */
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 23px;
-  color: white;
-  text-align: left;
-}
-.dropup-content {
-  display: none;
-  position: absolute;
-  min-width: 155px;
-  bottom: 50px;
-  z-index: 1;
-  background-color: #002C76;
-}
-.dropup-content a {
-  color: white;
-  padding: 5px 5px;
-  text-decoration: none;
-  display: block;
-}
-.dropup-content a:hover {background-color: #ccc}
-.dropup:hover .dropup-content {
-  display: block;
-}
-.dropup:hover .dropbtn {
-  background-color: #002C76;
-}
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 23px;
+        color: white;
+        text-align: left;
+    }
+
+    .dropup-content {
+        display: none;
+        position: absolute;
+        min-width: 155px;
+        bottom: 50px;
+        z-index: 1;
+        background-color: #002C76;
+    }
+
+    .dropup-content a {
+        color: white;
+        padding: 5px 5px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropup-content a:hover {
+        background-color: #ccc
+    }
+
+    .dropup:hover .dropup-content {
+        display: block;
+    }
+
+    .dropup:hover .dropbtn {
+        background-color: #002C76;
+    }
 </style>
 
 <script>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('municipality')->nullable();
             $table->string('gmap_url')->nullable();
             $table->string('num_of_brgys')->nullable();
-            $table->json('barangays')->nullable();
+            $table->longText('barangays')->nullable();
             $table->timestamps();
 
 

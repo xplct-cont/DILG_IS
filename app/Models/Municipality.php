@@ -14,6 +14,9 @@ class Municipality extends Model
     protected $fillable =
     [
         'municipality',
+        'gmap_url',
+        'num_of_brgys',
+        'barangays',
 
     ];
 
@@ -27,6 +30,10 @@ class Municipality extends Model
 
     public function lgu(){
         return $this->hasMany('App\Models\Lgu');
+    }
+
+    public function field_officer(){
+        return $this->hasMany('App\Models\Field_Officer');
     }
 
 }

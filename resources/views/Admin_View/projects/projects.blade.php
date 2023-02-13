@@ -158,7 +158,8 @@
                             style="text-align: center">Total Cost </th>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                             style="text-align: center">Year</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -199,7 +200,8 @@
 
                                                                 <select name="program_id" id="program_id"
                                                                     class="form-control" style="color:dimgray;">
-                                                                    <option selected>Select...</option>
+                                                                    <option selected value="{{ $all->program->id }}">
+                                                                        {{ $all->program->title }}</option>
                                                                     @foreach ($program as $prog)
                                                                         <option value="{{ $prog->id }}">
                                                                             {{ $prog->title }}
@@ -213,7 +215,8 @@
 
                                                                 <select name="municipality_id" id="municipality_id"
                                                                     class="form-control" style="color:dimgray;">
-                                                                    <option selected>Select...</option>
+                                                                    <option selected value="{{ $all->municipality->id }}">
+                                                                        {{ $all->municipality->municipality }}</option>
                                                                     @foreach ($municipalities as $municipal)
                                                                         <option value="{{ $municipal->id }}">
                                                                             {{ $municipal->municipality }}
@@ -324,10 +327,11 @@
                                 {{ $all->status }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->total_cost }}</td>
-                           
+
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->year }}</td>
-                            <td><a href="#" data-toggle="modal" id="project_delete_link" class="btn"
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                <a href="#" data-toggle="modal" id="project_delete_link" class="btn"
                                     data-target="#project_delete_link{{ $all->id }}"><span
                                         class="text-danger fas fa-trash-alt"></span></a></td>
 
