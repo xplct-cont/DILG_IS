@@ -1,6 +1,5 @@
-@extends('layouts.app')
-@section('content')
-    {{-- <div class="mx-auto">
+<div>
+    <div class="mx-auto">
         <div class="col-md-12 mb-5">
             <div class="row ">
                 @foreach ($projectsAll as $proj)
@@ -139,29 +138,5 @@
             </div>
 
         </div>
-    </div> --}}
-@endsection
-
-<style scoped>
-    .responsive {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .card {
-        --bg-color: #DCE9FF;
-        --bg-color-light: #f1f7ff;
-        --text-color-hover: whitesmoke;
-        --box-shadow-color: silver;
-    }
-
-    .card:hover {
-        transform: translateY(-5px) scale(1.005) translateZ(0);
-        box-shadow: 0 24px 36px silver,
-            0 24px 46px var(--box-shadow-color);
-    }
-
-    .card:hover .overlay {
-        transform: scale(8) translateZ(0);
-    }
-</style>
+    </div>
+</div>
