@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    @if ($message = Session::get('message'))
+        <div class="alert alert-success alert-block mt-2">
+            <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
+
     <div>
         <div class="text-center">
             <img src='img/Background.png' width="1370" style="max-width: 100%; height:auto;">
@@ -30,7 +37,7 @@
                                 <p class="text-center mt-3" style="font-size: 16px; font-weight: 700;">OFFICE ADDRESS</p>
                                 <p class="text-center" style="font-size: 15px; font-weight: 450; margin-top: -15px;">Rajah
                                     Sikatuna Avenue, Dampas, Tagbilaran City 6300</p>
-                                {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+
                             </div>
                         </div>
 
@@ -45,7 +52,7 @@
                                     Globe - 09178967572 <br>
                                     Smart - 09399302989 <br>
                                     Landline - (038) 422-8038 </p>
-                                {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+
                             </div>
                         </div>
 
@@ -53,7 +60,7 @@
                     </div>
                     <div class="col-md-6">
                         <iframe class="col-md-12"
-                            src="https://maps.google.com/maps?q=dilg rajah sikatuna avenue&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            src="https://maps.google.com/maps?q=rajah sikatuna dampas&t=&z=12&ie=UTF8&iwloc=&output=embed"
                             height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
 
@@ -63,20 +70,27 @@
                                         alt=""></span><span class="d-flex justify-content-center"> Email us</span>
                             </p>
 
-                            <div class="form-group">
-                                <label for="" style="color:dimgray">To:</label>
-                                <input type="text" class="form-control" name="" value="dilg_bohol@gmail.com"
-                                    readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="" style="color:dimgray">Subject:</label>
-                                <input type="text" class="form-control" name="">
-                            </div>
-                            <div class="form-group">
-                                <label for="" style="color:dimgray;">Content: </label>
-                                <textarea style=" height: 150px;" id="" type="text" class="form-control" placeholder="" title=""
-                                    name=""></textarea>
-                            </div>
+                            <form action="{{ url('/send-email') }}" method="POST">
+                                @csrf
+
+                                <div class="form-group">
+                                    <label for="" style="color:dimgray">To:</label>
+                                    <input type="email" class="form-control" name="email"
+                                        value="aquarius.pink27@gmail.com" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" style="color:dimgray">Subject:</label>
+                                    <input type="text" class="form-control" name="subject">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" style="color:dimgray;">Content: </label>
+                                    <textarea style=" height: 150px;" id="" type="text" class="form-control" placeholder="" title=""
+                                        name="content" required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-sm btn-success"><span class="fas fa-envelope"></span>
+                                    Send Email</button>
+                            </form>
                         </div>
                     </div>
                 </div>

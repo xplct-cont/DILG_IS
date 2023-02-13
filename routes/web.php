@@ -82,7 +82,7 @@ Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/
 Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
 Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
-
+Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
 
 
