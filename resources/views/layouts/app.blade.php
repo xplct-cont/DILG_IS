@@ -169,8 +169,7 @@
                                 Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                {{-- <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li> --}}
+                                <li><a class="dropdown-item" href="#">FAQ's</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
                         </div>

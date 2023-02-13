@@ -10,7 +10,7 @@ use App\Http\Controllers\Normal_View\Project\ProjectController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
-
+use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 
 //Normal View
 use App\Http\Controllers\Normal_View\Home\HomeController;
@@ -87,6 +87,8 @@ Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/
 
 Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
 Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
+
+Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
