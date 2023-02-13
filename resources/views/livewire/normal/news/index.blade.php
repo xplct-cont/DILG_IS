@@ -34,7 +34,8 @@
                                 <h1 style="font-size: 18px; font-weight: 500;">
                                     Post: {{ \Carbon\Carbon::parse($new->datetime)->format('M j, Y h:i A') }}</h1><br>
                                 <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
-                                <p class="text-left" style="font-size: 15px; font-weight: 400;">{{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
+                                <p class="text-left" style="font-size: 15px; font-weight: 400;">
+                                    {{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
                             </div>
                             <div class="col-md-5">
                                 <div class="col-md-12" style="height: 400px;">
@@ -59,16 +60,7 @@
                                             @endforeach
 
                                         </div>
-                                        {{-- <button class="carousel-control-prev" type="button"
-                                            data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Previous</span>
-                                        </button>
-                                        <button class="carousel-control-next" type="button"
-                                            data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Next</span>
-                                        </button> --}}
+
                                     </div>
 
                                 </div>
