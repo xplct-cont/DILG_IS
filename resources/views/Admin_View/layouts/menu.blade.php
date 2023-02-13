@@ -33,6 +33,14 @@
         <i class="fas fa-users fa-pull-left fa-md text-white"></i>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('admin/field_officers') }}"
+        class="nav-link {{ Request::is('admin/field_officers*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">Field Officers</p>
+        <i class="fas fa-people-carry fa-pull-left fa-md text-white"></i>
+    </a>
+</li>
+
 
 <li class="nav-item">
     <a href="{{ route('admin/lgu') }}" class="nav-link {{ Request::is('admin/lgu*') ? 'bg-secondary active' : '' }}">

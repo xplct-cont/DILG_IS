@@ -32,7 +32,7 @@
                     <!-- small box -->
                     <div class="small-box bg-light text-secondary elevation-4">
                         <div class="inner">
-                            <h3>{{$projects}}</h3>
+                            <h3>{{ $projects }}</h3>
 
                             <p class="text-secondary">Projects</p>
                         </div>
@@ -92,6 +92,23 @@
                             <i class="fas fa-users text-secondary"></i>
                         </div>
                         <a href="{{ route('admin/pdmu') }}" class="small-box-footer " style="background-color:dimgray;">
+                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 ">
+                    <!-- small box -->
+                    <div class="small-box text-secondary elevation-4">
+                        <div class="inner">
+                            <h3>{{ $field_officers }}</h3>
+
+                            <p class="text-secondary">Field Off.</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-users text-secondary"></i>
+                        </div>
+                        <a href="{{ route('admin/field_officers') }}" class="small-box-footer "
+                            style="background-color:dimgray;">
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
