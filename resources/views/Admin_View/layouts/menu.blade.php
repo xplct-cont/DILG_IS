@@ -26,18 +26,41 @@
     </a>
 </li>
 
-<li class="nav-item">
-    <a href="{{ route('admin/organization') }}"
-        class="nav-link {{ Request::is('admin/organization*') ? 'bg-secondary active' : '' }}">
-        <p class="text-white">Organization/PDMU</p>
-        <i class="fas fa-users fa-pull-left fa-md text-white"></i>
-    </a>
+
+<li class="text-white text-center mb-2 " style="padding:5px; font-size:15px; background-color:rgb(70, 70, 70);">
+    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white"
+        style="text-decoration: none;"> Key Officials & Management</a>
+    <ul class="collapse list-unstyled" style="text-decoration:none;" id="pageSubmenu">
+        <li style="margin-top: 12px;">
+            <a href="{{ route('admin/organization') }}"
+                style="color:white; text-decoration:none; margin-left: -50px; ">Organizational Struct.</a><i
+                class="fas fa-users fa-pull-left fa-md " style="margin-left: 10px;  margin-right: 25px;"></i>
+        </li>
+        <li style="margin-top: 10px;">
+            <a href="{{ route('admin/pdmu') }}"
+                style="color:white; text-decoration:none;  margin-left: -67px;">PDMU</a><i
+                class="fas fa-user-friends fa-pull-left fa-md " style="margin-left: 10px; margin-right: 25px;"></i>
+        </li>
+        <li style="margin-top: 10px;">
+            <a href="{{ route('admin/field_officers') }}"
+                style="color:white; text-decoration:none;  margin-left: -44px;">Field Officers</a><i
+                class="fas fa-people-carry fa-pull-left fa-md " style="margin-left: 10px; margin-right: 25px;"></i>
+        </li>
+    </ul>
 </li>
+
 
 <li class="nav-item">
     <a href="{{ route('admin/lgu') }}" class="nav-link {{ Request::is('admin/lgu*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">LGU's</p>
         <i class="fas fa-city fa-pull-left fa-md text-white"></i>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ route('admin/faqs') }}"
+        class="nav-link {{ Request::is('admin/faqs*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">FAQ</p>
+        <i class="fas fa-question-circle fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 

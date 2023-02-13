@@ -9,6 +9,7 @@ use App\Http\Controllers\Normal_View\Lgu\LguController;
 use App\Http\Controllers\Normal_View\Project\ProjectController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
+use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 
 
 //Normal View
@@ -26,6 +27,8 @@ use App\Http\Controllers\Admin_View\Admin_HomeController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
 use App\Http\Controllers\Admin_View\Admin_NewsController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
+use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
+use App\Http\Controllers\Admin_View\Admin_FaqsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -74,13 +77,18 @@ Route::post('/add-lgu', [Admin_LguController::class, 'store']);
 Route::get('/delete_lgu/{id}', [Admin_LguController::class, 'delete_lgu']);
 Route::put('/update-lgu/{id}', [Admin_LguController::class, 'update_lgu']);
 
+Route::get('/admin/faqs', [Admin_FaqsController::class, 'index'])->name('admin/faqs');
+Route::post('/add-faqs', [Admin_FaqsController::class, 'store']);
+Route::get('/delete_faqs/{id}', [Admin_FaqsController::class, 'delete_faqs']);
+Route::put('/update-faqs/{id}', [Admin_FaqsController::class, 'update_faqs']);
+
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
 Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
 Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
-
+Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
 
 
@@ -154,8 +162,18 @@ Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 
 
 //Routes for Franklin
-Route::get('/organization',[OrganizationController::class, 'index']);
 
+
+//Admin_View Routes
+Route::get('/admin/field_officers', [Admin_Field_OfficersController::class, 'index'])->name('admin/field_officers');
+Route::post('/add-field_officer', [Admin_Field_OfficersController::class, 'store']);
+Route::get('/delete_field_officer/{id}', [Admin_Field_OfficersController::class, 'delete_field_officer']);
+Route::put('/update-field_officer/{id}', [Admin_Field_OfficersController::class, 'update_field_officer']);
+
+
+//Normal_View Routes
+Route::get('/organization',[OrganizationController::class, 'index']);
+Route::get('/field_officers',[Field_OfficersController::class, 'index'])->name('/field_officers');
 
 
 

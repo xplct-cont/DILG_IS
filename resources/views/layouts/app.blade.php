@@ -102,42 +102,64 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/news-update') }}"> &nbsp;News</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;LGRRC</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/') }}"> &nbsp;Issuances</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ url('/lgu') }}"> &nbsp;LGU's</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/contacts') }}"> &nbsp;Contact</a>
-                        </li>
-
-
                         <div class="dropdown">
                             <button class="dropdown-toggle btn text-white" style="margin-top: 2px;" id="dropdownMenu1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
+                                LGRRC
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item" target="_blank" href="https://library.dilg.gov.ph/">DILG
+                                        E-Library</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle btn text-white" style="margin-top: 2px;" id="dropdownMenu1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Issuances
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/issuances-archive/jc/">Joint Circulars</a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/issuances-archive/mc/">Memo Circulars</a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/issuances-archive/pd/">Presidential Directives</a>
+                                </li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/issuances-archive/draft/">Draft Issuances</a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/issuances-archive/ra/">Republic Acts</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="dropdown-toggle btn text-white" style="margin-top: 2px;"
+                                id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
                                 About
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/organization') }}">Organizational
                                         Structure/PDMU</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a>
+                                </li>
                                 <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
                                         Agencies</a></li>
-                                <li><a class="dropdown-item" href="#">History</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/contacts') }}">Contact Information</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="dropdown">
-                            <button class="dropdown-toggle btn text-white" style="margin-top: 2px;" id="dropdownMenu1"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="dropdown-toggle btn text-white" style="margin-top: 2px;"
+                                id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Programs & Services
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" href="{{ url('/project') }}">Projects </a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
 
                             </ul>
                         </div>
@@ -147,8 +169,8 @@
                                 Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                {{-- <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li> --}}
                                 <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
                         </div>
@@ -202,7 +224,7 @@
 
     </div>
 
-    <div class="d-flex justify-content-center" style=" padding: 20px; background: #C9282D;; color: #DCDCDC;">
+    <div class="" style=" padding: 20px; background: #C9282D;; color: #DCDCDC;">
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
@@ -216,7 +238,7 @@
                 </div>
 
 
-                <form action="">
+                {{-- <form action="">
                     <div class="input-group mx-auto" style="width: 300px;">
 
                         <input type="text" name="email" style="height: 30px;" class="form-control" required>
@@ -226,7 +248,7 @@
                             </button>
                         </label>
                     </div>
-                </form>
+                </form> --}}
 
 
 
@@ -299,23 +321,23 @@
                             </a>
                             <a href="https://ovp.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" ">
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     Office of the Vice
                                     President</p>
                             </a>
                             <a href="http://legacy.senate.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" >
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     Senate of the
                                     Philippines</p>
                             </a>
                             <a href="https://www.congress.gov.ph/" target="_blank">
                                 <p class="text-secondary"
-                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;" >
+                                    style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     House of
                                     Representatives</p>
                             </a>
-                            <a href="https://sc.judiciary.gov.ph/"  target="_blank">
+                            <a href="https://sc.judiciary.gov.ph/" target="_blank">
                                 <p class="text-secondary"
                                     style="font-size: 12px; font-weight: 300; margin-top: -15px;">
                                     Supereme Court</p>
@@ -332,22 +354,29 @@
                     </div>
                 </div>
             </div>
-           <div class="text-center">
-           <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}</p>
-           </div>
+
+
+            <div class="text-center">
+                <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}
+                </p>
+            </div>
             <button onclick="topFunction()" id="myBtn" title="Go to top"
                 style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
 
-                <div class="dropup">
-                    <button class="dropbtn">Developers</button>
-                    <div class="dropup-content">
+            <div class="dropup">
+                <button class="dropbtn">Developers
 
-                      <a href="#">Vienna Rose Pepito</a>
-                      <a href="#">Kenn Secusana</a>
-                      <a href="#">Chadie Gil Augis</a>
-                      <a href="#">Franklin Pogoy</a>
-                    </div>
-                  </div>
+                </button>
+
+                <div class="dropup-content">
+
+                    <a href="#">Vienna Rose Pepito</a>
+                    <a href="#">Kenn Secusana</a>
+                    <a href="#">Chadie Gil Augis</a>
+                    <a href="#">Franklin Pogoy</a>
+
+                </div>
+            </div>
 
 </body>
 <script></script>
@@ -408,43 +437,51 @@
     }
 
     .dropbtn {
-  background-color: #002C76;
-  color: white;
-  padding: 5px;
-  font-size: 10px;
-  border: none;
-}
-.dropup {
-  /* position: relative;
+        background-color: #002C76;
+        color: white;
+        padding: 5px;
+        font-size: 10px;
+        border: none;
+    }
+
+    .dropup {
+        /* position: relative;
   display: inline-block; */
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 23px;
-  color: white;
-  text-align: left;
-}
-.dropup-content {
-  display: none;
-  position: absolute;
-  min-width: 155px;
-  bottom: 50px;
-  z-index: 1;
-  background-color: #002C76;
-}
-.dropup-content a {
-  color: white;
-  padding: 5px 5px;
-  text-decoration: none;
-  display: block;
-}
-.dropup-content a:hover {background-color: #ccc}
-.dropup:hover .dropup-content {
-  display: block;
-}
-.dropup:hover .dropbtn {
-  background-color: #002C76;
-}
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 23px;
+        color: white;
+        text-align: left;
+    }
+
+    .dropup-content {
+        display: none;
+        position: absolute;
+        min-width: 155px;
+        bottom: 50px;
+        z-index: 1;
+        background-color: #002C76;
+    }
+
+    .dropup-content a {
+        color: white;
+        padding: 5px 5px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropup-content a:hover {
+        background-color: #ccc
+    }
+
+    .dropup:hover .dropup-content {
+        display: block;
+    }
+
+    .dropup:hover .dropbtn {
+        background-color: #002C76;
+    }
 </style>
 
 <script>
@@ -457,7 +494,7 @@
     };
 
     function scrollFunction() {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
             mybutton.style.display = "block";
         } else {
             mybutton.style.display = "none";

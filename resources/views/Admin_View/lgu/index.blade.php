@@ -140,7 +140,8 @@
                     <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                         style="text-align: center">Vice Mayor</th>
                     <th>Municipality</th>
-                    <th>Delete</th>
+                    <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                    style="text-align: center">Delete</th>
                 </tr>
 
             </thead>
@@ -271,7 +272,8 @@
                             </div>
                         </div>
 
-                        <td><a href="#" data-toggle="modal" id="lgu_delete_link" class="btn"
+                        <td  class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                        style="text-align: center"><a href="#" data-toggle="modal" id="lgu_delete_link" class="btn"
                                 data-target="#delete_lgu_id{{ $lgu_member->id }}"><span
                                     class="text-danger fas fa-trash-alt"></span></a></td>
 

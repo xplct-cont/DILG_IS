@@ -55,33 +55,52 @@
 
     <p class="text-center mt-3" style="color:dimgray; font-size: 22px; font-weight: 600;">LIST OF LOCAL ELECTIVE OFFICIALS
     </p>
-    <div class="container col-md-12">
-        <div class="col-md-12">
+
+
+    <div class="col-md-12">
+        <div class="">
             <div class="row d-flex justify-content-center mb-3">
                 @foreach ($lgus as $lgu)
-                    <div class="col-md-3 card m-2 p-3 text-justify ">
+                    <div class="col-md-3 card m-2 p-2 text-justify ">
                         <p class="text-center mb-3" style="font-weight: 600; font-size: 26px; color:#C9282D;">
                             {{ $lgu->municipality->municipality }}</p>
-                        <p class="mt-2" style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
+
+                        <p class="text-justify mt-2" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray ">Mayor: </span> {{ $lgu->mayor }}</p>
-                        <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
+                        <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">Vice Mayor: </span> {{ $lgu->vice_mayor }}</p>
-                        <p class="mt-2" style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
+                        <p class="mt-2 text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member1 }}</p>
-                        <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
+                        <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member2 }}</p>
-                        <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
+                        <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member3 }}</p>
-                        <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
+                        <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member4 }}</p>
-                        <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
+                        <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member5 }}</p>
-                        <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
+                        <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member6 }}</p>
-                        <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
+                        <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member7 }}</p>
-                        <p style="color:dimgray; margin-top: -10px; font-size: 16px;"><span
-                                style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p>
+                        <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
+                                style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p> <br>
+
+                        <p class="text-center" style="color:dimgray; margin-top: -10px; font-size: 15px;"><span
+                                style="font-weight: 500; color:dimgray">No. of Barangays: </span>
+                            {{ $lgu->municipality->num_of_brgys }}</p>
+
+                        <div class="form-group " style="width: 170px;">
+                            <select name="" id="" class="form-control">
+                                @php $brgy = json_decode($lgu->municipality->barangays,true); @endphp
+                                <option selected>List of Barangays ⥂ </option>
+                                @foreach ((array) $brgy as $b)
+                                    <li>
+                                        <option value="">{{ $b }}</option>
+                                    </li>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 @endforeach
 
@@ -92,7 +111,7 @@
 
 
 <style scoped>
-    .card {
+    /* .card {
         --bg-color: #DCE9FF;
         --bg-color-light: #f1f7ff;
         --text-color-hover: whitesmoke;
@@ -107,5 +126,5 @@
 
     .card:hover .overlay {
         transform: scale(8) translateZ(0);
-    }
+    } */
 </style>

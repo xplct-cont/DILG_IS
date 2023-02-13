@@ -106,12 +106,9 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Complete
-                                                Location</label>
-                                     
-                                                <label for="" style="color:dimgray">Exact Location</label>
-                                              
-                                                <input type="text" class="form-control" name="exact_loc">
+                                            <label for="" style="color:dimgray">Exact Location</label>
+
+                                            <input type="text" class="form-control" name="exact_loc">
                                         </div>
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Year:</label>
@@ -145,7 +142,7 @@
                 <thead class="text-center" style="background-color:#343a40; color:white;">
                     <tr>
                         <th scope="col">View/Edit</th>
-                        <th scope="col">Categories</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Municipality</th>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                             style="text-align: center">Project Code</th>
@@ -160,10 +157,9 @@
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                             style="text-align: center">Total Cost </th>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                            style="text-align: center">Exact Location</th>
-                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                             style="text-align: center">Year</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -204,7 +200,8 @@
 
                                                                 <select name="program_id" id="program_id"
                                                                     class="form-control" style="color:dimgray;">
-                                                                    <option selected>Select...</option>
+                                                                    <option selected value="{{ $all->program->id }}">
+                                                                        {{ $all->program->title }}</option>
                                                                     @foreach ($program as $prog)
                                                                         <option value="{{ $prog->id }}">
                                                                             {{ $prog->title }}
@@ -218,7 +215,8 @@
 
                                                                 <select name="municipality_id" id="municipality_id"
                                                                     class="form-control" style="color:dimgray;">
-                                                                    <option selected>Select...</option>
+                                                                    <option selected value="{{ $all->municipality->id }}">
+                                                                        {{ $all->municipality->municipality }}</option>
                                                                     @foreach ($municipalities as $municipal)
                                                                         <option value="{{ $municipal->id }}">
                                                                             {{ $municipal->municipality }}
@@ -318,7 +316,7 @@
                             </div>
 
                             <td>{{ $all->program->title }}</td>
-                            <td>{{ $all->municipality->municipality }}</td>                           
+                            <td>{{ $all->municipality->municipality }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->proj_code }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
@@ -329,11 +327,11 @@
                                 {{ $all->status }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->total_cost }}</td>
-                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
-                                {{ $all->exact_loc }}</td>
+
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 {{ $all->year }}</td>
-                            <td><a href="#" data-toggle="modal" id="project_delete_link" class="btn"
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                <a href="#" data-toggle="modal" id="project_delete_link" class="btn"
                                     data-target="#project_delete_link{{ $all->id }}"><span
                                         class="text-danger fas fa-trash-alt"></span></a></td>
 
