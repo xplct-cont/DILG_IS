@@ -29,7 +29,7 @@ use App\Http\Controllers\Admin_View\Admin_NewsController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
 use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_FaqsController;
-use App\Http\Controllers\Admin_View\Bohol_IssuancesController;
+use App\Http\Controllers\Admin_View\Admin_Bohol_IssuancesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -83,7 +83,7 @@ Route::post('/add-faqs', [Admin_FaqsController::class, 'store']);
 Route::get('/delete_faqs/{id}', [Admin_FaqsController::class, 'delete_faqs']);
 Route::put('/update-faqs/{id}', [Admin_FaqsController::class, 'update_faqs']);
 
-Route::get('/admin/bohol_issuances', [Bohol_IssuancesController::class, 'index'])->name('admin/bohol_issuances');
+Route::get('/admin/bohol_issuances', [Admin_Bohol_IssuancesController::class, 'index'])->name('admin/bohol_issuances');
 
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
