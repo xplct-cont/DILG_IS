@@ -129,6 +129,23 @@
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+                 <!-- ./col -->
+                 <div class="col-lg-3 col-6 ">
+                    <!-- small box -->
+                    <div class="small-box text-secondary elevation-4">
+                        <div class="inner">
+                            <h3>{{ $b_issuances }}</h3>
+
+                            <p class="text-secondary">Issuances</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-file text-secondary"></i>
+                        </div>
+                        <a href="{{ route('admin/bohol_issuances') }}" class="small-box-footer "
+                            style="background-color:dimgray;">
+                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
