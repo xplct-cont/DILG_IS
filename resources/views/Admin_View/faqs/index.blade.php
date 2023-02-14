@@ -74,7 +74,8 @@
                         <th scope="col">View</th>
                         <th scope="col">Questions</th>
                         <th scope="col">Answers</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Delete</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -93,7 +94,8 @@
                                     <div class="modal-content">
                                         <div class="modal-header" style="background-color: #C9282D; color:white;">
                                             <h5 class="modal-title" id="exampleModalLabel">Edit FAQ</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
@@ -137,7 +139,8 @@
                             </div>
         </div>
 
-        <td><a href="#" data-toggle="modal" id="faq_delete_link" class="btn"
+        <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center"><a href="#"
+                data-toggle="modal" id="faq_delete_link" class="btn"
                 data-target="#delete_faq_id{{ $faqs->id }}"><span class="text-danger fas fa-trash-alt"></span></a>
         </td>
 
