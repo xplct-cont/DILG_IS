@@ -190,40 +190,41 @@
     <hr>
 
     <div class=" col-md-12 mx-auto mb-3 mt-3">
-        <div class="d-flex row">
-            <div class="">
-                <div class="">
-                    @foreach ($engrs as $pdmu_engrs)
-                        <div class="col-md-2 text-center d-flex justify-content-center">
-                            <div class="zoom">
-                                <img src="{{ asset('pdmu_profile_images/' . $pdmu_engrs->profile_img) }} " alt="Image"
-                                    class="shadow-lg border border-dark"
-                                    style="border-radius: 50%; height: 150px; width: 150px;">
-                                <p class="text-center" style=" font-weight:500;">{{ $pdmu_engrs->fname }}
-                                    {{ $pdmu_engrs->mid_initial }} {{ $pdmu_engrs->lname }}</p>
-                                <p class="text-center" style="margin-top: -20px;">
-                                    {{ $pdmu_engrs->position }}</p>
-                            </div>
+
+        <div class=" col-md-12">
+            <div class="row">
+
+                @foreach ($engrs as $pdmu_engrs)
+                    <div class="col-md-2 text-center d-flex justify-content-center">
+                        <div class="zoom">
+                            <img src="{{ asset('pdmu_profile_images/' . $pdmu_engrs->profile_img) }} " alt="Image"
+                                class="shadow-lg border border-dark"
+                                style="border-radius: 50%; height: 150px; width: 150px;">
+                            <p class="text-center" style=" font-weight:500;">{{ $pdmu_engrs->fname }}
+                                {{ $pdmu_engrs->mid_initial }} {{ $pdmu_engrs->lname }}</p>
+                            <p class="text-center" style="margin-top: -20px;">
+                                {{ $pdmu_engrs->position }}</p>
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
-    @endsection
+    </div>
+@endsection
 
 
-    <style scoped>
-        .zoom {
-            transition: transform .2s;
-        }
+<style scoped>
+    .zoom {
+        transition: transform .2s;
+    }
 
-        .zoom:hover {
-            -ms-transform: scale(1.2);
-            /* IE 9 */
-            -webkit-transform: scale(1.2);
-            /* Safari 3-8 */
-            transform: scale(1.2);
-            text-align: center;
-            font-size: 10px;
-        }
-    </style>
+    .zoom:hover {
+        -ms-transform: scale(1.2);
+        /* IE 9 */
+        -webkit-transform: scale(1.2);
+        /* Safari 3-8 */
+        transform: scale(1.2);
+        text-align: center;
+        font-size: 10px;
+    }
+</style>
