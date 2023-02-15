@@ -10,7 +10,7 @@ use DB;
 class Bohol_IssuancesController extends Controller
 {
     public function index(){
-
+        
         $issuances = Bohol_Issuance::orderBy('date', 'DESC')->get();
         return view('Normal_View.Bohol_Issuances.bohol_issuances', compact('issuances'));
     }

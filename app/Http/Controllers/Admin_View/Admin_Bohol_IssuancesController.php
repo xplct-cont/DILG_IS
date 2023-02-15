@@ -71,7 +71,7 @@ class Admin_Bohol_IssuancesController extends Controller
 
         if($request->hasFile('file')){
 
-            $destination = public_path().'/app/public/issuance_files/'.$issuances->file;;
+            $destination = public_path().'/app/public/issuance_files/'.$issuances->file;
             if(File::exists($destination)){
                 File::delete($destination);
             }
