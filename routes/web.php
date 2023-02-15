@@ -83,7 +83,10 @@ Route::post('/add-faqs', [Admin_FaqsController::class, 'store']);
 Route::get('/delete_faqs/{id}', [Admin_FaqsController::class, 'delete_faqs']);
 Route::put('/update-faqs/{id}', [Admin_FaqsController::class, 'update_faqs']);
 
-Route::get('/admin/bohol_issuances', [Admin_Bohol_IssuancesController::class, 'index'])->name('admin/bohol_issuances');
+Route::get('/admin/issuances', [Admin_Bohol_IssuancesController::class, 'index'])->name('admin/issuances');
+Route::post('/add-issuances', [Admin_Bohol_IssuancesController::class, 'store']);
+Route::get('/delete_issuances/{id}', [Admin_Bohol_IssuancesController::class, 'delete_issuances']);
+Route::put('/update-issuances/{id}', [Admin_Bohol_IssuancesController::class, 'update_issuances']);
 
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
