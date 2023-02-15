@@ -22,8 +22,10 @@
                                         </p>
                                     </td>
                                     <td class="" style="background-color:#002C76; color:white;  font-size: 12px;">
-                                        {{ $latest_issuances->reference_num }} <p class="text-center mt-2"
-                                            style=" font-size: 14px"> {{ $latest_issuances->category }}</p>
+                                        Reference No: <span
+                                            style="font-size: 15px; font-weight: 350; color:white;">{{ $latest_issuances->reference_num }}</span>
+                                        <p class="text-center mt-2" style=" font-size: 14px">
+                                            {{ $latest_issuances->category }}</p>
                                     </td>
                                 </tr>
                             @endforeach
