@@ -122,6 +122,8 @@
                                 Issuances
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item" href="{{ url('latest_issuances') }}">Latest Issuances</a>
+                                </li>
                                 <li><a class="dropdown-item" target="_blank"
                                         href="https://dilg.gov.ph/issuances-archive/jc/">Joint Circulars</a></li>
                                 <li><a class="dropdown-item" target="_blank"
@@ -169,7 +171,7 @@
                                 Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('/faqs')}}">FAQ's</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/faqs') }}">FAQ's</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
                         </div>

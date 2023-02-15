@@ -19,6 +19,12 @@ use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
+use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
+use App\Http\Controllers\Normal_View\Faqs\FaqsController;
+use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
+
+//Normal View
+use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
 use App\Http\Controllers\Admin_View\Admin_ProjectController;
 use App\Http\Controllers\Normal_View\Project\ProjectController;
@@ -84,7 +90,10 @@ Route::post('/add-faqs', [Admin_FaqsController::class, 'store']);
 Route::get('/delete_faqs/{id}', [Admin_FaqsController::class, 'delete_faqs']);
 Route::put('/update-faqs/{id}', [Admin_FaqsController::class, 'update_faqs']);
 
-Route::get('/admin/bohol_issuances', [Admin_Bohol_IssuancesController::class, 'index'])->name('admin/bohol_issuances');
+Route::get('/admin/issuances', [Admin_Bohol_IssuancesController::class, 'index'])->name('admin/issuances');
+Route::post('/add-issuances', [Admin_Bohol_IssuancesController::class, 'store']);
+Route::get('/delete_issuances/{id}', [Admin_Bohol_IssuancesController::class, 'delete_issuances']);
+Route::put('/update-issuances/{id}', [Admin_Bohol_IssuancesController::class, 'update_issuances']);
 
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
@@ -93,6 +102,9 @@ Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->
 Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
+
+Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->name('/latest_issuances');
+Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
