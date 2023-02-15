@@ -1,8 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
-    @extends('layouts.app')
-@section('content')
     <div class="mx-auto">
         <div class="mb-2">
             <a class="p-4" style="color:#002C76; text-decoration:none;" href="{{ url('/latest_issuances') }}"><span
@@ -24,13 +21,12 @@
                         Reference No: <span
                             style="font-size: 15px; font-weight: 350; color:rgb(77, 77, 77);">{{ $b_issuance->reference_num }}</span>
                     </p>
-
-
+                    `
+                    <iframe class="mb-3" src="/app/public/issuance_files/{{ $b_issuance->file }}" width="100%"
+                        height="600px">
+                    </iframe>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-
-
-
