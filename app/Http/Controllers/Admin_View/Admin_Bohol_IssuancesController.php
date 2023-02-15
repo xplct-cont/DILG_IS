@@ -25,13 +25,11 @@ class Admin_Bohol_IssuancesController extends Controller
     }
 
 
-
-
     public function store(Request $request){
        
         
         $request->validate([
-            'file' => 'required|mimes:csv,txt,xlsx,xls,pdf,docx|max:2048'
+            'file' => 'required|mimes:pdf|max:2048'
             ]);
             $issuances = new Bohol_Issuance;
 
@@ -62,7 +60,7 @@ class Admin_Bohol_IssuancesController extends Controller
     public function update_issuances(Request $request, $id){
 
         $request->validate([
-            'file' => 'required|mimes:csv,txt,xlsx,xls,pdf,docx|max:2048'
+            'file' => 'required|mimes:pdf|max:2048'
             ]);
             $issuances = Bohol_Issuance::find($id);
 

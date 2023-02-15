@@ -55,7 +55,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Upload File:
-                                                (csv,txt,xlsx,xls,pdf,docx)</label>
+                                                (PDF Only)</label>
                                             <input type="file" class="form-control" name="file">
                                         </div>
                                     </div>
@@ -165,7 +165,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">Upload File:
-                                                                    (csv,txt,xlsx,xls,pdf,docx)
+                                                                    (PDF Only)
                                                                 </label>
                                                                 <input type="file" class="form-control" name="file"
                                                                     value="{{ $issuances->file }}">
