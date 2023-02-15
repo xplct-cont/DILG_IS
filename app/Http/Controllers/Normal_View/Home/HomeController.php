@@ -17,7 +17,7 @@ class HomeController extends Controller
      *
      * @return void
      */
- 
+
     /**
      * Show the application dashboard.
      *
@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         // $show = DB::table('news')->limit(3)->get();
-        $projectsAll = Project::all();
+        $projectsAll = Project::limit(4)->get();
         return view('Normal_View.Home.home', compact('projectsAll'));
     }
 }

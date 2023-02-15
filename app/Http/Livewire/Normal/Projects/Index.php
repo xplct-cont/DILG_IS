@@ -41,7 +41,7 @@ class Index extends Component
             $query->where('municipality_id', $this->municipality);
         }
 
-        $projectsAll = $query->paginate(5);
+        $projectsAll = $query->paginate(8);
         return compact('projectsAll');
     }
     public function render()
@@ -53,7 +53,7 @@ class Index extends Component
         ->orWhere('status', 'like', '%'.$this->search.'%')
         ->orWhere('type', 'like', '%'.$this->search.'%')
         ->orWhere('title', 'like', '%'.$this->search.'%')
-        ->orderBy('year', 'asc')->paginate(5);
+        ->orderBy('year', 'asc')->paginate(8);
         return view('livewire.normal.projects.index',
                     ['projects' => $projects, 'programs'=> Program::all(), 'municipalities' => Municipality::all()]
                     , $this->loadProjects(), compact('projectsAll'));

@@ -134,7 +134,7 @@
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">Image:</label>
                                                                 <input type="file" class="form-control"
-                                                                    name="hiring_img">
+                                                                    name="hiring_img" value="{{ $ad_jobs->hiring_img }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">

@@ -36,7 +36,7 @@
             </div>
         @endforeach
     </div>
-    <div class="justify-content-between">
+    <div class="d-flex justify-content-center mt-2">
         {{ $jobs->links() }}
     </div>
 </div>

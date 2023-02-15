@@ -33,6 +33,8 @@ class Admin_HomeController extends Controller
         $pdmus = DB::table('pdmus')->count();
         $lgus = DB::table('lgus')->count();
         $field_officers = DB::table('field_officers')->count();
-        return view('Admin_View.layouts.home',compact('news', 'projects','jobs','orgs', 'pdmus', 'lgus', 'field_officers'));
+        $faqs = DB::table('faqs')->count();
+        $b_issuances = DB::table('bohol_issuances')->count();
+        return view('Admin_View.layouts.home',compact('news', 'projects','jobs','orgs', 'pdmus', 'lgus', 'field_officers', 'faqs', 'b_issuances'));
     }
 }

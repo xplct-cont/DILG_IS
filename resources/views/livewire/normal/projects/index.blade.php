@@ -174,7 +174,10 @@
                     </div>
                 @endforeach
             </div>
-
+            <div class="d-flex justify-content-center mt-2">
+                {{ $projects->links() }}
+            </div>
         </div>
     </div>
+
 </div>
