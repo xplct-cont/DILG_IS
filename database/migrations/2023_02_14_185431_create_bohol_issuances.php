@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('reference_num')->nullable();
             $table->string('file')->nullable();
+            $table->date('date')->nullable();
             $table->string('category')->nullable();
             $table->timestamps();
         });

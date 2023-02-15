@@ -15,6 +15,7 @@ class Bohol_Issuance extends Model
         'title',
         'reference_num',
         'file',
+        'date',
         'category',
 
     ];
