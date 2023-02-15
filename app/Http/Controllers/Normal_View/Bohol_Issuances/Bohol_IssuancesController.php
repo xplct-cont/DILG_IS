@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Normal_View\Bohol_Issuances;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Bohol_Issuance;
+use Illuminate\Support\Facades\Storage;
 use DB;
 
 class Bohol_IssuancesController extends Controller
@@ -23,5 +24,11 @@ class Bohol_IssuancesController extends Controller
 
     
         return view('Normal_View.Bohol_Issuances.show', compact('b_issuance', 'issuances'));
+    }
+
+    public function download( Request $request, $file){
+
+        return response()->download(public_path().'/app/public/issuance_files/'.$file);
+
     }
 }

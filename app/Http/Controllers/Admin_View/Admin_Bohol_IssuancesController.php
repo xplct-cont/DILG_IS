@@ -94,7 +94,7 @@ class Admin_Bohol_IssuancesController extends Controller
 
     public function delete_issuances($id){
         $issuances = Bohol_Issuance::find($id);
-            $destination = public_path().'/app/public/issuance_files/'.$issuances->file;;
+            $destination = public_path().'/app/public/issuance_files/'.$issuances->file;
              if(File::exists($destination)){
                  File::delete($destination);
              }
