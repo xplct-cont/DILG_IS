@@ -9,7 +9,7 @@ class Lgu extends Model
 {
     use HasFactory;
 
-    
+
     protected $primaryKey = 'id';
     protected $fillable =
     [
@@ -32,12 +32,31 @@ class Lgu extends Model
 
     protected $casts = [
         'created_at' => 'datetime',
-        
+
     ];
-    
+
     public function municipality() {
         return $this->belongsTo('App\Models\Municipality');
 
+    }
+
+    public function scopeSearch($query, $terms){
+        collect(explode(" " , $terms))->filter()->each(function($term) use($query){
+            $term = '%'. $term . '%';
+
+            $query->where('mayor', 'like', $term)
+                ->orWhere('vice_mayor', 'like', $term)
+                ->orWhere('municipality_id', 'like', $term)
+                ->orWhere('sb_member1', 'like', $term)
+                ->orWhere('sb_member2', 'like', $term)
+                ->orWhere('sb_member3', 'like', $term)
+                ->orWhere('sb_member4', 'like', $term)
+                ->orWhere('sb_member5', 'like', $term)
+                ->orWhere('sb_member6', 'like', $term)
+                ->orWhere('sb_member7', 'like', $term)
+                ->orWhere('sb_member8', 'like', $term);
+
+        });
     }
 
 }
