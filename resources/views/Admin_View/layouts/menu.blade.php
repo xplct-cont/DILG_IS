@@ -63,6 +63,13 @@
         <i class="fas fa-question-circle fa-pull-left fa-md text-white"></i>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('admin/issuances') }}"
+        class="nav-link {{ Request::is('admin/issuances*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">Issuances</p>
+        <i class="fas fa-file fa-pull-left fa-md text-white"></i>
+    </a>
+</li>
 
 <style scoped>
     .nav-item p {
