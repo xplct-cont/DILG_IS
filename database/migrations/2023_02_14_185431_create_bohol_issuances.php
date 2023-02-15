@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('bohol_issuances', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
+            $table->longText('title')->nullable();
             $table->string('reference_num')->nullable();
             $table->string('file')->nullable();
             $table->date('date')->nullable();
