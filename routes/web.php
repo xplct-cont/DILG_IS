@@ -11,6 +11,7 @@ use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 use App\Http\Controllers\Normal_View\Faqs\FaqsController;
+use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
 
 //Normal View
 use App\Http\Controllers\Normal_View\Home\HomeController;
@@ -95,6 +96,8 @@ Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->
 Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
+
+Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->name('/latest_issuances');
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
