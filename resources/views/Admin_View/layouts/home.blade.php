@@ -141,7 +141,7 @@
                         <div class="icon">
                             <i class="fas fa-file text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/bohol_issuances') }}" class="small-box-footer "
+                        <a href="{{ route('admin/issuances') }}" class="small-box-footer "
                             style="background-color:dimgray;">
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
