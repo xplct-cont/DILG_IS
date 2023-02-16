@@ -25,9 +25,8 @@
                             style="font-size: 15px; font-weight: 350; color:rgb(77, 77, 77);">{{ $b_issuance->reference_num }}</span>
                     </p>
                     <div class="mx-auto text-center">
-                        <iframe class="responsive mb-3 " src="{{ asset('/app/public/issuance_files/' . $b_issuance->file) }}"
+                        <embed class="responsive mb-3 " src="{{ asset('/app/public/issuance_files/' . $b_issuance->file) }}"
                             width="90%" height="500px;">
-                        </iframe>
                     </div>
 
 
