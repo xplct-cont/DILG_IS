@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('newstables', function (Blueprint $table) {
             $table->id();
-            $table->string('unique_id')->unique();
+            $table->string('unique_id');
             $table->string('title')->nullable();
             $table->longText('caption')->nullable();
-            $table->longText('image')->nullable();
+            // $table->longText('image')->nullable();
             $table->string('datetime')->nullable();
             // $table->unsignedBigInteger('image_id');
             // $table->foreign('image_id')->references('id')->on('newsimages')->onDelete('cascade')->onUpdate('cascade');

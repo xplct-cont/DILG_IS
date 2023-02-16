@@ -20,11 +20,11 @@ use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
-use App\Http\Controllers\Normal_View\Faqs\FaqsController;
+// use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
 
 //Normal View
-use App\Http\Controllers\Normal_View\Home\HomeController;
+// use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
 use App\Http\Controllers\Admin_View\Admin_ProjectController;
 use App\Http\Controllers\Normal_View\Project\ProjectController;
@@ -35,7 +35,7 @@ use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Bohol_IssuancesController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
-use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
+// use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
 /*
 |--------------------------------------------------------------------------
@@ -151,8 +151,10 @@ Route::get("/project",[ProjectController::class,'index']);
 //Routes for Vienna
 //Admin_View Routes
 Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/news');
-Route::get('admin/newsview', NewsComponent::class)->name('allNews');
-Route::get('admin/addnews', NewsComponent::class)->name('addNews');
+Route::get('/admin/newsview', [Admin_NewsController::class, 'newsview'])->name('admin/newsview');
+Route::get('/admin/addnews', [Admin_NewsController::class, 'addnews'])->name('admin/addnews');
+// Route::get('admin/newsview', NewsComponent::class)->name('allNews');
+// Route::get('admin/addnews', NewsComponent::class)->name('addNews');
 
 //Normal_View Routes
 Route::get('/about', [AboutController::class, 'index'])->name('/about');

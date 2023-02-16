@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Newstable extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['unique_id', 'title', 'caption', 'datetime'];
 }

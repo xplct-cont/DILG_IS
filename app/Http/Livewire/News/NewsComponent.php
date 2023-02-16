@@ -3,11 +3,14 @@
 namespace App\Http\Livewire\News;
 
 use Livewire\Component;
+use App\Models\Newstable;
 
 class NewsComponent extends Component
 {
     public function render()
     {
-        return view('livewire.news.news-component')->layout('Admin_View.layouts.app');
+
+        $news = Newstable::all();
+        return view('livewire.news.news-component', compact('news'));
     }
 }
