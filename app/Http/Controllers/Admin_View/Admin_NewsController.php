@@ -12,9 +12,9 @@ class Admin_NewsController extends Controller
     }
 
     public function newsview(){
-        return view('Admin_view.news.newsview');
+        return view('Admin_View.news.newsview');
     }
     public function addnews(){
-        return view('Admin_view.news.addnews');
+        return view('Admin_View.news.addnews');
     }
 }
