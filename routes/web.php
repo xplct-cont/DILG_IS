@@ -105,6 +105,7 @@ Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
 
 Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->name('/latest_issuances');
 Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
+Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
