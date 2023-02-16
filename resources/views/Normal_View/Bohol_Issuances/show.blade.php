@@ -33,9 +33,7 @@
 
                     </div>
 
-
                     <div class="col-md-12 mt-3">
-
                         <p class="text-center" style="color: #002C76; font-size: 22px; font-weight: 400;">More Issuances</p>
                         <table class="table bg-light table-sm table-bordered table-hover text-secondary">
                             <tbody class="elevation-4">
@@ -57,10 +55,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-
                         </table>
-
-
                     </div>
                 </div>
             </div>
