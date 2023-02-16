@@ -28,8 +28,8 @@
                         {{-- <embed class="responsive mb-3 " src="{{ asset('/app/public/issuance_files/' . $b_issuance->file) }}"
                             width="90%" height="500px;"> --}}
 
-                        <embed class="responsive mb-3 " src="{{ asset('issuance_files/' . $b_issuance->file) }} "
-                            width="90%" height="500px;">
+                        <iframe class="mb-3" src="{{ asset('issuance_files/' . $b_issuance->file) }} " width="90%"
+                            height="600px;"></iframe>
 
                     </div>
 
