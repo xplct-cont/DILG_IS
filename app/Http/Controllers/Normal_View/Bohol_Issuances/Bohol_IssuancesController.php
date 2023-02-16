@@ -28,7 +28,7 @@ class Bohol_IssuancesController extends Controller
 
     public function download( Request $request, $file){
 
-        return response()->download(public_path().'/app/public/issuance_files/'.$file);
-
+        return response()->download( public_path('issuance_files/'.$file));
+       
     }
 }
