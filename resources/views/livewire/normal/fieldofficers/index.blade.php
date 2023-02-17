@@ -1,12 +1,28 @@
-@extends('layouts.app')
-@section('content')
-
-<livewire:normal.fieldofficers.index>
-    {{-- <div class="container">
+<div>
+    <div class="container">
         <div class="d-flex justify-content-center mb-3">
             <img src="/img/dilg-main.png" style="height: 150px; width: 150px;" alt="">
         </div>
         <h1 class="text-center " style="font-size: 30px; margin-bottom: 50px;">FIELD OFFICERS</h1>
+    </div>
+
+    <div class="container mb-4">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 mt-2">
+                    <select class="form-select mt-1"  wire:model="municipality">
+                        <option value="all">All municipalities</option>
+                        @foreach ($municipalities as $municipality)
+                            <option value="{{ $municipality->id }}">{{ $municipality->municipality }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-6 mt-2">
+                    <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
+                        placeholder="Search">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="">
         <div class="col-md-12 mb-3 mt-3">
@@ -36,20 +52,5 @@
                 </div>
             </div>
         </div>
-    </div> --}}
-@endsection
-<style scoped>
-    .zoom {
-        transition: transform .2s;
-    }
-
-    .zoom:hover {
-        -ms-transform: scale(1.2);
-        /* IE 9 */
-        -webkit-transform: scale(1.2);
-        /* Safari 3-8 */
-        transform: scale(1.2);
-        text-align: center;
-        font-size: 10px;
-    }
-</style>
+    </div>
+</div>

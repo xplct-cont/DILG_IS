@@ -43,10 +43,12 @@ class Admin_Bohol_IssuancesController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $filePath = $request->file('file')->storeAs('issuance_files', $filename, 'public');
-
-            $issuances->file = '/public/issuance_files' . $filePath;;
+            $request->file('file')->move(public_path('/issuance_files/'), $filename);
             $issuances->file = $filename;
+
+            // storeAs('issuance_files', $filename, 'public');
+            // $issuances->file = '/public/issuance_files' . $filePath;;
+            // $issuances->file = $filename;
 
           }
 
@@ -71,7 +73,7 @@ class Admin_Bohol_IssuancesController extends Controller
 
         if($request->hasFile('file')){
 
-            $destination = public_path().'/app/public/issuance_files/'.$issuances->file;
+            $destination = 'issuance_files/'.$issuances->file;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -79,10 +81,11 @@ class Admin_Bohol_IssuancesController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $filePath = $request->file('file')->storeAs('issuance_files', $filename, 'public');
-
-            $issuances->file = '/public/issuance_files' . $filePath;;
+            $request->file('file')->move(public_path('/issuance_files/'), $filename);
             $issuances->file = $filename;
+
+            // $issuances->file = '/public/issuance_files' . $filePath;;
+            // $issuances->file = $filename;
 
           }
 
@@ -94,7 +97,7 @@ class Admin_Bohol_IssuancesController extends Controller
 
     public function delete_issuances($id){
         $issuances = Bohol_Issuance::find($id);
-            $destination = public_path().'/app/public/issuance_files/'.$issuances->file;
+            $destination = public_path('issuance_files/'.$issuances->file);
              if(File::exists($destination)){
                  File::delete($destination);
              }

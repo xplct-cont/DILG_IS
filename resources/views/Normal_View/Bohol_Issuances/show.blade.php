@@ -25,14 +25,15 @@
                             style="font-size: 15px; font-weight: 350; color:rgb(77, 77, 77);">{{ $b_issuance->reference_num }}</span>
                     </p>
                     <div class="mx-auto text-center">
-                        <iframe class="responsive mb-3 " src="{{ asset('/app/public/issuance_files/' . $b_issuance->file) }}"
-                            width="90%" height="500px;">
-                        </iframe>
+                        {{-- <embed class="responsive mb-3 " src="{{ asset('/app/public/issuance_files/' . $b_issuance->file) }}"
+                            width="90%" height="500px;"> --}}
+
+                        <iframe class="mb-3" src="{{ asset('issuance_files/' . $b_issuance->file) }} " width="90%"
+                            height="600px;"></iframe>
+
                     </div>
 
-
                     <div class="col-md-12 mt-3">
-
                         <p class="text-center" style="color: #002C76; font-size: 22px; font-weight: 400;">More Issuances</p>
                         <table class="table bg-light table-sm table-bordered table-hover text-secondary">
                             <tbody class="elevation-4">
@@ -54,10 +55,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-
                         </table>
-
-
                     </div>
                 </div>
             </div>
