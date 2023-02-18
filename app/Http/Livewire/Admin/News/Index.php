@@ -48,7 +48,7 @@ class Index extends Component
             'image.*' => 'image', // 1MB Max
         ]);
         foreach ($this->image as $key => $img) {
-            $this->image[$key] = $img->store('news', 'public');
+            $this->image[$key] = $img->storePublicly('news', 's3');
         }
 
         $this->image = json_encode($this->image);

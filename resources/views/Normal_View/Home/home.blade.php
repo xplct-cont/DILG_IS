@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    {{-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -29,7 +29,47 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+    </div> --}}
+
+    <div class="mx-auto tex-center">
+        <div class="">
+            @foreach ($home_images as $home_img)
+                <div>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+                        </ol>
+                        <div class="carousel-inner responsive">
+                            @php
+                                $images = json_decode($home_img->images, true);
+                            @endphp
+                            @foreach ($images as $key => $image)
+                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                    <img class="responsive" src="{{ asset('home_images/' . $image) }}" height="650"
+                                        width="1250" />
+                                </div>
+                            @endforeach
+
+                        </div>
+
+                    </div>
+
+                </div>
+            @endforeach
+        </div>
+
     </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -356,6 +396,11 @@
                 </div>
             </div>
 
+            <div class="container mx-auto mt-3 col-md-11">
+                <iframe src="https://www.youtube.com/embed/x4537UShJl4" style="height:400; width:100%;" frameborder="0">
+
+                </iframe>
+            </div>
         </div>
         <div class="elevation-4" style="margin-top: 30px;" id="ww_afa40588f70fd" v='1.3' loc='id'
             a='{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl5320"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
