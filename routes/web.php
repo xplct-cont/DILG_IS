@@ -53,12 +53,11 @@ Route::get('/', [HomeController::class, 'index']);
 
 Auth::routes();
 
-Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
-
-
-
 //Routes for Kenn
 //Admin_View Routes
+Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
+Route::post('/add_images/{id}', [Admin_HomeController::class, 'store']);
+
 Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
 Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
 
