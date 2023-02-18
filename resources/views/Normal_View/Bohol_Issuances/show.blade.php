@@ -5,7 +5,7 @@
             <a class="p-4" style="color:#002C76; text-decoration:none;" href="{{ url('/latest_issuances') }}"><span
                     class="fas fa-arrow-left" style="color:#002C76;"></span> Back</a>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-11 mx-auto">
             <div class="card elevation-4">
 
                 <div class="card-header-sm" style="background-color: #002C76; color:white;">
@@ -25,11 +25,12 @@
                             style="font-size: 15px; font-weight: 350; color:rgb(77, 77, 77);">{{ $b_issuance->reference_num }}</span>
                     </p>
                     <div class="mx-auto text-center">
-                        {{-- <embed class="responsive mb-3 " src="{{ asset('/app/public/issuance_files/' . $b_issuance->file) }}"
-                            width="90%" height="500px;"> --}}
 
-                        <iframe class="mb-3" src="{{ asset('issuance_files/' . $b_issuance->file) }} " width="90%"
-                            height="600px;"></iframe>
+                        {{-- <iframe class="mb-3" src="{{ asset('issuance_files/' . $b_issuance->file) }}#toolbar=0" width="90%"
+                            height="900;"></iframe> --}}
+                        <object data="{{ asset('issuance_files/' . $b_issuance->file) }}#toolbar=0" type="application/pdf"
+                            width="70%" height="900"></object>
+
 
                     </div>
 
