@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Municipality;
 use App\Models\Program;
+use App\Models\Home_Image;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,7 @@ class HomeController extends Controller
     {
         // $show = DB::table('news')->limit(3)->get();
         $projectsAll = Project::limit(4)->get();
-        return view('Normal_View.Home.home', compact('projectsAll'));
+        $home_images = Home_Image::all();
+        return view('Normal_View.Home.home', compact('projectsAll', 'home_images'));
     }
 }
