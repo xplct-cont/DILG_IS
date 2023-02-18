@@ -73,7 +73,7 @@
                             @endphp
 
                             @foreach ($images as $img )
-                                <img src="{{asset('uploads/all')}}/{{$img->image}}" style="height:50px; width:50px;" alt="">
+                                <img src="{{asset('public/uploads/all')}}/{{$img->image}}" style="height:50px; width:50px;" alt="">
 
                             @endforeach
                         </td>
