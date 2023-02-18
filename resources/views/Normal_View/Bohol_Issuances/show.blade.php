@@ -26,13 +26,17 @@
                     </p>
                     <div class="mx-auto text-center">
 
-                        {{-- <iframe class="mb-3" src="{{ asset('issuance_files/' . $b_issuance->file) }}#toolbar=0" width="90%"
-                            height="900;"></iframe> --}}
                         <object data="{{ asset('issuance_files/' . $b_issuance->file) }}#toolbar=0" type="application/pdf"
                             width="70%" height="900"></object>
-
-
                     </div>
+
+                    <p class="text-wrap mt-3" style="color:dimgray;">
+                        Note: If plugin is unsupported, kindly<a class=" mt-2 ml-2 mr-2" style="color:#C9282D;"
+                            href="{{ url('/download', $b_issuance->file) }}"><span class=""
+                                style="font-size: 15px;"></span>Download PDF Here</a>to view.
+                    </p>
+
+                    <hr>
 
                     <div class="col-md-12 mt-3">
                         <p class="text-center" style="color: #002C76; font-size: 22px; font-weight: 400;">More Issuances</p>
