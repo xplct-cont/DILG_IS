@@ -31,7 +31,7 @@
         </a>
     </div> --}}
 
-    <div class="mx-auto tex-center">
+    <div class="mx-auto text-center">
         <div class="">
             @foreach ($home_images as $home_img)
                 <div>
