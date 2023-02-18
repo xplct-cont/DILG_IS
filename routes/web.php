@@ -152,10 +152,7 @@ Route::get("/project",[ProjectController::class,'index']);
 //Routes for Vienna
 //Admin_View Routes
 Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/news');
-Route::get('/admin/newsview', [Admin_NewsController::class, 'newsview'])->name('admin/newsview');
-Route::get('/admin/addnews', [Admin_NewsController::class, 'addnews'])->name('admin/addnews');
-// Route::get('admin/newsview', NewsComponent::class)->name('allNews');
-// Route::get('admin/addnews', NewsComponent::class)->name('addNews');
+
 
 //Normal_View Routes
 Route::get('/about', [AboutController::class, 'index'])->name('/about');
