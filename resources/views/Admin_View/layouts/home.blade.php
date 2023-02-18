@@ -21,7 +21,7 @@
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-md" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
 
@@ -30,20 +30,20 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <table class="elevation-3 table table-bordered table-hovered text-center">
+                        <table class=" mx-auto col-md-8 elevation-3 table table-sm table-bordered table-hovered text-center">
                             <thead class="" style="background-color: dimgray; color:white;">
 
 
-                                <th>Images</th>
+                                <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                style="text-align: center">Images</th>
                             </thead>
                             <tbody>
                                 @foreach ($home_images as $home_img)
                                     <tr>
-
-
-                                        <td class="img"> <?php foreach (json_decode($home_img->images) as $picture) { ?>
+                                        <td scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                        style="text-align: center"> <?php foreach (json_decode($home_img->images) as $picture) { ?>
                                             <img src="{{ asset('home_images/' . $picture) }}"
-                                                style="height:80px; width:110px" />
+                                                style="height:60px; width:80px" />
                                             <?php } ?>
                                         </td>
                                     </tr>
@@ -58,7 +58,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Choose Images</label>
+                                            <label>Choose Images (Max:3)</label>
                                             <input type="file" name="images[]" class="form-control" multiple>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Submit</button>
+                        <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save Changes</button>
                     </div>
                     </form>
 
@@ -242,7 +242,7 @@
     .img {
         display: flex;
         justify-content: space-evenly;
-        background: red;
+       
 
     }
 </style>
