@@ -58,19 +58,30 @@ class Admin_NewsController extends Controller
     {
 
 
-            $img = News::find($id);
-            // $destination = '/news/'.$img->images;
+            // $img = DB::table('news')->find($id);
+            // $destination = public_path('news/' .$img->images);
             //  if(File::exists($destination)){
             //      File::delete($destination);
+             
             //  }
-            // $img->delete();
+              
+            //    else{
+            //     dd('file not found');
+            //  }
+          
 
 
-            if(file_exists('public/news/' .$img->images)){
-                delete('public/news/' .$img->images);
-              }else{
-                dd('File not found');
-              }
+            // if(file_exists('public/news/' .$img->images)){
+            //     delete('public/news/' .$img->images);
+            //   }else{
+            //     dd('File not found');
+            //   }
+
+
+
+            // $img = News::find($id);
+            // \Storage::delete($post->image);
+
 
         return redirect()->back()->with('message', 'News Deleted Successfully!');
     }
