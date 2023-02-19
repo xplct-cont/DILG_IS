@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin_View;
 use App\Http\Controllers\Controller;
 use Image;
 use File;
-use App\Models\News;
+use App\Models\News_Update;
 use DB;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,7 @@ class Admin_NewsController extends Controller
     public function index(){
 
 
-        $news_images = DB::table('news')->orderBy('created_at', 'DESC')->get();
+        $news_images = News_Update::orderBy('created_at', 'DESC')->get();
 
         return view('Admin_View.news.index', compact('news_images'));
     }
@@ -23,7 +23,7 @@ class Admin_NewsController extends Controller
 
     public function store(Request $request){
       
-        $img = new News;
+        $img = new News_Update;
 
         $img->title = $request->input('title');
         $img->caption = $request->input('caption');
