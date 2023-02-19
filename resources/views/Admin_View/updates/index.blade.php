@@ -89,7 +89,7 @@
                         <tr>
                             <td scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                 style="text-align: center"> <?php foreach (json_decode($news_img->images) as $picture) { ?>
-                                <img src="{{ asset('/news_updates/'.$picture) }}" style="height:40px; width:60px" />
+                                <img src="{{ asset('news_updates/'.$picture) }}" style="height:40px; width:60px" />
                                 <?php } ?>
                             </td>
 
