@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Images:</label>
+                                            <label for="" style="color:dimgray">Upload Images (Max:3)</label>
                                             <input type="file" class="form-control" name="images[]" required multiple>
                                         </div>
 
@@ -89,7 +89,7 @@
                         <tr>
                             <td scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                 style="text-align: center"> <?php foreach (json_decode($news_img->images) as $picture) { ?>
-                                <img src="{{ asset('news_updates/'.$picture) }}" style="height:40px; width:60px" />
+                                <img src="{{ asset('news_updates/' . $picture) }}" style="height:40px; width:60px" />
                                 <?php } ?>
                             </td>
 
@@ -166,12 +166,12 @@
                                 </div>
                             </div> --}}
 
-                            <td><a href="#" data-toggle="modal" id="news_delete_link" class="btn"
-                                    data-target="#delete_news_id{{ $news_img->id }}"><span
+                            <td><a href="#" data-toggle="modal" id="news_updates_delete_link" class="btn"
+                                    data-target="#delete_news_updates_id{{ $news_img->id }}"><span
                                         class="text-danger fas fa-trash-alt"></span></a></td>
 
-                            <div class="modal fade" id="delete_news_id{{ $news_img->id }}" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="delete_news_updates_id{{ $news_img->id }}" tabindex="-1"
+                                role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog " role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -185,7 +185,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="{{ url('delete_news/' . $news_img->id) }}" method="GET"
+                                            <form action="{{ url('delete_updates/' . $news_img->id) }}" method="GET"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 @method('GET')

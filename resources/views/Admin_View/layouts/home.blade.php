@@ -58,7 +58,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Choose Images (Max:3)</label>
+                                            <label>Upload Images (Max:3)</label>
                                             <input type="file" name="images[]" class="form-control" multiple>
                                         </div>
                                     </div>

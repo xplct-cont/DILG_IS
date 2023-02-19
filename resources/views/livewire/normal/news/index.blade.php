@@ -22,7 +22,6 @@
 
     </div>
 
-
     <div class="mx-auto mt-3 col-md-11">
         <div class="">
             @foreach ($news as $new)

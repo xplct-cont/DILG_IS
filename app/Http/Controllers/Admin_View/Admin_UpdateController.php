@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin_View;
 
 use App\Http\Controllers\Controller;
 use Image;
-use File;
+use Illuminate\Support\Facades\File;
 use DB;
 use Illuminate\Http\Request;
 use App\Models\Update;
@@ -49,41 +49,29 @@ class Admin_UpdateController extends Controller
      
     }
 
+    public function edit_updates(Request $request, $id){
+
+
+        return redirect()->back()->with('message', 'News/Updates Updated Successfully!');
+
+    }
 
 
 
 
-
-    public function delete_news(Request $request, $id)
+    public function delete_updates(Request $request, $id)
     {
 
-
-            // $img = DB::table('news')->find($id);
-            // $destination = public_path('news/' .$img->images);
-            //  if(File::exists($destination)){
-            //      File::delete($destination);
-             
-            //  }
-              
-            //    else{
-            //     dd('file not found');
-            //  }
-          
-
-
-            // if(file_exists('public/news/' .$img->images)){
-            //     delete('public/news/' .$img->images);
-            //   }else{
-            //     dd('File not found');
-            //   }
-
-
-
-            // $img = News::find($id);
-            // \Storage::delete($post->image);
-
-
-        return redirect()->back()->with('message', 'News Deleted Successfully!');
+            // $img = Update::find($id);
+            // $imagePaths = [public_path('news_updates/' .$img->images),
+            // ];
+            // foreach ($imagePaths as $imagePath) {
+            //     if (File::exists($imagePath)) {
+            //         File::delete($imagePath);
+            //     }
+            // }
+    
+        return redirect()->back()->with('message', 'News/Updates Deleted Successfully!');
     }
 
 
