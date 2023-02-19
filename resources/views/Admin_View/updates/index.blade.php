@@ -81,7 +81,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Caption</th>
                         <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -166,7 +166,7 @@
                                 </div>
                             </div> --}}
 
-                            <td><a href="#" data-toggle="modal" id="news_updates_delete_link" class="btn"
+                            <td scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"><a href="#" data-toggle="modal" id="news_updates_delete_link" class="btn"
                                     data-target="#delete_news_updates_id{{ $news_img->id }}"><span
                                         class="text-danger fas fa-trash-alt"></span></a></td>
 

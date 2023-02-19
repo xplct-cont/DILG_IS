@@ -30,14 +30,14 @@
                         <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
                             <div class="col-md-6 mx-auto mt-5 ">
 
-                                <h1 style="font-size: 20px;">
+                                <h1 style="font-size: 18px; font-weight: 500; color:dimgray;">
                                     Post: {{ \Carbon\Carbon::parse($new->created_at)->format('M j, Y h:i A') }}</h1><br>
                                 <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
                                 <p class="text-left" style="font-size: 15px; font-weight: 400;">
                                     {{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
                             </div>
-                            <div class="col-md-5">
-                                <div class="col-md-12" style="height: 400px;">
+                            <div class="col-md-6">
+                                <div class="col-md-12" style="height: 360px;">
 
                                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                         <ol class="carousel-indicators">
@@ -54,7 +54,7 @@
                                             @foreach ($images as $key => $image)
                                                 <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
                                                     <img src="{{ asset('/news_updates/' . $image) }}"
-                                                        style="height:350px; width:auto;" />
+                                                        style="height:350px; width:100%;" />
                                                 </div>
                                             @endforeach
 

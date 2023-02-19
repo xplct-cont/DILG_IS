@@ -1,36 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-
-        </ol>
-        <div class="carousel-inner text-center">
-
-            <div class="carousel-item active ">
-                <img src="{{ asset('img/img4.jpg') }}" class="responsive" width="1250" height="400" alt="..." />
-            </div>
-            <div class="carousel-item ">
-                <img src="{{ asset('img/img2.jpg') }}" class="responsive" width="1250" height="400" alt="..." />
-            </div>
-            <div class="carousel-item ">
-                <img src="{{ asset('img/img5.jpg') }}" class="responsive" width="1250" height="400" alt="..." />
-            </div>
-
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div> --}}
-
+   
     <div class="mx-auto text-center">
         <div class="">
             @foreach ($home_images as $home_img)
@@ -62,16 +33,6 @@
         </div>
 
     </div>
-
-
-
-
-
-
-
-
-
-
 
     <div class="container">
         <div class="row">
@@ -320,14 +281,14 @@
                         <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
                             <div class="col-md-6 mx-auto mt-5 ">
 
-                                <h1 style="font-size: 20px;">
+                                <h1 style="font-size: 18px; font-weight: 500; color:dimgray;">
                                     Post: {{ \Carbon\Carbon::parse($new->created_at)->format('M j, Y h:i A') }}</h1><br>
                                 <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
                                 <p class="text-left" style="font-size: 15px; font-weight: 400;">
                                     {{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
                             </div>
-                            <div class="col-md-5">
-                                <div class="col-md-12" style="height: 400px;">
+                            <div class="col-md-6">
+                                <div class="col-md-12" style="height: 365px;">
 
                                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                         <ol class="carousel-indicators">
@@ -337,14 +298,14 @@
                                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 
                                         </ol>
-                                        <div class="carousel-inner text-center" style="height:350px;">
+                                        <div class=" carousel-inner text-center" style="height:350px;">
                                             @php
                                                 $images = json_decode($new->images, true);
                                             @endphp
                                             @foreach ($images as $key => $image)
                                                 <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
                                                     <img src="{{ asset('/news_updates/' . $image) }}"
-                                                        style="height:350px; width:auto;" />
+                                                        style="height:350px; width:100%;" />
                                                 </div>
                                             @endforeach
 
