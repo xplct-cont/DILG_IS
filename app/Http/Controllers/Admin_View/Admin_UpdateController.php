@@ -5,25 +5,25 @@ namespace App\Http\Controllers\Admin_View;
 use App\Http\Controllers\Controller;
 use Image;
 use File;
-use App\Models\News_Update;
 use DB;
 use Illuminate\Http\Request;
+use App\Models\Update;
 
 
-class Admin_NewsController extends Controller
+class Admin_UpdateController extends Controller
 {
     public function index(){
 
 
-        $news_images = News_Update::orderBy('created_at', 'DESC')->get();
-
-        return view('Admin_View.news.index', compact('news_images'));
+        $news_images = Update::orderBy('created_at', 'DESC')->get();
+        return view('Admin_View.updates.index', compact('news_images'));
+        
     }
 
 
     public function store(Request $request){
       
-        $img = new News_Update;
+        $img = new Update;
 
         $img->title = $request->input('title');
         $img->caption = $request->input('caption');
@@ -37,7 +37,7 @@ class Admin_NewsController extends Controller
             foreach($request->file('images') as $image){
 
                 $name = $image->getClientOriginalName();
-                $image->move(public_path('/news/'), $name);
+                $image->move(public_path('/news_updates/'), $name);
                 $data[] = $name;
         }
     }

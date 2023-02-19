@@ -53,7 +53,7 @@
                                             @endphp
                                             @foreach ($images as $key => $image)
                                                 <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
-                                                    <img src="{{ asset('/news/' . $image) }}"
+                                                    <img src="{{ asset('/news_updates/' . $image) }}"
                                                         style="height:350px; width:auto;" />
                                                 </div>
                                             @endforeach

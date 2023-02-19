@@ -30,7 +30,7 @@ class Admin_HomeController extends Controller
 
         $home_images = Home_Image::all();
 
-        $news = DB::table('news')->count();
+        $updates = DB::table('updates')->count();
         $projects = DB::table('projects')->count();
         $jobs = DB::table('jobs')->count();
         $orgs = DB::table('orgs')->count();
@@ -39,7 +39,7 @@ class Admin_HomeController extends Controller
         $field_officers = DB::table('field_officers')->count();
         $faqs = DB::table('faqs')->count();
         $b_issuances = DB::table('bohol_issuances')->count();
-        return view('Admin_View.layouts.home',compact('home_images', 'news', 'projects','jobs','orgs', 'pdmus', 'lgus', 'field_officers', 'faqs', 'b_issuances'));
+        return view('Admin_View.layouts.home',compact('home_images', 'updates', 'projects','jobs','orgs', 'pdmus', 'lgus', 'field_officers', 'faqs', 'b_issuances'));
     }
 
 

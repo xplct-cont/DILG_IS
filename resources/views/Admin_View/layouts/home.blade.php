@@ -85,14 +85,14 @@
                     <!-- small box -->
                     <div class="small-box bg-light text-secondary elevation-4">
                         <div class="inner">
-                            <h3>{{ $news }}</h3>
+                            <h3>{{ $updates }}</h3>
 
-                            <p class="text-secondary">News</p>
+                            <p class="text-secondary">News/Updates</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-newspaper text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/news') }}" class="small-box-footer text-light"
+                        <a href="{{ route('admin/news_updates') }}" class="small-box-footer text-light"
                             style="background-color:dimgray;"><span class="text-light">More info</span> <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>

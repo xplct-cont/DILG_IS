@@ -343,7 +343,7 @@
                                             @endphp
                                             @foreach ($images as $key => $image)
                                                 <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
-                                                    <img src="{{ asset('/news/' . $image) }}"
+                                                    <img src="{{ asset('/news_updates/' . $image) }}"
                                                         style="height:350px; width:auto;" />
                                                 </div>
                                             @endforeach
@@ -363,7 +363,7 @@
     </div>
 
     <div class="d-flex justify-content-center mb-5 mt-3">
-        <a href="{{ url('/news-update') }}" type="button" class="btn btn-sm"
+        <a href="{{ url('/news_update') }}" type="button" class="btn btn-sm"
             style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>

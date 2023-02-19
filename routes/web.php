@@ -7,14 +7,14 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\Normal_View\Lgu\LguController;
-use App\Http\Controllers\Normal_View\News\NewsController;
+use App\Http\Controllers\Normal_View\Update\UpdatesController;
 use App\Http\Controllers\Admin_View\Admin_LguController;
 use App\Http\Controllers\Admin_View\Admin_FaqsController;
 use App\Http\Controllers\Admin_View\Admin_HomeController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
 
 //Normal View
-use App\Http\Controllers\Admin_View\Admin_NewsController;
+use App\Http\Controllers\Admin_View\Admin_UpdateController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
 use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Home\HomeController;
@@ -132,9 +132,9 @@ Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update'
 
 //Normal_View Routes
 
-Route::get("/single-news-update",function(){
-    return view('Normal_View.News.single_news');
-});
+// Route::get("/single-updates-update",function(){
+//     return view('Normal_View.Updates.single_updates');
+// });
 
 Route::get("/project",[ProjectController::class,'index']);
 
@@ -149,10 +149,10 @@ Route::get("/project",[ProjectController::class,'index']);
 
 //Routes for Vienna
 //Admin_View Routes
-Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/news');
-Route::post('/add-news', [Admin_NewsController::class, 'store']);
-Route::get('/delete_news/{id}', [Admin_NewsController::class, 'delete_news']);
-Route::put('/update_news/{id}', [Admin_NewsController::class, 'update_news']);
+Route::get('/admin/news_updates', [Admin_UpdateController::class, 'index'])->name('admin/news_updates');
+Route::post('/add-updates', [Admin_UpdateController::class, 'store']);
+Route::get('/delete_updates/{id}', [Admin_UpdateController::class, 'delete_updates']);
+Route::put('/update_updates/{id}', [Admin_UpdateController::class, 'update_updates']);
 
 
 //Normal_View Routes
@@ -160,7 +160,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('/about');
 Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
 
-Route::get('/news-update', [NewsController::class, 'index'])->name('/news-update');
+Route::get('/news_update', [UpdatesController::class, 'index'])->name('/news_update');
 
 Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 
