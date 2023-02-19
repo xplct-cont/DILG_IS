@@ -5,8 +5,9 @@ use Carbon\Carbon;
 //Admin View
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Livewire\News\NewsComponent;
+
 use App\Http\Controllers\Normal_View\Lgu\LguController;
+use App\Http\Controllers\Normal_View\News\NewsController;
 use App\Http\Controllers\Admin_View\Admin_LguController;
 use App\Http\Controllers\Admin_View\Admin_FaqsController;
 use App\Http\Controllers\Admin_View\Admin_HomeController;
@@ -130,9 +131,7 @@ Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update'
 
 
 //Normal_View Routes
-Route::get('/news-update',function(){
-    return view('Normal_View.News.news');
-});
+
 Route::get("/single-news-update",function(){
     return view('Normal_View.News.single_news');
 });
@@ -151,12 +150,17 @@ Route::get("/project",[ProjectController::class,'index']);
 //Routes for Vienna
 //Admin_View Routes
 Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/news');
+Route::post('/add-news', [Admin_NewsController::class, 'store']);
+Route::get('/delete_news/{id}', [Admin_NewsController::class, 'delete_news']);
+Route::put('/update_news/{id}', [Admin_NewsController::class, 'update_news']);
 
 
 //Normal_View Routes
 Route::get('/about', [AboutController::class, 'index'])->name('/about');
 Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
+
+Route::get('/news-update', [NewsController::class, 'index'])->name('/news-update');
 
 Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 

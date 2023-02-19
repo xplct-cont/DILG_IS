@@ -10,6 +10,7 @@ use App\Models\Project;
 use App\Models\Municipality;
 use App\Models\Program;
 use App\Models\Home_Image;
+use App\Models\News;
 
 class HomeController extends Controller
 {
@@ -26,9 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $show = DB::table('news')->limit(3)->get();
+        $news_images = DB::table('news')->limit(3)->get();
         $projectsAll = Project::limit(4)->get();
         $home_images = Home_Image::all();
-        return view('Normal_View.Home.home', compact('projectsAll', 'home_images'));
+        return view('Normal_View.Home.home', compact('projectsAll', 'home_images', 'news_images'));
     }
 }

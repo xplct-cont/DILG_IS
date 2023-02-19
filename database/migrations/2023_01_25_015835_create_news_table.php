@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->longText('caption');
-            $table->longText('image');
-            $table->string('datetime');
+            $table->longText('title')->nullable();
+            $table->longText('caption')->nullable();
+            $table->longText('images')->nullable();
+          
+          
+            // $table->string('datetime');
             // $table->unsignedBigInteger('image_id');
             // $table->foreign('image_id')->references('id')->on('newsimages')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
