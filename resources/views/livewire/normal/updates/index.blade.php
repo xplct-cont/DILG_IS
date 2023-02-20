@@ -137,6 +137,10 @@
                     </div>
                 </div>
             @endforeach
+
+        </div>
+        <div class="d-flex justify-content-center mt-2">
+            {{ $updates->links() }}
         </div>
     </div>
     </div>
