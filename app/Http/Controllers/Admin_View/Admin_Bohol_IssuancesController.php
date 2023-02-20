@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Bohol_Issuance;
+use App\Models\OutComeArea;
 use Image;
 use File;
 use Illuminate\Support\Facades\Validator;
@@ -20,8 +21,9 @@ class Admin_Bohol_IssuancesController extends Controller
 
     public function index(){
 
-        $b_issuances = DB::table('bohol_issuances')->get();
-        return view('Admin_View.bohol_issuances.index', compact('b_issuances'));
+        $b_issuances = Bohol_Issuance::with('outcomearea')->get();
+        $outcomes = DB::table('out_come_areas')->get();
+        return view('Admin_View.bohol_issuances.index', compact('b_issuances', 'outcomes'));
     }
 
 
@@ -33,6 +35,7 @@ class Admin_Bohol_IssuancesController extends Controller
             ]);
             $issuances = new Bohol_Issuance;
 
+            $issuances->outcome = $request->input('outcome');
             $issuances->date = $request->input('date');
             $issuances->category = $request->input('category');
             $issuances->title = $request->input('title');
@@ -66,6 +69,7 @@ class Admin_Bohol_IssuancesController extends Controller
             ]);
             $issuances = Bohol_Issuance::find($id);
 
+            $issuances->outcome = $request->input('outcome');
             $issuances->date = $request->input('date');
             $issuances->category = $request->input('category');
             $issuances->title = $request->input('title');

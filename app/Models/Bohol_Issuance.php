@@ -12,6 +12,7 @@ class Bohol_Issuance extends Model
     protected $primaryKey = 'id';
     protected $fillable =
     [
+        'outcome',
         'title',
         'reference_num',
         'file',
@@ -28,6 +29,11 @@ class Bohol_Issuance extends Model
 
     ];
 
+    public function outcomearea() {
+        return $this->belongsTo('App\Models\OutComeArea');
+
+    }
+
     public function scopeSearch($query, $terms){
         collect(explode(" " , $terms))->filter()->each(function($term) use($query){
             $term = '%'. $term . '%';
@@ -37,5 +43,6 @@ class Bohol_Issuance extends Model
                 ->orWhere('category', 'like', $term);
         });
     }
+
 
 }

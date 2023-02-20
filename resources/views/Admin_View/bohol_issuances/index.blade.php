@@ -30,6 +30,20 @@
                             @csrf
 
                             <div class="container mx-auto">
+                              <div class="">
+                                <div class="form-group">
+                                    <label for="outcome">Outcome Area/Program:</label>
+
+                                    <select name="outcome" id="outcome" class="form-control"
+                                        style="color:dimgray;" required>
+                                        <option selected>Select ...</option>
+                                        @foreach ($outcomes as $outcome)
+                                            <option value="{{ $outcome->id }}">{{ $outcome->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                              </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -94,7 +108,9 @@
             <table class="table table-bordered text-center">
                 <thead class="text-center" style="background-color:#343a40; color:white;">
                     <tr>
-                        <th scope="col">Date</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                        style="text-align: center">Date</th>
+                        <th scope="col">Outcome</th>
                         <th scope="col">Category</th>
                         <th scope="col">Title</th>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
@@ -108,7 +124,9 @@
                     @foreach ($b_issuances as $issuances)
                         <tr>
 
-                            <td>{{ $issuances->date }}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">{{ $issuances->date }}</td>
+                            <td>{{$issuances->outcomearea->title ?? 'None'}}</td>
                             <td>{{ $issuances->category }}</td>
                             <td>{{ $issuances->title }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
