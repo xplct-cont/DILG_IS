@@ -148,12 +148,6 @@ Route::get("/project",[ProjectController::class,'index']);
 
 
 
-Route::get('/draft-issuance',[DraftIssuanceController::class,'index']);
-Route::get('/joint-circular',[JointCircularController::class,'index']);
-Route::get('/republic-act',[RepublicActController::class,'index']);
-Route::get('/presidential-directive',[PresidentialDirectiveController::class,'index']);
-Route::get('/memo-circular',[MemoCircularController::class,'index']);
-
 
 
 
