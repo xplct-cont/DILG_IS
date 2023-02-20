@@ -26,8 +26,8 @@ class Admin_Bohol_IssuancesController extends Controller
 
 
     public function store(Request $request){
-       
-        
+
+
         $request->validate([
             'file' => 'required|mimes:pdf|max:2048'
             ]);
@@ -55,7 +55,7 @@ class Admin_Bohol_IssuancesController extends Controller
         $issuances->save();
 
         return redirect()->back()->with('message', 'Added to Issuances Successfully!');
-     
+
     }
 
 
@@ -103,8 +103,8 @@ class Admin_Bohol_IssuancesController extends Controller
              }
             $issuances->delete();
 
-        return redirect()->back()->with('message', 'Issuance Deleted Successfully!');   
-      }    
+        return redirect()->back()->with('message', 'Issuance Deleted Successfully!');
+      }
 
 
 }
