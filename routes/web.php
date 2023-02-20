@@ -3,41 +3,47 @@
 use Carbon\Carbon;
 
 //Admin View
+use Illuminate\Support\Facades\Auth;
+
+
 use Illuminate\Support\Facades\Route;
-
-
 use App\Http\Controllers\Normal_View\Lgu\LguController;
-use App\Http\Controllers\Normal_View\Update\UpdatesController;
+
+//Normal View
 use App\Http\Controllers\Admin_View\Admin_LguController;
 use App\Http\Controllers\Admin_View\Admin_FaqsController;
 use App\Http\Controllers\Admin_View\Admin_HomeController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
-
-//Normal View
-use App\Http\Controllers\Admin_View\Admin_UpdateController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
 use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Home\HomeController;
-use App\Http\Controllers\Normal_View\Jobs\JobsController;
-use App\Http\Controllers\Normal_View\About\AboutController;
-use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 // use App\Http\Controllers\Normal_View\Faqs\FaqsController;
-use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
+use App\Http\Controllers\Normal_View\Jobs\JobsController;
 
 //Normal View
 // use App\Http\Controllers\Normal_View\Home\HomeController;
+use App\Http\Controllers\Admin_View\Admin_UpdateController;
+use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
 use App\Http\Controllers\Admin_View\Admin_ProjectController;
+use App\Http\Controllers\Normal_View\Update\UpdatesController;
 use App\Http\Controllers\Normal_View\Project\ProjectController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
 use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
+// use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Bohol_IssuancesController;
+use App\Http\Controllers\Normal_View\Republic_Act\RepublicActController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
+use App\Http\Controllers\Normal_View\Memo_Circular\MemoCircularController;
+use App\Http\Controllers\Normal_View\Draft_Issuance\DraftIssuanceController;
+use App\Http\Controllers\Normal_View\Joint_Circular\JointCircularController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
-// use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
+use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
+use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
+use App\Http\Controllers\Normal_View\Presidential_Directive\PresidentialDirectiveController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -137,6 +143,16 @@ Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update'
 // });
 
 Route::get("/project",[ProjectController::class,'index']);
+
+
+
+
+Route::get('/draft-issuance',[DraftIssuanceController::class,'index']);
+Route::get('/joint-circular',[JointCircularController::class,'index']);
+Route::get('/republic-act',[RepublicActController::class,'index']);
+Route::get('/presidential-directive',[PresidentialDirectiveController::class,'index']);
+Route::get('/memo-circular',[MemoCircularController::class,'index']);
+
 
 
 
