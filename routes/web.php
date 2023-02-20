@@ -157,7 +157,7 @@ Route::get('/memo-circular',[MemoCircularController::class,'index']);
 
 
 
-Route::get('/admin-register',[AdminRegisterController::class,'index']);
+Route::get('admin/register',[AdminRegisterController::class,'index'])->name('admin/register');
 
 
 
