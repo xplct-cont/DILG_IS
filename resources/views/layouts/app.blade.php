@@ -114,6 +114,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" target="_blank" href="https://library.dilg.gov.ph/">DILG
                                         E-Library</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="https://library.dilg.gov.ph/">Knowledge Materials</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
