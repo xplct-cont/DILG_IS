@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('joint_circulars', function (Blueprint $table) {
+        Schema::create('admin_registers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('joint_circulars');
+        Schema::dropIfExists('admin_registers');
     }
 };
