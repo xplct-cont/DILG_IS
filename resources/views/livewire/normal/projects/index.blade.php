@@ -33,7 +33,7 @@
         <div class="col-md-12 mb-5">
             <div class="row ">
                 @foreach ($projectsAll as $proj)
-                    <div class="card col-md-5 m-1 mx-auto">
+                    <div class="card col-md-5 mx-auto">
                         <div class="card-body">
                             <a href="#" data-toggle="modal" id="project_view_link"
                                 data-target="#project_id{{ $proj->id }}"
@@ -81,7 +81,7 @@
                                     <span
                                         style="font-size: 16px; font-weight: 400;">{{ Illuminate\Support\Str::limit($proj->description, 30) }}</span>
                                 </p>
-                                <iframe class="col-md-12" src="{{ $proj->municipality->gmap_url }}" height="450"
+                                <iframe class="col-md-12" src="{{ $proj->municipality->gmap_url }}" height="400"
                                     style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
                         </div>
