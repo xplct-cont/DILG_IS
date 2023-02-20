@@ -12,26 +12,28 @@
                 </div>
             </div>
         </div> --}}
+<div class="container">
+    <div class="row ">
+        <div class="col-md-4 mx-auto">
 
-        <div class="row ">
-            <div class="col-md-4 mx-auto">
+            <p class="mt-2 m-2">From:</p>
+            <input style="border-radius: 20px;" type="date" name="" id="" wire:model="fromDate"
+                class="form-control ">
+            <p class="mt-2 m-2">To:</p>
+            <input style="border-radius: 20px;" type="date" name="" id="" wire:model="toDate"
+                class="form-control ">
 
-                <p class="mt-2 m-2">From:</p>
-                <input style="border-radius: 20px;" type="date" name="" id="" wire:model="fromDate"
-                    class="form-control ">
-                <p class="mt-2 m-2">To:</p>
-                <input style="border-radius: 20px;" type="date" name="" id="" wire:model="toDate"
-                    class="form-control ">
-
-            </div>
-            <div class="col-md-4 mx-auto">
-                <div class="" style="margin-top: 40px;">
-                    <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
-                        placeholder="Search">
-                </div>
-
-            </div>
         </div>
+        <div class="col-md-4 mx-auto">
+            <div class="" style="margin-top: 40px;">
+                <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
+                    placeholder="Search">
+            </div>
+
+        </div>
+    </div>
+</div>
+
     </div>
 
 
