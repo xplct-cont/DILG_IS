@@ -292,16 +292,21 @@
                                                                     <input type="text" class="form-control"
                                                                         value="{{ $all->exact_loc }}" name="exact_loc">
                                                                 </div>
-                                                                <div class="form-group">
+                                                            </div>
+                                                                <div class="col-md-6">
                                                                     <label for=""
                                                                         style="color:dimgray">Year:</label>
                                                                     <input type="text" name="year"
                                                                         class="form-control" style="width: 100px;"
                                                                         value="{{ $all->year }}">
                                                                 </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="" style="color:dimgray">Images (Max:3)</label>
+                                                                    <input type="file" class="form-control" name="images[]" value="{{$all->images}}" multiple required>
+                                                                </div>
 
-                                                            </div>
-                                                            <div class="col-md-12">
+                                                            
+                                                            <div class="col-md-12 mt-3">
                                                                 <div class="" style="height: 360px;">
 
                                                                     <div id="carouselExampleIndicators"
