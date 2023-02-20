@@ -20,13 +20,16 @@
                 <p class="text-justify" style="color:dimgray;">
                     THE Province of Bohol is an island haven tucked away in the Filipino region of Visayas.
 
-                    This is one of the largest of more than 7,000 islands that comprise the Philippines, and it consistently
+                    This is one of the largest of more than 7,000 islands that comprise the Philippines, and it
+                    consistently
                     draws tourists with its natural beauty, hilly interior and long stretches of white, sandy beaches.
-                    Nested as it is in the midst of Visayas, Bohol has long been a protected center of culture and politics.
+                    Nested as it is in the midst of Visayas, Bohol has long been a protected center of culture and
+                    politics.
                     Locals proudly refer to the island as the ‘Republic of Bohol’.
 
                     Vision: Bohol is a prime eco-cultural tourism destination and a strong, balanced agro-industrial
-                    province, with a well educated, God-loving and law-abiding citizenry, proud of their cultural heritage,
+                    province, with a well educated, God-loving and law-abiding citizenry, proud of their cultural
+                    heritage,
                     enjoying a state of well-being and committed to sound environment management.
 
                     Mission: To enrich Bohol’s social, economic, cultural, political and environmental resources through
@@ -48,7 +51,7 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6 mt-2">
-                    <select class="form-select mt-1"  wire:model="municipality">
+                    <select class="form-select mt-1" wire:model="municipality">
                         <option value="all">All municipalities</option>
                         @foreach ($municipalities as $municipality)
                             <option value="{{ $municipality->id }}">{{ $municipality->municipality }}</option>
@@ -62,12 +65,14 @@
             </div>
         </div>
     </div>
-    <p class="text-center mt-3" style="color:dimgray; font-size: 22px; font-weight: 600;">LIST OF LOCAL ELECTIVE OFFICIALS
+    <p class="text-center mt-3" style="color:dimgray; font-size: 22px; font-weight: 600;">LIST OF LOCAL ELECTIVE
+        OFFICIALS
     </p>
     <div class="col-md-12">
         <div class="">
             <div class="row d-flex justify-content-center mb-3">
                 @foreach ($lgus as $lgu)
+                
                     <div class="col-md-3 card m-2 p-2 text-justify ">
                         <p class="text-center mb-3" style="font-weight: 600; font-size: 26px; color:#C9282D;">
                             {{ $lgu->municipality->municipality }}</p>
@@ -91,7 +96,8 @@
                         <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member7 }}</p>
                         <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
-                                style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p> <br>
+                                style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p>
+                        <br>
 
                         <p class="text-center" style="color:dimgray; margin-top: -10px; font-size: 15px;"><span
                                 style="font-weight: 500; color:dimgray">No. of Barangays: </span>
@@ -108,9 +114,13 @@
                                 @endforeach
                             </select>
                         </div>
+                        <div class="">
+                            <iframe class="" src="{{ $lgu->municipality->gmap_url }}" height="300"
+                                style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
+                        </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
     </div>
