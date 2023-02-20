@@ -13,7 +13,7 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('admin/projects') }}" class="nav-link {{ Request::is('admin/projects*') ? '' : '' }}">
+    <a href="{{ route('admin/projects') }}" class="nav-link {{ Request::is('admin/projects*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Projects</p>
         <i class="fas fa-project-diagram fa-pull-left fa-md text-white"></i>
     </a>
