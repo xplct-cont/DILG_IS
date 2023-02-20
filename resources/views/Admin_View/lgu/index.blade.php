@@ -30,9 +30,7 @@
                             @csrf
 
                             <div class="container mx-auto">
-                                <div class="text-center">
-                                    <img src="/img/bohol_seal.png" style="height: 150px; width: 150px;" alt="">
-                                </div>
+                               
                                 <div class="col-md-4 text-center mt-2 mx-auto">
 
                                     <div class="form-group">
@@ -174,10 +172,7 @@
                                             @method('PUT')
 
                                             <div class="container mx-auto">
-                                                <div class="text-center">
-                                                    <img src="/img/bohol_seal.png" style="height: 150px; width: 150px;"
-                                                        alt="">
-                                                </div>
+                                               
                                                 <div class="col-md-3 mt-2 mx-auto">
                                                     <div class="form-group text-center">
                                                         <label for="" style="color:dimgray">Municipality:</label>
