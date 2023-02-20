@@ -176,7 +176,7 @@
                                                             <label for="" style="color:dimgray">Profile
                                                                 Image:</label>
                                                             <input type="file" class="form-control"
-                                                                name="profile_img">
+                                                                name="profile_img" value="{{ $org_member->profile_img }}">
                                                         </div>
                                                     </div>
 

@@ -6,7 +6,7 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('admin/news') }}" class="nav-link {{ Request::is('admin/news*') ? 'bg-secondary active' : '' }}">
+    <a href="{{ route('admin/news_updates') }}" class="nav-link {{ Request::is('admin/news_updates*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">News</p>
         <i class="fas fa-newspaper fa-pull-left fa-md text-white"></i>
     </a>
@@ -61,6 +61,13 @@
         class="nav-link {{ Request::is('admin/faqs*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">FAQ</p>
         <i class="fas fa-question-circle fa-pull-left fa-md text-white"></i>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ route('admin/issuances') }}"
+        class="nav-link {{ Request::is('admin/issuances*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">Issuances</p>
+        <i class="fas fa-file fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 

@@ -6,6 +6,8 @@
             alt="">
     </div>
 
+    <livewire:normal.l-g-u.index>
+{{--
     <div class="container">
         <div class="row">
             <div class="col-md-6" style=" font-weight: 400; color:#C9282D;">
@@ -51,12 +53,8 @@
         </div>
     </div>
 
-
-
     <p class="text-center mt-3" style="color:dimgray; font-size: 22px; font-weight: 600;">LIST OF LOCAL ELECTIVE OFFICIALS
     </p>
-
-
     <div class="col-md-12">
         <div class="">
             <div class="row d-flex justify-content-center mb-3">
@@ -106,7 +104,7 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
 
 

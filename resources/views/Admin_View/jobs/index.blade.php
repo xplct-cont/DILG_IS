@@ -1,5 +1,6 @@
 @extends('Admin_View.layouts.app')
 @section('content')
+
     @if ($message = Session::get('message'))
         <div class="alert alert-success alert-block mt-2">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
@@ -134,7 +135,7 @@
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">Image:</label>
                                                                 <input type="file" class="form-control"
-                                                                    name="hiring_img">
+                                                                    name="hiring_img" value="{{ $ad_jobs->hiring_img }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
