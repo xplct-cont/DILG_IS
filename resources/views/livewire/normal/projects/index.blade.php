@@ -90,7 +90,7 @@
 
                     <div class="modal fade" id="project_id{{ $proj->id }}" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-dialog modal-md" role="document">
                             <div class="modal-content">
                                 <div class="modal-header ">
 
@@ -156,8 +156,6 @@
                                                 <span style="font-size: 16px; font-weight: 400;">
                                                     {{ $proj->total_cost }}</span>
                                             </p>
-
-
                                         </div>
 
                                         <p class=" text-justify "
@@ -166,6 +164,37 @@
                                             <textarea style=" height: 150px; background-color:white;" id="" type="text" class="form-control"
                                                 placeholder="" title="" readonly>{{ $proj->description }}</textarea>
                                         </p>
+                                        <div class="col-md-12">
+                                            <div class="" style="height: 360px;">
+
+                                                <div id="carouselExampleIndicators" class="carousel slide"
+                                                    data-ride="carousel">
+                                                    <ol class="carousel-indicators">
+                                                        <li data-target="#carouselExampleIndicators" data-slide-to="0"
+                                                            class="active">
+                                                        </li>
+                                                        <li data-target="#carouselExampleIndicators"
+                                                            data-slide-to="1"></li>
+                                                        <li data-target="#carouselExampleIndicators"
+                                                            data-slide-to="2"></li>
+                                                    </ol>
+                                                    <div class="carousel-inner text-center" style="height:350px;">
+                                                        @php
+                                                            $images = json_decode($proj->images, true);
+                                                        @endphp
+                                                        @foreach ($images as $key => $image)
+                                                            <div
+                                                                class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
+                                                                <img src="{{ asset('/project_images/' . $image) }}"
+                                                                    style="height:350px; width:100%;" />
+                                                            </div>
+                                                        @endforeach
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>

@@ -7,6 +7,8 @@ use App\Models\Project;
 use App\Models\Municipality;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Image;
+use File;
 
 class Admin_ProjectController extends Controller
 {
@@ -66,6 +68,25 @@ class Admin_ProjectController extends Controller
         $admin_project->total_cost = $request->input('total_cost');
         $admin_project->proj_code = $request->input('proj_code');
 
+
+
+        $this->validate($request, [
+            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        if ($request->hasFile('images')){
+
+            foreach($request->file('images') as $image){
+
+                $name = $image->getClientOriginalName();
+                $image->move(public_path('/project_images/'), $name);
+                $data[] = $name;
+        }
+    }
+
+        // $img = Home_Image::find($id);
+        $admin_project->images = json_encode($data);
+       
         $admin_project->save();
 
         return redirect()->back()->with('message', 'New Project Added Successfully!');
