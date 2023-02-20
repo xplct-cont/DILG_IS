@@ -28,7 +28,7 @@ class Index extends Component
             $query->whereDate('created_at', '>=', $this->fromDate)
                 ->whereDate('created_at', '<=', $this->toDate);
         }
-        $updates = $query->paginate(2);
+        $updates = $query->paginate(1);
         return compact('updates');
     }
     public function render()
