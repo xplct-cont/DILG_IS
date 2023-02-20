@@ -30,20 +30,31 @@
                             @csrf
 
                             <div class="container mx-auto">
-                              <div class="">
-                                <div class="form-group">
-                                    <label for="outcome">Outcome Area/Program:</label>
+                                <div class="">
+                                    <div class="form-group">
+                                        <label for="">Outcome Area/Program:</label>
 
-                                    <select name="outcome" id="outcome" class="form-control"
-                                        style="color:dimgray;" required>
-                                        <option selected>Select ...</option>
-                                        @foreach ($outcomes as $outcome)
-                                            <option value="{{ $outcome->id }}">{{ $outcome->title }}
+                                        <select name="outcome_area" id="outcome_area" class="form-control"
+                                            style="color:dimgray;" required>
+                                            <option selected>Select ...</option>
+                                            <option
+                                                value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
+                                                ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE
                                             </option>
-                                        @endforeach
-                                    </select>
+                                            <option value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">PEACEFUL,
+                                                ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES</option>
+                                            <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY PROTECTIVE LGUS</option>
+                                            <option
+                                                value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
+                                                ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS
+                                            </option>
+                                            <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">BUSINESS-FRIENDLY AND
+                                                COMPETITIVE LGUS</option>
+                                            <option value="STRENGTHENING OF INTERNAL GOVERNANCE">STRENGTHENING OF INTERNAL
+                                                GOVERNANCE</option>
+                                        </select>
+                                    </div>
                                 </div>
-                              </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -109,7 +120,7 @@
                 <thead class="text-center" style="background-color:#343a40; color:white;">
                     <tr>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                        style="text-align: center">Date</th>
+                            style="text-align: center">Date</th>
                         <th scope="col">Outcome</th>
                         <th scope="col">Category</th>
                         <th scope="col">Title</th>
@@ -120,13 +131,13 @@
                             style="text-align: center">Delete</th>
                     </tr>
                 </thead>
+
                 <tbody class="text-center">
                     @foreach ($b_issuances as $issuances)
                         <tr>
-
-                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                            style="text-align: center">{{ $issuances->date }}</td>
-                            <td>{{$issuances->outcomearea->title ?? 'None'}}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                {{ $issuances->date }}</td>
+                            <td>{{ $issuances->outcome_area }}</td>
                             <td>{{ $issuances->category }}</td>
                             <td>{{ $issuances->title }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
@@ -157,6 +168,33 @@
                                                 @method('PUT')
 
                                                 <div class="container mx-auto">
+                                                    <div class="form-group">
+                                                        <label for="">Outcome Area/Program:</label>
+
+                                                        <select name="outcome_area" id="outcome_area"
+                                                            class="form-control" style="color:dimgray;" required>
+                                                            <option selected>{{ $issuances->outcome_area }}</option>
+
+                                                            <option
+                                                                value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
+                                                                ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL
+                                                                GOVERNANCE</option>
+                                                            <option
+                                                                value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">
+                                                                PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES
+                                                            </option>
+                                                            <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY PROTECTIVE
+                                                                LGUS</option>
+                                                            <option
+                                                                value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
+                                                                ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER
+                                                                RESILIENT LGUS</option>
+                                                            <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">
+                                                                BUSINESS-FRIENDLY AND COMPETITIVE LGUS</option>
+                                                            <option value="STRENGTHENING OF INTERNAL GOVERNANCE">
+                                                                STRENGTHENING OF INTERNAL GOVERNANCE</option>
+                                                        </select>
+                                                    </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">

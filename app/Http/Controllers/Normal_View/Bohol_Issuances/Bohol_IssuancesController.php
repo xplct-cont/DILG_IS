@@ -16,7 +16,6 @@ class Bohol_IssuancesController extends Controller
         return view('Normal_View.Bohol_Issuances.bohol_issuances', compact('issuances'));
     }
 
-
     public function show( $id){
 
         $b_issuance = Bohol_Issuance::find($id);

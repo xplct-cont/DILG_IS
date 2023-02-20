@@ -25,6 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MunicipalitySeeder::class);
         $this->call(ProgramSeeder::class);
         $this->call(HomeImageSliderSeeder::class);
-        $this->call(OutComeAreaSeeder::class);
+       
     }
 }
