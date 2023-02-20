@@ -11,7 +11,7 @@ class UpdatesController extends Controller
 {
     public function index(){
 
-        $news_images = Update::orderBy('created_at', 'DESC')->get();
+        $news_images = Update::orderBy('created_at', 'ASC')->get();
         return view('Normal_View.Updates.index', compact('news_images'));
     }
 }
