@@ -26,12 +26,13 @@ use App\Http\Controllers\Admin_View\Admin_UpdateController;
 use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
 use App\Http\Controllers\Admin_View\Admin_ProjectController;
+use App\Http\Controllers\Admin_View\AdminRegisterController;
 use App\Http\Controllers\Normal_View\Update\UpdatesController;
 use App\Http\Controllers\Normal_View\Project\ProjectController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
 use App\Http\Controllers\Normal_View\Contacts\ContactsController;
-use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
 // use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
+use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
 use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Bohol_IssuancesController;
 use App\Http\Controllers\Normal_View\Republic_Act\RepublicActController;
@@ -147,19 +148,10 @@ Route::get("/project",[ProjectController::class,'index']);
 
 
 
-Route::get('/draft-issuance',[DraftIssuanceController::class,'index']);
-Route::get('/joint-circular',[JointCircularController::class,'index']);
-Route::get('/republic-act',[RepublicActController::class,'index']);
-Route::get('/presidential-directive',[PresidentialDirectiveController::class,'index']);
-Route::get('/memo-circular',[MemoCircularController::class,'index']);
 
 
 
-
-
-
-
-
+Route::get('admin/register',[AdminRegisterController::class,'index'])->name('admin/register');
 
 
 

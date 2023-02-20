@@ -305,7 +305,7 @@
                                                                     <input type="file" class="form-control" name="images[]" value="{{$all->images}}" multiple required>
                                                                 </div>
 
-                                                            
+
                                                             <div class="col-md-12 mt-3">
                                                                 <div class="" style="height: 360px;">
 
@@ -325,7 +325,7 @@
                                                                             @php
                                                                                 $images = json_decode($all->images, true);
                                                                             @endphp
-                                                                            @foreach ($images as $key => $image)
+                                                                            @foreach ((array)$images as $key => $image)
                                                                                 <div
                                                                                     class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
                                                                                     <img src="{{ asset('/project_images/' . $image) }}"

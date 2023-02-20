@@ -70,6 +70,13 @@
         <i class="fas fa-file fa-pull-left fa-md text-white"></i>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('admin/register') }}"
+        class="nav-link {{ Request::is('admin/register*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">Users</p>
+        <i class="fas fa-user-cog fa-pull-left fa-md text-white"></i>
+    </a>
+</li>
 
 <style scoped>
     .nav-item p {

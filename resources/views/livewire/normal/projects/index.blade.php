@@ -182,7 +182,7 @@
                                                         @php
                                                             $images = json_decode($proj->images, true);
                                                         @endphp
-                                                        @foreach ($images as $key => $image)
+                                                        @foreach ((array)$images as $key => $image)
                                                             <div
                                                                 class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
                                                                 <img src="{{ asset('/project_images/' . $image) }}"
