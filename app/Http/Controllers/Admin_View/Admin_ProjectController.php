@@ -30,7 +30,7 @@ class Admin_ProjectController extends Controller
         $projects = Project::with(['municipality'])->orderBy('municipality_id', 'asc')->get();
 
         $municipalities = Municipality::all();
-        $projectsAll = Project::all();
+        $projectsAll = Project::orderBy('program_id', 'asc')->get();
         return view('Admin_View.projects.projects',compact('program','municipalities','projectsAll','projects'));
     }
 
