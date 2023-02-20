@@ -371,12 +371,12 @@
 
                 <div class="dropup-content">
 
-                    <a href="#">
+                    <a href="https://www.facebook.com/viennarose.pepito.73">
                         <img src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t39.30808-6/324515260_748118056649311_4663088318989486275_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFlc3OX2LnrrSBNCm4TnwXqsMddb_t6Yy-wx11v-3pjL1HBxrN-_ya_oPuUaUrUTgusxRphMRZcUsoDTjDnpYH3&_nc_ohc=QcQ_ifgm8fIAX_7-1fq&_nc_ht=scontent.fmnl9-3.fna&oh=00_AfC4YSaXemifhM3HlfY2LQa4gCk4bzFWtPaW0RNAvyHJrg&oe=63F88E4C"
                             width="50px"class="rounded" />
 
                         Vienna Rose Pepito</a>
-                    <a href="#">
+                    <a href="https://github.com/xplct-cont">
                         <img src="https://avatars.githubusercontent.com/u/89299194?v=4" width="50px"
                             class="rounded" />
 
@@ -392,7 +392,6 @@
                         <img src="https://scontent.fmnl9-1.fna.fbcdn.net/v/t39.30808-6/315988218_150553581041578_8932289945262975410_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeF6R_RccK28-s6yx79MMQVPS2G_zqGZGjhLYb_OoZkaOFpKJNAaJsJ2V-Qu12eEHfkhWLJM_-lv4r8zHd7oC55o&_nc_ohc=LjRvm8Drf5EAX_b3GXK&_nc_ht=scontent.fmnl9-1.fna&oh=00_AfBzorGkJ7EafQsgdeTimjDOY0noq59zmWvzizCiE9me_Q&oe=63F84EE8"
                             width="50" class="rounded" />
                         Franklin Pogoy</a>
-
                 </div>
             </div>
 
