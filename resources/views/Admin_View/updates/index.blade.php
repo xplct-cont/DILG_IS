@@ -107,7 +107,7 @@
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header" style="background-color: #C9282D; color:white;">
-                                            <h5 class="modal-title" id="exampleModalLabel">Edit Vacant Position</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit News</h5>
                                             <button type="button" class="close" data-dismiss="modal"
                                                 aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
@@ -122,7 +122,7 @@
 
                                                 <div class="container mx-auto">
                                                     <div class="row">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray" >Title:</label>
                                                                 <input type="text" class="form-control" name="title" value="{{ $news_img->title }}">
