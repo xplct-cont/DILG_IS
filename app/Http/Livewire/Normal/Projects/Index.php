@@ -13,7 +13,7 @@ class Index extends Component
     public $proj_code, $title, $exact_loc, $year, $description, $type;
     public function loadProjects(){
 
-        $query = Project::orderBy('year', 'asc')
+        $query = Project::orderBy('created_at', 'desc')
             ->search($this->search);
 
         if($this->title){
@@ -53,7 +53,7 @@ class Index extends Component
         ->orWhere('status', 'like', '%'.$this->search.'%')
         ->orWhere('type', 'like', '%'.$this->search.'%')
         ->orWhere('title', 'like', '%'.$this->search.'%')
-        ->orderBy('year', 'asc')->paginate(8);
+        ->orderBy('created_at', 'desc')->paginate(8);
         return view('livewire.normal.projects.index',
                     ['projects' => $projects, 'programs'=> Program::all(), 'municipalities' => Municipality::all()]
                     , $this->loadProjects(), compact('projectsAll'));

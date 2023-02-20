@@ -25,7 +25,17 @@ class Bohol_Issuance extends Model
 
     protected $casts = [
         'created_at' => 'datetime',
-        
+
     ];
+
+    public function scopeSearch($query, $terms){
+        collect(explode(" " , $terms))->filter()->each(function($term) use($query){
+            $term = '%'. $term . '%';
+
+            $query->where('title', 'like', $term)
+                ->orWhere('reference_num', 'like', $term)
+                ->orWhere('category', 'like', $term);
+        });
+    }
 
 }
