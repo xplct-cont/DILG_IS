@@ -6,7 +6,6 @@ namespace App\Http\Controllers\Normal_View\Home;
 use App\Http\Controllers\Controller;
 use DB;
 use Illuminate\Http\Request;
-use App\Models\Project;
 use App\Models\Municipality;
 use App\Models\Program;
 use App\Models\Home_Image;
@@ -27,9 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $news_images = Update::orderBy('created_at', 'ASC')->limit(3)->get();
-        $projectsAll = Project::limit(4)->get();
+        $news_images = Update::orderBy('created_at', 'ASC')->limit(6)->get();
         $home_images = Home_Image::all();
-        return view('Normal_View.Home.home', compact('projectsAll', 'home_images', 'news_images'));
+        return view('Normal_View.Home.home', compact( 'home_images', 'news_images'));
     }
 }

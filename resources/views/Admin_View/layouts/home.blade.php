@@ -98,23 +98,6 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-light text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $projects }}</h3>
-
-                            <p class="text-secondary">Projects</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-project-diagram text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/projects') }}" class="small-box-footer"
-                            style="background-color:dimgray;color:whitesmoke;
-              "><span class="text-light">More
-                                info</span> <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->

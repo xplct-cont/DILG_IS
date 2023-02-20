@@ -114,7 +114,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" target="_blank" href="https://library.dilg.gov.ph/">DILG
                                         E-Library</a></li>
-                                <li><a class="dropdown-item" target="_blank" href="https://library.dilg.gov.ph/">Knowledge Materials</a></li>
+                                <li><a class="dropdown-item" target="_blank" href="#">Knowledge Materials</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -162,7 +162,7 @@
                                 Programs & Services
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('/project') }}">Projects </a></li>
+                                <li><a class="dropdown-item" target="_blank" href="https://subaybayan.dilg.gov.ph/projects/index?ProjectSearch%5BREGION_C%5D=07&ProjectSearch%5BPROVINCE_C%5D=012&ProjectSearch%5BCITYMUN_C%5D=&ProjectSearch%5Bbarangay%5D=&ProjectSearch%5BimageSelection%5D=&ProjectSearch%5BPROGRAM_C%5D=&ProjectSearch%5BPROJECT_TYPE%5D=&ProjectSearch%5BYEAR%5D=&ProjectSearch%5BSTATUS%5D=">Projects </a></li>
 
                             </ul>
                         </div>
