@@ -27,7 +27,7 @@
                     <div class="mx-auto text-center">
 
                         <object data="{{ asset('issuance_files/' . $b_issuance->file) }}#toolbar=0" type="application/pdf"
-                            width="70%" height="900"></object>
+                            width="100%" height="600"></object>
                     </div>
 
                     <p class="text-wrap mt-3" style="color:dimgray;">

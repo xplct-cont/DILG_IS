@@ -60,9 +60,6 @@
                                         </select>
                                     </div>
 
-
-
-
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Project Code:</label>
@@ -110,11 +107,14 @@
 
                                             <input type="text" class="form-control" name="exact_loc">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="" style="color:dimgray">Year:</label>
-                                            <input type="text" class="form-control" style="width: 100px;"
-                                                name="year">
-                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="" style="color:dimgray">Year:</label>
+                                        <input type="text" class="form-control" style="width: 100px;" name="year">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="" style="color:dimgray">Images (Max:3)</label>
+                                        <input type="file" class="form-control" name="images[]" multiple required>
                                     </div>
                                 </div>
                             </div>
@@ -292,12 +292,50 @@
                                                                     <input type="text" class="form-control"
                                                                         value="{{ $all->exact_loc }}" name="exact_loc">
                                                                 </div>
-                                                                <div class="form-group">
+                                                            </div>
+                                                                <div class="col-md-6">
                                                                     <label for=""
                                                                         style="color:dimgray">Year:</label>
                                                                     <input type="text" name="year"
                                                                         class="form-control" style="width: 100px;"
                                                                         value="{{ $all->year }}">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="" style="color:dimgray">Images (Max:3)</label>
+                                                                    <input type="file" class="form-control" name="images[]" value="{{$all->images}}" multiple required>
+                                                                </div>
+
+                                                            
+                                                            <div class="col-md-12 mt-3">
+                                                                <div class="" style="height: 360px;">
+
+                                                                    <div id="carouselExampleIndicators"
+                                                                        class="carousel slide" data-ride="carousel">
+                                                                        <ol class="carousel-indicators">
+                                                                            <li data-target="#carouselExampleIndicators"
+                                                                                data-slide-to="0" class="active">
+                                                                            </li>
+                                                                            <li data-target="#carouselExampleIndicators"
+                                                                                data-slide-to="1"></li>
+                                                                            <li data-target="#carouselExampleIndicators"
+                                                                                data-slide-to="2"></li>
+                                                                        </ol>
+                                                                        <div class="carousel-inner text-center"
+                                                                            style="height:350px;">
+                                                                            @php
+                                                                                $images = json_decode($all->images, true);
+                                                                            @endphp
+                                                                            @foreach ($images as $key => $image)
+                                                                                <div
+                                                                                    class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
+                                                                                    <img src="{{ asset('/project_images/' . $image) }}"
+                                                                                        style="height:350px; width:100%;" />
+                                                                                </div>
+                                                                            @endforeach
+
+                                                                        </div>
+
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
@@ -333,7 +371,8 @@
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 <a href="#" data-toggle="modal" id="project_delete_link" class="btn"
                                     data-target="#project_delete_link{{ $all->id }}"><span
-                                        class="text-danger fas fa-trash-alt"></span></a></td>
+                                        class="text-danger fas fa-trash-alt"></span></a>
+                            </td>
 
                             <div class="modal fade" id="project_delete_link{{ $all->id }}" tabindex="-1"
                                 role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

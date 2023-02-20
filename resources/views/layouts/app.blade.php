@@ -100,7 +100,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/news-update') }}"> &nbsp;News</a>
+                            <a class="nav-link text-white" href="{{ url('/news_update') }}"> &nbsp;News</a>
                         </li>
 
                         <li class="nav-item">

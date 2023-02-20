@@ -33,7 +33,7 @@
         <div class="col-md-12 mb-5">
             <div class="row ">
                 @foreach ($projectsAll as $proj)
-                    <div class="card col-md-5 m-1 mx-auto">
+                    <div class="card col-md-5 mx-auto">
                         <div class="card-body">
                             <a href="#" data-toggle="modal" id="project_view_link"
                                 data-target="#project_id{{ $proj->id }}"
@@ -81,7 +81,7 @@
                                     <span
                                         style="font-size: 16px; font-weight: 400;">{{ Illuminate\Support\Str::limit($proj->description, 30) }}</span>
                                 </p>
-                                <iframe class="col-md-12" src="{{ $proj->municipality->gmap_url }}" height="450"
+                                <iframe class="col-md-12" src="{{ $proj->municipality->gmap_url }}" height="400"
                                     style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
                         </div>
@@ -90,7 +90,7 @@
 
                     <div class="modal fade" id="project_id{{ $proj->id }}" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-dialog modal-md" role="document">
                             <div class="modal-content">
                                 <div class="modal-header ">
 
@@ -156,8 +156,6 @@
                                                 <span style="font-size: 16px; font-weight: 400;">
                                                     {{ $proj->total_cost }}</span>
                                             </p>
-
-
                                         </div>
 
                                         <p class=" text-justify "
@@ -166,6 +164,37 @@
                                             <textarea style=" height: 150px; background-color:white;" id="" type="text" class="form-control"
                                                 placeholder="" title="" readonly>{{ $proj->description }}</textarea>
                                         </p>
+                                        <div class="col-md-12">
+                                            <div class="" style="height: 360px;">
+
+                                                <div id="carouselExampleIndicators" class="carousel slide"
+                                                    data-ride="carousel">
+                                                    <ol class="carousel-indicators">
+                                                        <li data-target="#carouselExampleIndicators" data-slide-to="0"
+                                                            class="active">
+                                                        </li>
+                                                        <li data-target="#carouselExampleIndicators"
+                                                            data-slide-to="1"></li>
+                                                        <li data-target="#carouselExampleIndicators"
+                                                            data-slide-to="2"></li>
+                                                    </ol>
+                                                    <div class="carousel-inner text-center" style="height:350px;">
+                                                        @php
+                                                            $images = json_decode($proj->images, true);
+                                                        @endphp
+                                                        @foreach ($images as $key => $image)
+                                                            <div
+                                                                class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
+                                                                <img src="{{ asset('/project_images/' . $image) }}"
+                                                                    style="height:350px; width:100%;" />
+                                                            </div>
+                                                        @endforeach
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>
