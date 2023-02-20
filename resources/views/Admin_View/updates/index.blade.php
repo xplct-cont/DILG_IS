@@ -102,7 +102,7 @@
                                     data-target="#news_id{{ $news_img->id }}"><span
                                         class="text-warning fas fa-edit"></span></a></td>
 
-                            {{-- <div class="modal fade" id="job_id{{ $ad_jobs->id }}" tabindex="-1" role="dialog"
+                            <div class="modal fade" id="news_id{{ $news_img->id }}" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
@@ -115,7 +115,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="{{ url('update_jobs/' . $ad_jobs->id) }}" method="POST"
+                                            <form action="{{ url('edit_updates/' . $news_img->id) }}" method="POST"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PUT')
@@ -124,35 +124,21 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for=""
-                                                                    style="color:dimgray">Position:</label>
-                                                                <input type="text" class="form-control"
-                                                                    name="position" value="{{ $ad_jobs->position }}"
-                                                                    required>
+                                                                <label for="" style="color:dimgray" >Title:</label>
+                                                                <input type="text" class="form-control" name="title" value="{{ $news_img->title }}">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="" style="color:dimgray">Caption:</label>
+                                                                <textarea id="" type="text" class="form-control" title="" rows="5" required name="caption"
+                                                                    placeholder="Say something...">{{ $news_img->caption }}</textarea>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-8">
                                                             <div class="form-group">
-                                                                <label for="" style="color:dimgray">Image:</label>
-                                                                <input type="file" class="form-control"
-                                                                    name="hiring_img" value="{{ $ad_jobs->hiring_img }}">
+                                                                <label for="" style="color:dimgray">Upload Images (Max:3)</label>
+                                                                <input type="file" class="form-control" name="images[]" required multiple>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label for="" style="color:dimgray">Document
-                                                                    Link:</label>
-                                                                <input type="text" class="form-control" name="link"
-                                                                    value="{{ $ad_jobs->link }}" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for=""
-                                                                    style="color:dimgray">Description:</label>
-                                                                <textarea style="white-space: pre-wrap;" id="" type="text" class="form-control" rows="5"
-                                                                    name="details" required>
-                                                        {{ $ad_jobs->details }}
-                                                    </textarea>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -164,7 +150,7 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
 
                             <td scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"><a href="#" data-toggle="modal" id="news_updates_delete_link" class="btn"
                                     data-target="#delete_news_updates_id{{ $news_img->id }}"><span

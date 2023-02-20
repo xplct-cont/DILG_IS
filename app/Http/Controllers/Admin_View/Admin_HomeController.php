@@ -44,12 +44,21 @@ class Admin_HomeController extends Controller
 
 
     public function store(Request $request, $id){
-      
+
         $img = Home_Image::find($id);
 
         $this->validate($request, [
             'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+        $images = json_decode($img->images,true);
+        if (is_array($images) && !empty($images)){
+        foreach ($images as $deleteimage) {
+                if (File::exists(public_path('home_images/'.$deleteimage))) {
+                    File::delete(public_path('home_images/'.$deleteimage));
+                }
+            }
+
+        }
 
         if ($request->hasFile('images')){
 
@@ -65,7 +74,7 @@ class Admin_HomeController extends Controller
         $img->images = json_encode($data);
         $img->save();
         return redirect()->back()->with('message', 'Added Images Successfully!');
-     
+
     }
 }
 
