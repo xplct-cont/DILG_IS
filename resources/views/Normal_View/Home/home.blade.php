@@ -1,37 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <div class="mx-auto text-center">
+        <div class="">
+            @foreach ($home_images as $home_img)
+                <div>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 
-        </ol>
-        <div class="carousel-inner text-center">
+                        </ol>
+                        <div class="carousel-inner responsive">
+                            @php
+                                $images = json_decode($home_img->images, true);
+                            @endphp
+                            @foreach ($images as $key => $image)
+                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                    <img class="responsive" src="{{ asset('home_images/' . $image) }}" height="650"
+                                        width="1250" />
+                                </div>
+                            @endforeach
 
-            <div class="carousel-item active ">
-                <img src="{{ asset('img/img4.jpg') }}" class="responsive" width="1250" height="400" alt="..." />
-            </div>
-            <div class="carousel-item ">
-                <img src="{{ asset('img/img2.jpg') }}" class="responsive" width="1250" height="400" alt="..." />
-            </div>
-            <div class="carousel-item ">
-                <img src="{{ asset('img/img5.jpg') }}" class="responsive" width="1250" height="400" alt="..." />
-            </div>
+                        </div>
 
+                    </div>
+
+                </div>
+            @endforeach
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+
     </div>
-
-
 
     <div class="container">
         <div class="row">
@@ -77,50 +77,9 @@
     <div class="mx-auto">
         <div class="col-md-12">
             <div class="row">
-                {{-- @foreach ($projectsAll as $proj)
-                    <div class="card col-md-5 m-1 mx-auto">
-                        <div class="card-body  text-center">
-                            <div class="card-header" style="background-color:#C9282D; color:white;">
-                                <h1 style="font-size: 20px;" class="text-center">Province of {{ $proj->province }}</h1>
-                            </div>
-                            <p class=" text-justify mt-3" style="font-weight: 500; font-size: 16px;">Program: <span
-                                    style="font-size: 16px; font-weight: 400;"> {{ $proj->program->title }}</span></p>
-                            <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Project
-                                Code: <span style="font-size: 16px; font-weight: 400;"> {{ $proj->proj_code }}</span></p>
-                            <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Title: <span
-                                    style="font-size: 16px; font-weight: 400;"> {{ Illuminate\Support\Str::limit($proj->title, 40) }}</span></p>
-                            <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
-                                Municipality: <span style="font-size: 16px; font-weight: 400;">
-                                    {{ $proj->municipality->municipality }}</span>
-                            </p>
-                            <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Exact
-                                Location: <span style="font-size: 16px; font-weight: 400;"> {{ $proj->exact_loc }}</span></p>
-                            <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Type: <span
-                                    style="font-size: 16px; font-weight: 400;"> {{ $proj->type }}</span></p>
-                            <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Year:
-                                <span style="font-size: 16px; font-weight: 400;"> {{ $proj->year }}</span>
-                            </p>
-                            <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Status:
-                                <span style="font-size: 16px; font-weight: 400;"> {{ $proj->status }}</span>
-                            </p>
-                            <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">Total
-                                Cost:
-                                <span style="font-size: 16px; font-weight: 400;"> {{ $proj->total_cost }}</span>
-                            </p>
-                            <p class=" text-justify " style="margin-top: -12px; font-weight: 500; font-size: 16px;">
-                                Description:
-                                <span style="font-size: 16px; font-weight: 400;">{{ Illuminate\Support\Str::limit($proj->description, 30) }}</span>
-                            </p>
-    
-                            <iframe class="col-md-12"
-                            src="{{ $proj->municipality->gmap_url}}"
-                            height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
-                        </div>
-                    </div>
-                @endforeach --}}
+
                 @foreach ($projectsAll as $proj)
-                    <div class="card col-md-5 m-1 mx-auto">
+                    <div class="card col-md-5 mx-auto">
                         <div class="card-body ">
                             <a href="#" data-toggle="modal" id="project_view_link"
                                 data-target="#project_id{{ $proj->id }}" style="text-decoration:none; color:dimgray">
@@ -162,7 +121,7 @@
                                     <span
                                         style="font-size: 16px; font-weight: 400;">{{ Illuminate\Support\Str::limit($proj->description, 30) }}</span>
                                 </p>
-                                <iframe class="col-md-12" src="{{ $proj->municipality->gmap_url }}" height="450"
+                                <iframe class="col-md-12" src="{{ $proj->municipality->gmap_url }}" height="400"
                                     style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
                         </div>
@@ -273,54 +232,104 @@
 
     <div class="mx-auto mt-3 col-md-11">
         <div class="">
+            @foreach ($news_images as $new)
+                <div class="card">
+                    <div class=" card-body elevation-4">
+                        <a href="#" data-toggle="modal" id="news_updates_view_link"
+                            data-target="#news_update_id{{ $new->id }}" style="text-decoration:none; color:dimgray">
 
-            @php
-                $show = DB::table('news')
-                    ->limit(3)
-                    ->get();
-            @endphp
-            @foreach ($show as $new)
-                <a href="#" style="text-decoration: none; color:#030303;">
-                    <div class=" card elevation-4">
-                        <div class="row d-flex justify-content-center mt-3 ml-3 mr-3  ">
-                            <div class="col-md-6 mx-auto mt-5 ">
+                            <div class="row d-flex justify-content-center mt-3">
+                                <div class="col-md-6 mx-auto mt-5 ">
 
-                                <h1 style="font-size: 20px;">
-                                    Post: {{ \Carbon\Carbon::parse($new->datetime)->format('M j, Y h:i a') }}</h1><br>
-                                <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
-                                <p class="text-left" style="font-size: 15px; font-weight: 400;">
-                                    {{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="col-md-12" style="height: 400px;">
+                                    <h1 style="font-size: 18px; font-weight: 500; color:dimgray;">
+                                        Post: {{ \Carbon\Carbon::parse($new->created_at)->format('M j, Y h:i A') }}</h1>
+                                    <br>
+                                    <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
+                                    <p class="text-left" style="font-size: 15px; font-weight: 400;">
+                                        {{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="" style="height: 360px;">
 
-                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="0"
-                                                class="active"></li>
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="0"
+                                                    class="active">
+                                                </li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                            </ol>
+                                            <div class="carousel-inner text-center" style="height:350px;">
+                                                @php
+                                                    $images = json_decode($new->images, true);
+                                                @endphp
+                                                @foreach ($images as $key => $image)
+                                                    <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
+                                                        <img src="{{ asset('/news_updates/' . $image) }}"
+                                                            style="height:350px; width:100%;" />
+                                                    </div>
+                                                @endforeach
 
-                                        </ol>
-                                        <div class="carousel-inner" style="height:350px;">
-                                            @php
-                                                $images = json_decode($new->image, true);
-                                            @endphp
-                                            @foreach ($images as $key => $image)
-                                                <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
-                                                    <img src="{{ asset('/' . $image) }}"
-                                                        style="height:350px; width:auto;" />
-                                                </div>
-                                            @endforeach
+                                            </div>
 
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </a>
 
+                <div class="modal fade" id="news_update_id{{ $new->id }}" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header ">
+
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" style="color:dimgray;">
+
+                                <div class="">
+                                    <h1 class="text-end" style="font-size: 18px; font-weight: 500; color:dimgray;">
+                                        Post: {{ \Carbon\Carbon::parse($new->created_at)->format('M j, Y h:i A') }}</h1>
+                                    <br>
+                                    <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
+                                    <p class="text-left" style="font-size: 15px; font-weight: 400;">
+                                        {{ $new->caption }}</p>
+
+                                    <div class="" style="height: 365px;">
+
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="0"
+                                                    class="active"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+                                            </ol>
+                                            <div class=" carousel-inner text-center" style="height:350px;">
+                                                @php
+                                                    $images = json_decode($new->images, true);
+                                                @endphp
+                                                @foreach ($images as $key => $image)
+                                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                                        <img src="{{ asset('/news_updates/' . $image) }}"
+                                                            style="height:350px; width:100%;" />
+                                                    </div>
+                                                @endforeach
+
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
             @endforeach
         </div>
     </div>
@@ -328,7 +337,7 @@
     </div>
 
     <div class="d-flex justify-content-center mb-5 mt-3">
-        <a href="{{ url('/news-update') }}" type="button" class="btn btn-sm"
+        <a href="{{ url('/news_update') }}" type="button" class="btn btn-sm"
             style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
@@ -356,6 +365,11 @@
                 </div>
             </div>
 
+            <div class="container mx-auto mt-3 col-md-11">
+                <iframe src="https://www.youtube.com/embed/x4537UShJl4" style="height:400; width:100%;" frameborder="0">
+
+                </iframe>
+            </div>
         </div>
         <div class="elevation-4" style="margin-top: 30px;" id="ww_afa40588f70fd" v='1.3' loc='id'
             a='{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl5320"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
@@ -376,7 +390,7 @@
         /* IE 9 */
         -webkit-transform: scale(1.2);
         /* Safari 3-8 */
-        transform: scale(1.2);
+        transform: scale(0.9);
         text-align: center;
         font-size: 10px;
     }
@@ -393,11 +407,11 @@
         --box-shadow-color: silver;
     }
 
-    .card:hover {
+    /* .card:hover {
         transform: translateY(-5px) scale(1.005) translateZ(0);
         box-shadow: 0 24px 36px silver,
             0 24px 46px var(--box-shadow-color);
-    }
+    } */
 
     .card:hover .overlay {
         transform: scale(8) translateZ(0);

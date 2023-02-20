@@ -3,40 +3,47 @@
 use Carbon\Carbon;
 
 //Admin View
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
-use App\Http\Livewire\News\NewsComponent;
+
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Normal_View\Lgu\LguController;
+
+//Normal View
 use App\Http\Controllers\Admin_View\Admin_LguController;
 use App\Http\Controllers\Admin_View\Admin_FaqsController;
 use App\Http\Controllers\Admin_View\Admin_HomeController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
-
-//Normal View
-use App\Http\Controllers\Admin_View\Admin_NewsController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
 use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Home\HomeController;
-use App\Http\Controllers\Normal_View\Jobs\JobsController;
-use App\Http\Controllers\Normal_View\About\AboutController;
-use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 // use App\Http\Controllers\Normal_View\Faqs\FaqsController;
-use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
+use App\Http\Controllers\Normal_View\Jobs\JobsController;
 
 //Normal View
 // use App\Http\Controllers\Normal_View\Home\HomeController;
+use App\Http\Controllers\Admin_View\Admin_UpdateController;
+use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
 use App\Http\Controllers\Admin_View\Admin_ProjectController;
+use App\Http\Controllers\Normal_View\Update\UpdatesController;
 use App\Http\Controllers\Normal_View\Project\ProjectController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
 use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
+// use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Bohol_IssuancesController;
+use App\Http\Controllers\Normal_View\Republic_Act\RepublicActController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
+use App\Http\Controllers\Normal_View\Memo_Circular\MemoCircularController;
+use App\Http\Controllers\Normal_View\Draft_Issuance\DraftIssuanceController;
+use App\Http\Controllers\Normal_View\Joint_Circular\JointCircularController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
-// use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
+use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
+use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
+use App\Http\Controllers\Normal_View\Presidential_Directive\PresidentialDirectiveController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,12 +60,11 @@ Route::get('/', [HomeController::class, 'index']);
 
 Auth::routes();
 
-Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
-
-
-
 //Routes for Kenn
 //Admin_View Routes
+Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
+Route::post('/add_images/{id}', [Admin_HomeController::class, 'store']);
+
 Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
 Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
 
@@ -131,14 +137,22 @@ Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update'
 
 
 //Normal_View Routes
-Route::get('/news-update',function(){
-    return view('Normal_View.News.news');
-});
-Route::get("/single-news-update",function(){
-    return view('Normal_View.News.single_news');
-});
+
+// Route::get("/single-updates-update",function(){
+//     return view('Normal_View.Updates.single_updates');
+// });
 
 Route::get("/project",[ProjectController::class,'index']);
+
+
+
+
+Route::get('/draft-issuance',[DraftIssuanceController::class,'index']);
+Route::get('/joint-circular',[JointCircularController::class,'index']);
+Route::get('/republic-act',[RepublicActController::class,'index']);
+Route::get('/presidential-directive',[PresidentialDirectiveController::class,'index']);
+Route::get('/memo-circular',[MemoCircularController::class,'index']);
+
 
 
 
@@ -151,16 +165,18 @@ Route::get("/project",[ProjectController::class,'index']);
 
 //Routes for Vienna
 //Admin_View Routes
-Route::get('/admin/news', [Admin_NewsController::class, 'index'])->name('admin/news');
-Route::get('/admin/newsview', [Admin_NewsController::class, 'newsview'])->name('admin/newsview');
-Route::get('/admin/addnews', [Admin_NewsController::class, 'addnews'])->name('admin/addnews');
-// Route::get('admin/newsview', NewsComponent::class)->name('allNews');
-// Route::get('admin/addnews', NewsComponent::class)->name('addNews');
+Route::get('/admin/news_updates', [Admin_UpdateController::class, 'index'])->name('admin/news_updates');
+Route::post('/add-updates', [Admin_UpdateController::class, 'store']);
+Route::get('/delete_updates/{id}', [Admin_UpdateController::class, 'delete_updates']);
+Route::put('/update_updates/{id}', [Admin_UpdateController::class, 'update_updates']);
+
 
 //Normal_View Routes
 Route::get('/about', [AboutController::class, 'index'])->name('/about');
 Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
+
+Route::get('/news_update', [UpdatesController::class, 'index'])->name('/news_update');
 
 Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 

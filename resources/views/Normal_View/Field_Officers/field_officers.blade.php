@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+
+<livewire:normal.fieldofficers.index>
+    {{-- <div class="container">
         <div class="d-flex justify-content-center mb-3">
             <img src="/img/dilg-main.png" style="height: 150px; width: 150px;" alt="">
         </div>
@@ -34,7 +36,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
 <style scoped>
     .zoom {

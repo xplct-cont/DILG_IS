@@ -27,10 +27,23 @@ class Field_Officer extends Model
 
     protected $casts = [
         'created_at' => 'datetime',
-        
+
     ];
 
     public function municipality() {
         return $this->belongsTo('App\Models\Municipality');
+    }
+
+
+    public function scopeSearch($query, $terms){
+        collect(explode(" " , $terms))->filter()->each(function($term) use($query){
+            $term = '%'. $term . '%';
+
+            $query->where('fname', 'like', $term)
+                ->orWhere('lname', 'like', $term)
+                ->orWhere('municipality_id', 'like', $term)
+                ->orWhere('cluster', 'like', $term);
+
+        });
     }
 }

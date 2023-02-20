@@ -72,6 +72,14 @@ class ProgramSeeder extends Seeder
                 'id' => 14,
                 'title' => 'SLRF',
             ],
+            [
+                'id' => 15,
+                'title' => 'BUB-LGSF',
+            ],
+            [
+                'id' => 16,
+                'title' => 'LGSF-PUBLIC MARKET',
+            ],
         ];
         Program::insert($data);
     }
