@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $news_images = Update::limit(3)->get();
+        $news_images = Update::orderBy('created_at', 'ASC')->limit(3)->get();
         $projectsAll = Project::limit(4)->get();
         $home_images = Home_Image::all();
         return view('Normal_View.Home.home', compact('projectsAll', 'home_images', 'news_images'));

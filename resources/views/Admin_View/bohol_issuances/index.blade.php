@@ -97,7 +97,8 @@
                         <th scope="col">Date</th>
                         <th scope="col">Category</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Ref Num.</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Ref Num.</th>
                         <th scope="col">View</th>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                             style="text-align: center">Delete</th>
@@ -110,7 +111,8 @@
                             <td>{{ $issuances->date }}</td>
                             <td>{{ $issuances->category }}</td>
                             <td>{{ $issuances->title }}</td>
-                            <td>{{ $issuances->reference_num }}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                {{ $issuances->reference_num }}</td>
 
                             <td><a href="#" data-toggle="modal" id="issuances_edit_link" class="btn"
                                     data-target="#issuances_id{{ $issuances->id }}"><span

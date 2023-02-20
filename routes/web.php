@@ -168,7 +168,7 @@ Route::get('/memo-circular',[MemoCircularController::class,'index']);
 Route::get('/admin/news_updates', [Admin_UpdateController::class, 'index'])->name('admin/news_updates');
 Route::post('/add-updates', [Admin_UpdateController::class, 'store']);
 Route::get('/delete_updates/{id}', [Admin_UpdateController::class, 'delete_updates']);
-Route::put('/update_updates/{id}', [Admin_UpdateController::class, 'update_updates']);
+Route::put('/edit_updates/{id}', [Admin_UpdateController::class, 'edit_updates']);
 
 
 //Normal_View Routes

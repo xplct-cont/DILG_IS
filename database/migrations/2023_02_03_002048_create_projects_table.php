@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('type')->nullable();
             $table->string('status')->nullable();
             $table->string('total_cost')->nullable();
+            $table->longText('images')->nullable();
             $table->timestamps();
 
             $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade')
