@@ -25,7 +25,6 @@ class Index extends Component
                 $query->where('reference_num', $this->reference_num);
             }
 
-
             $issuances = $query->paginate(5);
             return compact('issuances');
     }
@@ -35,7 +34,7 @@ class Index extends Component
         $issuances = Bohol_Issuance::where('title', 'like', '%'.$this->search.'%')
         ->orWhere('reference_num', 'like', '%'.$this->search.'%')
         ->orWhere('category', 'like', '%'.$this->search.'%')
-        ->orderBy('created_at', 'asc')->paginate(5);
+        ->orderBy('created_at', 'desc')->paginate(5);
         return view('livewire.normal.issuances.index', $this->loadIssuances());
     }
 }
