@@ -84,9 +84,9 @@ class Admin_ProjectController extends Controller
         }
     }
 
-        // $img = Home_Image::find($id);
+        // $admin_project = Home_Image::find($id);
         $admin_project->images = json_encode($data);
-       
+
         $admin_project->save();
 
         return redirect()->back()->with('message', 'New Project Added Successfully!');
@@ -141,10 +141,34 @@ class Admin_ProjectController extends Controller
         $admin_project->status = $request->input('status');
         $admin_project->total_cost = $request->input('total_cost');
         $admin_project->proj_code = $request->input('proj_code');
-        $admin_project->update();
 
+
+        $this->validate($request, [
+            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        $images = json_decode($admin_project->images,true);
+        if (is_array($images) && !empty($images)){
+        foreach ($images as $deleteimage) {
+                if (File::exists(public_path('project_images/'.$deleteimage))) {
+                    File::delete(public_path('project_images/'.$deleteimage));
+                }
+            }
+
+        }
+        if ($request->hasFile('images')){
+
+            foreach($request->file('images') as $image){
+
+                $name = $image->getClientOriginalName();
+                $image->move(public_path('/project_images/'), $name);
+                $data[] = $name;
+        }
+        $admin_project->images = json_encode($data);
+        $admin_project->update();
         return redirect()->back()->with('message', 'Details Updated Successfully!');
     }
+}
 
 
     /**
@@ -157,7 +181,15 @@ class Admin_ProjectController extends Controller
     {
         $remove = Project::findOrFail($id);
 
-        $remove -> delete();
+        $images = json_decode($remove->images,true);
+        if (is_array($images) && !empty($images)){
+        foreach ($images as $deleteimage) {
+                if (File::exists(public_path('project_images/'.$deleteimage))) {
+                    File::delete(public_path('project_images/'.$deleteimage));
+                }
+            }
+            $remove->delete();
+        }
         return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 }
