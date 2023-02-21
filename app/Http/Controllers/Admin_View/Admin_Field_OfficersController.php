@@ -18,11 +18,29 @@ class Admin_Field_OfficersController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index(Request $request){
 
         $municipalities = Municipality::all();
-        $field_officers = Field_Officer::with(['municipality'])->get();
-        return view('Admin_View.field_officers.index', compact('field_officers', 'municipalities'));
+
+        $field_officers = Field_Officer::with(['municipality'])->where([
+            ['created_at', '!=', null],
+            [function($query) use ($request){
+                if(($field_officers = $request->field_officers)){
+                    $query->orWhere('fname', 'LIKE', '%'. $field_officers . '%')
+                    ->orWhere('mid_initial', 'LIKE', '%'. $field_officers . '%')
+                    ->orWhere('lname', 'LIKE', '%'. $field_officers . '%')
+                    ->orWhere('position', 'LIKE', '%'. $field_officers . '%')
+                    ->orWhere('cluster', 'LIKE', '%'. $field_officers . '%')->get();
+                    
+                }
+            }]
+        ])
+    
+        ->orderBy("created_at","DESC")
+        ->paginate(12);
+
+        return view('Admin_View.field_officers.index', compact('field_officers', 'municipalities'))
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function store(Request $request){

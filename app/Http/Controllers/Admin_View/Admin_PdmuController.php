@@ -38,7 +38,7 @@ class Admin_PdmuController extends Controller
         ->paginate(10);
 
         return view('Admin_View.pdmu.index', compact('pdmus'))
-        ->with('i',(request()->input('page',1)-1)*5);;
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function store(Request $request){

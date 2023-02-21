@@ -37,7 +37,7 @@ class Admin_OrganizationController extends Controller
         ->paginate(10);
 
         return view('Admin_View.organization.index', compact('orgs'))
-        ->with('i',(request()->input('page',1)-1)*5);;
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function store(Request $request){

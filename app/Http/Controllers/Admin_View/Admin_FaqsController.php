@@ -17,10 +17,27 @@ class Admin_FaqsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index(Request $request){
 
-        $faq = DB::table('faqs')->get();
-        return view('Admin_View.faqs.index', compact('faq'));
+        // $faq = DB::table('faqs')->get();
+
+        $faq = Faq::where([
+            ['created_at', '!=', null],
+            [function($query) use ($request){
+                if(($faq = $request->faq)){
+                    $query->orWhere('outcome_area', 'LIKE', '%'. $faq . '%')
+                    ->orWhere('questions', 'LIKE', '%'. $faq . '%')
+                    ->orWhere('answers', 'LIKE', '%'. $faq . '%')->get();
+                    
+                }
+            }]
+        ])
+    
+        ->orderBy("created_at","DESC")
+        ->paginate(12);
+
+        return view('Admin_View.faqs.index', compact('faq'))
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function store(Request $request){

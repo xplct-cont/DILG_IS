@@ -18,12 +18,34 @@ class Admin_LguController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index(Request $request){
 
-        $lgus = Lgu::with(['municipality'])->orderBy('municipality_id', 'asc')->get();
+        $lgus = Lgu::with(['municipality'])->where([
+            ['created_at', '!=', null],
+            [function($query) use ($request){
+                if(($lgus = $request->lgus)){
+                    $query->orWhere('mayor', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('vice_mayor', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('sb_member1', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('sb_member2', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('sb_member3', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('sb_member4', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('sb_member5', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('sb_member6', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('sb_member7', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('sb_member8', 'LIKE', '%'. $lgus . '%')->get();
+                    
+                }
+            }]
+        ])
+
+        ->orderBy("municipality_id","ASC")
+        ->paginate(12);
+
 
         $municipalities = Municipality::all();
-        return view('Admin_View.lgu.index', compact('lgus', 'municipalities'));
+        return view('Admin_View.lgu.index', compact('lgus', 'municipalities'))
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function store(Request $request){

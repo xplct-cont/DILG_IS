@@ -36,7 +36,7 @@ class Admin_JobsController extends Controller
 
 
         return view('Admin_View.jobs.index', compact('admin_jobs'))
-        ->with('i',(request()->input('page',1)-1)*5);;
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function store(Request $request){
