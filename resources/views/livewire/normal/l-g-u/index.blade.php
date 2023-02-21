@@ -20,13 +20,16 @@
                 <p class="text-justify" style="color:dimgray;">
                     THE Province of Bohol is an island haven tucked away in the Filipino region of Visayas.
 
-                    This is one of the largest of more than 7,000 islands that comprise the Philippines, and it consistently
+                    This is one of the largest of more than 7,000 islands that comprise the Philippines, and it
+                    consistently
                     draws tourists with its natural beauty, hilly interior and long stretches of white, sandy beaches.
-                    Nested as it is in the midst of Visayas, Bohol has long been a protected center of culture and politics.
+                    Nested as it is in the midst of Visayas, Bohol has long been a protected center of culture and
+                    politics.
                     Locals proudly refer to the island as the ‘Republic of Bohol’.
 
                     Vision: Bohol is a prime eco-cultural tourism destination and a strong, balanced agro-industrial
-                    province, with a well educated, God-loving and law-abiding citizenry, proud of their cultural heritage,
+                    province, with a well educated, God-loving and law-abiding citizenry, proud of their cultural
+                    heritage,
                     enjoying a state of well-being and committed to sound environment management.
 
                     Mission: To enrich Bohol’s social, economic, cultural, political and environmental resources through
@@ -48,7 +51,7 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6 mt-2">
-                    <select class="form-select mt-1"  wire:model="municipality">
+                    <select class="form-select mt-1" wire:model="municipality">
                         <option value="all">All municipalities</option>
                         @foreach ($municipalities as $municipality)
                             <option value="{{ $municipality->id }}">{{ $municipality->municipality }}</option>
@@ -62,7 +65,8 @@
             </div>
         </div>
     </div>
-    <p class="text-center mt-3" style="color:dimgray; font-size: 22px; font-weight: 600;">LIST OF LOCAL ELECTIVE OFFICIALS
+    <p class="text-center mt-3" style="color:dimgray; font-size: 22px; font-weight: 600;">LIST OF LOCAL ELECTIVE
+        OFFICIALS
     </p>
     <div class="col-md-12">
         <div class="">
@@ -91,7 +95,8 @@
                         <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member7 }}</p>
                         <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
-                                style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p> <br>
+                                style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p>
+                        <br>
 
                         <p class="text-center" style="color:dimgray; margin-top: -10px; font-size: 15px;"><span
                                 style="font-weight: 500; color:dimgray">No. of Barangays: </span>
@@ -108,9 +113,12 @@
                                 @endforeach
                             </select>
                         </div>
+                        <div class="mx-auto">
+                            <iframe class="col-md-12 text-center mx-auto" src="{{ $lgu->municipality->gmap_url }}"
+                                height="300" width="100%"></iframe>
+                        </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
     </div>

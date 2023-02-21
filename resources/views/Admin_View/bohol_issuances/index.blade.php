@@ -18,7 +18,7 @@
             aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header" style="background-color: #C9282D; color:white;">
+                    <div class="modal-header" style="background-color: #8c0509; color:white;">
                         <h5 class="modal-title" id="exampleModalLabel">Adding to Issuances</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -30,6 +30,31 @@
                             @csrf
 
                             <div class="container mx-auto">
+                                <div class="">
+                                    <div class="form-group">
+                                        <label for="">Outcome Area/Program:</label>
+
+                                        <select name="outcome_area" id="outcome_area" class="form-control"
+                                            style="color:dimgray;" required>
+                                            <option selected>Select ...</option>
+                                            <option
+                                                value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
+                                                ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE
+                                            </option>
+                                            <option value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">PEACEFUL,
+                                                ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES</option>
+                                            <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY PROTECTIVE LGUS</option>
+                                            <option
+                                                value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
+                                                ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS
+                                            </option>
+                                            <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">BUSINESS-FRIENDLY AND
+                                                COMPETITIVE LGUS</option>
+                                            <option value="STRENGTHENING OF INTERNAL GOVERNANCE">STRENGTHENING OF INTERNAL
+                                                GOVERNANCE</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -85,8 +110,8 @@
 
         <div class="card-header d-flex justify-content-between">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-file"
-                    style="color:#C9282D;"></span> Issuances </h1>
+            <h1 class="" style="font-size: 18px; font-weight: 450;"><span class="fas fa-file"
+                    style="color:#8c0509;"></span> ISSUANCES </h1>
 
         </div>
         <div>
@@ -94,7 +119,9 @@
             <table class="table table-bordered text-center">
                 <thead class="text-center" style="background-color:#343a40; color:white;">
                     <tr>
-                        <th scope="col">Date</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Date</th>
+                        <th scope="col">Outcome</th>
                         <th scope="col">Category</th>
                         <th scope="col">Title</th>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
@@ -104,11 +131,13 @@
                             style="text-align: center">Delete</th>
                     </tr>
                 </thead>
+
                 <tbody class="text-center">
                     @foreach ($b_issuances as $issuances)
                         <tr>
-
-                            <td>{{ $issuances->date }}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                                {{ $issuances->date }}</td>
+                            <td>{{ $issuances->outcome_area }}</td>
                             <td>{{ $issuances->category }}</td>
                             <td>{{ $issuances->title }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
@@ -124,7 +153,7 @@
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
-                                        <div class="modal-header" style="background-color: #C9282D; color:white;">
+                                        <div class="modal-header" style="background-color: #8c0509; color:white;">
                                             <h5 class="modal-title" id="exampleModalLabel">Edit Issuance</h5>
                                             <button type="button" class="close" data-dismiss="modal"
                                                 aria-label="Close">
@@ -139,6 +168,33 @@
                                                 @method('PUT')
 
                                                 <div class="container mx-auto">
+                                                    <div class="form-group">
+                                                        <label for="">Outcome Area/Program:</label>
+
+                                                        <select name="outcome_area" id="outcome_area"
+                                                            class="form-control" style="color:dimgray;" required>
+                                                            <option selected>{{ $issuances->outcome_area }}</option>
+
+                                                            <option
+                                                                value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
+                                                                ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL
+                                                                GOVERNANCE</option>
+                                                            <option
+                                                                value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">
+                                                                PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES
+                                                            </option>
+                                                            <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY PROTECTIVE
+                                                                LGUS</option>
+                                                            <option
+                                                                value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
+                                                                ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER
+                                                                RESILIENT LGUS</option>
+                                                            <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">
+                                                                BUSINESS-FRIENDLY AND COMPETITIVE LGUS</option>
+                                                            <option value="STRENGTHENING OF INTERNAL GOVERNANCE">
+                                                                STRENGTHENING OF INTERNAL GOVERNANCE</option>
+                                                        </select>
+                                                    </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">

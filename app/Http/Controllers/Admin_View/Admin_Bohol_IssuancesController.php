@@ -20,19 +20,19 @@ class Admin_Bohol_IssuancesController extends Controller
 
     public function index(){
 
-        $b_issuances = DB::table('bohol_issuances')->get();
+        $b_issuances = Bohol_Issuance::orderBy('id', 'asc')->get();
         return view('Admin_View.bohol_issuances.index', compact('b_issuances'));
     }
 
 
     public function store(Request $request){
-       
-        
+
         $request->validate([
             'file' => 'required|mimes:pdf|max:2048'
             ]);
             $issuances = new Bohol_Issuance;
 
+            $issuances->outcome_area = $request->input('outcome_area');
             $issuances->date = $request->input('date');
             $issuances->category = $request->input('category');
             $issuances->title = $request->input('title');
@@ -55,7 +55,7 @@ class Admin_Bohol_IssuancesController extends Controller
         $issuances->save();
 
         return redirect()->back()->with('message', 'Added to Issuances Successfully!');
-     
+
     }
 
 
@@ -66,6 +66,8 @@ class Admin_Bohol_IssuancesController extends Controller
             ]);
             $issuances = Bohol_Issuance::find($id);
 
+            $issuances->outcome_area = $request->input('outcome_area');
+            $issuances->outcome = $request->input('outcome');
             $issuances->date = $request->input('date');
             $issuances->category = $request->input('category');
             $issuances->title = $request->input('title');
@@ -103,8 +105,8 @@ class Admin_Bohol_IssuancesController extends Controller
              }
             $issuances->delete();
 
-        return redirect()->back()->with('message', 'Issuance Deleted Successfully!');   
-      }    
+        return redirect()->back()->with('message', 'Issuance Deleted Successfully!');
+      }
 
 
 }

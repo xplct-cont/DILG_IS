@@ -7,12 +7,13 @@
         </div>
         <div class="col-md-11 mx-auto">
             <div class="card elevation-4">
-
                 <div class="card-header-sm" style="background-color: #002C76; color:white;">
                     <p class="ml-2 mt-2" style="font-weight: 450; font-size: 22px;">{{ $b_issuance->category }}</p>
                 </div>
                 <div class="card-body">
-
+                    <p class="text-wrap text-center" style="font-weight: 500; font-size: 15px; color: rgb(77, 77, 77);">
+                        {{ $b_issuance->outcome_area }}</p>
+                    <hr>
                     <p class="text-wrap text-center" style="font-weight: 500; font-size: 23px; color: rgb(77, 77, 77);">
                         {{ $b_issuance->title }}</p>
                     <p class="text-start" style="font-size: 15px; color:rgb(77, 77, 77);">

@@ -13,9 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('joint_circulars', function (Blueprint $table) {
+        Schema::create('bohol_issuances', function (Blueprint $table) {
             $table->id();
+            $table->string('outcome_area')->nullable();
+            $table->longText('title')->nullable();
+            $table->longText('reference_num')->nullable();
+            $table->string('file')->nullable();
+            $table->date('date')->nullable();
+            $table->string('category')->nullable();
+
             $table->timestamps();
+
         });
     }
 
@@ -26,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('joint_circulars');
+        Schema::dropIfExists('bohol_issuances');
     }
 };

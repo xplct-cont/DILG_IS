@@ -25,10 +25,8 @@ use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Admin_View\Admin_UpdateController;
 use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
-use App\Http\Controllers\Admin_View\Admin_ProjectController;
 use App\Http\Controllers\Admin_View\AdminRegisterController;
 use App\Http\Controllers\Normal_View\Update\UpdatesController;
-use App\Http\Controllers\Normal_View\Project\ProjectController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
 use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 // use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
@@ -128,36 +126,7 @@ Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 //Routes for Chadie
 
 //Admin_View Routes
-Route::get('admin/projects',[Admin_ProjectController::class,'index'])->name('admin/projects');
-Route::post('admin/projects-create',[Admin_ProjectController::class,'store']);
-Route::get('admin/projects-delete/{id}',[Admin_ProjectController::class,'destroy']);
-Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update']);
-
-
-
-
-
-//Normal_View Routes
-
-// Route::get("/single-updates-update",function(){
-//     return view('Normal_View.Updates.single_updates');
-// });
-
-Route::get("/project",[ProjectController::class,'index']);
-
-
-
-
-Route::get('/draft-issuance',[DraftIssuanceController::class,'index']);
-Route::get('/joint-circular',[JointCircularController::class,'index']);
-Route::get('/republic-act',[RepublicActController::class,'index']);
-Route::get('/presidential-directive',[PresidentialDirectiveController::class,'index']);
-Route::get('/memo-circular',[MemoCircularController::class,'index']);
-
-
-
-
-Route::get('/admin-register',[AdminRegisterController::class,'index']);
+Route::get('admin/register',[AdminRegisterController::class,'index'])->name('admin/register');
 
 
 
