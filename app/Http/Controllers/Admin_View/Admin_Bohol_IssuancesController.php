@@ -27,7 +27,6 @@ class Admin_Bohol_IssuancesController extends Controller
 
     public function store(Request $request){
 
-
         $request->validate([
             'file' => 'required|mimes:pdf|max:2048'
             ]);

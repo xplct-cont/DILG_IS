@@ -182,6 +182,37 @@
             style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
+
+    <div class="mt-4 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">LATEST ISSUANCES</h1>
+    </div>
+
+    <div class="card-body">
+        <table class="table bg-light table-bordered table-hover text-secondary">
+            <tbody class="elevation-4">
+                @foreach ($latest_issuances as $issuances)
+                    <tr>
+                        <td class="" style="font-size: 16px;"><a
+                                href="{{ url('/latest_issuances/' . $issuances->id) }}">
+                                {{ $issuances->title }} </a><br>
+                            <p class="mt-2" style="font-size: 12px;">
+                                {{ Carbon\Carbon::parse($issuances->date)->format('F d, Y') }}
+                            </p>
+                            <p class="text-center" style="font-size: 12px;">
+                                {{ $issuances->outcome_area }}</p>
+                        </td>
+                        <td class="" style="background-color:#002C76; color:white;  font-size: 12px;">
+                            Reference No: <span
+                                style="font-size: 15px; font-weight: 350; color:white;">{{ $issuances->reference_num }}</span>
+                            <p class="text-center mt-2" style=" font-size: 14px">
+                                {{ $issuances->category }}</p>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
     <div class="col-md-12 mb-5">
         <div class="row">
             <div class="col-md-6">
