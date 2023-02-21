@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-md-8">
                         <a href="https://lga.gov.ph/public/home/5ecb2a1f1476ab4fe1a75cf1" style="text-decoration:none;">
-                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">The Local
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#8c0509;">The Local
                                 Government
                                 (LGA)</p>
                         </a>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-md-8">
                         <a href="https://r7.napolcom.gov.ph/" style="text-decoration:none;">
-                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">National Police
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#8c0509;">National Police
                                 Commission</p>
                         </a>
                         <p class="text-justify" style="font-weight: 400; font-size: 16px;">The promulgation of Republic Act
@@ -58,7 +58,7 @@
                     </div>
                     <div class="col-md-8">
                         <a href="https://region7.bfp.gov.ph/" style="text-decoration:none;">
-                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Bureau of Fire
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#8c0509;">Bureau of Fire
                                 Protection</p>
                         </a>
                         <p class="text-justify" style="font-weight: 400; font-size: 16px;">The enactment of Republic Act
@@ -78,7 +78,7 @@
                     </div>
                     <div class="col-md-8">
                         <a href="https://www.bjmp.gov.ph/" style="text-decoration:none;">
-                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Bureau of Jail
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#8c0509;">Bureau of Jail
                                 Management and Penology</p>
                         </a>
                         <p class="text-justify" style="font-weight: 400; font-size: 16px;">As one of the five pillars of the
@@ -104,7 +104,7 @@
                     </div>
                     <div class="col-md-8">
                         <a href="https://ppsc.gov.ph/" style="text-decoration: none;">
-                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Philippine
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#8c0509;">Philippine
                                 Public
                                 Safety College</p>
                         </a>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="col-md-8">
                         <a href="https://pro7.pnp.gov.ph/" style="text-decoration:none;">
-                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#C9282D;">Philippine
+                            <p class="text-center" style="font-weight: 700; font-size: 22px; color:#8c0509;">Philippine
                                 National
                                 Police (PNP)</p>
                         </a>

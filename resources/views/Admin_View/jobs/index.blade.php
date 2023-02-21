@@ -19,7 +19,7 @@
             aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header" style="background-color: #C9282D; color:white;">
+                    <div class="modal-header" style="background-color: #8c0509; color:white;">
                         <h5 class="modal-title" id="exampleModalLabel">Adding Vacant Position</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -71,8 +71,8 @@
 
         <div class="card-header d-flex justify-content-between">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-address-book"
-                    style="color:#C9282D;"></span> JOB VACANCIES</h1>
+            <h1 class="" style="font-size: 18px; font-weight: 450;"><span class="fas fa-address-book"
+                    style="color:#8c0509;"></span> JOB VACANCIES</h1>
 
         </div>
         <div>
@@ -106,7 +106,7 @@
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
-                                        <div class="modal-header" style="background-color: #C9282D; color:white;">
+                                        <div class="modal-header" style="background-color: #8c0509; color:white;">
                                             <h5 class="modal-title" id="exampleModalLabel">Edit Vacant Position</h5>
                                             <button type="button" class="close" data-dismiss="modal"
                                                 aria-label="Close">

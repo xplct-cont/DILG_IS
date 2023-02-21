@@ -73,7 +73,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark hadow-sm fixed-top" style="background-color: #C9282D;">
+        <nav class="navbar navbar-expand-md navbar-dark hadow-sm fixed-top" style="background-color: #8c0509;">
             <div class="container">
                 <a class="navbar-brand" style="font-size: 16px;" href="{{ url('/') }}">
                     {{-- {{ config('app. name', 'Laravel') }} --}}
@@ -226,7 +226,7 @@
 
     </div>
 
-    <div class="" style=" padding: 20px; background: #C9282D;; color: #DCDCDC;">
+    <div class="" style=" padding: 20px; background: #8c0509; color: #DCDCDC;">
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">

@@ -201,7 +201,7 @@
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box text-light elevation-4" style="background-color:#C9282D;">
+                    <div class="small-box text-light elevation-4" style="background-color:#8c0509;">
                         <div class="inner">
                             <h3>{{ $lgus }}</h3>
 
