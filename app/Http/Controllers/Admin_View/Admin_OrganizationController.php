@@ -33,7 +33,7 @@ class Admin_OrganizationController extends Controller
             }]
         ])
     
-        ->orderBy("created_at","DESC")
+        ->orderBy("created_at","ASC")
         ->paginate(10);
 
         return view('Admin_View.organization.index', compact('orgs'))

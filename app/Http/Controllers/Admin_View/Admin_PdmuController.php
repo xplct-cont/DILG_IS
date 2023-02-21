@@ -34,7 +34,7 @@ class Admin_PdmuController extends Controller
             }]
         ])
     
-        ->orderBy("created_at","DESC")
+        ->orderBy("created_at","ASC")
         ->paginate(10);
 
         return view('Admin_View.pdmu.index', compact('pdmus'))
