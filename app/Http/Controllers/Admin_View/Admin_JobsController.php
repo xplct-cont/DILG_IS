@@ -17,10 +17,26 @@ class Admin_JobsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index(Request $request){
 
-        $admin_jobs = DB::table('jobs')->orderBy('created_at','desc')->get();
-        return view('Admin_View.jobs.index', compact('admin_jobs'));
+        $admin_jobs = Job::where([
+            ['created_at', '!=', null],
+            [function($query) use ($request){
+                if(($admin_jobs = $request->admin_jobs)){
+                    $query->orWhere('position', 'LIKE', '%'. $admin_jobs . '%')
+                    ->orWhere('details', 'LIKE', '%'. $admin_jobs . '%')->get();
+    
+                    
+                }
+            }]
+        ])
+    
+        ->orderBy("created_at","DESC")
+        ->paginate(8);
+
+
+        return view('Admin_View.jobs.index', compact('admin_jobs'))
+        ->with('i',(request()->input('page',1)-1)*5);;
     }
 
     public function store(Request $request){

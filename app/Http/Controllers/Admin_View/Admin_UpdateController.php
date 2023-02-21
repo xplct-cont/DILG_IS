@@ -12,11 +12,24 @@ use App\Models\Update;
 
 class Admin_UpdateController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 
+        $news_images = Update::where([
+            ['created_at', '!=', null],
+            [function($query) use ($request){
+                if(($news_images = $request->news_images)){
+                    $query->orWhere('title', 'LIKE', '%'. $news_images . '%')
+                    ->orWhere('caption', 'LIKE', '%'. $news_images . '%')->get();
+    
+                }
+            }]
+        ])
+    
+        ->orderBy("created_at","DESC")
+        ->paginate(20);
 
-        $news_images = Update::orderBy('created_at', 'DESC')->get();
-        return view('Admin_View.updates.index', compact('news_images'));
+        return view('Admin_View.updates.index', compact('news_images'))
+        ->with('i',(request()->input('page',1)-1)*5);
 
     }
 
