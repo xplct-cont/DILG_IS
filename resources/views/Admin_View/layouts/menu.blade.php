@@ -1,5 +1,5 @@
 <li class="nav-item mt-2">
-    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? 'bg-dark active' : '' }}">
+    <a href="{{ route('home') }}" class="nav-link {{ Request::is('home*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Dashboard</p>
         <i class="fas fa-tachometer-alt fa-pull-left fa-md text-white"></i>
     </a>
@@ -7,21 +7,21 @@
 
 <li class="nav-item">
     <a href="{{ route('admin/news_updates') }}"
-        class="nav-link {{ Request::is('admin/news_updates*') ? 'bg-dark active' : '' }}">
+        class="nav-link {{ Request::is('admin/news_updates*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">News</p>
         <i class="fas fa-newspaper fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('admin/jobs') }}" class="nav-link {{ Request::is('admin/jobs*') ? 'bg-dark active' : '' }}">
+    <a href="{{ route('admin/jobs') }}" class="nav-link {{ Request::is('admin/jobs*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Job Vacancies</p>
         <i class="fas fa-address-book fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 
 
-<li class="text-white text-center mb-2 " style="padding:5px; font-size:15px; background-color:rgb(70, 70, 70);">
+<li class="text-white text-center mb-2 " style="padding:5px; font-size:15px; background-color:rgb(66, 65, 65);">
     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white"
         style="text-decoration: none;"> Key Officials & Management</a>
     <ul class="collapse list-unstyled" style="text-decoration:none;" id="pageSubmenu">
@@ -45,27 +45,28 @@
 
 
 <li class="nav-item">
-    <a href="{{ route('admin/lgu') }}" class="nav-link {{ Request::is('admin/lgu*') ? 'bg-dark active' : '' }}">
+    <a href="{{ route('admin/lgu') }}" class="nav-link {{ Request::is('admin/lgu*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">LGU's</p>
         <i class="fas fa-city fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('admin/faqs') }}" class="nav-link {{ Request::is('admin/faqs*') ? 'bg-dark active' : '' }}">
+    <a href="{{ route('admin/faqs') }}"
+        class="nav-link {{ Request::is('admin/faqs*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">FAQ</p>
         <i class="fas fa-question-circle fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 <li class="nav-item">
     <a href="{{ route('admin/issuances') }}"
-        class="nav-link {{ Request::is('admin/issuances*') ? 'bg-dark active' : '' }}">
+        class="nav-link {{ Request::is('admin/issuances*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Issuances</p>
         <i class="fas fa-file fa-pull-left fa-md text-white"></i>
     </a>
 </li>
 <li class="nav-item">
     <a href="{{ route('admin/register') }}"
-        class="nav-link {{ Request::is('admin/register*') ? 'bg-dark active' : '' }}">
+        class="nav-link {{ Request::is('admin/register*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Users</p>
         <i class="fas fa-user-cog fa-pull-left fa-md text-white"></i>
     </a>

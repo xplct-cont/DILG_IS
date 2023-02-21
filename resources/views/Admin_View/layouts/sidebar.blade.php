@@ -1,4 +1,4 @@
-<aside class="main-sidebar bg-secondary">
+<aside class="main-sidebar bg-dark">
     <div class="p-2">
         <a href="{{ route('home') }}" style=" text-decoration:none; color:white;">
             <img src="{{ url('/img/dilg-main.png') }}" alt="{{ config('app.name') }} Logo"
