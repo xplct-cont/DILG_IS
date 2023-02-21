@@ -72,7 +72,6 @@
         <div class="">
             <div class="row d-flex justify-content-center mb-3">
                 @foreach ($lgus as $lgu)
-                
                     <div class="col-md-3 card m-2 p-2 text-justify ">
                         <p class="text-center mb-3" style="font-weight: 600; font-size: 26px; color:#C9282D;">
                             {{ $lgu->municipality->municipality }}</p>
@@ -114,10 +113,9 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="">
-                            <iframe class="" src="{{ $lgu->municipality->gmap_url }}" height="300"
-                                style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
+                        <div class="mx-auto">
+                            <iframe class="col-md-12 text-center mx-auto" src="{{ $lgu->municipality->gmap_url }}"
+                                height="300" width="100%"></iframe>
                         </div>
                     </div>
                 @endforeach
