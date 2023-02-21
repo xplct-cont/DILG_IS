@@ -32,6 +32,31 @@
                             <div class="container mx-auto">
                                 <div class="row">
                                     <div class="col-md-12">
+
+                                            <div class="form-group">
+                                                <label for="">Outcome Area/Program:</label>
+        
+                                                <select name="outcome_area" id="outcome_area" class="form-control"
+                                                    style="color:dimgray;" required>
+                                                    <option selected>Select ...</option>
+                                                    <option
+                                                        value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
+                                                        ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE
+                                                    </option>
+                                                    <option value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">PEACEFUL,
+                                                        ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES</option>
+                                                    <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY PROTECTIVE LGUS</option>
+                                                    <option
+                                                        value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
+                                                        ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS
+                                                    </option>
+                                                    <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">BUSINESS-FRIENDLY AND
+                                                        COMPETITIVE LGUS</option>
+                                                    <option value="STRENGTHENING OF INTERNAL GOVERNANCE">STRENGTHENING OF INTERNAL
+                                                        GOVERNANCE</option>
+                                                </select>
+                                            </div>
+
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Questions:</label>
                                             <textarea id="" type="text" class="form-control" title="" rows="5" required name="questions"
@@ -72,8 +97,10 @@
                 <thead class="text-center" style="background-color:#343a40; color:white;">
                     <tr>
                         <th scope="col">View</th>
+                        <th scope="col">Outcome</th>
                         <th scope="col">Questions</th>
-                        <th scope="col">Answers</th>
+                        <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                        style="text-align: center">Answers</th>
                         <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                             style="text-align: center">Delete</th>
                     </tr>
@@ -85,8 +112,10 @@
                             <td><a href="#" data-toggle="modal" id="faq_edit_link" class="btn"
                                     data-target="#faq_id{{ $faqs->id }}"><span
                                         class="text-white btn-success btn-sm">View</span></a></td>
+                            <td>{{ $faqs->outcome_area }}</td>
                             <td>{{ $faqs->questions }}</td>
-                            <td>{{ $faqs->answers }}</td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">{{ $faqs->answers }}</td>
 
                             <div class="modal fade" id="faq_id{{ $faqs->id }}" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -109,6 +138,30 @@
                                                 <div class="container mx-auto">
                                                     <div class="row">
                                                         <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="">Outcome Area/Program:</label>
+                        
+                                                                <select name="outcome_area" id="outcome_area" class="form-control"
+                                                                    style="color:dimgray;" required>
+                                                                    <option selected>{{$faqs->outcome_area}}</option>
+                                                                    <option
+                                                                        value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
+                                                                        ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE
+                                                                    </option>
+                                                                    <option value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">PEACEFUL,
+                                                                        ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES</option>
+                                                                    <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY PROTECTIVE LGUS</option>
+                                                                    <option
+                                                                        value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
+                                                                        ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS
+                                                                    </option>
+                                                                    <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">BUSINESS-FRIENDLY AND
+                                                                        COMPETITIVE LGUS</option>
+                                                                    <option value="STRENGTHENING OF INTERNAL GOVERNANCE">STRENGTHENING OF INTERNAL
+                                                                        GOVERNANCE</option>
+                                                                </select>
+                                                            </div>
+                
                                                             <div class="form-group">
                                                                 <label for=""
                                                                     style="color:dimgray">Questions:</label>
