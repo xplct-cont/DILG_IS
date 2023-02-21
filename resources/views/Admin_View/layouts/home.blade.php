@@ -6,7 +6,7 @@
             <strong>{{ $message }}</strong>
         </div>
     @endif
-    <div class="text-start p-1 ml-1" style="font-size: 25px; font-weight: 500; color:dimgray;">
+    <div class="text-start p-1 ml-1" style="font-size: 22px; font-weight: 500; color:dimgray;">
         DASHBOARD
     </div>
 
@@ -94,9 +94,8 @@
                         <div class="icon">
                             <i class="fas fa-newspaper text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/news_updates') }}" class="small-box-footer text-light"
-                            style="background-color:dimgray;"><span class="text-light">More info</span> <i
-                                class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('admin/news_updates') }}" class="small-box-footer bg-dark text-light"><span
+                                class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
@@ -112,9 +111,8 @@
                         <div class="icon">
                             <i class="fas fa-address-book text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/jobs') }}" class="small-box-footer "
-                            style="background-color:dimgray;color:whitesmoke;"><span class="text-light">More info</span> <i
-                                class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('admin/jobs') }}" class="small-box-footer bg-dark" style="color:whitesmoke;"><span
+                                class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -129,8 +127,8 @@
                         <div class="icon">
                             <i class="fas fa-users text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/organization') }}" class="small-box-footer "
-                            style="background-color:dimgray;color:whitesmoke;"><span class="text-light">More info</span> <i
+                        <a href="{{ route('admin/organization') }}" class="small-box-footer bg-dark"
+                            style="color:whitesmoke;"><span class="text-light">More info</span> <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -146,7 +144,7 @@
                         <div class="icon">
                             <i class="fas fa-user-friends text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/pdmu') }}" class="small-box-footer " style="background-color:dimgray;">
+                        <a href="{{ route('admin/pdmu') }}" class="small-box-footer bg-dark">
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -162,8 +160,7 @@
                         <div class="icon">
                             <i class="fas fa-people-carry text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/field_officers') }}" class="small-box-footer "
-                            style="background-color:dimgray;">
+                        <a href="{{ route('admin/field_officers') }}" class="small-box-footer bg-dark" style="">
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -179,7 +176,7 @@
                         <div class="icon">
                             <i class="fas fa-question-circle text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/faqs') }}" class="small-box-footer " style="background-color:dimgray;">
+                        <a href="{{ route('admin/faqs') }}" class="small-box-footer bg-dark" style="">
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -195,25 +192,24 @@
                         <div class="icon">
                             <i class="fas fa-file text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/issuances') }}" class="small-box-footer "
-                            style="background-color:dimgray;">
+                        <a href="{{ route('admin/issuances') }}" class="small-box-footer bg-dark" style="">
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box text-light elevation-4" style="background-color:#8c0509;">
+                    <div class="small-box text-secondary elevation-4">
                         <div class="inner">
                             <h3>{{ $lgus }}</h3>
 
-                            <p class="text-light">LGU's</p>
+                            <p class="text-secondary">LGU's</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-city text-light"></i>
+                            <i class="fas fa-city text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/lgu') }}" class="small-box-footer "
-                            style="background-color:dimgray;color:whitesmoke;"><span class="text-light">More info</span>
+                        <a href="{{ route('admin/lgu') }}" class="small-box-footer bg-dark"
+                            style=";color:whitesmoke;"><span class="text-light">More info</span>
                             <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
