@@ -133,16 +133,6 @@ Route::post('admin/projects-create',[Admin_ProjectController::class,'store']);
 Route::get('admin/projects-delete/{id}',[Admin_ProjectController::class,'destroy']);
 Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update']);
 
-
-
-
-
-//Normal_View Routes
-
-// Route::get("/single-updates-update",function(){
-//     return view('Normal_View.Updates.single_updates');
-// });
-
 Route::get("/project",[ProjectController::class,'index']);
 
 
