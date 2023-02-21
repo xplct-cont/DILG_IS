@@ -1,5 +1,4 @@
 @extends('Admin_View.layouts.app')
-
 @section('content')
     @if ($message = Session::get('message'))
         <div class="alert alert-success alert-block mt-2">
@@ -30,18 +29,20 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <table class=" mx-auto col-md-8 elevation-3 table table-sm table-bordered table-hovered text-center">
+                        <table
+                            class=" mx-auto col-md-8 elevation-3 table table-sm table-bordered table-hovered text-center">
                             <thead class="" style="background-color: dimgray; color:white;">
 
 
                                 <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                                style="text-align: center">Images</th>
+                                    style="text-align: center">Images</th>
                             </thead>
                             <tbody>
                                 @foreach ($home_images as $home_img)
                                     <tr>
-                                        <td scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                                        style="text-align: center"> <?php foreach (json_decode($home_img->images) as $picture) { ?>
+                                        <td scope="col"
+                                            class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                            style="text-align: center"> <?php foreach (json_decode($home_img->images) as $picture) { ?>
                                             <img src="{{ asset('home_images/' . $picture) }}"
                                                 style="height:60px; width:80px" />
                                             <?php } ?>
@@ -66,7 +67,8 @@
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save Changes</button>
+                        <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save
+                            Changes</button>
                     </div>
                     </form>
 
@@ -225,7 +227,7 @@
     .img {
         display: flex;
         justify-content: space-evenly;
-       
+
 
     }
 </style>
