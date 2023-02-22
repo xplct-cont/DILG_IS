@@ -126,7 +126,7 @@
 
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                             style="text-align: center">{{ $issuances->date }}</td>
-                            <td>{{$issuances->outcomearea->title ?? 'None'}}</td>
+                            <td>{{$issuances->outcomearea->title}}</td>
                             <td>{{ $issuances->category }}</td>
                             <td>{{ $issuances->title }}</td>
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">

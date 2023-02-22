@@ -22,7 +22,7 @@ class Admin_Bohol_IssuancesController extends Controller
     public function index(){
 
         $b_issuances = Bohol_Issuance::with('outcomearea')->get();
-        $outcomes = DB::table('out_come_areas')->get();
+        $outcomes = OutComeArea::get();
         return view('Admin_View.bohol_issuances.index', compact('b_issuances', 'outcomes'));
     }
 
