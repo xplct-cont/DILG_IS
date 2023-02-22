@@ -72,6 +72,13 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="{{ route('admin/provincial_officials') }}"
+        class="nav-link {{ Request::is('admin/provincial_officials*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">Prov. Officials</p>
+        <i class="fas fa-user-tie fa-pull-left fa-md text-white"></i>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{ route('admin/register') }}"
         class="nav-link {{ Request::is('admin/register*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Users</p>

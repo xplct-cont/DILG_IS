@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin_View\Admin_FaqsController;
 use App\Http\Controllers\Admin_View\Admin_HomeController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
+use App\Http\Controllers\Admin_View\Admin_Provincial_OfficialsController;
 use App\Http\Controllers\Admin_View\Admin_DownloadablesController;
 use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Home\HomeController;
@@ -99,6 +100,11 @@ Route::get('/admin/downloadables', [Admin_DownloadablesController::class, 'index
 Route::post('/add-downloadables', [Admin_DownloadablesController::class, 'store']);
 Route::get('/delete_downloadables/{id}', [Admin_DownloadablesController::class, 'delete_downloadables']);
 Route::put('/update-downloadables/{id}', [Admin_DownloadablesController::class, 'update_downloadables']);
+
+Route::get('/admin/provincial_officials', [Admin_Provincial_OfficialsController::class, 'index'])->name('admin/provincial_officials');
+Route::post('/add-provincial_officials', [Admin_Provincial_OfficialsController::class, 'store']);
+Route::get('/delete_provincial_officials/{id}', [Admin_Provincial_OfficialsController::class, 'delete_provincial_officials']);
+Route::put('/update-provincial_officials/{id}', [Admin_Provincial_OfficialsController::class, 'update_provincial_officials']);
 
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');

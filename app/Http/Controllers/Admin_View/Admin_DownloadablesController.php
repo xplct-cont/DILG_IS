@@ -44,7 +44,7 @@ class Admin_DownloadablesController extends Controller
         
         $downloadables->save();
 
-        return redirect()->back()->with('message', 'Added Details Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully!');
      
     }
 
@@ -57,7 +57,7 @@ class Admin_DownloadablesController extends Controller
        
     $downloadables->update();
 
-    return redirect()->back()->with('message', 'Details Updated Successfully!');
+    return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 
