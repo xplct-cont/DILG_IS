@@ -72,6 +72,13 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="{{ route('admin/knowledge_materials') }}"
+        class="nav-link {{ Request::is('admin/knowledge_materials*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">Knowledge Materials</p>
+        <i class="fas fa-book-open fa-pull-left fa-md text-white"></i>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{ route('admin/provincial_officials') }}"
         class="nav-link {{ Request::is('admin/provincial_officials*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Prov. Officials</p>
