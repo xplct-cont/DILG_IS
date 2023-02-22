@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Normal_View\Lgu\LguController;
+use App\Http\Controllers\Admin_View\Admin_UserController;
 
 //Normal View
 use App\Http\Controllers\Admin_View\Admin_LguController;
@@ -125,7 +126,8 @@ Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 //Routes for Chadie
 
 //Admin_View Routes
-Route::get('admin/register',[AdminRegisterController::class,'index'])->name('admin/register');
+Route::get('admin/users',[Admin_UserController::class,'index'])->name('admin/users');
+Route::post('/add-user', [Admin_UserController::class, 'store']);
 
 
 
