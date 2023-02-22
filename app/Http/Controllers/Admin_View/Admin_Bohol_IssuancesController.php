@@ -70,7 +70,7 @@ class Admin_Bohol_IssuancesController extends Controller
 
         $issuances->save();
 
-        return redirect()->back()->with('message', 'Added to Issuances Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully!');
 
     }
 
@@ -109,7 +109,7 @@ class Admin_Bohol_IssuancesController extends Controller
 
         $issuances->update();
 
-    return redirect()->back()->with('message', 'Issuance Updated Successfully!');
+    return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 
@@ -121,7 +121,7 @@ class Admin_Bohol_IssuancesController extends Controller
              }
             $issuances->delete();
 
-        return redirect()->back()->with('message', 'Issuance Deleted Successfully!');
+        return redirect()->back()->with('message', 'Deleted Successfully!');
       }
 
 

@@ -72,8 +72,27 @@
     </a>
 </li>
 <li class="nav-item">
+<<<<<<< HEAD
     <a href="{{ route('admin/users') }}"
         class="nav-link {{ Request::is('admin/users*') ? 'bg-secondary active' : '' }}">
+=======
+    <a href="{{ route('admin/knowledge_materials') }}"
+        class="nav-link {{ Request::is('admin/knowledge_materials*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">Knowledge Materials</p>
+        <i class="fas fa-book-open fa-pull-left fa-md text-white"></i>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ route('admin/provincial_officials') }}"
+        class="nav-link {{ Request::is('admin/provincial_officials*') ? 'bg-secondary active' : '' }}">
+        <p class="text-white">Prov. Officials</p>
+        <i class="fas fa-user-tie fa-pull-left fa-md text-white"></i>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ route('admin/register') }}"
+        class="nav-link {{ Request::is('admin/register*') ? 'bg-secondary active' : '' }}">
+>>>>>>> cd9642985494d3530e97ca720d4cb1753a1571d5
         <p class="text-white">Users</p>
         <i class="fas fa-user-cog fa-pull-left fa-md text-white"></i>
     </a>

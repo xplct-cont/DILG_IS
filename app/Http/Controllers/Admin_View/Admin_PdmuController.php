@@ -62,7 +62,7 @@ class Admin_PdmuController extends Controller
 
         $pdmus->save();
 
-        return redirect()->back()->with('message', 'Added to PDMU Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully!');
      
     }
 
@@ -90,7 +90,7 @@ class Admin_PdmuController extends Controller
     }
 
     $pdmus->update();
-    return redirect()->back()->with('message', 'Profile Updated Successfully!');
+    return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 
@@ -107,7 +107,7 @@ class Admin_PdmuController extends Controller
              }
             $pdmus->delete();
            
-        return redirect()->back()->with('message', 'Profile Deleted Successfully!');
+        return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 
 }

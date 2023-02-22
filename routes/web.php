@@ -16,10 +16,13 @@ use App\Http\Controllers\Admin_View\Admin_FaqsController;
 use App\Http\Controllers\Admin_View\Admin_HomeController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
+use App\Http\Controllers\Admin_View\Admin_Provincial_OfficialsController;
 use App\Http\Controllers\Admin_View\Admin_DownloadablesController;
+use App\Http\Controllers\Admin_View\Admin_Knowledge_MaterialsController;
 use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
+use App\Http\Controllers\Normal_View\Knowledge_Materials\Knowledge_MaterialsController;
 
 //Normal View
 use App\Http\Controllers\Admin_View\Admin_UpdateController;
@@ -37,6 +40,8 @@ use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
 use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
+use App\Http\Controllers\Normal_View\Downloadables\DownloadablesController;
+use App\Http\Controllers\Normal_View\Provincial_Officials\Provincial_OfficialsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,6 +105,16 @@ Route::post('/add-downloadables', [Admin_DownloadablesController::class, 'store'
 Route::get('/delete_downloadables/{id}', [Admin_DownloadablesController::class, 'delete_downloadables']);
 Route::put('/update-downloadables/{id}', [Admin_DownloadablesController::class, 'update_downloadables']);
 
+Route::get('/admin/provincial_officials', [Admin_Provincial_OfficialsController::class, 'index'])->name('admin/provincial_officials');
+Route::post('/add-provincial_officials', [Admin_Provincial_OfficialsController::class, 'store']);
+Route::get('/delete_provincial_officials/{id}', [Admin_Provincial_OfficialsController::class, 'delete_provincial_officials']);
+Route::put('/update-provincial_officials/{id}', [Admin_Provincial_OfficialsController::class, 'update_provincial_officials']);
+
+Route::get('/admin/knowledge_materials', [Admin_Knowledge_MaterialsController::class, 'index'])->name('admin/knowledge_materials');
+Route::post('/add-knowledge_materials', [Admin_Knowledge_MaterialsController::class, 'store']);
+Route::get('/delete_knowledge_materials/{id}', [Admin_Knowledge_MaterialsController::class, 'delete_knowledge_materials']);
+Route::put('/update-knowledge_materials/{id}', [Admin_Knowledge_MaterialsController::class, 'update_knowledge_materials']);
+
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
@@ -111,6 +126,12 @@ Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
 Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->name('/latest_issuances');
 Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
+
+Route::get('/downloadables',[DownloadablesController::class, 'index'])->name('/downloadables');
+
+Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'index'])->name('/provincial_officials');
+
+Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'])->name('/knowledge_materials');
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 

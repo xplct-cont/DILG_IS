@@ -58,7 +58,7 @@ class Admin_UpdateController extends Controller
         // $img = Home_Image::find($id);
         $img->images = json_encode($data);
         $img->save();
-        return redirect()->back()->with('message', 'Added Images Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully!');
 
     }
 
@@ -94,7 +94,7 @@ class Admin_UpdateController extends Controller
         $img->images = json_encode($data);
         $img->update();
 
-        return redirect()->back()->with('message', 'News/Updates Updated Successfully!');
+        return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 }
@@ -111,7 +111,7 @@ class Admin_UpdateController extends Controller
             $img->delete();
         }
 
-        return redirect()->back()->with('message', 'News/Updates Deleted Successfully!');
+        return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 
 
