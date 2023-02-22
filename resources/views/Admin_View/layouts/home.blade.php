@@ -225,7 +225,7 @@
                             <p class="text-secondary">Prov. Officials</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-download text-secondary"></i>
+                            <i class="fas fa-user-tie text-secondary"></i>
                         </div>
                         <a href="{{ route('admin/provincial_officials') }}" class="small-box-footer bg-secondary"
                             style="">
