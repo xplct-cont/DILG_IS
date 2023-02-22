@@ -65,8 +65,8 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('admin/register') }}"
-        class="nav-link {{ Request::is('admin/register*') ? 'bg-secondary active' : '' }}">
+    <a href="{{ route('admin/downloadables') }}"
+        class="nav-link {{ Request::is('admin/downloadables*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Downloadables</p>
         <i class="fas fa-download fa-pull-left fa-md text-white"></i>
     </a>
