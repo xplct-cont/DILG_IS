@@ -101,12 +101,8 @@
         }
     }
 
-    /* @keyframes fireworkPseudo {
-  0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }
-  50% { width: 0.5vmin; opacity: 1; }
-  100% { width: var(--finalSize); opacity: 0; }
-}
- */
+
+
     .firework,
     .firework::before,
     .firework::after {
@@ -221,20 +217,4 @@
     .firework:nth-child(3) {
         --x: -30vmin;
         --y: -50vmin;
-    }
-
-    .firework:nth-child(3),
-    .firework:nth-child(3)::before,
-    .firework:nth-child(3)::after {
-        --color1: blue;
-        --color2: red;
-        --color3: brown;
-        --color4: rgb(31, 41, 41);
-        --color5: SkyBlue;
-        --color6: pink;
-        --finalSize: 35vmin;
-        left: 70%;
-        top: 60%;
-        animation-delay: -0.4s;
-    }
 </style>

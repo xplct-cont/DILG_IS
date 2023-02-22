@@ -8,6 +8,30 @@
         </div>
     @endif
 
+
+    <div class="search" style="position:relative; top: 5px;">
+        <div class="mx-auto" style="width:300px;">
+            <form action="{{ url('admin/organization') }}" method="GET" role="search">
+
+                <div class="input-group">
+                    <span class="input-group-btn mr-1 mt-0">
+                        <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                            <span class="fas fa-search"></span>
+                        </button>
+                    </span>
+                    <input type="text" class="form-control mr-1" name="orgs" placeholder="Search..."
+                        id="orgs">
+                    <a href="{{ url('admin/organization') }}" class=" mt-0">
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                <span class="fas fa-sync-alt"></span>
+                            </button>
+                        </span>
+                    </a>
+                </div>
+            </form>
+        </div>
+
     <div class="d-flex justify-content-end mt-5">
         <!-- Button trigger modal -->
         <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
@@ -233,4 +257,9 @@
             </tbody>
         </table>
     </div>
+
+    <div class="d-flex justify-content-end mt-2">
+        {{ $orgs->links() }}
+    </div>
+
 @endsection
