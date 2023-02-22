@@ -15,7 +15,7 @@ class Index extends Component
 
     public function loadUpdates(){
 
-        $query = Update::orderBy('title', 'asc')
+        $query = Update::orderBy('created_at', 'desc')
             ->search($this->search);
 
         if($this->title){
@@ -36,7 +36,7 @@ class Index extends Component
         $updates = Update::get();
         $updatesFilter = Update::where('title', 'like', '%'.$this->search.'%')
         ->orWhere('caption', 'like', '%'.$this->search.'%')
-        ->orderBy('created_at', 'asc')->paginate(5);
+        ->orderBy('created_at', 'desc')->paginate(5);
         return view('livewire.normal.updates.index',  $this->loadUpdates(),
          ['updates'=> Update::get(), 'updatesFilter' => $updatesFilter],);
     }

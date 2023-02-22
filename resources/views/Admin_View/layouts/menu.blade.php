@@ -13,13 +13,6 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('admin/projects') }}" class="nav-link {{ Request::is('admin/projects*') ? '' : '' }}">
-        <p class="text-white">Projects</p>
-        <i class="fas fa-project-diagram fa-pull-left fa-md text-white"></i>
-    </a>
-</li>
-
-<li class="nav-item">
     <a href="{{ route('admin/jobs') }}" class="nav-link {{ Request::is('admin/jobs*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Job Vacancies</p>
         <i class="fas fa-address-book fa-pull-left fa-md text-white"></i>

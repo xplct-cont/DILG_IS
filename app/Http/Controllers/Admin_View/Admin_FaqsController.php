@@ -27,6 +27,7 @@ class Admin_FaqsController extends Controller
         
         $faq = new Faq;
        
+        $faq->outcome_area = $request->input('outcome_area');
         $faq->questions = $request->input('questions');
         $faq->answers = $request->input('answers');
 
@@ -39,6 +40,7 @@ class Admin_FaqsController extends Controller
     public function update_faqs(Request $request, $id){
         $faq = Faq::find($id);
 
+        $faq->outcome_area = $request->input('outcome_area');
         $faq->questions = $request->input('questions');
         $faq->answers = $request->input('answers');
        

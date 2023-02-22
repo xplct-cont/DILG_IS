@@ -1,5 +1,5 @@
 <aside class="main-sidebar sidebar-dark-primary ">
-    <a href="{{ route('home') }}" class="brand-link" style="background-color: #C9282D; text-decoration:none;">
+    <a href="{{ route('home') }}" class="brand-link" style="background-color: #8c0509; text-decoration:none;">
         <img src="{{url('/img/dilg-main.png')}}"
              alt="{{ config('app.name') }} Logo"
              class="brand-image img-circle elevation-3">

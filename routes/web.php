@@ -25,10 +25,8 @@ use App\Http\Controllers\Normal_View\Jobs\JobsController;
 use App\Http\Controllers\Admin_View\Admin_UpdateController;
 use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
-use App\Http\Controllers\Admin_View\Admin_ProjectController;
 use App\Http\Controllers\Admin_View\AdminRegisterController;
 use App\Http\Controllers\Normal_View\Update\UpdatesController;
-use App\Http\Controllers\Normal_View\Project\ProjectController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
 use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 // use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
@@ -128,19 +126,6 @@ Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 //Routes for Chadie
 
 //Admin_View Routes
-Route::get('admin/projects',[Admin_ProjectController::class,'index'])->name('admin/projects');
-Route::post('admin/projects-create',[Admin_ProjectController::class,'store']);
-Route::get('admin/projects-delete/{id}',[Admin_ProjectController::class,'destroy']);
-Route::put('admin/projects-update/{id}',[Admin_ProjectController::class,'update']);
-
-Route::get("/project",[ProjectController::class,'index']);
-
-
-
-
-
-
-
 Route::get('admin/register',[AdminRegisterController::class,'index'])->name('admin/register');
 
 
@@ -161,24 +146,6 @@ Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts')
 Route::get('/news_update', [UpdatesController::class, 'index'])->name('/news_update');
 
 Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
