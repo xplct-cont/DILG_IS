@@ -17,10 +17,28 @@ class Admin_PdmuController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index(Request $request){
 
-        $pdmus = DB::table('pdmus')->get();
-        return view('Admin_View.pdmu.index', compact('pdmus'));
+        // $pdmus = DB::table('pdmus')->get();
+
+        $pdmus = Pdmu::where([
+            ['created_at', '!=', null],
+            [function($query) use ($request){
+                if(($pdmus = $request->pdmus)){
+                    $query->orWhere('fname', 'LIKE', '%'. $pdmus . '%')
+                    ->orWhere('mid_initial', 'LIKE', '%'. $pdmus . '%')
+                    ->orWhere('lname', 'LIKE', '%'. $pdmus . '%')
+                    ->orWhere('position', 'LIKE', '%'. $pdmus . '%')->get();
+    
+                }
+            }]
+        ])
+    
+        ->orderBy("created_at","ASC")
+        ->paginate(10);
+
+        return view('Admin_View.pdmu.index', compact('pdmus'))
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function store(Request $request){
