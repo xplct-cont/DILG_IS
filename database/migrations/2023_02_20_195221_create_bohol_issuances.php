@@ -15,12 +15,15 @@ return new class extends Migration
     {
         Schema::create('bohol_issuances', function (Blueprint $table) {
             $table->id();
+            $table->string('outcome_area')->nullable();
             $table->longText('title')->nullable();
             $table->longText('reference_num')->nullable();
             $table->string('file')->nullable();
             $table->date('date')->nullable();
             $table->string('category')->nullable();
+
             $table->timestamps();
+
         });
     }
 

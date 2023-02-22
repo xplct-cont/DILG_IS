@@ -17,10 +17,27 @@ class Admin_OrganizationController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index(Request $request){
 
-        $orgs = DB::table('orgs')->get();
-        return view('Admin_View.organization.index', compact('orgs'));
+        $orgs = Org::where([
+            ['created_at', '!=', null],
+            [function($query) use ($request){
+                if(($orgs = $request->orgs)){
+                    $query->orWhere('fname', 'LIKE', '%'. $orgs . '%')
+                    ->orWhere('mid_initial', 'LIKE', '%'. $orgs . '%')
+                    ->orWhere('lname', 'LIKE', '%'. $orgs . '%')
+                    ->orWhere('position', 'LIKE', '%'. $orgs . '%')->get();
+    
+                    
+                }
+            }]
+        ])
+    
+        ->orderBy("created_at","ASC")
+        ->paginate(10);
+
+        return view('Admin_View.organization.index', compact('orgs'))
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function store(Request $request){
