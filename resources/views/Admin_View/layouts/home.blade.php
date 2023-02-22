@@ -198,6 +198,22 @@
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+                 <!-- ./col -->
+                 <div class="col-lg-3 col-6 ">
+                    <!-- small box -->
+                    <div class="small-box text-secondary elevation-4">
+                        <div class="inner">
+                            <h3>{{ $downloadables }}</h3>
+
+                            <p class="text-secondary">Downloadables</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-download text-secondary"></i>
+                        </div>
+                        <a href="{{ route('admin/downloadables') }}" class="small-box-footer bg-secondary" style="">
+                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->

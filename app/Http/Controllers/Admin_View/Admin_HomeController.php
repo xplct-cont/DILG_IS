@@ -38,7 +38,9 @@ class Admin_HomeController extends Controller
         $field_officers = DB::table('field_officers')->count();
         $faqs = DB::table('faqs')->count();
         $b_issuances = DB::table('bohol_issuances')->count();
-        return view('Admin_View.layouts.home',compact('home_images', 'updates','jobs','orgs', 'pdmus', 'lgus', 'field_officers', 'faqs', 'b_issuances'));
+        $downloadables = DB::table('downloadables')->count();
+
+        return view('Admin_View.layouts.home',compact('home_images', 'updates','jobs','orgs', 'pdmus', 'lgus', 'field_officers', 'faqs', 'b_issuances', 'downloadables'));
     }
 
 
