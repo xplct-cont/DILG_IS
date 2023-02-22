@@ -36,6 +36,7 @@ use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
 use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
+use App\Http\Controllers\Normal_View\Downloadables\DownloadablesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,6 +111,8 @@ Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
 Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->name('/latest_issuances');
 Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
+
+Route::get('/downloadables',[DownloadablesController::class, 'index'])->name('/downloadables');
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
