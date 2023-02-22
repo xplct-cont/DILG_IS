@@ -36,6 +36,7 @@ class Bohol_Issuance extends Model
 
             $query->where('title', 'like', $term)
                 ->orWhere('reference_num', 'like', $term)
+                ->orWhere('outcome_area', 'like', $term)
                 ->orWhere('category', 'like', $term);
         });
     }

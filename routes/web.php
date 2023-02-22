@@ -151,24 +151,6 @@ Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Routes for Franklin
 
 

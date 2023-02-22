@@ -28,11 +28,11 @@ class Admin_Bohol_IssuancesController extends Controller
                     ->orWhere('category', 'LIKE', '%'. $b_issuances . '%')
                     ->orWhere('title', 'LIKE', '%'. $b_issuances . '%')
                     ->orWhere('reference_num', 'LIKE', '%'. $b_issuances . '%')->get();
-    
+
                 }
             }]
         ])
-    
+
         ->orderBy("date","DESC")
         ->paginate(15);
 
