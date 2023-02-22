@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('bohol_issuances', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('outcome')->unsigned();
+            $table->string('outcome_area')->nullable();
             $table->longText('title')->nullable();
             $table->longText('reference_num')->nullable();
             $table->string('file')->nullable();
@@ -24,8 +24,6 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->foreign('outcome')->references('id')->on('out_come_areas')->onDelete('cascade')
-            ->onUpdate('cascade');
         });
     }
 

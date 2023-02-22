@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Bohol_Issuance;
-use App\Models\OutComeArea;
 use Image;
 use File;
 use Illuminate\Support\Facades\Validator;
@@ -19,23 +18,37 @@ class Admin_Bohol_IssuancesController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index(Request $request){
 
-        $b_issuances = Bohol_Issuance::with('outcomearea')->get();
-        $outcomes = OutComeArea::get();
-        return view('Admin_View.bohol_issuances.index', compact('b_issuances', 'outcomes'));
+        $b_issuances = Bohol_Issuance::where([
+            ['created_at', '!=', null],
+            [function($query) use ($request){
+                if(($b_issuances = $request->b_issuances)){
+                    $query->orWhere('outcome_area', 'LIKE', '%'. $b_issuances . '%')
+                    ->orWhere('category', 'LIKE', '%'. $b_issuances . '%')
+                    ->orWhere('title', 'LIKE', '%'. $b_issuances . '%')
+                    ->orWhere('reference_num', 'LIKE', '%'. $b_issuances . '%')->get();
+
+                }
+            }]
+        ])
+
+        ->orderBy("date","DESC")
+        ->paginate(15);
+
+        return view('Admin_View.bohol_issuances.index', compact('b_issuances'))
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
 
     public function store(Request $request){
-
 
         $request->validate([
             'file' => 'required|mimes:pdf|max:2048'
             ]);
             $issuances = new Bohol_Issuance;
 
-            $issuances->outcome = $request->input('outcome');
+            $issuances->outcome_area = $request->input('outcome_area');
             $issuances->date = $request->input('date');
             $issuances->category = $request->input('category');
             $issuances->title = $request->input('title');
@@ -69,6 +82,7 @@ class Admin_Bohol_IssuancesController extends Controller
             ]);
             $issuances = Bohol_Issuance::find($id);
 
+            $issuances->outcome_area = $request->input('outcome_area');
             $issuances->outcome = $request->input('outcome');
             $issuances->date = $request->input('date');
             $issuances->category = $request->input('category');

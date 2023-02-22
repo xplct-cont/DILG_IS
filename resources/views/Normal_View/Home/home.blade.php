@@ -38,17 +38,17 @@
             <div class="col-md-6 mt-5 mb-5 ">
 
                 <a href="{{ route('/provincial_director') }}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">THE
+                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">THE
                     PROVINCIAL
                     DIRECTOR
                     <span class="fas fa-arrow-right" style="margin-left:38px;"></span></a><br><br>
                 <a href="{{ route('/about') }}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION
+                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION
                     &
                     MISSION <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a><br><br>
-                <a href="{{ url('/project') }}" type="button" class="btn btn-md"
-                    style="background-color: #C9282D; color: white; width: 300px; overflow:auto; border-radius:10px;">PROJECTS
-                    <span class="fas fa-arrow-right" style="margin-left: 160px;"></span></a>
+                <a href="{{ url('/latest_issuances') }}" type="button" class="btn btn-md"
+                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">LATEST ISSUANCES
+                    <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a>
 
             </div>
             <div class="col-md-6 mt-5 mb-5">
@@ -179,9 +179,45 @@
 
     <div class="d-flex justify-content-center mb-5 mt-3">
         <a href="{{ url('/news_update') }}" type="button" class="btn btn-sm"
-            style="background-color: #C9282D; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
+            style="background-color: #8c0509; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
+
+    <div class="mt-4 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+        <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">LATEST ISSUANCES</h1>
+    </div>
+
+    <div class="card-body">
+        <table class="table bg-light table-bordered table-hover text-secondary">
+            <tbody class="elevation-4">
+                @foreach ($latest_issuances as $issuances)
+                    <tr>
+                        <td class="" style="font-size: 16px;"><a
+                                href="{{ url('/latest_issuances/' . $issuances->id) }}">
+                                {{ $issuances->title }} </a><br>
+                            <p class="mt-2" style="font-size: 12px;">
+                                {{ Carbon\Carbon::parse($issuances->date)->format('F d, Y') }}
+                            </p>
+                            <p class="text-center" style="font-size: 12px;">
+                                {{ $issuances->outcome_area }}</p>
+                        </td>
+                        <td class="" style="background-color:#002C76; color:white;  font-size: 12px;">
+                            Reference No: <span
+                                style="font-size: 15px; font-weight: 350; color:white;">{{ $issuances->reference_num }}</span>
+                            <p class="text-center mt-2" style=" font-size: 14px">
+                                {{ $issuances->category }}</p>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex justify-content-center mb-5 mt-3">
+        <a href="{{ url('/latest_issuances') }}" type="button" class="btn btn-sm"
+            style="background-color: #8c0509; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
+            href="#">See more...</a>
+    </div>
+
     <div class="col-md-12 mb-5">
         <div class="row">
             <div class="col-md-6">

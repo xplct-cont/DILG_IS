@@ -15,13 +15,12 @@ use App\Http\Controllers\Admin_View\Admin_FaqsController;
 use App\Http\Controllers\Admin_View\Admin_HomeController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
+use App\Http\Controllers\Admin_View\Admin_DownloadablesController;
 use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Home\HomeController;
-// use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
 
 //Normal View
-// use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Admin_View\Admin_UpdateController;
 use App\Http\Controllers\Normal_View\About\AboutController;
 use App\Http\Controllers\Admin_View\Admin_ProfileController;
@@ -29,20 +28,15 @@ use App\Http\Controllers\Admin_View\AdminRegisterController;
 use App\Http\Controllers\Normal_View\Update\UpdatesController;
 use App\Http\Controllers\Admin_View\Admin_OrganizationController;
 use App\Http\Controllers\Normal_View\Contacts\ContactsController;
-// use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
 use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Bohol_IssuancesController;
-use App\Http\Controllers\Normal_View\Republic_Act\RepublicActController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
-use App\Http\Controllers\Normal_View\Memo_Circular\MemoCircularController;
-use App\Http\Controllers\Normal_View\Draft_Issuance\DraftIssuanceController;
-use App\Http\Controllers\Normal_View\Joint_Circular\JointCircularController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
 use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
-use App\Http\Controllers\Normal_View\Presidential_Directive\PresidentialDirectiveController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -100,6 +94,11 @@ Route::post('/add-issuances', [Admin_Bohol_IssuancesController::class, 'store'])
 Route::get('/delete_issuances/{id}', [Admin_Bohol_IssuancesController::class, 'delete_issuances']);
 Route::put('/update-issuances/{id}', [Admin_Bohol_IssuancesController::class, 'update_issuances']);
 
+Route::get('/admin/downloadables', [Admin_DownloadablesController::class, 'index'])->name('admin/downloadables');
+Route::post('/add-downloadables', [Admin_DownloadablesController::class, 'store']);
+Route::get('/delete_downloadables/{id}', [Admin_DownloadablesController::class, 'delete_downloadables']);
+Route::put('/update-downloadables/{id}', [Admin_DownloadablesController::class, 'update_downloadables']);
+
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
@@ -146,24 +145,6 @@ Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts')
 Route::get('/news_update', [UpdatesController::class, 'index'])->name('/news_update');
 
 Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -12,6 +12,7 @@ class Faq extends Model
     protected $primaryKey = 'id';
     protected $fillable =
     [
+        'outcome_area',
         'questions',
         'answers',
 

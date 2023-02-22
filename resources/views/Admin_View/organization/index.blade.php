@@ -8,6 +8,30 @@
         </div>
     @endif
 
+
+    <div class="search" style="position:relative; top: 5px;">
+        <div class="mx-auto" style="width:300px;">
+            <form action="{{ url('admin/organization') }}" method="GET" role="search">
+
+                <div class="input-group">
+                    <span class="input-group-btn mr-1 mt-0">
+                        <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                            <span class="fas fa-search"></span>
+                        </button>
+                    </span>
+                    <input type="text" class="form-control mr-1" name="orgs" placeholder="Search..."
+                        id="orgs">
+                    <a href="{{ url('admin/organization') }}" class=" mt-0">
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                <span class="fas fa-sync-alt"></span>
+                            </button>
+                        </span>
+                    </a>
+                </div>
+            </form>
+        </div>
+
     <div class="d-flex justify-content-end mt-5">
         <!-- Button trigger modal -->
         <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
@@ -19,7 +43,7 @@
             aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header" style="background-color: #C9282D; color:white;">
+                    <div class="modal-header" style="background-color: #8c0509; color:white;">
                         <h5 class="modal-title" id="exampleModalLabel">Adding to Organizational Structure</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -81,8 +105,8 @@
     <div class="elevation-1 p-3 rounded mt-2">
         <div class="card-header d-flex justify-content-between mb-1">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-            <h1 class="" style="font-size: 21px; font-weight: 450;"><span class="fas fa-users"
-                    style="color:#C9282D;"></span> ORGANIZATIONAL PROFILE</h1>
+            <h1 class="" style="font-size: 18px; font-weight: 450;"><span class="fas fa-users"
+                    style="color:#8c0509;"></span> ORG. STRUCTURE</h1>
         </div>
 
 
@@ -123,7 +147,7 @@
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <div class="modal-header" style="background-color: #C9282D; color:white;">
+                                    <div class="modal-header" style="background-color: #8c0509; color:white;">
                                         <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -233,4 +257,9 @@
             </tbody>
         </table>
     </div>
+
+    <div class="d-flex justify-content-end mt-2">
+        {{ $orgs->links() }}
+    </div>
+
 @endsection

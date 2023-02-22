@@ -14,7 +14,7 @@
             aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header" style="background-color: #C9282D; color:white;">
+                    <div class="modal-header" style="background-color: #8c0509; color:white;">
                         <h5 class="modal-title" id="exampleModalLabel">Adding New User </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>

@@ -29,7 +29,7 @@
                                     {{ $job_list->details }}</p>
                                 <a href="{{ $job_list->link }}"
                                     class=" mt-5 btn btn-sm text-white col-sm-2 mx-auto text-center"
-                                    style="background-color: #C9282D">View Details</a>
+                                    style="background-color: #8c0509">View Details</a>
                             </div>
                         </div>
                     </div>

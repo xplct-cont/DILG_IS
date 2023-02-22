@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('out_come_areas', function (Blueprint $table) {
+        Schema::create('downloadables', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
+            $table->longText('title')->nullable();
+            $table->longText('link')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('out_come_areas');
+        Schema::dropIfExists('downloadables');
     }
 };

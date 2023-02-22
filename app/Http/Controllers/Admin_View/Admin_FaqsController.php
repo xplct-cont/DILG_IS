@@ -17,16 +17,34 @@ class Admin_FaqsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index(Request $request){
 
-        $faq = DB::table('faqs')->get();
-        return view('Admin_View.faqs.index', compact('faq'));
+        // $faq = DB::table('faqs')->get();
+
+        $faq = Faq::where([
+            ['created_at', '!=', null],
+            [function($query) use ($request){
+                if(($faq = $request->faq)){
+                    $query->orWhere('outcome_area', 'LIKE', '%'. $faq . '%')
+                    ->orWhere('questions', 'LIKE', '%'. $faq . '%')
+                    ->orWhere('answers', 'LIKE', '%'. $faq . '%')->get();
+                    
+                }
+            }]
+        ])
+    
+        ->orderBy("created_at","DESC")
+        ->paginate(12);
+
+        return view('Admin_View.faqs.index', compact('faq'))
+        ->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function store(Request $request){
         
         $faq = new Faq;
        
+        $faq->outcome_area = $request->input('outcome_area');
         $faq->questions = $request->input('questions');
         $faq->answers = $request->input('answers');
 
@@ -39,6 +57,7 @@ class Admin_FaqsController extends Controller
     public function update_faqs(Request $request, $id){
         $faq = Faq::find($id);
 
+        $faq->outcome_area = $request->input('outcome_area');
         $faq->questions = $request->input('questions');
         $faq->answers = $request->input('answers');
        

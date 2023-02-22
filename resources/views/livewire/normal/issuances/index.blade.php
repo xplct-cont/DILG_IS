@@ -12,7 +12,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6 mt-2">
-                                <select class="form-select mt-1"  wire:model="category">
+                                <select class="form-select mt-1" wire:model="category">
                                     <option value="all">All Issuances</option>
                                     @foreach ($issuances as $category)
                                         <option value="{{ $category->category }}">{{ $category->category }}</option>
@@ -20,8 +20,8 @@
                                 </select>
                             </div>
                             <div class="col-md-6 mt-2">
-                                <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
-                                    placeholder="Search">
+                                <input type="search" style="border-radius: 20px;" wire:model="search"
+                                    class="form-control input" placeholder="Search">
                             </div>
                         </div>
                     </div>
@@ -38,6 +38,8 @@
                                         <p class="mt-2" style="font-size: 12px;">
                                             {{ Carbon\Carbon::parse($latest_issuances->date)->format('F d, Y') }}
                                         </p>
+                                        <p class="text-center" style="font-size: 12px;">
+                                            {{ $latest_issuances->outcome_area }}</p>
                                     </td>
                                     <td class="" style="background-color:#002C76; color:white;  font-size: 12px;">
                                         Reference No: <span
