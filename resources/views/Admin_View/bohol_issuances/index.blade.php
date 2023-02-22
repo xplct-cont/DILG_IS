@@ -159,15 +159,6 @@
                         </tr>
                     </thead>
 
-<<<<<<< HEAD
-                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                            style="text-align: center">{{ $issuances->date }}</td>
-                            <td>{{$issuances->outcomearea->title}}</td>
-                            <td>{{ $issuances->category }}</td>
-                            <td>{{ $issuances->title }}</td>
-                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
-                                {{ $issuances->reference_num }}</td>
-=======
                     <tbody class="text-center">
                         @foreach ($b_issuances as $issuances)
                             <tr>
@@ -180,7 +171,6 @@
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">
                                     {{ $issuances->reference_num }}</td>
->>>>>>> ca5053af385c6c2ddcd1278ecc8b485b81f10d64
 
                                 <td><a href="#" data-toggle="modal" id="issuances_edit_link" class="btn"
                                         data-target="#issuances_id{{ $issuances->id }}"><span
