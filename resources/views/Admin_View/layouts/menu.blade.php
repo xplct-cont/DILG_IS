@@ -72,10 +72,6 @@
     </a>
 </li>
 <li class="nav-item">
-<<<<<<< HEAD
-    <a href="{{ route('admin/users') }}"
-        class="nav-link {{ Request::is('admin/users*') ? 'bg-secondary active' : '' }}">
-=======
     <a href="{{ route('admin/knowledge_materials') }}"
         class="nav-link {{ Request::is('admin/knowledge_materials*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Knowledge Materials</p>
@@ -90,9 +86,8 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('admin/register') }}"
-        class="nav-link {{ Request::is('admin/register*') ? 'bg-secondary active' : '' }}">
->>>>>>> cd9642985494d3530e97ca720d4cb1753a1571d5
+    <a href="{{ route('admin/users') }}"
+        class="nav-link {{ Request::is('admin/users*') ? 'bg-secondary active' : '' }}">
         <p class="text-white">Users</p>
         <i class="fas fa-user-cog fa-pull-left fa-md text-white"></i>
     </a>
