@@ -61,7 +61,7 @@ class Admin_OrganizationController extends Controller
 
         $orgs->save();
 
-        return redirect()->back()->with('message', 'Added to Organizational Structure Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully!');
      
     }
 
@@ -89,7 +89,7 @@ class Admin_OrganizationController extends Controller
     }
 
     $orgs->update();
-    return redirect()->back()->with('message', 'Profile Updated Successfully!');
+    return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 
@@ -106,7 +106,7 @@ class Admin_OrganizationController extends Controller
              }
             $orgs->delete();
            
-        return redirect()->back()->with('message', 'Profile Deleted Successfully!');
+        return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 
 }

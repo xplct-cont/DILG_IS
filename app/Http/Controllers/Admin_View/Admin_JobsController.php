@@ -59,7 +59,7 @@ class Admin_JobsController extends Controller
 
         $admin_jobs->save();
 
-        return redirect()->back()->with('message', 'Added Vacant Position Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully!');
 
     }
 
@@ -87,7 +87,7 @@ class Admin_JobsController extends Controller
     }
 
     $admin_jobs->update();
-    return redirect()->back()->with('message', 'Vacant Position Updated Successfully!');
+    return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 
@@ -104,7 +104,7 @@ class Admin_JobsController extends Controller
              }
             $admin_jobs->delete();
 
-        return redirect()->back()->with('message', 'Vacant Position Deleted Successfully!');
+        return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 
 }

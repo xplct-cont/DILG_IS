@@ -50,7 +50,7 @@ class Admin_FaqsController extends Controller
 
         $faq->save();
 
-        return redirect()->back()->with('message', 'Added to FAQ Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully!');
      
     }
 
@@ -63,14 +63,14 @@ class Admin_FaqsController extends Controller
        
     $faq->update();
 
-    return redirect()->back()->with('message', 'FAQ Updated Successfully!');
+    return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 
     public function delete_faqs($id){
         $remove = Faq::findOrFail($id);
         $remove -> delete();
-        return redirect()->back()->with('message', 'FAQ Deleted Successfully!');   
+        return redirect()->back()->with('message', 'Deleted Successfully!');   
       }    
 
 
