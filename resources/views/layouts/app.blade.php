@@ -114,7 +114,8 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" target="_blank" href="https://library.dilg.gov.ph/">DILG
                                         E-Library</a></li>
-                                <li><a class="dropdown-item" href="{{url('/knowledge_materials')}}">Knowledge Materials</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/knowledge_materials') }}">Knowledge
+                                        Materials</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -368,7 +369,7 @@
                 <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}
                 </p>
             </div>
-           
+
 
 
 
@@ -377,32 +378,61 @@
 
             <div class="d-flex justify-content-start mt-5">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-sm" style="background-color: #89898a; color:white; font-size: 9px;" data-toggle="modal"
-                    data-target="#exampleModal">
-                   Developers
-                </button>
-    
+
+                <button type="button" class="btn btn-sm"
+                    style="background-color: #89898a; color:white; font-size: 9px;" data-toggle="modal"
+                    data-target=".bd-example-modal-sm">
+                    Developers</button>
+
+
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
+                <div class="modal fade bd-example-modal-sm mt-5" tabindex="-1" role="dialog"
+                    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm rounded">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header bg-dark rounded">
+                                <h1 class=""
+                                    style="font-size: 18px; color:white; font-weight: 500; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                                    Developers</h1>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                
-                                
-                              
-                                  
+                            <div class="modal-body rounded bg-dark mx-auto">
+
+                                <div>
+                                    <a href="https://github.com/viennarose" target="_blank">
+                                        <img src="/img/vienna.jpg" width="18%" class="rounded" /> <span
+                                            style="color:white; font-size: 18px;">&nbsp; Vienna Rose Pepito
+                                            &nbsp;&nbsp;</span></a>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://github.com/xplct-cont" target="_blank">
+                                        <img src="/img/kenn.jpg" width="18%" class="rounded" /> <span
+                                            style="color:white; font-size: 18px;">&nbsp; Kenn Secusana
+                                            &nbsp;&nbsp;</span></a>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://github.com/chadiegil" target="_blank">
+                                        <img src="/img/chadie.jpg" width="18%" class="rounded" /> <span
+                                            style="color:white; font-size: 18px;">&nbsp; Chadie Gil Augis
+                                            &nbsp;&nbsp;</span></a>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://github.com/dfkhin" target="_blank">
+                                        <img src="/img/franklin.jpg" width="18%" class="rounded" /> <span
+                                            style="color:white; font-size: 18px;">&nbsp; Franklin Pogoy
+                                            &nbsp;&nbsp;</span></a>
+                                </div>
+
+                                <hr>
+                                <p class="text-center " style="font-size: 12px;"> Contact Number: 09096027312</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-    
+
 
 
 
@@ -420,7 +450,7 @@
             <button onclick="topFunction()" id="myBtn" title="Go to top"
                 style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
 
-          
+
 
 </body>
 <script></script>
@@ -479,9 +509,6 @@
     #myBtn:hover {
         background-color: #555;
     }
-
-  
-  
 </style>
 
 <script>
@@ -494,7 +521,7 @@
     };
 
     function scrollFunction() {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+        if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
             mybutton.style.display = "block";
         } else {
             mybutton.style.display = "none";
