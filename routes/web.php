@@ -149,6 +149,9 @@ Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 //Admin_View Routes
 Route::get('admin/users',[Admin_UserController::class,'index'])->name('admin/users');
 Route::post('/add-user', [Admin_UserController::class, 'store']);
+Route::put('/update-user/{id}', [Admin_UserController::class, 'update_user']);
+Route::get('/delete_user/{id}', [Admin_UserController::class, 'delete_user']);
+Route::get('/role_user/{id}', [Admin_UserController::class, 'show']);
 
 
 

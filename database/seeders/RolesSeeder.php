@@ -1,12 +1,13 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\User;
 
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\PermissionRegistrar;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class UserSeeder extends Seeder
+class RolesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,18 +16,10 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        app()[PermissionRegistrar::class]->forgetCachedPermissions();
+
         $role1 = Role::create(['name' => 'Super-Admin']);
         $role2 = Role::create(['name' => 'Admin']);
         $role3 = Role::create(['name' => 'Publisher']);
-
-        $user = User::create([
-            'name' => 'Albus Dumbledore',
-            'position' => 'Administrator',
-            'email' => 'admin@gmail.com',
-            'email_verified_at' => now(),
-            'password' => 'admin12345',
-
-        ]);
-        $user->assignRole($role1);
     }
 }

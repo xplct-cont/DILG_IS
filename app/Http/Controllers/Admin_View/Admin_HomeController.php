@@ -41,8 +41,9 @@ class Admin_HomeController extends Controller
         $downloadables = DB::table('downloadables')->count();
         $knowledge_materials = DB::table('knowledge_materials')->count();
         $prov_officials = DB::table('provincial_officials')->count();
+        $users = DB::table('users')->count();
 
-        return view('Admin_View.layouts.home',compact('home_images', 'updates','jobs','orgs', 'pdmus', 'lgus', 'field_officers', 'faqs', 'b_issuances', 'downloadables', 'knowledge_materials', 'prov_officials'));
+        return view('Admin_View.layouts.home',compact('home_images', 'updates','jobs','orgs', 'pdmus', 'lgus', 'field_officers', 'faqs', 'b_issuances', 'downloadables', 'knowledge_materials', 'prov_officials', 'users'));
     }
 
 
