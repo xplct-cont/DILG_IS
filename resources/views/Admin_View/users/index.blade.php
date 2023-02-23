@@ -106,10 +106,10 @@
                                                             <label for="role" style="color:dimgray">User Role</label>
                                                                 <select name="role" id="role" class="form-select">
                                                                     @foreach ($user->roles as $user_role )
-                                                                        <option selected>{{ $user_role->name }}</option>
+                                                                        <option value="{{$user_role->id}}"selected>{{ $user_role->name }}</option>
                                                                     @endforeach
                                                                     @foreach ($roles as $role )
-                                                                        <option value="{{$role->name}}">{{$role->name}}</option>
+                                                                        <option value="{{$role->id}}">{{$role->name}}</option>
                                                                     @endforeach
                                                                 </select>
                                                         </div>

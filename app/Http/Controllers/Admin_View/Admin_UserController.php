@@ -58,15 +58,14 @@ class Admin_UserController extends Controller
         $users->position = $request->input('position');
         $users->email = $request->input('email');
         $users->email_verified_at = now();
-        $users->password = $request->input('password');
-        //$users->removeRole($request->role);
-        $users->assignRole($request->role);
-        // if ($users->hasRole($request->role)) {
-        //     $users->removeRole($request->role);
-        //     $users->assignRole($request->role);
-        // }
+        //$users->password = $request->input('password');
+        $users->roles()->sync([$request->input('role')]);
 
+        if ($users->hasRole($request->role)) {
+            $users->removeRole($request->role);
+        }
 
+        $newPassword = $request->get('password');
         if($request->hasFile('profile_image')){
 
             $destination = 'user_profile_images/'.$users->profile_img;
@@ -82,64 +81,26 @@ class Admin_UserController extends Controller
 
         }
 
-    $users->update();
+    //$users->update();
+    if(empty($newPassword)){
+        $users->update($request->except('password'));
+    }else{
+        $users->update($request->all());
+    }
     return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 
     public function delete_user(Request $request, $id)
     {
-
-        // $ids = $request->ids;
-        // user::whereIn('id', $ids)->delete();
-
-            $users = User::find($id);
-            $destination = public_path('user_profile_images/'.$users->profile_image);
-             if(File::exists($destination)){
-                 File::delete($destination);
-             }
-            $users->delete();
+        $users = User::find($id);
+        $destination = public_path('user_profile_images/'.$users->profile_image);
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+        $users->delete();
 
         return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 
-    public function show(Request $request, $id)
-    {
-        $roles = Role::all();
-        $permissions = Permission::all();
-
-        return view('Admin_View.users.index', compact('user', 'roles', 'permissions'));
-    }
-
-    // public function assignRole(Request $request, $id)
-    // {
-    //     if ($user->hasRole($request->role)) {
-    //         return back()->with('message', 'Role exists.');
-    //     }
-
-    //     $user->assignRole($request->role);
-    //     return back()->with('message', 'Role assigned.');
-    // }
-
-    // public function removeRole($id, Role $role)
-    // {
-    //     if ($user->hasRole($role)) {
-    //         $user->removeRole($role);
-    //         return back()->with('message', 'Role removed.');
-    //     }
-
-    //     return back()->with('message', 'Role not exists.');
-    // }
-
-
-
-    public function destroy(User $user)
-    {
-        if ($user->hasRole('admin')) {
-            return back()->with('message', 'you are admin.');
-        }
-        $user->delete();
-
-        return back()->with('message', 'User deleted.');
-    }
 }
