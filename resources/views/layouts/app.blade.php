@@ -292,8 +292,6 @@
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
         </footer>
-
-
     </div>
 
     <div class="" style=" padding: 20px; background-color:#efefef; color: #DCDCDC;">
@@ -301,17 +299,14 @@
             <div class="container">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-2 text-left">
+                        <div class="col-md-4 text-center">
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">REPUBLIC OF THE
+                                PHILIPPINES</p>
                             <img src="/img/govph-seal.jpg" style="height: 100px; width: 100px;" alt="">
 
                         </div>
-                        <div class="col-md-3 text-justify">
-                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">REPUBLIC OF THE
-                                PHILIPPINES</p>
-                            <p class="text-secondary" style="font-size: 12px; font-weight: 300;">All content is in the
-                                public domain unless otherwise stated.</p>
-                        </div>
-                        <div class="col-md-3 text-justify">
+
+                        <div class="col-md-4 text-justify">
                             <p class="text-secondary" style="font-size: 12px; font-weight: 500;">ABOUT GOVPH</p>
                             <p class="text-secondary" style="font-size: 12px; font-weight: 300;">Learn more about the
                                 Philippine government, its structure, how government works and the people behind it.
@@ -322,7 +317,7 @@
                                     Gazette</a>
                             </p>
                         </div>
-                        <div class="col-md-3 text-justify">
+                        <div class="col-md-4 text-justify">
                             <p class="text-secondary" style="font-size: 12px; font-weight: 500;">
                                 GOVERNMENT LINKS</p>
                             <a href="https://president.gov.ph/" target="_blank">
@@ -369,11 +364,6 @@
                 <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}
                 </p>
             </div>
-
-
-
-
-
 
 
             <div class="d-flex justify-content-start mt-5">
@@ -432,19 +422,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             <button onclick="topFunction()" id="myBtn" title="Go to top"
