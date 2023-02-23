@@ -85,6 +85,7 @@
         <i class="fas fa-user-tie fa-pull-left fa-md text-white"></i>
     </a>
 </li>
+@role('Super-Admin')
 <li class="nav-item">
     <a href="{{ route('admin/users') }}"
         class="nav-link {{ Request::is('admin/users*') ? 'bg-secondary active' : '' }}">
@@ -92,6 +93,7 @@
         <i class="fas fa-user-cog fa-pull-left fa-md text-white"></i>
     </a>
 </li>
+@endrole
 
 
 <style scoped>
