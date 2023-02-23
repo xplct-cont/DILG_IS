@@ -13,7 +13,7 @@
     <div class="elevation-1 p-3 rounded mt-2">
         <div class="card-header d-flex justify-content-between mb-1">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-            <h1 class="" style="font-size: 18px; font-weight: 450;"><span class="fas fa-people-carry"
+            <h1 class="" style="font-size: 18px; font-weight: 450;"><span class="fas fa-user-cog"
                     style="color:#8c0509;"></span> Users </h1>
         </div>
 

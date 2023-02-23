@@ -85,14 +85,22 @@
         <i class="fas fa-user-tie fa-pull-left fa-md text-white"></i>
     </a>
 </li>
+
 @role('Super-Admin')
-<li class="nav-item">
-    <a href="{{ route('admin/users') }}"
-        class="nav-link {{ Request::is('admin/users*') ? 'bg-secondary active' : '' }}">
-        <p class="text-white">Users</p>
-        <i class="fas fa-user-cog fa-pull-left fa-md text-white"></i>
-    </a>
-</li>
+    <li class="nav-item">
+        <a href="{{ route('admin/logs') }}"
+            class="nav-link {{ Request::is('admin/logs*') ? 'bg-secondary active' : '' }}">
+            <p class="text-white">Logs</p>
+            <i class="fas fa-pen fa-pull-left fa-md text-white"></i>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{ route('admin/users') }}"
+            class="nav-link {{ Request::is('admin/users*') ? 'bg-secondary active' : '' }}">
+            <p class="text-white">Users</p>
+            <i class="fas fa-user-cog fa-pull-left fa-md text-white"></i>
+        </a>
+    </li>
 @endrole
 
 

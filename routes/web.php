@@ -35,6 +35,7 @@ use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
 use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Bohol_IssuancesController;
+use App\Http\Controllers\Admin_View\Admin_LogsController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
 use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
@@ -163,6 +164,8 @@ Route::get('/admin/news_updates', [Admin_UpdateController::class, 'index'])->nam
 Route::post('/add-updates', [Admin_UpdateController::class, 'store']);
 Route::get('/delete_updates/{id}', [Admin_UpdateController::class, 'delete_updates']);
 Route::put('/edit_updates/{id}', [Admin_UpdateController::class, 'edit_updates']);
+
+Route::get('/admin/logs', [Admin_LogsController::class, 'index'])->name('admin/logs');
 
 
 //Normal_View Routes
