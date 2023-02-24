@@ -33,11 +33,11 @@ class Index extends Component
     }
     public function render()
     {
-        $logs = Activity::all();
+        $logs = Activity::where('causer_id', '!=', 1)->get();
         $logsFilter = Activity::where('event', 'like', '%'.$this->search.'%')
         ->orWhere('description', 'like', '%'.$this->search.'%')
         ->orderBy('created_at', 'desc')->paginate(5);
         return view('livewire.admin.logs-activity.index', $this->loadLogs(),
-        ['logs'=> Activity::all(), 'logsFilter' => $logsFilter]);
+        ['logs'=> Activity::where('causer_id', '!=', 1)->get(), 'logsFilter' => $logsFilter]);
     }
 }

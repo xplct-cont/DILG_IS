@@ -55,12 +55,14 @@
     </thead>
     <tbody class="text-dark">
         @foreach ($logs as $log )
+        @if($log->causer_id != 1)
         <tr>
             <td>{{$log->event}}</td>
             <td>{{$log->description}}</td>
             <td>{{$log->causer->name}}</td>
             <td>{{$log->created_at}}</td>
         </tr>
+        @endif
         @endforeach
     </tbody>
 </table>
