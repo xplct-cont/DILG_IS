@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Activitylog\LogOptions;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Provincial_Official extends Model
 {
-    use HasFactory;
+    use HasFactory, LogsActivity;
 
     protected $primaryKey = 'id';
     protected $fillable =
@@ -25,6 +27,15 @@ class Provincial_Official extends Model
 
     protected $casts = [
         'created_at' => 'datetime',
-        
+
     ];
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        ->logOnly(['profile_image', 'name',
+                    'position', 'message',])
+        ->setDescriptionForEvent(fn(string $eventName) => "The Provincial Official has been {$eventName}")
+        ->logOnlyDirty();
+    }
 }

@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Activitylog\LogOptions;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Field_Officer extends Model
 {
-    use HasFactory;
+    use HasFactory, LogsActivity;
 
     protected $primaryKey = 'id';
     protected $fillable =
@@ -45,5 +47,19 @@ class Field_Officer extends Model
                 ->orWhere('cluster', 'like', $term);
 
         });
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        ->logOnly(['municipality_id',
+                    'profile_img',
+                    'fname',
+                    'mid_initial',
+                    'lname',
+                    'position',
+                    'cluster',])
+        ->setDescriptionForEvent(fn(string $eventName) => "A field officer has been {$eventName}")
+        ->logOnlyDirty();
     }
 }
