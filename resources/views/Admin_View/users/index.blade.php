@@ -36,6 +36,9 @@
             </thead>
             <tbody class=" text-dark">
                 @foreach ($users as $user)
+                @if ($user->id != 1)
+
+
                     <tr>
 
                         <td><img src="{{ asset('user_profile_images/' . $user->profile_image) }}"
@@ -165,7 +168,9 @@
                             </div>
                         </div>
                     </tr>
+                    @endif
                 @endforeach
+
             </tbody>
         </table>
     </div>
