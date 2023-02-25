@@ -15,7 +15,7 @@ class Index extends Component
     public $toDate = null;
     public function loadLogs(){
 
-        $query = Activity::orderBy('created_at', 'desc')
+        $query = Activity::orderBy('created_at', 'desc')->where('causer_id', '!=', 1)
             ->search($this->search);
 
         if($this->event != 'all'){
