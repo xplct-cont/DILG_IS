@@ -41,3 +41,5 @@ class Index extends Component
         ['logs'=> Activity::where('causer_id', '!=', 1)->get(), 'logsFilter' => $logsFilter]);
     }
 }
+
+

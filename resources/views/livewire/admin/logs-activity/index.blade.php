@@ -17,8 +17,8 @@
                     class="form-control ">
 
             </div>
-            <div class="col-md-2 mt-3">
-                <label for="">Changes</label>
+            <div class="col-md-2 mt-2 text-center">
+                <label for="" style="font-weight: 400">Event Changes</label>
                 <select name="event" id="event" class="form-select" style="color:dimgray;" wire:model="event">
                     <option value="all">All Changes</option>
                     <option value="created">
@@ -49,11 +49,10 @@
                 <th class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">Date and
                     Time</th>
             </tr>
-
         </thead>
         <tbody class="text-dark">
             @foreach ($logs as $log)
-                @if ($log->causer_id != 1)
+                @if ($log->causer_id != '1')
                     <tr>
                         <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                             @if ($log->event === 'created')
