@@ -44,7 +44,7 @@ class Admin_HomeController extends Controller
         $knowledge_materials = DB::table('knowledge_materials')->count();
         $prov_officials = DB::table('provincial_officials')->count();
         $logs = DB::table('activity_log')->count();
-        $users = DB::table('users')->count();
+        $users = DB::table('users')->where('id','!=', 1)->count();
 
         return view('Admin_View.layouts.home',compact('home_images', 'updates','jobs','orgs', 'pdmus', 'lgus', 'field_officers', 'faqs', 'b_issuances', 'downloadables', 'knowledge_materials', 'prov_officials','logs' , 'users'));
     }
