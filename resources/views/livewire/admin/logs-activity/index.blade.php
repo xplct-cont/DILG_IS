@@ -59,7 +59,7 @@
         <tr>
             <td>{{$log->event}}</td>
             <td>{{$log->description}}</td>
-            <td>{{$log->causer->name}}</td>
+            <td>{{$log->causer->name ?? 'None'}}</td>
             <td>{{$log->created_at}}</td>
         </tr>
         @endif
