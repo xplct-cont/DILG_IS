@@ -58,10 +58,11 @@ use App\Http\Controllers\Normal_View\Provincial_Officials\Provincial_OfficialsCo
 Route::get('/', [HomeController::class, 'index']);
 
 
-Auth::routes();
 
 //Routes for Kenn
 //Admin_View Routes
+Auth::routes();
+
 Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 Route::post('/add_images/{id}', [Admin_HomeController::class, 'store']);
 
@@ -139,14 +140,7 @@ Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
 
 
-
-
-
-
-
-
 //Routes for Chadie
-
 //Admin_View Routes
 Route::group(['middleware' => ['role:Super-Admin']], function () {
     Route::get('admin/users',[Admin_UserController::class,'index'])->name('admin/users');
@@ -180,8 +174,6 @@ Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 
 
 //Routes for Franklin
-
-
 //Admin_View Routes
 Route::get('/admin/field_officers', [Admin_Field_OfficersController::class, 'index'])->name('admin/field_officers');
 Route::post('/add-field_officer', [Admin_Field_OfficersController::class, 'store']);
@@ -192,13 +184,6 @@ Route::put('/update-field_officer/{id}', [Admin_Field_OfficersController::class,
 //Normal_View Routes
 Route::get('/organization',[OrganizationController::class, 'index']);
 Route::get('/field_officers',[Field_OfficersController::class, 'index'])->name('/field_officers');
-
-
-
-
-
-
-
 
 
 //End here

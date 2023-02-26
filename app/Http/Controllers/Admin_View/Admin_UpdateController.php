@@ -12,6 +12,13 @@ use App\Models\Update;
 
 class Admin_UpdateController extends Controller
 {
+
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request){
 
         $news_images = Update::where([

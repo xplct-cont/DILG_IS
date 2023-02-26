@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Hash;
 
 class Admin_ChangePasswordController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
