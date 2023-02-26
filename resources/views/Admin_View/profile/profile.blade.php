@@ -23,7 +23,7 @@
                                     class="img-circle elevation-4" alt="User Image"
                                     style="height: 300px; width: 300px; border-radius: 50%; padding-top:10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">
                             </div>
-                            <p class="text-center mt-2 mb-1" style="font-weight: 500;">{{ Auth::user()->name }}</p>
+                            <p class="text-center text-dark mt-2 mb-1" style="font-weight: 500;">{{ Auth::user()->name }}</p>
                         </div>
                         <div class="form-group mb-3 col-md-6 mx-auto">
                             <label for="" style="color:dimgray;"></label>
