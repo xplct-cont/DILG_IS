@@ -61,4 +61,7 @@ class User extends Authenticatable
         ->setDescriptionForEvent(fn(string $eventName) => "A user has been {$eventName}")
         ->logOnlyDirty();
     }
+    public function updateNews(){
+        return $this->hasMany('App\Models\Update');
+    }
 }
