@@ -61,7 +61,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 //Routes for Kenn
 //Admin_View Routes
-Auth::routes();
+Auth::routes(['register'=>false]);
 
 Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 Route::post('/add_images/{id}', [Admin_HomeController::class, 'store']);
