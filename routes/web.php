@@ -142,9 +142,6 @@ Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
-
-
-
 //Routes for Chadie
 //Admin_View Routes
 Route::group(['middleware' => ['role:Super-Admin']], function () {
