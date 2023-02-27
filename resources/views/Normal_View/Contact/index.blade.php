@@ -77,7 +77,7 @@
                                 <div class="form-group">
                                     <label for="" style="color:dimgray">To:</label>
                                     <input type="email" class="form-control" name="email"
-                                        value="aquarius.pink27@gmail.com" readonly>
+                                        value="kennbassist@gmail.com" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label for="" style="color:dimgray">Subject:</label>
