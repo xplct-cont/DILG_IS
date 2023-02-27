@@ -150,6 +150,10 @@ Route::group(['middleware' => ['role:Super-Admin']], function () {
 });
 
 
+Route::get('excel',function(){
+    return view('excel');
+});
+
 
 
 //Routes for Vienna
