@@ -159,7 +159,10 @@ Route::post('/add-updates', [Admin_UpdateController::class, 'store']);
 Route::get('/delete_updates/{id}', [Admin_UpdateController::class, 'delete_updates']);
 Route::put('/edit_updates/{id}', [Admin_UpdateController::class, 'edit_updates']);
 
+
+Route::group(['middleware' => ['role:Super-Admin']], function () {
 Route::get('/admin/logs', [Admin_LogsController::class, 'index'])->name('admin/logs');
+});
 
 
 //Normal_View Routes
