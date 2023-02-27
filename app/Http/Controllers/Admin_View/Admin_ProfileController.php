@@ -9,6 +9,11 @@ use File;
 
 class Admin_ProfileController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -79,10 +84,10 @@ class Admin_ProfileController extends Controller
 
         if($request->hasFile('profile_image')){
       
-            $destination = 'user_profile_images/'.$profile->profile_image;
-            if(File::exists($destination)){
-                File::delete($destination);
-            }
+            // $destination = 'user_profile_images/'.$profile->profile_image;
+            // if(File::exists($destination)){
+            //     File::delete($destination);
+            // }
 
             $file = $request->file('profile_image');
             $extention = $file->getClientOriginalExtension();

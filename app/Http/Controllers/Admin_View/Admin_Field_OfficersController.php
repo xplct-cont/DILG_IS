@@ -66,7 +66,7 @@ class Admin_Field_OfficersController extends Controller
 
         $field_officers->save();
 
-        return redirect()->back()->with('message', 'Added to Field Officers Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully!');
      
     }
 
@@ -96,7 +96,7 @@ class Admin_Field_OfficersController extends Controller
     }
 
     $field_officers->update();
-    return redirect()->back()->with('message', 'Field Officer Updated Successfully!');
+    return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 
@@ -113,7 +113,7 @@ class Admin_Field_OfficersController extends Controller
              }
             $field_officers->delete();
            
-        return redirect()->back()->with('message', 'Field Officer Deleted Successfully!');
+        return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 
 }

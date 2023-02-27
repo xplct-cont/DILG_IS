@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Normal_View\Lgu\LguController;
+use App\Http\Controllers\Admin_View\Admin_UserController;
 
 //Normal View
 use App\Http\Controllers\Admin_View\Admin_LguController;
@@ -15,10 +16,13 @@ use App\Http\Controllers\Admin_View\Admin_FaqsController;
 use App\Http\Controllers\Admin_View\Admin_HomeController;
 use App\Http\Controllers\Admin_View\Admin_JobsController;
 use App\Http\Controllers\Admin_View\Admin_PdmuController;
+use App\Http\Controllers\Admin_View\Admin_Provincial_OfficialsController;
 use App\Http\Controllers\Admin_View\Admin_DownloadablesController;
+use App\Http\Controllers\Admin_View\Admin_Knowledge_MaterialsController;
 use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
+use App\Http\Controllers\Normal_View\Knowledge_Materials\Knowledge_MaterialsController;
 
 //Normal View
 use App\Http\Controllers\Admin_View\Admin_UpdateController;
@@ -31,11 +35,14 @@ use App\Http\Controllers\Normal_View\Contacts\ContactsController;
 use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
 use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Bohol_IssuancesController;
+use App\Http\Controllers\Admin_View\Admin_LogsController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
 use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
 use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
+use App\Http\Controllers\Normal_View\Downloadables\DownloadablesController;
+use App\Http\Controllers\Normal_View\Provincial_Officials\Provincial_OfficialsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,10 +58,11 @@ use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesControll
 Route::get('/', [HomeController::class, 'index']);
 
 
-Auth::routes();
 
 //Routes for Kenn
 //Admin_View Routes
+Auth::routes(['register'=>false]);
+
 Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 Route::post('/add_images/{id}', [Admin_HomeController::class, 'store']);
 
@@ -99,6 +107,16 @@ Route::post('/add-downloadables', [Admin_DownloadablesController::class, 'store'
 Route::get('/delete_downloadables/{id}', [Admin_DownloadablesController::class, 'delete_downloadables']);
 Route::put('/update-downloadables/{id}', [Admin_DownloadablesController::class, 'update_downloadables']);
 
+Route::get('/admin/provincial_officials', [Admin_Provincial_OfficialsController::class, 'index'])->name('admin/provincial_officials');
+Route::post('/add-provincial_officials', [Admin_Provincial_OfficialsController::class, 'store']);
+Route::get('/delete_provincial_officials/{id}', [Admin_Provincial_OfficialsController::class, 'delete_provincial_officials']);
+Route::put('/update-provincial_officials/{id}', [Admin_Provincial_OfficialsController::class, 'update_provincial_officials']);
+
+Route::get('/admin/knowledge_materials', [Admin_Knowledge_MaterialsController::class, 'index'])->name('admin/knowledge_materials');
+Route::post('/add-knowledge_materials', [Admin_Knowledge_MaterialsController::class, 'store']);
+Route::get('/delete_knowledge_materials/{id}', [Admin_Knowledge_MaterialsController::class, 'delete_knowledge_materials']);
+Route::put('/update-knowledge_materials/{id}', [Admin_Knowledge_MaterialsController::class, 'update_knowledge_materials']);
+
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
@@ -111,21 +129,26 @@ Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->nam
 Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
 
+Route::get('/downloadables',[DownloadablesController::class, 'index'])->name('/downloadables');
+
+Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'index'])->name('/provincial_officials');
+
+Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'])->name('/knowledge_materials');
+
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
 
 
 
-
-
-
-
-
-
 //Routes for Chadie
-
 //Admin_View Routes
-Route::get('admin/register',[AdminRegisterController::class,'index'])->name('admin/register');
+Route::group(['middleware' => ['role:Super-Admin']], function () {
+    Route::get('admin/users',[Admin_UserController::class,'index'])->name('admin/users');
+    Route::post('/add-user', [Admin_UserController::class, 'store']);
+    Route::put('/update-user/{id}', [Admin_UserController::class, 'update_user']);
+    Route::get('/delete_user/{id}', [Admin_UserController::class, 'delete_user']);
+});
+
 
 
 
@@ -135,6 +158,11 @@ Route::get('/admin/news_updates', [Admin_UpdateController::class, 'index'])->nam
 Route::post('/add-updates', [Admin_UpdateController::class, 'store']);
 Route::get('/delete_updates/{id}', [Admin_UpdateController::class, 'delete_updates']);
 Route::put('/edit_updates/{id}', [Admin_UpdateController::class, 'edit_updates']);
+
+
+Route::group(['middleware' => ['role:Super-Admin']], function () {
+Route::get('/admin/logs', [Admin_LogsController::class, 'index'])->name('admin/logs');
+});
 
 
 //Normal_View Routes
@@ -149,8 +177,6 @@ Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 
 
 //Routes for Franklin
-
-
 //Admin_View Routes
 Route::get('/admin/field_officers', [Admin_Field_OfficersController::class, 'index'])->name('admin/field_officers');
 Route::post('/add-field_officer', [Admin_Field_OfficersController::class, 'store']);
@@ -161,13 +187,6 @@ Route::put('/update-field_officer/{id}', [Admin_Field_OfficersController::class,
 //Normal_View Routes
 Route::get('/organization',[OrganizationController::class, 'index']);
 Route::get('/field_officers',[Field_OfficersController::class, 'index'])->name('/field_officers');
-
-
-
-
-
-
-
 
 
 //End here

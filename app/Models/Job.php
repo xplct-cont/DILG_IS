@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Activitylog\LogOptions;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Job extends Model
 {
-    use HasFactory;
+    use HasFactory, LogsActivity;
 
 
     protected $primaryKey = 'id';
@@ -36,4 +38,15 @@ class Job extends Model
                 ->orWhere('details', 'like', $term);
         });
     }
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        ->logOnly(['hiring_img',
+                    'position',
+                    'details',
+                    'link',])
+        ->setDescriptionForEvent(fn(string $eventName) => "A job vacancy has been {$eventName}")
+        ->logOnlyDirty();
+    }
+
 }

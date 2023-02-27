@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Activitylog\LogOptions;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Faq extends Model
 {
-    use HasFactory;
+    use HasFactory, LogsActivity;
 
     protected $primaryKey = 'id';
     protected $fillable =
@@ -23,7 +25,25 @@ class Faq extends Model
 
     protected $casts = [
         'created_at' => 'datetime',
-        
+
     ];
+
+    public function scopeSearch($query, $terms){
+        collect(explode(" " , $terms))->filter()->each(function($term) use($query){
+            $term = '%'. $term . '%';
+
+            $query->where('questions', 'like', $term)
+                ->orWhere('answers', 'like', $term)
+                ->orWhere('outcome_area', 'like', $term);
+        });
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        ->logOnly(['questions', 'answers', 'outcome_area'])
+        ->setDescriptionForEvent(fn(string $eventName) => "A Frequently Asked Question (FAQ) has been {$eventName}")
+        ->logOnlyDirty();
+    }
 
 }

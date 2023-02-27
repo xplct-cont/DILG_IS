@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Activitylog\LogOptions;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Bohol_Issuance extends Model
 {
-    use HasFactory;
+    use HasFactory, LogsActivity;
 
     protected $primaryKey = 'id';
     protected $fillable =
@@ -36,9 +38,21 @@ class Bohol_Issuance extends Model
 
             $query->where('title', 'like', $term)
                 ->orWhere('reference_num', 'like', $term)
+                ->orWhere('outcome_area', 'like', $term)
                 ->orWhere('category', 'like', $term);
         });
     }
 
-
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        ->logOnly(['outcome_area',
+                    'title',
+                    'reference_num',
+                    'file',
+                    'date',
+                    'category',])
+        ->setDescriptionForEvent(fn(string $eventName) => "An issuance has been {$eventName}")
+        ->logOnlyDirty();
+    }
 }

@@ -11,15 +11,34 @@
                 <div class="container mb-4">
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-6 mt-2">
-                                <select class="form-select mt-1" wire:model="category">
-                                    <option value="all">All Issuances</option>
-                                    @foreach ($issuances as $category)
-                                        <option value="{{ $category->category }}">{{ $category->category }}</option>
-                                    @endforeach
-                                </select>
+                            <div class="col-md-6 mt-3">
+
+                                    <label for="">Outcome Area/Program:</label>
+                                    <select name="outcome_area" id="outcome_area" class="form-select"
+                                        style="color:dimgray;" wire:model="outcome">
+                                        <option value="all">All Outcome Area</option>
+                                        <option
+                                            value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
+                                            ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE
+                                        </option>
+                                        <option value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">
+                                            PEACEFUL,
+                                            ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES</option>
+                                        <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY PROTECTIVE LGUS</option>
+                                        <option
+                                            value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
+                                            ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT
+                                            LGUS
+                                        </option>
+                                        <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">BUSINESS-FRIENDLY AND
+                                            COMPETITIVE LGUS</option>
+                                        <option value="STRENGTHENING OF INTERNAL GOVERNANCE">STRENGTHENING OF
+                                            INTERNAL
+                                            GOVERNANCE</option>
+                                    </select>
+
                             </div>
-                            <div class="col-md-6 mt-2">
+                            <div class="col-md-6 mt-5">
                                 <input type="search" style="border-radius: 20px;" wire:model="search"
                                     class="form-control input" placeholder="Search">
                             </div>

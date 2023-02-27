@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth; 
 
 class LoginController extends Controller
 {
@@ -19,14 +20,23 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers{
+        redirectPath as laravelRedirectPath;
+    }
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+
+    public function redirectPath()
+     {   
+         session()->flash('message', 'Welcome '  . Auth::user()->name .'!' );
+
+         return $this->laravelRedirectPath();
+    }
 
     /**
      * Create a new controller instance.

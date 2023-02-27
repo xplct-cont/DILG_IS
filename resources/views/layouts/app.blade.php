@@ -114,7 +114,8 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a class="dropdown-item" target="_blank" href="https://library.dilg.gov.ph/">DILG
                                         E-Library</a></li>
-                                <li><a class="dropdown-item" target="_blank" href="#">Knowledge Materials</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/knowledge_materials') }}">Knowledge
+                                        Materials</a></li>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -150,6 +151,9 @@
                                         Structure/PDMU</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a>
                                 </li>
+                                <li><a class="dropdown-item" href="{{ url('/provincial_officials') }}">Provincial
+                                        Officials</a>
+                                </li>
                                 <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
                                         Agencies</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/contacts') }}">Contact Information</a>
@@ -162,7 +166,9 @@
                                 Programs & Services
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" target="_blank" href="https://subaybayan.dilg.gov.ph/projects/index?ProjectSearch%5BREGION_C%5D=07&ProjectSearch%5BPROVINCE_C%5D=012&ProjectSearch%5BCITYMUN_C%5D=&ProjectSearch%5Bbarangay%5D=&ProjectSearch%5BimageSelection%5D=&ProjectSearch%5BPROGRAM_C%5D=&ProjectSearch%5BPROJECT_TYPE%5D=&ProjectSearch%5BYEAR%5D=&ProjectSearch%5BSTATUS%5D=">Projects </a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://subaybayan.dilg.gov.ph/projects/index?ProjectSearch%5BREGION_C%5D=07&ProjectSearch%5BPROVINCE_C%5D=012&ProjectSearch%5BCITYMUN_C%5D=&ProjectSearch%5Bbarangay%5D=&ProjectSearch%5BimageSelection%5D=&ProjectSearch%5BPROGRAM_C%5D=&ProjectSearch%5BPROJECT_TYPE%5D=&ProjectSearch%5BYEAR%5D=&ProjectSearch%5BSTATUS%5D=">Projects
+                                    </a></li>
 
                             </ul>
                         </div>
@@ -172,6 +178,8 @@
                                 Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item" href="{{ url('/downloadables') }}">Downloadables</a>
+                                </li>
                                 <li><a class="dropdown-item" href="{{ url('/faqs') }}">FAQ's</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
                             </ul>
@@ -284,8 +292,6 @@
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
         </footer>
-
-
     </div>
 
     <div class="" style=" padding: 20px; background-color:#efefef; color: #DCDCDC;">
@@ -293,17 +299,14 @@
             <div class="container">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-2 text-left">
+                        <div class="col-md-4 text-center">
+                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">REPUBLIC OF THE
+                                PHILIPPINES</p>
                             <img src="/img/govph-seal.jpg" style="height: 100px; width: 100px;" alt="">
 
                         </div>
-                        <div class="col-md-3 text-justify">
-                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">REPUBLIC OF THE
-                                PHILIPPINES</p>
-                            <p class="text-secondary" style="font-size: 12px; font-weight: 300;">All content is in the
-                                public domain unless otherwise stated.</p>
-                        </div>
-                        <div class="col-md-3 text-justify">
+
+                        <div class="col-md-4 text-justify">
                             <p class="text-secondary" style="font-size: 12px; font-weight: 500;">ABOUT GOVPH</p>
                             <p class="text-secondary" style="font-size: 12px; font-weight: 300;">Learn more about the
                                 Philippine government, its structure, how government works and the people behind it.
@@ -314,7 +317,7 @@
                                     Gazette</a>
                             </p>
                         </div>
-                        <div class="col-md-3 text-justify">
+                        <div class="col-md-4 text-justify">
                             <p class="text-secondary" style="font-size: 12px; font-weight: 500;">
                                 GOVERNMENT LINKS</p>
                             <a href="https://president.gov.ph/" target="_blank">
@@ -357,44 +360,74 @@
                 </div>
             </div>
 
-
             <div class="text-center">
                 <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}
                 </p>
             </div>
+
+
+            <div class="d-flex justify-content-start mt-5">
+                <!-- Button trigger modal -->
+
+                <button type="button" class="btn btn-sm"
+                    style="background-color: #89898a; color:white; font-size: 9px;" data-toggle="modal"
+                    data-target=".bd-example-modal-sm">
+                    Developers</button>
+
+
+                <!-- Modal -->
+                <div class="modal fade bd-example-modal-sm mt-5" tabindex="-1" role="dialog"
+                    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm rounded">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark rounded">
+                                <h1 class=""
+                                    style="font-size: 18px; color:white; font-weight: 500; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                                    Developers</h1>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body rounded bg-dark mx-auto">
+
+                                <div>
+                                    <a href="https://github.com/viennarose" target="_blank">
+                                        <img src="/img/vienna.jpg" width="18%" class="rounded" /> <span
+                                            style="color:white; font-size: 18px;">&nbsp; Vienna Rose Pepito
+                                            &nbsp;&nbsp;</span></a>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://github.com/xplct-cont" target="_blank">
+                                        <img src="/img/kenn.jpg" width="18%" class="rounded" /> <span
+                                            style="color:white; font-size: 18px;">&nbsp; Kenn Secusana
+                                            &nbsp;&nbsp;</span></a>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://github.com/chadiegil" target="_blank">
+                                        <img src="/img/chadie.jpg" width="18%" class="rounded" /> <span
+                                            style="color:white; font-size: 18px;">&nbsp; Chadie Gil Augis
+                                            &nbsp;&nbsp;</span></a>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://github.com/dfkhin" target="_blank">
+                                        <img src="/img/franklin.jpg" width="18%" class="rounded" /> <span
+                                            style="color:white; font-size: 18px;">&nbsp; Franklin Pogoy
+                                            &nbsp;&nbsp;</span></a>
+                                </div>
+
+                                <hr>
+                                <p class="text-center " style="font-size: 12px;"> Contact Number: 09096027312</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <button onclick="topFunction()" id="myBtn" title="Go to top"
                 style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
 
-            <div class="dropup">
-                <button class="dropbtn">Developers
 
-                </button>
-
-                <div class="dropup-content">
-
-                    <a href="https://www.facebook.com/viennarose.pepito.73">
-                        <img src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t39.30808-6/324515260_748118056649311_4663088318989486275_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFlc3OX2LnrrSBNCm4TnwXqsMddb_t6Yy-wx11v-3pjL1HBxrN-_ya_oPuUaUrUTgusxRphMRZcUsoDTjDnpYH3&_nc_ohc=QcQ_ifgm8fIAX_7-1fq&_nc_ht=scontent.fmnl9-3.fna&oh=00_AfC4YSaXemifhM3HlfY2LQa4gCk4bzFWtPaW0RNAvyHJrg&oe=63F88E4C"
-                            width="50px"class="rounded" />
-
-                        Vienna Rose Pepito</a>
-                    <a href="https://github.com/xplct-cont">
-                        <img src="https://avatars.githubusercontent.com/u/89299194?v=4" width="50px"
-                            class="rounded" />
-
-
-                        Kenn Secusana</a>
-                    <a href="https://www.facebook.com/chadiegil">
-                        <img src="https://scontent.fmnl9-1.fna.fbcdn.net/v/t39.30808-6/302085060_839893250701859_8500980205922896607_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH-Admdtm8JCCrWjupKqVTxiHt51-OspkCIe3nX46ymQA1rB4Xn4mB0bnwpiakSTH3w4j1GyBq9PE72Btc_FUGT&_nc_ohc=ZBd3zQtALKAAX9RKyJS&_nc_ht=scontent.fmnl9-1.fna&oh=00_AfCkx0HmhrLl1eV0DoLOMNYbPpqfVJYdm2__sUIkbA1fhg&oe=63F7A960"
-                            width="50px" class="rounded" />
-
-                        Chadie Gil Augis
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=100082608113721">
-                        <img src="https://scontent.fmnl9-1.fna.fbcdn.net/v/t39.30808-6/315988218_150553581041578_8932289945262975410_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeF6R_RccK28-s6yx79MMQVPS2G_zqGZGjhLYb_OoZkaOFpKJNAaJsJ2V-Qu12eEHfkhWLJM_-lv4r8zHd7oC55o&_nc_ohc=LjRvm8Drf5EAX_b3GXK&_nc_ht=scontent.fmnl9-1.fna&oh=00_AfBzorGkJ7EafQsgdeTimjDOY0noq59zmWvzizCiE9me_Q&oe=63F84EE8"
-                            width="50" class="rounded" />
-                        Franklin Pogoy</a>
-                </div>
-            </div>
 
 </body>
 <script></script>
@@ -453,53 +486,6 @@
     #myBtn:hover {
         background-color: #555;
     }
-
-    .dropbtn {
-        background-color: #002C76;
-        color: white;
-        padding: 5px;
-        font-size: 10px;
-        border: none;
-    }
-
-    .dropup {
-        /* position: relative;
-  display: inline-block; */
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        height: 23px;
-        color: white;
-        text-align: left;
-    }
-
-    .dropup-content {
-        display: none;
-        position: absolute;
-        min-width: 225px;
-        bottom: 50px;
-        z-index: 1;
-        background-color: #002C76;
-    }
-
-    .dropup-content a {
-        color: white;
-        padding: 5px 5px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropup-content a:hover {
-        background-color: #ccc
-    }
-
-    .dropup:hover .dropup-content {
-        display: block;
-    }
-
-    .dropup:hover .dropbtn {
-        background-color: #002C76;
-    }
 </style>
 
 <script>
@@ -512,7 +498,7 @@
     };
 
     function scrollFunction() {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+        if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
             mybutton.style.display = "block";
         } else {
             mybutton.style.display = "none";

@@ -47,7 +47,8 @@
                     &
                     MISSION <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a><br><br>
                 <a href="{{ url('/latest_issuances') }}" type="button" class="btn btn-md"
-                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">LATEST ISSUANCES
+                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">LATEST
+                    ISSUANCES
                     <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a>
 
             </div>
@@ -223,7 +224,7 @@
             <div class="col-md-6">
                 <p class="text-center" style="font-size: 25px; font-weight: 500;">Location Map</p>
                 <iframe class="col-md-12"
-                    src="https://maps.google.com/maps?q=rajah sikatuna avenue&t=k&z=11&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=rajah sikatuna tagbilaran&t=k&z=16&ie=UTF8&iwloc=&output=embed"
                     height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
             </div>
@@ -243,7 +244,7 @@
             </div>
 
             <div class="container mx-auto mt-3 col-md-11">
-                <iframe src="https://www.youtube.com/embed/JYa4OBZ66fI" style="height:400; width:100%;" frameborder="0">
+                <iframe src="https://www.youtube.com/embed/JYa4OBZ66fI" style="height:450; width:100%;" frameborder="0">
 
                 </iframe>
             </div>

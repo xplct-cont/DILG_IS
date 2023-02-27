@@ -1,7 +1,7 @@
 @extends('Admin_View.layouts.app')
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-block mt-2">
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
@@ -198,8 +198,8 @@
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                 <!-- ./col -->
-                 <div class="col-lg-3 col-6 ">
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 ">
                     <!-- small box -->
                     <div class="small-box text-secondary elevation-4">
                         <div class="inner">
@@ -210,38 +210,114 @@
                         <div class="icon">
                             <i class="fas fa-download text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/downloadables') }}" class="small-box-footer bg-secondary" style="">
+                        <a href="{{ route('admin/downloadables') }}" class="small-box-footer bg-secondary"
+                            style="">
+                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 ">
+                    <!-- small box -->
+                    <div class="small-box text-secondary elevation-4">
+                        <div class="inner">
+                            <h3>{{ $knowledge_materials }}</h3>
+
+                            <p class="text-secondary">Knowledge Mat.</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-book-open text-secondary"></i>
+                        </div>
+                        <a href="{{ route('admin/knowledge_materials') }}" class="small-box-footer bg-secondary"
+                            style="">
+                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 ">
+                    <!-- small box -->
+                    <div class="small-box text-secondary elevation-4">
+                        <div class="inner">
+                            <h3>{{ $prov_officials }}</h3>
+
+                            <p class="text-secondary">Prov. Officials</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-user-tie text-secondary"></i>
+                        </div>
+                        <a href="{{ route('admin/provincial_officials') }}" class="small-box-footer bg-secondary"
+                            style="">
                             <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box text-light elevation-4" style="background-color: #8c0509;">
+                    <div class="small-box text-secondary elevation-4">
                         <div class="inner">
                             <h3>{{ $lgus }}</h3>
-
-                            <p class="text-light">LGU's</p>
+                            <p class="text-secondary">LGU's</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-city text-light"></i>
+                            <i class="fas fa-city text-secondary"></i>
                         </div>
                         <a href="{{ route('admin/lgu') }}" class="small-box-footer bg-secondary"
                             style=";color:whitesmoke;"><span class="text-light">More info</span>
                             <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+
+                @role('Super-Admin')
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $logs }}</h3>
+                                <p class="text-secondary">Logs</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-pen text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/logs') }}" class="small-box-footer bg-secondary"
+                                style=";color:whitesmoke;"><span class="text-light">More info</span>
+                                <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box text-light elevation-4" style="background-color: #8c0509;">
+                            <div class="inner">
+                                <h3>{{ $users }}</h3>
+
+                                <p class="text-light">Users</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-user-cog text-light"></i>
+                            </div>
+                            <a href="{{ route('admin/users') }}" class="small-box-footer bg-secondary"
+                                style=";color:whitesmoke;"><span class="text-light">More info</span>
+                                <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                @endrole
+
             </div>
         </div>
     </section>
     </div>
+
+    <script>
+        setTimeout(function() {
+            $(' .alert-dismissible').fadeOut('slow');
+        }, 3000);
+    </script>
 @endsection
 
 <style scoped>
     .img {
         display: flex;
         justify-content: space-evenly;
-
 
     }
 </style>

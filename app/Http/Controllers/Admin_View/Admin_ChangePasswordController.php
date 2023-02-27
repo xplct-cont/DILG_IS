@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Hash;
 
 class Admin_ChangePasswordController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,15 +30,15 @@ class Admin_ChangePasswordController extends Controller
     }
 
     public function change_password(Request $request){
-          
+
         $request->validate([
             'current_password' => ['required', new MatchOldPassword],
             'new_password' => ['required'],
             'new_confirm_password' => ['same:new_password'],
         ]);
-   
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
-   
+
+        User::find(auth()->user()->id)->update(['password'=> $request->new_password]);
+
         return redirect()->back()->with('status', 'Password changed successfully!');
      }
 }

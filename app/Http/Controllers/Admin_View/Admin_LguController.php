@@ -66,7 +66,7 @@ class Admin_LguController extends Controller
 
         $lgus->save();
 
-        return redirect()->back()->with('message', 'Added Details Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully!');
      
     }
 
@@ -86,7 +86,7 @@ class Admin_LguController extends Controller
        
     $lgus->update();
 
-    return redirect()->back()->with('message', 'Details Updated Successfully!');
+    return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 
