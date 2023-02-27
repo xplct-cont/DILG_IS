@@ -265,39 +265,43 @@
                             <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $logs }}</h3>
-                            <p class="text-secondary">Logs</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-pen text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/logs') }}" class="small-box-footer bg-secondary"
-                            style=";color:whitesmoke;"><span class="text-light">More info</span>
-                            <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box text-light elevation-4" style="background-color: #8c0509;">
-                        <div class="inner">
-                            <h3>{{ $users }}</h3>
 
-                            <p class="text-light">Users</p>
+                @role('Super-Admin')
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $logs }}</h3>
+                                <p class="text-secondary">Logs</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-pen text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/logs') }}" class="small-box-footer bg-secondary"
+                                style=";color:whitesmoke;"><span class="text-light">More info</span>
+                                <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-user-cog text-light"></i>
-                        </div>
-                        <a href="{{ route('admin/users') }}" class="small-box-footer bg-secondary"
-                            style=";color:whitesmoke;"><span class="text-light">More info</span>
-                            <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box text-light elevation-4" style="background-color: #8c0509;">
+                            <div class="inner">
+                                <h3>{{ $users }}</h3>
+
+                                <p class="text-light">Users</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-user-cog text-light"></i>
+                            </div>
+                            <a href="{{ route('admin/users') }}" class="small-box-footer bg-secondary"
+                                style=";color:whitesmoke;"><span class="text-light">More info</span>
+                                <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                @endrole
+
             </div>
         </div>
     </section>
