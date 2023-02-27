@@ -17,15 +17,17 @@
         <div class="header ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF;  margin-bottom: 5px;">
             <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">CONTACT INFORMATION</h1>
         </div>
-
         <div class="">
-            <div class="card p-5">
+            <div class=" p-3">
                 <div class="row">
                     <div class="col-md-6">
                         <h1 class="text-left" style="font-size: 28px; font-weight: 700;">Get in touch with us!</h1>
                         <p class="text-justify" style="font-size: 18px;">
-                            If you have any inquiries regarding our programs and services, please do not hesitate to contact us.
-                            We make every effort to answer any questions you may have and provide assistance with any of your needs as much as possible. Please contact us if you require any further information or would like to discuss anything related to our office.</p>
+                            If you have any inquiries regarding our programs and services, please do not hesitate to contact
+                            us.
+                            We make every effort to answer any questions you may have and provide assistance with any of
+                            your needs as much as possible. Please contact us if you require any further information or
+                            would like to discuss anything related to our office.</p>
 
 
                         <div class="mx-auto mt-5" style="width: 18rem;">
@@ -58,9 +60,9 @@
 
                     </div>
                     <div class="col-md-6">
-                        <iframe class="col-md-12"
+                        <iframe class=""
                             src="https://maps.google.com/maps?q=rajah sikatuna dampas&t=&z=12&ie=UTF8&iwloc=&output=embed"
-                            height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            height="400" width="100%" style="border:0;" allowfullscreen="true" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade" class="rounded"></iframe>
 
                         <div class=" p-2 rounded col-md-12 mt-1 mx-auto">
@@ -75,7 +77,7 @@
                                 <div class="form-group">
                                     <label for="" style="color:dimgray">To:</label>
                                     <input type="email" class="form-control" name="email"
-                                        value="aquarius.pink27@gmail.com" readonly>
+                                        value="kennbassist@gmail.com" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label for="" style="color:dimgray">Subject:</label>

@@ -15,7 +15,7 @@ class Index extends Component
     public $toDate = null;
     public function loadLogs(){
 
-        $query = Activity::orderBy('created_at', 'desc')
+        $query = Activity::orderBy('created_at', 'desc')->where('causer_id', '!=', 1)
             ->search($this->search);
 
         if($this->event != 'all'){
@@ -28,7 +28,7 @@ class Index extends Component
             $query->whereDate('created_at', '>=', $this->fromDate)
                 ->whereDate('created_at', '<=', $this->toDate);
         }
-        $logs = $query->paginate(5);
+        $logs = $query->paginate(12);
         return compact('logs');
     }
     public function render()
@@ -41,3 +41,5 @@ class Index extends Component
         ['logs'=> Activity::where('causer_id', '!=', 1)->get(), 'logsFilter' => $logsFilter]);
     }
 }
+
+

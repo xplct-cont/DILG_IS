@@ -58,10 +58,11 @@ use App\Http\Controllers\Normal_View\Provincial_Officials\Provincial_OfficialsCo
 Route::get('/', [HomeController::class, 'index']);
 
 
-Auth::routes();
 
 //Routes for Kenn
 //Admin_View Routes
+Auth::routes(['register'=>false]);
+
 Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 Route::post('/add_images/{id}', [Admin_HomeController::class, 'store']);
 
@@ -75,6 +76,9 @@ Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/j
 Route::post('/add-new-job', [Admin_JobsController::class, 'store']);
 Route::get('/delete_jobs/{id}', [Admin_JobsController::class, 'delete_jobs']);
 Route::put('/update_jobs/{id}', [Admin_JobsController::class, 'update_jobs']);
+
+
+Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
 
 Route::get('/admin/organization', [Admin_OrganizationController::class, 'index'])->name('admin/organization');
 Route::post('/add-org', [Admin_OrganizationController::class, 'store']);
@@ -116,6 +120,8 @@ Route::post('/add-knowledge_materials', [Admin_Knowledge_MaterialsController::cl
 Route::get('/delete_knowledge_materials/{id}', [Admin_Knowledge_MaterialsController::class, 'delete_knowledge_materials']);
 Route::put('/update-knowledge_materials/{id}', [Admin_Knowledge_MaterialsController::class, 'update_knowledge_materials']);
 
+});
+
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
@@ -136,17 +142,7 @@ Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
-
-
-
-
-
-
-
-
-
 //Routes for Chadie
-
 //Admin_View Routes
 Route::group(['middleware' => ['role:Super-Admin']], function () {
     Route::get('admin/users',[Admin_UserController::class,'index'])->name('admin/users');
@@ -156,16 +152,23 @@ Route::group(['middleware' => ['role:Super-Admin']], function () {
 });
 
 
+Route::get('/citizens_charter',function(){
+    return view('Normal_View.Citizens_charter.citizens_charter');
+});
+
 
 
 //Routes for Vienna
 //Admin_View Routes
+
 Route::get('/admin/news_updates', [Admin_UpdateController::class, 'index'])->name('admin/news_updates');
 Route::post('/add-updates', [Admin_UpdateController::class, 'store']);
 Route::get('/delete_updates/{id}', [Admin_UpdateController::class, 'delete_updates']);
 Route::put('/edit_updates/{id}', [Admin_UpdateController::class, 'edit_updates']);
 
+Route::group(['middleware' => ['role:Super-Admin']], function () {
 Route::get('/admin/logs', [Admin_LogsController::class, 'index'])->name('admin/logs');
+});
 
 
 //Normal_View Routes
@@ -180,25 +183,20 @@ Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 
 
 //Routes for Franklin
-
-
 //Admin_View Routes
+
+Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
+
 Route::get('/admin/field_officers', [Admin_Field_OfficersController::class, 'index'])->name('admin/field_officers');
 Route::post('/add-field_officer', [Admin_Field_OfficersController::class, 'store']);
 Route::get('/delete_field_officer/{id}', [Admin_Field_OfficersController::class, 'delete_field_officer']);
 Route::put('/update-field_officer/{id}', [Admin_Field_OfficersController::class, 'update_field_officer']);
 
+});
 
 //Normal_View Routes
 Route::get('/organization',[OrganizationController::class, 'index']);
 Route::get('/field_officers',[Field_OfficersController::class, 'index'])->name('/field_officers');
-
-
-
-
-
-
-
 
 
 //End here

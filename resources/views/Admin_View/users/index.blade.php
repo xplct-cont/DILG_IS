@@ -36,11 +36,9 @@
             </thead>
             <tbody class=" text-dark">
                 @foreach ($users as $user)
-                @if ($user->id != 1)
-
+                    {{-- @if ($user->id != 1) --}}
 
                     <tr>
-
                         <td><img src="{{ asset('user_profile_images/' . $user->profile_image) }}"
                                 style="border-radius: 50%; height: 50px; width: 50px;"></td>
                         <td>{{ $user->name }}</td>
@@ -168,7 +166,7 @@
                             </div>
                         </div>
                     </tr>
-                    @endif
+                    {{-- @endif --}}
                 @endforeach
 
             </tbody>
@@ -263,13 +261,12 @@
                                         <input type="file" class="form-control" name="profile_img">
                                     </div>
                                 </div> --}}
-
-
                             </div>
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save
+                        changes</button>
                 </div>
                 </form>
             </div>

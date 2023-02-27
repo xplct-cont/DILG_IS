@@ -12,6 +12,13 @@ use App\Models\Update;
 
 class Admin_UpdateController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request){
 
         $news_images = Update::where([
@@ -20,11 +27,11 @@ class Admin_UpdateController extends Controller
                 if(($news_images = $request->news_images)){
                     $query->orWhere('title', 'LIKE', '%'. $news_images . '%')
                     ->orWhere('caption', 'LIKE', '%'. $news_images . '%')->get();
-    
+
                 }
             }]
         ])
-    
+
         ->orderBy("created_at","DESC")
         ->paginate(20);
 
@@ -40,6 +47,7 @@ class Admin_UpdateController extends Controller
 
         $img->title = $request->input('title');
         $img->caption = $request->input('caption');
+        $img->user_id = auth()->user()->id;
 
         $this->validate($request, [
             'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -69,6 +77,7 @@ class Admin_UpdateController extends Controller
 
         $img->title = $request->input('title');
         $img->caption = $request->input('caption');
+        $img->user_id = auth()->user()->id;
 
         $this->validate($request, [
             'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'

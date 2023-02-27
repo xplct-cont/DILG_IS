@@ -183,7 +183,7 @@
                                                                 <label for="" style="color:dimgray">Profile
                                                                     Image:</label>
                                                                 <input type="file" class="form-control"
-                                                                    name="profile_image">
+                                                                    name="profile_image" value="{{$prov_off->profile_image}}">
                                                             </div>
 
                                                         </div>

@@ -20,11 +20,11 @@ class UserSeeder extends Seeder
         $role3 = Role::create(['name' => 'Publisher']);
 
         $user = User::create([
-            'name' => 'Albus Dumbledore',
-            'position' => 'Administrator',
-            'email' => 'admin@gmail.com',
+            'name' => 'The Developer',
+            'position' => 'Developer',
+            'email' => 'developer@gmail.com',
             'email_verified_at' => now(),
-            'password' => 'admin12345',
+            'password' => 'the_developer123',
 
         ]);
         $user->assignRole($role1);

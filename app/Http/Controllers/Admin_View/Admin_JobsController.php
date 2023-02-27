@@ -25,12 +25,12 @@ class Admin_JobsController extends Controller
                 if(($admin_jobs = $request->admin_jobs)){
                     $query->orWhere('position', 'LIKE', '%'. $admin_jobs . '%')
                     ->orWhere('details', 'LIKE', '%'. $admin_jobs . '%')->get();
-    
-                    
+
+
                 }
             }]
         ])
-    
+
         ->orderBy("created_at","DESC")
         ->paginate(8);
 
@@ -46,6 +46,7 @@ class Admin_JobsController extends Controller
         $admin_jobs->position = $request->input('position');
         $admin_jobs->link = $request->input('link');
         $admin_jobs->details = $request->input('details');
+        $admin_jobs->user_id = auth()->user()->id;
 
         if($request->hasFile('hiring_img')){
 
@@ -69,7 +70,7 @@ class Admin_JobsController extends Controller
         $admin_jobs->position = $request->input('position');
         $admin_jobs->link = $request->input('link');
         $admin_jobs->details = $request->input('details');
-
+        $admin_jobs->user_id = auth()->user()->id;
 
         if($request->hasFile('hiring_img')){
 
