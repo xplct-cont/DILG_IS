@@ -152,8 +152,8 @@ Route::group(['middleware' => ['role:Super-Admin']], function () {
 });
 
 
-Route::get('excel',function(){
-    return view('excel');
+Route::get('/citizens_charter',function(){
+    return view('Normal_View.Citizens_charter.citizens_charter');
 });
 
 
