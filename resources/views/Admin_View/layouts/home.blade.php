@@ -116,156 +116,158 @@
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-light text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $orgs }}</h3>
 
-                            <p class="text-secondary">Org. Structure</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-users text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/organization') }}" class="small-box-footer bg-secondary"
-                            style="color:whitesmoke;"><span class="text-light">More info</span> <i
-                                class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $pdmus }}</h3>
+                @role(['Super-Admin', 'Admin'])
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-light text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $orgs }}</h3>
 
-                            <p class="text-secondary">PDMU</p>
+                                <p class="text-secondary">Org. Structure</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-users text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/organization') }}" class="small-box-footer bg-secondary"
+                                style="color:whitesmoke;"><span class="text-light">More info</span> <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-user-friends text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/pdmu') }}" class="small-box-footer bg-secondary">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $field_officers }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $pdmus }}</h3>
 
-                            <p class="text-secondary">Field Off.</p>
+                                <p class="text-secondary">PDMU</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-user-friends text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/pdmu') }}" class="small-box-footer bg-secondary">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-people-carry text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/field_officers') }}" class="small-box-footer bg-secondary"
-                            style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $faqs }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $field_officers }}</h3>
 
-                            <p class="text-secondary">FAQ's</p>
+                                <p class="text-secondary">Field Off.</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-people-carry text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/field_officers') }}" class="small-box-footer bg-secondary"
+                                style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-question-circle text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/faqs') }}" class="small-box-footer bg-secondary" style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $b_issuances }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $faqs }}</h3>
 
-                            <p class="text-secondary">Issuances</p>
+                                <p class="text-secondary">FAQ's</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-question-circle text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/faqs') }}" class="small-box-footer bg-secondary" style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-file text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/issuances') }}" class="small-box-footer bg-secondary" style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $downloadables }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $b_issuances }}</h3>
 
-                            <p class="text-secondary">Downloadables</p>
+                                <p class="text-secondary">Issuances</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-file text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/issuances') }}" class="small-box-footer bg-secondary" style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-download text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/downloadables') }}" class="small-box-footer bg-secondary"
-                            style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $knowledge_materials }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $downloadables }}</h3>
 
-                            <p class="text-secondary">Knowledge Mat.</p>
+                                <p class="text-secondary">Downloadables</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-download text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/downloadables') }}" class="small-box-footer bg-secondary"
+                                style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-book-open text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/knowledge_materials') }}" class="small-box-footer bg-secondary"
-                            style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $prov_officials }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $knowledge_materials }}</h3>
 
-                            <p class="text-secondary">Prov. Officials</p>
+                                <p class="text-secondary">Knowledge Mat.</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-book-open text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/knowledge_materials') }}" class="small-box-footer bg-secondary"
+                                style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-user-tie text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/provincial_officials') }}" class="small-box-footer bg-secondary"
-                            style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $lgus }}</h3>
-                            <p class="text-secondary">LGU's</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-city text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/lgu') }}" class="small-box-footer bg-secondary"
-                            style=";color:whitesmoke;"><span class="text-light">More info</span>
-                            <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $prov_officials }}</h3>
 
+                                <p class="text-secondary">Prov. Officials</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-user-tie text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/provincial_officials') }}" class="small-box-footer bg-secondary"
+                                style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $lgus }}</h3>
+                                <p class="text-secondary">LGU's</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-city text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/lgu') }}" class="small-box-footer bg-secondary"
+                                style=";color:whitesmoke;"><span class="text-light">More info</span>
+                                <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                @endrole
                 @role('Super-Admin')
                     <!-- ./col -->
                     <div class="col-lg-3 col-6">
