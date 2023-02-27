@@ -31,7 +31,7 @@ class Admin_Provincial_OfficialsController extends Controller
             }]
         ])
     
-        ->orderBy("created_at","DESC")
+        ->orderBy("created_at","ASC")
         ->paginate(12);
 
         return view('Admin_View.provincial_officials.index', compact('prov_officials'))

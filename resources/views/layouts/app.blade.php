@@ -103,9 +103,20 @@
                             <a class="nav-link text-white" href="{{ url('/news_update') }}"> &nbsp;News</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/lgu') }}"> &nbsp;LGU's</a>
-                        </li>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle btn text-white" style="margin-top: 2px;" id="dropdownMenu1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Officials
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item" href="{{ url('lgu') }}">LGU's</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ url('provincial_officials') }}">Provincial
+                                        Officials</a></li>
+
+                            </ul>
+                        </div>
+
                         <div class="dropdown">
                             <button class="dropdown-toggle btn text-white" style="margin-top: 2px;" id="dropdownMenu1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -150,9 +161,6 @@
                                 <li><a class="dropdown-item" href="{{ url('/organization') }}">Organizational
                                         Structure/PDMU</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a>
-                                </li>
-                                <li><a class="dropdown-item" href="{{ url('/provincial_officials') }}">Provincial
-                                        Officials</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
                                         Agencies</a></li>
