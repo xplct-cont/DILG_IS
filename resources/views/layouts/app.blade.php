@@ -162,6 +162,9 @@
                                         Structure/PDMU</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a>
                                 </li>
+                                <li><a class="dropdown-item" href="{{ url('/citizens_charter') }}">Citizens
+                                        Charter</a>
+                                </li>
                                 <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
                                         Agencies</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/contacts') }}">Contact Information</a>
