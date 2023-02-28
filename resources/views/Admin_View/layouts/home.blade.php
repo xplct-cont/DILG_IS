@@ -60,7 +60,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Upload Images (Max:3)</label>
-                                            <input type="file" name="images[]" class="form-control" multiple>
+                                            <input type="file" name="images[]" class="form-control" required multiple>
                                         </div>
                                     </div>
                                 </div>
