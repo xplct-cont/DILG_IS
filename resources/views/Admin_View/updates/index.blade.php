@@ -105,7 +105,7 @@
                                 class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 Images</th>
                             <th scope="col">Title</th>
-                            <th scope="col">Caption</th>
+                            <th scope="col"  class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">Caption</th>
                             <th scope="col">Author</th>
                             <th scope="col">Edit</th>
                             <th scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete
@@ -123,7 +123,7 @@
 
 
                                 <td class="text-wrap">{{ $news_img->title }}</td>
-                                <td class="text-wrap">{{ $news_img->caption }}</td>
+                                <td  class="text-wrap d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center" >{{ $news_img->caption }}</td>
                                 <td class="text-wrap">{{ $news_img->user->name }}</td>
 
 

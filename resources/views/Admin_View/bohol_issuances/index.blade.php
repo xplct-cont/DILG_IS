@@ -149,7 +149,8 @@
                             <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                 style="text-align: center">Date</th>
                             <th scope="col">Outcome</th>
-                            <th scope="col">Category</th>
+                            <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Category</th>
                             <th scope="col">Title</th>
                             <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                 style="text-align: center">Ref Num.</th>
@@ -166,7 +167,8 @@
                                     style="text-align: center">
                                     {{ $issuances->date }}</td>
                                 <td>{{ $issuances->outcome_area }}</td>
-                                <td>{{ $issuances->category }}</td>
+                                <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                style="text-align: center">{{ $issuances->category }}</td>
                                 <td>{{ $issuances->title }}</td>
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">

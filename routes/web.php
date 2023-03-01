@@ -152,11 +152,11 @@ Route::group(['middleware' => ['role:Super-Admin']], function () {
 });
 
 
+
+
 Route::get('/citizens_charter',function(){
     return view('Normal_View.Citizens_charter.citizens_charter');
 });
-
-
 
 //Routes for Vienna
 //Admin_View Routes
