@@ -70,7 +70,7 @@
             <thead style="background-color:#343a40; color:white;">
                 <tr>
                     <th>Images</th>
-                    <th class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">title</th>
+                    <th class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">Title</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
