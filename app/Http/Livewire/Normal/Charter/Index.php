@@ -9,7 +9,7 @@ class Index extends Component
 {
     public function render()
     {
-        $cit_charter = Citizens_Charter::orderBy('id', 'asc')->paginate(2);
+        $cit_charter = Citizens_Charter::orderBy('id', 'asc')->paginate(3);
         return view('livewire.normal.charter.index', compact('cit_charter'));
     }
 }
