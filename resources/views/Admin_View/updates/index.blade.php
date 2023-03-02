@@ -170,9 +170,13 @@
                                                                     <label for="" style="color:dimgray">Upload
                                                                         Images (Max:3)</label>
                                                                     <input type="file" class="form-control"
-                                                                        name="images[]" required multiple>
-                                                                </div>
+                                                                        name="images[]" multiple>
 
+                                                                        <?php foreach (json_decode($news_img->images) as $picture) { ?>
+                                                                            <p class="mt-3 fw-light">Old photo(s):</p>
+                                                                            <img src="{{ asset('news_updates/' . $picture) }}" style="height:50px; width:70px" />
+                                                                        <?php } ?>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -300,7 +304,7 @@
                                                                 <label for="" style="color:dimgray">Upload
                                                                     Images (Max:3)</label>
                                                                 <input type="file" class="form-control"
-                                                                    name="images[]" required multiple>
+                                                                    name="images[]" multiple>
                                                             </div>
 
                                                         </div>
