@@ -43,10 +43,11 @@ class Admin_HomeController extends Controller
         $downloadables = DB::table('downloadables')->count();
         $knowledge_materials = DB::table('knowledge_materials')->count();
         $prov_officials = DB::table('provincial_officials')->count();
+        $cit_charter = DB::table('citizens_charters')->count();
         $logs = DB::table('activity_log')->where('causer_id', '!=', 1)->count();
         $users = DB::table('users')->where('id','!=', 1)->count();
 
-        return view('Admin_View.layouts.home',compact('home_images', 'updates','jobs','orgs', 'pdmus', 'lgus', 'field_officers', 'faqs', 'b_issuances', 'downloadables', 'knowledge_materials', 'prov_officials','logs' , 'users'));
+        return view('Admin_View.layouts.home',compact('home_images', 'updates','jobs','orgs', 'pdmus', 'lgus', 'field_officers', 'faqs', 'b_issuances', 'downloadables', 'knowledge_materials', 'prov_officials', 'cit_charter' ,'logs' , 'users'));
     }
 
 
