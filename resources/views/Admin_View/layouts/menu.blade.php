@@ -85,6 +85,13 @@
             <i class="fas fa-user-tie fa-pull-left fa-md text-white"></i>
         </a>
     </li>
+    <li class="nav-item">
+        <a href="{{ route('admin/citizens_charter') }}"
+            class="nav-link {{ Request::is('admin/citizens_charter*') ? 'bg-secondary active' : '' }}">
+            <p class="text-white">Citizens Charter</p>
+            <i class="fas fa-users-slash fa-pull-left fa-md text-white"></i>
+        </a>
+    </li>
 @endrole
 
 @role('Super-Admin')
