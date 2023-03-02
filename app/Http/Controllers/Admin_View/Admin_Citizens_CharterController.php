@@ -20,7 +20,7 @@ class Admin_Citizens_CharterController extends Controller
 
     public function index(){
 
-        $citizens_charter = Citizens_Charter::orderBy('page_num', 'ASC')->get();
+        $citizens_charter = Citizens_Charter::orderBy('created_at', 'ASC')->get();
 
         return view('Admin_View.citizens_charter.index', compact('citizens_charter'));
 
@@ -31,7 +31,7 @@ class Admin_Citizens_CharterController extends Controller
         
         $citizens_charter = new Citizens_Charter;
        
-        $citizens_charter->page_num = $request->input('page_num');
+        $citizens_charter->title = $request->input('title');
 
         if($request->hasFile('images')){
 
@@ -53,7 +53,7 @@ class Admin_Citizens_CharterController extends Controller
       
         $citizens_charter = Citizens_Charter::find($id);
 
-        $citizens_charter->page_num = $request->input('page_num');
+        $citizens_charter->title = $request->input('title');
 
         if($request->hasFile('images')){
       

@@ -13,7 +13,7 @@ class Citizens_Charter extends Model
     protected $primaryKey = 'id';
     protected $fillable =
     [
-       'page_num',
+       'title',
        'images',
     ];
 

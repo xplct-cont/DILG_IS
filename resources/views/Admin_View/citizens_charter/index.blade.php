@@ -33,11 +33,10 @@
 
                             <div class="container mx-auto">
 
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="" style="color:dimgray">Page Number:</label>
-                                        <input type="text" class="form-control text-center" name="page_num"
-                                            style="width: 60px;" required>
+                                        <label for="" style="color:dimgray">Title:</label>
+                                        <input type="text" class="form-control" name="title" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -71,7 +70,7 @@
             <thead style="background-color:#343a40; color:white;">
                 <tr>
                     <th>Images</th>
-                    <th>Page Number</th>
+                    <th class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">title</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -83,7 +82,8 @@
 
                         <td><img class="rounded" src="{{ asset('citizens_charter_images/' . $cit_chart->images) }} "
                                 alt="Image" style=" height: 80px; width: 90px;"></td>
-                        <td>No: {{ $cit_chart->page_num }}</td>
+                        <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
+                            {{ $cit_chart->title }}</td>
 
 
                         <td><a href="#" data-toggle="modal" id="citizens_charter_edit_link" class="btn"
@@ -110,15 +110,13 @@
 
                                             <div class="container mx-auto">
 
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="" style="color:dimgray">Page Number: </label>
-                                                        <input type="text" class="form-control text-center"
-                                                            style="width: 60px;" name="page_num"
-                                                            value="{{ $cit_chart->page_num }}" required>
+                                                        <label for="" style="color:dimgray">Title: </label>
+                                                        <input type="text" class="form-control" name="title"
+                                                            value="{{ $cit_chart->title }}" required>
                                                     </div>
                                                 </div>
-
 
                                                 <div class="col-md-12 text-center mx-auto">
                                                     <img src="{{ asset('citizens_charter_images/' . $cit_chart->images) }}"
@@ -130,7 +128,6 @@
                                                             value="{{ $cit_chart->images }}">
                                                     </div>
                                                 </div>
-
 
                                             </div>
 
