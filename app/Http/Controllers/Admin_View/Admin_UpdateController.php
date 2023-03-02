@@ -83,15 +83,6 @@ class Admin_UpdateController extends Controller
             'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        $images = json_decode($img->images,true);
-        if (is_array($images) && !empty($images)){
-        foreach ($images as $deleteimage) {
-                if (File::exists(public_path('news_updates/'.$deleteimage))) {
-                    File::delete(public_path('news_updates/'.$deleteimage));
-                }
-            }
-
-        }
         if ($request->hasFile('images')){
 
             foreach($request->file('images') as $image){
@@ -99,13 +90,27 @@ class Admin_UpdateController extends Controller
                 $name = $image->getClientOriginalName();
                 $image->move(public_path('/news_updates/'), $name);
                 $data[] = $name;
-        }
+            }
+
+            $images = json_decode($img->images,true);
+            if (is_array($images) && !empty($images)){
+            foreach ($images as $deleteimage) {
+                    if (File::exists(public_path('news_updates/'.$deleteimage))) {
+                        File::delete(public_path('news_updates/'.$deleteimage));
+                    }
+                }
+
+            }
+
         $img->images = json_encode($data);
+        }
+
+
         $img->update();
 
         return redirect()->back()->with('message', 'Updated Successfully!');
 
-    }
+
 }
     public function delete_updates(Request $request, $id)
     {
