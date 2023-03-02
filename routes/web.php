@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin_View\Admin_PdmuController;
 use App\Http\Controllers\Admin_View\Admin_Provincial_OfficialsController;
 use App\Http\Controllers\Admin_View\Admin_DownloadablesController;
 use App\Http\Controllers\Admin_View\Admin_Knowledge_MaterialsController;
+use App\Http\Controllers\Admin_View\Admin_Citizens_CharterController;
 use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
@@ -119,6 +120,11 @@ Route::get('/admin/knowledge_materials', [Admin_Knowledge_MaterialsController::c
 Route::post('/add-knowledge_materials', [Admin_Knowledge_MaterialsController::class, 'store']);
 Route::get('/delete_knowledge_materials/{id}', [Admin_Knowledge_MaterialsController::class, 'delete_knowledge_materials']);
 Route::put('/update-knowledge_materials/{id}', [Admin_Knowledge_MaterialsController::class, 'update_knowledge_materials']);
+
+Route::get('/admin/citizens_charter', [Admin_Citizens_CharterController::class, 'index'])->name('admin/citizens_charter');
+Route::post('/add-citizens_charter', [Admin_Citizens_CharterController::class, 'store']);
+Route::get('/delete_citizens_charter/{id}', [Admin_Citizens_CharterController::class, 'delete_citizens_charter']);
+Route::put('/update-citizens_charter/{id}', [Admin_Citizens_CharterController::class, 'update_citizens_charter']);
 
 });
 
