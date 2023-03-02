@@ -1,11 +1,5 @@
-@extends('layouts.app')
-@section('content')
-    <div class="d-flex justify-content-center mb-3">
-        <img src="/img/dilg-main.png" style="height: 150px; width: 150px;" alt="">
-    </div>
-    <h1 class="text-center mt-2" style="font-size: 28px; margin-bottom: 50px;">CITIZENS CHARTER</h1>
-<livewire:normal.charter.index>
-    {{-- <div class="container">
+<div>
+    <div class="container">
         @foreach ($cit_charter as $citizen)
             <div class="bg-secondary p-1 mr-3 ml-3" style="">
                 <p class="text-wrap text-center mt-1" style="font-weight: 500; font-size: 18px;">{{ $citizen->title }}</p>
@@ -17,5 +11,8 @@
             </div>
         @endforeach
 
-    </div> --}}
-@endsection
+    </div>
+    <div class="d-flex justify-content-center mt-2">
+        {{ $cit_charter->links() }}
+    </div>
+</div>
