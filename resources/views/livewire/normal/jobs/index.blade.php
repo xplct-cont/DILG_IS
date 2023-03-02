@@ -38,7 +38,7 @@
         @endforeach
     </div>
     <div class="d-flex justify-content-center mt-2">
-        {{ $jobs->links() }}
+        {{ $jobs->onEachSide(1)->links() }}
     </div>
 
 </div>

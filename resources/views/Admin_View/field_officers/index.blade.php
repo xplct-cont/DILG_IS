@@ -317,6 +317,6 @@
             </table>
         </div>
         <div class="d-flex justify-content-end mt-2">
-            {{ $field_officers->links() }}
+            {{ $field_officers->onEachSide(1)->links() }}
         </div>
     @endsection

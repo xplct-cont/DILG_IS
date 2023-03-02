@@ -206,6 +206,6 @@
             </div>
         </div>
         <div class="d-flex justify-content-end mt-2">
-            {{ $knowledge_materials->links() }}
+            {{ $knowledge_materials->onEachSide(1)->links() }}
         </div>
     @endsection

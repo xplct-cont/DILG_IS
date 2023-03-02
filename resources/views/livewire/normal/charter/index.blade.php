@@ -12,7 +12,7 @@
         @endforeach
 
     </div>
-    <div class="d-flex justify-content-center mt-2">
-        {{ $cit_charter->links() }}
+    <div class="d-flex justify-content-center flex-wrap mt-2">
+        {{ $cit_charter->onEachSide(1)->links() }}
     </div>
 </div>

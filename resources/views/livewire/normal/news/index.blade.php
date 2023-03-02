@@ -70,7 +70,7 @@
             @endforeach
         </div>
         <div class="justify-content-between">
-            {{ $news->links() }}
+            {{ $news->onEachSide(1)->links() }}
         </div>
     </div>
 </div>
