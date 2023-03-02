@@ -44,6 +44,8 @@ use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
 use App\Http\Controllers\Normal_View\Downloadables\DownloadablesController;
 use App\Http\Controllers\Normal_View\Provincial_Officials\Provincial_OfficialsController;
+use App\Http\Controllers\Normal_View\Citizens_Charter\Citizens_CharterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -146,7 +148,10 @@ Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'inde
 
 Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'])->name('/knowledge_materials');
 
+Route::get('/citizens_charter', [Citizens_CharterController::class, 'index'])->name('/citizens_charter'); 
+
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
+
 
 //Routes for Chadie
 //Admin_View Routes
@@ -159,10 +164,6 @@ Route::group(['middleware' => ['role:Super-Admin']], function () {
 
 
 
-
-Route::get('/citizens_charter',function(){
-    return view('Normal_View.Citizens_charter.citizens_charter');
-});
 
 //Routes for Vienna
 //Admin_View Routes

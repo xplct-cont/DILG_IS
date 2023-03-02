@@ -48,7 +48,7 @@ class Admin_UserController extends Controller
 
         $users->save();
 
-        return redirect()->back()->with('message', 'Added to User Successfully!');
+        return redirect()->back()->with('message', 'Added User Successfully!');
 
     }
 

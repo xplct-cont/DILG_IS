@@ -267,6 +267,22 @@
                                 <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $cit_charter }}</h3>
+                                <p class="text-secondary">Cit. Charter</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-users-slash text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/citizens_charter') }}" class="small-box-footer bg-secondary"
+                                style="color:whitesmoke;"><span class="text-light">More info</span>
+                                <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
                 @endrole
                 @role('Super-Admin')
                     <!-- ./col -->

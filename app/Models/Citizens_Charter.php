@@ -4,17 +4,16 @@ namespace App\Models;
 
 use Spatie\Activitylog\LogOptions;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Citizens_Charter extends Model
 {
-    use HasFactory, LogsActivity;
+    use HasFactory;
 
     protected $primaryKey = 'id';
     protected $fillable =
     [
-       'page_num',
+       'title',
        'images',
     ];
 
