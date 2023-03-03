@@ -509,7 +509,7 @@
     };
 
     function scrollFunction() {
-        if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
+        if (document.body.scrollTop > 1200 || document.documentElement.scrollTop > 1200) {
             mybutton.style.display = "block";
         } else {
             mybutton.style.display = "none";
