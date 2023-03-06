@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('profile_img')->default('pdmu_icon.png');
             $table->string('fname');
-            $table->string('mid_initial');
+            $table->string('mid_initial')->nullable();;
             $table->string('lname');
-            $table->string('position');
+            $table->string('position')->nullable();;
             $table->timestamps();
         });
     }

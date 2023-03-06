@@ -38,16 +38,16 @@
             <div class="col-md-6 mt-5 mb-5 ">
 
                 <a href="{{ route('/provincial_director') }}" type="button" class="btn btn-md"
-                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">THE
+                    style="background-color: #234495; color: white; width: 300px; overflow:auto; border-radius:10px;">THE
                     PROVINCIAL
                     DIRECTOR
                     <span class="fas fa-arrow-right" style="margin-left:38px;"></span></a><br><br>
                 <a href="{{ route('/about') }}" type="button" class="btn btn-md"
-                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION
+                    style="background-color: #234495; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION
                     &
                     MISSION <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a><br><br>
                 <a href="{{ url('/latest_issuances') }}" type="button" class="btn btn-md"
-                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">LATEST
+                    style="background-color: #234495; color: white; width: 300px; overflow:auto; border-radius:10px;">LATEST
                     ISSUANCES
                     <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a>
 
@@ -68,7 +68,7 @@
         </div>
     </div>
 
-    <div class="mt-4 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+    <div class="mt-4 ml-3 mr-3" style=" padding: 7px; background: #234495; color: #FFFFFF; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
     </div>
 
@@ -180,11 +180,11 @@
 
     <div class="d-flex justify-content-center mb-5 mt-3">
         <a href="{{ url('/news_update') }}" type="button" class="btn btn-sm"
-            style="background-color: #8c0509; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
+            style="background-color: #234495; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
 
-    <div class="mt-4 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+    <div class="mt-4 ml-3 mr-3" style=" padding: 7px; background: #234495; color: #FFFFFF; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">LATEST ISSUANCES</h1>
     </div>
 
@@ -215,7 +215,7 @@
     </div>
     <div class="d-flex justify-content-center mb-5 mt-3">
         <a href="{{ url('/latest_issuances') }}" type="button" class="btn btn-sm"
-            style="background-color: #8c0509; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
+            style="background-color: #234495; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
 

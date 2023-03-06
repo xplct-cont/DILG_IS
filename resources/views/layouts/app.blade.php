@@ -73,7 +73,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark hadow-sm fixed-top" style="background-color: #8c0509;">
+        <nav class="navbar navbar-expand-md navbar-dark hadow-sm fixed-top" style="background-color: #234495;">
             <div class="container">
                 <a class="navbar-brand" style="font-size: 16px;" href="{{ url('/') }}">
                     {{-- {{ config('app. name', 'Laravel') }} --}}
@@ -236,7 +236,7 @@
         </nav>
 
         <main class="mt-5">
-            <div class="header" style=" padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
+            <div class="header" style=" padding: 20px; background: #e4e1e1; color: #030303; margin-bottom: 10px;">
                 <a href="/about"> <img width="500" height="auto" style="max-width: 100%; height:auto;"
                         src="{{ asset('/img/dilg-bohol.png') }}"></a>
             </div>
@@ -245,7 +245,7 @@
 
     </div>
 
-    <div class="" style=" padding: 20px; background: #8c0509; color: #DCDCDC;">
+    <div class="" style=" padding: 20px; background: #234495; color: #DCDCDC;">
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
