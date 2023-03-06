@@ -375,6 +375,6 @@
         </div>
 
         <div class="d-flex justify-content-end mt-2">
-            {{ $admin_jobs->links() }}
+            {{ $admin_jobs->onEachSide(1)->links() }}
         </div>
     @endsection

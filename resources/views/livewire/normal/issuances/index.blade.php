@@ -74,7 +74,7 @@
 
                 </div>
                 <div class="d-flex justify-content-center mt-2">
-                    {{ $issuances->links() }}
+                    {{ $issuances->onEachSide(1)->links() }}
                 </div>
 
             </div>

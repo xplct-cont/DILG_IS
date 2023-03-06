@@ -77,6 +77,6 @@
     </table>
 </div>
 <div class="d-flex justify-content-center mt-2">
-    {{ $logs->links() }}
+    {{ $logs->onEachSide(1)->links() }}
 </div>
 </div>

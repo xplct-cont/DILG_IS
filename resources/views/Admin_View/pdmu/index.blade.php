@@ -64,7 +64,7 @@
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Middle Initial:</label>
                                                 <input type="text" class="form-control text-center" style="width: 50px;"
-                                                    name="mid_initial" required>
+                                                    name="mid_initial">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -261,6 +261,6 @@
             </table>
         </div>
         <div class="d-flex justify-content-end mt-2">
-            {{ $pdmus->links() }}
+            {{ $pdmus->onEachSide(1)->links() }}
         </div>
     @endsection

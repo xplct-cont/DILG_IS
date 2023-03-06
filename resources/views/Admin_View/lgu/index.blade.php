@@ -354,6 +354,6 @@
             </table>
         </div>
         <div class="d-flex justify-content-end mt-2">
-            {{ $lgus->links() }}
+            {{ $lgus->onEachSide(1)->links() }}
         </div>
     @endsection

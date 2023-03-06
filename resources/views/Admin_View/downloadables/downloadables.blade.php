@@ -202,6 +202,6 @@
             </div>
         </div>
         <div class="d-flex justify-content-end mt-2">
-            {{ $downloadables->links() }}
+            {{ $downloadables->onEachSide(1)->links() }}
         </div>
     @endsection

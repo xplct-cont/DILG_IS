@@ -259,7 +259,7 @@
     </div>
 
     <div class="d-flex justify-content-end mt-2">
-        {{ $orgs->links() }}
+        {{ $orgs->onEachSide(1)->links() }}
     </div>
 
 @endsection
