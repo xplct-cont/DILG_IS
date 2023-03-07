@@ -41,3 +41,10 @@
     <livewire:normal.updates.index>
 
 @endsection
+
+<style>
+     .responsive {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
