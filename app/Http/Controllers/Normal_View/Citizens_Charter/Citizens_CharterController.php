@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Normal_View\Citizens_Charter;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Citizens_charter;
+use App\Models\Citizens_Charter;
 use DB;
 use PDF;
 
