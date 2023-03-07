@@ -36,11 +36,11 @@
             <div class="d-flex justify-content-start mb-2 ">
 
                 <button type="button" class="btn btn-sm" style="background-color: #343a40; color:white; font-size: 12px;"
-                    data-toggle="modal" data-target="#exampleModal">
+                    data-toggle="modal" data-target="#changeModal">
                     <span class="fas fa-plus-circle"></span> Change Cover Images
                 </button>
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            <div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="changeModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
