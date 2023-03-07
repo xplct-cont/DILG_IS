@@ -148,7 +148,7 @@ Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'inde
 
 Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'])->name('/knowledge_materials');
 
-Route::get('/citizens_charter', [Citizens_CharterController::class, 'index'])->name('/citizens_charter'); 
+Route::get('/citizens_charter', [Citizens_CharterController::class, 'index'])->name('/citizens_charter');
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
@@ -172,6 +172,7 @@ Route::get('/admin/news_updates', [Admin_UpdateController::class, 'index'])->nam
 Route::post('/add-updates', [Admin_UpdateController::class, 'store']);
 Route::get('/delete_updates/{id}', [Admin_UpdateController::class, 'delete_updates']);
 Route::put('/edit_updates/{id}', [Admin_UpdateController::class, 'edit_updates']);
+Route::post('/add_images/{id}', [Admin_UpdateController::class, 'storeImage']);
 
 Route::group(['middleware' => ['role:Super-Admin']], function () {
 Route::get('/admin/logs', [Admin_LogsController::class, 'index'])->name('admin/logs');

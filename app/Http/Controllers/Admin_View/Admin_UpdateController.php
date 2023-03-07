@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use DB;
 use Illuminate\Http\Request;
 use App\Models\Update;
+use App\Models\Updates_Image;
 
 
 class Admin_UpdateController extends Controller
@@ -20,7 +21,7 @@ class Admin_UpdateController extends Controller
     }
 
     public function index(Request $request){
-
+        $updates_images = Updates_Image::all();
         $news_images = Update::where([
             ['created_at', '!=', null],
             [function($query) use ($request){
@@ -35,7 +36,7 @@ class Admin_UpdateController extends Controller
         ->orderBy("created_at","DESC")
         ->paginate(20);
 
-        return view('Admin_View.updates.index', compact('news_images'))
+        return view('Admin_View.updates.index', compact('news_images', 'updates_images'))
         ->with('i',(request()->input('page',1)-1)*5);
 
     }
@@ -128,5 +129,39 @@ class Admin_UpdateController extends Controller
         return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 
+
+    public function storeImage(Request $request, $id){
+
+        $img = Updates_Image::find($id);
+
+        $this->validate($request, [
+            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        $images = json_decode($img->images,true);
+        if (is_array($images) && !empty($images)){
+        foreach ($images as $deleteimage) {
+                if (File::exists(public_path('updates_images/'.$deleteimage))) {
+                    File::delete(public_path('updates_images/'.$deleteimage));
+                }
+            }
+
+        }
+
+        if ($request->hasFile('images')){
+
+            foreach($request->file('images') as $image){
+
+                $name = $image->getClientOriginalName();
+                $image->move(public_path('/updates_images/'), $name);
+                $data[] = $name;
+        }
+    }
+
+        // $img = Home_Image::find($id);
+        $img->images = json_encode($data);
+        $img->save();
+        return redirect()->back()->with('message', 'Added Images Successfully!');
+
+    }
 
 }
