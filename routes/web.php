@@ -149,8 +149,11 @@ Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'inde
 Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'])->name('/knowledge_materials');
 
 Route::get('/citizens_charter', [Citizens_CharterController::class, 'index'])->name('/citizens_charter');
+Route::get('/export_citizes_charter_pdf', [Citizens_CharterController::class, 'export_citizes_charter_pdf'])->name('export_citizes_charter_pdf');
+
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
+
 
 
 //Routes for Chadie
