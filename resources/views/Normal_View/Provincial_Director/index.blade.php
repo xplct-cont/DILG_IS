@@ -6,6 +6,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-6">
+                        @csrf
                         <p class="text-center mt-5" style="font-size: 30px; font-weight: 500;">The Provincial Director</p>
                         @foreach ($pd as $pdirector)
                             <div class="d-flex justify-content-center mb-3">

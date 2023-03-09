@@ -7,6 +7,7 @@
     </div>
 
     <div class="container mb-4">
+        @csrf
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6 mt-2">
@@ -30,6 +31,7 @@
                 <div class="col-md-12">
 
                     <div class="row">
+                        @csrf
                         @foreach ($field_officers as $field_off)
                             <div class="col-md-2 text-center d-flex justify-content-center">
                                 <div class="zoom">

@@ -12,7 +12,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6 mt-3">
-
+                                @csrf
                                     <label for="">Outcome Area/Program:</label>
                                     <select name="outcome_area" id="outcome_area" class="form-select"
                                         style="color:dimgray;" wire:model="outcome">
@@ -49,6 +49,7 @@
                 <div class="card-body">
                     <table class="table bg-light table-bordered table-hover text-secondary">
                         <tbody class="elevation-4">
+                            @csrf
                             @foreach ($issuances as $latest_issuances)
                                 <tr>
                                     <td class="" style="font-size: 16px;"><a

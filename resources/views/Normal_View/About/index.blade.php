@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div>
+        @csrf
         <div class="text-center">
             <img src='img/Background.png' width="1370" style="max-width: 100%; height:auto;">
         </div>

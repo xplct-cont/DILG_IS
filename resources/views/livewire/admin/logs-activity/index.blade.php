@@ -51,6 +51,7 @@
             </tr>
         </thead>
         <tbody class="text-dark">
+            @csrf
             @foreach ($logs as $log)
                 {{-- @if ($log->causer_id != '1') --}}
                     <tr>

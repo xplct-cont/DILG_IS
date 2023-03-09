@@ -7,6 +7,7 @@
         </div>
         <div class="col-md-11 mx-auto">
             <div class="card elevation-4">
+                @csrf
                 <div class="card-header-sm" style="background-color: #002C76; color:white;">
                     <p class="ml-2 mt-2" style="font-weight: 450; font-size: 22px;">{{ $b_issuance->category }}</p>
                 </div>

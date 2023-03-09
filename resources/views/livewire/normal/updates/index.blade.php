@@ -39,6 +39,7 @@
 
     <div class="mx-auto mt-3 col-md-11">
         <div class="">
+            @csrf
             @foreach ($updates as $new)
                 <div class="card">
                     <div class=" card-body elevation-4">
