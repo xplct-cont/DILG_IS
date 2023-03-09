@@ -9,6 +9,7 @@
     <div class="col-md-12">
         <div class="card-body col-md-11 text-center mx-auto">
             <table class="table bg-light table-bordered table-hover text-secondary">
+                @csrf
                 <tbody class="elevation-4">
                     @foreach ($knowledge_materials as $book)
                         <tr>

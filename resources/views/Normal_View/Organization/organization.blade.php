@@ -63,7 +63,7 @@
                 <div class="col-md-6">
                     <p class="text-center mt-4" style="font-size: 28px; font-weight: 500;">PROGRAM COORDINATORS</p>
                     <div class="d-flex row">
-
+                        @csrf
                         @foreach ($d_one as $d_ones)
                             <div class="col-md-4 text-center d-flex justify-content-center">
                                 <div class="zoom">

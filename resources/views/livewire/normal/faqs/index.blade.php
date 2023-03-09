@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-6 mt-3">
-
+                        @csrf
                             <label for="">Outcome Area/Program:</label>
                             <select name="outcome_area" id="outcome_area" class="form-select"
                                 style="color:dimgray;" wire:model="outcome">
@@ -40,6 +40,7 @@
             </div>
         </div>
         <div class="accordion" id="accordionExample">
+            @csrf
             @foreach ($faq as $fq)
                 <div class="accordion-item mb-2">
                     <h2 class="accordion-header" id="headingOne{{ $fq->id }}">

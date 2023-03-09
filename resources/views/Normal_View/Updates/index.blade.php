@@ -6,6 +6,7 @@
     </div> --}}
     <div class="mx-auto text-center">
         <div class="">
+            @csrf
             @foreach ($updates_images as $updates_img)
                 <div>
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

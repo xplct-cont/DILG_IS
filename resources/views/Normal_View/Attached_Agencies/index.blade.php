@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container col-md-12 mt-4">
+        @csrf
         <div class="row">
             <div class="col-md-6">
                 <div class="row">
