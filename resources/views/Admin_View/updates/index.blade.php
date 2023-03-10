@@ -188,7 +188,7 @@
 
 
                                 <td class="text-wrap">{{ $news_img->title }}</td>
-                                <td  class="text-wrap d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center" >{{ $news_img->caption }}</td>
+                                <td  class="text-wrap d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center" >{{ Illuminate\Support\Str::limit($news_img->caption, 50) }}</td>
                                 <td class="text-wrap">{{ $news_img->user->name ?? 'User Removed' }}</td>
 
 
@@ -236,9 +236,9 @@
                                                                         Images (Max:3)</label>
                                                                     <input type="file" class="form-control"
                                                                         name="images[]" multiple>
-
+                                                                        <p class="mt-3 fw-light">Old photo(s):</p>
                                                                         <?php foreach (json_decode($news_img->images) as $picture) { ?>
-                                                                            <p class="mt-3 fw-light">Old photo(s):</p>
+
                                                                             <img src="{{ asset('news_updates/' . $picture) }}" style="height:50px; width:70px" />
                                                                         <?php } ?>
                                                                 </div>
