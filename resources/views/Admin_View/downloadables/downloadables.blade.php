@@ -85,8 +85,8 @@
 
             <div class="card-header d-flex justify-content-between">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-                <h1 class="" style="font-size: 18px; font-weight: 450;"><span class="fas fa-download"
-                        style="color:#8c0509;"></span> DOWNLOADABLES</h1>
+                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link" href="{{ url('/downloadables') }}"><span class="fas fa-download"
+                        style="color:#8c0509;"></span> DOWNLOADABLES </a></h1>
 
             </div>
             <div>
