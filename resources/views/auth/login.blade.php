@@ -38,7 +38,7 @@
 
     <body>
         <a href="{{ url('/') }}" class="text-start ml-4" style="color:#C9282D; font-size: 19px; margin:auto;"><span
-                class="fas fa-arrow-left"></span> Back to home</a>
+                class="fas fa-arrow-left"></span> Back</a>
 
         <div class="container" style="margin-top: -10px;">
             <div class=" rounded d-flex justify-content-between">
