@@ -92,7 +92,7 @@ class Admin_ProfileController extends Controller
             $file = $request->file('profile_image');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $file->move('user_profile_images/', $filename);
+            $file->move('/home/dilgboho/public_html/user_profile_images/', $filename);
             $profile->profile_image = $filename;
 
     }
