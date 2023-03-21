@@ -22,7 +22,7 @@
 
     @foreach ($citizens_charters as $charters)
         <div class="container">
-            <img src="{{ public_path('/home/dilgboho/public_html/citizens_charter_images/'. $charters->images) }}" alt=""
+            <img src="{{ asset('/home/dilgboho/public_html/citizens_charter_images/'. $charters->images) }}" alt=""
                 style="height: 100%; width: 100%; ">
         </div>
     @endforeach
