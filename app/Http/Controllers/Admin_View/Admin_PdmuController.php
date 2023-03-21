@@ -55,7 +55,7 @@ class Admin_PdmuController extends Controller
             $file = $request->file('profile_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save(public_path('/pdmu_profile_images/' . $filename));
+            Image::make($file)->save('/home/dilgboho/public_html/pdmu_profile_images/'. $filename);
             $pdmus->profile_img = $filename;
           
           }
@@ -76,7 +76,7 @@ class Admin_PdmuController extends Controller
 
         if($request->hasFile('profile_img')){
       
-            $destination = 'pdmu_profile_images/'.$pdmus->profile_img;
+            $destination = '/home/dilgboho/public_html/pdmu_profile_images/'.$pdmus->profile_img;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -84,7 +84,7 @@ class Admin_PdmuController extends Controller
             $file = $request->file('profile_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $file->move('pdmu_profile_images/', $filename);
+            $file->move('/home/dilgboho/public_html/pdmu_profile_images/', $filename);
             $pdmus->profile_img = $filename;
 
     }
@@ -101,7 +101,7 @@ class Admin_PdmuController extends Controller
         // Pdmu::whereIn('id', $ids)->delete();
 
             $pdmus = Pdmu::find($id);
-            $destination = public_path('pdmu_profile_images/'.$pdmus->profile_img);
+            $destination = '/home/dilgboho/public_html/pdmu_profile_images/'.$pdmus->profile_img;
              if(File::exists($destination)){
                  File::delete($destination);
              }
