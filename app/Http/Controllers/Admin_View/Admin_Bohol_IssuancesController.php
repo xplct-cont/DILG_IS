@@ -59,7 +59,7 @@ class Admin_Bohol_IssuancesController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move(public_path('/issuance_files/'), $filename);
+            $request->file('file')->move('/home/dilgboho/public_html/issuance_files/', $filename);
             $issuances->file = $filename;
 
             // storeAs('issuance_files', $filename, 'public');
@@ -91,7 +91,7 @@ class Admin_Bohol_IssuancesController extends Controller
 
         if($request->hasFile('file')){
 
-            $destination = 'issuance_files/'.$issuances->file;
+            $destination = '/home/dilgboho/public_html/issuance_files/'.$issuances->file;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -99,7 +99,7 @@ class Admin_Bohol_IssuancesController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move(public_path('/issuance_files/'), $filename);
+            $request->file('file')->move('/home/dilgboho/public_html/issuance_files/', $filename);
             $issuances->file = $filename;
 
             // $issuances->file = '/public/issuance_files' . $filePath;;
@@ -115,7 +115,7 @@ class Admin_Bohol_IssuancesController extends Controller
 
     public function delete_issuances($id){
         $issuances = Bohol_Issuance::find($id);
-            $destination = public_path('issuance_files/'.$issuances->file);
+            $destination = '/home/dilgboho/public_html/issuance_files/'.$issuances->file;
              if(File::exists($destination)){
                  File::delete($destination);
              }
