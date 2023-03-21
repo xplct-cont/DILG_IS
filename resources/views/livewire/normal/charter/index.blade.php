@@ -4,7 +4,7 @@
             <a href="{{ url('export_citizes_charter_pdf') }}" class="btn btn-sm"
                 style="background-color: #234495; color:white;"><span class="fas fa-file-pdf"></span> Download PDF</a>
         </div> --}}
-        <p class="text-center">This page is currently not available at the moment.<br>-The Developers</p>
+        <p class="text-center">This page is currently unavailable at the moment.<br>-The Developers</p>
         @foreach ($cit_charter as $citizen)
             <div class="bg-secondary p-1 mr-3 ml-3" style="">
                 <p class="text-wrap text-center mt-1" style="font-weight: 500; font-size: 18px;">{{ $citizen->title }}</p>

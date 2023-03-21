@@ -203,7 +203,7 @@
                             <p class="text-center" style="font-size: 12px;">
                                 {{ $issuances->outcome_area }}</p>
                         </td>
-                        <td class="" style="background-color:#002C76; color:white;  font-size: 12px;">
+                        <td class="" style="background-color:#234495; color:white;  font-size: 12px;">
                             Reference No: <span
                                 style="font-size: 15px; font-weight: 350; color:white;">{{ $issuances->reference_num }}</span>
                             <p class="text-center mt-2" style=" font-size: 14px">

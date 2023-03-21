@@ -2,7 +2,7 @@
     <div class="mx-auto">
         <div class="col-md-12">
             <div class="card elevation-4">
-                <div class="card-header-sm" style="background-color: #002C76; color:white;">
+                <div class="card-header-sm" style="background-color: #234495; color:white;">
                     <p class="ml-2 mt-2" style="font-weight: 450; font-size: 22px;">Latest Issuances Archive</p>
                 </div>
 
@@ -61,7 +61,7 @@
                                         <p class="text-center" style="font-size: 12px;">
                                             {{ $latest_issuances->outcome_area }}</p>
                                     </td>
-                                    <td class="" style="background-color:#002C76; color:white;  font-size: 12px;">
+                                    <td class="" style="background-color:#234495; color:white;  font-size: 12px;">
                                         Reference No: <span
                                             style="font-size: 15px; font-weight: 350; color:white;">{{ $latest_issuances->reference_num }}</span>
                                         <p class="text-center mt-2" style=" font-size: 14px">
