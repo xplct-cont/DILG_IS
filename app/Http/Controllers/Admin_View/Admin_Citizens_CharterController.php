@@ -38,7 +38,7 @@ class Admin_Citizens_CharterController extends Controller
             $file = $request->file('images');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save(public_path('/citizens_charter_images/' . $filename));
+            Image::make($file)->save('/home/dilgboho/public_html/citizens_charter_images/'. $filename);
             $citizens_charter->images = $filename;
           
           }
@@ -57,7 +57,7 @@ class Admin_Citizens_CharterController extends Controller
 
         if($request->hasFile('images')){
       
-            $destination = 'citizens_charter_images/'.$citizens_charter->images;
+            $destination = '/home/dilgboho/public_html/citizens_charter_images/'.$citizens_charter->images;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -65,7 +65,7 @@ class Admin_Citizens_CharterController extends Controller
             $file = $request->file('images');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $file->move('citizens_charter_images/', $filename);
+            $file->move('/home/dilgboho/public_html/citizens_charter_images/', $filename);
             $citizens_charter->images = $filename;
 
     }
@@ -79,7 +79,7 @@ class Admin_Citizens_CharterController extends Controller
     {
 
             $citizens_charter = Citizens_Charter::find($id);
-            $destination = public_path('citizens_charter_images/'.$citizens_charter->images);
+            $destination = '/home/dilgboho/public_html/citizens_charter_images/' .$citizens_charter->images;
              if(File::exists($destination)){
                  File::delete($destination);
              }
