@@ -381,7 +381,7 @@
                 <!-- Button trigger modal -->
 
                 <button type="button" class="btn btn-sm"
-                    style="background-color: #89898a; color:white; font-size: 9px;" data-toggle="modal"
+                    style="background-color: #dddddd; color:rgb(70, 69, 69); font-size: 9px;" data-toggle="modal"
                     data-target=".bd-example-modal-sm">
                     Developers</button>
 
@@ -427,7 +427,7 @@
                                 </div>
 
                                 <hr>
-                                <p class="text-center " style="font-size: 12px;"> Contact Number: 09096027312</p>
+                                <p class="text-center " style="font-size: 12px;"> Contact No: 09096027312</p>
                             </div>
                         </div>
                     </div>
