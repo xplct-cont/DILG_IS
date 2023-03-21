@@ -52,7 +52,7 @@
                             </tbody>
                         </table>
 
-                        <form action="{{ url('/add_images/' . $home_img->id) }}" method="POST"
+                        <form action="{{ url('/add_images_hm/' . $home_img->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="container mx-auto">
