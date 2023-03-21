@@ -41,7 +41,7 @@ class Admin_Citizens_CharterController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move('citizens_charter_videos/', $filename);
+            $request->file('file')->move('/home/dilgboho/public_html/citizens_charter_videos/', $filename);
             $citizens_charter->file = $filename;
 
           }
@@ -63,7 +63,7 @@ class Admin_Citizens_CharterController extends Controller
            
         if($request->hasFile('file')){
 
-            $destination = 'citizens_charter_videos/'.$citizens_charter->file;
+            $destination = '/home/dilgboho/public_html/citizens_charter_videos/'.$citizens_charter->file;
                 if(File::exists($destination)){
                     File::delete($destination);
                 }
@@ -71,7 +71,7 @@ class Admin_Citizens_CharterController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move('citizens_charter_videos/', $filename);
+            $request->file('file')->move('/home/dilgboho/public_html/citizens_charter_videos/', $filename);
             $citizens_charter->file = $filename;
 
           }
@@ -85,7 +85,7 @@ class Admin_Citizens_CharterController extends Controller
     {
 
             $citizens_charter = Citizens_Charter::find($id);
-            $destination = 'citizens_charter_videos/' .$citizens_charter->file;
+            $destination = '/home/dilgboho/public_html/citizens_charter_videos/' .$citizens_charter->file;
              if(File::exists($destination)){
                  File::delete($destination);
              }
