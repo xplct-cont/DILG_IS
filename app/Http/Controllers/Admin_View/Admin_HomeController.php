@@ -61,8 +61,8 @@ class Admin_HomeController extends Controller
         $images = json_decode($img->images,true);
         if (is_array($images) && !empty($images)){
         foreach ($images as $deleteimage) {
-                if (File::exists(public_path('home_images/'.$deleteimage))) {
-                    File::delete(public_path('home_images/'.$deleteimage));
+                if (File::exists('/home/dilgboho/public_html/home_images/' .$deleteimage)) {
+                    File::delete('/home/dilgboho/public_html/home_images/' .$deleteimage);
                 }
             }
 
@@ -73,7 +73,7 @@ class Admin_HomeController extends Controller
             foreach($request->file('images') as $image){
 
                 $name = $image->getClientOriginalName();
-                $image->move(public_path('/home_images/'), $name);
+                $image->move('/home/dilgboho/public_html/home_images/', $name);
                 $data[] = $name;
         }
     }
