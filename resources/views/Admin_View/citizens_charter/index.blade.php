@@ -41,8 +41,11 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="" style="color:dimgray">Upload Image: </label>
-                                        <input type="file" class="form-control" name="images" required>
+                                        <label for="" style="color:dimgray">Upload Video (Max: 1 min. | Type: mp4): </label>
+                                        <input type="file" class="form-control" name="file" required>
+                                        @if($errors->has('file'))
+                                        {{ $errors->first('file') }}
+                                      @endif
                                     </div>
                                 </div>
 
@@ -79,9 +82,9 @@
             <tbody class=" text-dark">
                 @foreach ($citizens_charter as $cit_chart)
                     <tr>
-
-                        <td><img class="rounded" src="{{ asset('citizens_charter_images/' . $cit_chart->images) }} "
-                                alt="Image" style=" height: 80px; width: 90px;"></td>
+                       
+                        <td> <video style=" height: 80px; width: 100px;" class="text-center" controls>
+                            <source src="{{URL::asset('citizens_charter_videos/' . $cit_chart->file)}}"  style=" height: height: 80px; width: 100px;" type="video/mp4"></td>
                         <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                             {{ $cit_chart->title }}</td>
 
@@ -119,18 +122,18 @@
                                                 </div>
 
                                                 <div class="col-md-12 text-center mx-auto">
-                                                    <img src="{{ asset('citizens_charter_images/' . $cit_chart->images) }}"
-                                                        class="text-center col-md-12" style=" height: 200px; width: 100%;"
-                                                        alt="">
-                                                    <div class="form-group mt-2">
-                                                        <label for="" style="color:dimgray">Upload Image:</label>
-                                                        <input type="file" class="form-control" name="images"
-                                                            value="{{ $cit_chart->images }}">
-                                                    </div>
+                                                        <video style=" height: 100%; width:100%;" class="text-center col-md-12" controls>
+                                                            <source src="{{URL::asset('citizens_charter_videos/' . $cit_chart->file)}}"  style=" height: 200px; width:100%;" type="video/mp4">
                                                 </div>
-
+                                                <div class="form-group mt-3">
+                                                    <label for="" style="color:dimgray">Upload Video (Max: 1 min. | Type: mp4): </label>
+                                                    <input type="file" class="form-control" name="file"
+                                                        value="{{ $cit_chart->file }}">
+                                                        @if($errors->has('file'))
+                                                        {{ $errors->first('file') }}
+                                                        @endif
+                                                </div>
                                             </div>
-
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-success"><span class="fas fa-save"></span>
@@ -140,7 +143,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <td>
                             <a href="#" data-toggle="modal" id="citiznes_charter_delete_link" class="btn"
                                 data-target="#delete_citiznes_charter_id{{ $cit_chart->id }}"><span

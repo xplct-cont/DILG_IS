@@ -26,49 +26,55 @@ class Admin_Citizens_CharterController extends Controller
 
     }
 
-    
     public function store(Request $request){
         
-        $citizens_charter = new Citizens_Charter;
-       
-        $citizens_charter->title = $request->input('title');
+        $request->validate([
+            'file' => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm'
+          
+        ]);
+            $citizens_charter = new Citizens_Charter;
+            $citizens_charter->title = $request->input('title');
+           
 
-        if($request->hasFile('images')){
+        if($request->hasFile('file')){
 
-            $file = $request->file('images');
+            $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save('/home/dilgboho/public_html/citizens_charter_images/'. $filename);
-            $citizens_charter->images = $filename;
-          
+            $request->file('file')->move('citizens_charter_videos/', $filename);
+            $citizens_charter->file = $filename;
+
           }
 
         $citizens_charter->save();
-
         return redirect()->back()->with('message', 'Added Successfully!');
      
     }
 
     public function update_citizens_charter(Request $request, $id){
       
+        $request->validate([
+            'file' => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm'
+          
+        ]);
         $citizens_charter = Citizens_Charter::find($id);
 
         $citizens_charter->title = $request->input('title');
+           
+        if($request->hasFile('file')){
 
-        if($request->hasFile('images')){
-      
-            $destination = '/home/dilgboho/public_html/citizens_charter_images/'.$citizens_charter->images;
-            if(File::exists($destination)){
-                File::delete($destination);
-            }
+            $destination = 'citizens_charter_videos/'.$citizens_charter->file;
+                if(File::exists($destination)){
+                    File::delete($destination);
+                }
 
-            $file = $request->file('images');
+            $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $file->move('/home/dilgboho/public_html/citizens_charter_images/', $filename);
-            $citizens_charter->images = $filename;
+            $request->file('file')->move('citizens_charter_videos/', $filename);
+            $citizens_charter->file = $filename;
 
-    }
+          }
 
     $citizens_charter->update();
     return redirect()->back()->with('message', 'Updated Successfully!');
@@ -79,7 +85,7 @@ class Admin_Citizens_CharterController extends Controller
     {
 
             $citizens_charter = Citizens_Charter::find($id);
-            $destination = '/home/dilgboho/public_html/citizens_charter_images/' .$citizens_charter->images;
+            $destination = 'citizens_charter_videos/' .$citizens_charter->file;
              if(File::exists($destination)){
                  File::delete($destination);
              }
