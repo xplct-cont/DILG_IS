@@ -83,7 +83,6 @@ class Admin_Bohol_IssuancesController extends Controller
             $issuances = Bohol_Issuance::find($id);
 
             $issuances->outcome_area = $request->input('outcome_area');
-            $issuances->outcome = $request->input('outcome');
             $issuances->date = $request->input('date');
             $issuances->category = $request->input('category');
             $issuances->title = $request->input('title');
