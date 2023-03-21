@@ -53,7 +53,7 @@ class Admin_JobsController extends Controller
             $file = $request->file('hiring_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save(public_path('/hiring_images/' . $filename));
+            Image::make($file)->save('/home/dilgboho/public_html/hiring_images/' . $filename);
             $admin_jobs->hiring_img = $filename;
 
           }
@@ -74,7 +74,7 @@ class Admin_JobsController extends Controller
 
         if($request->hasFile('hiring_img')){
 
-            $destination = 'hiring_images/'.$admin_jobs->hiring_img;
+            $destination = '/home/dilgboho/public_html/hiring_images/'.$admin_jobs->hiring_img;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -82,7 +82,7 @@ class Admin_JobsController extends Controller
             $file = $request->file('hiring_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $file->move('hiring_images/', $filename);
+            $file->move('/home/dilgboho/public_html/hiring_images/', $filename);
             $admin_jobs->hiring_img = $filename;
 
     }
@@ -99,7 +99,7 @@ class Admin_JobsController extends Controller
         // Job::whereIn('id', $ids)->delete();
 
             $admin_jobs = Job::find($id);
-            $destination = public_path('hiring_images/'.$admin_jobs->hiring_img);
+            $destination = '/home/dilgboho/public_html/hiring_images/'.$admin_jobs->hiring_img;
              if(File::exists($destination)){
                  File::delete($destination);
              }
