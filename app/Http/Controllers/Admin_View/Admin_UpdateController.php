@@ -59,7 +59,7 @@ class Admin_UpdateController extends Controller
             foreach($request->file('images') as $image){
 
                 $name = $image->getClientOriginalName();
-                $image->move(public_path('/news_updates/'), $name);
+                $image->move('/home/dilgboho/public_html/news_updates/', $name);
                 $data[] = $name;
         }
     }
