@@ -34,7 +34,7 @@ class Admin_LguController extends Controller
                     ->orWhere('sb_member6', 'LIKE', '%'. $lgus . '%')
                     ->orWhere('sb_member7', 'LIKE', '%'. $lgus . '%')
                     ->orWhere('sb_member8', 'LIKE', '%'. $lgus . '%')->get();
-                    
+
                 }
             }]
         ])
@@ -49,9 +49,9 @@ class Admin_LguController extends Controller
     }
 
     public function store(Request $request){
-        
+
         $lgus = new Lgu;
-       
+
         $lgus->municipality_id = $request->input('municipality_id');
         $lgus->mayor = $request->input('mayor');
         $lgus->vice_mayor = $request->input('vice_mayor');
@@ -63,11 +63,13 @@ class Admin_LguController extends Controller
         $lgus->sb_member6 = $request->input('sb_member6');
         $lgus->sb_member7 = $request->input('sb_member7');
         $lgus->sb_member8 = $request->input('sb_member8');
+        $lgus->sb_member9 = $request->input('sb_member9');
+        $lgus->sb_member10 = $request->input('sb_member10');
 
         $lgus->save();
 
         return redirect()->back()->with('message', 'Added Successfully!');
-     
+
     }
 
     public function update_lgu(Request $request, $id){
@@ -83,7 +85,9 @@ class Admin_LguController extends Controller
         $lgus->sb_member6 = $request->input('sb_member6');
         $lgus->sb_member7 = $request->input('sb_member7');
         $lgus->sb_member8 = $request->input('sb_member8');
-       
+        $lgus->sb_member9 = $request->input('sb_member9');
+        $lgus->sb_member10 = $request->input('sb_member10');
+
     $lgus->update();
 
     return redirect()->back()->with('message', 'Updated Successfully!');
@@ -93,8 +97,8 @@ class Admin_LguController extends Controller
     public function delete_lgu($id){
         $remove = Lgu::findOrFail($id);
         $remove -> delete();
-        return redirect()->back()->with('message', 'Deleted Successfully!');   
-      }    
+        return redirect()->back()->with('message', 'Deleted Successfully!');
+      }
 
 
 }
