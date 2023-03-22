@@ -128,7 +128,7 @@
                                                 <div class="form-group mt-3">
                                                     <label for="" style="color:dimgray">Upload Video (Max: 1 min. | Type: mp4): </label>
                                                     <input type="file" class="form-control" name="file"
-                                                        value="{{ $cit_chart->file }}">
+                                                        value="{{ $cit_chart->file }}" required>
                                                         @if($errors->has('file'))
                                                         {{ $errors->first('file') }}
                                                         @endif
