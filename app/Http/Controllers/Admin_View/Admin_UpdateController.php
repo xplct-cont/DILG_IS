@@ -59,7 +59,7 @@ class Admin_UpdateController extends Controller
             foreach($request->file('images') as $image){
 
                 $name = $image->getClientOriginalName();
-                $image->move(public_path('/news_updates/'), $name);
+                $image->move('/home/dilgboho/public_html/news_updates/', $name);
                 $data[] = $name;
         }
     }
@@ -89,15 +89,15 @@ class Admin_UpdateController extends Controller
             foreach($request->file('images') as $image){
 
                 $name = $image->getClientOriginalName();
-                $image->move(public_path('/news_updates/'), $name);
+                $image->move('/home/dilgboho/public_html/news_updates/', $name);
                 $data[] = $name;
             }
 
             $images = json_decode($img->images,true);
             if (is_array($images) && !empty($images)){
             foreach ($images as $deleteimage) {
-                    if (File::exists(public_path('news_updates/'.$deleteimage))) {
-                        File::delete(public_path('news_updates/'.$deleteimage));
+                    if (File::exists('/home/dilgboho/public_html/news_updates/'.$deleteimage)) {
+                        File::delete('/home/dilgboho/public_html/news_updates/'.$deleteimage);
                     }
                 }
 
@@ -119,8 +119,8 @@ class Admin_UpdateController extends Controller
         $images = json_decode($img->images,true);
         if (is_array($images) && !empty($images)){
         foreach ($images as $deleteimage) {
-                if (File::exists(public_path('news_updates/'.$deleteimage))) {
-                    File::delete(public_path('news_updates/'.$deleteimage));
+                if (File::exists('/home/dilgboho/public_html/news_updates/'.$deleteimage)) {
+                    File::delete('/home/dilgboho/public_html/news_updates/'.$deleteimage);
                 }
             }
             $img->delete();
@@ -140,8 +140,8 @@ class Admin_UpdateController extends Controller
         $images = json_decode($img->images,true);
         if (is_array($images) && !empty($images)){
         foreach ($images as $deleteimage) {
-                if (File::exists(public_path('updates_images/'.$deleteimage))) {
-                    File::delete(public_path('updates_images/'.$deleteimage));
+                if (File::exists('/home/dilgboho/public_html/updates_images/'.$deleteimage)) {
+                    File::delete('/home/dilgboho/public_html/updates_images/'.$deleteimage);
                 }
             }
 
@@ -152,7 +152,7 @@ class Admin_UpdateController extends Controller
             foreach($request->file('images') as $image){
 
                 $name = $image->getClientOriginalName();
-                $image->move(public_path('/updates_images/'), $name);
+                $image->move('/home/dilgboho/public_html/updates_images/', $name);
                 $data[] = $name;
         }
     }

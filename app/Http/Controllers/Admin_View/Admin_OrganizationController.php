@@ -54,7 +54,7 @@ class Admin_OrganizationController extends Controller
             $file = $request->file('profile_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save(public_path('/org_profile_images/' . $filename));
+            Image::make($file)->save('/home/dilgboho/public_html/org_profile_images/'. $filename);
             $orgs->profile_img = $filename;
           
           }
@@ -75,7 +75,7 @@ class Admin_OrganizationController extends Controller
 
         if($request->hasFile('profile_img')){
       
-            $destination = 'org_profile_images/'.$orgs->profile_img;
+            $destination = '/home/dilgboho/public_html/org_profile_images/'.$orgs->profile_img;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -83,7 +83,7 @@ class Admin_OrganizationController extends Controller
             $file = $request->file('profile_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $file->move('org_profile_images/', $filename);
+            $file->move('/home/dilgboho/public_html/org_profile_images/', $filename);
             $orgs->profile_img = $filename;
 
     }
@@ -100,7 +100,7 @@ class Admin_OrganizationController extends Controller
         // Org::whereIn('id', $ids)->delete();
 
             $orgs = Org::find($id);
-            $destination = public_path('org_profile_images/'.$orgs->profile_img);
+            $destination = '/home/dilgboho/public_html/org_profile_images/'.$orgs->profile_img;
              if(File::exists($destination)){
                  File::delete($destination);
              }

@@ -23,7 +23,7 @@
             <div class="modal-dialog modal-md" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-
+                            <p style="font-size: 14px;"><span class="fas fa-exclamation-triangle text-warning" style="font-size: 13px;"></span> Note: Please use images with same size.</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -52,7 +52,7 @@
                             </tbody>
                         </table>
 
-                        <form action="{{ url('/add_images/' . $home_img->id) }}" method="POST"
+                        <form action="{{ url('/add_images_hm/' . $home_img->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="container mx-auto">

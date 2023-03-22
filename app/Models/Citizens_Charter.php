@@ -15,7 +15,7 @@ class Citizens_Charter extends Model
     protected $fillable =
     [
        'title',
-       'images',
+       'file',
     ];
 
     protected $table = "citizens_charters";
@@ -29,7 +29,7 @@ class Citizens_Charter extends Model
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-        ->logOnly(['title', 'images', 'outcome_area'])
+        ->logOnly(['title', 'file', 'outcome_area'])
         ->setDescriptionForEvent(fn(string $eventName) => "Citizen's Charter has been {$eventName}")
         ->logOnlyDirty();
     }

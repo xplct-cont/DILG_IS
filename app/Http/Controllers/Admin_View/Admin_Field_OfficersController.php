@@ -59,7 +59,7 @@ class Admin_Field_OfficersController extends Controller
             $file = $request->file('profile_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save(public_path('/field_off_images/' . $filename));
+            Image::make($file)->save('/home/dilgboho/public_html/field_off_images/'. $filename);
             $field_officers->profile_img = $filename;
           
           }
@@ -82,7 +82,7 @@ class Admin_Field_OfficersController extends Controller
 
         if($request->hasFile('profile_img')){
       
-            $destination = 'field_off_images/'.$field_officers->profile_img;
+            $destination = '/home/dilgboho/public_html/field_off_images/'.$field_officers->profile_img;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -90,7 +90,7 @@ class Admin_Field_OfficersController extends Controller
             $file = $request->file('profile_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $file->move('field_off_images/', $filename);
+            $file->move('/home/dilgboho/public_html/field_off_images/', $filename);
             $field_officers->profile_img = $filename;
 
     }
@@ -107,7 +107,7 @@ class Admin_Field_OfficersController extends Controller
         // Org::whereIn('id', $ids)->delete();
 
             $field_officers = Field_Officer::find($id);
-            $destination = public_path('field_off_images/'.$field_officers->profile_img);
+            $destination = '/home/dilgboho/public_html/field_off_images/'.$field_officers->profile_img;
              if(File::exists($destination)){
                  File::delete($destination);
              }

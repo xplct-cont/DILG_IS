@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('citizens_charters', function (Blueprint $table) {
             $table->id();
             $table->longText('title')->nullable();
-            $table->longText('images')->nullable();
+            $table->longText('file')->nullable();
             $table->timestamps();
         });
     }
