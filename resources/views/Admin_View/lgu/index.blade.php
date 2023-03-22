@@ -86,50 +86,62 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">SB Member:</label>
+                                                <label for="" style="color:dimgray">SB Member 1:</label>
                                                 <input type="text" class="form-control" name="sb_member1">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">SB Member:</label>
+                                                <label for="" style="color:dimgray">SB Member 2:</label>
                                                 <input type="text" class="form-control" name="sb_member2">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">SB Member:</label>
+                                                <label for="" style="color:dimgray">SB Member 3:</label>
                                                 <input type="text" class="form-control" name="sb_member3">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">SB Member:</label>
+                                                <label for="" style="color:dimgray">SB Member 4:</label>
                                                 <input type="text" class="form-control" name="sb_member4">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">SB Member:</label>
+                                                <label for="" style="color:dimgray">SB Member 5:</label>
                                                 <input type="text" class="form-control" name="sb_member5">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">SB Member:</label>
+                                                <label for="" style="color:dimgray">SB Member 6:</label>
                                                 <input type="text" class="form-control" name="sb_member6">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">SB Member:</label>
+                                                <label for="" style="color:dimgray">SB Member 7:</label>
                                                 <input type="text" class="form-control" name="sb_member7">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">SB Member:</label>
+                                                <label for="" style="color:dimgray">SB Member 8:</label>
                                                 <input type="text" class="form-control" name="sb_member8">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="" style="color:dimgray">SB Member 9:</label>
+                                                <input type="text" class="form-control" name="sb_member9">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="" style="color:dimgray">SB Member 10:</label>
+                                                <input type="text" class="form-control" name="sb_member10">
                                             </div>
                                         </div>
 
@@ -150,8 +162,9 @@
         <div class="elevation-1 p-3 rounded mt-2">
             <div class="card-header d-flex justify-content-between mb-1">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link" href="{{ url('lgu') }}"><span class="fas fa-city"
-                        style="color:#8c0509;"></span> LGU's </a></h1>
+                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link"
+                        href="{{ url('lgu') }}"><span class="fas fa-city" style="color:#8c0509;"></span> LGU's </a>
+                </h1>
             </div>
 
 
@@ -228,7 +241,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">SB
-                                                                    Member:</label>
+                                                                    Member 1:</label>
                                                                 <input type="text" class="form-control"
                                                                     name="sb_member1"
                                                                     value="{{ $lgu_member->sb_member1 }}">
@@ -237,7 +250,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">SB
-                                                                    Member:</label>
+                                                                    Member 2:</label>
                                                                 <input type="text" class="form-control"
                                                                     name="sb_member2"
                                                                     value="{{ $lgu_member->sb_member2 }}">
@@ -246,7 +259,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">SB
-                                                                    Member:</label>
+                                                                    Member 3:</label>
                                                                 <input type="text" class="form-control"
                                                                     name="sb_member3"
                                                                     value="{{ $lgu_member->sb_member3 }}">
@@ -255,7 +268,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">SB
-                                                                    Member:</label>
+                                                                    Member 4:</label>
                                                                 <input type="text" class="form-control"
                                                                     name="sb_member4"
                                                                     value="{{ $lgu_member->sb_member4 }}">
@@ -264,7 +277,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">SB
-                                                                    Member:</label>
+                                                                    Member 5:</label>
                                                                 <input type="text" class="form-control"
                                                                     name="sb_member5"
                                                                     value="{{ $lgu_member->sb_member5 }}">
@@ -273,7 +286,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">SB
-                                                                    Member:</label>
+                                                                    Member 6:</label>
                                                                 <input type="text" class="form-control"
                                                                     name="sb_member6"
                                                                     value="{{ $lgu_member->sb_member6 }}">
@@ -282,7 +295,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">SB
-                                                                    Member:</label>
+                                                                    Member 7:</label>
                                                                 <input type="text" class="form-control"
                                                                     name="sb_member7"
                                                                     value="{{ $lgu_member->sb_member7 }}">
@@ -291,13 +304,32 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">SB
-                                                                    Member:</label>
+                                                                    Member 8:</label>
                                                                 <input type="text" class="form-control"
                                                                     name="sb_member8"
                                                                     value="{{ $lgu_member->sb_member8 }}">
                                                             </div>
                                                         </div>
-
+                                                        @if (($lgu_member->sb_member9 && $lgu_member->sb_member10) != null)
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="" style="color:dimgray">SB
+                                                                        Member 9:</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="sb_member9"
+                                                                        value="{{ $lgu_member->sb_member9 }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="" style="color:dimgray">SB
+                                                                        Member 10:</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="sb_member10"
+                                                                        value="{{ $lgu_member->sb_member10 }}">
+                                                                </div>
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                 </div>
 
@@ -315,7 +347,8 @@
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 <a href="#" data-toggle="modal" id="lgu_delete_link" class="btn"
                                     data-target="#delete_lgu_id{{ $lgu_member->id }}"><span
-                                        class="text-danger fas fa-trash-alt"></span></a></td>
+                                        class="text-danger fas fa-trash-alt"></span></a>
+                            </td>
 
                             <div class="modal fade" id="delete_lgu_id{{ $lgu_member->id }}" tabindex="-1"
                                 role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
