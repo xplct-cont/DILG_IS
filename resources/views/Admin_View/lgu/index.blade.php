@@ -310,26 +310,26 @@
                                                                     value="{{ $lgu_member->sb_member8 }}">
                                                             </div>
                                                         </div>
-                                                        @if (($lgu_member->sb_member9 && $lgu_member->sb_member10) != null)
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label for="" style="color:dimgray">SB
-                                                                        Member 9:</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="sb_member9"
-                                                                        value="{{ $lgu_member->sb_member9 }}">
-                                                                </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="" style="color:dimgray">SB
+                                                                    Member 9:</label>
+                                                                <input type="text" class="form-control"
+                                                                    name="sb_member9"
+                                                                    value="{{ $lgu_member->sb_member9 }}">
                                                             </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label for="" style="color:dimgray">SB
-                                                                        Member 10:</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="sb_member10"
-                                                                        value="{{ $lgu_member->sb_member10 }}">
-                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="" style="color:dimgray">SB
+                                                                    Member 10:</label>
+                                                                <input type="text" class="form-control"
+                                                                    name="sb_member10"
+                                                                    value="{{ $lgu_member->sb_member10 }}">
                                                             </div>
-                                                        @endif
+                                                        </div>
+
                                                     </div>
                                                 </div>
 
