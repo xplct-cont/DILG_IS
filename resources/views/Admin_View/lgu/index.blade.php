@@ -41,7 +41,7 @@
                 aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <div class="modal-header" style="background-color: #8c0509; color:white;">
+                        <div class="modal-header" style="background-color: #234495; color:white;">
                             <h5 class="modal-title" id="exampleModalLabel">Adding to Local Government Unit (LGU)</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -163,7 +163,7 @@
             <div class="card-header d-flex justify-content-between mb-1">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
                 <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link"
-                        href="{{ url('lgu') }}"><span class="fas fa-city" style="color:#8c0509;"></span> LGU's </a>
+                        href="{{ url('lgu') }}"><span class="fas fa-city" style="color:#234495;"></span> LGU's </a>
                 </h1>
             </div>
 
@@ -197,7 +197,7 @@
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
-                                        <div class="modal-header" style="background-color: #8c0509; color:white;">
+                                        <div class="modal-header" style="background-color: #234495; color:white;">
                                             <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
                                             <button type="button" class="close" data-dismiss="modal"
                                                 aria-label="Close">
