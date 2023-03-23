@@ -278,7 +278,7 @@ class MunicipalitySeeder extends Seeder
                 [
                     'id' => 38,
                     'municipality' => 'SAN ISIDRO',
-                    'gmap_url' => 'https://maps.google.com/maps?q=san isidro, bohol&t=&z=11&ie=UTF8&iwloc=&output=embed',
+                    'gmap_url' => 'https://maps.google.com/maps?q=san isidro bohol&t=&z=11&ie=UTF8&iwloc=&output=embed',
                     'num_of_brgys' => '12',
                     'barangays' => json_encode(array('Abehilan', 'Baunos', 'Cabanugan', 'Caimbang', 'Cambansag', 'Candungao', 'Cansague Norte', 'Cansague Sur', 'Causwagan Sur', 'Masonoy', 'Poblacion', 'Baryong Daan')),
                 ],
@@ -353,7 +353,7 @@ class MunicipalitySeeder extends Seeder
                     'barangays' => json_encode(array('Adlawan', 'Anas', 'Anonang', 'Anoyon', 'Balingasao', 'Botong', 'Buyog', 'Canduao', 'Canduao Oriental', 'Canlusong', 'Canmanico', 'Cansibao', 'Catug-a', 'Cutcutan', 'Danao', 'Genoveva', 'Ginopolan (Ginopolan)', 'La Victoria', 'Lantang', 'Limocon', 'Loctob', 'Magsaysay', 'Marawis', 'Maubo', 'Nailo', 'Omjon', 'Pangi-an', 'Poblacion Occidental', 'Poblacion Oriental', 'Simang', 'Taug', 'Tausion', 'Taytay', 'Ticum', 'Banderahan (Upper Ginopolan)')),
                 ],
             ];
-    
+
             Municipality::insert($data);
         }
     }
