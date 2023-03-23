@@ -94,7 +94,7 @@
                         <div class="icon">
                             <i class="fas fa-newspaper text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/news_updates') }}" class="small-box-footer bg-secondary text-light"><span
+                        <a href="{{ route('admin/news_updates') }}" class="small-box-footer text-light" style="background-color: #234495;"><span
                                 class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                         <div class="icon">
                             <i class="fas fa-address-book text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/jobs') }}" class="small-box-footer bg-secondary"
+                        <a href="{{ route('admin/jobs') }}" class="small-box-footer" style="background-color: #234495;"
                             style="color:whitesmoke;"><span class="text-light">More info</span> <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
@@ -130,7 +130,7 @@
                             <div class="icon">
                                 <i class="fas fa-users text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/organization') }}" class="small-box-footer bg-secondary"
+                            <a href="{{ route('admin/organization') }}" class="small-box-footer" style="background-color: #234495;"
                                 style="color:whitesmoke;"><span class="text-light">More info</span> <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
@@ -147,7 +147,7 @@
                             <div class="icon">
                                 <i class="fas fa-user-friends text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/pdmu') }}" class="small-box-footer bg-secondary">
+                            <a href="{{ route('admin/pdmu') }}" class="small-box-footer" style="background-color: #234495;">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                             <div class="icon">
                                 <i class="fas fa-people-carry text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/field_officers') }}" class="small-box-footer bg-secondary"
+                            <a href="{{ route('admin/field_officers') }}" class="small-box-footer " style="background-color: #234495;"
                                 style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
@@ -180,7 +180,7 @@
                             <div class="icon">
                                 <i class="fas fa-question-circle text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/faqs') }}" class="small-box-footer bg-secondary" style="">
+                            <a href="{{ route('admin/faqs') }}" class="small-box-footer " style="background-color: #234495;" style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                             <div class="icon">
                                 <i class="fas fa-file text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/issuances') }}" class="small-box-footer bg-secondary" style="">
+                            <a href="{{ route('admin/issuances') }}" class="small-box-footer " style="background-color: #234495;" style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -212,7 +212,7 @@
                             <div class="icon">
                                 <i class="fas fa-download text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/downloadables') }}" class="small-box-footer bg-secondary"
+                            <a href="{{ route('admin/downloadables') }}" class="small-box-footer " style="background-color: #234495;"
                                 style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
@@ -229,7 +229,7 @@
                             <div class="icon">
                                 <i class="fas fa-book-open text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/knowledge_materials') }}" class="small-box-footer bg-secondary"
+                            <a href="{{ route('admin/knowledge_materials') }}" class="small-box-footer " style="background-color: #234495;"
                                 style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
@@ -246,7 +246,7 @@
                             <div class="icon">
                                 <i class="fas fa-user-tie text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/provincial_officials') }}" class="small-box-footer bg-secondary"
+                            <a href="{{ route('admin/provincial_officials') }}" class="small-box-footer " style="background-color: #234495;"
                                 style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
@@ -262,7 +262,7 @@
                             <div class="icon">
                                 <i class="fas fa-city text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/lgu') }}" class="small-box-footer bg-secondary"
+                            <a href="{{ route('admin/lgu') }}" class="small-box-footer " style="background-color: #234495;"
                                 style=";color:whitesmoke;"><span class="text-light">More info</span>
                                 <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
@@ -278,7 +278,7 @@
                             <div class="icon">
                                 <i class="fas fa-users-slash text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/citizens_charter') }}" class="small-box-footer bg-secondary"
+                            <a href="{{ route('admin/citizens_charter') }}" class="small-box-footer " style="background-color: #234495;"
                                 style="color:whitesmoke;"><span class="text-light">More info</span>
                                 <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
@@ -296,7 +296,7 @@
                             <div class="icon">
                                 <i class="fas fa-pen text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/logs') }}" class="small-box-footer bg-secondary"
+                            <a href="{{ route('admin/logs') }}" class="small-box-footer " style="background-color: #234495;"
                                 style=";color:whitesmoke;"><span class="text-light">More info</span>
                                 <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
