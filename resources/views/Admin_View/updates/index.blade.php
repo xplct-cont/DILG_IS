@@ -53,7 +53,7 @@
                         <div class="modal-body">
                             <table
                                 class=" mx-auto col-md-8 elevation-3 table table-sm table-bordered table-hovered text-center">
-                                <thead class="" style="background-color: dimgray; color:white;">
+                                <thead class="" style="background-color: #234495; color:white;">
 
 
                                     <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
