@@ -43,7 +43,7 @@
                 aria-hidden="true">
                 <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
-                        <div class="modal-header" style="background-color: #8c0509; color:white;">
+                        <div class="modal-header" style="background-color: #234495; color:white;">
                             <h5 class="modal-title" id="exampleModalLabel">Adding Downloadables</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -86,7 +86,7 @@
             <div class="card-header d-flex justify-content-between">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
                 <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link" href="{{ url('/downloadables') }}"><span class="fas fa-download"
-                        style="color:#8c0509;"></span> DOWNLOADABLES </a></h1>
+                        style="color:#234495;"></span> DOWNLOADABLES </a></h1>
 
             </div>
             <div>
@@ -117,7 +117,7 @@
                                     role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-md" role="document">
                                         <div class="modal-content">
-                                            <div class="modal-header" style="background-color: #8c0509; color:white;">
+                                            <div class="modal-header" style="background-color: #234495; color:white;">
                                                 <h5 class="modal-title" id="exampleModalLabel">Edit Downloadables</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">

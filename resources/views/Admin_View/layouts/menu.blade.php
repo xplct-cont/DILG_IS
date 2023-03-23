@@ -102,7 +102,7 @@
             <i class="fas fa-pen fa-pull-left fa-md text-white"></i>
         </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item mb-5">
         <a href="{{ route('admin/users') }}"
             class="nav-link {{ Request::is('admin/users*') ? 'bg-secondary active' : '' }}">
             <p class="text-white">Users/Roles</p>
