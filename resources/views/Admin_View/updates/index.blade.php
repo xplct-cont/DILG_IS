@@ -191,7 +191,7 @@
                                             <span class=" btn btn-sm btn-warning text-light">Pending <span
                                                     class="text-justify fas fa-exclamation"></span></span>
                                         @elseif ($news_img->status === 1)
-                                            <span class="btn btn-sm btn-success text-light">Approved <span
+                                            <span class="btn btn-sm text-light" style="background-color: #234495;">Approved <span
                                                     class="text-justify fas fa-check"></span></span>
                                         @endif
                                     </td>
@@ -267,6 +267,24 @@
                                                             class="fas fa-save"></span> Save changes</button>
                                                 </div>
                                                 </form>
+                                               
+                                                
+                                                <div class="text-start mb-3">
+                                                    @if ($news_img->status === 0)
+                                                    <span>
+                                                        <form action="{{ url('/approve/'. $news_img->id) }}" method="POST" class="d-inline-block">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-sm ml-2" style="background-color: #234495; color:white;">Approve ?</button>
+                                                        </form>
+                                                    </span>
+                                                @elseif ($news_img->status === 1)
+                                                    <span>  <form action="{{ url('/disapprove/'. $news_img->id) }}" method="POST" class="d-inline-block">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-sm ml-2 btn-danger" style="color:white;">Disapprove ?</button></span>
+                                                    </form>
+                                                @endif
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -304,6 +322,7 @@
                                                     <button type="submit" class="btn btn-danger">Delete Permanently</button>
                                                 </div>
                                                 </form>
+
                                             </div>
                                         </div>
                                     </div>

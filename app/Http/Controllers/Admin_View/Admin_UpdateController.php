@@ -164,12 +164,22 @@ class Admin_UpdateController extends Controller
 
     }
 
-    public function approve(Update $id)
+    public function approve($id)
     {
-        $post->approved = true;
-        $post->save();
+        $news_updates = Update::find($id);
+        $news_updates->status = true;
+        $news_updates->save();
 
         return redirect()->back()->with('message', 'Approved Successfully!');
+    }
+
+    public function disapprove($id)
+    {
+        $news_updates = Update::find($id);
+        $news_updates->status = false;
+        $news_updates->save();
+
+        return redirect()->back()->with('message', 'Disapproved Successfully!');
     }
 
 }
