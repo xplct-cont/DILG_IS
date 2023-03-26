@@ -200,8 +200,6 @@
                                         <img src="{{ asset('news_updates/' . $picture) }}" style="height:40px; width:60px" />
                                         <?php } ?>
                                     </td>
-
-
                                     <td class="text-wrap">{{ $news_img->title }}</td>
                                     <td class="text-wrap d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                         style="text-align: center">{{ Illuminate\Support\Str::limit($news_img->caption, 50) }}
