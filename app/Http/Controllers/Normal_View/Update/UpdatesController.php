@@ -13,7 +13,7 @@ class UpdatesController extends Controller
     public function index(){
 
         $updates_images = Updates_Image::all();
-        $news_images = Update::orderBy('created_at', 'ASC')->get();
+        $news_images = Update::where('status', true)->orderBy('created_at', 'ASC')->get();
         return view('Normal_View.Updates.index', compact('news_images', 'updates_images'));
     }
 }

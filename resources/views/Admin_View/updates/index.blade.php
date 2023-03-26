@@ -191,8 +191,8 @@
                                             <span class=" btn btn-sm btn-warning text-light">Pending <span
                                                     class="text-justify fas fa-exclamation"></span></span>
                                         @elseif ($news_img->status === 1)
-                                            <span class="btn btn-sm text-light" style="background-color: #234495;">Approved <span
-                                                    class="text-justify fas fa-check"></span></span>
+                                            <span class="btn btn-sm text-light" style="background-color: #234495;">Approved
+                                                <span class="text-justify fas fa-check"></span></span>
                                         @endif
                                     </td>
                                     <td scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
@@ -267,23 +267,31 @@
                                                             class="fas fa-save"></span> Save changes</button>
                                                 </div>
                                                 </form>
-                                               
-                                                
-                                                <div class="text-start mb-3">
-                                                    @if ($news_img->status === 0)
-                                                    <span>
-                                                        <form action="{{ url('/approve/'. $news_img->id) }}" method="POST" class="d-inline-block">
-                                                            @csrf
-                                                            <button type="submit" class="btn btn-sm ml-2" style="background-color: #234495; color:white;">Approve ?</button>
-                                                        </form>
-                                                    </span>
-                                                @elseif ($news_img->status === 1)
-                                                    <span>  <form action="{{ url('/disapprove/'. $news_img->id) }}" method="POST" class="d-inline-block">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-sm ml-2 btn-danger" style="color:white;">Disapprove ?</button></span>
-                                                    </form>
-                                                @endif
-                                                </div>
+
+                                                @role('Super-Admin')
+                                                    <div class="text-start mb-3">
+                                                        @if ($news_img->status === 0)
+                                                            <span>
+                                                                <form action="{{ url('/approve/' . $news_img->id) }}"
+                                                                    method="POST" class="d-inline-block">
+                                                                    @csrf
+                                                                    <button type="submit" class="btn btn-sm ml-2"
+                                                                        style="background-color: #234495; color:white;">Approve
+                                                                        ?</button>
+                                                                </form>
+                                                            </span>
+                                                        @elseif ($news_img->status === 1)
+                                                            <span>
+                                                                <form action="{{ url('/disapprove/' . $news_img->id) }}"
+                                                                    method="POST" class="d-inline-block">
+                                                                    @csrf
+                                                                    <button type="submit" class="btn btn-sm ml-2 btn-danger"
+                                                                        style="color:white;">Discard ?</button>
+                                                            </span>
+                                                            </form>
+                                                        @endif
+                                                    </div>
+                                                @endrole
 
                                             </div>
                                         </div>
@@ -337,11 +345,13 @@
                     <table class="table table-bordered text-center">
                         <thead class="text-center" style="background-color:#343a40; color:white;">
                             <tr>
+                                <th>Status</th>
                                 <th scope="col" scope="col"
                                     class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                     Images</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Caption</th>
+                                <th scope="col">Author</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete
                                 </th>
@@ -350,16 +360,27 @@
                         <tbody class="text-center">
                             @foreach ($news_images as $news_img)
                                 <tr>
+
+                                    <td>
+                                        @if ($news_img->status === 0)
+                                            <span class=" btn btn-sm btn-warning text-light">Pending <span
+                                                    class="text-justify fas fa-exclamation"></span></span>
+                                        @elseif ($news_img->status === 1)
+                                            <span class="btn btn-sm text-light" style="background-color: #234495;">Approved
+                                                <span class="text-justify fas fa-check"></span></span>
+                                        @endif
+                                    </td>
+
                                     <td scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                         style="text-align: center"> <?php foreach (json_decode($news_img->images) as $picture) { ?>
                                         <img src="{{ asset('news_updates/' . $picture) }}" style="height:40px; width:60px" />
                                         <?php } ?>
                                     </td>
-
-
                                     <td class="text-wrap">{{ $news_img->title }}</td>
-                                    <td class="text-wrap">{{ $news_img->caption }}</td>
-
+                                    <td class="text-wrap d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                        style="text-align: center">{{ Illuminate\Support\Str::limit($news_img->caption, 50) }}
+                                    </td>
+                                    <td class="text-wrap">{{ $news_img->user->name ?? 'User Removed' }}</td>
                                     @if ($news_img->user_id == auth()->user()->id)
                                         <td><a href="#" data-toggle="modal" id="news_edit_link" class="btn"
                                                 data-target="#news_id{{ $news_img->id }}"><span
@@ -424,7 +445,8 @@
                                         <td scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">
                                             <a href="#" data-toggle="modal" id="news_updates_delete_link"
                                                 class="btn" data-target="#delete_news_updates_id{{ $news_img->id }}"><span
-                                                    class="text-danger fas fa-trash-alt"></span></a></td>
+                                                    class="text-danger fas fa-trash-alt"></span></a>
+                                        </td>
 
                                         <div class="modal fade" id="delete_news_updates_id{{ $news_img->id }}"
                                             tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

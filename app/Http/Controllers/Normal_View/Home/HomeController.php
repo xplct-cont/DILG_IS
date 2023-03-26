@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $news_images = Update::orderBy('created_at', 'DESC')->limit(6)->get();
+        $news_images = Update::where('status', true)->orderBy('created_at', 'DESC')->limit(6)->get();
         $home_images = Home_Image::all();
         $latest_issuances = Bohol_Issuance::orderBy('date', 'DESC')->limit(8)->get();
         return view('Normal_View.Home.home', compact( 'home_images', 'news_images', 'latest_issuances'));

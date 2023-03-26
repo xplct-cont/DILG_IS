@@ -15,7 +15,7 @@ class Index extends Component
 
     public function loadUpdates(){
 
-        $query = Update::orderBy('created_at', 'desc')
+        $query = Update::where('status', true)->orderBy('created_at', 'desc')
             ->search($this->search);
 
         if($this->title){
