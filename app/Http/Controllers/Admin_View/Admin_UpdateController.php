@@ -164,7 +164,7 @@ class Admin_UpdateController extends Controller
 
     }
 
-    public function approve(Post $post)
+    public function approve(Update $id)
     {
         $post->approved = true;
         $post->save();
