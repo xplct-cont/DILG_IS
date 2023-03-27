@@ -362,10 +362,10 @@
                                 <tr>
 
                                     <td>
-                                        @if ($news_img->status === 0)
+                                        @if ($news_img->status === false)
                                             <span class=" btn btn-sm btn-warning text-light">Pending <span
                                                     class="text-justify fas fa-exclamation"></span></span>
-                                        @elseif ($news_img->status === 1)
+                                        @elseif ($news_img->status === true)
                                             <span class="btn btn-sm text-light" style="background-color: #234495;">Approved
                                                 <span class="text-justify fas fa-check"></span></span>
                                         @endif
