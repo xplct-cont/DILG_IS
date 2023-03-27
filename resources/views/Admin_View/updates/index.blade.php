@@ -270,7 +270,7 @@
 
                                                 @role('Super-Admin')
                                                     <div class="text-start mb-3">
-                                                        @if ($news_img->status === false)
+                                                        @if ($news_img->status == false)
                                                             <span>
                                                                 <form action="{{ url('/approve/' . $news_img->id) }}"
                                                                     method="POST" class="d-inline-block">
@@ -280,7 +280,7 @@
                                                                         ?</button>
                                                                 </form>
                                                             </span>
-                                                        @elseif ($news_img->status === true)
+                                                        @elseif ($news_img->status == true)
                                                             <span>
                                                                 <form action="{{ url('/disapprove/' . $news_img->id) }}"
                                                                     method="POST" class="d-inline-block">
