@@ -176,6 +176,9 @@ Route::post('/add-updates', [Admin_UpdateController::class, 'store']);
 Route::get('/delete_updates/{id}', [Admin_UpdateController::class, 'delete_updates']);
 Route::put('/edit_updates/{id}', [Admin_UpdateController::class, 'edit_updates']);
 Route::post('/add_images/{id}', [Admin_UpdateController::class, 'storeImage']);
+Route::post('/approve/{id}', [Admin_UpdateController::class, 'approve'])->name('approve');
+Route::post('/disapprove/{id}', [Admin_UpdateController::class, 'disapprove'])->name('disapprove');
+
 
 Route::group(['middleware' => ['role:Super-Admin']], function () {
 Route::get('/admin/logs', [Admin_LogsController::class, 'index'])->name('admin/logs');

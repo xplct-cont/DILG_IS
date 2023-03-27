@@ -67,7 +67,7 @@ class Admin_UpdateController extends Controller
         // $img = Home_Image::find($id);
         $img->images = json_encode($data);
         $img->save();
-        return redirect()->back()->with('message', 'Added Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully : Waiting for Approval!');
 
     }
 
@@ -162,6 +162,24 @@ class Admin_UpdateController extends Controller
         $img->save();
         return redirect()->back()->with('message', 'Added Images Successfully!');
 
+    }
+
+    public function approve($id)
+    {
+        $news_updates = Update::find($id);
+        $news_updates->status = true;
+        $news_updates->save();
+
+        return redirect()->back()->with('message', 'Approved Successfully!');
+    }
+
+    public function disapprove($id)
+    {
+        $news_updates = Update::find($id);
+        $news_updates->status = false;
+        $news_updates->save();
+
+        return redirect()->back()->with('message', 'Disapproved Successfully!');
     }
 
 }

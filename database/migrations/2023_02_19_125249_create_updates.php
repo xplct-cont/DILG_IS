@@ -19,6 +19,7 @@ return new class extends Migration
             $table->longText('title')->nullable();
             $table->longText('caption')->nullable();
             $table->longText('images')->nullable();
+            $table->boolean('status')->default(false);
 
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
