@@ -187,10 +187,10 @@
                             @foreach ($news_images as $news_img)
                                 <tr>
                                     <td>
-                                        @if ($news_img->status === 0)
+                                        @if ($news_img->status == false)
                                             <span class=" btn btn-sm btn-warning text-light">Pending <span
                                                     class="text-justify fas fa-exclamation"></span></span>
-                                        @elseif ($news_img->status === 1)
+                                        @elseif ($news_img->status == true)
                                             <span class="btn btn-sm text-light" style="background-color: #234495;">Approved
                                                 <span class="text-justify fas fa-check"></span></span>
                                         @endif
@@ -270,7 +270,7 @@
 
                                                 @role('Super-Admin')
                                                     <div class="text-start mb-3">
-                                                        @if ($news_img->status === false)
+                                                        @if ($news_img->status == false)
                                                             <span>
                                                                 <form action="{{ url('/approve/' . $news_img->id) }}"
                                                                     method="POST" class="d-inline-block">
@@ -280,7 +280,7 @@
                                                                         ?</button>
                                                                 </form>
                                                             </span>
-                                                        @elseif ($news_img->status === true)
+                                                        @elseif ($news_img->status == true)
                                                             <span>
                                                                 <form action="{{ url('/disapprove/' . $news_img->id) }}"
                                                                     method="POST" class="d-inline-block">
@@ -362,10 +362,10 @@
                                 <tr>
 
                                     <td>
-                                        @if ($news_img->status === false)
+                                        @if ($news_img->status == false)
                                             <span class=" btn btn-sm btn-warning text-light">Pending <span
                                                     class="text-justify fas fa-exclamation"></span></span>
-                                        @elseif ($news_img->status === true)
+                                        @elseif ($news_img->status == true)
                                             <span class="btn btn-sm text-light" style="background-color: #234495;">Approved
                                                 <span class="text-justify fas fa-check"></span></span>
                                         @endif
