@@ -133,7 +133,7 @@ Route::put('/update-citizens_charter/{id}', [Admin_Citizens_CharterController::c
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
-Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
+Route::get('/dilg_family',[Attached_AgenciesController::class, 'index'])->name('/dilg_family');
 Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
