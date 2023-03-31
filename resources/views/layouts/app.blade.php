@@ -73,11 +73,10 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark hadow-sm fixed-top" style="background-color: #234495;">
+        <nav class="navbar navbar-expand-md navbar-dark shadow-sm fixed-top" style="background-color: #234495;">
             <div class="container">
                 <a class="navbar-brand" style="font-size: 16px;" href="{{ url('/') }}">
-                    {{-- {{ config('app. name', 'Laravel') }} --}}
-                    &nbsp; DILG-BOHOL PROVINCE
+                   DILG-BOHOL PROVINCE
 
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
