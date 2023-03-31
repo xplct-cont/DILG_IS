@@ -273,20 +273,16 @@
 
 
 
-                <p class="text-center" style="font-size: 16px; font-weight: 400;">Attached Agencies</p>
+                <p class="text-center" style="font-size: 16px; font-weight: 400;">DILG FAMILY</p>
 
                 <div class="container d-flex justify-content-center">
                     <div class="row ">
                         <div class="col-md-8 d-flex justify-content-between" style="gap:10px;">
-                            <a href="https://lga.gov.ph/public/home/5ecb2a1f1476ab4fe1a75cf1"> <img src="/img/lga.png"
-                                    alt="" style="height: 50px;"></a>
                             <a href="https://r7.napolcom.gov.ph/"> <img src="/img/napolcom.png" alt=""
                                     style="height: 50px;"></a>
                             <a href="https://region7.bfp.gov.ph/"> <img src="/img/bfp.png" alt=""
                                     style="height: 50px;"></a>
                             <a href="https://www.bjmp.gov.ph/"> <img src="/img/bjmp.png" alt=""
-                                    style="height: 50px;"></a>
-                            <a href="https://ppsc.gov.ph/"> <img src="/img/ppsc.png" alt=""
                                     style="height: 50px;"></a>
                             <a href="https://pro7.pnp.gov.ph/"> <img src="/img/pnp.png" alt=""
                                     style="height: 50px;">
