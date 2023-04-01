@@ -81,18 +81,18 @@
                         <a href="#" data-toggle="modal" id="news_updates_view_link"
                             data-target="#news_update_id{{ $new->id }}" style="text-decoration:none; color:dimgray">
 
-                            <div class="row d-flex justify-content-center mt-3">
-                                <div class="col-md-6 mx-auto mt-5 ">
+                            <div class="row d-flex justify-content-center mt-1">
+                                <div class="col-md-6 mx-auto mt-2 ">
 
                                     <h1 style="font-size: 18px; font-weight: 500; color:dimgray;">
                                         Post: {{ \Carbon\Carbon::parse($new->created_at)->format('M j, Y h:i A') }}</h1>
                                     <br>
                                     <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
                                     <p class="text-left" style="font-size: 15px; font-weight: 400;">
-                                        {{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
+                                        {{ Illuminate\Support\Str::limit($new->caption, 300) }}</p>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="" style="height: 360px;">
+                                <div class="col-md-6 text-center mx-auto">
+                                    <div class="">
 
                                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                             <ol class="carousel-indicators">
@@ -101,15 +101,17 @@
                                                 </li>
                                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
                                             </ol>
-                                            <div class="carousel-inner text-center" style="height:350px;">
+                                            <div class="carousel-inner text-center mx-auto"
+                                                style="height:auto; width: auto;">
                                                 @php
                                                     $images = json_decode($new->images, true);
                                                 @endphp
                                                 @foreach ($images as $key => $image)
                                                     <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
                                                         <img src="{{ asset('/news_updates/' . $image) }}"
-                                                            style="height:350px; width:100%;" />
+                                                            style="height:auto; max-height:250px; width: auto; max-width: 100%;" />
                                                     </div>
                                                 @endforeach
 

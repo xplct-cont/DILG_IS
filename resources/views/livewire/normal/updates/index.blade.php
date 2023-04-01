@@ -47,7 +47,7 @@
                             data-target="#news_update_id{{ $new->id }}"
                             style="text-decoration:none; color:dimgray">
 
-                            <div class="row d-flex justify-content-center mt-3">
+                            <div class="row d-flex justify-content-center mt-1">
                                 <div class="col-md-6 mx-auto mt-2 ">
 
                                     <h1 style="font-size: 18px; font-weight: 500; color:dimgray;">
