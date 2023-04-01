@@ -145,7 +145,7 @@
                                     <p class="text-left" style="font-size: 15px; font-weight: 400;">
                                         {{ $new->caption }}</p>
 
-                                    <div class="" style="height: 365px;">
+                                    {{-- <div class="" style="height: 365px;">
 
                                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                             <ol class="carousel-indicators">
@@ -169,7 +169,17 @@
                                             </div>
 
                                         </div>
+                                    </div> --}}
+
+                                    <div class="image-container">
+                                        @php
+                                            $images = json_decode($new->images, true);
+                                        @endphp
+                                        @foreach ($images as $image)
+                                            <img src="{{ asset('/news_updates/' . $image) }}" alt="" />
+                                        @endforeach
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -296,5 +306,22 @@
 
     .card:hover .overlay {
         transform: scale(8) translateZ(0);
+    }
+
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 10px;
+        padding: 5px;
+        box-shadow: 2px 2px 5px #888;
     }
 </style>
