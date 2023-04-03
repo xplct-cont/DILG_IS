@@ -32,24 +32,15 @@
                     </div>
 
                     <div class="col-md-6 mb-5" style="margin-top: 50px;">
-                        <p class="text-justify">
 
-                            MESSAGE OF THE PROVINCIAL DIRECTOR <br><br>
+                        <p class="text-center" style="font-size: 20px; font-weight: 500;"> MESSAGE OF THE PROVINCIAL DIRECTOR </p>
+                     
+                            @foreach ($pd_messages as $msg)
 
-                            It has been my great pride and joy to present to you this Accomplishment Report for CY 2022.
-                            This
-                            is made possible through the joint efforts of the active and dedicated men and women of
-                            DILG-Bohol. These accomplishments manifest the department’s aspirations through the
-                            collaboration and
-                            participation of the different stakeholders. For that, I wholeheartedly laud the men and women
-                            of
-                            DILG-Bohol for a great job. <br><br>
-
-                            This year marks the second year since COVID-19 strikes which limits some of the activities of
-                            the
-                            department. However, the men and women of the department work hand in hand and set aside
-                            their differences to achieve excellence and proficiency. The accomplishments that DILG-Bohol
-                            brought depict the values of a true public servant by being “Matino, Mahusay at Maaasahan”.
+                            <p class="text-justify" style="text-indent: 40px;">
+                                {{$msg->message}}
+                                
+                            @endforeach
                         </p>
                     </div>
 

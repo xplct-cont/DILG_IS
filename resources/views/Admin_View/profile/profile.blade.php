@@ -110,7 +110,7 @@
                                                     <div class="form-group">
                                                         <label for="" style="color:dimgray">Message:</label>
                                                         @foreach ($pd_messages as $msg)
-                                                        <textarea id="" type="text" class="form-control" placeholder="" title="" rows="5" required
+                                                        <textarea id="" type="text" class="form-control" placeholder="" title="" rows="8" required
                                                             name="message" placeholder="Write your message..." required>{{$msg->message}}</textarea>
                                                     </div>
                                                 </div>
