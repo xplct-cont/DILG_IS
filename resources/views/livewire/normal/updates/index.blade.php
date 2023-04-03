@@ -158,7 +158,7 @@
 
         </div>
         <div class="d-flex justify-content-center mt-2">
-            {{ $updates->onEachSide(1)->links() }}
+            {{ $updates->onEachSide(-1)->links() }}
         </div>
     </div>
 </div>

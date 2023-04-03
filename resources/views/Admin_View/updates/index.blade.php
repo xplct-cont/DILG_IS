@@ -490,6 +490,6 @@
             </div>
         </div>
         <div class="d-flex justify-content-end mt-2">
-            {{ $news_images->links() }}
+            {{ $news_images->onEachSide(-1)->links()}}
         </div>
     @endsection
