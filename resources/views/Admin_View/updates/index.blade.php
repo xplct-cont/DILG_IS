@@ -82,7 +82,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label>Upload Images (Max:3)</label>
+                                                    <label>Upload Images (Max:5)</label>
                                                     <input type="file" name="images[]" class="form-control" required
                                                         multiple>
                                                 </div>
@@ -137,7 +137,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Upload Images (Max:3)</label>
+                                                <label for="" style="color:dimgray">Upload Images (Max:5)</label>
                                                 <input type="file" class="form-control" name="images[]" required
                                                     multiple>
                                             </div>
@@ -248,7 +248,7 @@
                                                                 <div class="col-md-8">
                                                                     <div class="form-group">
                                                                         <label for="" style="color:dimgray">Upload
-                                                                            Images (Max:3)</label>
+                                                                            Images (Max:5)</label>
                                                                         <input type="file" class="form-control"
                                                                             name="images[]" multiple>
                                                                         <p class="mt-3 fw-light">Old photo(s):</p>
@@ -424,7 +424,7 @@
                                                                     <div class="col-md-8">
                                                                         <div class="form-group">
                                                                             <label for="" style="color:dimgray">Upload
-                                                                                Images (Max:3)</label>
+                                                                                Images (Max:5)</label>
                                                                             <input type="file" class="form-control"
                                                                                 name="images[]" multiple>
                                                                         </div>
