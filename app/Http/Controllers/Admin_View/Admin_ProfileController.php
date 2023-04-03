@@ -44,9 +44,19 @@ class Admin_ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store_update_message(Request $request, $id)
     {
-        //
+
+        $pd_messages = Pd_Message::find($id);
+
+        $pd_messages->user_id = auth()->user()->id;
+        $pd_messages->message = $request->input('message');
+     
+       
+    $pd_messages->update();
+
+    return redirect()->back()->with('message', 'Updated Successfully!');
+        
     }
 
     /**

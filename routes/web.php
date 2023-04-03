@@ -71,6 +71,7 @@ Route::post('/add_images_hm/{id}', [Admin_HomeController::class, 'store']);
 
 Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
 Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
+Route::put('/store_update_message/{id}', [Admin_ProfileController::class, 'store_update_message']);
 
 Route::get('/admin/change-password/{id}', [Admin_ChangePasswordController::class, 'index']);
 Route::post('/admin/change-password', [Admin_ChangePasswordController::class, 'change_password']);
