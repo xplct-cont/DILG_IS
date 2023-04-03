@@ -36,7 +36,7 @@ class Admin_Field_OfficersController extends Controller
             }]
         ])
     
-        ->orderBy("lastname","ASC")
+        ->orderBy("lname","ASC")
         ->paginate(12);
 
         return view('Admin_View.field_officers.index', compact('field_officers', 'municipalities'))
