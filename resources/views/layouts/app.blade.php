@@ -147,6 +147,8 @@
                                         href="https://dilg.gov.ph/issuances-archive/draft/">Draft Issuances</a></li>
                                 <li><a class="dropdown-item" target="_blank"
                                         href="https://dilg.gov.ph/issuances-archive/ra/">Republic Acts</a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/legal-opinions-archive/">Legal Opinions</a></li>
                             </ul>
                         </div>
 
