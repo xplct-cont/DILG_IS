@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin_View;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Pd_Message;
 use File;
 
 class Admin_ProfileController extends Controller
@@ -21,8 +22,10 @@ class Admin_ProfileController extends Controller
      */
     public function index()
     {
+    
+            $pd_messages = Pd_Message::with(['user'])->get();
 
-        return view('Admin_View.profile.profile');
+        return view('Admin_View.profile.profile', compact('pd_messages'));
     }
 
     /**
