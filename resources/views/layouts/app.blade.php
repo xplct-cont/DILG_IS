@@ -374,10 +374,10 @@
             <div class="d-flex justify-content-start mt-5">
                 <!-- Button trigger modal -->
 
-                <button type="button" class="btn btn-sm"
+                {{-- <button type="button" class="btn btn-sm"
                     style="background-color: #dddddd; color:rgb(70, 69, 69); font-size: 7px;" data-toggle="modal"
                     data-target=".bd-example-modal-sm">
-                    Developers</button>
+                    Developers</button> --}}
 
 
                 <!-- Modal -->
