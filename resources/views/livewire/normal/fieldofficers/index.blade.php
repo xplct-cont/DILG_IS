@@ -38,14 +38,15 @@
                                     <img src="{{ asset('field_off_images/' . $field_off->profile_img) }} " alt="Image"
                                         class="shadow-lg border border-dark"
                                         style="border-radius: 50%; height: 140px; width: 140px;">
+                                     <p class="text-center" style="margin-top: -20px; font-weight: 500;">
+                                            {{ $field_off->municipality->municipality }}</p>
                                     <p class="text-center" style=" font-weight:500;">{{ $field_off->fname }}
                                         {{ $field_off->mid_initial }} {{ $field_off->lname }}</p>
                                     <p class="text-center" style="margin-top: -20px;">
                                         {{ $field_off->position }}</p>
                                     <p class="text-center" style="margin-top: -20px;">
                                         {{ $field_off->cluster }}</p>
-                                    <p class="text-center" style="margin-top: -20px; font-weight: 500;">
-                                        {{ $field_off->municipality->municipality }}</p>
+                                  
                                 </div>
                             </div>
                         @endforeach
