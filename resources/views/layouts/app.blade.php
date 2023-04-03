@@ -181,7 +181,7 @@
                                         href="https://subaybayan.dilg.gov.ph/projects/index?ProjectSearch%5BREGION_C%5D=07&ProjectSearch%5BPROVINCE_C%5D=012&ProjectSearch%5BCITYMUN_C%5D=&ProjectSearch%5Bbarangay%5D=&ProjectSearch%5BimageSelection%5D=&ProjectSearch%5BPROGRAM_C%5D=&ProjectSearch%5BPROJECT_TYPE%5D=&ProjectSearch%5BYEAR%5D=&ProjectSearch%5BSTATUS%5D=">Projects
                                     </a></li>
                                     <li><a class="dropdown-item" target="_blank"
-                                        href="https://fdpp.dilg.gov.ph/fdpp/report">FDP Portal
+                                        href="https://fdpp.dilg.gov.ph/fdpp/report/index?_csrf-frontend=RBVssfr9QXZl60bNe0juzDQvRsKtxA-pS7A64znU1ugNUCqAvpV3IVCIFpQYGq38Umd29-isadsTglaWaL7moA%3D%3D&document_filter=&region_filter=07&province_filter=012&lgu_filter=&year_filter=">FDP Portal
                                     </a></li>
 
                             </ul>
