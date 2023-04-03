@@ -292,7 +292,6 @@
             </div>
 
 
-
             <div class="bg"></div>
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
@@ -311,17 +310,6 @@
 
                         </div>
 
-                        <div class="col-md-4 text-justify">
-                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">ABOUT GOVPH</p>
-                            <p class="text-secondary" style="font-size: 12px; font-weight: 300;">Learn more about the
-                                Philippine government, its structure, how government works and the people behind it.
-                                <br><br>
-                                <a href="https://www.gov.ph/" style="color:dimgray;">GOV.PH</a> <br>
-                                <a href="https://www.gov.ph/data" style="color: dimgray;"> Open Data Portal</a> <br>
-                                <a href="https://www.officialgazette.gov.ph/" style="color: dimgray;"> Official
-                                    Gazette</a>
-                            </p>
-                        </div>
                         <div class="col-md-4 text-justify">
                             <p class="text-secondary" style="font-size: 12px; font-weight: 500;">
                                 GOVERNMENT LINKS</p>
@@ -360,14 +348,16 @@
                                 <p class="text-secondary"
                                     style="font-size: 12px; font-weight: 300; margin-top: -15px;">Sandiganbayan</p>
                             </a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-justify">
+                            <div class="text-center">
+                                <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="text-center">
-                <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}
-                </p>
             </div>
 
 
