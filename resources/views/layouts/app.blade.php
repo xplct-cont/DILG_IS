@@ -108,7 +108,7 @@
                                 Officials
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('lgu') }}">LGU's</a>
+                                <li><a class="dropdown-item" href="{{ url('lgu') }}">LGUs</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('provincial_officials') }}">Provincial
                                         Officials</a></li>
