@@ -375,7 +375,7 @@
                 <!-- Button trigger modal -->
 
                 <button type="button" class="btn btn-sm"
-                    style="background-color: #dddddd; color:rgb(70, 69, 69); font-size: 9px;" data-toggle="modal"
+                    style="background-color: #dddddd; color:rgb(70, 69, 69); font-size: 7px;" data-toggle="modal"
                     data-target=".bd-example-modal-sm">
                     Developers</button>
 
@@ -385,7 +385,7 @@
                     aria-labelledby="mySmallModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-sm rounded">
                         <div class="modal-content">
-                            <div class="modal-header bg-dark rounded">
+                            <div class="modal-header rounded" style="background-color: #234495;">
                                 <h1 class=""
                                     style="font-size: 18px; color:white; font-weight: 500; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
                                     Developers</h1>
@@ -420,8 +420,9 @@
                                             &nbsp;&nbsp;</span></a>
                                 </div>
 
-                                <hr>
-                                <p class="text-center " style="font-size: 12px;"> Contact No: 09096027312</p>
+                               <hr>
+                                    <p class="text-center mt-3" style="font-size: 12px;"> Contact No: 09096027312</p>
+                              
                             </div>
                         </div>
                     </div>
