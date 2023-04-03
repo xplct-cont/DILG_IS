@@ -45,7 +45,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- Main Header -->
-        <nav class="main-header navbar navbar-expand text-light" style="background-color: #8c0509;">
+        <nav class="main-header navbar navbar-expand text-light" style="background-color: #234495;">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">

@@ -2,7 +2,7 @@
     <div class="mx-auto">
         <div class="col-md-12">
             <div class="card elevation-4">
-                <div class="card-header-sm" style="background-color: #002C76; color:white;">
+                <div class="card-header-sm" style="background-color: #234495; color:white;">
                     <p class="ml-2 mt-2" style="font-weight: 450; font-size: 22px;">Latest Issuances Archive</p>
                 </div>
 
@@ -12,7 +12,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6 mt-3">
-
+                                @csrf
                                     <label for="">Outcome Area/Program:</label>
                                     <select name="outcome_area" id="outcome_area" class="form-select"
                                         style="color:dimgray;" wire:model="outcome">
@@ -49,6 +49,7 @@
                 <div class="card-body">
                     <table class="table bg-light table-bordered table-hover text-secondary">
                         <tbody class="elevation-4">
+                            @csrf
                             @foreach ($issuances as $latest_issuances)
                                 <tr>
                                     <td class="" style="font-size: 16px;"><a
@@ -60,7 +61,7 @@
                                         <p class="text-center" style="font-size: 12px;">
                                             {{ $latest_issuances->outcome_area }}</p>
                                     </td>
-                                    <td class="" style="background-color:#002C76; color:white;  font-size: 12px;">
+                                    <td class="" style="background-color:#234495; color:white;  font-size: 12px;">
                                         Reference No: <span
                                             style="font-size: 15px; font-weight: 350; color:white;">{{ $latest_issuances->reference_num }}</span>
                                         <p class="text-center mt-2" style=" font-size: 14px">
@@ -74,7 +75,7 @@
 
                 </div>
                 <div class="d-flex justify-content-center mt-2">
-                    {{ $issuances->links() }}
+                    {{ $issuances->onEachSide(1)->links() }}
                 </div>
 
             </div>

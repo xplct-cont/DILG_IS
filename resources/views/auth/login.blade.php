@@ -1,4 +1,3 @@
-
 @extends('auth.layout')
 
 @section('content')
@@ -31,31 +30,30 @@
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+                    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+                    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+                    <![endif]-->
 
     </head>
 
     <body>
-      
-            <a href="{{ url('/') }}" class="text-start ml-4"
-                style="color:#C9282D; font-size: 19px; margin:auto;"><span class="fas fa-arrow-left"></span> Back to home</a>
+        <a href="{{ url('/') }}" class="text-start ml-4" style="color:#C9282D; font-size: 19px; margin:auto;"><span
+                class="fas fa-arrow-left"></span> Back</a>
 
         <div class="container" style="margin-top: -10px;">
             <div class=" rounded d-flex justify-content-between">
                 <img src="/img/dilg-main.png" class=" shadow-lg rounded-circle"
-                    style="height: 150px; width:150px; margin:auto;">
+                    style="height: 130px; width:130px; margin:auto;">
 
             </div>
             <div class="d-flex justify-content-center" style="margin-top: 10px">
-                <h3 class="text-center" style="font-size: 27px;">Department of the Interior and Local Government
+                <h3 class="text-center" style="font-size: 22px;">Department of the Interior and Local Government
                     <p class="text-center" style="font-weight:450; font-size: 20px; margin-top: -5px;">Bohol Province</p>
                     <br>
                 </h3>
             </div>
 
-            <div class="row justify-content-center" style="margin-top: -50px">
+            <div class="row justify-content-center" style="margin-top: -45px">
                 <div class="col-md-5">
                     <div class="card shadow-lg rounded">
                         <h3 class="text-center p-3"
@@ -92,8 +90,9 @@
                                             class="form-control @error('password') is-invalid @enderror"
                                             placeholder="Enter your password" name="password" required
                                             autocomplete="current-password">
-                                        <span class="d-flex justify-content-end mt-1"><i class="fas fa-eye" style="color: #C9282D;"
-                                                aria-hidden="true" id="eye" onclick="toggle()"></i></span>
+                                        <span class="d-flex justify-content-end mt-1"><i class="fas fa-eye"
+                                                style="color: #C9282D;" aria-hidden="true" id="eye"
+                                                onclick="toggle()"></i></span>
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -124,13 +123,13 @@
                                     </div>
 
                                     </p>
-                                    <div class="row ">
+                                    {{-- <div class="row ">
                                         @if (Route::has('password.request'))
                                             <a class="btn btn-link" href="{{ route('password.request') }}">
                                                 {{ __('Forgot Your Password?') }}
                                             </a>
                                         @endif
-                                    </div>
+                                    </div> --}}
 
                                 </div>
                             </form>
@@ -217,5 +216,4 @@
             transform: translateX(25%);
         }
     }
-
 </style>

@@ -41,14 +41,14 @@ class Admin_UserController extends Controller
             $file = $request->file('profile_image');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save(public_path('/user_profile_images/' . $filename));
+            Image::make($file)->save('/home/dilgboho/public_html/user_profile_images/'. $filename);
             $users->profile_img = $filename;
 
           }
 
         $users->save();
 
-        return redirect()->back()->with('message', 'Added to User Successfully!');
+        return redirect()->back()->with('message', 'Added User Successfully!');
 
     }
 
@@ -69,7 +69,7 @@ class Admin_UserController extends Controller
         $newPassword = $request->get('password');
         if($request->hasFile('profile_image')){
 
-            $destination = 'user_profile_images/'.$users->profile_img;
+            $destination = '/home/dilgboho/public_html/user_profile_images/'.$users->profile_img;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -77,7 +77,7 @@ class Admin_UserController extends Controller
             $file = $request->file('profile_image');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $file->move('user_profile_images/', $filename);
+            $file->move('/home/dilgboho/public_html/user_profile_images/', $filename);
             $users->profile_img = $filename;
 
         }
@@ -95,7 +95,7 @@ class Admin_UserController extends Controller
     public function delete_user(Request $request, $id)
     {
         $users = User::find($id);
-        $destination = public_path('user_profile_images/'.$users->profile_image);
+        $destination = '/home/dilgboho/public_html/user_profile_images/'.$users->profile_image;
             if(File::exists($destination)){
                 File::delete($destination);
             }

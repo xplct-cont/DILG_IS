@@ -31,7 +31,7 @@ class Admin_Provincial_OfficialsController extends Controller
             }]
         ])
     
-        ->orderBy("created_at","DESC")
+        ->orderBy("created_at","ASC")
         ->paginate(12);
 
         return view('Admin_View.provincial_officials.index', compact('prov_officials'))
@@ -53,7 +53,7 @@ class Admin_Provincial_OfficialsController extends Controller
             $file = $request->file('profile_image');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save(public_path('/provincial_officials_images/' . $filename));
+            Image::make($file)->save('/home/dilgboho/public_html/provincial_officials_images/'. $filename);
             $prov_officials->profile_image = $filename;
           
           }
@@ -73,7 +73,7 @@ class Admin_Provincial_OfficialsController extends Controller
 
         if($request->hasFile('profile_image')){
       
-            $destination = 'provincial_officials_images/'.$prov_officials->profile_image;
+            $destination = '/home/dilgboho/public_html/provincial_officials_images/'.$prov_officials->profile_image;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -81,7 +81,7 @@ class Admin_Provincial_OfficialsController extends Controller
             $file = $request->file('profile_image');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $file->move('provincial_officials_images/', $filename);
+            $file->move('/home/dilgboho/public_html/provincial_officials_images/', $filename);
             $prov_officials->profile_image = $filename;
 
     }
@@ -96,7 +96,7 @@ class Admin_Provincial_OfficialsController extends Controller
 
 
             $prov_officials = Provincial_Official::find($id);
-            $destination = public_path('provincial_officials_images/'.$prov_officials->profile_image);
+            $destination = '/home/dilgboho/public_html/provincial_officials_images/'.$prov_officials->profile_image;
              if(File::exists($destination)){
                  File::delete($destination);
              }

@@ -43,8 +43,8 @@
             aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header" style="background-color: #8c0509; color:white;">
-                        <h5 class="modal-title" id="exampleModalLabel">Adding to Organizational Structure</h5>
+                    <div class="modal-header" style="background-color: #234495; color:white;">
+                        <h5 class="modal-title" id="exampleModalLabel">Adding Organizational Structure</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -105,8 +105,8 @@
     <div class="elevation-1 p-3 rounded mt-2">
         <div class="card-header d-flex justify-content-between mb-1">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-            <h1 class="" style="font-size: 18px; font-weight: 450;"><span class="fas fa-users"
-                    style="color:#8c0509;"></span> ORG. STRUCTURE</h1>
+            <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link" href="{{ url('/organization') }}"><span class="fas fa-users"
+                    style="color:#234495;"></span> ORGANIZATIONAL STRUCTURE</a></h1>
         </div>
 
 
@@ -147,7 +147,7 @@
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                    <div class="modal-header" style="background-color: #8c0509; color:white;">
+                                    <div class="modal-header" style="background-color: #234495; color:white;">
                                         <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -259,7 +259,7 @@
     </div>
 
     <div class="d-flex justify-content-end mt-2">
-        {{ $orgs->links() }}
+        {{ $orgs->onEachSide(1)->links() }}
     </div>
 
 @endsection

@@ -16,7 +16,7 @@
 
         <div class="main-content mt-4">
             <div class="container">
-
+                @csrf
                 <div class="row equal">
                     <div class="col-sm-4 d-flex pb-3" href="{{ url('/single-news-update') }}">
                         <div class="card card-inverse card-danger">

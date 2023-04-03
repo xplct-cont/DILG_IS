@@ -73,11 +73,10 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark hadow-sm fixed-top" style="background-color: #8c0509;">
+        <nav class="navbar navbar-expand-xl navbar-dark shadow-sm fixed-top" style="background-color: #234495;">
             <div class="container">
                 <a class="navbar-brand" style="font-size: 16px;" href="{{ url('/') }}">
-                    {{-- {{ config('app. name', 'Laravel') }} --}}
-                    &nbsp; DILG-BOHOL PROVINCE
+                    DILG-BOHOL PROVINCE
 
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -103,9 +102,20 @@
                             <a class="nav-link text-white" href="{{ url('/news_update') }}"> &nbsp;News</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ url('/lgu') }}"> &nbsp;LGU's</a>
-                        </li>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle btn text-white" style="margin-top: 2px;" id="dropdownMenu1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Officials
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="dropdown-item" href="{{ url('lgu') }}">LGU's</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ url('provincial_officials') }}">Provincial
+                                        Officials</a></li>
+
+                            </ul>
+                        </div>
+
                         <div class="dropdown">
                             <button class="dropdown-toggle btn text-white" style="margin-top: 2px;" id="dropdownMenu1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -151,11 +161,10 @@
                                         Structure/PDMU</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a>
                                 </li>
-                                <li><a class="dropdown-item" href="{{ url('/provincial_officials') }}">Provincial
-                                        Officials</a>
+                                <li><a class="dropdown-item" href="{{ url('/citizens_charter') }}">Citizens
+                                        Charter</a>
                                 </li>
-                                <li><a class="dropdown-item" href="{{ url('/attached_agencies') }}">Attached
-                                        Agencies</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/dilg_family') }}">DILG FAMILY</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/contacts') }}">Contact Information</a>
                                 </li>
                             </ul>
@@ -225,7 +234,7 @@
         </nav>
 
         <main class="mt-5">
-            <div class="header" style=" padding: 20px; background: #DCDCDC; color: #030303; margin-bottom: 10px;">
+            <div class="header" style=" padding: 20px; background: #e4e1e1; color: #030303; margin-bottom: 10px;">
                 <a href="/about"> <img width="500" height="auto" style="max-width: 100%; height:auto;"
                         src="{{ asset('/img/dilg-bohol.png') }}"></a>
             </div>
@@ -234,7 +243,7 @@
 
     </div>
 
-    <div class="" style=" padding: 20px; background: #8c0509; color: #DCDCDC;">
+    <div class="" style=" padding: 20px; background: #234495; color: #DCDCDC;">
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
@@ -262,20 +271,16 @@
 
 
 
-                <p class="text-center" style="font-size: 16px; font-weight: 400;">Attached Agencies</p>
+                <p class="text-center" style="font-size: 16px; font-weight: 400;">DILG FAMILY</p>
 
                 <div class="container d-flex justify-content-center">
                     <div class="row ">
                         <div class="col-md-8 d-flex justify-content-between" style="gap:10px;">
-                            <a href="https://lga.gov.ph/public/home/5ecb2a1f1476ab4fe1a75cf1"> <img src="/img/lga.png"
-                                    alt="" style="height: 50px;"></a>
                             <a href="https://r7.napolcom.gov.ph/"> <img src="/img/napolcom.png" alt=""
                                     style="height: 50px;"></a>
                             <a href="https://region7.bfp.gov.ph/"> <img src="/img/bfp.png" alt=""
                                     style="height: 50px;"></a>
                             <a href="https://www.bjmp.gov.ph/"> <img src="/img/bjmp.png" alt=""
-                                    style="height: 50px;"></a>
-                            <a href="https://ppsc.gov.ph/"> <img src="/img/ppsc.png" alt=""
                                     style="height: 50px;"></a>
                             <a href="https://pro7.pnp.gov.ph/"> <img src="/img/pnp.png" alt=""
                                     style="height: 50px;">
@@ -370,7 +375,7 @@
                 <!-- Button trigger modal -->
 
                 <button type="button" class="btn btn-sm"
-                    style="background-color: #89898a; color:white; font-size: 9px;" data-toggle="modal"
+                    style="background-color: #dddddd; color:rgb(70, 69, 69); font-size: 9px;" data-toggle="modal"
                     data-target=".bd-example-modal-sm">
                     Developers</button>
 
@@ -416,7 +421,7 @@
                                 </div>
 
                                 <hr>
-                                <p class="text-center " style="font-size: 12px;"> Contact Number: 09096027312</p>
+                                <p class="text-center " style="font-size: 12px;"> Contact No: 09096027312</p>
                             </div>
                         </div>
                     </div>
@@ -498,7 +503,7 @@
     };
 
     function scrollFunction() {
-        if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
+        if (document.body.scrollTop > 1200 || document.documentElement.scrollTop > 1200) {
             mybutton.style.display = "block";
         } else {
             mybutton.style.display = "none";

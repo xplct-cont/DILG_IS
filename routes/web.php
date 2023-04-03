@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin_View\Admin_PdmuController;
 use App\Http\Controllers\Admin_View\Admin_Provincial_OfficialsController;
 use App\Http\Controllers\Admin_View\Admin_DownloadablesController;
 use App\Http\Controllers\Admin_View\Admin_Knowledge_MaterialsController;
+use App\Http\Controllers\Admin_View\Admin_Citizens_CharterController;
 use App\Http\Controllers\Normal_View\Faqs\FaqsController;
 use App\Http\Controllers\Normal_View\Home\HomeController;
 use App\Http\Controllers\Normal_View\Jobs\JobsController;
@@ -43,6 +44,8 @@ use App\Http\Controllers\Normal_View\Bohol_Issuances\Bohol_IssuancesController;
 use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesController;
 use App\Http\Controllers\Normal_View\Downloadables\DownloadablesController;
 use App\Http\Controllers\Normal_View\Provincial_Officials\Provincial_OfficialsController;
+use App\Http\Controllers\Normal_View\Citizens_Charter\Citizens_CharterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -64,10 +67,11 @@ Route::get('/', [HomeController::class, 'index']);
 Auth::routes(['register'=>false]);
 
 Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
-Route::post('/add_images/{id}', [Admin_HomeController::class, 'store']);
+Route::post('/add_images_hm/{id}', [Admin_HomeController::class, 'store']);
 
 Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
 Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
+Route::put('/store_update_message/{id}', [Admin_ProfileController::class, 'store_update_message']);
 
 Route::get('/admin/change-password/{id}', [Admin_ChangePasswordController::class, 'index']);
 Route::post('/admin/change-password', [Admin_ChangePasswordController::class, 'change_password']);
@@ -76,6 +80,9 @@ Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/j
 Route::post('/add-new-job', [Admin_JobsController::class, 'store']);
 Route::get('/delete_jobs/{id}', [Admin_JobsController::class, 'delete_jobs']);
 Route::put('/update_jobs/{id}', [Admin_JobsController::class, 'update_jobs']);
+
+
+Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
 
 Route::get('/admin/organization', [Admin_OrganizationController::class, 'index'])->name('admin/organization');
 Route::post('/add-org', [Admin_OrganizationController::class, 'store']);
@@ -117,10 +124,17 @@ Route::post('/add-knowledge_materials', [Admin_Knowledge_MaterialsController::cl
 Route::get('/delete_knowledge_materials/{id}', [Admin_Knowledge_MaterialsController::class, 'delete_knowledge_materials']);
 Route::put('/update-knowledge_materials/{id}', [Admin_Knowledge_MaterialsController::class, 'update_knowledge_materials']);
 
+Route::get('/admin/citizens_charter', [Admin_Citizens_CharterController::class, 'index'])->name('admin/citizens_charter');
+Route::post('/add-citizens_charter', [Admin_Citizens_CharterController::class, 'store']);
+Route::get('/delete_citizens_charter/{id}', [Admin_Citizens_CharterController::class, 'delete_citizens_charter']);
+Route::put('/update-citizens_charter/{id}', [Admin_Citizens_CharterController::class, 'update_citizens_charter']);
+
+});
+
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
-Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
+Route::get('/dilg_family',[Attached_AgenciesController::class, 'index'])->name('/dilg_family');
 Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
@@ -135,8 +149,11 @@ Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'inde
 
 Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'])->name('/knowledge_materials');
 
-Route::post('/send-email', [ContactsController::class, 'sendEmail']);
+Route::get('/citizens_charter', [Citizens_CharterController::class, 'index'])->name('/citizens_charter');
+Route::get('/export_citizes_charter_pdf', [Citizens_CharterController::class, 'export_citizes_charter_pdf'])->name('export_citizes_charter_pdf');
 
+
+Route::post('/send-email', [ContactsController::class, 'sendEmail']);
 
 
 
@@ -154,10 +171,14 @@ Route::group(['middleware' => ['role:Super-Admin']], function () {
 
 //Routes for Vienna
 //Admin_View Routes
+
 Route::get('/admin/news_updates', [Admin_UpdateController::class, 'index'])->name('admin/news_updates');
 Route::post('/add-updates', [Admin_UpdateController::class, 'store']);
 Route::get('/delete_updates/{id}', [Admin_UpdateController::class, 'delete_updates']);
 Route::put('/edit_updates/{id}', [Admin_UpdateController::class, 'edit_updates']);
+Route::post('/add_images/{id}', [Admin_UpdateController::class, 'storeImage']);
+Route::post('/approve/{id}', [Admin_UpdateController::class, 'approve'])->name('approve');
+Route::post('/disapprove/{id}', [Admin_UpdateController::class, 'disapprove'])->name('disapprove');
 
 
 Route::group(['middleware' => ['role:Super-Admin']], function () {
@@ -178,11 +199,15 @@ Route::get('/search/', [Admin_JobsController::class, 'search'])->name('search');
 
 //Routes for Franklin
 //Admin_View Routes
+
+Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
+
 Route::get('/admin/field_officers', [Admin_Field_OfficersController::class, 'index'])->name('admin/field_officers');
 Route::post('/add-field_officer', [Admin_Field_OfficersController::class, 'store']);
 Route::get('/delete_field_officer/{id}', [Admin_Field_OfficersController::class, 'delete_field_officer']);
 Route::put('/update-field_officer/{id}', [Admin_Field_OfficersController::class, 'update_field_officer']);
 
+});
 
 //Normal_View Routes
 Route::get('/organization',[OrganizationController::class, 'index']);

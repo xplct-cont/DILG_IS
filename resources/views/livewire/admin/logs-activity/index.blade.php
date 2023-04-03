@@ -51,6 +51,7 @@
             </tr>
         </thead>
         <tbody class="text-dark">
+            @csrf
             @foreach ($logs as $log)
                 {{-- @if ($log->causer_id != '1') --}}
                     <tr>
@@ -77,6 +78,6 @@
     </table>
 </div>
 <div class="d-flex justify-content-center mt-2">
-    {{ $logs->links() }}
+    {{ $logs->onEachSide(1)->links() }}
 </div>
 </div>

@@ -8,34 +8,35 @@ use Illuminate\Support\Facades\File;
 use DB;
 use Illuminate\Http\Request;
 use App\Models\Update;
+use App\Models\Updates_Image;
 
 
 class Admin_UpdateController extends Controller
 {
 
-    
+
     public function __construct()
     {
         $this->middleware('auth');
     }
-    
-    public function index(Request $request){
 
+    public function index(Request $request){
+        $updates_images = Updates_Image::all();
         $news_images = Update::where([
             ['created_at', '!=', null],
             [function($query) use ($request){
                 if(($news_images = $request->news_images)){
                     $query->orWhere('title', 'LIKE', '%'. $news_images . '%')
                     ->orWhere('caption', 'LIKE', '%'. $news_images . '%')->get();
-    
+
                 }
             }]
         ])
-    
+
         ->orderBy("created_at","DESC")
         ->paginate(20);
 
-        return view('Admin_View.updates.index', compact('news_images'))
+        return view('Admin_View.updates.index', compact('news_images', 'updates_images'))
         ->with('i',(request()->input('page',1)-1)*5);
 
     }
@@ -47,6 +48,7 @@ class Admin_UpdateController extends Controller
 
         $img->title = $request->input('title');
         $img->caption = $request->input('caption');
+        $img->user_id = auth()->user()->id;
 
         $this->validate($request, [
             'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -57,7 +59,7 @@ class Admin_UpdateController extends Controller
             foreach($request->file('images') as $image){
 
                 $name = $image->getClientOriginalName();
-                $image->move(public_path('/news_updates/'), $name);
+                $image->move('/home/dilgboho/public_html/news_updates/', $name);
                 $data[] = $name;
         }
     }
@@ -65,7 +67,7 @@ class Admin_UpdateController extends Controller
         // $img = Home_Image::find($id);
         $img->images = json_encode($data);
         $img->save();
-        return redirect()->back()->with('message', 'Added Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully : (Pending) Waiting for Approval!');
 
     }
 
@@ -76,34 +78,40 @@ class Admin_UpdateController extends Controller
 
         $img->title = $request->input('title');
         $img->caption = $request->input('caption');
+        $img->user_id = auth()->user()->id;
 
         $this->validate($request, [
             'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        $images = json_decode($img->images,true);
-        if (is_array($images) && !empty($images)){
-        foreach ($images as $deleteimage) {
-                if (File::exists(public_path('news_updates/'.$deleteimage))) {
-                    File::delete(public_path('news_updates/'.$deleteimage));
-                }
-            }
-
-        }
         if ($request->hasFile('images')){
 
             foreach($request->file('images') as $image){
 
                 $name = $image->getClientOriginalName();
-                $image->move(public_path('/news_updates/'), $name);
+                $image->move('/home/dilgboho/public_html/news_updates/', $name);
                 $data[] = $name;
-        }
+            }
+
+            $images = json_decode($img->images,true);
+            if (is_array($images) && !empty($images)){
+            foreach ($images as $deleteimage) {
+                    if (File::exists('/home/dilgboho/public_html/news_updates/'.$deleteimage)) {
+                        File::delete('/home/dilgboho/public_html/news_updates/'.$deleteimage);
+                    }
+                }
+
+            }
+
         $img->images = json_encode($data);
+        }
+
+
         $img->update();
 
         return redirect()->back()->with('message', 'Updated Successfully!');
 
-    }
+
 }
     public function delete_updates(Request $request, $id)
     {
@@ -111,8 +119,8 @@ class Admin_UpdateController extends Controller
         $images = json_decode($img->images,true);
         if (is_array($images) && !empty($images)){
         foreach ($images as $deleteimage) {
-                if (File::exists(public_path('news_updates/'.$deleteimage))) {
-                    File::delete(public_path('news_updates/'.$deleteimage));
+                if (File::exists('/home/dilgboho/public_html/news_updates/'.$deleteimage)) {
+                    File::delete('/home/dilgboho/public_html/news_updates/'.$deleteimage);
                 }
             }
             $img->delete();
@@ -121,5 +129,57 @@ class Admin_UpdateController extends Controller
         return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 
+
+    public function storeImage(Request $request, $id){
+
+        $img = Updates_Image::find($id);
+
+        $this->validate($request, [
+            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        $images = json_decode($img->images,true);
+        if (is_array($images) && !empty($images)){
+        foreach ($images as $deleteimage) {
+                if (File::exists('/home/dilgboho/public_html/updates_images/'.$deleteimage)) {
+                    File::delete('/home/dilgboho/public_html/updates_images/'.$deleteimage);
+                }
+            }
+
+        }
+
+        if ($request->hasFile('images')){
+
+            foreach($request->file('images') as $image){
+
+                $name = $image->getClientOriginalName();
+                $image->move('/home/dilgboho/public_html/updates_images/', $name);
+                $data[] = $name;
+        }
+    }
+
+        // $img = Home_Image::find($id);
+        $img->images = json_encode($data);
+        $img->save();
+        return redirect()->back()->with('message', 'Added Images Successfully!');
+
+    }
+
+    public function approve($id)
+    {
+        $news_updates = Update::find($id);
+        $news_updates->status = true;
+        $news_updates->save();
+
+        return redirect()->back()->with('message', 'Approved Successfully!');
+    }
+
+    public function disapprove($id)
+    {
+        $news_updates = Update::find($id);
+        $news_updates->status = false;
+        $news_updates->save();
+
+        return redirect()->back()->with('message', 'Discarded Successfully!');
+    }
 
 }

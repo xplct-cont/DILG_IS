@@ -21,6 +21,4 @@ class AdminRegisterController extends Controller
 
     }
 
-
-
 }

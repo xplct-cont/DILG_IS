@@ -24,6 +24,7 @@
 
     <div class="mx-auto mt-3 col-md-11">
         <div class="">
+            @csrf
             @foreach ($news as $new)
                 <a href="#" style="text-decoration: none; color:#030303;">
                     <div class="card elevation-4">
@@ -70,7 +71,7 @@
             @endforeach
         </div>
         <div class="justify-content-between">
-            {{ $news->links() }}
+            {{ $news->onEachSide(1)->links() }}
         </div>
     </div>
 </div>

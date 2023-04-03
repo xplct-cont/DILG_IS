@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="header  ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+    <div class="header  ml-3 mr-3" style=" padding: 7px; background: #234495; color: #FFFFFF; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px; ">KNOWLEDGE MATERIALS</h1>
     </div>
 
@@ -9,10 +9,11 @@
     <div class="col-md-12">
         <div class="card-body col-md-11 text-center mx-auto">
             <table class="table bg-light table-bordered table-hover text-secondary">
+                @csrf
                 <tbody class="elevation-4">
                     @foreach ($knowledge_materials as $book)
                         <tr>
-                            <td class="" style="background-color:#002C76; color:white;  font-size: 12px;">
+                            <td class="" style="background-color:#234495; color:white;  font-size: 12px;">
                                 <p class="text-center" style="font-size: 12px;">
                                     {{ Carbon\Carbon::parse($book->created_at)->format('F d, Y') }}</p>
                             </td>

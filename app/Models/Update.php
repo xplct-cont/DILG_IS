@@ -27,6 +27,9 @@ class Update extends Model
         'created_at' => 'datetime',
 
     ];
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 
     public function scopeSearch($query, $terms){
         collect(explode(" " , $terms))->filter()->each(function($term) use($query){
@@ -44,4 +47,6 @@ class Update extends Model
         ->setDescriptionForEvent(fn(string $eventName) => "A News and Updates has been {$eventName}")
         ->logOnlyDirty();
     }
+
+
 }

@@ -61,4 +61,12 @@ class User extends Authenticatable
         ->setDescriptionForEvent(fn(string $eventName) => "A user has been {$eventName}")
         ->logOnlyDirty();
     }
+    public function updateNews(){
+        return $this->hasMany('App\Models\Update');
+    }
+
+    public function Pd_Message() {
+        return $this->hasMany('App\Models\Pd_Message');
+
+    }
 }

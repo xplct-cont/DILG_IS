@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin_View;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Pd_Message;
 use File;
 
 class Admin_ProfileController extends Controller
@@ -21,8 +22,10 @@ class Admin_ProfileController extends Controller
      */
     public function index()
     {
+    
+            $pd_messages = Pd_Message::with(['user'])->get();
 
-        return view('Admin_View.profile.profile');
+        return view('Admin_View.profile.profile', compact('pd_messages'));
     }
 
     /**
@@ -41,9 +44,19 @@ class Admin_ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store_update_message(Request $request, $id)
     {
-        //
+
+        $pd_messages = Pd_Message::find($id);
+
+        $pd_messages->user_id = auth()->user()->id;
+        $pd_messages->message = $request->input('message');
+     
+       
+    $pd_messages->update();
+
+    return redirect()->back()->with('message', 'Updated Successfully!');
+        
     }
 
     /**
@@ -92,7 +105,7 @@ class Admin_ProfileController extends Controller
             $file = $request->file('profile_image');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $file->move('user_profile_images/', $filename);
+            $file->move('/home/dilgboho/public_html/user_profile_images/', $filename);
             $profile->profile_image = $filename;
 
     }

@@ -8,7 +8,7 @@
     </div>
    </div>
     <div>
-        <div class="header mb-5 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+        <div class="header mb-5 ml-3 mr-3" style=" padding: 7px; background: #234495; color: #FFFFFF; margin-bottom: 5px;">
             <h1 class="text-center" style="font-size: 18px; margin-top: 10px; ">JOB VACANCIES</h1>
         </div>
         @foreach ($jobs as $job_list)
@@ -38,7 +38,7 @@
         @endforeach
     </div>
     <div class="d-flex justify-content-center mt-2">
-        {{ $jobs->links() }}
+        {{ $jobs->onEachSide(1)->links() }}
     </div>
 
 </div>

@@ -41,8 +41,8 @@
                 aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
-                        <div class="modal-header" style="background-color: #8c0509; color:white;">
-                            <h5 class="modal-title" id="exampleModalLabel">Adding to Issuances</h5>
+                        <div class="modal-header" style="background-color: #234495; color:white;">
+                            <h5 class="modal-title" id="exampleModalLabel">Adding Issuances</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -137,8 +137,8 @@
 
             <div class="card-header d-flex justify-content-between">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-                <h1 class="" style="font-size: 18px; font-weight: 450;"><span class="fas fa-file"
-                        style="color:#8c0509;"></span> ISSUANCES </h1>
+                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link" href="{{ url('latest_issuances') }}"><span class="fas fa-file"
+                        style="color:#234495;"></span> ISSUANCES </a></h1>
 
             </div>
             <div>
@@ -149,7 +149,8 @@
                             <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                 style="text-align: center">Date</th>
                             <th scope="col">Outcome</th>
-                            <th scope="col">Category</th>
+                            <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                            style="text-align: center">Category</th>
                             <th scope="col">Title</th>
                             <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                 style="text-align: center">Ref Num.</th>
@@ -166,7 +167,8 @@
                                     style="text-align: center">
                                     {{ $issuances->date }}</td>
                                 <td>{{ $issuances->outcome_area }}</td>
-                                <td>{{ $issuances->category }}</td>
+                                <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                style="text-align: center">{{ $issuances->category }}</td>
                                 <td>{{ $issuances->title }}</td>
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">
@@ -182,7 +184,7 @@
                                     role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
-                                            <div class="modal-header" style="background-color: #8c0509; color:white;">
+                                            <div class="modal-header" style="background-color: #234495; color:white;">
                                                 <h5 class="modal-title" id="exampleModalLabel">Edit Issuance</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
@@ -334,6 +336,6 @@
         </div>
     </div>
     <div class="d-flex justify-content-end mt-2">
-        {{ $b_issuances->links() }}
+        {{ $b_issuances->onEachSide(1)->links() }}
     </div>
 @endsection

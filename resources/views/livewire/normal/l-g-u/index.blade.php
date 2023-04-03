@@ -96,6 +96,14 @@
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member7 }}</p>
                         <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p>
+                        @if (($lgu->sb_member9 && $lgu->sb_member10) != null)
+                            <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
+                                    style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member9 }}
+                            </p>
+                            <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
+                                    style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member10 }}
+                            </p>
+                        @endif
                         <br>
 
                         <p class="text-center" style="color:dimgray; margin-top: -10px; font-size: 15px;"><span

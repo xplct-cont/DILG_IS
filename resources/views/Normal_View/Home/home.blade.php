@@ -38,16 +38,16 @@
             <div class="col-md-6 mt-5 mb-5 ">
 
                 <a href="{{ route('/provincial_director') }}" type="button" class="btn btn-md"
-                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">THE
+                    style="background-color: #234495; color: white; width: 300px; overflow:auto; border-radius:10px;">THE
                     PROVINCIAL
                     DIRECTOR
                     <span class="fas fa-arrow-right" style="margin-left:38px;"></span></a><br><br>
                 <a href="{{ route('/about') }}" type="button" class="btn btn-md"
-                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION
+                    style="background-color: #234495; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION
                     &
                     MISSION <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a><br><br>
                 <a href="{{ url('/latest_issuances') }}" type="button" class="btn btn-md"
-                    style="background-color: #8c0509; color: white; width: 300px; overflow:auto; border-radius:10px;">LATEST
+                    style="background-color: #234495; color: white; width: 300px; overflow:auto; border-radius:10px;">LATEST
                     ISSUANCES
                     <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a>
 
@@ -68,30 +68,31 @@
         </div>
     </div>
 
-    <div class="mt-4 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+    <div class="mt-4 ml-3 mr-3" style=" padding: 7px; background: #234495; color: #FFFFFF; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">NEWS & UPDATES</h1>
     </div>
 
     <div class="mx-auto mt-3 col-md-11">
         <div class="">
+            @csrf
             @foreach ($news_images as $new)
                 <div class="card">
                     <div class=" card-body elevation-4">
                         <a href="#" data-toggle="modal" id="news_updates_view_link"
                             data-target="#news_update_id{{ $new->id }}" style="text-decoration:none; color:dimgray">
 
-                            <div class="row d-flex justify-content-center mt-3">
-                                <div class="col-md-6 mx-auto mt-5 ">
+                            <div class="row d-flex justify-content-center mt-1">
+                                <div class="col-md-6 mx-auto mt-2 ">
 
                                     <h1 style="font-size: 18px; font-weight: 500; color:dimgray;">
                                         Post: {{ \Carbon\Carbon::parse($new->created_at)->format('M j, Y h:i A') }}</h1>
                                     <br>
                                     <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
                                     <p class="text-left" style="font-size: 15px; font-weight: 400;">
-                                        {{ Illuminate\Support\Str::limit($new->caption, 500) }}</p>
+                                        {{ Illuminate\Support\Str::limit($new->caption, 300) }}</p>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="" style="height: 360px;">
+                                <div class="col-md-6 text-center mx-auto">
+                                    <div class="">
 
                                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                             <ol class="carousel-indicators">
@@ -100,15 +101,18 @@
                                                 </li>
                                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
                                             </ol>
-                                            <div class="carousel-inner text-center" style="height:350px;">
+                                            <div class="carousel-inner text-center mx-auto"
+                                                style="height:auto; width: auto;">
                                                 @php
                                                     $images = json_decode($new->images, true);
                                                 @endphp
                                                 @foreach ($images as $key => $image)
                                                     <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
                                                         <img src="{{ asset('/news_updates/' . $image) }}"
-                                                            style="height:350px; width:100%;" />
+                                                            style="height:auto; max-height:250px; width: auto; max-width: 100%; padding: 3px;
+                                                            box-shadow: 2px 2px 5px #888;" />
                                                     </div>
                                                 @endforeach
 
@@ -142,7 +146,7 @@
                                     <p class="text-left" style="font-size: 15px; font-weight: 400;">
                                         {{ $new->caption }}</p>
 
-                                    <div class="" style="height: 365px;">
+                                    {{-- <div class="" style="height: 365px;">
 
                                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                             <ol class="carousel-indicators">
@@ -166,7 +170,17 @@
                                             </div>
 
                                         </div>
+                                    </div> --}}
+
+                                    <div class="image-container">
+                                        @php
+                                            $images = json_decode($new->images, true);
+                                        @endphp
+                                        @foreach ($images as $image)
+                                            <img src="{{ asset('/news_updates/' . $image) }}" alt="" />
+                                        @endforeach
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -180,11 +194,11 @@
 
     <div class="d-flex justify-content-center mb-5 mt-3">
         <a href="{{ url('/news_update') }}" type="button" class="btn btn-sm"
-            style="background-color: #8c0509; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
+            style="background-color: #234495; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
 
-    <div class="mt-4 ml-3 mr-3" style=" padding: 7px; background: #002c76; color: #FFFFFF; margin-bottom: 5px;">
+    <div class="mt-4 ml-3 mr-3" style=" padding: 7px; background: #234495; color: #FFFFFF; margin-bottom: 5px;">
         <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">LATEST ISSUANCES</h1>
     </div>
 
@@ -202,7 +216,7 @@
                             <p class="text-center" style="font-size: 12px;">
                                 {{ $issuances->outcome_area }}</p>
                         </td>
-                        <td class="" style="background-color:#002C76; color:white;  font-size: 12px;">
+                        <td class="" style="background-color:#234495; color:white;  font-size: 12px;">
                             Reference No: <span
                                 style="font-size: 15px; font-weight: 350; color:white;">{{ $issuances->reference_num }}</span>
                             <p class="text-center mt-2" style=" font-size: 14px">
@@ -215,7 +229,7 @@
     </div>
     <div class="d-flex justify-content-center mb-5 mt-3">
         <a href="{{ url('/latest_issuances') }}" type="button" class="btn btn-sm"
-            style="background-color: #8c0509; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
+            style="background-color: #234495; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
 
@@ -235,7 +249,7 @@
                 <div id="Container " class="mx-auto"
                     style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
                     <iframe id="UstreamIframe"
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdilgboholprovince&tabs=timeline&width=900&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdilgboholprovince&tabs=timeline&width=950&height=450&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                         width="100%" height="120%" style="position:absolute; top:0; left: 0" allowfullscreen
                         webkitallowfullscreen frameborder="0" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
@@ -243,8 +257,8 @@
                 </div>
             </div>
 
-            <div class="container mx-auto mt-3 col-md-11">
-                <iframe src="https://www.youtube.com/embed/JYa4OBZ66fI" style="height:450; width:100%;" frameborder="0">
+            <div class="container mx-auto mt-1 col-md-12">
+                <iframe src="https://www.youtube.com/embed/NDseKmeNMt8" style="height:550; width:100%;" frameborder="0">
 
                 </iframe>
             </div>
@@ -293,5 +307,22 @@
 
     .card:hover .overlay {
         transform: scale(8) translateZ(0);
+    }
+
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 10px;
+        padding: 5px;
+        box-shadow: 2px 2px 5px #888;
     }
 </style>

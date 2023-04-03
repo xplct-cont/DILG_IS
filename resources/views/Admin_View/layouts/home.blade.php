@@ -23,7 +23,7 @@
             <div class="modal-dialog modal-md" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-
+                            <p style="font-size: 14px;"><span class="fas fa-exclamation-triangle text-warning" style="font-size: 13px;"></span> Note: Please use images with same size.</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -31,7 +31,7 @@
                     <div class="modal-body">
                         <table
                             class=" mx-auto col-md-8 elevation-3 table table-sm table-bordered table-hovered text-center">
-                            <thead class="" style="background-color: dimgray; color:white;">
+                            <thead class="" style="background-color: #234495; color:white;">
 
 
                                 <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
@@ -52,7 +52,7 @@
                             </tbody>
                         </table>
 
-                        <form action="{{ url('/add_images/' . $home_img->id) }}" method="POST"
+                        <form action="{{ url('/add_images_hm/' . $home_img->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="container mx-auto">
@@ -60,7 +60,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Upload Images (Max:3)</label>
-                                            <input type="file" name="images[]" class="form-control" multiple>
+                                            <input type="file" name="images[]" class="form-control" required multiple>
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                         <div class="icon">
                             <i class="fas fa-newspaper text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/news_updates') }}" class="small-box-footer bg-secondary text-light"><span
+                        <a href="{{ route('admin/news_updates') }}" class="small-box-footer text-light" style="background-color: #234495;"><span
                                 class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -111,161 +111,179 @@
                         <div class="icon">
                             <i class="fas fa-address-book text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/jobs') }}" class="small-box-footer bg-secondary"
+                        <a href="{{ route('admin/jobs') }}" class="small-box-footer" style="background-color: #234495;"
                             style="color:whitesmoke;"><span class="text-light">More info</span> <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-light text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $orgs }}</h3>
 
-                            <p class="text-secondary">Org. Structure</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-users text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/organization') }}" class="small-box-footer bg-secondary"
-                            style="color:whitesmoke;"><span class="text-light">More info</span> <i
-                                class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $pdmus }}</h3>
+                @role(['Super-Admin', 'Admin'])
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-light text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $orgs }}</h3>
 
-                            <p class="text-secondary">PDMU</p>
+                                <p class="text-secondary">Org. Structure</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-users text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/organization') }}" class="small-box-footer" style="background-color: #234495;"
+                                style="color:whitesmoke;"><span class="text-light">More info</span> <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-user-friends text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/pdmu') }}" class="small-box-footer bg-secondary">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $field_officers }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $pdmus }}</h3>
 
-                            <p class="text-secondary">Field Off.</p>
+                                <p class="text-secondary">PDMU</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-user-friends text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/pdmu') }}" class="small-box-footer" style="background-color: #234495;">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-people-carry text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/field_officers') }}" class="small-box-footer bg-secondary"
-                            style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $faqs }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $field_officers }}</h3>
 
-                            <p class="text-secondary">FAQ's</p>
+                                <p class="text-secondary">Field Off.</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-people-carry text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/field_officers') }}" class="small-box-footer " style="background-color: #234495;"
+                                style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-question-circle text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/faqs') }}" class="small-box-footer bg-secondary" style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $b_issuances }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $faqs }}</h3>
 
-                            <p class="text-secondary">Issuances</p>
+                                <p class="text-secondary">FAQ's</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-question-circle text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/faqs') }}" class="small-box-footer " style="background-color: #234495;" style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-file text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/issuances') }}" class="small-box-footer bg-secondary" style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $downloadables }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $b_issuances }}</h3>
 
-                            <p class="text-secondary">Downloadables</p>
+                                <p class="text-secondary">Issuances</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-file text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/issuances') }}" class="small-box-footer " style="background-color: #234495;" style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-download text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/downloadables') }}" class="small-box-footer bg-secondary"
-                            style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $knowledge_materials }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $downloadables }}</h3>
 
-                            <p class="text-secondary">Knowledge Mat.</p>
+                                <p class="text-secondary">Downloadables</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-download text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/downloadables') }}" class="small-box-footer " style="background-color: #234495;"
+                                style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-book-open text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/knowledge_materials') }}" class="small-box-footer bg-secondary"
-                            style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $prov_officials }}</h3>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $knowledge_materials }}</h3>
 
-                            <p class="text-secondary">Prov. Officials</p>
+                                <p class="text-secondary">Knowledge Mat.</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-book-open text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/knowledge_materials') }}" class="small-box-footer " style="background-color: #234495;"
+                                style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="fas fa-user-tie text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/provincial_officials') }}" class="small-box-footer bg-secondary"
-                            style="">
-                            <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box text-secondary elevation-4">
-                        <div class="inner">
-                            <h3>{{ $lgus }}</h3>
-                            <p class="text-secondary">LGU's</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-city text-secondary"></i>
-                        </div>
-                        <a href="{{ route('admin/lgu') }}" class="small-box-footer bg-secondary"
-                            style=";color:whitesmoke;"><span class="text-light">More info</span>
-                            <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6 ">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $prov_officials }}</h3>
 
+                                <p class="text-secondary">Prov. Officials</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-user-tie text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/provincial_officials') }}" class="small-box-footer " style="background-color: #234495;"
+                                style="">
+                                <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $lgus }}</h3>
+                                <p class="text-secondary">LGU's</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-city text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/lgu') }}" class="small-box-footer " style="background-color: #234495;"
+                                style=";color:whitesmoke;"><span class="text-light">More info</span>
+                                <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box text-secondary elevation-4">
+                            <div class="inner">
+                                <h3>{{ $cit_charter }}</h3>
+                                <p class="text-secondary">Cit. Charter</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-users-slash text-secondary"></i>
+                            </div>
+                            <a href="{{ route('admin/citizens_charter') }}" class="small-box-footer " style="background-color: #234495;"
+                                style="color:whitesmoke;"><span class="text-light">More info</span>
+                                <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                @endrole
                 @role('Super-Admin')
                     <!-- ./col -->
                     <div class="col-lg-3 col-6">
@@ -278,7 +296,7 @@
                             <div class="icon">
                                 <i class="fas fa-pen text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/logs') }}" class="small-box-footer bg-secondary"
+                            <a href="{{ route('admin/logs') }}" class="small-box-footer " style="background-color: #234495;"
                                 style=";color:whitesmoke;"><span class="text-light">More info</span>
                                 <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
@@ -286,7 +304,7 @@
                     <!-- ./col -->
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box text-light elevation-4" style="background-color: #8c0509;">
+                        <div class="small-box text-light elevation-4" style="background-color: #234495;">
                             <div class="inner">
                                 <h3>{{ $users }}</h3>
 
@@ -296,7 +314,7 @@
                                 <i class="fas fa-user-cog text-light"></i>
                             </div>
                             <a href="{{ route('admin/users') }}" class="small-box-footer bg-secondary"
-                                style=";color:whitesmoke;"><span class="text-light">More info</span>
+                                style="color:whitesmoke;"><span class="text-light">More info</span>
                                 <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
