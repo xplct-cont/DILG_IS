@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pd_messages', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->default('1');
+            $table->unsignedBigInteger('user_id')->default('2');
             $table->longText('message')->nullable();
             $table->timestamps();
             
