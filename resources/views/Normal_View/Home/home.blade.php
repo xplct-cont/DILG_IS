@@ -111,7 +111,8 @@
                                                 @foreach ($images as $key => $image)
                                                     <div class="carousel-item zoom {{ $key == 0 ? 'active' : '' }}">
                                                         <img src="{{ asset('/news_updates/' . $image) }}"
-                                                            style="height:auto; max-height:250px; width: auto; max-width: 100%;" />
+                                                            style="height:auto; max-height:250px; width: auto; max-width: 100%; padding: 3px;
+                                                            box-shadow: 2px 2px 5px #888;" />
                                                     </div>
                                                 @endforeach
 
