@@ -28,7 +28,7 @@
                             <div class="modal-dialog modal-md" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header" style="background-color:#234495; color:white">
-                                        <p class="modal-title" id="exampleModalLabel" style="font-size: 14px;">Knowledge Materials</p>
+                                        <p class="modal-title" id="exampleModalLabel" style="font-size: 18px;">Knowledge Materials</p>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
