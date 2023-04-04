@@ -9,8 +9,28 @@
 
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto mb-2 mt-5">
-            <form action="" method="GET">
-                <div class="d-flex justify-content-end">
+
+                {{-- <form action="{{ url('admin/news_updates') }}" method="GET" role="search">
+                    <div class="input-group">
+                        <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                    <span class="fas fa-sync-alt"></span>
+                                </button>
+                            </span>
+                        </a>
+                        <input type="text" class="form-control mr-1" name="news_images" placeholder="Search..."
+                            id="news_images">
+
+                        <span class="input-group-btn mr-1 mt-0">
+                            <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                                <span class="fas fa-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form> --}}
+                <form action="" method="GET">
+                    <div class="d-flex justify-content-end">
                     <div class="input-group d-flex col-md-4">
                         <a href="{{ url('admin/news_updates') }}" class=" mt-0">
                             <span class="input-group-btn me-2">
@@ -19,35 +39,41 @@
                                 </button>
                             </span>
                         </a>
-                        <input type="text" class="form-control mr-1" name="news_images" placeholder="Search..."
-                            id="news_images">
-                        <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                        <input type="text" class="form-control mr-1" name="search" placeholder="Search..."
+                            id="search" value="{{ Request::get('search')}}">
                             <span class="input-group-btn mr-1 mt-0">
                                 <button class="btn btn-secondary text-light" type="submit" title="Search Name">
                                     <span class="fas fa-search"></span>
                                 </button>
                             </span>
-                        </a>
+                        {{-- <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn mr-1 mt-0">
+                                <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                                    <span class="fas fa-search"></span>
+                                </button>
+                            </span>
+                        </a> --}}
                     </div>
-                <div class="input-group d-flex col-md-3">
-                    <a href="{{ url('admin/news_updates') }}" class=" mt-0">
-                        <span class="input-group-btn me-2">
-                            <button class="btn btn-danger text-light" type="button" title="Refresh page">
-                                <span class="fas fa-sync-alt"></span>
+
+                    <div class="input-group d-flex col-md-3">
+                        <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn me-2">
+                                <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                    <span class="fas fa-sync-alt"></span>
+                                </button>
+                            </span>
+                        </a>
+                        <select name="status" id="status">
+                            <option value="">Filter by status</option>
+                            <option value="1" {{ Request::get('status') == '1' ? 'selected' : '' }}>Approved</option>
+                            <option value="0" {{ Request::get('status') == '0' ? 'selected' : '' }}>Pending</option>
+                        </select>
+                        <span class="input-group-btn mr-1 mt-0 ms-2">
+                            <button class="btn btn-secondary text-light" type="submit">
+                                Filter
                             </button>
                         </span>
-                    </a>
-                    <select name="status" id="status">
-                        <option>Filter by status</option>
-                        <option value="1" {{ Request::get('status') == '1' ? 'selected' : '' }}>Approved</option>
-                        <option value="0" {{ Request::get('status') == '0' ? 'selected' : '' }}>Pending</option>
-                    </select>
-                    <span class="input-group-btn mr-1 mt-0 ms-2">
-                        <button class="btn btn-secondary text-light" type="submit">
-                            Filter
-                        </button>
-                    </span>
-                </div>
+                    </div>
 
             </div>
             </form>
@@ -222,7 +248,7 @@
                                 <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">Caption</th>
                                 <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                                style="text-align: center">Author</th>
+                                    style="text-align: center">Author</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete
                                 </th>
@@ -250,7 +276,7 @@
                                         style="text-align: center">{{ Illuminate\Support\Str::limit($news_img->caption, 50) }}
                                     </td>
                                     <td class="text-wrap  d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                                    style="text-align: center">{{ $news_img->user->name ?? 'User Removed' }}</td>
+                                        style="text-align: center">{{ $news_img->user->name ?? 'User Removed' }}</td>
 
 
                                     <td><a href="#" data-toggle="modal" id="news_edit_link" class="btn"
@@ -536,6 +562,6 @@
             </div>
         </div>
         <div class="d-flex justify-content-end mt-2">
-            {{ $news_images->onEachSide(-1)->links()}}
+            {{ $news_images->onEachSide(-1)->links() }}
         </div>
     @endsection
