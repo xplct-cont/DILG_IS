@@ -21,9 +21,10 @@
             </div>
 
             <div class="mb-5 mt-1 col-md-12" style=" padding: 3px; box-shadow: 2px 2px 5px #888;">
-                <video style=" height: 100%; width:100%;" controls>
+                <video controls autoplay style=" height: 100%; width:100%;" controls>
                     <source src="{{ URL::asset('citizens_charter_videos/' . $citizen->file) }}" class="elevation-4"
                         style=" " type="video/mp4">
+                    Your browser does not support the video tag.
             </div>
         @endforeach
     </div>
