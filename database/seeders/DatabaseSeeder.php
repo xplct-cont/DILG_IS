@@ -30,5 +30,7 @@ class DatabaseSeeder extends Seeder
         //$this->call(RolesSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(UpdatesImageSeeder::class);
+        $this->call(PdfCitCharterSeeder::class);
+
     }
 }

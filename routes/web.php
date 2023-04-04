@@ -129,6 +129,10 @@ Route::post('/add-citizens_charter', [Admin_Citizens_CharterController::class, '
 Route::get('/delete_citizens_charter/{id}', [Admin_Citizens_CharterController::class, 'delete_citizens_charter']);
 Route::put('/update-citizens_charter/{id}', [Admin_Citizens_CharterController::class, 'update_citizens_charter']);
 
+Route::put('/change_pdf_cit_charter/{id}', [Admin_Citizens_CharterController::class, 'change_pdf_cit_charter']);
+
+
+
 });
 
 //Normal_View Routes
@@ -150,7 +154,7 @@ Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'inde
 Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'])->name('/knowledge_materials');
 
 Route::get('/citizens_charter', [Citizens_CharterController::class, 'index'])->name('/citizens_charter');
-Route::get('/export_citizes_charter_pdf', [Citizens_CharterController::class, 'export_citizes_charter_pdf'])->name('export_citizes_charter_pdf');
+Route::get('/download_pdf_cit_charter/{file}', [Citizens_CharterController::class, 'download_pdf_cit_charter'])->name('download_pdf_cit_charter');
 
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
