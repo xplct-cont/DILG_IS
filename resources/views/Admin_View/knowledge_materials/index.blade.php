@@ -57,6 +57,12 @@
 
                                 <div class="container mx-auto">
 
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="" style="color:dimgray">Date:</label>
+                                            <input type="date" class="form-control" name="date">
+                                        </div>
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Title:</label>
@@ -69,6 +75,7 @@
                                             <input type="text" class="form-control" name="link">
                                         </div>
                                     </div>
+                                   
 
 
                                 </div>
@@ -105,7 +112,7 @@
                         @foreach ($knowledge_materials as $km)
                             <tr>
 
-                                <td>{{ $km->title }}</td>
+                                <td class="text-wrap">{{ $km->title }} <br> <span class="text-wrap" style="font-size: 12px; color:#234495;">{{ \Carbon\Carbon::parse($km->date)->format('F d, Y')}}</span></td>
 
                                 <td><a class="btn " href="{{ $km->link }}"><span
                                             class="btn btn-sm btn-success">Details</span></a></td>
@@ -135,6 +142,14 @@
 
                                                     <div class="container mx-auto">
 
+                                                        
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="" style="color:dimgray">Date:</label>
+                                                                <input type="date" class="form-control" name="date"
+                                                                    value="{{ $km->date }}" required>
+                                                            </div>
+                                                        </div>
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">Title:</label>
@@ -144,7 +159,7 @@
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="" style="color:dimgray">Documen
+                                                                <label for="" style="color:dimgray">Document
                                                                     Link:</label>
                                                                 <input type="text" class="form-control" name="link"
                                                                     value="{{ $km->link }}">

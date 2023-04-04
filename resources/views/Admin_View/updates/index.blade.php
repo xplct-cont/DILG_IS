@@ -126,7 +126,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label>Upload Images (Max:3)</label>
+                                                    <label>Upload Images (Max:5)</label>
                                                     <input type="file" name="images[]" class="form-control" required
                                                         multiple>
                                                 </div>
@@ -181,7 +181,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Upload Images (Max:3)</label>
+                                                <label for="" style="color:dimgray">Upload Images (Max:5)</label>
                                                 <input type="file" class="form-control" name="images[]" required
                                                     multiple>
                                             </div>
@@ -221,7 +221,8 @@
                                 <th scope="col">Title</th>
                                 <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">Caption</th>
-                                <th scope="col">Author</th>
+                                <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                style="text-align: center">Author</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete
                                 </th>
@@ -248,7 +249,8 @@
                                     <td class="text-wrap d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                         style="text-align: center">{{ Illuminate\Support\Str::limit($news_img->caption, 50) }}
                                     </td>
-                                    <td class="text-wrap">{{ $news_img->user->name ?? 'User Removed' }}</td>
+                                    <td class="text-wrap  d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                    style="text-align: center">{{ $news_img->user->name ?? 'User Removed' }}</td>
 
 
                                     <td><a href="#" data-toggle="modal" id="news_edit_link" class="btn"
@@ -260,7 +262,7 @@
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header" style="background-color: #234495; color:white;">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Edit News</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit News & Updates</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -292,7 +294,7 @@
                                                                 <div class="col-md-8">
                                                                     <div class="form-group">
                                                                         <label for="" style="color:dimgray">Upload
-                                                                            Images (Max:3)</label>
+                                                                            Images (Max:5)</label>
                                                                         <input type="file" class="form-control"
                                                                             name="images[]" multiple>
                                                                         <p class="mt-3 fw-light">Old photo(s):</p>
@@ -468,7 +470,7 @@
                                                                     <div class="col-md-8">
                                                                         <div class="form-group">
                                                                             <label for="" style="color:dimgray">Upload
-                                                                                Images (Max:3)</label>
+                                                                                Images (Max:5)</label>
                                                                             <input type="file" class="form-control"
                                                                                 name="images[]" multiple>
                                                                         </div>
@@ -534,6 +536,6 @@
             </div>
         </div>
         <div class="d-flex justify-content-end mt-2">
-            {{ $news_images->links() }}
+            {{ $news_images->onEachSide(-1)->links()}}
         </div>
     @endsection

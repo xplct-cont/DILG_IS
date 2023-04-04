@@ -11,7 +11,7 @@ class Field_OfficersController extends Controller
 {
     public function index(){
 
-        $field_officers = Field_Officer::with(['municipality'])->orderBy('position', 'ASC')->get();
+        $field_officers = Field_Officer::with(['municipality'])->orderBy('municipality_id', 'ASC')->get();
         return view('Normal_View.Field_Officers.field_officers', compact('field_officers'));
     }
 }

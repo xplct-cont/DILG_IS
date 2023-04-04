@@ -11,7 +11,7 @@ class Index extends Component
     public $reference_num, $title, $outcome = 'all';
     public function loadIssuances(){
 
-        $query = Bohol_Issuance::orderBy('created_at', 'desc')
+        $query = Bohol_Issuance::orderBy('date', 'desc')
             ->search($this->search);
 
             if($this->outcome != 'all'){

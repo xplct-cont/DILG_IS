@@ -12,7 +12,7 @@ class Index extends Component
     public $fname, $lname, $cluster, $municipality_id;
     public function loadOfficers(){
 
-        $query = Field_Officer::orderBy('fname', 'asc')
+        $query = Field_Officer::orderBy('municipality_id', 'asc')
             ->search($this->search);
 
             if($this->municipality != 'all'){

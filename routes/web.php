@@ -71,6 +71,7 @@ Route::post('/add_images_hm/{id}', [Admin_HomeController::class, 'store']);
 
 Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
 Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
+Route::put('/store_update_message/{id}', [Admin_ProfileController::class, 'store_update_message']);
 
 Route::get('/admin/change-password/{id}', [Admin_ChangePasswordController::class, 'index']);
 Route::post('/admin/change-password', [Admin_ChangePasswordController::class, 'change_password']);
@@ -128,12 +129,16 @@ Route::post('/add-citizens_charter', [Admin_Citizens_CharterController::class, '
 Route::get('/delete_citizens_charter/{id}', [Admin_Citizens_CharterController::class, 'delete_citizens_charter']);
 Route::put('/update-citizens_charter/{id}', [Admin_Citizens_CharterController::class, 'update_citizens_charter']);
 
+Route::put('/change_pdf_cit_charter/{id}', [Admin_Citizens_CharterController::class, 'change_pdf_cit_charter']);
+
+
+
 });
 
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
-Route::get('/attached_agencies',[Attached_AgenciesController::class, 'index'])->name('/attach_agencies');
+Route::get('/dilg_family',[Attached_AgenciesController::class, 'index'])->name('/dilg_family');
 Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
 
 Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
@@ -149,7 +154,7 @@ Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'inde
 Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'])->name('/knowledge_materials');
 
 Route::get('/citizens_charter', [Citizens_CharterController::class, 'index'])->name('/citizens_charter');
-Route::get('/export_citizes_charter_pdf', [Citizens_CharterController::class, 'export_citizes_charter_pdf'])->name('export_citizes_charter_pdf');
+Route::get('/download_pdf_cit_charter/{file}', [Citizens_CharterController::class, 'download_pdf_cit_charter'])->name('download_pdf_cit_charter');
 
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);

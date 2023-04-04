@@ -23,7 +23,8 @@
                                     class="img-circle elevation-4" alt="User Image"
                                     style="height: 300px; width: 300px; border-radius: 50%; padding-top:10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;">
                             </div>
-                            <p class="text-center text-dark mt-2 mb-1" style="font-weight: 500;">{{ Auth::user()->name }}</p>
+                            <p class="text-center text-dark mt-2 mb-1" style="font-weight: 500;">{{ Auth::user()->name }}
+                            </p>
                         </div>
                         <div class="form-group mb-3 col-md-6 mx-auto">
                             <label for="" style="color:dimgray;"></label>
@@ -65,8 +66,60 @@
                                 <button class="btn btn-sm btn-success" type="submit"><span class="fas fa-save"></span> Save
                                     Changes</button>
                             </div>
+            </form>
+
+
+            <!-- Button trigger modal -->
+            @if (auth()->check() && auth()->user()->position == 'Provincial Director')
+                <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModalCenter"
+                    style="font-size: 12px;">
+                    Change Message ?
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle" style="font-size: 13px;">Provincial
+                                    Director's Message</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                @foreach ($pd_messages as $msg)
+                                    <form action="{{ url('/store_update_message/' . $msg->id) }}" method="POST">
+
+                                        @csrf
+                                        @method('PUT')
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="" style="color:dimgray">Message:</label>
+
+                                                <textarea id="" type="text" class="form-control" placeholder="" title="" rows="8" required
+                                                    name="message" placeholder="Write your message..." required>{{ $msg->message }}</textarea>
+                                            </div>
+                                        </div>
+                                @endforeach
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save
+                                    changes</button>
+                            </div>
+
                         </div>
                     </div>
+                    </form>
                 </div>
+            @endif
+
         </div>
-    @endsection
+    </div>
+    </div>
+    </div>
+@endsection

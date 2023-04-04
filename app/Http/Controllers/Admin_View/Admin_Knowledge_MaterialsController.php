@@ -27,7 +27,7 @@ class Admin_Knowledge_MaterialsController extends Controller
             }]
         ])
     
-        ->orderBy("created_at","DESC")
+        ->orderBy("date","DESC")
         ->paginate(12);
 
         return view('Admin_View.knowledge_materials.index', compact('knowledge_materials'))
@@ -41,6 +41,9 @@ class Admin_Knowledge_MaterialsController extends Controller
        
         $knowledge_materials->title = $request->input('title');
         $knowledge_materials->link = $request->input('link');
+        $knowledge_materials->date = $request->input('date');
+
+
         
         $knowledge_materials->save();
 
@@ -54,6 +57,8 @@ class Admin_Knowledge_MaterialsController extends Controller
 
         $knowledge_materials->title = $request->input('title');
         $knowledge_materials->link = $request->input('link');
+        $knowledge_materials->date = $request->input('date');
+
        
     $knowledge_materials->update();
 
