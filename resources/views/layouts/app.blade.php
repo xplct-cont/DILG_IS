@@ -180,8 +180,9 @@
                                 <li><a class="dropdown-item" target="_blank"
                                         href="https://subaybayan.dilg.gov.ph/projects/index?ProjectSearch%5BREGION_C%5D=07&ProjectSearch%5BPROVINCE_C%5D=012&ProjectSearch%5BCITYMUN_C%5D=&ProjectSearch%5Bbarangay%5D=&ProjectSearch%5BimageSelection%5D=&ProjectSearch%5BPROGRAM_C%5D=&ProjectSearch%5BPROJECT_TYPE%5D=&ProjectSearch%5BYEAR%5D=&ProjectSearch%5BSTATUS%5D=">Projects
                                     </a></li>
-                                    <li><a class="dropdown-item" target="_blank"
-                                        href="https://fdpp.dilg.gov.ph/fdpp/report/index?_csrf-frontend=RBVssfr9QXZl60bNe0juzDQvRsKtxA-pS7A64znU1ugNUCqAvpV3IVCIFpQYGq38Umd29-isadsTglaWaL7moA%3D%3D&document_filter=&region_filter=07&province_filter=012&lgu_filter=&year_filter=">FDP Portal
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://fdpp.dilg.gov.ph/fdpp/report/index?_csrf-frontend=RBVssfr9QXZl60bNe0juzDQvRsKtxA-pS7A64znU1ugNUCqAvpV3IVCIFpQYGq38Umd29-isadsTglaWaL7moA%3D%3D&document_filter=&region_filter=07&province_filter=012&lgu_filter=&year_filter=">FDP
+                                        Portal
                                     </a></li>
 
                             </ul>
@@ -200,39 +201,9 @@
                         </div>
 
                         @guest
-                            {{-- @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">&nbsp;{{ __('Login') }} <span
-                                            class="fas fa-sign-in-alt"></span> </a>
-                                </li>
-                            @endif --}}
-
-                            {{-- @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif --}}
                         @else
-                            {{-- <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li> --}}
                         @endguest
+
                     </ul>
                 </div>
             </div>
@@ -292,16 +263,15 @@
     <div class="" style=" padding: 20px; background-color:#efefef; color: #DCDCDC;">
         <footer class="sticky-footer">
             <div class="container">
-                <div class="col-md-12">
+                <div class="col-md-10 mx-auto">
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <p class="text-secondary" style="font-size: 12px; font-weight: 500;">REPUBLIC OF THE
                                 PHILIPPINES</p>
                             <img src="/img/govph-seal.jpg" style="height: 100px; width: 100px;" alt="">
-
                         </div>
 
-                        <div class="col-md-4 text-justify">
+                        <div class="col-md-4 text-center">
                             <p class="text-secondary" style="font-size: 12px; font-weight: 500;">
                                 GOVERNMENT LINKS</p>
                             <a href="https://president.gov.ph/" target="_blank">
@@ -341,9 +311,10 @@
                             </a>
                             </p>
                         </div>
-                        <div class="col-md-4 text-justify">
+                        <div class="col-md-4 text-center">
                             <div class="text-center">
-                                <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}
+                                <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span>
+                                    {{ date('F d, Y') }}
                                 </p>
                             </div>
                         </div>
@@ -401,20 +372,17 @@
                                             &nbsp;&nbsp;</span></a>
                                 </div>
 
-                               <hr>
-                                    <p class="text-center mt-3" style="font-size: 12px;"> Contact No: 09096027312</p>
-                              
+                                <hr>
+                                <p class="text-center mt-3" style="font-size: 12px;"> Contact No: 09096027312</p>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-
             <button onclick="topFunction()" id="myBtn" title="Go to top"
                 style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
-
-
 
 </body>
 <script></script>
