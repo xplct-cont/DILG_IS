@@ -195,7 +195,7 @@
 
     <button type="button" class="btn mt-3" data-toggle="modal" data-target="#upload_pdf_cit_charterModal"
         style="font-size: 14px; background-color:#234495; color:white;">
-        Change PDF File <span class="fas fa-file-pdf"></span>
+        Change PDF File <span class="text-danger fas fa-file-pdf"></span>
     </button>
 
     <!-- Modal -->
