@@ -262,20 +262,6 @@
                 </div>
 
 
-                {{-- <form action="">
-                    <div class="input-group mx-auto" style="width: 300px;">
-
-                        <input type="text" name="email" style="height: 30px;" class="form-control" required>
-                        <label for="" style="color:dimgray;">
-                            <button type="submit" class="btn btn-sm bg-dark " style="margin-left:1px;">
-                                <span class="" style="font-size: 12px; font-weight: 400;">EMAIL US</span>
-                            </button>
-                        </label>
-                    </div>
-                </form> --}}
-
-
-
                 <p class="text-center" style="font-size: 16px; font-weight: 400;">DILG FAMILY</p>
 
                 <div class="container d-flex justify-content-center">
@@ -369,10 +355,10 @@
             <div class="d-flex justify-content-start mt-5">
                 <!-- Button trigger modal -->
 
-                {{-- <button type="button" class="btn btn-sm"
+                <button type="button" class="btn btn-sm"
                     style="background-color: #dddddd; color:rgb(70, 69, 69); font-size: 7px;" data-toggle="modal"
                     data-target=".bd-example-modal-sm">
-                    Developers</button> --}}
+                    Developers</button>
 
 
                 <!-- Modal -->
