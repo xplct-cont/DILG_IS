@@ -177,7 +177,8 @@
                                 <th scope="col">Title</th>
                                 <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">Caption</th>
-                                <th scope="col">Author</th>
+                                <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                style="text-align: center">Author</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete
                                 </th>
@@ -204,7 +205,8 @@
                                     <td class="text-wrap d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                         style="text-align: center">{{ Illuminate\Support\Str::limit($news_img->caption, 50) }}
                                     </td>
-                                    <td class="text-wrap">{{ $news_img->user->name ?? 'User Removed' }}</td>
+                                    <td class="text-wrap  d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                    style="text-align: center">{{ $news_img->user->name ?? 'User Removed' }}</td>
 
 
                                     <td><a href="#" data-toggle="modal" id="news_edit_link" class="btn"

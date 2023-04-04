@@ -16,6 +16,7 @@ class Knowledge_Material extends Model
     [
         'title',
         'link',
+        'date'
 
     ];
 

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->longText('title')->nullable();
             $table->longText('link')->nullable();
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }
