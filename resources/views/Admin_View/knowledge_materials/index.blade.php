@@ -144,7 +144,7 @@
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="" style="color:dimgray">Documen
+                                                                <label for="" style="color:dimgray">Document
                                                                     Link:</label>
                                                                 <input type="text" class="form-control" name="link"
                                                                     value="{{ $km->link }}">
