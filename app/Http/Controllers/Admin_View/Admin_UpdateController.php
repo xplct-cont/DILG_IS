@@ -22,16 +22,14 @@ class Admin_UpdateController extends Controller
 
     public function index(Request $request){
         $updates_images = Updates_Image::all();
-        $news_images = Update::where([
-            ['created_at', '!=', null],
-            [function($query) use ($request){
-                if(($news_images = $request->news_images)){
-                    $query->orWhere('title', 'LIKE', '%'. $news_images . '%')
-                    ->orWhere('caption', 'LIKE', '%'. $news_images . '%')->get();
 
-                }
-            }]
-        ])
+        $news_images = Update::when($request->status != null, function($q) use ($request){
+            return $q->where('status', $request->status);
+        })
+        ->when($request->search != null, function($q) use ($request){
+            return $q->where('title', 'LIKE', '%'. $request->search . '%')
+                    ->orWhere('caption', 'LIKE', '%'. $request->search . '%');
+        })
 
         ->orderBy("created_at","DESC")
         ->paginate(20);

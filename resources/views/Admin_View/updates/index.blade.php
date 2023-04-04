@@ -8,7 +8,51 @@
     @endif
 
     <div class="search" style="position:relative; top: 5px;">
-        <div class="mx-auto" style="width:300px;">
+        <div class="mx-auto mb-2 mt-5">
+            <form action="" method="GET">
+                <div class="d-flex justify-content-end">
+                    <div class="input-group d-flex col-md-4">
+                        <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn me-2">
+                                <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                    <span class="fas fa-sync-alt"></span>
+                                </button>
+                            </span>
+                        </a>
+                        <input type="text" class="form-control mr-1" name="news_images" placeholder="Search..."
+                            id="news_images">
+                        <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn mr-1 mt-0">
+                                <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                                    <span class="fas fa-search"></span>
+                                </button>
+                            </span>
+                        </a>
+                    </div>
+                <div class="input-group d-flex col-md-3">
+                    <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                        <span class="input-group-btn me-2">
+                            <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                <span class="fas fa-sync-alt"></span>
+                            </button>
+                        </span>
+                    </a>
+                    <select name="status" id="status">
+                        <option>Filter by status</option>
+                        <option value="1" {{ Request::get('status') == '1' ? 'selected' : '' }}>Approved</option>
+                        <option value="0" {{ Request::get('status') == '0' ? 'selected' : '' }}>Pending</option>
+                    </select>
+                    <span class="input-group-btn mr-1 mt-0 ms-2">
+                        <button class="btn btn-secondary text-light" type="submit">
+                            Filter
+                        </button>
+                    </span>
+                </div>
+
+            </div>
+            </form>
+        </div>
+        {{-- <div class="mx-auto" style="width:300px;">
             <form action="{{ url('admin/news_updates') }}" method="GET" role="search">
 
                 <div class="input-group">
@@ -28,7 +72,7 @@
                     </a>
                 </div>
             </form>
-        </div>
+        </div> --}}
 
         <div class="d-flex justify-content-between mt-1">
             <!-- Button trigger modal -->
