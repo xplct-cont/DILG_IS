@@ -64,4 +64,9 @@ class User extends Authenticatable
     public function updateNews(){
         return $this->hasMany('App\Models\Update');
     }
+
+    public function Pd_Message() {
+        return $this->hasMany('App\Models\Pd_Message');
+
+    }
 }

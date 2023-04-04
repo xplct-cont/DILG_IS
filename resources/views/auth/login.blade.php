@@ -37,7 +37,7 @@
     </head>
 
     <body>
-        <a href="{{ url('/') }}" class="text-start ml-4" style="color:#C9282D; font-size: 19px; margin:auto;"><span
+        <a href="{{ url('/') }}" class="text-start ml-4" style="color:#234495; font-size: 19px; margin:auto;"><span
                 class="fas fa-arrow-left"></span> Back</a>
 
         <div class="container" style="margin-top: -10px;">
@@ -117,7 +117,7 @@
 
                                 <div class="row mb-0 ">
                                     <div class="col-md-6 offset-md-5 d-flex justify-content-end">
-                                        <button type="submit" class="btn " style="background: #C9282D; color:white;">
+                                        <button type="submit" class="btn " style="background: #234495; color:white;">
                                             {{ __('Login') }} <span class="fas fa-sign-in-alt"></span>
                                         </button>
                                     </div>

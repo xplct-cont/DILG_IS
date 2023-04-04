@@ -36,6 +36,7 @@ class Update extends Model
             $term = '%'. $term . '%';
 
             $query->where('title', 'like', $term)
+                ->orWhere('status', 'like', $term)
                 ->orWhere('caption', 'like', $term);
         });
     }

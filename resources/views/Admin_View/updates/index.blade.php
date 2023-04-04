@@ -8,7 +8,51 @@
     @endif
 
     <div class="search" style="position:relative; top: 5px;">
-        <div class="mx-auto" style="width:300px;">
+        <div class="mx-auto mb-2 mt-5">
+            <form action="" method="GET">
+                <div class="d-flex justify-content-end">
+                    <div class="input-group d-flex col-md-4">
+                        <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn me-2">
+                                <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                    <span class="fas fa-sync-alt"></span>
+                                </button>
+                            </span>
+                        </a>
+                        <input type="text" class="form-control mr-1" name="news_images" placeholder="Search..."
+                            id="news_images">
+                        <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn mr-1 mt-0">
+                                <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                                    <span class="fas fa-search"></span>
+                                </button>
+                            </span>
+                        </a>
+                    </div>
+                <div class="input-group d-flex col-md-3">
+                    <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                        <span class="input-group-btn me-2">
+                            <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                <span class="fas fa-sync-alt"></span>
+                            </button>
+                        </span>
+                    </a>
+                    <select name="status" id="status">
+                        <option>Filter by status</option>
+                        <option value="1" {{ Request::get('status') == '1' ? 'selected' : '' }}>Approved</option>
+                        <option value="0" {{ Request::get('status') == '0' ? 'selected' : '' }}>Pending</option>
+                    </select>
+                    <span class="input-group-btn mr-1 mt-0 ms-2">
+                        <button class="btn btn-secondary text-light" type="submit">
+                            Filter
+                        </button>
+                    </span>
+                </div>
+
+            </div>
+            </form>
+        </div>
+        {{-- <div class="mx-auto" style="width:300px;">
             <form action="{{ url('admin/news_updates') }}" method="GET" role="search">
 
                 <div class="input-group">
@@ -28,7 +72,7 @@
                     </a>
                 </div>
             </form>
-        </div>
+        </div> --}}
 
         <div class="d-flex justify-content-between mt-1">
             <!-- Button trigger modal -->
@@ -82,7 +126,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label>Upload Images (Max:3)</label>
+                                                    <label>Upload Images (Max:5)</label>
                                                     <input type="file" name="images[]" class="form-control" required
                                                         multiple>
                                                 </div>
@@ -137,7 +181,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Upload Images (Max:3)</label>
+                                                <label for="" style="color:dimgray">Upload Images (Max:5)</label>
                                                 <input type="file" class="form-control" name="images[]" required
                                                     multiple>
                                             </div>
@@ -177,7 +221,8 @@
                                 <th scope="col">Title</th>
                                 <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">Caption</th>
-                                <th scope="col">Author</th>
+                                <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                style="text-align: center">Author</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete
                                 </th>
@@ -204,7 +249,8 @@
                                     <td class="text-wrap d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                         style="text-align: center">{{ Illuminate\Support\Str::limit($news_img->caption, 50) }}
                                     </td>
-                                    <td class="text-wrap">{{ $news_img->user->name ?? 'User Removed' }}</td>
+                                    <td class="text-wrap  d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                    style="text-align: center">{{ $news_img->user->name ?? 'User Removed' }}</td>
 
 
                                     <td><a href="#" data-toggle="modal" id="news_edit_link" class="btn"
@@ -216,7 +262,7 @@
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header" style="background-color: #234495; color:white;">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Edit News</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit News & Updates</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -248,7 +294,7 @@
                                                                 <div class="col-md-8">
                                                                     <div class="form-group">
                                                                         <label for="" style="color:dimgray">Upload
-                                                                            Images (Max:3)</label>
+                                                                            Images (Max:5)</label>
                                                                         <input type="file" class="form-control"
                                                                             name="images[]" multiple>
                                                                         <p class="mt-3 fw-light">Old photo(s):</p>
@@ -424,7 +470,7 @@
                                                                     <div class="col-md-8">
                                                                         <div class="form-group">
                                                                             <label for="" style="color:dimgray">Upload
-                                                                                Images (Max:3)</label>
+                                                                                Images (Max:5)</label>
                                                                             <input type="file" class="form-control"
                                                                                 name="images[]" multiple>
                                                                         </div>
@@ -490,6 +536,6 @@
             </div>
         </div>
         <div class="d-flex justify-content-end mt-2">
-            {{ $news_images->links() }}
+            {{ $news_images->onEachSide(-1)->links()}}
         </div>
     @endsection

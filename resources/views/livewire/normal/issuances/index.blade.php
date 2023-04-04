@@ -52,7 +52,7 @@
                             @csrf
                             @foreach ($issuances as $latest_issuances)
                                 <tr>
-                                    <td class="" style="font-size: 16px;"><a
+                                    <td class="" style="font-size: 16px; text-transform: uppercase;"><a
                                             href="{{ url('/latest_issuances/' . $latest_issuances->id) }}">
                                             {{ $latest_issuances->title }} </a><br>
                                         <p class="mt-2" style="font-size: 12px;">
