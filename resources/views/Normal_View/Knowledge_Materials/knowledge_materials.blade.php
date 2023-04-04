@@ -33,9 +33,9 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body bg-secondary">
+                                    <div class="modal-body">
 
-                                        <p class="text-center" style="font-weight: 500; font-size: 22px;">
+                                        <p class="text-center text-dark" style="font-weight: 500; font-size: 22px;">
                                             {{ $book->title }}</p>
 
                                         <iframe style="width: 100%;height:600px;" src="{{ $book->link }}"
