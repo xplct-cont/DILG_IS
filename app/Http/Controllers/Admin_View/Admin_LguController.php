@@ -33,7 +33,9 @@ class Admin_LguController extends Controller
                     ->orWhere('sb_member5', 'LIKE', '%'. $lgus . '%')
                     ->orWhere('sb_member6', 'LIKE', '%'. $lgus . '%')
                     ->orWhere('sb_member7', 'LIKE', '%'. $lgus . '%')
-                    ->orWhere('sb_member8', 'LIKE', '%'. $lgus . '%')->get();
+                    ->orWhere('sb_member8', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('lb_pres', 'LIKE', '%'. $lgus . '%')
+                    ->orWhere('psk_pres', 'LIKE', '%'. $lgus . '%')->get();
 
                 }
             }]
@@ -65,6 +67,8 @@ class Admin_LguController extends Controller
         $lgus->sb_member8 = $request->input('sb_member8');
         $lgus->sb_member9 = $request->input('sb_member9');
         $lgus->sb_member10 = $request->input('sb_member10');
+        $lgus->lb_pres = $request->input('lb_pres');
+        $lgus->psk_pres = $request->input('psk_pres');
 
         $lgus->save();
 
@@ -87,6 +91,8 @@ class Admin_LguController extends Controller
         $lgus->sb_member8 = $request->input('sb_member8');
         $lgus->sb_member9 = $request->input('sb_member9');
         $lgus->sb_member10 = $request->input('sb_member10');
+        $lgus->lb_pres = $request->input('lb_pres');
+        $lgus->psk_pres = $request->input('psk_pres');
 
     $lgus->update();
 

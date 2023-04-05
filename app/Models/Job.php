@@ -19,6 +19,7 @@ class Job extends Model
         'position',
         'details',
         'link',
+        'remarks'
 
     ];
 
@@ -44,7 +45,8 @@ class Job extends Model
         ->logOnly(['hiring_img',
                     'position',
                     'details',
-                    'link',])
+                    'link',
+                    'remarks',])
         ->setDescriptionForEvent(fn(string $eventName) => "A job vacancy has been {$eventName}")
         ->logOnlyDirty();
     }

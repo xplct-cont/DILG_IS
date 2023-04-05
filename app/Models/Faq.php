@@ -15,6 +15,7 @@ class Faq extends Model
     protected $fillable =
     [
         'outcome_area',
+        'program',
         'questions',
         'answers',
 
@@ -33,6 +34,7 @@ class Faq extends Model
             $term = '%'. $term . '%';
 
             $query->where('questions', 'like', $term)
+                ->orWhere('program', 'like', $term)
                 ->orWhere('answers', 'like', $term)
                 ->orWhere('outcome_area', 'like', $term);
         });

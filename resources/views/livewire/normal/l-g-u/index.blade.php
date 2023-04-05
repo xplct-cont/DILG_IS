@@ -59,8 +59,11 @@
                     </select>
                 </div>
                 <div class="col-md-6 mt-2">
-                    <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
-                        placeholder="Search">
+                    <input type="search" style="border-radius: 20px;" wire:model.delay.400ms="search"
+                        class="form-control input" placeholder="Search">
+                    <div wire:loading>
+                        Searching...
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,12 +99,22 @@
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member7 }}</p>
                         <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                 style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member8 }}</p>
+
                         @if (($lgu->sb_member9 && $lgu->sb_member10) != null)
                             <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                     style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member9 }}
                             </p>
                             <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
                                     style="font-weight: 700; color:dimgray">SB Member: </span> {{ $lgu->sb_member10 }}
+                            </p>
+                        @endif
+
+                        @if (($lgu->lb_pres && $lgu->psk_pres) != null)
+                            <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
+                                    style="font-weight: 700; color:dimgray">Liga ng mga Brgy. President: </span>
+                                {{ $lgu->lb_pres }}</p>
+                            <p class="text-justify" style="color:dimgray; margin-top: -10px; font-size: 14px;"><span
+                                    style="font-weight: 700; color:dimgray">PSK President: </span> {{ $lgu->psk_pres }}
                             </p>
                         @endif
                         <br>
@@ -121,9 +134,9 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="mx-auto">
-                            <iframe class="col-md-12 text-center mx-auto" src="{{ $lgu->municipality->gmap_url }}"
-                                height="300" width="100%"></iframe>
+                        <div class="mx-auto col-md-12 mb-2">
+                            <iframe class="text-center mx-auto" src="{{ $lgu->municipality->gmap_url }}" height="300"
+                                width="100%"></iframe>
                         </div>
                     </div>
                 @endforeach

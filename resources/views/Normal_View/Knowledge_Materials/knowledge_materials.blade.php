@@ -15,7 +15,7 @@
                         <tr>
                             <td class="" style="background-color:#234495; color:white;  font-size: 12px;">
                                 <p class="text-center" style="font-size: 12px;">
-                                    {{ Carbon\Carbon::parse($book->date)->format('F d, Y') }}</p>
+                                    {{ \Carbon\Carbon::parse($book->date)->format('F d, Y') }}</p>
                             </td>
                             <td class="" style="font-size: 16px;"><a href="#" data-toggle="modal"
                                     id="knowledge_materials_edit_link"
@@ -28,7 +28,8 @@
                             <div class="modal-dialog modal-md" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header" style="background-color:#234495; color:white">
-                                        <p class="modal-title" id="exampleModalLabel" style="font-size: 18px;">Knowledge Materials</p>
+                                        <p class="modal-title" id="exampleModalLabel" style="font-size: 18px;">Knowledge
+                                            Materials</p>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>

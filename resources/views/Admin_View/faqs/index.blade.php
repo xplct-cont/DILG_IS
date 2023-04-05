@@ -86,6 +86,10 @@
                                             </div>
 
                                             <div class="form-group">
+                                                <label for="" style="color:dimgray">Program</label>
+                                                <input id="" type="text" class="form-control" required name="program">
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="" style="color:dimgray">Questions:</label>
                                                 <textarea id="" type="text" class="form-control" title="" rows="5" required name="questions"
                                                     placeholder="Write some questions..."></textarea>
@@ -126,6 +130,7 @@
                         <tr>
                             <th scope="col">View</th>
                             <th scope="col">Outcome</th>
+                            <th scope="col">Program</th>
                             <th scope="col">Questions</th>
                             <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                 style="text-align: center">Answers</th>
@@ -141,6 +146,7 @@
                                         data-target="#faq_id{{ $faqs->id }}"><span
                                             class="text-white btn-success btn-sm">View</span></a></td>
                                 <td>{{ $faqs->outcome_area }}</td>
+                                <td>{{ $faqs->program }}</td>
                                 <td>{{ $faqs->questions }}</td>
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">{{ $faqs->answers }}</td>
@@ -200,7 +206,10 @@
                                                                             GOVERNANCE</option>
                                                                     </select>
                                                                 </div>
-
+                                                                <div class="form-group">
+                                                                    <label for="" style="color:dimgray">Program</label>
+                                                                    <input id="" type="text" class="form-control" required name="program" value="{{ $faqs->program }}">
+                                                                </div>
                                                                 <div class="form-group">
                                                                     <label for=""
                                                                         style="color:dimgray">Questions:</label>

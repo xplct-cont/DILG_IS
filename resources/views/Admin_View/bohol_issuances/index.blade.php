@@ -264,8 +264,7 @@
                                                                         (PDF Only)
                                                                     </label>
                                                                     <input type="file" class="form-control"
-                                                                        name="file" value="{{ $issuances->file }}"
-                                                                        required>
+                                                                        name="file" value="{{ $issuances->file }}">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8">

@@ -17,6 +17,9 @@ return new class extends Migration
             $table->id();
             $table->longText('title')->nullable();
             $table->longText('link')->nullable();
+            $table->string('outcome_area')->nullable();
+            $table->string('program')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
