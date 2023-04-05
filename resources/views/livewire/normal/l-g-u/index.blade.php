@@ -59,8 +59,11 @@
                     </select>
                 </div>
                 <div class="col-md-6 mt-2">
-                    <input type="search" style="border-radius: 20px;" wire:model="search" class="form-control input"
-                        placeholder="Search">
+                    <input type="search" style="border-radius: 20px;" wire:model.delay.400ms="search"
+                        class="form-control input" placeholder="Search">
+                    <div wire:loading>
+                        Searching...
+                    </div>
                 </div>
             </div>
         </div>

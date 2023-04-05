@@ -55,7 +55,39 @@
                                 @csrf
 
                                 <div class="container mx-auto">
+                                    <div class="col-md-12">
+                                        <label for="">Outcome Area/Program:</label>
 
+                                        <select name="outcome_area" id="outcome_area" class="form-control"
+                                            style="color:dimgray;" required>
+                                            <option selected>Select ...</option>
+                                            <option
+                                                value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
+                                                ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL
+                                                GOVERNANCE
+                                            </option>
+                                            <option value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">
+                                                PEACEFUL,
+                                                ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES</option>
+                                            <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY PROTECTIVE LGUS
+                                            </option>
+                                            <option
+                                                value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
+                                                ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER
+                                                RESILIENT LGUS
+                                            </option>
+                                            <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">BUSINESS-FRIENDLY
+                                                AND
+                                                COMPETITIVE LGUS</option>
+                                            <option value="STRENGTHENING OF INTERNAL GOVERNANCE">STRENGTHENING OF
+                                                INTERNAL
+                                                GOVERNANCE</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="" style="color:dimgray">Program</label>
+                                        <input id="" type="text" class="form-control" required name="program">
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Title:</label>
@@ -68,7 +100,16 @@
                                             <input type="text" class="form-control" name="link">
                                         </div>
                                     </div>
-
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="" style="color:dimgray">You may also upload PDF File (Max: 1 File):
+                                            </label>
+                                            <input type="file" class="form-control" name="file" required>
+                                            @if ($errors->has('file'))
+                                                {{ $errors->first('file') }}
+                                            @endif
+                                        </div>
+                                    </div>
 
                                 </div>
                         </div>
@@ -132,7 +173,39 @@
                                                     @method('PUT')
 
                                                     <div class="container mx-auto">
+                                                        <div class="col-md-12">
+                                                            <label for="">Outcome Area/Program:</label>
 
+                                                            <select name="outcome_area" id="outcome_area" class="form-control"
+                                                                style="color:dimgray;" required>
+                                                                <option selected>{{ $dw->outcome_area }}</option>
+                                                                <option
+                                                                    value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
+                                                                    ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL
+                                                                    GOVERNANCE
+                                                                </option>
+                                                                <option value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">
+                                                                    PEACEFUL,
+                                                                    ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES</option>
+                                                                <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY PROTECTIVE LGUS
+                                                                </option>
+                                                                <option
+                                                                    value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
+                                                                    ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER
+                                                                    RESILIENT LGUS
+                                                                </option>
+                                                                <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">BUSINESS-FRIENDLY
+                                                                    AND
+                                                                    COMPETITIVE LGUS</option>
+                                                                <option value="STRENGTHENING OF INTERNAL GOVERNANCE">STRENGTHENING OF
+                                                                    INTERNAL
+                                                                    GOVERNANCE</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <label for="" style="color:dimgray">Program</label>
+                                                            <input id="" type="text" class="form-control" required name="program"  value="{{ $dw->program }}">
+                                                        </div>
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">Title:</label>
@@ -146,6 +219,17 @@
                                                                     Link:</label>
                                                                 <input type="text" class="form-control" name="link"
                                                                     value="{{ $dw->link }}">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="" style="color:dimgray">Change PDF File (Max: 1 File):
+                                                                </label>
+                                                                <input type="file" class="form-control" name="file" value="{{ $dw->file }}">
+                                                                @if ($errors->has('file'))
+                                                                    {{ $errors->first('file') }}
+                                                                @endif
                                                             </div>
                                                         </div>
 

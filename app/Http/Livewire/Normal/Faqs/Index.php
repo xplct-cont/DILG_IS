@@ -8,7 +8,7 @@ use Livewire\Component;
 class Index extends Component
 {
     public $search;
-    public $questions, $answers, $outcome = 'all';
+    public $questions, $answers, $program, $outcome = 'all';
     public function loadfaqs(){
 
         $query = Faq::orderBy('created_at', 'desc')
@@ -18,6 +18,9 @@ class Index extends Component
                 $query->where('outcome_area', $this->outcome);
             }
 
+            if($this->program){
+                $query->where('program', $this->program);
+            }
             if($this->answers){
                 $query->where('answers', $this->answers);
             }
