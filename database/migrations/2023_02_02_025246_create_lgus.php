@@ -28,6 +28,8 @@ return new class extends Migration
             $table->string('sb_member8')->nullable();
             $table->string('sb_member9')->nullable();
             $table->string('sb_member10')->nullable();
+            $table->string('lb_pres')->nullable();
+            $table->string('psk_pres')->nullable();
             $table->timestamps();
 
             $table->foreign('municipality_id')->references('id')->on('municipalities')->onDelete('cascade')

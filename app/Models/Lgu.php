@@ -26,6 +26,8 @@ class Lgu extends Model
         'sb_member6',
         'sb_member7',
         'sb_member8',
+        'lb_pres',
+        'psk_pres'
 
     ];
 

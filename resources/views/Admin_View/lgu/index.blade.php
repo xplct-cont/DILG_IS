@@ -144,6 +144,18 @@
                                                 <input type="text" class="form-control" name="sb_member10">
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="" style="color:dimgray">Liga ng mga Brgy. President:</label>
+                                                <input type="text" class="form-control" name="lb_pres">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="" style="color:dimgray">PSK President:</label>
+                                                <input type="text" class="form-control" name="psk_pres">
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -329,10 +341,25 @@
                                                                     value="{{ $lgu_member->sb_member10 }}">
                                                             </div>
                                                         </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="" style="color:dimgray">Liga ng mga Brgy. President:</label>
+                                                                <input type="text" class="form-control"
+                                                                    name="lb_pres"
+                                                                    value="{{ $lgu_member->lb_pres }}">
+                                                            </div>
+                                                        </div>
 
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="" style="color:dimgray">PSK President:</label>
+                                                                <input type="text" class="form-control"
+                                                                    name="psk_pres"
+                                                                    value="{{ $lgu_member->psk_pres }}">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-
                                         </div>
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-success"><span
