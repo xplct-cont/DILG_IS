@@ -237,9 +237,9 @@
         <div class="row">
             <div class="col-md-7">
                 <p class="text-center" style="font-size: 25px; font-weight: 500;">Location Map</p>
-                <iframe class="col-md-12 rounded"
+                <iframe class="rounded"
                     src="https://maps.google.com/maps?q=rajah sikatuna tagbilaran&t=k&z=16&ie=UTF8&iwloc=&output=embed"
-                    height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    height="450" style="border:0; width: 100%;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-md-5 mb-5 mx-auto">
