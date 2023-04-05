@@ -12,7 +12,7 @@ class Knowledge_MaterialsController extends Controller
     public function index(){
 
         
-        $knowledge_materials = Knowledge_Material::orderBy("date","ASC")->get();
+        $knowledge_materials = Knowledge_Material::orderBy("date","DESC")->get();
         
         return view('Normal_View.Knowledge_Materials.knowledge_materials', compact('knowledge_materials'));
     }
