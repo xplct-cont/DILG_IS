@@ -27,7 +27,7 @@ class Admin_Knowledge_MaterialsController extends Controller
             }]
         ])
     
-        ->orderBy("date","DESC")
+        ->orderBy("date","ASC")
         ->paginate(12);
 
         return view('Admin_View.knowledge_materials.index', compact('knowledge_materials'))
