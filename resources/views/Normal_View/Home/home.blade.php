@@ -767,6 +767,7 @@
         left: 40%;
         top: -18px;
         text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .time-formate {
