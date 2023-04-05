@@ -112,7 +112,7 @@
                         @foreach ($knowledge_materials as $km)
                             <tr>
 
-                                <td class="text-wrap">{{ $km->title }} <br> <span class="text-wrap" style="font-size: 12px; color:#234495;">{{$km->date->format('F d, Y')}}</span></td>
+                                <td class="text-wrap">{{ $km->title }} <br> <span class="text-wrap" style="font-size: 12px; color:#234495;">{{ \Carbon\Carbon::parse($km->date)->format('F d, Y') }}</span></td>
 
                                 <td><a class="btn " href="{{ $km->link }}"><span
                                             class="btn btn-sm btn-success">Details</span></a></td>

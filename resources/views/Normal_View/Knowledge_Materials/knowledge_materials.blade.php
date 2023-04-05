@@ -15,7 +15,7 @@
                         <tr>
                             <td class="" style="background-color:#234495; color:white;  font-size: 12px;">
                                 <p class="text-center" style="font-size: 12px;">
-                                    {{ $book->date->format('F d, Y') }}</p>
+                                    {{ \Carbon\Carbon::parse($book->date)->format('F d, Y') }}</p>
                             </td>
                             <td class="" style="font-size: 16px;"><a href="#" data-toggle="modal"
                                     id="knowledge_materials_edit_link"
