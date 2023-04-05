@@ -108,4 +108,22 @@ class Admin_JobsController extends Controller
         return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 
+    public function available($id)
+    {
+        $admin_jobs = Job::find($id);
+        $admin_jobs->remarks = 'Available';
+        $admin_jobs->save();
+
+        return redirect()->back()->with('message', 'Changed to Available!');
+    }
+
+    public function filled_up($id)
+    {
+        $admin_jobs = Job::find($id);
+        $admin_jobs->remarks = 'Filled Up';
+        $admin_jobs->save();
+
+        return redirect()->back()->with('message', 'Changed to Filled Up!');
+    }
+
 }

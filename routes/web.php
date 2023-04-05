@@ -81,6 +81,9 @@ Route::post('/add-new-job', [Admin_JobsController::class, 'store']);
 Route::get('/delete_jobs/{id}', [Admin_JobsController::class, 'delete_jobs']);
 Route::put('/update_jobs/{id}', [Admin_JobsController::class, 'update_jobs']);
 
+Route::post('/available/{id}', [Admin_JobsController::class, 'available'])->name('available');
+Route::post('/filled_up/{id}', [Admin_JobsController::class, 'filled_up'])->name('filled_up');
+
 
 Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
 

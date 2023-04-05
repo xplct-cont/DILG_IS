@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('position')->nullable();
             $table->string('details')->nullable();
             $table->string('link')->nullable();
+            $table->string('remarks')->default('Available')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')
