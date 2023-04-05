@@ -752,8 +752,8 @@
 
     .day-text-formate {
         font-family: Microsoft JhengHei UI;
-        font-size: 1.4rem;
-        padding: 5%;
+        font-size: 1.1rem;
+        padding: 4%;
         border-right: 3px solid #234495;
         position: absolute;
         left: -1rem;
