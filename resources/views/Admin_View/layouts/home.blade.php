@@ -77,6 +77,56 @@
         </div>
     </div>
 
+
+    <!-- Audio in About Page -->
+    <button type="button" class="btn btn-sm mb-3 ml-3 " style="background-color: #343a40; color:white; font-size: 12px;"
+    data-toggle="modal" data-target="#audioModal">
+    <span class="fas fa-plus-circle"></span> Change Audio in About Page
+</button>
+
+<div class="modal fade" id="audioModal" tabindex="-1" role="dialog" aria-labelledby="audioModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+                <p style="font-size: 18px; font-weight: 500;">Change Audio</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          
+            @foreach ($audio as $aud)
+            <form action="{{ url('/change_audio/' . $aud->id) }}" method="POST"
+                enctype="multipart/form-data">
+                @csrf
+                  @method('PUT')
+                <div class="container mx-auto">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Upload Audio (Max:1 | Type: mp3, wav)</label>
+                                <input type="file" name="file" class="form-control" required>
+                               <p class="text-danger"> @if ($errors->has('file'))
+                                {{ $errors->first('file') }}
+                               @endif</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+        </div>
+      
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save
+                Changes</button>
+        </div>
+        </form>
+
+    </div>
+</div>
+</div>
+
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">

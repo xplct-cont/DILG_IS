@@ -68,6 +68,8 @@ Auth::routes(['register'=>false]);
 
 Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 Route::post('/add_images_hm/{id}', [Admin_HomeController::class, 'store']);
+Route::put('/change_audio/{id}', [Admin_HomeController::class, 'change_audio']);
+
 
 Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
 Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);

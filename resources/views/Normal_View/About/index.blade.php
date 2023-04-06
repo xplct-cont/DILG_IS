@@ -8,10 +8,16 @@
         <p></p>
         <div class="header ml-3 mr-3" style=" padding: 7px; background: #234495; color: #FFFFFF; margin-bottom: 5px;">
             <h1 class="text-center" style="font-size: 18px; margin-top: 10px;">ABOUT US</h1>
-            <audio controls autoplay hidden>
-                <source src="{{ asset('audio/DILG-BOHOL LGOO Hymn.mp3') }}" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+            @php
+                $audio = DB::table('audios')->get();
+            @endphp
+
+            @foreach ($audio as $aud)
+                <audio controls autoplay hidden>
+                    <source src="{{ asset('audio/' . $aud->file) }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            @endforeach
         </div>
 
         <div class="col-md-11 mx-auto mt-3">
@@ -89,9 +95,7 @@
 
             </div>
         </div>
-
     </div>
-
     </div>
     </div>
 @endsection
