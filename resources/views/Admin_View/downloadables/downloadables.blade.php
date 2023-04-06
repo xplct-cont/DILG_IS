@@ -85,7 +85,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="" style="color:dimgray">Program</label>
+                                        <label for="" style="color:dimgray">Program:</label>
                                         <input id="" type="text" class="form-control" required name="program">
                                     </div>
                                     <div class="col-md-12">
@@ -211,7 +211,7 @@
                                                             </select>
                                                         </div>
                                                         <div class="col-md-12">
-                                                            <label for="" style="color:dimgray">Program</label>
+                                                            <label for="" style="color:dimgray">Program:</label>
                                                             <input id="" type="text" class="form-control"
                                                                 required name="program" value="{{ $dw->program }}">
                                                         </div>
