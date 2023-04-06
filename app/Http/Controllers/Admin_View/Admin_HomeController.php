@@ -99,7 +99,7 @@ class Admin_HomeController extends Controller
 
         if($request->hasFile('file')){
 
-            $destination = 'audio/'.$aud->file;
+            $destination = '/home/dilgboho/public_html/audio/'.$aud->file;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -107,7 +107,7 @@ class Admin_HomeController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move('audio/', $filename);
+            $request->file('file')->move('/home/dilgboho/public_html/audio/', $filename);
             $aud->file = $filename;
 
 
