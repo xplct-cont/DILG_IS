@@ -175,7 +175,7 @@
             <div class="card-header d-flex justify-content-between mb-1">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
                 <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link"
-                        href="{{ url('lgu') }}"><span class="fas fa-city" style="color:#234495;"></span> LGUs </a>
+                        href="{{ url('lgus') }}"><span class="fas fa-city" style="color:#234495;"></span> LGUs </a>
                 </h1>
             </div>
 

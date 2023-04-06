@@ -142,7 +142,7 @@ Route::put('/change_pdf_cit_charter/{id}', [Admin_Citizens_CharterController::cl
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
 Route::get('/dilg_family',[Attached_AgenciesController::class, 'index'])->name('/dilg_family');
-Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
+Route::get('/lgus',[LguController::class, 'index'])->name('/lgus');
 
 Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
 
@@ -196,9 +196,9 @@ Route::get('/admin/logs', [Admin_LogsController::class, 'index'])->name('admin/l
 
 
 //Normal_View Routes
-Route::get('/about', [AboutController::class, 'index'])->name('/about');
-Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
-Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
+Route::get('/about_us', [AboutController::class, 'index'])->name('/about_us');
+Route::get('/job_vacancies', [JobsController::class, 'index'])->name('/job_vacancies');
+Route::get('/contact_information', [ContactsController::class, 'index'])->name('/contact_information');
 
 Route::get('/news_update', [UpdatesController::class, 'index'])->name('/news_update');
 

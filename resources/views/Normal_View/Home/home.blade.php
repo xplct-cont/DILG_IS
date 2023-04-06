@@ -42,7 +42,7 @@
                     PROVINCIAL
                     DIRECTOR
                     <span class="fas fa-arrow-right" style="margin-left:38px;"></span></a><br><br>
-                <a href="{{ route('/about') }}" type="button" class="btn btn-md"
+                <a href="{{ route('/about_us') }}" type="button" class="btn btn-md"
                     style="background-color: #234495; color: white; width: 300px; overflow:auto; border-radius:10px;">VISION
                     &
                     MISSION <span class="fas fa-arrow-right" style="margin-left: 100px;"></span></a><br><br>
