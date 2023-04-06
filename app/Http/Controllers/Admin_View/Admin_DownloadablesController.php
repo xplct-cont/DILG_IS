@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin_View;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Downloadable;
+use File;
 
 
 class Admin_DownloadablesController extends Controller
@@ -37,7 +38,7 @@ class Admin_DownloadablesController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'file' => 'required|mimes:pdf'
+            'file' => 'nullable|mimes:pdf'
             ]);
         $downloadables = new Downloadable;
 
@@ -51,19 +52,22 @@ class Admin_DownloadablesController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move('/home/dilgboho/public_html/downloadable$downloadables/', $filename);
+            $request->file('file')->move('/home/dilgboho/public_html/downloadables/', $filename);
             $downloadables->file = $filename;
 
           }
 
         $downloadables->save();
 
-        return redirect()->back()->with('message', 'Added Successfully!');
+        return redirect()->back()->with('status', 'Added Successfully!');
 
     }
 
     public function update_downloadables(Request $request, $id){
 
+        $request->validate([
+            'file' => 'nullable|mimes:pdf'
+            ]);
         $downloadables = Downloadable::find($id);
 
         $downloadables->title = $request->input('title');
@@ -88,7 +92,7 @@ class Admin_DownloadablesController extends Controller
           }
     $downloadables->update();
 
-    return redirect()->back()->with('message', 'Updated Successfully!');
+    return redirect()->back()->with('status', 'Updated Successfully!');
 
     }
 
@@ -99,7 +103,7 @@ class Admin_DownloadablesController extends Controller
             File::delete($destination);
         }
         $remove -> delete();
-        return redirect()->back()->with('message', 'Deleted Successfully!');
+        return redirect()->back()->with('status', 'Deleted Successfully!');
       }
 
 

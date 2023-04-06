@@ -108,7 +108,7 @@
                                 Officials
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('lgu') }}">LGUs</a>
+                                <li><a class="dropdown-item" href="{{ url('lgus') }}">LGUs</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('provincial_officials') }}">Provincial
                                         Officials</a></li>
@@ -158,7 +158,7 @@
                                 About
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/about_us') }}">About Us</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/organization') }}">Organizational
                                         Structure/PDMU</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a>
@@ -167,7 +167,7 @@
                                         Charter</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('/dilg_family') }}">DILG FAMILY</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/contacts') }}">Contact Information</a>
+                                <li><a class="dropdown-item" href="{{ url('/contact_information') }}">Contact Information</a>
                                 </li>
                             </ul>
                         </div>
@@ -193,10 +193,10 @@
                                 Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('/downloadables') }}">Downloadables</a>
+                                <li><a class="dropdown-item" href="{{ url('/downloadable_files') }}">Downloadables</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('/faqs') }}">FAQ's</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/job_vacancies') }}">Job Vacancies</a></li>
                             </ul>
                         </div>
 

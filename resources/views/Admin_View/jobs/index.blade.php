@@ -50,7 +50,8 @@
                         </div>
                         <div class="modal-body">
 
-                            <form action="{{ url('/add-new-job') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('/add-new-job') }}" method="POST" enctype="multipart/form-data"
+                                id="add-form">
                                 @csrf
 
                                 <div class="container mx-auto">
@@ -95,7 +96,8 @@
             <div class="card-header d-flex justify-content-between">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
                 <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="dropdown-item"
-                        href="{{ url('/jobs') }}"><span class="fas fa-address-book" style="color:#234495;"></span> JOB
+                        href="{{ url('/job_vacancies') }}"><span class="fas fa-address-book"
+                            style="color:#234495;"></span> JOB
                         VACANCIES</a></h1>
 
             </div>
@@ -153,7 +155,7 @@
                                                 <div class="modal-body">
 
                                                     <form action="{{ url('update_jobs/' . $ad_jobs->id) }}" method="POST"
-                                                        enctype="multipart/form-data">
+                                                        enctype="multipart/form-data" id="update-form">
                                                         @csrf
                                                         @method('PUT')
 
@@ -259,7 +261,7 @@
                                                 <div class="modal-body">
 
                                                     <form action="{{ url('delete_jobs/' . $ad_jobs->id) }}" method="GET"
-                                                        enctype="multipart/form-data">
+                                                        enctype="multipart/form-data" id="delete-form">
                                                         @csrf
                                                         @method('GET')
 
@@ -425,4 +427,60 @@
         <div class="d-flex justify-content-end mt-2">
             {{ $admin_jobs->onEachSide(1)->links() }}
         </div>
+
+        <!-- Loading GIF image -->
+        <div id="loading"
+            style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
+            <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
+        </div>
+
+        <script>
+            const addform = document.getElementById('add-form');
+            const addloading = document.getElementById('loading');
+
+            addform.addEventListener('submit', () => {
+                addloading.style.display = 'block';
+            });
+
+            addform.addEventListener('load', () => {
+                addloading.style.display = 'none';
+            });
+
+            addform.addEventListener('error', () => {
+                addloading.style.display = 'none';
+            });
+
+
+
+            const updateform = document.getElementById('update-form');
+            const updateloading = document.getElementById('loading');
+
+            updateform.addEventListener('submit', () => {
+                updateloading.style.display = 'block';
+            });
+
+            updateform.addEventListener('load', () => {
+                updateloading.style.display = 'none';
+            });
+
+            updateform.addEventListener('error', () => {
+                updateloading.style.display = 'none';
+            });
+
+
+            const deleteform = document.getElementById('delete-form');
+            const deleteloading = document.getElementById('loading');
+
+            deleteform.addEventListener('submit', () => {
+                deleteloading.style.display = 'block';
+            });
+
+            deleteform.addEventListener('load', () => {
+                deleteloading.style.display = 'none';
+            });
+
+            deleteform.addEventListener('error', () => {
+                deleteloading.style.display = 'none';
+            });
+        </script>
     @endsection

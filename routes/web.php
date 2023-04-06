@@ -68,6 +68,8 @@ Auth::routes(['register'=>false]);
 
 Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 Route::post('/add_images_hm/{id}', [Admin_HomeController::class, 'store']);
+Route::put('/change_audio/{id}', [Admin_HomeController::class, 'change_audio']);
+
 
 Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
 Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
@@ -142,7 +144,7 @@ Route::put('/change_pdf_cit_charter/{id}', [Admin_Citizens_CharterController::cl
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
 Route::get('/dilg_family',[Attached_AgenciesController::class, 'index'])->name('/dilg_family');
-Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
+Route::get('/lgus',[LguController::class, 'index'])->name('/lgus');
 
 Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
 
@@ -150,7 +152,9 @@ Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->nam
 Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
 
-Route::get('/downloadables',[DownloadablesController::class, 'index'])->name('/downloadables');
+Route::get('/downloadable_files',[DownloadablesController::class, 'index'])->name('/downloadable_files');
+Route::get('/download_downloadables/{file}',[DownloadablesController::class, 'download_downloadables']);
+
 
 Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'index'])->name('/provincial_officials');
 
@@ -194,9 +198,9 @@ Route::get('/admin/logs', [Admin_LogsController::class, 'index'])->name('admin/l
 
 
 //Normal_View Routes
-Route::get('/about', [AboutController::class, 'index'])->name('/about');
-Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
-Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
+Route::get('/about_us', [AboutController::class, 'index'])->name('/about_us');
+Route::get('/job_vacancies', [JobsController::class, 'index'])->name('/job_vacancies');
+Route::get('/contact_information', [ContactsController::class, 'index'])->name('/contact_information');
 
 Route::get('/news_update', [UpdatesController::class, 'index'])->name('/news_update');
 
