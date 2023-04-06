@@ -26,7 +26,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div>
-                                    <p class="" style="color:dimgray; font-size: 16px;">Remarks:
+                                    <p class="mt-1" style="color:dimgray; font-size: 16px;">Remarks:
 
                                         @if ($job_list->remarks == 'Filled Up')
                                             <span class=" btn btn-sm btn-danger text-light">Filled Up <span
