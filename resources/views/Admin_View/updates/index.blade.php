@@ -151,15 +151,16 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Upload Images (Max:5)</label>
-                                                    <input type="file" name="images[]" class="form-control" required
-                                                        multiple>
+                                                    <input type="file" name="images[]" class="form-control"
+                                                        id="news_cover_images" required multiple>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save
+                                <button type="submit" class="btn btn-success" id="news_cover_imagesSubmit-btn"><span
+                                        class="fas fa-save"></span> Save
                                     Changes</button>
                             </div>
                             </form>
@@ -206,8 +207,8 @@
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Upload Images (Max:5)</label>
-                                                <input type="file" class="form-control" name="images[]" required
-                                                    multiple>
+                                                <input type="file" class="form-control" name="images[]"
+                                                    id="news_updates_images" required multiple>
                                             </div>
 
                                         </div>
@@ -215,7 +216,8 @@
                                 </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span>
+                            <button type="submit" class="btn btn-success" id="news_updates_imagesSubmit-btn"><span
+                                    class="fas fa-save"></span>
                                 Submit</button>
                         </div>
                         </form>
@@ -498,7 +500,6 @@
                                                                             <input type="file" class="form-control"
                                                                                 name="images[]" multiple>
                                                                         </div>
-
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -562,4 +563,52 @@
         <div class="d-flex justify-content-end mt-2">
             {{ $news_images->onEachSide(-1)->links() }}
         </div>
+
+
+
+
+        <script>
+            // Get the file input and submit button elements for news cover images
+            const newsCoverImagesInput = document.querySelector('#news_cover_images');
+            const newsCoverImagesSubmitButton = document.querySelector('#news_cover_imagesSubmit-btn');
+
+            // Disable the news cover images submit button on page load
+            newsCoverImagesSubmitButton.disabled = true;
+
+            // Listen for changes to the news cover images file input
+            newsCoverImagesInput.addEventListener('change', function() {
+                // Check if the news cover images file input has an error
+                if (this.files.length > 0 && !this.files[0].name.match(/\.(jpeg|png|jpg|gif|svg)$/i)) {
+                    // If the file extension is incorrect, disable the news cover images submit button
+                    newsCoverImagesSubmitButton.disabled = true;
+                    // Show an error message
+                    alert('Please select JPEG, PNG, JPG, GIF or SVG file');
+                } else {
+                    // If the file extension is correct, enable the news cover images submit button
+                    newsCoverImagesSubmitButton.disabled = false;
+                }
+            });
+
+
+            // Get the file input and submit button elements for news updates images
+            const newsUpdatesImagesInput = document.querySelector('#news_updates_images');
+            const newsUpdatesImagesSubmitButton = document.querySelector('#news_updates_imagesSubmit-btn');
+
+            // Disable the news updates images submit button on page load
+            newsUpdatesImagesSubmitButton.disabled = true;
+
+            // Listen for changes to the news updates images file input
+            newsUpdatesImagesInput.addEventListener('change', function() {
+                // Check if the news updates images file input has an error
+                if (this.files.length > 0 && !this.files[0].name.match(/\.(jpeg|png|jpg|gif|svg)$/i)) {
+                    // If the file extension is incorrect, disable the news updates images submit button
+                    newsUpdatesImagesSubmitButton.disabled = true;
+                    // Show an error message
+                    alert('Please select JPEG, PNG, JPG, GIF or SVG file');
+                } else {
+                    // If the file extension is correct, enable the news updates images submit button
+                    newsUpdatesImagesSubmitButton.disabled = false;
+                }
+            });
+        </script>
     @endsection

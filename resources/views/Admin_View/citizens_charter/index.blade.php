@@ -42,17 +42,16 @@
                                     <div class="form-group">
                                         <label for="" style="color:dimgray">Upload Video (Max: 1 min. | Type: mp4):
                                         </label>
-                                        <input type="file" class="form-control" name="file" required>
-                                        @if ($errors->has('file'))
-                                            {{ $errors->first('file') }}
-                                        @endif
+                                        <input type="file" class="form-control" name="file" id="cit_charter_video"
+                                            required>
                                     </div>
                                 </div>
 
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success"><span class="fas fa-save"></span>
+                        <button type="submit" class="btn btn-success" id="cit_charter_videoSubmit-btn"><span
+                                class="fas fa-save"></span>
                             Submit</button>
                     </div>
                     </form>
@@ -221,16 +220,15 @@
                                     <div class="form-group">
                                         <label for="" style="color:dimgray">Upload PDF File (Max: 1 File):
                                         </label>
-                                        <input type="file" class="form-control" name="file" required>
-                                        @if ($errors->has('file'))
-                                            {{ $errors->first('file') }}
-                                        @endif
+                                        <input type="file" class="form-control" name="file" id="cit_pdf_file"
+                                            required>
                                     </div>
                                 </div>
                             </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save
+                    <button type="submit" class="btn btn-success" id="cit_pdf_fileSubmit-btn"><span
+                            class="fas fa-save"></span> Save
                         changes</button>
                 </div>
             </div>
@@ -238,4 +236,50 @@
             @endforeach
         </div>
     </div>
+
+
+    <script>
+        // Get the file input and submit button elements for news cover images
+        const citPdfFile = document.querySelector('#cit_pdf_file');
+        const citPdfFileSubmitButton = document.querySelector('#cit_pdf_fileSubmit-btn');
+
+        // Disable the news cover images submit button on page load
+        citPdfFileSubmitButton.disabled = true;
+
+        // Listen for changes to the news cover images file input
+        citPdfFile.addEventListener('change', function() {
+            // Check if the news cover images file input has an error
+            if (this.files.length > 0 && !this.files[0].name.match(/\.(pdf)$/i)) {
+                // If the file extension is incorrect, disable the news cover images submit button
+                citPdfFileSubmitButton.disabled = true;
+                // Show an error message
+                alert('Please select PDF File');
+            } else {
+                // If the file extension is correct, enable the news cover images submit button
+                citPdfFileSubmitButton.disabled = false;
+            }
+        });
+
+
+        // Get the file input and submit button elements for news updates images
+        const citCharterVideoInput = document.querySelector('#cit_charter_video');
+        const citCharterVideoSubmitButton = document.querySelector('#cit_charter_videoSubmit-btn');
+
+        // Disable the news updates images submit button on page load
+        citCharterVideoSubmitButton.disabled = true;
+
+        // Listen for changes to the news updates images file input
+        citCharterVideoInput.addEventListener('change', function() {
+            // Check if the news updates images file input has an error
+            if (this.files.length > 0 && !this.files[0].name.match(/\.(mp4|ogg|webm)$/i)) {
+                // If the file extension is incorrect, disable the news updates images submit button
+                citCharterVideoSubmitButton.disabled = true;
+                // Show an error message
+                alert('Please select MP4, OGG or WEBM ');
+            } else {
+                // If the file extension is correct, enable the news updates images submit button
+                citCharterVideoSubmitButton.disabled = false;
+            }
+        });
+    </script>
 @endsection
