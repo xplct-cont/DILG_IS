@@ -105,7 +105,7 @@
                                             <label for="" style="color:dimgray">You may also upload PDF File (Max: 1
                                                 File):
                                             </label>
-                                            <input type="file" class="form-control" name="file" required>
+                                            <input type="file" class="form-control" name="file" >
                                             @if ($errors->has('file'))
                                                 {{ $errors->first('file') }}
                                             @endif
