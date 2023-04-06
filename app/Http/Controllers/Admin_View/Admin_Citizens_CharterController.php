@@ -32,7 +32,7 @@ class Admin_Citizens_CharterController extends Controller
     public function store(Request $request){
         
         $request->validate([
-            'file' => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm'
+            'file' => 'nullable|mimes:mp4,ogx,oga,ogv,ogg,webm'
           
         ]);
             $citizens_charter = new Citizens_Charter;
@@ -57,7 +57,7 @@ class Admin_Citizens_CharterController extends Controller
     public function update_citizens_charter(Request $request, $id){
       
         $request->validate([
-            'file' => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm'
+            'file' => 'nullable|mimes:mp4,ogx,oga,ogv,ogg,webm'
           
         ]);
         $citizens_charter = Citizens_Charter::find($id);
@@ -101,7 +101,7 @@ class Admin_Citizens_CharterController extends Controller
     public function change_pdf_cit_charter(Request $request, $id){
 
         $request->validate([
-            'file' => 'required|mimes:pdf'
+            'file' => 'nullable|mimes:pdf'
             ]);
             $citizens_charter = Pdf_Upload_Cit_Charter::find($id);
 

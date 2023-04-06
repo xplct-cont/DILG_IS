@@ -38,7 +38,7 @@ class Admin_DownloadablesController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'file' => 'required|mimes:pdf'
+            'file' => 'nullable|mimes:pdf'
             ]);
         $downloadables = new Downloadable;
 
@@ -65,6 +65,9 @@ class Admin_DownloadablesController extends Controller
 
     public function update_downloadables(Request $request, $id){
 
+        $request->validate([
+            'file' => 'nullable|mimes:pdf'
+            ]);
         $downloadables = Downloadable::find($id);
 
         $downloadables->title = $request->input('title');
