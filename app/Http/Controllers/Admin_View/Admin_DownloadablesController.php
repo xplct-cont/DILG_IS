@@ -52,7 +52,7 @@ class Admin_DownloadablesController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move('/home/dilgboho/public_html/issuance_files/', $filename);
+            $request->file('file')->move('/home/dilgboho/public_html/downloadables/', $filename);
             $downloadables->file = $filename;
 
           }
@@ -74,7 +74,7 @@ class Admin_DownloadablesController extends Controller
 
         if($request->hasFile('file')){
 
-            $destination = '/home/dilgboho/public_html/issuance_files/'.$downloadables->file;
+            $destination = '/home/dilgboho/public_html/downloadables/'.$downloadables->file;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -82,7 +82,7 @@ class Admin_DownloadablesController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move('/home/dilgboho/public_html/issuance_files/', $filename);
+            $request->file('file')->move('/home/dilgboho/public_html/downloadables/', $filename);
             $downloadables->file = $filename;
 
 
@@ -95,7 +95,7 @@ class Admin_DownloadablesController extends Controller
 
     public function delete_downloadables($id){
         $remove = Downloadable::findOrFail($id);
-        $destination = '/home/dilgboho/public_html/issuance_files/' .$remove->file;
+        $destination = '/home/dilgboho/public_html/downloadables/' .$remove->file;
         if(File::exists($destination)){
             File::delete($destination);
         }
