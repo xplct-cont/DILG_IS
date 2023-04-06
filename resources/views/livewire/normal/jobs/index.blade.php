@@ -17,7 +17,7 @@
         </div>
         @foreach ($jobs as $job_list)
             <div class="row mx-auto">
-                <div class="card border border-0">
+                <div class="card border border-0 ml-3 mr-3">
                     <div class="card-body ">
                         <div class="row">
                             <div class="col-md-4">
