@@ -54,7 +54,7 @@
                         </table>
 
                         <form action="{{ url('/add_images_hm/' . $home_img->id) }}" method="POST"
-                            enctype="multipart/form-data">
+                            enctype="multipart/form-data" id="image-form">
                             @csrf
                             <div class="container mx-auto">
                                 <div class="row">
@@ -100,7 +100,8 @@
                 <div class="modal-body">
 
                     @foreach ($audio as $aud)
-                        <form action="{{ url('/change_audio/' . $aud->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('/change_audio/' . $aud->id) }}" method="POST" enctype="multipart/form-data"
+                            id="audio-form">
                             @csrf
                             @method('PUT')
                             <div class="container mx-auto">
@@ -125,10 +126,17 @@
                 </div>
 
                 </form>
-
             </div>
         </div>
     </div>
+
+
+    <!-- Loading GIF image -->
+    <div id="loading"
+        style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
+        <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
+    </div>
+
 
     <!-- Main content -->
     <section class="content">
@@ -428,6 +436,39 @@
                 // If the file extension is correct, enable the images submit button
                 imagesSubmitButton.disabled = false;
             }
+        });
+
+
+        const imageform = document.getElementById('image-form');
+        const imageloading = document.getElementById('loading');
+
+        imageform.addEventListener('submit', () => {
+            imageloading.style.display = 'block';
+        });
+
+        imageform.addEventListener('load', () => {
+            imageloading.style.display = 'none';
+        });
+
+        imageform.addEventListener('error', () => {
+            imageloading.style.display = 'none';
+        });
+
+
+
+        const audioform = document.getElementById('audio-form');
+        const audioloading = document.getElementById('loading');
+
+        audioform.addEventListener('submit', () => {
+            audioloading.style.display = 'block';
+        });
+
+        audioform.addEventListener('load', () => {
+            audioloading.style.display = 'none';
+        });
+
+        audioform.addEventListener('error', () => {
+            audioloading.style.display = 'none';
         });
     </script>
 @endsection

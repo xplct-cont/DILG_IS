@@ -27,7 +27,8 @@
                     </div>
                     <div class="modal-body">
 
-                        <form action="{{ url('/add-citizens_charter') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('/add-citizens_charter') }}" method="POST" enctype="multipart/form-data"
+                            id="add-form">
                             @csrf
 
                             <div class="container mx-auto">
@@ -109,7 +110,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <form action="{{ url('update-citizens_charter/' . $cit_chart->id) }}"
-                                            method="POST" enctype="multipart/form-data">
+                                            method="POST" enctype="multipart/form-data" id="update-form">
                                             @csrf
                                             @method('PUT')
 
@@ -134,7 +135,7 @@
                                                     <label for="" style="color:dimgray">Upload Video (Max: 1 min.
                                                         | Type: mp4): </label>
                                                     <input type="file" class="form-control" name="file"
-                                                        value="{{ $cit_chart->file }}" required>
+                                                        value="{{ $cit_chart->file }}">
                                                     @if ($errors->has('file'))
                                                         {{ $errors->first('file') }}
                                                     @endif
@@ -170,7 +171,7 @@
                                     <div class="modal-body">
 
                                         <form action="{{ url('delete_citizens_charter/' . $cit_chart->id) }}"
-                                            method="GET" enctype="multipart/form-data">
+                                            method="GET" enctype="multipart/form-data" id="delete-form">
                                             @csrf
                                             @method('GET')
 
@@ -237,6 +238,13 @@
         </div>
     </div>
 
+    <!-- Loading GIF image -->
+    <div id="loading"
+        style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
+        <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
+    </div>
+
+
 
     <script>
         // Get the file input and submit button elements for news cover images
@@ -280,6 +288,53 @@
                 // If the file extension is correct, enable the news updates images submit button
                 citCharterVideoSubmitButton.disabled = false;
             }
+        });
+
+
+        const addform = document.getElementById('add-form');
+        const addloading = document.getElementById('loading');
+
+        addform.addEventListener('submit', () => {
+            addloading.style.display = 'block';
+        });
+
+        addform.addEventListener('load', () => {
+            addloading.style.display = 'none';
+        });
+
+        addform.addEventListener('error', () => {
+            addloading.style.display = 'none';
+        });
+
+
+        const updateform = document.getElementById('update-form');
+        const updateloading = document.getElementById('loading');
+
+        updateform.addEventListener('submit', () => {
+            updateloading.style.display = 'block';
+        });
+
+        updateform.addEventListener('load', () => {
+            updateloading.style.display = 'none';
+        });
+
+        updateform.addEventListener('error', () => {
+            updateloading.style.display = 'none';
+        });
+
+        const deleteform = document.getElementById('delete-form');
+        const deleteloading = document.getElementById('loading');
+
+        deleteform.addEventListener('submit', () => {
+            deleteloading.style.display = 'block';
+        });
+
+        deleteform.addEventListener('load', () => {
+            deleteloading.style.display = 'none';
+        });
+
+        deleteform.addEventListener('error', () => {
+            deleteloading.style.display = 'none';
         });
     </script>
 @endsection

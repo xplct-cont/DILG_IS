@@ -144,13 +144,13 @@
                                 </table>
 
                                 <form action="{{ url('/add_images/' . $updates_img->id) }}" method="POST"
-                                    enctype="multipart/form-data">
+                                    enctype="multipart/form-data" id="upload-form">
                                     @csrf
                                     <div class="container mx-auto">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label>Upload Images (Max:5)</label>
+                                                    <label>Upload Images (Max:3)</label>
                                                     <input type="file" name="images[]" class="form-control"
                                                         id="news_cover_images" required multiple>
                                                 </div>
@@ -186,7 +186,8 @@
                         </div>
                         <div class="modal-body">
 
-                            <form action="{{ url('/add-updates') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('/add-updates') }}" method="POST" enctype="multipart/form-data"
+                                id="add-form">
                                 @csrf
 
                                 <div class="container mx-auto">
@@ -297,7 +298,7 @@
                                                 <div class="modal-body">
 
                                                     <form action="{{ url('edit_updates/' . $news_img->id) }}" method="POST"
-                                                        enctype="multipart/form-data">
+                                                        enctype="multipart/form-data" id="update-form">
                                                         @csrf
                                                         @method('PUT')
 
@@ -345,7 +346,7 @@
                                                         @if ($news_img->status == false)
                                                             <span>
                                                                 <form action="{{ url('/approve/' . $news_img->id) }}"
-                                                                    method="POST" class="d-inline-block">
+                                                                    method="POST" class="d-inline-block" id="upload-form">
                                                                     @csrf
                                                                     <button type="submit" class="btn btn-sm ml-2"
                                                                         style="background-color: #234495; color:white;">Approve
@@ -355,7 +356,7 @@
                                                         @elseif ($news_img->status == true)
                                                             <span>
                                                                 <form action="{{ url('/disapprove/' . $news_img->id) }}"
-                                                                    method="POST" class="d-inline-block">
+                                                                    method="POST" class="d-inline-block" id="upload-form">
                                                                     @csrf
                                                                     <button type="submit" class="btn btn-sm ml-2 btn-danger"
                                                                         style="color:white;">Discard ?</button>
@@ -390,7 +391,7 @@
                                                 <div class="modal-body">
 
                                                     <form action="{{ url('delete_updates/' . $news_img->id) }}"
-                                                        method="GET" enctype="multipart/form-data">
+                                                        method="GET" enctype="multipart/form-data" id="delete-form">
                                                         @csrf
                                                         @method('GET')
 
@@ -564,6 +565,11 @@
             {{ $news_images->onEachSide(-1)->links() }}
         </div>
 
+        <!-- Loading GIF image -->
+        <div id="loading"
+            style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
+            <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
+        </div>
 
 
 
@@ -609,6 +615,74 @@
                     // If the file extension is correct, enable the news updates images submit button
                     newsUpdatesImagesSubmitButton.disabled = false;
                 }
+            });
+
+
+            const form = document.getElementById('upload-form');
+            const loading = document.getElementById('loading');
+
+            form.addEventListener('submit', () => {
+                loading.style.display = 'block';
+            });
+
+            form.addEventListener('load', () => {
+                loading.style.display = 'none';
+            });
+
+            form.addEventListener('error', () => {
+                loading.style.display = 'none';
+            });
+
+
+
+            //FOR NEWS UPDATES
+
+            const addform = document.getElementById('add-form');
+            const addloading = document.getElementById('loading');
+
+            addform.addEventListener('submit', () => {
+                addloading.style.display = 'block';
+            });
+
+            addform.addEventListener('load', () => {
+                addloading.style.display = 'none';
+            });
+
+            addform.addEventListener('error', () => {
+                addloading.style.display = 'none';
+            });
+
+
+
+            const updateform = document.getElementById('update-form');
+            const updateloading = document.getElementById('loading');
+
+            updateform.addEventListener('submit', () => {
+                updateloading.style.display = 'block';
+            });
+
+            updateform.addEventListener('load', () => {
+                updateloading.style.display = 'none';
+            });
+
+            updateform.addEventListener('error', () => {
+                updateloading.style.display = 'none';
+            });
+
+
+            const deleteform = document.getElementById('delete-form');
+            const deleteloading = document.getElementById('loading');
+
+            deleteform.addEventListener('submit', () => {
+                deleteloading.style.display = 'block';
+            });
+
+            deleteform.addEventListener('load', () => {
+                deleteloading.style.display = 'none';
+            });
+
+            deleteform.addEventListener('error', () => {
+                deleteloading.style.display = 'none';
             });
         </script>
     @endsection

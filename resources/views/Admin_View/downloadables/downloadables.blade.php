@@ -51,7 +51,8 @@
                         </div>
                         <div class="modal-body">
 
-                            <form action="{{ url('/add-downloadables') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('/add-downloadables') }}" method="POST" enctype="multipart/form-data"
+                                id="add-form">
                                 @csrf
 
                                 <div class="container mx-auto">
@@ -170,7 +171,7 @@
                                             <div class="modal-body">
 
                                                 <form action="{{ url('update-downloadables/' . $dw->id) }}"
-                                                    method="POST" enctype="multipart/form-data">
+                                                    method="POST" enctype="multipart/form-data" id="update-form">
                                                     @csrf
                                                     @method('PUT')
 
@@ -275,7 +276,7 @@
                                             <div class="modal-body">
 
                                                 <form action="{{ url('delete_downloadables/' . $dw->id) }}"
-                                                    method="GET" enctype="multipart/form-data">
+                                                    method="GET" enctype="multipart/form-data" id="delete-form">
                                                     @csrf
                                                     @method('GET')
 
@@ -299,4 +300,60 @@
         <div class="d-flex justify-content-end mt-2">
             {{ $downloadables->onEachSide(1)->links() }}
         </div>
+
+
+        <!-- Loading GIF image -->
+        <div id="loading"
+            style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
+            <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
+        </div>
+
+
+        <script>
+            const addform = document.getElementById('add-form');
+            const addloading = document.getElementById('loading');
+
+            addform.addEventListener('submit', () => {
+                addloading.style.display = 'block';
+            });
+
+            addform.addEventListener('load', () => {
+                addloading.style.display = 'none';
+            });
+
+            addform.addEventListener('error', () => {
+                addloading.style.display = 'none';
+            });
+
+
+            const updateform = document.getElementById('update-form');
+            const updateloading = document.getElementById('loading');
+
+            updateform.addEventListener('submit', () => {
+                updateloading.style.display = 'block';
+            });
+
+            updateform.addEventListener('load', () => {
+                updateloading.style.display = 'none';
+            });
+
+            updateform.addEventListener('error', () => {
+                updateloading.style.display = 'none';
+            });
+
+            const deleteform = document.getElementById('delete-form');
+            const deleteloading = document.getElementById('loading');
+
+            deleteform.addEventListener('submit', () => {
+                deleteloading.style.display = 'block';
+            });
+
+            deleteform.addEventListener('load', () => {
+                deleteloading.style.display = 'none';
+            });
+
+            deleteform.addEventListener('error', () => {
+                deleteloading.style.display = 'none';
+            });
+        </script>
     @endsection
