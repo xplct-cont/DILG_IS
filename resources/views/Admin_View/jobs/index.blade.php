@@ -206,7 +206,7 @@
                                                 </div>
                                                 </form>
                                                 <div class="text-start p-3">
-                                                    @if ($ad_jobs->remarks == 'Filled Up')
+                                                    @if ($ad_jobs->remarks === 'Filled Up')
                                                         <span>
                                                             <form action="{{ url('/available/' . $ad_jobs->id) }}"
                                                                 method="POST" class="d-inline-block">
@@ -218,7 +218,7 @@
                                                                 </button>
                                                             </form>
                                                         </span>
-                                                    @elseif ($ad_jobs->remarks == 'Available')
+                                                    @elseif ($ad_jobs->remarks === 'Available')
                                                         <span>
                                                             <form action="{{ url('/filled_up/' . $ad_jobs->id) }}"
                                                                 method="POST" class="d-inline-block">
