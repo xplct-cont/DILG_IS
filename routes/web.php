@@ -150,7 +150,9 @@ Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->nam
 Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
 
-Route::get('/downloadables',[DownloadablesController::class, 'index'])->name('/downloadables');
+Route::get('/downloadable_files',[DownloadablesController::class, 'index'])->name('/downloadable_files');
+Route::get('/download_downloadables/{file}',[DownloadablesController::class, 'download_downloadables']);
+
 
 Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'index'])->name('/provincial_officials');
 

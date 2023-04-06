@@ -102,7 +102,8 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">You may also upload PDF File (Max: 1 File):
+                                            <label for="" style="color:dimgray">You may also upload PDF File (Max: 1
+                                                File):
                                             </label>
                                             <input type="file" class="form-control" name="file" required>
                                             @if ($errors->has('file'))
@@ -114,7 +115,8 @@
                                 </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Submit</button>
+                            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span>
+                                Submit</button>
                         </div>
                         </form>
                     </div>
@@ -126,8 +128,9 @@
 
             <div class="card-header d-flex justify-content-between">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link" href="{{ url('/downloadables') }}"><span class="fas fa-download"
-                        style="color:#234495;"></span> DOWNLOADABLES </a></h1>
+                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link"
+                        href="{{ url('/downloadable_files') }}"><span class="fas fa-download"
+                            style="color:#234495;"></span> DOWNLOADABLES </a></h1>
 
             </div>
             <div>
@@ -144,7 +147,6 @@
                     <tbody class="text-center">
                         @foreach ($downloadables as $dw)
                             <tr>
-
                                 <td>{{ $dw->title }}</td>
 
                                 <td><a class="btn " href="{{ $dw->link }}"><span
@@ -167,8 +169,8 @@
                                             </div>
                                             <div class="modal-body">
 
-                                                <form action="{{ url('update-downloadables/' . $dw->id) }}" method="POST"
-                                                    enctype="multipart/form-data">
+                                                <form action="{{ url('update-downloadables/' . $dw->id) }}"
+                                                    method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     @method('PUT')
 
@@ -176,35 +178,42 @@
                                                         <div class="col-md-12">
                                                             <label for="">Outcome Area/Program:</label>
 
-                                                            <select name="outcome_area" id="outcome_area" class="form-control"
-                                                                style="color:dimgray;" required>
+                                                            <select name="outcome_area" id="outcome_area"
+                                                                class="form-control" style="color:dimgray;" required>
                                                                 <option selected>{{ $dw->outcome_area }}</option>
                                                                 <option
                                                                     value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
-                                                                    ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL
+                                                                    ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE
+                                                                    LOCAL
                                                                     GOVERNANCE
                                                                 </option>
-                                                                <option value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">
+                                                                <option
+                                                                    value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">
                                                                     PEACEFUL,
                                                                     ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES</option>
-                                                                <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY PROTECTIVE LGUS
+                                                                <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY
+                                                                    PROTECTIVE LGUS
                                                                 </option>
                                                                 <option
                                                                     value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
-                                                                    ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER
+                                                                    ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND
+                                                                    DISASTER
                                                                     RESILIENT LGUS
                                                                 </option>
-                                                                <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">BUSINESS-FRIENDLY
+                                                                <option value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">
+                                                                    BUSINESS-FRIENDLY
                                                                     AND
                                                                     COMPETITIVE LGUS</option>
-                                                                <option value="STRENGTHENING OF INTERNAL GOVERNANCE">STRENGTHENING OF
+                                                                <option value="STRENGTHENING OF INTERNAL GOVERNANCE">
+                                                                    STRENGTHENING OF
                                                                     INTERNAL
                                                                     GOVERNANCE</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <label for="" style="color:dimgray">Program</label>
-                                                            <input id="" type="text" class="form-control" required name="program"  value="{{ $dw->program }}">
+                                                            <input id="" type="text" class="form-control"
+                                                                required name="program" value="{{ $dw->program }}">
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="form-group">
@@ -215,7 +224,7 @@
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="" style="color:dimgray">Documen
+                                                                <label for="" style="color:dimgray">Document
                                                                     Link:</label>
                                                                 <input type="text" class="form-control" name="link"
                                                                     value="{{ $dw->link }}">
@@ -224,9 +233,11 @@
 
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="" style="color:dimgray">Change PDF File (Max: 1 File):
+                                                                <label for="" style="color:dimgray">Change PDF
+                                                                    File (Max: 1 File):
                                                                 </label>
-                                                                <input type="file" class="form-control" name="file" value="{{ $dw->file }}">
+                                                                <input type="file" class="form-control" name="file"
+                                                                    value="{{ $dw->file }}">
                                                                 @if ($errors->has('file'))
                                                                     {{ $errors->first('file') }}
                                                                 @endif

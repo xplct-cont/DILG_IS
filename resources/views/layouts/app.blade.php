@@ -193,7 +193,7 @@
                                 Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('/downloadables') }}">Downloadables</a>
+                                <li><a class="dropdown-item" href="{{ url('/downloadable_files') }}">Downloadables</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('/faqs') }}">FAQ's</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>

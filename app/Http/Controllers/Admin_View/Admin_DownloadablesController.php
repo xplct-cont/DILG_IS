@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin_View;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Downloadable;
+use File;
 
 
 class Admin_DownloadablesController extends Controller
@@ -51,14 +52,14 @@ class Admin_DownloadablesController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move('/home/dilgboho/public_html/downloadable$downloadables/', $filename);
+            $request->file('file')->move('/home/dilgboho/public_html/issuance_files/', $filename);
             $downloadables->file = $filename;
 
           }
 
         $downloadables->save();
 
-        return redirect()->back()->with('message', 'Added Successfully!');
+        return redirect()->back()->with('status', 'Added Successfully!');
 
     }
 
@@ -73,7 +74,7 @@ class Admin_DownloadablesController extends Controller
 
         if($request->hasFile('file')){
 
-            $destination = '/home/dilgboho/public_html/downloadables/'.$downloadables->file;
+            $destination = '/home/dilgboho/public_html/issuance_files/'.$downloadables->file;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -81,25 +82,25 @@ class Admin_DownloadablesController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move('/home/dilgboho/public_html/downloadables/', $filename);
+            $request->file('file')->move('/home/dilgboho/public_html/issuance_files/', $filename);
             $downloadables->file = $filename;
 
 
           }
     $downloadables->update();
 
-    return redirect()->back()->with('message', 'Updated Successfully!');
+    return redirect()->back()->with('status', 'Updated Successfully!');
 
     }
 
     public function delete_downloadables($id){
         $remove = Downloadable::findOrFail($id);
-        $destination = '/home/dilgboho/public_html/downloadables/' .$remove->file;
+        $destination = '/home/dilgboho/public_html/issuance_files/' .$remove->file;
         if(File::exists($destination)){
             File::delete($destination);
         }
         $remove -> delete();
-        return redirect()->back()->with('message', 'Deleted Successfully!');
+        return redirect()->back()->with('status', 'Deleted Successfully!');
       }
 
 
