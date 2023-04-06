@@ -16,9 +16,9 @@
             <h1 class="text-center" style="font-size: 18px; margin-top: 10px; ">JOB VACANCIES</h1>
         </div>
         @foreach ($jobs as $job_list)
-            <div class="row mx-auto  ">
+            <div class="row mx-auto">
                 <div class="card">
-                    <div class="card-body ml-3 mr-3">
+                    <div class="card-body">
                         <div class="row">
                             <div class="col-md-4">
 
