@@ -190,15 +190,10 @@
                                                                     <div class="form-group">
                                                                         <label for=""
                                                                             style="color:dimgray">Description:</label>
-                                                                        <textarea style="white-space: pre-wrap;" id="" type="text" class="form-control" rows="5"
-                                                                            name="details" required>
-                                                        {{ $ad_jobs->details }}
-                                                    </textarea>
+                                                                        <textarea id="" type="text" class="form-control" title="" rows="5" required name="details"
+                                                                            placeholder="Write some description...">{{ $ad_jobs->details }}</textarea>
                                                                     </div>
-
-
                                                                 </div>
-
                                                             </div>
                                                         </div>
                                                 </div>
@@ -361,10 +356,8 @@
                                                                         <div class="form-group">
                                                                             <label for=""
                                                                                 style="color:dimgray">Description:</label>
-                                                                            <textarea style="white-space: pre-wrap;" id="" type="text" class="form-control" rows="5"
-                                                                                name="details" required>
-                                                        {{ $ad_jobs->details }}
-                                                    </textarea>
+                                                                            <textarea id="" type="text" class="form-control" title="" rows="5" required name="details"
+                                                                                placeholder="Write some description...">{{ $ad_jobs->details }}</textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>
