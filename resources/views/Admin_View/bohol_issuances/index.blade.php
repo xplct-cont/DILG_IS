@@ -178,7 +178,7 @@
                                 <td>{{ $issuances->outcome_area }}</td>
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">{{ $issuances->category }}</td>
-                                <td>{{ $issuances->title }}</td>
+                                <td>{{ Illuminate\Support\Str::limit($issuances->title, 60) }}</td>
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">
                                     {{ $issuances->reference_num }}</td>
