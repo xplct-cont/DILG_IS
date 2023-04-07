@@ -6,6 +6,13 @@
             <strong>{{ $message }}</strong>
         </div>
     @endif
+
+    @error('file')
+        <div class="alert alert-danger alert-block mt-2">
+            <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+    @enderror
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
             <form action="{{ url('admin/issuances') }}" method="GET" role="search">
