@@ -41,7 +41,8 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="" style="color:dimgray">Upload Video (Max: 1 min. | Type: mp4):
+                                        <label for="" style="color:dimgray">Upload Video <span class="text-danger">(Max: 1 min.
+                                            | Type: mp4)</span>
                                         </label>
                                         <input type="file" class="form-control" name="file" id="cit_charter_video"
                                             required>
@@ -132,8 +133,8 @@
                                                             style=" height: 200px; width:100%;" type="video/mp4">
                                                 </div>
                                                 <div class="form-group mt-3">
-                                                    <label for="" style="color:dimgray">Upload Video (Max: 1 min.
-                                                        | Type: mp4): </label>
+                                                    <label for="" style="color:dimgray">Upload Video <span class="text-danger">(Max: 1 min.
+                                                        | Type: mp4)</span> </label>
                                                     <input type="file" class="form-control" name="file"
                                                         value="{{ $cit_chart->file }}">
                                                     @if ($errors->has('file'))

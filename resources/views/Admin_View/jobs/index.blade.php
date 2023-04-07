@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Image:</label>
+                                                <label for="" style="color:dimgray">Upload Image: <span class="text-danger">(Max: 1)</span></label>
                                                 <input type="file" class="form-control" name="hiring_img">
                                             </div>
                                         </div>
@@ -173,7 +173,7 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label for=""
-                                                                            style="color:dimgray">Image:</label>
+                                                                            style="color:dimgray">Upload Image: <span class="text-danger">(Max: 1)</span></label>
                                                                         <input type="file" class="form-control"
                                                                             name="hiring_img"
                                                                             value="{{ $ad_jobs->hiring_img }}">
@@ -338,7 +338,7 @@
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <label for=""
-                                                                                style="color:dimgray">Image:</label>
+                                                                                style="color:dimgray">Upload Image: <span class="text-danger">(Max: 1)</span></label>
                                                                             <input type="file" class="form-control"
                                                                                 name="hiring_img"
                                                                                 value="{{ $ad_jobs->hiring_img }}">
