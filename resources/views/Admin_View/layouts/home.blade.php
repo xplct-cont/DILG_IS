@@ -393,7 +393,7 @@
     <script>
         setTimeout(function() {
             $(' .alert-dismissible').fadeOut('slow');
-        }, 3000);
+        }, 1000);
 
 
         // Get the file input and submit button elements for audio
