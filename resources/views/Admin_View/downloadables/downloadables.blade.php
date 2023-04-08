@@ -1,12 +1,13 @@
 @extends('Admin_View.layouts.app')
 
 @section('content')
-    @if ($message = Session::get('status'))
-        <div class="alert alert-success alert-block">
+    @if ($message = Session::get('message'))
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
+
 
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
@@ -103,10 +104,11 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">You may also upload <span class="text-danger">PDF</span> File <span class="text-danger">
-                                                (Max: 1
-                                                File)
-                                            </span>
+                                            <label for="" style="color:dimgray">You may also upload <span
+                                                    class="text-danger">PDF</span> File <span class="text-danger">
+                                                    (Max: 1
+                                                    File)
+                                                </span>
                                             </label>
                                             <input type="file" class="form-control" name="file">
                                             @if ($errors->has('file'))
@@ -236,7 +238,8 @@
 
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="" style="color:dimgray">Change <span class="text-danger"> PDF</span>
+                                                                <label for="" style="color:dimgray">Change <span
+                                                                        class="text-danger"> PDF</span>
                                                                     File <span class="text-danger">(Max: 1 File)</span>
                                                                 </label>
                                                                 <input type="file" class="form-control" name="file"
@@ -312,6 +315,11 @@
 
 
         <script>
+            setTimeout(function() {
+                $(' .alert-dismissible').fadeOut('slow');
+            }, 1000);
+
+
             const addform = document.getElementById('add-form');
             const addloading = document.getElementById('loading');
 
