@@ -58,7 +58,7 @@ class Admin_UpdateController extends Controller
         $img->user_id = auth()->user()->id;
 
         $this->validate($request, [
-            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         if ($request->hasFile('images')){
@@ -88,7 +88,7 @@ class Admin_UpdateController extends Controller
         $img->user_id = auth()->user()->id;
 
         $this->validate($request, [
-            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         if ($request->hasFile('images')){
@@ -142,7 +142,7 @@ class Admin_UpdateController extends Controller
         $img = Updates_Image::find($id);
 
         $this->validate($request, [
-            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]);
         $images = json_decode($img->images,true);
         if (is_array($images) && !empty($images)){

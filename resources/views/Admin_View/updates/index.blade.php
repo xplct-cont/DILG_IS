@@ -207,7 +207,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Upload Images (Max:5)</label>
+                                                <label for="" style="color:dimgray">Upload Images: <span class="text-danger">(Max: 5)</span></label>
                                                 <input type="file" class="form-control" name="images[]"
                                                     id="news_updates_images" required multiple>
                                             </div>
@@ -320,8 +320,7 @@
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <div class="form-group">
-                                                                        <label for="" style="color:dimgray">Upload
-                                                                            Images (Max:5)</label>
+                                                                        <label for="" style="color:dimgray">Upload Images: <span class="text-danger">(Max: 5)</span></label>
                                                                         <input type="file" class="form-control"
                                                                             name="images[]" multiple>
                                                                         <p class="mt-3 fw-light">Old photo(s):</p>
@@ -496,8 +495,7 @@
                                                                     </div>
                                                                     <div class="col-md-8">
                                                                         <div class="form-group">
-                                                                            <label for="" style="color:dimgray">Upload
-                                                                                Images (Max:5)</label>
+                                                                            <label for="" style="color:dimgray">Upload Images: <span class="text-danger">(Max: 5)</span></label>
                                                                             <input type="file" class="form-control"
                                                                                 name="images[]" multiple>
                                                                         </div>
@@ -507,7 +505,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="submit" class="btn btn-success"><span
-                                                                class="fas fa-save"></span> Save changes</button>
+                                                                class="fas fa-save"></span> Savechanges</button>
                                                     </div>
                                                     </form>
                                                 </div>

@@ -103,8 +103,10 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">You may also upload PDF File (Max: 1
-                                                File):
+                                            <label for="" style="color:dimgray">You may also upload <span class="text-danger">PDF</span> File <span class="text-danger">
+                                                (Max: 1
+                                                File)
+                                            </span>
                                             </label>
                                             <input type="file" class="form-control" name="file">
                                             @if ($errors->has('file'))
@@ -234,8 +236,8 @@
 
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="" style="color:dimgray">Change PDF
-                                                                    File (Max: 1 File):
+                                                                <label for="" style="color:dimgray">Change <span class="text-danger"> PDF</span>
+                                                                    File <span class="text-danger">(Max: 1 File)</span>
                                                                 </label>
                                                                 <input type="file" class="form-control" name="file"
                                                                     value="{{ $dw->file }}">
