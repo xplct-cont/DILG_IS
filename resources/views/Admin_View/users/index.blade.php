@@ -1,7 +1,13 @@
 @extends('Admin_View.layouts.app')
 
-
 @section('content')
+    @if ($message = Session::get('message'))
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+            <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
+
     <div class="d-flex justify-content-end mt-5">
         <!-- Button trigger modal -->
         <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
@@ -272,4 +278,10 @@
         </div>
     </div>
     </div>
+
+    <script>
+        setTimeout(function() {
+            $(' .alert-dismissible').fadeOut('slow');
+        }, 1000);
+    </script>
 @endsection
