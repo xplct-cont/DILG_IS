@@ -177,9 +177,6 @@
             </tbody>
         </table>
     </div>
-
-
-            aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #234495; color:white;">
@@ -259,7 +256,7 @@
 
                                     </div>
                                 </div>
-                               
+
                             </div>
                         </div>
                 </div>
