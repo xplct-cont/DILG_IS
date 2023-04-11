@@ -1,4 +1,5 @@
 @extends('Admin_View.layouts.app')
+
 @section('content')
     @if ($message = Session::get('message'))
         <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
@@ -6,6 +7,7 @@
             <strong>{{ $message }}</strong>
         </div>
     @endif
+
 
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
@@ -89,8 +91,21 @@
 
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Program</label>
-                                                <input id="" type="text" class="form-control" required
-                                                    name="program">
+                                                <select name="program_id" id="program_id" class="form-control"
+                                                style="color:dimgray;" required>
+                                                <option selected>Select ...</option>
+                                                    @foreach ($programs as $prog )
+                                                        <option value="{{$prog->id}}">{{$prog->title}}</option>
+                                                    @endforeach
+
+                                                </select>
+                                                {{-- <input id="" type="text" class="form-control" required
+                                                    name="program"> --}}
+                                                    <p>Not in the list?</p>
+                                                    <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
+                                                        data-target="#Program">
+                                                        <span class="fas fa-plus-circle"></span> Add program
+                                                    </button>
                                             </div>
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Questions:</label>
@@ -116,8 +131,43 @@
 
                 </div>
             </div>
-        </div>
+            <div class="modal fade" id="Program" tabindex="-1" role="dialog" aria-labelledby="ProgramLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #234495; color:white;">
+                            <h5 class="modal-title" id="ProgramLabel">Adding Program</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
 
+                            <form action="{{ url('/add-programs') }}" method="POST" enctype="multipart/form-data"
+                                id="add-form">
+                                @csrf
+
+                                <div class="container mx-auto">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="" style="color:dimgray">Program</label>
+                                                <input id="" type="text" class="form-control" required
+                                                    name="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span>
+                                Submit</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="card mt-2">
 
@@ -151,7 +201,7 @@
                                         data-target="#faq_id{{ $faqs->id }}"><span
                                             class="text-white btn-success btn-sm">View</span></a></td>
                                 <td>{{ $faqs->outcome_area }}</td>
-                                <td>{{ $faqs->program }}</td>
+                                <td>{{ $faqs->program->title }}</td>
                                 <td>{{ $faqs->questions }}</td>
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">{{ $faqs->answers }}</td>
