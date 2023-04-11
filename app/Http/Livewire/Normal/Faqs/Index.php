@@ -39,12 +39,6 @@ class Index extends Component
     public function render()
     {
         $programs = Program::all();
-
-        if ($this->outcome != 'all' || $this->program_id || $this->answers || $this->questions || $this->search) {
-            $faq = $this->loadfaqs()['faq'];
-        } else {
-            $faq = collect();
-        }
-        return view('livewire.normal.faqs.index', compact('faq', 'programs'));
+        return view('livewire.normal.faqs.index', compact('programs'), $this->loadfaqs());
     }
 }

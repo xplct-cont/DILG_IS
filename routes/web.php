@@ -117,6 +117,7 @@ Route::put('/update-issuances/{id}', [Admin_Bohol_IssuancesController::class, 'u
 
 Route::get('/admin/downloadables', [Admin_DownloadablesController::class, 'index'])->name('admin/downloadables');
 Route::post('/add-downloadables', [Admin_DownloadablesController::class, 'store']);
+Route::post('/add-programs', [Admin_DownloadablesController::class, 'storeProgram']);
 Route::get('/delete_downloadables/{id}', [Admin_DownloadablesController::class, 'delete_downloadables']);
 Route::put('/update-downloadables/{id}', [Admin_DownloadablesController::class, 'update_downloadables']);
 
