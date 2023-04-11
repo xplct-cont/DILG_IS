@@ -1,11 +1,12 @@
 @extends('Admin_View.layouts.app')
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-block mt-2">
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
+
 
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto mb-2 ">
@@ -207,7 +208,8 @@
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Upload Images (Max:5)</label>
+                                                <label for="" style="color:dimgray">Upload Images: <span
+                                                        class="text-danger">(Max: 5)</span></label>
                                                 <input type="file" class="form-control" name="images[]"
                                                     id="news_updates_images" required multiple>
                                             </div>
@@ -321,7 +323,8 @@
                                                                 <div class="col-md-8">
                                                                     <div class="form-group">
                                                                         <label for="" style="color:dimgray">Upload
-                                                                            Images (Max:5)</label>
+                                                                            Images: <span class="text-danger">(Max:
+                                                                                5)</span></label>
                                                                         <input type="file" class="form-control"
                                                                             name="images[]" multiple>
                                                                         <p class="mt-3 fw-light">Old photo(s):</p>
@@ -497,7 +500,8 @@
                                                                     <div class="col-md-8">
                                                                         <div class="form-group">
                                                                             <label for="" style="color:dimgray">Upload
-                                                                                Images (Max:5)</label>
+                                                                                Images: <span class="text-danger">(Max:
+                                                                                    5)</span></label>
                                                                             <input type="file" class="form-control"
                                                                                 name="images[]" multiple>
                                                                         </div>
@@ -507,7 +511,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="submit" class="btn btn-success"><span
-                                                                class="fas fa-save"></span> Save changes</button>
+                                                                class="fas fa-save"></span> Savechanges</button>
                                                     </div>
                                                     </form>
                                                 </div>
@@ -572,8 +576,12 @@
         </div>
 
 
-
         <script>
+            setTimeout(function() {
+                $(' .alert-dismissible').fadeOut('slow');
+            }, 1000);
+
+
             // Get the file input and submit button elements for news cover images
             const newsCoverImagesInput = document.querySelector('#news_cover_images');
             const newsCoverImagesSubmitButton = document.querySelector('#news_cover_imagesSubmit-btn');

@@ -59,7 +59,7 @@ class Admin_DownloadablesController extends Controller
 
         $downloadables->save();
 
-        return redirect()->back()->with('status', 'Added Successfully!');
+        return redirect()->back()->with('message', 'Added Successfully!');
 
     }
 
@@ -92,7 +92,7 @@ class Admin_DownloadablesController extends Controller
           }
     $downloadables->update();
 
-    return redirect()->back()->with('status', 'Updated Successfully!');
+    return redirect()->back()->with('message', 'Updated Successfully!');
 
     }
 
@@ -103,7 +103,7 @@ class Admin_DownloadablesController extends Controller
             File::delete($destination);
         }
         $remove -> delete();
-        return redirect()->back()->with('status', 'Deleted Successfully!');
+        return redirect()->back()->with('message', 'Deleted Successfully!');
       }
 
 

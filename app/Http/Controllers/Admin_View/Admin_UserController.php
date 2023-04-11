@@ -48,7 +48,7 @@ class Admin_UserController extends Controller
 
         $users->save();
 
-        return redirect()->back()->with('message', 'Added User Successfully!');
+        return redirect()->back()->with('message', 'Added New User Successfully!');
 
     }
 
@@ -88,7 +88,7 @@ class Admin_UserController extends Controller
     }else{
         $users->update($request->all());
     }
-    return redirect()->back()->with('message', 'Updated Successfully!');
+    return redirect()->back()->with('message', 'User Updated Successfully!');
 
     }
 
@@ -101,7 +101,7 @@ class Admin_UserController extends Controller
             }
         $users->delete();
 
-        return redirect()->back()->with('message', 'Deleted Successfully!');
+        return redirect()->back()->with('message', 'User Deleted Successfully!');
     }
 
 }
