@@ -5,6 +5,14 @@
 
     RewriteEngine On
 
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # Block HTTP requests
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^.*$ - [R=403,L]
+    
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
