@@ -23,13 +23,7 @@
                                 <span class="fas fa-search"></span>
                             </button>
                         </span>
-                        {{-- <a href="{{ url('admin/news_updates') }}" class=" mt-0">
-                            <span class="input-group-btn mr-1 mt-0">
-                                <button class="btn btn-secondary text-light" type="submit" title="Search Name">
-                                    <span class="fas fa-search"></span>
-                                </button>
-                            </span>
-                        </a> --}}
+                       
                     </div>
                 </div>
                 <div class="input-group d-flex mx-auto mt-3 col-md-3">

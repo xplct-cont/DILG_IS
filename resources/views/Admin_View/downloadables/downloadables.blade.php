@@ -96,8 +96,7 @@
                                                 @endforeach
 
                                             </select>
-                                            {{-- <input id="" type="text" class="form-control" required
-                                                name="program"> --}}
+                                          
                                                 <p>Not in the list?</p>
                                                 <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
                                                     data-target="#Program">

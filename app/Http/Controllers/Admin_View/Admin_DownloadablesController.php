@@ -69,7 +69,6 @@ class Admin_DownloadablesController extends Controller
         $prog = new Program;
 
         $prog->title = $request->input('title');
-        //add validation that if ni exist siya
 
         $prog->save();
 

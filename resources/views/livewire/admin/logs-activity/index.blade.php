@@ -53,7 +53,7 @@
         <tbody class="text-dark">
             @csrf
             @foreach ($logs as $log)
-                {{-- @if ($log->causer_id != '1') --}}
+              
                     <tr>
                         <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                             @if ($log->event === 'created')

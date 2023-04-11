@@ -25,9 +25,7 @@ class DownloadablesController extends Controller
 
         return view('Normal_View.Downloadables.index', compact('downloadables', 'programs'))
         ->with('i',(request()->input('page',1)-1)*5);
-        // // $faqs = Faq::where('program_id', $selectedProgramId)->get();
-        // $downloadables = DB::table('downloadables')->orderBy('created_at', 'DESC')->get();
-        // return view('Normal_View.Downloadables.index', compact('downloadables'));
+
     }
 
     public function download_downloadables( Request $request, $file){

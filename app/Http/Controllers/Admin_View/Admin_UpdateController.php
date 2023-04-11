@@ -60,7 +60,6 @@ class Admin_UpdateController extends Controller
         }
     }
 
-        // $img = Home_Image::find($id);
         $img->images = json_encode($data);
         $img->save();
         return redirect()->back()->with('message', 'Added Successfully : Waiting for Approval!');
@@ -70,7 +69,6 @@ class Admin_UpdateController extends Controller
     public function edit_updates(Request $request, $id){
         $img = Update::find($id);
 
-        // $img = new Update;
 
         $img->title = $request->input('title');
         $img->caption = $request->input('caption');

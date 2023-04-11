@@ -17,9 +17,6 @@ class Index extends Component
         $query = Job::orderBy('position', 'asc')
             ->search($this->search);
 
-        // if($this->position){
-        //     $query->where('position', $this->position);
-        // }
         if($this->details){
             $query->where('details', $this->details);
         }

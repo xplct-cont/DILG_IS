@@ -31,11 +31,11 @@ class Admin_Field_OfficersController extends Controller
                     ->orWhere('lname', 'LIKE', '%'. $field_officers . '%')
                     ->orWhere('position', 'LIKE', '%'. $field_officers . '%')
                     ->orWhere('cluster', 'LIKE', '%'. $field_officers . '%')->get();
-                    
+
                 }
             }]
         ])
-    
+
         ->orderBy("municipality_id","ASC")
         ->paginate(12);
 
@@ -44,9 +44,9 @@ class Admin_Field_OfficersController extends Controller
     }
 
     public function store(Request $request){
-        
+
         $field_officers = new Field_Officer;
-       
+
         $field_officers->fname = $request->input('fname');
         $field_officers->mid_initial = $request->input('mid_initial');
         $field_officers->lname = $request->input('lname');
@@ -61,13 +61,13 @@ class Admin_Field_OfficersController extends Controller
             $filename = time().'.'. $extention;
             Image::make($file)->save('/home/dilgboho/public_html/field_off_images/'. $filename);
             $field_officers->profile_img = $filename;
-          
+
           }
 
         $field_officers->save();
 
         return redirect()->back()->with('message', 'Added Successfully!');
-     
+
     }
 
     public function update_field_officer(Request $request, $id){
@@ -81,7 +81,7 @@ class Admin_Field_OfficersController extends Controller
         $field_officers->cluster = $request->input('cluster');
 
         if($request->hasFile('profile_img')){
-      
+
             $destination = '/home/dilgboho/public_html/field_off_images/'.$field_officers->profile_img;
             if(File::exists($destination)){
                 File::delete($destination);
@@ -100,11 +100,8 @@ class Admin_Field_OfficersController extends Controller
 
     }
 
-    public function delete_field_officer(Request $request, $id) 
+    public function delete_field_officer(Request $request, $id)
     {
-
-        // $ids = $request->ids;
-        // Org::whereIn('id', $ids)->delete();
 
             $field_officers = Field_Officer::find($id);
             $destination = '/home/dilgboho/public_html/field_off_images/'.$field_officers->profile_img;
@@ -112,7 +109,7 @@ class Admin_Field_OfficersController extends Controller
                  File::delete($destination);
              }
             $field_officers->delete();
-           
+
         return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 

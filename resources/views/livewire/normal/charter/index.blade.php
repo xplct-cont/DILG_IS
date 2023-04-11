@@ -1,9 +1,6 @@
 <div>
     <div class="container">
-        {{-- <div class="container mb-3 text-start">
-            <a href="{{ url('export_citizes_charter_pdf') }}" class="btn btn-sm"
-                style="background-color: #234495; color:white;"><span class="fas fa-file-pdf"></span> Download PDF</a>
-        </div> --}}
+      
 
         @foreach ($pdf_cit_charter as $pdf_cit)
             <div class="text-end">

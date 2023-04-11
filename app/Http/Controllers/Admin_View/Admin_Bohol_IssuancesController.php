@@ -48,11 +48,6 @@ class Admin_Bohol_IssuancesController extends Controller
             'message' => 'You can only upload PDF files',
             ]);
 
-
-            // if(!$checkPdf){
-            //     return redirect()->back()->with('message', 'Wrong format must be PDF');
-            // }
-
             $issuances = new Bohol_Issuance;
 
             $issuances->outcome_area = $request->input('outcome_area');
@@ -69,9 +64,6 @@ class Admin_Bohol_IssuancesController extends Controller
             $request->file('file')->move('/home/dilgboho/public_html/issuance_files/', $filename);
             $issuances->file = $filename;
 
-            // storeAs('issuance_files', $filename, 'public');
-            // $issuances->file = '/public/issuance_files' . $filePath;;
-            // $issuances->file = $filename;
 
           }
 
@@ -108,8 +100,6 @@ class Admin_Bohol_IssuancesController extends Controller
             $request->file('file')->move('/home/dilgboho/public_html/issuance_files/', $filename);
             $issuances->file = $filename;
 
-            // $issuances->file = '/public/issuance_files' . $filePath;;
-            // $issuances->file = $filename;
 
           }
 

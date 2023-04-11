@@ -20,7 +20,6 @@ class Admin_FaqsController extends Controller
 
     public function index(Request $request){
 
-        // $faq = DB::table('faqs')->get();
 
         $faq = Faq::where([
             ['created_at', '!=', null],
@@ -60,7 +59,6 @@ class Admin_FaqsController extends Controller
         $prog = new Program;
 
         $prog->title = $request->input('title');
-        //add validation that if ni exist siya
 
         if(Program::where('title',$prog->title)->exists()){
            return redirect()->back()->with('error','Program already exist!');

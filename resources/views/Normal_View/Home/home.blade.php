@@ -146,32 +146,7 @@
                                     <p class="text-left" style="font-size: 15px; font-weight: 400;">
                                         {{ $new->caption }}</p>
 
-                                    {{-- <div class="" style="height: 365px;">
-
-                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                            <ol class="carousel-indicators">
-                                                <li data-target="#carouselExampleIndicators" data-slide-to="0"
-                                                    class="active"></li>
-                                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-
-                                            </ol>
-                                            <div class=" carousel-inner text-center" style="height:350px;">
-                                                @php
-                                                    $images = json_decode($new->images, true);
-                                                @endphp
-                                                @foreach ($images as $key => $image)
-                                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                                        <img src="{{ asset('/news_updates/' . $image) }}"
-                                                            style="height:350px; width:100%;" />
-                                                    </div>
-                                                @endforeach
-
-                                            </div>
-
-                                        </div>
-                                    </div> --}}
-
+                                   
                                     <div class="image-container">
                                         @php
                                             $images = json_decode($new->images, true);

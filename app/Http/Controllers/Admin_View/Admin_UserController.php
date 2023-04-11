@@ -59,7 +59,6 @@ class Admin_UserController extends Controller
         $users->position = $request->input('position');
         $users->email = $request->input('email');
         $users->email_verified_at = now();
-        //$users->password = $request->input('password');
         $users->roles()->sync([$request->input('role')]);
 
         if ($users->hasRole($request->role)) {

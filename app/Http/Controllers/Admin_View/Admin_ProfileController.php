@@ -22,7 +22,7 @@ class Admin_ProfileController extends Controller
      */
     public function index()
     {
-    
+
         $pd_messages = Pd_Message::with(['user'])->get();
         return view('Admin_View.profile.profile', compact('pd_messages'));
     }
@@ -50,11 +50,11 @@ class Admin_ProfileController extends Controller
 
         $pd_messages->user_id = auth()->user()->id;
         $pd_messages->message = $request->input('message');
-     
+
     $pd_messages->update();
 
     return redirect()->back()->with('message', 'Updated Successfully!');
-        
+
     }
 
     /**
@@ -94,11 +94,6 @@ class Admin_ProfileController extends Controller
         $profile->email = $request->input('email');
 
         if($request->hasFile('profile_image')){
-      
-            // $destination = 'user_profile_images/'.$profile->profile_image;
-            // if(File::exists($destination)){
-            //     File::delete($destination);
-            // }
 
             $file = $request->file('profile_image');
             $extention = $file->getClientOriginalExtension();
