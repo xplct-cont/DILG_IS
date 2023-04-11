@@ -95,7 +95,7 @@
 
                         <div class="card-body">
                             <p class="text-wrap" style="font-weight: 400; font-size: 18px;">Program: <span class="text-wrap"
-                                    style="font-size: 18px; font-weight: 500;">{{ $dw->program->title }}</span></p>
+                                    style="font-size: 18px; font-weight: 500;">{{ $dw->program->title ?? 'None' }}</span></p>
                             <p class="text-wrap" style="font-weight: 400; font-size: 18px;">Outcome Area: <span
                                     class="text-wrap"
                                     style="font-size: 18px; font-weight: 500;">{{ $dw->outcome_area }}</span></p>
