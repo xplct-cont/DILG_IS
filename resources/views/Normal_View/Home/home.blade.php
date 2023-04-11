@@ -748,6 +748,7 @@
         display: inline;
         top: 50px;
         justify-content: center;
+        color:#234495;
     }
 
     .day-text-formate {
