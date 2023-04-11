@@ -8,6 +8,13 @@
         </div>
     @endif
 
+    @if ($message = Session::get('error'))
+        <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+            <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
+
 
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
@@ -64,7 +71,7 @@
 
                                                 <select name="outcome_area" id="outcome_area" class="form-control"
                                                     style="color:dimgray;" required>
-                                                    <option selected>Select ...</option>
+                                                    <option selected disabled></option>
                                                     <option
                                                         value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
                                                         ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL
@@ -90,27 +97,27 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Program</label>
+                                                <label for="" style="color:dimgray">Program:</label>
                                                 <select name="program_id" id="program_id" class="form-control"
-                                                style="color:dimgray;" required>
-                                                <option selected>Select ...</option>
-                                                    @foreach ($programs as $prog )
-                                                        <option value="{{$prog->id}}">{{$prog->title}}</option>
+                                                    style="color:dimgray;" required>
+                                                    <option selected disabled></option>
+                                                    @foreach ($programs as $prog)
+                                                        <option value="{{ $prog->id }}">{{ $prog->title }}</option>
                                                     @endforeach
-
                                                 </select>
-                                                {{-- <input id="" type="text" class="form-control" required
-                                                    name="program"> --}}
-                                                    <p>Not in the list?</p>
-                                                    <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
-                                                        data-target="#Program">
-                                                        <span class="fas fa-plus-circle"></span> Add program
-                                                    </button>
+
+                                                <a href="#" data-toggle="modal" data-target="#Program"
+                                                    style="text-decoration: none; margin-top:10px;">
+                                                    <p class="text-danger" style="font-size: 16px;">&nbsp;Not in the list?
+                                                        <span style="color:#234495;">Click Here to Add Program.</span>
+                                                    </p>
+                                                </a>
+
                                             </div>
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Questions:</label>
-                                                <textarea id="" type="text" class="form-control" title="" rows="5" required name="questions"
-                                                    placeholder="Write some questions..."></textarea>
+                                                <textarea id="" type="text" class="form-control" title="" rows="5" required
+                                                    name="questions" placeholder="Write some questions..."></textarea>
                                             </div>
                                         </div>
 
@@ -151,9 +158,9 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Program</label>
+                                                <label for="" style="color:dimgray">Program:</label>
                                                 <input id="" type="text" class="form-control" required
-                                                    name="title">
+                                                    name="title" required>
                                             </div>
                                         </div>
                                     </div>
@@ -262,22 +269,12 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <div class="form-group">
-                                                                        <label for="" style="color:dimgray">Program</label>
-                                                                        <select name="program_id" id="program_id" class="form-control"
-                                                                        style="color:dimgray;" required>
-                                                                        <option value="{{ $faqs->program_id }}" selected>{{ $faqs->program->title }}</option>
-                                                                            @foreach ($programs as $prog )
-                                                                                <option value="{{$prog->id}}">{{$prog->title}}</option>
-                                                                            @endforeach
-
-                                                                        </select>
-                                                                            <p>Not in the list?</p>
-                                                                            <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
-                                                                                data-target="#Program">
-                                                                                <span class="fas fa-plus-circle"></span> Add program
-                                                                            </button>
-                                                                    </div>
+                                                                    <label for=""
+                                                                        style="color:dimgray">Program:</label>
+                                                                    <input id="" type="text"
+                                                                        class="form-control" required name="program"
+                                                                        value="{{ $faqs->program }}">
+                                                                </div>
                                                                 <div class="form-group">
                                                                     <label for=""
                                                                         style="color:dimgray">Questions:</label>

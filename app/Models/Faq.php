@@ -15,7 +15,7 @@ class Faq extends Model
     protected $fillable =
     [
         'outcome_area',
-        'program',
+        'program_id',
         'questions',
         'answers',
 
@@ -32,12 +32,13 @@ class Faq extends Model
         return $this->belongsTo('App\Models\Program');
     }
 
+
     public function scopeSearch($query, $terms){
         collect(explode(" " , $terms))->filter()->each(function($term) use($query){
             $term = '%'. $term . '%';
 
             $query->where('questions', 'like', $term)
-                ->orWhere('program', 'like', $term)
+                ->orWhere('program_id', 'like', $term)
                 ->orWhere('answers', 'like', $term)
                 ->orWhere('outcome_area', 'like', $term);
         });
