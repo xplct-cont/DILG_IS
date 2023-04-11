@@ -4,22 +4,23 @@ namespace App\Http\Livewire\Normal\Faqs;
 
 use App\Models\Faq;
 use Livewire\Component;
+use Illuminate\Support\Facades\DB;
 
 class Index extends Component
 {
     public $search;
-    public $questions, $answers, $program, $outcome = 'all';
+    public $questions, $answers, $program_id, $outcome = 'all';
     public function loadfaqs(){
 
-        $query = Faq::orderBy('created_at', 'desc')
+        $query = Faq::groupBy('program_id')
             ->search($this->search);
 
             if($this->outcome != 'all'){
                 $query->where('outcome_area', $this->outcome);
             }
 
-            if($this->program){
-                $query->where('program', $this->program);
+            if($this->program_id){
+                $query->where('program_id', $this->program_id);
             }
             if($this->answers){
                 $query->where('answers', $this->answers);
@@ -33,10 +34,7 @@ class Index extends Component
     }
     public function render()
     {
-        $faq = Faq::where('outcome_area', 'like', '%'.$this->search.'%')
-            ->orWhere('questions', 'like', '%'.$this->search.'%')
-            ->orWhere('answers', 'like', '%'.$this->search.'%')
-            ->orderBy('created_at', 'desc')->paginate(5);
         return view('livewire.normal.faqs.index', $this->loadfaqs());
+
     }
 }

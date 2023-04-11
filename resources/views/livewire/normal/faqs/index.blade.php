@@ -45,28 +45,27 @@
         <div class="accordion" id="accordionExample">
             @csrf
             @foreach ($faq as $fq)
-            @if ($fq->program == $fq->program)
             <div class="accordion-item mb-2">
                 <h2 class="accordion-header" id="headingOne{{ $fq->id }}">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne{{ $fq->id }}" aria-expanded="true"
                         aria-controls="collapseOne" style="background-color:#364d74; color:white">
-                        <strong>{{ $fq->program }}<strong>
+                        <strong>{{ $fq->program->title }}<strong>
                     </button>
                 </h2>
-
-                    <div id="collapseOne{{ $fq->id }}" class="accordion-collapse collapse"
-                        aria-labelledby="headingOne{{ $fq->id }}" data-bs-parent="#accordionExample">
-                        <div class="accordion-body text-wrap fw-light">
-                            <h6>{{ $fq->questions }}<h6>
-                            <p class="fw-light">Answer: {{ $fq->answers }}</p>
-                            <hr>
-                            <p class="text-end" style="font-size: 11px; color:#364d74;">{{ $fq->outcome_area }}</p>
-                        </div>
+                
+                <div id="collapseOne{{ $fq->id }}" class="accordion-collapse collapse"
+                    aria-labelledby="headingOne{{ $fq->id}}" data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-wrap fw-light">
+                        <h6>{{ $fq->questions}}<h6>
+                        <p class="fw-light">Answer: {{ $fq->answers }}</p>
+                        <hr>
+                        <p class="text-end" style="font-size: 11px; color:#364d74;">{{ $fq->outcome_area }}</p>
                     </div>
+                </div>
 
             </div>
-            @endif
+
                 {{-- <div class="accordion-item mb-2">
                     <h2 class="accordion-header" id="headingOne{{ $fq->id }}">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -86,6 +85,8 @@
                     </div>
                 </div> --}}
             @endforeach
+
+
         </div>
     </div>
 </div>

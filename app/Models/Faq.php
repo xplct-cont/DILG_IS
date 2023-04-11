@@ -28,6 +28,9 @@ class Faq extends Model
         'created_at' => 'datetime',
 
     ];
+    public function program(){
+        return $this->belongsTo('App\Models\Program');
+    }
 
     public function scopeSearch($query, $terms){
         collect(explode(" " , $terms))->filter()->each(function($term) use($query){
