@@ -43,7 +43,6 @@ class Index extends Component
             $faq = collect();
         }
         return view('livewire.normal.faqs.index', compact('faq', 'programs'));
-        //return view('livewire.normal.faqs.index', $this->loadfaqs(), compact('programs'));
 
     }
 }

@@ -18,9 +18,11 @@ return new class extends Migration
             $table->longText('title')->nullable();
             $table->longText('link')->nullable();
             $table->string('outcome_area')->nullable();
-            $table->string('program')->nullable();
+            $table->unsignedBigInteger('program_id');
             $table->string('file')->nullable();
             $table->timestamps();
+
+            $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade');
         });
     }
 

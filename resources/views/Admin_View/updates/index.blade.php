@@ -10,26 +10,6 @@
 
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto mb-2 ">
-
-            {{-- <form action="{{ url('admin/news_updates') }}" method="GET" role="search">
-                    <div class="input-group">
-                        <a href="{{ url('admin/news_updates') }}" class=" mt-0">
-                            <span class="input-group-btn">
-                                <button class="btn btn-danger text-light" type="button" title="Refresh page">
-                                    <span class="fas fa-sync-alt"></span>
-                                </button>
-                            </span>
-                        </a>
-                        <input type="text" class="form-control mr-1" name="news_images" placeholder="Search..."
-                            id="news_images">
-
-                        <span class="input-group-btn mr-1 mt-0">
-                            <button class="btn btn-secondary text-light" type="submit" title="Search Name">
-                                <span class="fas fa-search"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form> --}}
             <form action="" method="GET">
                 <div class="d-flex justify-content-center">
                     <div class="input-group d-flex col-md-4">
@@ -77,27 +57,7 @@
                 </div>
             </form>
         </div>
-        {{-- <div class="mx-auto" style="width:300px;">
-            <form action="{{ url('admin/news_updates') }}" method="GET" role="search">
 
-                <div class="input-group">
-                    <span class="input-group-btn mr-1 mt-0">
-                        <button class="btn btn-secondary text-light" type="submit" title="Search Name">
-                            <span class="fas fa-search"></span>
-                        </button>
-                    </span>
-                    <input type="text" class="form-control mr-1" name="news_images" placeholder="Search..."
-                        id="news_images">
-                    <a href="{{ url('admin/news_updates') }}" class=" mt-0">
-                        <span class="input-group-btn">
-                            <button class="btn btn-danger text-light" type="button" title="Refresh page">
-                                <span class="fas fa-sync-alt"></span>
-                            </button>
-                        </span>
-                    </a>
-                </div>
-            </form>
-        </div> --}}
 
         <div class="d-flex justify-content-between mt-1">
             <!-- Button trigger modal -->

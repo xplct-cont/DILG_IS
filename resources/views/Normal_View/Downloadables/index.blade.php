@@ -5,6 +5,56 @@
     </div>
 
     <div class="ml-3 mr-3">
+        <div class="mx-auto mb-2 ">
+            <form action="" method="GET">
+                <div class="d-flex justify-content-center">
+                    <div class="input-group d-flex col-md-4">
+                        <a href="{{ url('/downloadable_files') }}" class=" mt-0">
+                            <span class="input-group-btn me-2">
+                                <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                    <span class="fas fa-sync-alt"></span>
+                                </button>
+                            </span>
+                        </a>
+                        <input type="text" class="form-control mr-1" name="search" placeholder="Search..."
+                            id="search" value="{{ Request::get('search') }}">
+                        <span class="input-group-btn mr-1 mt-0">
+                            <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                                <span class="fas fa-search"></span>
+                            </button>
+                        </span>
+                        {{-- <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn mr-1 mt-0">
+                                <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                                    <span class="fas fa-search"></span>
+                                </button>
+                            </span>
+                        </a> --}}
+                    </div>
+                </div>
+                <div class="input-group d-flex mx-auto mt-3 col-md-3">
+                    <a href="{{ url('/downloadable_files') }}" class=" mt-0">
+                        <span class="input-group-btn me-2">
+                            <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                <span class="fas fa-sync-alt"></span>
+                            </button>
+                        </span>
+                    </a>
+                    <select name="program_id" id="program_id" class="form-control">
+                        <option value="all">Search by Program</option>
+                        @foreach ($programs as $prog )
+                            <option value="{{$prog->id}}" {{ Request::get('program_id') == 'program_id' ? 'selected' : '' }}>{{$prog->title}}</option>
+                        @endforeach
+
+                    </select>
+                    <span class="input-group-btn mr-1 mt-0 ms-2">
+                        <button class="btn btn-secondary text-light" type="submit">
+                            Filter
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
         <div class="row">
             @foreach ($downloadables as $dw)
                 <div class="col-md-6">
@@ -50,7 +100,7 @@
 
                         <div class="card-body">
                             <p class="text-wrap" style="font-weight: 400; font-size: 18px;">Program: <span class="text-wrap"
-                                    style="font-size: 18px; font-weight: 500;">{{ $dw->program }}</span></p>
+                                    style="font-size: 18px; font-weight: 500;">{{ $dw->program->title }}</span></p>
                             <p class="text-wrap" style="font-weight: 400; font-size: 18px;">Outcome Area: <span
                                     class="text-wrap"
                                     style="font-size: 18px; font-weight: 500;">{{ $dw->outcome_area }}</span></p>
