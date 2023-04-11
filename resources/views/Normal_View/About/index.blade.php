@@ -21,7 +21,7 @@
         </div>
 
         <div class="col-md-11 mx-auto mt-3">
-            {{-- <h1 style="font-size: 30px;">Who we are</h1> --}}
+           
             <div class="">
                 <ul class="text-justify list-group">
 

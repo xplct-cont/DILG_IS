@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- <div class="text-center">
-        <img src='img/Bohol-Banner-2.jpg' width="1370" style="max-width: 100%; height:auto;">
-    </div> --}}
+   
     <div class="mx-auto text-center">
         <div class="">
             @csrf

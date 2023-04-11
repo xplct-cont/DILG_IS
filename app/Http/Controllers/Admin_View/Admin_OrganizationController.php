@@ -94,9 +94,6 @@ class Admin_OrganizationController extends Controller
     public function delete_org(Request $request, $id)
     {
 
-        // $ids = $request->ids;
-        // Org::whereIn('id', $ids)->delete();
-
             $orgs = Org::find($id);
             $destination = '/home/dilgboho/public_html/org_profile_images/'.$orgs->profile_img;
              if(File::exists($destination)){

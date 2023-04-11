@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin_View;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Downloadable;
 use File;
+use App\Models\Program;
+use App\Models\Downloadable;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 
 class Admin_DownloadablesController extends Controller
@@ -30,8 +31,8 @@ class Admin_DownloadablesController extends Controller
 
         ->orderBy("created_at","DESC")
         ->paginate(12);
-
-        return view('Admin_View.downloadables.downloadables', compact('downloadables'))
+        $programs = Program::all();
+        return view('Admin_View.downloadables.downloadables', compact('downloadables', 'programs'))
         ->with('i',(request()->input('page',1)-1)*5);
 
     }
@@ -45,7 +46,7 @@ class Admin_DownloadablesController extends Controller
         $downloadables->title = $request->input('title');
         $downloadables->link = $request->input('link');
         $downloadables->outcome_area = $request->input('outcome_area');
-        $downloadables->program = $request->input('program');
+        $downloadables->program_id = $request->input('program_id');
 
         if($request->hasFile('file')){
 
@@ -63,6 +64,18 @@ class Admin_DownloadablesController extends Controller
 
     }
 
+    public function storeProgram(Request $request){
+
+        $prog = new Program;
+
+        $prog->title = $request->input('title');
+
+        $prog->save();
+
+        return redirect()->back()->with('message', 'Program Added! You may now add your FAQ');
+
+    }
+
     public function update_downloadables(Request $request, $id){
 
         $request->validate([
@@ -73,7 +86,7 @@ class Admin_DownloadablesController extends Controller
         $downloadables->title = $request->input('title');
         $downloadables->link = $request->input('link');
         $downloadables->outcome_area = $request->input('outcome_area');
-        $downloadables->program = $request->input('program');
+        $downloadables->program_id = $request->input('program_id');
 
         if($request->hasFile('file')){
 

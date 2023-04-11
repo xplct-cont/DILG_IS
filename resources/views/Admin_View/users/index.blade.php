@@ -42,7 +42,6 @@
             </thead>
             <tbody class=" text-dark">
                 @foreach ($users as $user)
-                    {{-- @if ($user->id != 1) --}}
 
                     <tr>
                         <td><img src="{{ asset('user_profile_images/' . $user->profile_image) }}"
@@ -179,8 +178,7 @@
         </table>
     </div>
 
-    <!-- Modal -->
-    {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
             aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -257,16 +255,11 @@
                                                 <option value="{{ $role->name }}">{{ $role->name }}</option>
                                             @endforeach
                                         </select>
-                                        {{-- <input type="text" class="form-control" name="role" required> --}}
+
 
                                     </div>
                                 </div>
-                                {{-- <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="" style="color:dimgray">Profile Image:</label>
-                                        <input type="file" class="form-control" name="profile_img">
-                                    </div>
-                                </div> --}}
+                               
                             </div>
                         </div>
                 </div>

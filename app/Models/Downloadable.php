@@ -29,6 +29,10 @@ class Downloadable extends Model
         'created_at' => 'datetime',
 
     ];
+
+    public function program(){
+        return $this->belongsTo('App\Models\Program');
+    }
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

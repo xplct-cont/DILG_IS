@@ -29,17 +29,6 @@ class Admin_UpdateController extends Controller
             return $q->where('title', 'LIKE', '%'. $request->search . '%')
                     ->orWhere('caption', 'LIKE', '%'. $request->search . '%');
         })
-        // ->where([
-        //     ['created_at', '!=', null],
-        //     [function($query) use ($request){
-        //         if(($news_images = $request->news_images)){
-        //             $query->orWhere('title', 'LIKE', '%'. $news_images . '%')
-        //             ->orWhere('caption', 'LIKE', '%'. $news_images . '%')->get();
-
-        //         }
-        //     }]
-        //     ])
-
         ->orderBy("created_at","DESC")
         ->paginate(20);
 
@@ -71,7 +60,6 @@ class Admin_UpdateController extends Controller
         }
     }
 
-        // $img = Home_Image::find($id);
         $img->images = json_encode($data);
         $img->save();
         return redirect()->back()->with('message', 'Added Successfully : Waiting for Approval!');
@@ -81,7 +69,6 @@ class Admin_UpdateController extends Controller
     public function edit_updates(Request $request, $id){
         $img = Update::find($id);
 
-        // $img = new Update;
 
         $img->title = $request->input('title');
         $img->caption = $request->input('caption');

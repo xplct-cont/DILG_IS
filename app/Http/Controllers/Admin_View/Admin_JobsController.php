@@ -95,10 +95,6 @@ class Admin_JobsController extends Controller
 
     public function delete_jobs(Request $request, $id)
     {
-
-        // $ids = $request->ids;
-        // Job::whereIn('id', $ids)->delete();
-
             $admin_jobs = Job::find($id);
             $destination = '/home/dilgboho/public_html/hiring_images/'.$admin_jobs->hiring_img;
              if(File::exists($destination)){
