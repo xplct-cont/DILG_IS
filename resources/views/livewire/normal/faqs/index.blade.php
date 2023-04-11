@@ -77,6 +77,7 @@
                             <p class="fw-light">Answer: {{ $fq->answers }}</p>
                             <hr>
                             <p class="text-end" style="font-size: 11px; color:#364d74;">{{ $fq->outcome_area }}</p>
+                            <p class="text-start" style="font-size: 11px; color:#364d74;">{{ $fq->outcome_area }}</p>
                         </div>
                     </div>
                 </div>
