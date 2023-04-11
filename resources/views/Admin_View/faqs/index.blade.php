@@ -103,16 +103,6 @@
                                                         <option value="{{ $prog->id }}">{{ $prog->title }}</option>
                                                     @endforeach
                                                 </select>
-<<<<<<< HEAD
-                                                {{-- <input id="" type="text" class="form-control" required
-                                                    name="program"> --}}
-                                                <p>Not in the list?</p>
-                                                <button type="button" class="btn"
-                                                    style="background-color: #343a40; color:white;" data-toggle="modal"
-                                                    data-target="#Program">
-                                                    <span class="fas fa-plus-circle"></span> Add program
-                                                </button>
-=======
 
                                                 <a href="#" data-toggle="modal" data-target="#Program"
                                                     style="text-decoration: none; margin-top:10px;">
@@ -121,7 +111,6 @@
                                                     </p>
                                                 </a>
 
->>>>>>> 4b968ba71da0fb852f35452ce3772140efdb6938
                                             </div>
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Questions:</label>
