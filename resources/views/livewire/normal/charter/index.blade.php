@@ -5,7 +5,7 @@
         @foreach ($pdf_cit_charter as $pdf_cit)
             <div class="text-end">
                 <a class="btn mt-2 ml-3 mb-3" style="color:white; background-color:#234495; font-size: 13px;"
-                    href="{{ url('/download_pdf_cit_charter', $pdf_cit->file) }}"><span class=""
+                    href="{{ url('/download_pdf_citizens_charter', $pdf_cit->file) }}"><span class=""
                         style="font-size: 13px;"></span>Download PDF <span class="text-danger fas fa-file-pdf"></span></a>
             </div>
         @endforeach
