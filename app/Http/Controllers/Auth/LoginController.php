@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Auth; 
+use Auth;
 
 class LoginController extends Controller
 {
@@ -31,14 +31,12 @@ class LoginController extends Controller
      */
     // protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function redirectPath()
-     {   
+    public function redirectPath(){
          session()->flash('message', 'Welcome '  . Auth::user()->name .'!' );
-
          return $this->laravelRedirectPath();
     }
 
-    /**
+    /**1
      * Create a new controller instance.
      *
      * @return void
