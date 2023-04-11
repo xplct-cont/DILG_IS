@@ -40,7 +40,7 @@
                             wire:model.delay.300ms="program_id">
                             <option value="all">All Outcome Area</option>
                             @foreach ($programs as $prog)
-                                <option value="{{ $prog->id }}">{{ $prog->title }}
+                                <option value="{{ $prog->id ?? 'None'}}">{{ $prog->title ?? 'None' }}
                                 </option>
                             @endforeach
                         </select>
@@ -74,10 +74,11 @@
                     <div id="collapseOne{{ $fq->id }}" class="accordion-collapse collapse"
                         aria-labelledby="headingOne{{ $fq->id }}" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-wrap fw-light">
+                            <p class="text-end" style="font-size: 12px; color:#364d74;">{{ $fq->program->title ?? 'None' }}</p>
                             <p class="fw-light">Answer: {{ $fq->answers }}</p>
                             <hr>
-                            <p class="text-end" style="font-size: 11px; color:#234495;">{{ $fq->outcome_area }}</p>
-                            <p class="text-start" style="font-size: 11px; color:#234495;">{{ $fq->outcome_area }}</p>
+                            <p class="text-end" style="font-size: 11px; color:#364d74;">{{ $fq->outcome_area }}</p>
+
                         </div>
                     </div>
                 </div>
