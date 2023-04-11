@@ -61,7 +61,7 @@
 
                                         <select name="outcome_area" id="outcome_area" class="form-control"
                                             style="color:dimgray;" required>
-                                            <option selected>Select ...</option>
+                                            <option selected disabled></option>
                                             <option
                                                 value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
                                                 ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL
@@ -90,7 +90,7 @@
                                             <label for="" style="color:dimgray">Program</label>
                                             <select name="program_id" id="program_id" class="form-control"
                                                 style="color:dimgray;" required>
-                                                <option selected>Select ...</option>
+                                                <option selected disabled></option>
                                                 @foreach ($programs as $prog)
                                                     <option value="{{ $prog->id }}">{{ $prog->title  ?? 'None'}}</option>
                                                 @endforeach
