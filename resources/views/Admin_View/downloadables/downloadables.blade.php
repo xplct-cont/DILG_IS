@@ -92,7 +92,7 @@
                                                 style="color:dimgray;" required>
                                                 <option selected>Select ...</option>
                                                 @foreach ($programs as $prog)
-                                                    <option value="{{ $prog->id }}">{{ $prog->title }}</option>
+                                                    <option value="{{ $prog->id }}">{{ $prog->title  ?? 'None'}}</option>
                                                 @endforeach
 
                                             </select>
