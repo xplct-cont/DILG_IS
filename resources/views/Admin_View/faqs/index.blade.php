@@ -135,12 +135,11 @@
                         </div>
                         </form>
                     </div>
-
                 </div>
             </div>
             <div class="modal fade" id="Program" tabindex="-1" role="dialog" aria-labelledby="ProgramLabel"
                 aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
                         <div class="modal-header" style="background-color: #234495; color:white;">
                             <h5 class="modal-title" id="ProgramLabel">Adding Program</h5>
