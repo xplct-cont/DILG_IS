@@ -74,7 +74,7 @@
                     <div id="collapseOne{{ $fq->id }}" class="accordion-collapse collapse"
                         aria-labelledby="headingOne{{ $fq->id }}" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-wrap fw-light">
-                            <p class="text-end" style="font-size: 12px; color:#364d74;">{{ $fq->program->title ?? 'None' }}</p>
+                            <p class="text-end" style="font-size: 12px; color:#364d74; font-size: 12px; font-weight: 500;">{{ $fq->program->title ?? 'None' }}</p>
                             <p class="fw-light">Answer: {{ $fq->answers }}</p>
                             <hr>
                             <p class="text-end" style="font-size: 11px; color:#364d74;">{{ $fq->outcome_area }}</p>
