@@ -66,7 +66,7 @@
                     <h2 class="accordion-header" id="headingOne{{ $fq->id }}">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne{{ $fq->id }}" aria-expanded="true"
-                            aria-controls="collapseOne" style="background-color:#364d74; color:white">
+                            aria-controls="collapseOne" style="background-color:#234495; color:white">
                             <strong>{{ $fq->questions }}<strong>
                         </button>
                     </h2>
@@ -76,8 +76,8 @@
                         <div class="accordion-body text-wrap fw-light">
                             <p class="fw-light">Answer: {{ $fq->answers }}</p>
                             <hr>
-                            <p class="text-end" style="font-size: 11px; color:#364d74;">{{ $fq->outcome_area }}</p>
-                            <p class="text-start" style="font-size: 11px; color:#364d74;">{{ $fq->outcome_area }}</p>
+                            <p class="text-end" style="font-size: 11px; color:#234495;">{{ $fq->outcome_area }}</p>
+                            <p class="text-start" style="font-size: 11px; color:#234495;">{{ $fq->outcome_area }}</p>
                         </div>
                     </div>
                 </div>
