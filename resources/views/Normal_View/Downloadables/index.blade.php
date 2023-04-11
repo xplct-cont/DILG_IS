@@ -23,7 +23,7 @@
                                 <span class="fas fa-search"></span>
                             </button>
                         </span>
-                       
+
                     </div>
                 </div>
                 <div class="input-group d-flex mx-auto mt-3 col-md-3">
@@ -34,10 +34,11 @@
                             </button>
                         </span>
                     </a>
+
                     <select name="program_id" id="program_id" class="form-control">
                         <option value="all">Search by Program</option>
                         @foreach ($programs as $prog )
-                            <option value="{{$prog->id}}" {{ Request::get('program_id') == 'program_id' ? 'selected' : '' }}>{{$prog->title}}</option>
+                            <option value="{{$prog->id}}" {{ Request::get('program_id') == 'program_id' ? 'selected' : '' }}>{{$prog->title ?? 'None'}}</option>
                         @endforeach
 
                     </select>
