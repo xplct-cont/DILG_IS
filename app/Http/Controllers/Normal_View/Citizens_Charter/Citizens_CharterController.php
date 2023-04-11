@@ -21,9 +21,9 @@ class Citizens_CharterController extends Controller
     }
 
 
-    public function download_pdf_cit_charter( Request $request, $file){
+    public function download_pdf_citizens_charter( Request $request, $file){
 
-        response()->download('/home/dilgboho/public_html/pdf_cit_charter/' .$file);
+       return response()->download('/home/dilgboho/public_html/pdf_cit_charter/' .$file);
 
     }
 }

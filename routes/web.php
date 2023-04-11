@@ -163,7 +163,7 @@ Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'inde
 Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'])->name('/knowledge_materials');
 
 Route::get('/citizens_charter', [Citizens_CharterController::class, 'index'])->name('/citizens_charter');
-Route::get('/download_pdf_cit_charter/{file}', [Citizens_CharterController::class, 'download_pdf_cit_charter'])->name('download_pdf_cit_charter');
+Route::get('/download_pdf_citizens_charter/{file}', [Citizens_CharterController::class, 'download_pdf_citizens_charter'])->name('download_pdf_cit_charter');
 
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
