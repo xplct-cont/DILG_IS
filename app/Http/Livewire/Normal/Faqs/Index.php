@@ -10,6 +10,9 @@ class Index extends Component
 {
     public $search;
     public $questions, $answers, $program_id, $outcome = 'all';
+    public $faqs;
+
+
     public function loadfaqs(){
 
         $query = Faq::groupBy('program_id')
@@ -32,9 +35,15 @@ class Index extends Component
             $faq = $query->paginate(5);
             return compact('faq');
     }
+
+    public function mount()
+    {
+        $this->faqs = Faq::with('program')->get();
+    }
     public function render()
     {
-        return view('livewire.normal.faqs.index', $this->loadfaqs());
+        $faqs = Faq::with('program')->get();
+        return view('livewire.normal.faqs.index', compact($faqs) );
 
     }
 }

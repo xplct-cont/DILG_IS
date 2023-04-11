@@ -7,7 +7,12 @@
             <strong>{{ $message }}</strong>
         </div>
     @endif
-
+    @if ($message = Session::get('error'))
+        <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+            <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
 
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
@@ -92,25 +97,25 @@
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Program</label>
                                                 <select name="program_id" id="program_id" class="form-control"
-                                                style="color:dimgray;" required>
-                                                <option selected>Select ...</option>
-                                                    @foreach ($programs as $prog )
-                                                        <option value="{{$prog->id}}">{{$prog->title}}</option>
+                                                    style="color:dimgray;" required>
+                                                    <option selected>Select ...</option>
+                                                    @foreach ($programs as $prog)
+                                                        <option value="{{ $prog->id }}">{{ $prog->title }}</option>
                                                     @endforeach
-
                                                 </select>
                                                 {{-- <input id="" type="text" class="form-control" required
                                                     name="program"> --}}
-                                                    <p>Not in the list?</p>
-                                                    <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
-                                                        data-target="#Program">
-                                                        <span class="fas fa-plus-circle"></span> Add program
-                                                    </button>
+                                                <p>Not in the list?</p>
+                                                <button type="button" class="btn"
+                                                    style="background-color: #343a40; color:white;" data-toggle="modal"
+                                                    data-target="#Program">
+                                                    <span class="fas fa-plus-circle"></span> Add program
+                                                </button>
                                             </div>
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Questions:</label>
-                                                <textarea id="" type="text" class="form-control" title="" rows="5" required name="questions"
-                                                    placeholder="Write some questions..."></textarea>
+                                                <textarea id="" type="text" class="form-control" title="" rows="5" required
+                                                    name="questions" placeholder="Write some questions..."></textarea>
                                             </div>
                                         </div>
 

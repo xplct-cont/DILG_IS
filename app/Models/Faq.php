@@ -32,6 +32,7 @@ class Faq extends Model
         return $this->belongsTo('App\Models\Program');
     }
 
+
     public function scopeSearch($query, $terms){
         collect(explode(" " , $terms))->filter()->each(function($term) use($query){
             $term = '%'. $term . '%';
