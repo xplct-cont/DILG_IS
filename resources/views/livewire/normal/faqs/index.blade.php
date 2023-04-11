@@ -44,8 +44,7 @@
         </div>
         <div class="accordion" id="accordionExample">
             @csrf
-            @foreach ($faq as $fq)
-            @if ($fq->program == $fq->program)
+            @foreach ($faq as $faq => $fq)
             <div class="accordion-item mb-2">
                 <h2 class="accordion-header" id="headingOne{{ $fq->id }}">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -54,19 +53,19 @@
                         <strong>{{ $fq->program }}<strong>
                     </button>
                 </h2>
-
+                @foreach ($faqs as $item)
                     <div id="collapseOne{{ $fq->id }}" class="accordion-collapse collapse"
-                        aria-labelledby="headingOne{{ $fq->id }}" data-bs-parent="#accordionExample">
+                        aria-labelledby="headingOne{{ $fq->id}}" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-wrap fw-light">
-                            <h6>{{ $fq->questions }}<h6>
-                            <p class="fw-light">Answer: {{ $fq->answers }}</p>
+                            <h6>{{ $item->questions}}<h6>
+                            <p class="fw-light">Answer: {{ $item->answers }}</p>
                             <hr>
-                            <p class="text-end" style="font-size: 11px; color:#364d74;">{{ $fq->outcome_area }}</p>
+                            <p class="text-end" style="font-size: 11px; color:#364d74;">{{ $item->outcome_area }}</p>
                         </div>
                     </div>
-
+                @endforeach
             </div>
-            @endif
+
                 {{-- <div class="accordion-item mb-2">
                     <h2 class="accordion-header" id="headingOne{{ $fq->id }}">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -86,6 +85,8 @@
                     </div>
                 </div> --}}
             @endforeach
+
+
         </div>
     </div>
 </div>
