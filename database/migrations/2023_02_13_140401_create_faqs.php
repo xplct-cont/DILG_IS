@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
             $table->string('outcome_area')->nullable();
-            $table->string('program')->nullable();
+            $table->unsignedBigInteger('program_id');
             $table->longText('questions')->nullable();
             $table->longText('answers')->nullable();
             $table->timestamps();
+
+            $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade');
         });
     }
 

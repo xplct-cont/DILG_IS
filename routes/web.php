@@ -106,6 +106,7 @@ Route::put('/update-lgu/{id}', [Admin_LguController::class, 'update_lgu']);
 
 Route::get('/admin/faqs', [Admin_FaqsController::class, 'index'])->name('admin/faqs');
 Route::post('/add-faqs', [Admin_FaqsController::class, 'store']);
+Route::post('/add-programs', [Admin_FaqsController::class, 'storeProgram']);
 Route::get('/delete_faqs/{id}', [Admin_FaqsController::class, 'delete_faqs']);
 Route::put('/update-faqs/{id}', [Admin_FaqsController::class, 'update_faqs']);
 
