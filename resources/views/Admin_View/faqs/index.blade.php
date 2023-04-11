@@ -92,20 +92,21 @@
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Program</label>
                                                 <select name="program_id" id="program_id" class="form-control"
-                                                style="color:dimgray;" required>
-                                                <option selected>Select ...</option>
-                                                    @foreach ($programs as $prog )
-                                                        <option value="{{$prog->id}}">{{$prog->title}}</option>
+                                                    style="color:dimgray;" required>
+                                                    <option selected>Select ...</option>
+                                                    @foreach ($programs as $prog)
+                                                        <option value="{{ $prog->id }}">{{ $prog->title }}</option>
                                                     @endforeach
 
                                                 </select>
-                                                {{-- <input id="" type="text" class="form-control" required
-                                                    name="program"> --}}
-                                                    <p>Not in the list?</p>
-                                                    <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
-                                                        data-target="#Program">
-                                                        <span class="fas fa-plus-circle"></span> Add program
-                                                    </button>
+
+                                                <a href="#" data-toggle="modal" data-target="#Program"
+                                                    style="text-decoration: none; margin-top:10px;">
+                                                    <p class="text-danger" style="font-size: 16px;">&nbsp;Not in the list?
+                                                        <span style="color:#234495;">Click Here to Add Program.</span>
+                                                    </p>
+                                                </a>
+
                                             </div>
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Questions:</label>
