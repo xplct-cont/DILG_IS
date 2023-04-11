@@ -1,11 +1,14 @@
 @extends('Admin_View.layouts.app')
+
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-block mt-2">
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
+
+
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
             <form action="{{ url('admin/faqs') }}" method="GET" role="search">
@@ -48,7 +51,8 @@
                         </div>
                         <div class="modal-body">
 
-                            <form action="{{ url('/add-faqs') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('/add-faqs') }}" method="POST" enctype="multipart/form-data"
+                                id="add-form">
                                 @csrf
 
                                 <div class="container mx-auto">
@@ -86,6 +90,25 @@
                                             </div>
 
                                             <div class="form-group">
+                                                <label for="" style="color:dimgray">Program</label>
+                                                <select name="program_id" id="program_id" class="form-control"
+                                                    style="color:dimgray;" required>
+                                                    <option selected>Select ...</option>
+                                                    @foreach ($programs as $prog)
+                                                        <option value="{{ $prog->id }}">{{ $prog->title }}</option>
+                                                    @endforeach
+
+                                                </select>
+
+                                                <a href="#" data-toggle="modal" data-target="#Program"
+                                                    style="text-decoration: none; margin-top:10px;">
+                                                    <p class="text-danger" style="font-size: 16px;">&nbsp;Not in the list?
+                                                        <span style="color:#234495;">Click Here to Add Program.</span>
+                                                    </p>
+                                                </a>
+
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="" style="color:dimgray">Questions:</label>
                                                 <textarea id="" type="text" class="form-control" title="" rows="5" required name="questions"
                                                     placeholder="Write some questions..."></textarea>
@@ -101,22 +124,59 @@
                                 </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Submit</button>
+                            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span>
+                                Submit</button>
                         </div>
                         </form>
                     </div>
 
                 </div>
             </div>
-        </div>
+            <div class="modal fade" id="Program" tabindex="-1" role="dialog" aria-labelledby="ProgramLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #234495; color:white;">
+                            <h5 class="modal-title" id="ProgramLabel">Adding Program</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
 
+                            <form action="{{ url('/add-programs') }}" method="POST" enctype="multipart/form-data"
+                                id="add-form">
+                                @csrf
+
+                                <div class="container mx-auto">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="" style="color:dimgray">Program</label>
+                                                <input id="" type="text" class="form-control" required
+                                                    name="title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span>
+                                Submit</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="card mt-2">
 
             <div class="card-header d-flex justify-content-between">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link" href="{{ url('/faqs') }}"><span class="fas fa-question-circle"
-                        style="color:#234495;"></span> FAQ's </a></h1>
+                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link"
+                        href="{{ url('/faqs') }}"><span class="fas fa-question-circle" style="color:#234495;"></span>
+                        FAQ's </a></h1>
 
             </div>
             <div>
@@ -126,6 +186,7 @@
                         <tr>
                             <th scope="col">View</th>
                             <th scope="col">Outcome</th>
+                            <th scope="col">Program</th>
                             <th scope="col">Questions</th>
                             <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                 style="text-align: center">Answers</th>
@@ -141,6 +202,7 @@
                                         data-target="#faq_id{{ $faqs->id }}"><span
                                             class="text-white btn-success btn-sm">View</span></a></td>
                                 <td>{{ $faqs->outcome_area }}</td>
+                                <td>{{ $faqs->program->title }}</td>
                                 <td>{{ $faqs->questions }}</td>
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">{{ $faqs->answers }}</td>
@@ -159,7 +221,7 @@
                                             <div class="modal-body">
 
                                                 <form action="{{ url('update-faqs/' . $faqs->id) }}" method="POST"
-                                                    enctype="multipart/form-data">
+                                                    enctype="multipart/form-data" id="update-form">
                                                     @csrf
                                                     @method('PUT')
 
@@ -200,7 +262,13 @@
                                                                             GOVERNANCE</option>
                                                                     </select>
                                                                 </div>
-
+                                                                <div class="form-group">
+                                                                    <label for=""
+                                                                        style="color:dimgray">Program</label>
+                                                                    <input id="" type="text"
+                                                                        class="form-control" required name="program"
+                                                                        value="{{ $faqs->program }}">
+                                                                </div>
                                                                 <div class="form-group">
                                                                     <label for=""
                                                                         style="color:dimgray">Questions:</label>
@@ -252,7 +320,7 @@
                         <div class="modal-body">
 
                             <form action="{{ url('delete_faqs/' . $faqs->id) }}" method="GET"
-                                enctype="multipart/form-data">
+                                enctype="multipart/form-data" id="delete-form">
                                 @csrf
                                 @method('GET')
 
@@ -278,4 +346,65 @@
     <div class="d-flex justify-content-end mt-2">
         {{ $faq->onEachSide(1)->links() }}
     </div>
+
+
+    <!-- Loading GIF image -->
+    <div id="loading"
+        style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
+        <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
+    </div>
+
+
+    <script>
+        setTimeout(function() {
+            $(' .alert-dismissible').fadeOut('slow');
+        }, 1000);
+
+
+        const addform = document.getElementById('add-form');
+        const addloading = document.getElementById('loading');
+
+        addform.addEventListener('submit', () => {
+            addloading.style.display = 'block';
+        });
+
+        addform.addEventListener('load', () => {
+            addloading.style.display = 'none';
+        });
+
+        addform.addEventListener('error', () => {
+            addloading.style.display = 'none';
+        });
+
+
+        const updateform = document.getElementById('update-form');
+        const updateloading = document.getElementById('loading');
+
+        updateform.addEventListener('submit', () => {
+            updateloading.style.display = 'block';
+        });
+
+        updateform.addEventListener('load', () => {
+            updateloading.style.display = 'none';
+        });
+
+        updateform.addEventListener('error', () => {
+            updateloading.style.display = 'none';
+        });
+
+        const deleteform = document.getElementById('delete-form');
+        const deleteloading = document.getElementById('loading');
+
+        deleteform.addEventListener('submit', () => {
+            deleteloading.style.display = 'block';
+        });
+
+        deleteform.addEventListener('load', () => {
+            deleteloading.style.display = 'none';
+        });
+
+        deleteform.addEventListener('error', () => {
+            deleteloading.style.display = 'none';
+        });
+    </script>
 @endsection

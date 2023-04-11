@@ -23,8 +23,7 @@ class Admin_ProfileController extends Controller
     public function index()
     {
     
-            $pd_messages = Pd_Message::with(['user'])->get();
-
+        $pd_messages = Pd_Message::with(['user'])->get();
         return view('Admin_View.profile.profile', compact('pd_messages'));
     }
 
@@ -52,7 +51,6 @@ class Admin_ProfileController extends Controller
         $pd_messages->user_id = auth()->user()->id;
         $pd_messages->message = $request->input('message');
      
-       
     $pd_messages->update();
 
     return redirect()->back()->with('message', 'Updated Successfully!');

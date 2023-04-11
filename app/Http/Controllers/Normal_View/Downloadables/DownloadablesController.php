@@ -14,4 +14,10 @@ class DownloadablesController extends Controller
         $downloadables = DB::table('downloadables')->orderBy('created_at', 'DESC')->get();
         return view('Normal_View.Downloadables.index', compact('downloadables'));
     }
+
+    public function download_downloadables( Request $request, $file){
+
+        return response()->download('/home/dilgboho/public_html/downloadables/'.$file);
+        
+    }
 }

@@ -1,14 +1,83 @@
 @extends('Admin_View.layouts.app')
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-block mt-2">
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
 
+
     <div class="search" style="position:relative; top: 5px;">
-        <div class="mx-auto" style="width:300px;">
+        <div class="mx-auto mb-2 ">
+
+            {{-- <form action="{{ url('admin/news_updates') }}" method="GET" role="search">
+                    <div class="input-group">
+                        <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                    <span class="fas fa-sync-alt"></span>
+                                </button>
+                            </span>
+                        </a>
+                        <input type="text" class="form-control mr-1" name="news_images" placeholder="Search..."
+                            id="news_images">
+
+                        <span class="input-group-btn mr-1 mt-0">
+                            <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                                <span class="fas fa-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form> --}}
+            <form action="" method="GET">
+                <div class="d-flex justify-content-center">
+                    <div class="input-group d-flex col-md-4">
+                        <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn me-2">
+                                <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                    <span class="fas fa-sync-alt"></span>
+                                </button>
+                            </span>
+                        </a>
+                        <input type="text" class="form-control mr-1" name="search" placeholder="Search..."
+                            id="search" value="{{ Request::get('search') }}">
+                        <span class="input-group-btn mr-1 mt-0">
+                            <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                                <span class="fas fa-search"></span>
+                            </button>
+                        </span>
+                        {{-- <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                            <span class="input-group-btn mr-1 mt-0">
+                                <button class="btn btn-secondary text-light" type="submit" title="Search Name">
+                                    <span class="fas fa-search"></span>
+                                </button>
+                            </span>
+                        </a> --}}
+                    </div>
+                </div>
+                <div class="input-group d-flex mx-auto mt-3 col-md-3">
+                    <a href="{{ url('admin/news_updates') }}" class=" mt-0">
+                        <span class="input-group-btn me-2">
+                            <button class="btn btn-danger text-light" type="button" title="Refresh page">
+                                <span class="fas fa-sync-alt"></span>
+                            </button>
+                        </span>
+                    </a>
+                    <select name="status" id="status" class="form-control">
+                        <option value="">Filter by status</option>
+                        <option value="1" {{ Request::get('status') == '1' ? 'selected' : '' }}>Approved</option>
+                        <option value="0" {{ Request::get('status') == '0' ? 'selected' : '' }}>Pending</option>
+                    </select>
+                    <span class="input-group-btn mr-1 mt-0 ms-2">
+                        <button class="btn btn-secondary text-light" type="submit">
+                            Filter
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+        {{-- <div class="mx-auto" style="width:300px;">
             <form action="{{ url('admin/news_updates') }}" method="GET" role="search">
 
                 <div class="input-group">
@@ -28,7 +97,7 @@
                     </a>
                 </div>
             </form>
-        </div>
+        </div> --}}
 
         <div class="d-flex justify-content-between mt-1">
             <!-- Button trigger modal -->
@@ -76,22 +145,23 @@
                                 </table>
 
                                 <form action="{{ url('/add_images/' . $updates_img->id) }}" method="POST"
-                                    enctype="multipart/form-data">
+                                    enctype="multipart/form-data" id="upload-form">
                                     @csrf
                                     <div class="container mx-auto">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Upload Images (Max:3)</label>
-                                                    <input type="file" name="images[]" class="form-control" required
-                                                        multiple>
+                                                    <input type="file" name="images[]" class="form-control"
+                                                        id="news_cover_images" required multiple>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save
+                                <button type="submit" class="btn btn-success" id="news_cover_imagesSubmit-btn"><span
+                                        class="fas fa-save"></span> Save
                                     Changes</button>
                             </div>
                             </form>
@@ -117,7 +187,8 @@
                         </div>
                         <div class="modal-body">
 
-                            <form action="{{ url('/add-updates') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('/add-updates') }}" method="POST" enctype="multipart/form-data"
+                                id="add-form">
                                 @csrf
 
                                 <div class="container mx-auto">
@@ -137,9 +208,10 @@
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Upload Images (Max:3)</label>
-                                                <input type="file" class="form-control" name="images[]" required
-                                                    multiple>
+                                                <label for="" style="color:dimgray">Upload Images: <span
+                                                        class="text-danger">(Max: 5)</span></label>
+                                                <input type="file" class="form-control" name="images[]"
+                                                    id="news_updates_images" required multiple>
                                             </div>
 
                                         </div>
@@ -147,7 +219,8 @@
                                 </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success"><span class="fas fa-save"></span>
+                            <button type="submit" class="btn btn-success" id="news_updates_imagesSubmit-btn"><span
+                                    class="fas fa-save"></span>
                                 Submit</button>
                         </div>
                         </form>
@@ -177,7 +250,8 @@
                                 <th scope="col">Title</th>
                                 <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                     style="text-align: center">Caption</th>
-                                <th scope="col">Author</th>
+                                <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                    style="text-align: center">Author</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete
                                 </th>
@@ -204,7 +278,8 @@
                                     <td class="text-wrap d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
                                         style="text-align: center">{{ Illuminate\Support\Str::limit($news_img->caption, 50) }}
                                     </td>
-                                    <td class="text-wrap">{{ $news_img->user->name ?? 'User Removed' }}</td>
+                                    <td class="text-wrap  d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                        style="text-align: center">{{ $news_img->user->name ?? 'User Removed' }}</td>
 
 
                                     <td><a href="#" data-toggle="modal" id="news_edit_link" class="btn"
@@ -216,7 +291,7 @@
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header" style="background-color: #234495; color:white;">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Edit News</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit News & Updates</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -225,7 +300,7 @@
                                                 <div class="modal-body">
 
                                                     <form action="{{ url('edit_updates/' . $news_img->id) }}" method="POST"
-                                                        enctype="multipart/form-data">
+                                                        enctype="multipart/form-data" id="update-form">
                                                         @csrf
                                                         @method('PUT')
 
@@ -248,7 +323,8 @@
                                                                 <div class="col-md-8">
                                                                     <div class="form-group">
                                                                         <label for="" style="color:dimgray">Upload
-                                                                            Images (Max:3)</label>
+                                                                            Images: <span class="text-danger">(Max:
+                                                                                5)</span></label>
                                                                         <input type="file" class="form-control"
                                                                             name="images[]" multiple>
                                                                         <p class="mt-3 fw-light">Old photo(s):</p>
@@ -273,7 +349,7 @@
                                                         @if ($news_img->status == false)
                                                             <span>
                                                                 <form action="{{ url('/approve/' . $news_img->id) }}"
-                                                                    method="POST" class="d-inline-block">
+                                                                    method="POST" class="d-inline-block" id="upload-form">
                                                                     @csrf
                                                                     <button type="submit" class="btn btn-sm ml-2"
                                                                         style="background-color: #234495; color:white;">Approve
@@ -283,7 +359,7 @@
                                                         @elseif ($news_img->status == true)
                                                             <span>
                                                                 <form action="{{ url('/disapprove/' . $news_img->id) }}"
-                                                                    method="POST" class="d-inline-block">
+                                                                    method="POST" class="d-inline-block" id="upload-form">
                                                                     @csrf
                                                                     <button type="submit" class="btn btn-sm ml-2 btn-danger"
                                                                         style="color:white;">Discard ?</button>
@@ -318,7 +394,7 @@
                                                 <div class="modal-body">
 
                                                     <form action="{{ url('delete_updates/' . $news_img->id) }}"
-                                                        method="GET" enctype="multipart/form-data">
+                                                        method="GET" enctype="multipart/form-data" id="delete-form">
                                                         @csrf
                                                         @method('GET')
 
@@ -424,18 +500,18 @@
                                                                     <div class="col-md-8">
                                                                         <div class="form-group">
                                                                             <label for="" style="color:dimgray">Upload
-                                                                                Images (Max:3)</label>
+                                                                                Images: <span class="text-danger">(Max:
+                                                                                    5)</span></label>
                                                                             <input type="file" class="form-control"
                                                                                 name="images[]" multiple>
                                                                         </div>
-
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="submit" class="btn btn-success"><span
-                                                                class="fas fa-save"></span> Save changes</button>
+                                                                class="fas fa-save"></span> Savechanges</button>
                                                     </div>
                                                     </form>
                                                 </div>
@@ -490,6 +566,131 @@
             </div>
         </div>
         <div class="d-flex justify-content-end mt-2">
-            {{ $news_images->links() }}
+            {{ $news_images->onEachSide(-1)->links() }}
         </div>
+
+        <!-- Loading GIF image -->
+        <div id="loading"
+            style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
+            <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
+        </div>
+
+
+        <script>
+            setTimeout(function() {
+                $(' .alert-dismissible').fadeOut('slow');
+            }, 1000);
+
+
+            // Get the file input and submit button elements for news cover images
+            const newsCoverImagesInput = document.querySelector('#news_cover_images');
+            const newsCoverImagesSubmitButton = document.querySelector('#news_cover_imagesSubmit-btn');
+
+            // Disable the news cover images submit button on page load
+            newsCoverImagesSubmitButton.disabled = true;
+
+            // Listen for changes to the news cover images file input
+            newsCoverImagesInput.addEventListener('change', function() {
+                // Check if the news cover images file input has an error
+                if (this.files.length > 0 && !this.files[0].name.match(/\.(jpeg|png|jpg|gif|svg)$/i)) {
+                    // If the file extension is incorrect, disable the news cover images submit button
+                    newsCoverImagesSubmitButton.disabled = true;
+                    // Show an error message
+                    alert('Please select JPEG, PNG, JPG, GIF or SVG file');
+                } else {
+                    // If the file extension is correct, enable the news cover images submit button
+                    newsCoverImagesSubmitButton.disabled = false;
+                }
+            });
+
+
+            // Get the file input and submit button elements for news updates images
+            const newsUpdatesImagesInput = document.querySelector('#news_updates_images');
+            const newsUpdatesImagesSubmitButton = document.querySelector('#news_updates_imagesSubmit-btn');
+
+            // Disable the news updates images submit button on page load
+            newsUpdatesImagesSubmitButton.disabled = true;
+
+            // Listen for changes to the news updates images file input
+            newsUpdatesImagesInput.addEventListener('change', function() {
+                // Check if the news updates images file input has an error
+                if (this.files.length > 0 && !this.files[0].name.match(/\.(jpeg|png|jpg|gif|svg)$/i)) {
+                    // If the file extension is incorrect, disable the news updates images submit button
+                    newsUpdatesImagesSubmitButton.disabled = true;
+                    // Show an error message
+                    alert('Please select JPEG, PNG, JPG, GIF or SVG file');
+                } else {
+                    // If the file extension is correct, enable the news updates images submit button
+                    newsUpdatesImagesSubmitButton.disabled = false;
+                }
+            });
+
+
+            const form = document.getElementById('upload-form');
+            const loading = document.getElementById('loading');
+
+            form.addEventListener('submit', () => {
+                loading.style.display = 'block';
+            });
+
+            form.addEventListener('load', () => {
+                loading.style.display = 'none';
+            });
+
+            form.addEventListener('error', () => {
+                loading.style.display = 'none';
+            });
+
+
+
+            //FOR NEWS UPDATES
+
+            const addform = document.getElementById('add-form');
+            const addloading = document.getElementById('loading');
+
+            addform.addEventListener('submit', () => {
+                addloading.style.display = 'block';
+            });
+
+            addform.addEventListener('load', () => {
+                addloading.style.display = 'none';
+            });
+
+            addform.addEventListener('error', () => {
+                addloading.style.display = 'none';
+            });
+
+
+
+            const updateform = document.getElementById('update-form');
+            const updateloading = document.getElementById('loading');
+
+            updateform.addEventListener('submit', () => {
+                updateloading.style.display = 'block';
+            });
+
+            updateform.addEventListener('load', () => {
+                updateloading.style.display = 'none';
+            });
+
+            updateform.addEventListener('error', () => {
+                updateloading.style.display = 'none';
+            });
+
+
+            const deleteform = document.getElementById('delete-form');
+            const deleteloading = document.getElementById('loading');
+
+            deleteform.addEventListener('submit', () => {
+                deleteloading.style.display = 'block';
+            });
+
+            deleteform.addEventListener('load', () => {
+                deleteloading.style.display = 'none';
+            });
+
+            deleteform.addEventListener('error', () => {
+                deleteloading.style.display = 'none';
+            });
+        </script>
     @endsection

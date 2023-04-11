@@ -43,9 +43,16 @@ class Admin_Bohol_IssuancesController extends Controller
 
     public function store(Request $request){
 
-        $request->validate([
-            'file' => 'required|mimes:pdf|max:2048'
+        $checkPdf = $request->validate([
+            'file' => 'nullable|mimes:pdf',
+            'message' => 'You can only upload PDF files',
             ]);
+
+
+            // if(!$checkPdf){
+            //     return redirect()->back()->with('message', 'Wrong format must be PDF');
+            // }
+
             $issuances = new Bohol_Issuance;
 
             $issuances->outcome_area = $request->input('outcome_area');
@@ -78,7 +85,7 @@ class Admin_Bohol_IssuancesController extends Controller
     public function update_issuances(Request $request, $id){
 
         $request->validate([
-            'file' => 'required|mimes:pdf|max:2048'
+            'file' => 'nullable|mimes:pdf'
             ]);
             $issuances = Bohol_Issuance::find($id);
 

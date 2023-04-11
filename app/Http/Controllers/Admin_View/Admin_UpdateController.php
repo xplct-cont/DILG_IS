@@ -22,16 +22,23 @@ class Admin_UpdateController extends Controller
 
     public function index(Request $request){
         $updates_images = Updates_Image::all();
-        $news_images = Update::where([
-            ['created_at', '!=', null],
-            [function($query) use ($request){
-                if(($news_images = $request->news_images)){
-                    $query->orWhere('title', 'LIKE', '%'. $news_images . '%')
-                    ->orWhere('caption', 'LIKE', '%'. $news_images . '%')->get();
+        $news_images = Update::when($request->status != null, function($q) use ($request){
+            return $q->where('status', $request->status);
+        })
+        ->when($request->search != null, function($q) use ($request){
+            return $q->where('title', 'LIKE', '%'. $request->search . '%')
+                    ->orWhere('caption', 'LIKE', '%'. $request->search . '%');
+        })
+        // ->where([
+        //     ['created_at', '!=', null],
+        //     [function($query) use ($request){
+        //         if(($news_images = $request->news_images)){
+        //             $query->orWhere('title', 'LIKE', '%'. $news_images . '%')
+        //             ->orWhere('caption', 'LIKE', '%'. $news_images . '%')->get();
 
-                }
-            }]
-        ])
+        //         }
+        //     }]
+        //     ])
 
         ->orderBy("created_at","DESC")
         ->paginate(20);
@@ -51,7 +58,7 @@ class Admin_UpdateController extends Controller
         $img->user_id = auth()->user()->id;
 
         $this->validate($request, [
-            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         if ($request->hasFile('images')){
@@ -67,7 +74,7 @@ class Admin_UpdateController extends Controller
         // $img = Home_Image::find($id);
         $img->images = json_encode($data);
         $img->save();
-        return redirect()->back()->with('message', 'Added Successfully : (Pending) Waiting for Approval!');
+        return redirect()->back()->with('message', 'Added Successfully : Waiting for Approval!');
 
     }
 
@@ -81,7 +88,7 @@ class Admin_UpdateController extends Controller
         $img->user_id = auth()->user()->id;
 
         $this->validate($request, [
-            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         if ($request->hasFile('images')){
@@ -135,7 +142,7 @@ class Admin_UpdateController extends Controller
         $img = Updates_Image::find($id);
 
         $this->validate($request, [
-            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]);
         $images = json_decode($img->images,true);
         if (is_array($images) && !empty($images)){
@@ -179,7 +186,7 @@ class Admin_UpdateController extends Controller
         $news_updates->status = false;
         $news_updates->save();
 
-        return redirect()->back()->with('message', 'Discarded Successfully!');
+        return redirect()->back()->with('message', 'Disapproved Successfully!');
     }
 
 }

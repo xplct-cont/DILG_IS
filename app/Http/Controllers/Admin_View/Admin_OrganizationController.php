@@ -27,12 +27,10 @@ class Admin_OrganizationController extends Controller
                     ->orWhere('mid_initial', 'LIKE', '%'. $orgs . '%')
                     ->orWhere('lname', 'LIKE', '%'. $orgs . '%')
                     ->orWhere('position', 'LIKE', '%'. $orgs . '%')->get();
-    
-                    
                 }
             }]
         ])
-    
+
         ->orderBy("created_at","ASC")
         ->paginate(10);
 
@@ -41,9 +39,9 @@ class Admin_OrganizationController extends Controller
     }
 
     public function store(Request $request){
-        
+
         $orgs = new Org;
-       
+
         $orgs->fname = $request->input('fname');
         $orgs->mid_initial = $request->input('mid_initial');
         $orgs->lname = $request->input('lname');
@@ -56,13 +54,13 @@ class Admin_OrganizationController extends Controller
             $filename = time().'.'. $extention;
             Image::make($file)->save('/home/dilgboho/public_html/org_profile_images/'. $filename);
             $orgs->profile_img = $filename;
-          
+
           }
 
         $orgs->save();
 
         return redirect()->back()->with('message', 'Added Successfully!');
-     
+
     }
 
     public function update_org(Request $request, $id){
@@ -74,7 +72,7 @@ class Admin_OrganizationController extends Controller
         $orgs->position = $request->input('position');
 
         if($request->hasFile('profile_img')){
-      
+
             $destination = '/home/dilgboho/public_html/org_profile_images/'.$orgs->profile_img;
             if(File::exists($destination)){
                 File::delete($destination);
@@ -93,7 +91,7 @@ class Admin_OrganizationController extends Controller
 
     }
 
-    public function delete_org(Request $request, $id) 
+    public function delete_org(Request $request, $id)
     {
 
         // $ids = $request->ids;
@@ -105,7 +103,7 @@ class Admin_OrganizationController extends Controller
                  File::delete($destination);
              }
             $orgs->delete();
-           
+
         return redirect()->back()->with('message', 'Deleted Successfully!');
     }
 

@@ -16,6 +16,9 @@ class Downloadable extends Model
     [
         'title',
         'link',
+        'outcome_area',
+        'program',
+        'file'
 
     ];
 

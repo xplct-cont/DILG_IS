@@ -26,6 +26,10 @@ class Lgu extends Model
         'sb_member6',
         'sb_member7',
         'sb_member8',
+        'sb_member9',
+        'sb_member10',
+        'lb_pres',
+        'psk_pres'
 
     ];
 
@@ -56,7 +60,11 @@ class Lgu extends Model
                 ->orWhere('sb_member5', 'like', $term)
                 ->orWhere('sb_member6', 'like', $term)
                 ->orWhere('sb_member7', 'like', $term)
-                ->orWhere('sb_member8', 'like', $term);
+                ->orWhere('sb_member8', 'like', $term)
+                ->orWhere('sb_member9', 'like', $term)
+                ->orWhere('sb_member10', 'like', $term)
+                ->orWhere('lb_pres', 'like', $term)
+                ->orWhere('psk_pres', 'like', $term);
 
         });
     }
@@ -68,7 +76,10 @@ class Lgu extends Model
                     'vice_mayor','sb_member1',
                     'sb_member2','sb_member3',
                     'sb_member4','sb_member5',
-                    'sb_member6','sb_member7','sb_member8',])
+                    'sb_member6','sb_member7',
+                    'sb_member8','sb_member9',
+                    'sb_member10','lb_pres',
+                    'psk_pres',])
         ->setDescriptionForEvent(fn(string $eventName) => "A Municipal Official has been {$eventName}")
         ->logOnlyDirty();
     }

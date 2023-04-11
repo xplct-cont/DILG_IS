@@ -108,7 +108,7 @@
                                 Officials
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('lgu') }}">LGU's</a>
+                                <li><a class="dropdown-item" href="{{ url('lgus') }}">LGUs</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('provincial_officials') }}">Provincial
                                         Officials</a></li>
@@ -147,6 +147,8 @@
                                         href="https://dilg.gov.ph/issuances-archive/draft/">Draft Issuances</a></li>
                                 <li><a class="dropdown-item" target="_blank"
                                         href="https://dilg.gov.ph/issuances-archive/ra/">Republic Acts</a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://dilg.gov.ph/legal-opinions-archive/">Legal Opinions</a></li>
                             </ul>
                         </div>
 
@@ -156,7 +158,7 @@
                                 About
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/about_us') }}">About Us</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/organization') }}">Organizational
                                         Structure/PDMU</a></li>
                                 <li><a class="dropdown-item" href="{{ url('/field_officers') }}">Field Officers</a>
@@ -165,7 +167,7 @@
                                         Charter</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('/dilg_family') }}">DILG FAMILY</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/contacts') }}">Contact Information</a>
+                                <li><a class="dropdown-item" href="{{ url('/contact_information') }}">Contact Information</a>
                                 </li>
                             </ul>
                         </div>
@@ -178,6 +180,10 @@
                                 <li><a class="dropdown-item" target="_blank"
                                         href="https://subaybayan.dilg.gov.ph/projects/index?ProjectSearch%5BREGION_C%5D=07&ProjectSearch%5BPROVINCE_C%5D=012&ProjectSearch%5BCITYMUN_C%5D=&ProjectSearch%5Bbarangay%5D=&ProjectSearch%5BimageSelection%5D=&ProjectSearch%5BPROGRAM_C%5D=&ProjectSearch%5BPROJECT_TYPE%5D=&ProjectSearch%5BYEAR%5D=&ProjectSearch%5BSTATUS%5D=">Projects
                                     </a></li>
+                                <li><a class="dropdown-item" target="_blank"
+                                        href="https://fdpp.dilg.gov.ph/fdpp/report/index?_csrf-frontend=RBVssfr9QXZl60bNe0juzDQvRsKtxA-pS7A64znU1ugNUCqAvpV3IVCIFpQYGq38Umd29-isadsTglaWaL7moA%3D%3D&document_filter=&region_filter=07&province_filter=012&lgu_filter=&year_filter=">FDP
+                                        Portal
+                                    </a></li>
 
                             </ul>
                         </div>
@@ -187,47 +193,17 @@
                                 Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('/downloadables') }}">Downloadables</a>
+                                <li><a class="dropdown-item" href="{{ url('/downloadable_files') }}">Downloadables</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('/faqs') }}">FAQ's</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/jobs') }}">Job Vacancies</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/job_vacancies') }}">Job Vacancies</a></li>
                             </ul>
                         </div>
 
                         @guest
-                            {{-- @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">&nbsp;{{ __('Login') }} <span
-                                            class="fas fa-sign-in-alt"></span> </a>
-                                </li>
-                            @endif --}}
-
-                            {{-- @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif --}}
                         @else
-                            {{-- <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li> --}}
                         @endguest
+
                     </ul>
                 </div>
             </div>
@@ -257,20 +233,6 @@
                 </div>
 
 
-                {{-- <form action="">
-                    <div class="input-group mx-auto" style="width: 300px;">
-
-                        <input type="text" name="email" style="height: 30px;" class="form-control" required>
-                        <label for="" style="color:dimgray;">
-                            <button type="submit" class="btn btn-sm bg-dark " style="margin-left:1px;">
-                                <span class="" style="font-size: 12px; font-weight: 400;">EMAIL US</span>
-                            </button>
-                        </label>
-                    </div>
-                </form> --}}
-
-
-
                 <p class="text-center" style="font-size: 16px; font-weight: 400;">DILG FAMILY</p>
 
                 <div class="container d-flex justify-content-center">
@@ -292,7 +254,6 @@
             </div>
 
 
-
             <div class="bg"></div>
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
@@ -302,27 +263,15 @@
     <div class="" style=" padding: 20px; background-color:#efefef; color: #DCDCDC;">
         <footer class="sticky-footer">
             <div class="container">
-                <div class="col-md-12">
+                <div class="col-md-10 mx-auto">
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <p class="text-secondary" style="font-size: 12px; font-weight: 500;">REPUBLIC OF THE
                                 PHILIPPINES</p>
                             <img src="/img/govph-seal.jpg" style="height: 100px; width: 100px;" alt="">
-
                         </div>
 
-                        <div class="col-md-4 text-justify">
-                            <p class="text-secondary" style="font-size: 12px; font-weight: 500;">ABOUT GOVPH</p>
-                            <p class="text-secondary" style="font-size: 12px; font-weight: 300;">Learn more about the
-                                Philippine government, its structure, how government works and the people behind it.
-                                <br><br>
-                                <a href="https://www.gov.ph/" style="color:dimgray;">GOV.PH</a> <br>
-                                <a href="https://www.gov.ph/data" style="color: dimgray;"> Open Data Portal</a> <br>
-                                <a href="https://www.officialgazette.gov.ph/" style="color: dimgray;"> Official
-                                    Gazette</a>
-                            </p>
-                        </div>
-                        <div class="col-md-4 text-justify">
+                        <div class="col-md-4 text-center">
                             <p class="text-secondary" style="font-size: 12px; font-weight: 500;">
                                 GOVERNMENT LINKS</p>
                             <a href="https://president.gov.ph/" target="_blank">
@@ -360,14 +309,17 @@
                                 <p class="text-secondary"
                                     style="font-size: 12px; font-weight: 300; margin-top: -15px;">Sandiganbayan</p>
                             </a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="text-center">
+                                <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span>
+                                    {{ date('F d, Y') }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="text-center">
-                <p class="text-secondary" style="font-size: 12px;"><span>Current Date: </span> {{ date('F d, Y') }}
-                </p>
             </div>
 
 
@@ -375,7 +327,7 @@
                 <!-- Button trigger modal -->
 
                 <button type="button" class="btn btn-sm"
-                    style="background-color: #dddddd; color:rgb(70, 69, 69); font-size: 9px;" data-toggle="modal"
+                    style="background-color: #dddddd; color:rgb(70, 69, 69); font-size: 7px;" data-toggle="modal"
                     data-target=".bd-example-modal-sm">
                     Developers</button>
 
@@ -385,7 +337,7 @@
                     aria-labelledby="mySmallModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-sm rounded">
                         <div class="modal-content">
-                            <div class="modal-header bg-dark rounded">
+                            <div class="modal-header rounded" style="background-color: #234495;">
                                 <h1 class=""
                                     style="font-size: 18px; color:white; font-weight: 500; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
                                     Developers</h1>
@@ -421,18 +373,16 @@
                                 </div>
 
                                 <hr>
-                                <p class="text-center " style="font-size: 12px;"> Contact No: 09096027312</p>
+                                <p class="text-center mt-3" style="font-size: 12px;"> Contact No: 09096027312</p>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-
             <button onclick="topFunction()" id="myBtn" title="Go to top"
                 style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
-
-
 
 </body>
 <script></script>

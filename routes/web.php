@@ -68,6 +68,8 @@ Auth::routes(['register'=>false]);
 
 Route::get('/home', [Admin_HomeController::class, 'index'])->name('home');
 Route::post('/add_images_hm/{id}', [Admin_HomeController::class, 'store']);
+Route::put('/change_audio/{id}', [Admin_HomeController::class, 'change_audio']);
+
 
 Route::get('/admin/profile', [Admin_ProfileController::class, 'index'])->name('admin/profile');
 Route::put('/update-profile/{id}', [Admin_ProfileController::class, 'update_profile']);
@@ -80,6 +82,9 @@ Route::get('/admin/jobs', [Admin_JobsController::class, 'index'])->name('admin/j
 Route::post('/add-new-job', [Admin_JobsController::class, 'store']);
 Route::get('/delete_jobs/{id}', [Admin_JobsController::class, 'delete_jobs']);
 Route::put('/update_jobs/{id}', [Admin_JobsController::class, 'update_jobs']);
+
+Route::post('/available/{id}', [Admin_JobsController::class, 'available'])->name('available');
+Route::post('/filled_up/{id}', [Admin_JobsController::class, 'filled_up'])->name('filled_up');
 
 
 Route::group(['middleware' => ['role:Super-Admin|Admin']], function () {
@@ -101,6 +106,7 @@ Route::put('/update-lgu/{id}', [Admin_LguController::class, 'update_lgu']);
 
 Route::get('/admin/faqs', [Admin_FaqsController::class, 'index'])->name('admin/faqs');
 Route::post('/add-faqs', [Admin_FaqsController::class, 'store']);
+Route::post('/add-programs', [Admin_FaqsController::class, 'storeProgram']);
 Route::get('/delete_faqs/{id}', [Admin_FaqsController::class, 'delete_faqs']);
 Route::put('/update-faqs/{id}', [Admin_FaqsController::class, 'update_faqs']);
 
@@ -129,13 +135,17 @@ Route::post('/add-citizens_charter', [Admin_Citizens_CharterController::class, '
 Route::get('/delete_citizens_charter/{id}', [Admin_Citizens_CharterController::class, 'delete_citizens_charter']);
 Route::put('/update-citizens_charter/{id}', [Admin_Citizens_CharterController::class, 'update_citizens_charter']);
 
+Route::put('/change_pdf_cit_charter/{id}', [Admin_Citizens_CharterController::class, 'change_pdf_cit_charter']);
+
+
+
 });
 
 //Normal_View Routes
 Route::get('/provincial_director',[DirectorController::class, 'index'])->name('/provincial_director');
 
 Route::get('/dilg_family',[Attached_AgenciesController::class, 'index'])->name('/dilg_family');
-Route::get('/lgu',[LguController::class, 'index'])->name('/lgu');
+Route::get('/lgus',[LguController::class, 'index'])->name('/lgus');
 
 Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
 
@@ -143,14 +153,16 @@ Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->nam
 Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
 
-Route::get('/downloadables',[DownloadablesController::class, 'index'])->name('/downloadables');
+Route::get('/downloadable_files',[DownloadablesController::class, 'index'])->name('/downloadable_files');
+Route::get('/download_downloadables/{file}',[DownloadablesController::class, 'download_downloadables']);
+
 
 Route::get('/provincial_officials',[Provincial_OfficialsController::class, 'index'])->name('/provincial_officials');
 
 Route::get('/knowledge_materials',[Knowledge_MaterialsController::class, 'index'])->name('/knowledge_materials');
 
 Route::get('/citizens_charter', [Citizens_CharterController::class, 'index'])->name('/citizens_charter');
-Route::get('/export_citizes_charter_pdf', [Citizens_CharterController::class, 'export_citizes_charter_pdf'])->name('export_citizes_charter_pdf');
+Route::get('/download_pdf_cit_charter/{file}', [Citizens_CharterController::class, 'download_pdf_cit_charter'])->name('download_pdf_cit_charter');
 
 
 Route::post('/send-email', [ContactsController::class, 'sendEmail']);
@@ -187,9 +199,9 @@ Route::get('/admin/logs', [Admin_LogsController::class, 'index'])->name('admin/l
 
 
 //Normal_View Routes
-Route::get('/about', [AboutController::class, 'index'])->name('/about');
-Route::get('/jobs', [JobsController::class, 'index'])->name('/jobs');
-Route::get('/contacts', [ContactsController::class, 'index'])->name('/contacts');
+Route::get('/about_us', [AboutController::class, 'index'])->name('/about_us');
+Route::get('/job_vacancies', [JobsController::class, 'index'])->name('/job_vacancies');
+Route::get('/contact_information', [ContactsController::class, 'index'])->name('/contact_information');
 
 Route::get('/news_update', [UpdatesController::class, 'index'])->name('/news_update');
 

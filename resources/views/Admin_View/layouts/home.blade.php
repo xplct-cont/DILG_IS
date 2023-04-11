@@ -23,7 +23,8 @@
             <div class="modal-dialog modal-md" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                            <p style="font-size: 14px;"><span class="fas fa-exclamation-triangle text-warning" style="font-size: 13px;"></span> Note: Please use images with same size.</p>
+                        <p style="font-size: 14px;"><span class="fas fa-exclamation-triangle text-warning"
+                                style="font-size: 13px;"></span> Note: Please use images with same size.</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -53,21 +54,23 @@
                         </table>
 
                         <form action="{{ url('/add_images_hm/' . $home_img->id) }}" method="POST"
-                            enctype="multipart/form-data">
+                            enctype="multipart/form-data" id="image-form">
                             @csrf
                             <div class="container mx-auto">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Upload Images (Max:3)</label>
-                                            <input type="file" name="images[]" class="form-control" required multiple>
+                                            <input type="file" name="images[]" class="form-control" id="id_home_images"
+                                                required multiple>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save
+                        <button type="submit" class="btn btn-success" id="homeimagesSubmit-btn"><span
+                                class="fas fa-save"></span> Save
                             Changes</button>
                     </div>
                     </form>
@@ -76,6 +79,64 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Audio in About Page -->
+    <button type="button" class="btn btn-sm mb-3 ml-3 " style="background-color: #343a40; color:white; font-size: 12px;"
+        data-toggle="modal" data-target="#audioModal">
+        <span class="fas fa-plus-circle"></span> Change Audio in About Page
+    </button>
+
+    <div class="modal fade" id="audioModal" tabindex="-1" role="dialog" aria-labelledby="audioModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p style="font-size: 18px; font-weight: 500;">Change Audio</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    @foreach ($audio as $aud)
+                        <form action="{{ url('/change_audio/' . $aud->id) }}" method="POST" enctype="multipart/form-data"
+                            id="audio-form">
+                            @csrf
+                            @method('PUT')
+                            <div class="container mx-auto">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Upload Audio (Max:1 | Type: mp3, wav)</label>
+                                            <input type="file" name="file" class="form-control" id="file_audio"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    @endforeach
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" id="audioSubmit-btn" class="btn btn-success"><span class="fas fa-save"></span>
+                        Save
+                        Changes</button>
+
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Loading GIF image -->
+    <div id="loading"
+        style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
+        <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
+    </div>
+
 
     <!-- Main content -->
     <section class="content">
@@ -94,8 +155,9 @@
                         <div class="icon">
                             <i class="fas fa-newspaper text-secondary"></i>
                         </div>
-                        <a href="{{ route('admin/news_updates') }}" class="small-box-footer text-light" style="background-color: #234495;"><span
-                                class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('admin/news_updates') }}" class="small-box-footer text-light"
+                            style="background-color: #234495;"><span class="text-light">More info</span> <i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
@@ -130,9 +192,9 @@
                             <div class="icon">
                                 <i class="fas fa-users text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/organization') }}" class="small-box-footer" style="background-color: #234495;"
-                                style="color:whitesmoke;"><span class="text-light">More info</span> <i
-                                    class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('admin/organization') }}" class="small-box-footer"
+                                style="background-color: #234495;" style="color:whitesmoke;"><span class="text-light">More
+                                    info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -163,8 +225,8 @@
                             <div class="icon">
                                 <i class="fas fa-people-carry text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/field_officers') }}" class="small-box-footer " style="background-color: #234495;"
-                                style="">
+                            <a href="{{ route('admin/field_officers') }}" class="small-box-footer "
+                                style="background-color: #234495;" style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -180,7 +242,8 @@
                             <div class="icon">
                                 <i class="fas fa-question-circle text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/faqs') }}" class="small-box-footer " style="background-color: #234495;" style="">
+                            <a href="{{ route('admin/faqs') }}" class="small-box-footer " style="background-color: #234495;"
+                                style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -196,7 +259,8 @@
                             <div class="icon">
                                 <i class="fas fa-file text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/issuances') }}" class="small-box-footer " style="background-color: #234495;" style="">
+                            <a href="{{ route('admin/issuances') }}" class="small-box-footer "
+                                style="background-color: #234495;" style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -212,8 +276,8 @@
                             <div class="icon">
                                 <i class="fas fa-download text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/downloadables') }}" class="small-box-footer " style="background-color: #234495;"
-                                style="">
+                            <a href="{{ route('admin/downloadables') }}" class="small-box-footer "
+                                style="background-color: #234495;" style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -229,8 +293,8 @@
                             <div class="icon">
                                 <i class="fas fa-book-open text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/knowledge_materials') }}" class="small-box-footer " style="background-color: #234495;"
-                                style="">
+                            <a href="{{ route('admin/knowledge_materials') }}" class="small-box-footer "
+                                style="background-color: #234495;" style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -246,8 +310,8 @@
                             <div class="icon">
                                 <i class="fas fa-user-tie text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/provincial_officials') }}" class="small-box-footer " style="background-color: #234495;"
-                                style="">
+                            <a href="{{ route('admin/provincial_officials') }}" class="small-box-footer "
+                                style="background-color: #234495;" style="">
                                 <span class="text-light">More info</span> <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -278,8 +342,9 @@
                             <div class="icon">
                                 <i class="fas fa-users-slash text-secondary"></i>
                             </div>
-                            <a href="{{ route('admin/citizens_charter') }}" class="small-box-footer " style="background-color: #234495;"
-                                style="color:whitesmoke;"><span class="text-light">More info</span>
+                            <a href="{{ route('admin/citizens_charter') }}" class="small-box-footer "
+                                style="background-color: #234495;" style="color:whitesmoke;"><span class="text-light">More
+                                    info</span>
                                 <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -328,7 +393,83 @@
     <script>
         setTimeout(function() {
             $(' .alert-dismissible').fadeOut('slow');
-        }, 3000);
+        }, 1000);
+
+
+        // Get the file input and submit button elements for audio
+        const audioInput = document.querySelector('#file_audio');
+        const audioSubmitButton = document.querySelector('#audioSubmit-btn');
+
+        // Disable the audio submit button on page load
+        audioSubmitButton.disabled = true;
+
+        // Listen for changes to the audio file input
+        audioInput.addEventListener('change', function() {
+            // Check if the audio file input has an error
+            if (this.files.length > 0 && !this.files[0].name.match(/\.(mp3|wav)$/i)) {
+                // If the file extension is incorrect, disable the audio submit button
+                audioSubmitButton.disabled = true;
+                // Show an error message
+                alert('Please select MP3, or WAV file');
+            } else {
+                // If the file extension is correct, enable the audio submit button
+                audioSubmitButton.disabled = false;
+            }
+        });
+
+        // Get the file input and submit button elements for images
+        const imagesInput = document.querySelector('#id_home_images');
+        const imagesSubmitButton = document.querySelector('#homeimagesSubmit-btn');
+
+        // Disable the images submit button on page load
+        imagesSubmitButton.disabled = true;
+
+        // Listen for changes to the images file input
+        imagesInput.addEventListener('change', function() {
+            // Check if the images file input has an error
+            if (this.files.length > 0 && !this.files[0].name.match(/\.(jpeg|png|jpg|gif|svg)$/i)) {
+                // If the file extension is incorrect, disable the images submit button
+                imagesSubmitButton.disabled = true;
+                // Show an error message
+                alert('Please select JPEG, PNG, JPG, GIF or SVG file');
+            } else {
+                // If the file extension is correct, enable the images submit button
+                imagesSubmitButton.disabled = false;
+            }
+        });
+
+
+        const imageform = document.getElementById('image-form');
+        const imageloading = document.getElementById('loading');
+
+        imageform.addEventListener('submit', () => {
+            imageloading.style.display = 'block';
+        });
+
+        imageform.addEventListener('load', () => {
+            imageloading.style.display = 'none';
+        });
+
+        imageform.addEventListener('error', () => {
+            imageloading.style.display = 'none';
+        });
+
+
+
+        const audioform = document.getElementById('audio-form');
+        const audioloading = document.getElementById('loading');
+
+        audioform.addEventListener('submit', () => {
+            audioloading.style.display = 'block';
+        });
+
+        audioform.addEventListener('load', () => {
+            audioloading.style.display = 'none';
+        });
+
+        audioform.addEventListener('error', () => {
+            audioloading.style.display = 'none';
+        });
     </script>
 @endsection
 

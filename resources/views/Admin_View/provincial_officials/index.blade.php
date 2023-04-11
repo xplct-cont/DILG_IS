@@ -2,7 +2,7 @@
 
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-block mt-2">
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
@@ -52,7 +52,7 @@
                         <div class="modal-body">
 
                             <form action="{{ url('/add-provincial_officials') }}" method="POST"
-                                enctype="multipart/form-data">
+                                enctype="multipart/form-data" id="add-form">
                                 @csrf
 
                                 <div class="container mx-auto">
@@ -100,8 +100,9 @@
         <div class="elevation-1 p-3 rounded mt-2">
             <div class="card-header d-flex justify-content-between mb-1">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link" href="{{ url('provincial_officials') }}"><span class="fas fa-user-tie"
-                        style="color:#234495;"></span> PROVINCIAL OFFICIALS </a></h1>
+                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link"
+                        href="{{ url('provincial_officials') }}"><span class="fas fa-user-tie"
+                            style="color:#234495;"></span> PROVINCIAL OFFICIALS </a></h1>
             </div>
 
 
@@ -150,7 +151,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <form action="{{ url('update-provincial_officials/' . $prov_off->id) }}"
-                                                method="POST" enctype="multipart/form-data">
+                                                method="POST" enctype="multipart/form-data" id="update-form">
                                                 @csrf
                                                 @method('PUT')
 
@@ -183,7 +184,8 @@
                                                                 <label for="" style="color:dimgray">Profile
                                                                     Image:</label>
                                                                 <input type="file" class="form-control"
-                                                                    name="profile_image" value="{{$prov_off->profile_image}}">
+                                                                    name="profile_image"
+                                                                    value="{{ $prov_off->profile_image }}">
                                                             </div>
 
                                                         </div>
@@ -214,7 +216,8 @@
                             <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
                                 <a href="#" data-toggle="modal" id="provincial_officials_delete_link"
                                     class="btn" data-target="#delete_provincial_officials_id{{ $prov_off->id }}"><span
-                                        class="text-danger fas fa-trash-alt"></span></a></td>
+                                        class="text-danger fas fa-trash-alt"></span></a>
+                            </td>
 
                             <div class="modal fade" id="delete_provincial_officials_id{{ $prov_off->id }}"
                                 tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -232,7 +235,7 @@
                                         <div class="modal-body">
 
                                             <form action="{{ url('delete_provincial_officials/' . $prov_off->id) }}"
-                                                method="GET" enctype="multipart/form-data">
+                                                method="GET" enctype="multipart/form-data" id="delete-form">
                                                 @csrf
                                                 @method('GET')
 
@@ -256,4 +259,65 @@
         <div class="d-flex justify-content-end mt-2">
             {{ $prov_officials->links() }}
         </div>
+
+
+        <!-- Loading GIF image -->
+        <div id="loading"
+            style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
+            <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
+        </div>
+
+
+        <script>
+            setTimeout(function() {
+                $(' .alert-dismissible').fadeOut('slow');
+            }, 1000);
+
+
+            const addform = document.getElementById('add-form');
+            const addloading = document.getElementById('loading');
+
+            addform.addEventListener('submit', () => {
+                addloading.style.display = 'block';
+            });
+
+            addform.addEventListener('load', () => {
+                addloading.style.display = 'none';
+            });
+
+            addform.addEventListener('error', () => {
+                addloading.style.display = 'none';
+            });
+
+
+            const updateform = document.getElementById('update-form');
+            const updateloading = document.getElementById('loading');
+
+            updateform.addEventListener('submit', () => {
+                updateloading.style.display = 'block';
+            });
+
+            updateform.addEventListener('load', () => {
+                updateloading.style.display = 'none';
+            });
+
+            updateform.addEventListener('error', () => {
+                updateloading.style.display = 'none';
+            });
+
+            const deleteform = document.getElementById('delete-form');
+            const deleteloading = document.getElementById('loading');
+
+            deleteform.addEventListener('submit', () => {
+                deleteloading.style.display = 'block';
+            });
+
+            deleteform.addEventListener('load', () => {
+                deleteloading.style.display = 'none';
+            });
+
+            deleteform.addEventListener('error', () => {
+                deleteloading.style.display = 'none';
+            });
+        </script>
     @endsection

@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\RolesSeeder;
 use Database\Seeders\ProgramSeeder;
 use Database\Seeders\UpdatesImageSeeder;
+use Database\Seeders\AudioSeeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,10 +27,14 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(MunicipalitySeeder::class);
-        $this->call(ProgramSeeder::class);
+        //$this->call(ProgramSeeder::class);
         $this->call(HomeImageSliderSeeder::class);
         //$this->call(RolesSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(UpdatesImageSeeder::class);
+        $this->call(PdfCitCharterSeeder::class);
+        $this->call(AudioSeeder::class);
+
+
     }
 }

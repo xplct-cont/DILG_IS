@@ -2,11 +2,12 @@
 
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-block mt-2">
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
+
 
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
@@ -49,7 +50,8 @@
                         </div>
                         <div class="modal-body">
 
-                            <form action="{{ url('/add-lgu') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('/add-lgu') }}" method="POST" enctype="multipart/form-data"
+                                id="add-form">
                                 @csrf
 
                                 <div class="container mx-auto">
@@ -144,6 +146,19 @@
                                                 <input type="text" class="form-control" name="sb_member10">
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="" style="color:dimgray">Liga ng mga Brgy.
+                                                    President:</label>
+                                                <input type="text" class="form-control" name="lb_pres">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="" style="color:dimgray">PSK President:</label>
+                                                <input type="text" class="form-control" name="psk_pres">
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -163,7 +178,7 @@
             <div class="card-header d-flex justify-content-between mb-1">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
                 <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link"
-                        href="{{ url('lgu') }}"><span class="fas fa-city" style="color:#234495;"></span> LGU's </a>
+                        href="{{ url('lgus') }}"><span class="fas fa-city" style="color:#234495;"></span> LGUs </a>
                 </h1>
             </div>
 
@@ -206,7 +221,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <form action="{{ url('update-lgu/' . $lgu_member->id) }}" method="POST"
-                                                enctype="multipart/form-data">
+                                                enctype="multipart/form-data" id="update-form">
                                                 @csrf
                                                 @method('PUT')
 
@@ -329,10 +344,25 @@
                                                                     value="{{ $lgu_member->sb_member10 }}">
                                                             </div>
                                                         </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="" style="color:dimgray">Liga ng mga
+                                                                    Brgy. President:</label>
+                                                                <input type="text" class="form-control" name="lb_pres"
+                                                                    value="{{ $lgu_member->lb_pres }}">
+                                                            </div>
+                                                        </div>
 
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="" style="color:dimgray">PSK
+                                                                    President:</label>
+                                                                <input type="text" class="form-control"
+                                                                    name="psk_pres" value="{{ $lgu_member->psk_pres }}">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-
                                         </div>
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-success"><span
@@ -366,7 +396,7 @@
                                         <div class="modal-body">
 
                                             <form action="{{ url('delete_lgu/' . $lgu_member->id) }}" method="GET"
-                                                enctype="multipart/form-data">
+                                                enctype="multipart/form-data" id="delete-form">
                                                 @csrf
                                                 @method('GET')
 
@@ -389,4 +419,64 @@
         <div class="d-flex justify-content-end mt-2">
             {{ $lgus->onEachSide(1)->links() }}
         </div>
+
+        <!-- Loading GIF image -->
+        <div id="loading"
+            style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
+            <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
+        </div>
+
+
+        <script>
+            setTimeout(function() {
+                $(' .alert-dismissible').fadeOut('slow');
+            }, 1000);
+
+
+            const addform = document.getElementById('add-form');
+            const addloading = document.getElementById('loading');
+
+            addform.addEventListener('submit', () => {
+                addloading.style.display = 'block';
+            });
+
+            addform.addEventListener('load', () => {
+                addloading.style.display = 'none';
+            });
+
+            addform.addEventListener('error', () => {
+                addloading.style.display = 'none';
+            });
+
+
+            const updateform = document.getElementById('update-form');
+            const updateloading = document.getElementById('loading');
+
+            updateform.addEventListener('submit', () => {
+                updateloading.style.display = 'block';
+            });
+
+            updateform.addEventListener('load', () => {
+                updateloading.style.display = 'none';
+            });
+
+            updateform.addEventListener('error', () => {
+                updateloading.style.display = 'none';
+            });
+
+            const deleteform = document.getElementById('delete-form');
+            const deleteloading = document.getElementById('loading');
+
+            deleteform.addEventListener('submit', () => {
+                deleteloading.style.display = 'block';
+            });
+
+            deleteform.addEventListener('load', () => {
+                deleteloading.style.display = 'none';
+            });
+
+            deleteform.addEventListener('error', () => {
+                deleteloading.style.display = 'none';
+            });
+        </script>
     @endsection

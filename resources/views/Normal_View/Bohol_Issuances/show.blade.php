@@ -5,7 +5,7 @@
             <a class="p-4" style="color:#002C76; text-decoration:none;" href="{{ url('/latest_issuances') }}"><span
                     class="fas fa-arrow-left" style="color:#002C76;"></span> Back</a>
         </div>
-        <div class="col-md-11 mx-auto">
+        <div class="col-md-9 mx-auto">
             <div class="card elevation-4">
                 @csrf
                 <div class="card-header-sm" style="background-color: #234495; color:white;">
@@ -15,7 +15,7 @@
                     <p class="text-wrap text-center" style="font-weight: 500; font-size: 15px; color: rgb(77, 77, 77);">
                         {{ $b_issuance->outcome_area }}</p>
                     <hr>
-                    <p class="text-wrap text-center" style="font-weight: 500; font-size: 23px; color: rgb(77, 77, 77);">
+                    <p class="text-wrap text-center" style="font-weight: 500; font-size: 18px; color: rgb(77, 77, 77);">
                         {{ $b_issuance->title }}</p>
                     <p class="text-start" style="font-size: 15px; color:rgb(77, 77, 77);">
                         {{ Carbon\Carbon::parse($b_issuance->date)->format('F d, Y') }}</p>
@@ -29,7 +29,7 @@
                     <div class="mx-auto text-center">
 
                         <object data="{{ asset('issuance_files/' . $b_issuance->file) }}#toolbar=0" type="application/pdf"
-                            width="100%" height="600"></object>
+                            width="100%" height="700"></object>
                     </div>
 
                     <p class="text-wrap mt-3" style="color:dimgray;">

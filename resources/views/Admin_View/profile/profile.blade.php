@@ -2,11 +2,12 @@
 
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-block mt-2">
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
+
     <h1 class="text-center mt-2" style="font-size: 30px; color:dimgray; font-weight: 450;">{{ Auth::user()->position }}
         Profile</h1>
     <hr>
@@ -122,4 +123,10 @@
     </div>
     </div>
     </div>
+
+    <script>
+        setTimeout(function() {
+            $(' .alert-dismissible').fadeOut('slow');
+        }, 1000);
+    </script>
 @endsection

@@ -48,12 +48,13 @@ class Admin_JobsController extends Controller
         $admin_jobs->details = $request->input('details');
         $admin_jobs->user_id = auth()->user()->id;
 
+
         if($request->hasFile('hiring_img')){
 
             $file = $request->file('hiring_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save('/home/dilgboho/public_html/hiring_images/' . $filename);
+            Image::make($file)->save('/home/dilgboho/public_html/hiring_images/'. $filename);
             $admin_jobs->hiring_img = $filename;
 
           }
@@ -106,6 +107,24 @@ class Admin_JobsController extends Controller
             $admin_jobs->delete();
 
         return redirect()->back()->with('message', 'Deleted Successfully!');
+    }
+
+    public function available($id)
+    {
+        $admin_jobs = Job::find($id);
+        $admin_jobs->remarks = 'Available';
+        $admin_jobs->save();
+
+        return redirect()->back()->with('message', 'Changed to Available!');
+    }
+
+    public function filled_up($id)
+    {
+        $admin_jobs = Job::find($id);
+        $admin_jobs->remarks = 'Filled Up';
+        $admin_jobs->save();
+
+        return redirect()->back()->with('message', 'Changed to Filled Up!');
     }
 
 }

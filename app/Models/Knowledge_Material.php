@@ -16,6 +16,7 @@ class Knowledge_Material extends Model
     [
         'title',
         'link',
+        'date'
 
     ];
 
@@ -24,6 +25,7 @@ class Knowledge_Material extends Model
 
     protected $casts = [
         'created_at' => 'datetime',
+        'date' => 'date',
 
     ];
 
