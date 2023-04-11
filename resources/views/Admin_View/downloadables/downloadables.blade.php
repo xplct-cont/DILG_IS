@@ -92,7 +92,8 @@
                                                 style="color:dimgray;" required>
                                                 <option selected disabled></option>
                                                 @foreach ($programs as $prog)
-                                                    <option value="{{ $prog->id }}">{{ $prog->title  ?? 'None'}}</option>
+                                                    <option value="{{ $prog->id }}">{{ $prog->title ?? 'None' }}
+                                                    </option>
                                                 @endforeach
 
                                             </select>
@@ -278,7 +279,7 @@
                                                                         {{ $dw->program->title ?? 'None' }}</option>
                                                                     @foreach ($programs as $prog)
                                                                         <option value="{{ $prog->id }}">
-                                                                            {{ $prog->title ?? 'None'}}</option>
+                                                                            {{ $prog->title ?? 'None' }}</option>
                                                                     @endforeach
 
                                                                 </select>
@@ -295,7 +296,7 @@
                                                             <div class="form-group">
                                                                 <label for="" style="color:dimgray">Title:</label>
                                                                 <input type="text" class="form-control" name="title"
-                                                                    value="{{ $dw->title ?? 'None'}}" required>
+                                                                    value="{{ $dw->title ?? 'None' }}" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
