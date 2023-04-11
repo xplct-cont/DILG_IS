@@ -9,7 +9,7 @@
                         @csrf
                         <label for="">Outcome Area/Program:</label>
                         <select name="outcome_area" id="outcome_area" class="form-select" style="color:dimgray;"
-                            wire:model="outcome">
+                            wire:model.delay.400ms="outcome">
                             <option value="all">All Outcome Area</option>
                             <option value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
                                 ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE
@@ -28,19 +28,25 @@
                                 INTERNAL
                                 GOVERNANCE</option>
                         </select>
+                        <div wire:loading>
+                            Searching...
+                        </div>
 
                     </div>
                     <div class="col-md-6 mt-3">
                         @csrf
                         <label for="">Program:</label>
                         <select name="program_id" id="program_id" class="form-select" style="color:dimgray;"
-                            wire:model="program_id">
+                            wire:model.delay.300ms="program_id">
                             <option value="all">All Outcome Area</option>
                             @foreach ($programs as $prog)
                                 <option value="{{ $prog->id }}">{{ $prog->title }}
                                 </option>
                             @endforeach
                         </select>
+                        <div wire:loading>
+                            Searching...
+                        </div>
                     </div>
                     <div class="col-md-6 mt-5">
                         <input type="search" style="border-radius: 20px;" wire:model.delay.400ms="search"
@@ -55,9 +61,6 @@
 
         <div class="accordion" id="accordionExample">
             @csrf
-            @if ($faq->count() > 0)
-                <h2>Search Results:</h2>
-            @endif
             @foreach ($faq as $fq)
                 <div class="accordion-item mb-2">
                     <h2 class="accordion-header" id="headingOne{{ $fq->id }}">
