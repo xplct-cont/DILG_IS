@@ -89,20 +89,20 @@
                                         <div class="form-group">
                                             <label for="" style="color:dimgray">Program</label>
                                             <select name="program_id" id="program_id" class="form-control"
-                                            style="color:dimgray;" required>
-                                            <option selected>Select ...</option>
-                                                @foreach ($programs as $prog )
-                                                    <option value="{{$prog->id}}">{{$prog->title}}</option>
+                                                style="color:dimgray;" required>
+                                                <option selected>Select ...</option>
+                                                @foreach ($programs as $prog)
+                                                    <option value="{{ $prog->id }}">{{ $prog->title }}</option>
                                                 @endforeach
 
                                             </select>
-                                            {{-- <input id="" type="text" class="form-control" required
-                                                name="program"> --}}
-                                                <p>Not in the list?</p>
-                                                <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
-                                                    data-target="#Program">
-                                                    <span class="fas fa-plus-circle"></span> Add program
-                                                </button>
+                                            <a href="#" data-toggle="modal" data-target="#Program"
+                                                style="text-decoration: none; margin-top:10px;">
+                                                <p class="text-danger" style="font-size: 16px;">&nbsp;Not in the list?
+                                                    <span style="color:#234495;">Click Here to Add Program.</span>
+                                                </p>
+                                            </a>
+
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -145,7 +145,7 @@
 
             <div class="modal fade" id="Program" tabindex="-1" role="dialog" aria-labelledby="ProgramLabel"
                 aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
                         <div class="modal-header" style="background-color: #234495; color:white;">
                             <h5 class="modal-title" id="ProgramLabel">Adding Program</h5>
@@ -172,7 +172,8 @@
                                 </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="exampleModal" data-bs-dismiss="modal"><span class="fas fa-save"></span>
+                            <button type="submit" class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="exampleModal" data-bs-dismiss="modal"><span class="fas fa-save"></span>
                                 Submit</button>
                         </div>
                         </form>
@@ -269,20 +270,24 @@
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="" style="color:dimgray">Program</label>
-                                                                <select name="program_id" id="program_id" class="form-control"
-                                                                style="color:dimgray;" required>
-                                                                <option value="{{ $dw->program_id }}" selected>{{ $dw->program->title }}</option>
-                                                                    @foreach ($programs as $prog )
-                                                                        <option value="{{$prog->id}}">{{$prog->title}}</option>
+                                                                <label for=""
+                                                                    style="color:dimgray">Program</label>
+                                                                <select name="program_id" id="program_id"
+                                                                    class="form-control" style="color:dimgray;" required>
+                                                                    <option value="{{ $dw->program_id }}" selected>
+                                                                        {{ $dw->program->title }}</option>
+                                                                    @foreach ($programs as $prog)
+                                                                        <option value="{{ $prog->id }}">
+                                                                            {{ $prog->title }}</option>
                                                                     @endforeach
 
                                                                 </select>
-                                                                    <p>Not in the list?</p>
-                                                                    <button type="button" class="btn" style="background-color: #343a40; color:white;" data-toggle="modal"
-                                                                        data-target="#Program">
-                                                                        <span class="fas fa-plus-circle"></span> Add program
-                                                                    </button>
+                                                                <p>Not in the list?</p>
+                                                                <button type="button" class="btn"
+                                                                    style="background-color: #343a40; color:white;"
+                                                                    data-toggle="modal" data-target="#Program">
+                                                                    <span class="fas fa-plus-circle"></span> Add program
+                                                                </button>
                                                             </div>
 
                                                         </div>
