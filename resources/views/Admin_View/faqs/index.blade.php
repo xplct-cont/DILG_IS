@@ -8,7 +8,6 @@
         </div>
     @endif
 
-
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
             <form action="{{ url('admin/faqs') }}" method="GET" role="search">
@@ -90,7 +89,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Program</label>
+                                                <label for="" style="color:dimgray">Program:</label>
                                                 <select name="program_id" id="program_id" class="form-control"
                                                     style="color:dimgray;" required>
                                                     <option selected>Select ...</option>
@@ -152,7 +151,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Program</label>
+                                                <label for="" style="color:dimgray">Program:</label>
                                                 <input id="" type="text" class="form-control" required
                                                     name="title">
                                             </div>
@@ -264,7 +263,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for=""
-                                                                        style="color:dimgray">Program</label>
+                                                                        style="color:dimgray">Program:</label>
                                                                     <input id="" type="text"
                                                                         class="form-control" required name="program"
                                                                         value="{{ $faqs->program }}">

@@ -8,7 +8,7 @@
     @endif
 
     @error('file')
-        <div class="alert alert-danger alert-block mt-2">
+        <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
