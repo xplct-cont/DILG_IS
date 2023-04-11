@@ -33,13 +33,7 @@ class Index extends Component
     }
     public function render()
     {
-        $field_officersfilter = Field_Officer::where('municipality_id', 'like', '%'.$this->search.'%')
-            ->where('fname', 'like', '%'.$this->search.'%')
-            ->orWhere('lname', 'like', '%'.$this->search.'%')
-            ->orWhere('cluster', 'like', '%'.$this->search.'%')
-            ->orderBy('municipality_id', 'asc')->get();
-        return view('livewire.normal.fieldofficers.index',
-        ['field_officersfilter' => $field_officersfilter, 'municipalities' => Municipality::all()],
-        $this->loadOfficers());
+        $municipalities = Municipality::orderBy('municipality', 'ASC')->get();
+        return view('livewire.normal.fieldofficers.index', compact('municipalities'), $this->loadOfficers());
     }
 }
