@@ -8,6 +8,14 @@
         </div>
     @endif
 
+    @if ($message = Session::get('error'))
+        <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+            <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
+
+
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
             <form action="{{ url('admin/faqs') }}" method="GET" role="search">
@@ -96,7 +104,6 @@
                                                     @foreach ($programs as $prog)
                                                         <option value="{{ $prog->id }}">{{ $prog->title }}</option>
                                                     @endforeach
-
                                                 </select>
 
                                                 <a href="#" data-toggle="modal" data-target="#Program"
@@ -109,8 +116,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="" style="color:dimgray">Questions:</label>
-                                                <textarea id="" type="text" class="form-control" title="" rows="5" required name="questions"
-                                                    placeholder="Write some questions..."></textarea>
+                                                <textarea id="" type="text" class="form-control" title="" rows="5" required
+                                                    name="questions" placeholder="Write some questions..."></textarea>
                                             </div>
                                         </div>
 

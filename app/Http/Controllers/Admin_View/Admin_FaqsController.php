@@ -62,9 +62,18 @@ class Admin_FaqsController extends Controller
         $prog->title = $request->input('title');
         //add validation that if ni exist siya
 
-        $prog->save();
+        if(Program::where('title',$prog->title)->exists()){
+           return redirect()->back()->with('error','Program already exist!');
+        }else{
+            $prog->save();
+            return redirect()->back()->with('message', 'Program Added! You may now add your FAQ');
 
-        return redirect()->back()->with('message', 'Program Added! You may now add your FAQ');
+        }
+
+
+
+
+
 
     }
 

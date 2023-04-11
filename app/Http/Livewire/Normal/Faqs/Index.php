@@ -11,6 +11,9 @@ class Index extends Component
 {
     public $search;
     public $questions, $answers, $program_id, $outcome = 'all';
+    public $faqs;
+
+
     public function loadfaqs(){
 
         $query = Faq::search($this->search);
@@ -33,6 +36,16 @@ class Index extends Component
             return compact('faq');
     }
 
+<<<<<<< HEAD
+    public function mount()
+    {
+        $this->faqs = Faq::with('program')->get();
+    }
+    public function render()
+    {
+        $faqs = Faq::with('program')->get();
+        return view('livewire.normal.faqs.index', compact($faqs) );
+=======
     public function render()
     {
         $programs = Program::all();
@@ -44,6 +57,7 @@ class Index extends Component
         }
         return view('livewire.normal.faqs.index', compact('faq', 'programs'));
         //return view('livewire.normal.faqs.index', $this->loadfaqs(), compact('programs'));
+>>>>>>> 4b968ba71da0fb852f35452ce3772140efdb6938
 
     }
 }
