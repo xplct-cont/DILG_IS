@@ -42,7 +42,6 @@
             </thead>
             <tbody class=" text-dark">
                 @foreach ($users as $user)
-
                     <tr>
                         <td><img src="{{ asset('user_profile_images/' . $user->profile_image) }}"
                                 style="border-radius: 50%; height: 50px; width: 50px;"></td>
@@ -177,32 +176,6 @@
             </tbody>
         </table>
     </div>
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: #234495; color:white;">
-                        <h5 class="modal-title" id="exampleModalLabel">Adding New User </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <form method="POST" enctype="multipart/form-data">
-                            @csrf
-
-                            <div class="container mx-auto">
-                               <div class="row">
-
-                               </div>
-                            </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Submit</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div> --}}
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
@@ -252,11 +225,8 @@
                                                 <option value="{{ $role->name }}">{{ $role->name }}</option>
                                             @endforeach
                                         </select>
-
-
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                 </div>
