@@ -2,7 +2,7 @@
 
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-block mt-2">
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
@@ -41,7 +41,9 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="" style="color:dimgray">Upload Video (Max: 1 min. | Type: mp4):
+                                        <label for="" style="color:dimgray">Upload Video <span
+                                                class="text-danger">(Max: 1 min.
+                                                | Type: mp4)</span>
                                         </label>
                                         <input type="file" class="form-control" name="file" id="cit_charter_video"
                                             required>
@@ -132,8 +134,9 @@
                                                             style=" height: 200px; width:100%;" type="video/mp4">
                                                 </div>
                                                 <div class="form-group mt-3">
-                                                    <label for="" style="color:dimgray">Upload Video (Max: 1 min.
-                                                        | Type: mp4): </label>
+                                                    <label for="" style="color:dimgray">Upload Video <span
+                                                            class="text-danger">(Max: 1 min.
+                                                            | Type: mp4)</span> </label>
                                                     <input type="file" class="form-control" name="file"
                                                         value="{{ $cit_chart->file }}">
                                                     @if ($errors->has('file'))
@@ -244,9 +247,12 @@
         <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
     </div>
 
-
-
     <script>
+        setTimeout(function() {
+            $(' .alert-dismissible').fadeOut('slow');
+        }, 1000);
+
+
         // Get the file input and submit button elements for news cover images
         const citPdfFile = document.querySelector('#cit_pdf_file');
         const citPdfFileSubmitButton = document.querySelector('#cit_pdf_fileSubmit-btn');

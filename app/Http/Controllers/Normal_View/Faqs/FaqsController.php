@@ -11,7 +11,7 @@ class FaqsController extends Controller
 {
     public function index(){
 
-        $faq = Faq::orderBy('created_at', 'ASC')->get();
+        $faq = Faq::orderBy('program', 'ASC')->get();
         return view('Normal_View.Faqs.faqs', compact('faq'));
     }
 }

@@ -1,11 +1,12 @@
 @extends('Admin_View.layouts.app')
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-block mt-2">
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
+
 
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
@@ -64,7 +65,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Image:</label>
+                                                <label for="" style="color:dimgray">Upload Image: <span
+                                                        class="text-danger">(Max: 1)</span></label>
                                                 <input type="file" class="form-control" name="hiring_img">
                                             </div>
                                         </div>
@@ -172,8 +174,9 @@
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
-                                                                        <label for=""
-                                                                            style="color:dimgray">Image:</label>
+                                                                        <label for="" style="color:dimgray">Upload
+                                                                            Image: <span class="text-danger">(Max:
+                                                                                1)</span></label>
                                                                         <input type="file" class="form-control"
                                                                             name="hiring_img"
                                                                             value="{{ $ad_jobs->hiring_img }}">
@@ -190,15 +193,10 @@
                                                                     <div class="form-group">
                                                                         <label for=""
                                                                             style="color:dimgray">Description:</label>
-                                                                        <textarea style="white-space: pre-wrap;" id="" type="text" class="form-control" rows="5"
-                                                                            name="details" required>
-                                                        {{ $ad_jobs->details }}
-                                                    </textarea>
+                                                                        <textarea id="" type="text" class="form-control" title="" rows="5" required name="details"
+                                                                            placeholder="Write some description...">{{ $ad_jobs->details }}</textarea>
                                                                     </div>
-
-
                                                                 </div>
-
                                                             </div>
                                                         </div>
                                                 </div>
@@ -342,8 +340,9 @@
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
-                                                                            <label for=""
-                                                                                style="color:dimgray">Image:</label>
+                                                                            <label for="" style="color:dimgray">Upload
+                                                                                Image: <span class="text-danger">(Max:
+                                                                                    1)</span></label>
                                                                             <input type="file" class="form-control"
                                                                                 name="hiring_img"
                                                                                 value="{{ $ad_jobs->hiring_img }}">
@@ -361,10 +360,8 @@
                                                                         <div class="form-group">
                                                                             <label for=""
                                                                                 style="color:dimgray">Description:</label>
-                                                                            <textarea style="white-space: pre-wrap;" id="" type="text" class="form-control" rows="5"
-                                                                                name="details" required>
-                                                        {{ $ad_jobs->details }}
-                                                    </textarea>
+                                                                            <textarea id="" type="text" class="form-control" title="" rows="5" required name="details"
+                                                                                placeholder="Write some description...">{{ $ad_jobs->details }}</textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -435,6 +432,11 @@
         </div>
 
         <script>
+            setTimeout(function() {
+                $(' .alert-dismissible').fadeOut('slow');
+            }, 1000);
+
+
             const addform = document.getElementById('add-form');
             const addloading = document.getElementById('loading');
 

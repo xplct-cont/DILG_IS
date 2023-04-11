@@ -2,12 +2,11 @@
 
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-block mt-2">
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
     @endif
-
 
     <div class="search" style="position:relative; top: 5px;">
         <div class="mx-auto" style="width:300px;">
@@ -276,6 +275,11 @@
 
 
         <script>
+            setTimeout(function() {
+                $(' .alert-dismissible').fadeOut('slow');
+            }, 1000);
+
+
             const addform = document.getElementById('add-form');
             const addloading = document.getElementById('loading');
 
