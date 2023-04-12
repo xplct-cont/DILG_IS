@@ -36,6 +36,20 @@
         integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
         crossorigin="anonymous" />
 
+    <Link href="{{ asset('fonts/Old-English.ttf') }}">
+    <style>
+        @font-face {
+            font-family: "Old-English";
+            src: url('/fonts/Old-English.ttf');
+        }
+
+        .old-font {
+            font-family: "Old-English";
+            color: rgb(53, 53, 53);
+            font-size: 22px;
+        }
+    </style>
+
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -43,7 +57,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-  
+
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
@@ -162,7 +176,8 @@
                                         Charter</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('/dilg_family') }}">DILG FAMILY</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/contact_information') }}">Contact Information</a>
+                                <li><a class="dropdown-item" href="{{ url('/contact_information') }}">Contact
+                                        Information</a>
                                 </li>
                             </ul>
                         </div>
@@ -188,10 +203,12 @@
                                 Transparency at Work
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('/downloadable_files') }}">Downloadables</a>
+                                <li><a class="dropdown-item"
+                                        href="{{ url('/downloadable_files') }}">Downloadables</a>
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('/faqs') }}">FAQ's</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/job_vacancies') }}">Job Vacancies</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/job_vacancies') }}">Job Vacancies</a>
+                                </li>
                             </ul>
                         </div>
 
@@ -206,7 +223,7 @@
 
         <main class="mt-5">
             <div class="header" style=" padding: 20px; background: #e4e1e1; color: #030303; margin-bottom: 10px;">
-                <a href="/about"> <img width="500" height="auto" style="max-width: 100%; height:auto;"
+                <a href="/about_us"> <img width="500" height="auto" style="max-width: 100%; height:auto;"
                         src="{{ asset('/img/dilg-bohol.png') }}"></a>
             </div>
             @yield('content')
@@ -245,7 +262,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-center mt-3" style="color:silver; font-size: 8px;">&copy;DILG-BOHOL PROVINCE</p>
+                <p class="text-center mt-3" style="color:silver; font-size: 8px;">&copy;DILG-BOHOL PROVINCE 2023</p>
             </div>
 
 
@@ -328,47 +345,66 @@
 
 
                 <!-- Modal -->
-                <div class="modal fade bd-example-modal-sm mt-5" tabindex="-1" role="dialog"
+                <div class="modal fade bd-example-modal-sm mt-5 " tabindex="-1" role="dialog"
                     aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm rounded">
+                    <div class="modal-dialog modal-lg ">
                         <div class="modal-content">
-                            <div class="modal-header rounded" style="background-color: #234495;">
+                            <div class="modal-header " style="background-color: #234495;">
                                 <h1 class=""
-                                    style="font-size: 18px; color:white; font-weight: 500; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
-                                    Developers</h1>
+                                    style="font-size: 16px; color:white; font-weight: 500; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                                    Developed By: Mater Dei College Information Technology Interns</h1>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body rounded bg-dark mx-auto">
-
-                                <div>
-                                    <a href="https://github.com/viennarose" target="_blank">
-                                        <img src="/img/vienna.jpg" width="18%" class="rounded" /> <span
-                                            style="color:white; font-size: 18px;">&nbsp; Vienna Rose Pepito
-                                            &nbsp;&nbsp;</span></a>
-                                </div>
-                                <div class="mt-3">
-                                    <a href="https://github.com/xplct-cont" target="_blank">
-                                        <img src="/img/kenn.jpg" width="18%" class="rounded" /> <span
-                                            style="color:white; font-size: 18px;">&nbsp; Kenn Secusana
-                                            &nbsp;&nbsp;</span></a>
-                                </div>
-                                <div class="mt-3">
-                                    <a href="https://github.com/chadiegil" target="_blank">
-                                        <img src="/img/chadie.jpg" width="18%" class="rounded" /> <span
-                                            style="color:white; font-size: 18px;">&nbsp; Chadie Gil Augis
-                                            &nbsp;&nbsp;</span></a>
-                                </div>
-                                <div class="mt-3">
-                                    <a href="https://github.com/dfkhin" target="_blank">
-                                        <img src="/img/franklin.jpg" width="18%" class="rounded" /> <span
-                                            style="color:white; font-size: 18px;">&nbsp; Franklin Pogoy
-                                            &nbsp;&nbsp;</span></a>
+                            <div class="modal-body rounded mx-auto">
+                                <div class="container">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6 text-center">
+                                                <p class="old-font">Mater Dei College</p>
+                                                <img src="/img/MDC_LOGO.png" height="200" width="200"
+                                                    style="max-height: 85%; max-width:85%; width: auto; height: auto; margin-top:-15px;"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <a href="https://github.com/viennarose" target="_blank">
+                                                        <img src="/img/vienna.jpg" width="18%" class="rounded" />
+                                                        <span style="color:dimgray; font-size: 18px;">&nbsp; Vienna
+                                                            Rose Pepito
+                                                            &nbsp;&nbsp;</span></a>
+                                                </div>
+                                                <div class="mt-3">
+                                                    <a href="https://github.com/xplct-cont" target="_blank">
+                                                        <img src="/img/kenn.jpg" width="18%" class="rounded" />
+                                                        <span style="color:dimgray; font-size: 18px;">&nbsp; Kenn
+                                                            Secusana
+                                                            &nbsp;&nbsp;</span></a>
+                                                </div>
+                                                <div class="mt-3">
+                                                    <a href="https://github.com/chadiegil" target="_blank">
+                                                        <img src="/img/chadie.jpg" width="18%" class="rounded" />
+                                                        <span style="color:dimgray; font-size: 18px;">&nbsp; Chadie Gil
+                                                            Augis
+                                                            &nbsp;&nbsp;</span></a>
+                                                </div>
+                                                <div class="mt-3">
+                                                    <a href="https://github.com/dfkhin" target="_blank">
+                                                        <img src="/img/franklin.jpg" width="18%"
+                                                            class="rounded" /> <span
+                                                            style="color:dimgray; font-size: 18px;">&nbsp; Franklin
+                                                            Pogoy
+                                                            &nbsp;&nbsp;</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <hr>
-                                <p class="text-center mt-3" style="font-size: 12px;"> Contact No: 09096027312</p>
+                                <p class="text-center mt-3" style="font-size: 12px; color:dimgray;"> Contact No:
+                                    09096027312</p>
 
                             </div>
                         </div>
