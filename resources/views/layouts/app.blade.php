@@ -345,17 +345,27 @@
 
 
                 <!-- Modal -->
-                <div class="modal fade bd-example-modal-sm mt-5 " tabindex="-1" role="dialog"
+                <div class="modal fade bd-example-modal-sm mt-4 mb-5" tabindex="-1" role="dialog"
                     aria-labelledby="mySmallModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg ">
                         <div class="modal-content">
-                            <div class="modal-header " style="background-color: #234495;">
-                                <h1 class=""
-                                    style="font-size: 16px; color:white; font-weight: 500; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
-                                    Developed By: Mater Dei College Information Technology Interns</h1>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <div class="modal-header"
+                                style="background-color: #234495; display: flex;
+                            justify-content: center;
+                            align-items: center;">
+                                <button type="button" class="close text-end"
+                                    style="background-color: #234495; position: absolute;
+                                top: 0;
+                                right: 0;
+                                margin-top: -10px;
+                                margin-right: 0px;"
+                                    data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
+                                <h1 class="text-center mx-auto"
+                                    style="font-size: 16px; color:white; font-weight: 500; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                                    Developed by: <br>
+                                    Mater Dei College Information Technology Interns</h1>
                             </div>
                             <div class="modal-body rounded mx-auto">
                                 <div class="container">
@@ -364,7 +374,7 @@
                                             <div class="col-md-6 text-center">
                                                 <p class="old-font">Mater Dei College</p>
                                                 <img src="/img/MDC_LOGO.png" height="200" width="200"
-                                                    style="max-height: 85%; max-width:85%; width: auto; height: auto; margin-top:-15px;"
+                                                    style="max-height: 75%; max-width:75%; width: auto; height: auto; margin-top:-15px;"
                                                     alt="">
                                             </div>
                                             <div class="col-md-6">
@@ -401,9 +411,8 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <hr>
-                                <p class="text-center mt-3" style="font-size: 12px; color:dimgray;"> Contact No:
+                                <p class="text-center mb-3" style="font-size: 12px; color:dimgray;"> Contact No:
                                     09096027312</p>
 
                             </div>
