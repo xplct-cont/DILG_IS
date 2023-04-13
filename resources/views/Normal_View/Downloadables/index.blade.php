@@ -37,8 +37,10 @@
 
                     <select name="program_id" id="program_id" class="form-control">
                         <option value="all">Search by Program</option>
-                        @foreach ($programs as $prog )
-                            <option value="{{$prog->id}}" {{ Request::get('program_id') == 'program_id' ? 'selected' : '' }}>{{$prog->title ?? 'None'}}</option>
+                        @foreach ($programs as $prog)
+                            <option value="{{ $prog->id }}"
+                                {{ Request::get('program_id') == 'program_id' ? 'selected' : '' }}>
+                                {{ $prog->title ?? 'None' }}</option>
                         @endforeach
 
                     </select>
@@ -55,9 +57,17 @@
                 <div class="col-md-6">
                     <div class="card elevation-4">
                         <img src="img/dilg-main.png" class="p-2" style="height: 60px; width: 60px;" alt="">
-                        <a href="#" class="btn mx-auto btn-danger" data-toggle="modal"
-                            data-target="#downlodableModalPDF{{ $dw->id }}"><span class="fas fa-file-pdf"></span> PDF
-                            Preview</a>
+
+                        @if ($dw->file)
+                            <a href="#" class="btn mx-auto btn-danger" data-toggle="modal"
+                                data-target="#downlodableModalPDF{{ $dw->id }}"><span class="fas fa-file-pdf"></span>
+                                PDF
+                                Preview</a>
+                        @else
+                            <a href="#" class="btn mx-auto" style="background-color: dimgray; color:white;"
+                                @disabled(true)><span class="fas fa-file-pdf"></span> PDF
+                                Unavailable</a>
+                        @endif
 
                         <!-- Modal -->
                         <div class="modal fade" id="downlodableModalPDF{{ $dw->id }}" tabindex="-1" role="dialog"
@@ -95,18 +105,29 @@
 
                         <div class="card-body">
                             <p class="text-wrap" style="font-weight: 400; font-size: 18px;">Program: <span class="text-wrap"
-                                    style="font-size: 18px; font-weight: 500;">{{ $dw->program->title ?? 'None' }}</span></p>
+                                    style="font-size: 18px; font-weight: 500;">{{ $dw->program->title ?? 'None' }}</span>
+                            </p>
                             <p class="text-wrap" style="font-weight: 400; font-size: 18px;">Outcome Area: <span
                                     class="text-wrap"
                                     style="font-size: 18px; font-weight: 500;">{{ $dw->outcome_area }}</span></p>
                             <hr>
-                            <p class="text-wrap" style="font-weight: 400; font-size: 16px;">Title: <span class="text-wrap"
+                            <p class="text-wrap" style="font-weight: 400; font-size: 16px;">Title: <span
+                                    class="text-wrap"
                                     style="font-size: 16px; font-weight: 500;">{{ $dw->title }}</span></p>
                         </div>
-                        <a href="{{ $dw->link }}" target="_blank" class=" text-center"
-                            style="text-decoration:none; padding-top:8px; background-color:#234495;
+                        @if ($dw->link)
+                            <a href="{{ $dw->link }}" target="_blank" class=" text-center"
+                                style="text-decoration:none; padding-top:8px; background-color:#234495;
                          padding-bottom:8px;">
-                            <span class="text-light">Link</span></a>
+                                <span class="text-light">Link</span></a>
+                        @else
+                            <a href="{{ $dw->link }}"class=" text-center"
+                                style="text-decoration:none; padding-top:8px; background-color:dimgray;
+                         padding-bottom:8px;"
+                                @disabled(true)>
+                                <span class="text-light">Link Unavailable</span></a>
+                        @endif
+
                     </div>
                 </div>
             @endforeach
