@@ -210,9 +210,10 @@
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">
                                     {{ $faqs->outcome_area }}</td>
                                 <td>{{ $faqs->program->title }}</td>
-                                <td>{{ $faqs->questions }}</td>
+                                <td>{{ Illuminate\Support\Str::limit($faqs->questions, 50) }}</td>
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                                    style="text-align: center">{{ $faqs->answers }}</td>
+                                    style="text-align: center">{{ Illuminate\Support\Str::limit($faqs->answers, 60) }}
+                                </td>
 
                                 <div class="modal fade" id="faq_id{{ $faqs->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
