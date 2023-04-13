@@ -87,7 +87,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Program</label>
+                                            <label for="" style="color:dimgray">Program:</label>
                                             <select name="program_id" id="program_id" class="form-control"
                                                 style="color:dimgray;" required>
                                                 <option selected disabled></option>
@@ -198,16 +198,17 @@
                     <thead class="text-center" style="background-color:#343a40; color:white;">
                         <tr>
                             <th scope="col">Title</th>
+                            <th scope="col">Program</th>
                             <th scope="col">Document Link</th>
                             <th scope="col">Edit</th>
-                            <th scope="col">Delete</th>
+                            <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
                         @foreach ($downloadables as $dw)
                             <tr>
                                 <td>{{ $dw->title }}</td>
-
+                                <td>{{ $dw->program->title }}</td>
                                 <td>
                                     @if ($dw->link)
                                         <a class="btn" target="_blank" href="{{ $dw->link }}"><span
@@ -344,7 +345,8 @@
                                     </div>
                                 </div>
 
-                                <td><a href="#" data-toggle="modal" id="downloadables_delete_link" class="btn"
+                                <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"><a href="#"
+                                        data-toggle="modal" id="downloadables_delete_link" class="btn"
                                         data-target="#delete_downloadables_id{{ $dw->id }}"><span
                                             class="text-danger fas fa-trash-alt"></span></a></td>
 
