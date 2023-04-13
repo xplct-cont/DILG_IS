@@ -144,7 +144,7 @@
                 </div>
             </div>
 
-            <div class="modal fade" id="Program" tabindex="-1" role="dialog" aria-labelledby="ProgramLabel"
+            {{-- <div class="modal fade" id="Program" tabindex="-1" role="dialog" aria-labelledby="ProgramLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
@@ -180,7 +180,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <div class="card mt-2">
@@ -374,6 +374,45 @@
                 </table>
             </div>
         </div>
+
+        <div class="modal fade" id="Program" tabindex="-1" role="dialog" aria-labelledby="ProgramLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #234495; color:white;">
+                        <h5 class="modal-title" id="ProgramLabel">Adding Program</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="{{ url('/add-programs') }}" method="POST" enctype="multipart/form-data"
+                            id="add-form">
+                            @csrf
+
+                            <div class="container mx-auto">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="" style="color:dimgray">Program</label>
+                                            <input id="" type="text" class="form-control" required
+                                                name="title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="exampleModal" data-bs-dismiss="modal"><span class="fas fa-save"></span>
+                            Submit</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div class="d-flex justify-content-end mt-2">
             {{ $downloadables->onEachSide(1)->links() }}
         </div>
