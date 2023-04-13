@@ -199,9 +199,9 @@
                         <tr>
                             <th scope="col">Title</th>
                             <th scope="col">Program</th>
-                            <th scope="col">Document Link</th>
+                            <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Document Link</th>
                             <th scope="col">Edit</th>
-                            <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
@@ -209,7 +209,7 @@
                             <tr>
                                 <td>{{ $dw->title }}</td>
                                 <td>{{ $dw->program->title }}</td>
-                                <td>
+                                <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">
                                     @if ($dw->link)
                                         <a class="btn" target="_blank" href="{{ $dw->link }}"><span
                                                 class="btn btn-sm btn-success">Link</span></a>
@@ -345,7 +345,7 @@
                                     </div>
                                 </div>
 
-                                <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"><a href="#"
+                                <td><a href="#"
                                         data-toggle="modal" id="downloadables_delete_link" class="btn"
                                         data-target="#delete_downloadables_id{{ $dw->id }}"><span
                                             class="text-danger fas fa-trash-alt"></span></a></td>
