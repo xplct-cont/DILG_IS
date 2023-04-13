@@ -208,8 +208,15 @@
                             <tr>
                                 <td>{{ $dw->title }}</td>
 
-                                <td><a class="btn " href="{{ $dw->link }}"><span
-                                            class="btn btn-sm btn-success">Details</span></a></td>
+                                <td>
+                                    @if ($dw->link)
+                                        <a class="btn" target="_blank" href="{{ $dw->link }}"><span
+                                                class="btn btn-sm btn-success">Link</span></a>
+                                    @else
+                                        <a class="btn " href="{{ $dw->link }}"><span class="btn btn-sm"
+                                                style="background-color: dimgray; color:white;">Link Unavailable</span></a>
+                                    @endif
+                                </td>
 
                                 <td><a href="#" data-toggle="modal" id="downloadables_edit_link" class="btn"
                                         data-target="#downloadables_id{{ $dw->id }}"><span
