@@ -399,7 +399,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Program</label>
+                                            <label for="" style="color:dimgray">Program:</label>
                                             <input id="" type="text" class="form-control" required
                                                 name="title">
                                         </div>
