@@ -1,7 +1,6 @@
 <div>
     <div class="col-md-12 mb-3">
         <h3 class="text-center mt-3 mb-5">FREQUENTLY ASKED QUESTIONS (FAQs)</h3>
-
         <div class="container mb-4">
             <div class="col-md-12">
                 <div class="row">
@@ -40,7 +39,7 @@
                             wire:model.delay.300ms="program_id">
                             <option value="all">All Outcome Area</option>
                             @foreach ($programs as $prog)
-                                <option value="{{ $prog->id ?? 'None'}}">{{ $prog->title ?? 'None' }}
+                                <option value="{{ $prog->id ?? 'None' }}">{{ $prog->title ?? 'None' }}
                                 </option>
                             @endforeach
                         </select>
@@ -62,27 +61,30 @@
         <div class="accordion" id="accordionExample">
             @csrf
             @foreach ($faq as $fq)
-                <div class="accordion-item mb-2">
+                <div class="accordion-item mb-2 elevation-1 ">
                     <h2 class="accordion-header" id="headingOne{{ $fq->id }}">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne{{ $fq->id }}" aria-expanded="true"
-                            aria-controls="collapseOne" style="background-color:#364d74; color:white">
-                            <strong>{{ $fq->questions }}<strong>
+                            aria-controls="collapseOne" style="background-color:#515358; color:white">
+                            <strong style="color:white;">{{ $fq->questions }}<strong>
                         </button>
                     </h2>
 
-                    <div id="collapseOne{{ $fq->id }}" class="accordion-collapse collapse"
+                    <div id="collapseOne{{ $fq->id }}" class="accordion-collapse collapse elevation-4"
                         aria-labelledby="headingOne{{ $fq->id }}" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-wrap fw-light">
-                            <p class="text-end" style="font-size: 12px; color:#364d74; font-size: 12px; font-weight: 500;">{{ $fq->program->title ?? 'None' }}</p>
-                            <p class="fw-light">Answer: {{ $fq->answers }}</p>
+                            <p class="text-center"
+                                style="font-size: 12px; color:#364d74; font-size: 20px; font-weight: 500;">
+                                {{ $fq->program->title ?? 'None' }}</p>
+                            <p class="text-dark" style="margin-top:-20px; font-weight: 500;">Answer:</p>
+                            <p class="text-dark" style="text-indent: 30px; margin-top:-10px;">{{ $fq->answers }}</p>
                             <hr>
                             <p class="text-end" style="font-size: 11px; color:#364d74;">{{ $fq->outcome_area }}</p>
 
                         </div>
                     </div>
                 </div>
-                @endforeach
+            @endforeach
         </div>
 
     </div>
