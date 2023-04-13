@@ -115,14 +115,14 @@
 
                                             </div>
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Questions:</label>
+                                                <label for="" style="color:dimgray">Question:</label>
                                                 <textarea id="" type="text" class="form-control" title="" rows="5" required
                                                     name="questions" placeholder="Write some questions..."></textarea>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="" style="color:dimgray">Answers:</label>
+                                            <label for="" style="color:dimgray">Answer:</label>
                                             <textarea id="" type="text" class="form-control" title="" rows="10" required name="answers"
                                                 placeholder="Write some answers..."></textarea>
                                         </div>
@@ -298,7 +298,7 @@
 
                                                                 <div class="form-group">
                                                                     <label for=""
-                                                                        style="color:dimgray">Questions:</label>
+                                                                        style="color:dimgray">Question:</label>
                                                                     <textarea id="" type="text" class="form-control" title="" rows="5" required
                                                                         name="questions">{{ $faqs->questions }}</textarea>
                                                                 </div>
@@ -306,7 +306,7 @@
 
                                                             <div class="form-group">
                                                                 <label for=""
-                                                                    style="color:dimgray">Answers:</label>
+                                                                    style="color:dimgray">Answer:</label>
                                                                 <textarea id="" type="text" class="form-control" title="" rows="10" required
                                                                     name="answers">{{ $faqs->answers }}</textarea>
                                                             </div>
