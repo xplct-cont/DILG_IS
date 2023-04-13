@@ -198,8 +198,11 @@
                     <thead class="text-center" style="background-color:#343a40; color:white;">
                         <tr>
                             <th scope="col">Title</th>
+                            <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Outcome Area
+                            </th>
                             <th scope="col">Program</th>
-                            <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Document Link</th>
+                            <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Document
+                                Link</th>
                             <th scope="col">Edit</th>
                             <th scope="col">Delete</th>
                         </tr>
@@ -208,6 +211,8 @@
                         @foreach ($downloadables as $dw)
                             <tr>
                                 <td>{{ $dw->title }}</td>
+                                <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">{{ $dw->outcome_area }}
+                                </td>
                                 <td>{{ $dw->program->title }}</td>
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">
                                     @if ($dw->link)
@@ -345,8 +350,7 @@
                                     </div>
                                 </div>
 
-                                <td><a href="#"
-                                        data-toggle="modal" id="downloadables_delete_link" class="btn"
+                                <td><a href="#" data-toggle="modal" id="downloadables_delete_link" class="btn"
                                         data-target="#delete_downloadables_id{{ $dw->id }}"><span
                                             class="text-danger fas fa-trash-alt"></span></a></td>
 

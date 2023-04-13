@@ -190,7 +190,8 @@
                     <thead class="text-center" style="background-color:#343a40; color:white;">
                         <tr>
                             <th scope="col">View</th>
-                            <th scope="col">Outcome</th>
+                            <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Outcome Area
+                            </th>
                             <th scope="col">Program</th>
                             <th scope="col">Questions</th>
                             <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
@@ -206,7 +207,8 @@
                                 <td><a href="#" data-toggle="modal" id="faq_edit_link" class="btn"
                                         data-target="#faq_id{{ $faqs->id }}"><span
                                             class="text-white btn-success btn-sm">View</span></a></td>
-                                <td>{{ $faqs->outcome_area }}</td>
+                                <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">
+                                    {{ $faqs->outcome_area }}</td>
                                 <td>{{ $faqs->program->title }}</td>
                                 <td>{{ $faqs->questions }}</td>
                                 <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
