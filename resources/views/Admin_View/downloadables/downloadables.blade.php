@@ -272,7 +272,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for=""
-                                                                    style="color:dimgray">Program</label>
+                                                                    style="color:dimgray">Program:</label>
                                                                 <select name="program_id" id="program_id"
                                                                     class="form-control" style="color:dimgray;" required>
                                                                     <option value="{{ $dw->program_id }}" selected>
