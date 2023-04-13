@@ -267,13 +267,39 @@
                                                                             GOVERNANCE</option>
                                                                     </select>
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <label for=""
+                                                                {{-- <div class="form-group"> --}}
+                                                                {{-- <label for=""
                                                                         style="color:dimgray">Program:</label>
                                                                     <input id="" type="text"
                                                                         class="form-control" required name="program"
-                                                                        value="{{ $faqs->program }}">
+                                                                        value="{{ $faqs->program }}"> --}} <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <label for=""
+                                                                            style="color:dimgray">Program:</label>
+                                                                        <select name="program_id" id="program_id"
+                                                                            class="form-control" style="color:dimgray;"
+                                                                            required>
+                                                                            <option value="{{ $faqs->program_id }}"
+                                                                                selected>
+                                                                                {{ $faqs->program->title ?? 'None' }}
+                                                                            </option>
+                                                                            @foreach ($programs as $prog)
+                                                                                <option value="{{ $prog->id }}">
+                                                                                    {{ $prog->title ?? 'None' }}</option>
+                                                                            @endforeach
+
+                                                                        </select>
+                                                                        <p>Not in the list?</p>
+                                                                        <button type="button" class="btn"
+                                                                            style="background-color: #343a40; color:white;"
+                                                                            data-toggle="modal" data-target="#Program">
+                                                                            <span class="fas fa-plus-circle"></span> Add
+                                                                            program
+                                                                        </button>
+                                                                    </div>
+
                                                                 </div>
+
                                                                 <div class="form-group">
                                                                     <label for=""
                                                                         style="color:dimgray">Questions:</label>
