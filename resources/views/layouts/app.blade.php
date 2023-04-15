@@ -8,7 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>DILG Bohol Province</title>
+
+    <meta name="description"
+        content="Welcome to the official website of the Department of the Interior and Local Government Bohol Province.">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -54,9 +57,6 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
 
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -143,7 +143,8 @@
                                 Issuances
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a class="dropdown-item" href="{{ url('latest_issuances') }}">Latest Issuances</a>
+                                <li><a class="dropdown-item" href="{{ url('latest_issuances') }}">Latest
+                                        Issuances</a>
                                 </li>
                                 <li><a class="dropdown-item" target="_blank"
                                         href="https://dilg.gov.ph/issuances-archive/jc/">Joint Circulars</a></li>
