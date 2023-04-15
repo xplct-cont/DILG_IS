@@ -1,6 +1,6 @@
 <div>
     <div class="container d-flex justify-content-center">
-       
+
         <div class="container">
             <div class="row ">
                 <div class="col-md-4 mx-auto">
@@ -17,9 +17,9 @@
                     <div class="" style="margin-top: 40px;">
                         <input type="search" style="border-radius: 20px;" wire:model.delay.400ms="search"
                             class="form-control input" placeholder="Search">
-                            <div wire:loading>
-                                Searching...
-                            </div>
+                        <div wire:loading>
+                            Searching...
+                        </div>
                     </div>
 
                 </div>
@@ -42,8 +42,8 @@
                             <div class="row d-flex justify-content-center mt-1">
                                 <div class="col-md-6 mx-auto mt-2 ">
 
-                                    <h1 style="font-size: 18px; font-weight: 500; color:dimgray;">
-                                        Post: {{ \Carbon\Carbon::parse($new->created_at)->format('M j, Y h:i A') }}</h1>
+                                    <h1 style="font-size: 16px; font-weight: 500;   color:#234495;">
+                                        Post: {{ \Carbon\Carbon::parse($new->created_at)->format('F d, Y h:i A') }}</h1>
                                     <br>
                                     <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
                                     <p class="text-left" style="font-size: 15px; font-weight: 400;">
@@ -96,14 +96,14 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body" style="color:dimgray;">
+                            <div class="modal-body">
 
                                 <div class="">
-                                    <h1 class="text-end" style="font-size: 18px; font-weight: 500; color:dimgray;">
-                                        Post: {{ \Carbon\Carbon::parse($new->created_at)->format('M j, Y h:i A') }}</h1>
+                                    <h1 class="text-end" style="font-size: 16px; font-weight: 500; color:#234495;">
+                                        Post: {{ \Carbon\Carbon::parse($new->created_at)->format('F d, Y h:i A') }}</h1>
                                     <br>
-                                    <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
-                                    <p class="text-left" style="font-size: 15px; font-weight: 400;">
+                                    <p class="text-left" style="font-size: 18px; color:dimgray;">{{ $new->title }}</p>
+                                    <p class="text-left" style="font-size: 15px; font-weight: 400; color:dimgray;">
                                         {{ $new->caption }}</p>
 
                                     {{-- <div class="" style="height: 365px;">
