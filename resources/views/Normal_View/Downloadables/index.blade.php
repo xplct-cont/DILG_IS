@@ -54,7 +54,7 @@
         </div>
         <div class="row">
             @foreach ($downloadables as $dw)
-                <div class="col-md-6">
+                <div class="col-md-6 mt-3">
                     <div class="card elevation-4">
                         <img src="img/dilg-main.png" class="p-2" style="height: 60px; width: 60px;" alt="">
 
