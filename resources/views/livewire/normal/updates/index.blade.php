@@ -1,6 +1,6 @@
 <div>
     <div class="container d-flex justify-content-center">
-       
+
         <div class="container">
             <div class="row ">
                 <div class="col-md-4 mx-auto">
@@ -17,9 +17,9 @@
                     <div class="" style="margin-top: 40px;">
                         <input type="search" style="border-radius: 20px;" wire:model.delay.400ms="search"
                             class="form-control input" placeholder="Search">
-                            <div wire:loading>
-                                Searching...
-                            </div>
+                        <div wire:loading>
+                            Searching...
+                        </div>
                     </div>
 
                 </div>

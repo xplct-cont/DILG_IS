@@ -84,8 +84,8 @@
                             <div class="row d-flex justify-content-center mt-1">
                                 <div class="col-md-6 mx-auto mt-2 ">
 
-                                    <h1 style="font-size: 18px; font-weight: 500; color:dimgray;">
-                                        Post: {{ \Carbon\Carbon::parse($new->created_at)->format('M j, Y h:i A') }}</h1>
+                                    <h1 style="font-size: 16px; font-weight: 500;  color:#234495;">
+                                        Post: {{ \Carbon\Carbon::parse($new->created_at)->format('F d, Y h:i A') }}</h1>
                                     <br>
                                     <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
                                     <p class="text-left" style="font-size: 15px; font-weight: 400;">
@@ -136,17 +136,17 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body" style="color:dimgray;">
+                            <div class="modal-body">
 
                                 <div class="">
-                                    <h1 class="text-end" style="font-size: 18px; font-weight: 500; color:dimgray;">
-                                        Post: {{ \Carbon\Carbon::parse($new->created_at)->format('M j, Y h:i A') }}</h1>
+                                    <h1 class="text-end" style="font-size: 16px; font-weight: 500;  color:#234495;">
+                                        Post: {{ \Carbon\Carbon::parse($new->created_at)->format('F d, Y h:i A') }}</h1>
                                     <br>
-                                    <p class="text-left" style="font-size: 18px;">{{ $new->title }}</p>
-                                    <p class="text-left" style="font-size: 15px; font-weight: 400;">
+                                    <p class="text-left" style="font-size: 18px; color:dimgray;">{{ $new->title }}</p>
+                                    <p class="text-left" style="font-size: 15px; font-weight: 400; color:dimgray;">
                                         {{ $new->caption }}</p>
 
-                                   
+
                                     <div class="image-container">
                                         @php
                                             $images = json_decode($new->images, true);
@@ -723,7 +723,7 @@
         display: inline;
         top: 50px;
         justify-content: center;
-        color:#234495;
+        color: #234495;
     }
 
     .day-text-formate {
