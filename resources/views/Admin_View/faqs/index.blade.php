@@ -407,6 +407,9 @@
             </div>
         </div>
     </div>
+    <div class="text-start" style="color:black; font-weight: 450; margin-top: -10px;">
+        Showing {{ $faq->firstItem() }} to {{ $faq->lastItem() }} of {{ $faq->total() }} entries
+    </div>
 
     <div class="d-flex justify-content-end mt-2">
         {{ $faq->onEachSide(1)->links() }}

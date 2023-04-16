@@ -149,6 +149,10 @@
             @endforeach
 
         </div>
+        <div class="text-end" style="color:black; font-weight: 450;">
+            Showing {{ $updates->firstItem() }} to {{ $updates->lastItem() }} of {{ $updates->total() }} entries
+        </div>
+
         <div class="d-flex justify-content-center mt-2">
             {{ $updates->onEachSide(-1)->links() }}
         </div>

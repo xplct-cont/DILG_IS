@@ -255,6 +255,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="text-start" style="color:black; font-weight: 450; margin-top: 10px;">
+            Showing {{ $prov_officials->firstItem() }} to {{ $prov_officials->lastItem() }} of {{ $prov_officials->total() }} entries
+        </div>
 
         <div class="d-flex justify-content-end mt-2">
             {{ $prov_officials->links() }}
