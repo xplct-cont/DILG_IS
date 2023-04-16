@@ -263,6 +263,10 @@
                 </tbody>
             </table>
         </div>
+        <div class="text-start" style="color:black; font-weight: 450; margin-top: 10px;">
+            Showing {{ $pdmus->firstItem() }} to {{ $pdmus->lastItem() }} of {{ $pdmus->total() }} entries
+        </div>
+
         <div class="d-flex justify-content-end mt-2">
             {{ $pdmus->onEachSide(1)->links() }}
         </div>

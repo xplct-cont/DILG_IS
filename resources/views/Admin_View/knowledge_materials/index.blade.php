@@ -224,6 +224,10 @@
                 </table>
             </div>
         </div>
+        <div class="text-start" style="color:black; font-weight: 450; margin-top: -10px;">
+            Showing {{ $knowledge_materials->firstItem() }} to {{ $knowledge_materials->lastItem() }} of {{ $knowledge_materials->total() }} entries
+        </div>
+
         <div class="d-flex justify-content-end mt-2">
             {{ $knowledge_materials->onEachSide(1)->links() }}
         </div>

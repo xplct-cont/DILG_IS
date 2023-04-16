@@ -77,7 +77,11 @@
         </tbody>
     </table>
 </div>
-<div class="d-flex justify-content-center mt-2">
+<div class="text-start" style="color:black; font-weight: 450; margin-top: 10px;">
+    Showing {{ $logs->firstItem() }} to {{ $logs->lastItem() }} of {{ $logs->total() }} entries
+</div>
+
+<div class="d-flex justify-content-end mt-2">
     {{ $logs->onEachSide(-1)->links() }}
 </div>
 </div>

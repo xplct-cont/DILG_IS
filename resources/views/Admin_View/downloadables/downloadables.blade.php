@@ -429,6 +429,9 @@
                 </div>
             </div>
         </div>
+        <div class="text-start" style="color:black; font-weight: 450; margin-top: -10px;">
+            Showing {{ $downloadables->firstItem() }} to {{ $downloadables->lastItem() }} of {{ $downloadables->total() }} entries
+        </div>
 
         <div class="d-flex justify-content-end mt-2">
             {{ $downloadables->onEachSide(1)->links() }}

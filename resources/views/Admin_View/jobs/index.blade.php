@@ -420,6 +420,9 @@
                 @endrole
             </div>
         </div>
+        <div class="text-start" style="color:black; font-weight: 450; margin-top: -10px;">
+            Showing {{ $admin_jobs->firstItem() }} to {{ $admin_jobs->lastItem() }} of {{ $admin_jobs->total() }} entries
+        </div>
 
         <div class="d-flex justify-content-end mt-2">
             {{ $admin_jobs->onEachSide(1)->links() }}

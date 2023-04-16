@@ -525,6 +525,10 @@
                 @endrole
             </div>
         </div>
+        <div class="text-start" style="color:black; font-weight: 450; margin-top: -10px;">
+            Showing {{ $news_images->firstItem() }} to {{ $news_images->lastItem() }} of {{ $news_images->total() }} entries
+        </div>
+
         <div class="d-flex justify-content-end mt-2">
             {{ $news_images->onEachSide(-1)->links() }}
         </div>

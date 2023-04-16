@@ -416,6 +416,10 @@
                 </tbody>
             </table>
         </div>
+        <div class="text-start" style="color:black; font-weight: 450; margin-top: 10px;">
+            Showing {{ $lgus->firstItem() }} to {{ $lgus->lastItem() }} of {{ $lgus->total() }} entries
+        </div>
+
         <div class="d-flex justify-content-end mt-2">
             {{ $lgus->onEachSide(1)->links() }}
         </div>

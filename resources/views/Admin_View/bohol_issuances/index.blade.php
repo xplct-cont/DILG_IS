@@ -344,6 +344,10 @@
             </table>
         </div>
     </div>
+    <div class="text-start" style="color:black; font-weight: 450; margin-top: -10px;">
+        Showing {{ $b_issuances->firstItem() }} to {{ $b_issuances->lastItem() }} of {{ $b_issuances->total() }} entries
+    </div>
+
     <div class="d-flex justify-content-end mt-2">
         {{ $b_issuances->onEachSide(1)->links() }}
     </div>

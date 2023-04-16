@@ -319,6 +319,10 @@
                 </tbody>
             </table>
         </div>
+        <div class="text-start" style="color:black; font-weight: 450; margin-top: 10px;">
+            Showing {{ $field_officers->firstItem() }} to {{ $field_officers->lastItem() }} of {{ $field_officers->total() }} entries
+        </div>
+
         <div class="d-flex justify-content-end mt-2">
             {{ $field_officers->onEachSide(1)->links() }}
         </div>
