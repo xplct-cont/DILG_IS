@@ -224,7 +224,7 @@
                 </table>
             </div>
         </div>
-        <div class="text-start" style="color:black; font-weight: 450; margin-top: -10px;">
+        <div class="text-start" style="color:rgb(83, 82, 82); margin-top: -10px;">
             Showing {{ $knowledge_materials->firstItem() }} to {{ $knowledge_materials->lastItem() }} of {{ $knowledge_materials->total() }} entries
         </div>
 

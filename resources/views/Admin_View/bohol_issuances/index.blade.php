@@ -344,7 +344,7 @@
             </table>
         </div>
     </div>
-    <div class="text-start" style="color:black; font-weight: 450; margin-top: -10px;">
+    <div class="text-start" style="color:rgb(83, 82, 82); margin-top: -10px;">
         Showing {{ $b_issuances->firstItem() }} to {{ $b_issuances->lastItem() }} of {{ $b_issuances->total() }} entries
     </div>
 

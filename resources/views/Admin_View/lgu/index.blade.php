@@ -416,7 +416,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="text-start" style="color:black; font-weight: 450; margin-top: 10px;">
+        <div class="text-start" style="color:rgb(83, 82, 82); margin-top: 10px;">
             Showing {{ $lgus->firstItem() }} to {{ $lgus->lastItem() }} of {{ $lgus->total() }} entries
         </div>
 

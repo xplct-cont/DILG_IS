@@ -525,7 +525,7 @@
                 @endrole
             </div>
         </div>
-        <div class="text-start" style="color:black; font-weight: 450; margin-top: -10px;">
+        <div class="text-start" style="color:rgb(83, 82, 82); margin-top: -10px;">
             Showing {{ $news_images->firstItem() }} to {{ $news_images->lastItem() }} of {{ $news_images->total() }} entries
         </div>
 

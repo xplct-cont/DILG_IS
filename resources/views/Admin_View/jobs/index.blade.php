@@ -420,7 +420,7 @@
                 @endrole
             </div>
         </div>
-        <div class="text-start" style="color:black; font-weight: 450; margin-top: -10px;">
+        <div class="text-start" style="color:rgb(83, 82, 82); margin-top: -10px;">
             Showing {{ $admin_jobs->firstItem() }} to {{ $admin_jobs->lastItem() }} of {{ $admin_jobs->total() }} entries
         </div>
 

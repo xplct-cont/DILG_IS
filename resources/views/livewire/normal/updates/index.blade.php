@@ -149,7 +149,7 @@
             @endforeach
 
         </div>
-        <div class="text-end" style="color:black; font-weight: 450;">
+        <div class="text-end" style="color:rgb(83, 82, 82);">
             Showing {{ $updates->firstItem() }} to {{ $updates->lastItem() }} of {{ $updates->total() }} entries
         </div>
 
