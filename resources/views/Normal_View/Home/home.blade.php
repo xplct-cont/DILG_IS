@@ -534,7 +534,7 @@
         height: 500px;
         width: 100%;
         background-color: white;
-        border-radius: 25px;
+        border-radius: 10px;
         overflow: hidden;
         padding: 30px 50px 0px 50px;
     }
@@ -655,15 +655,15 @@
 
     .calendar-days div:hover {
         transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-        background-color: #fbc7d4;
-        border-radius: 20%;
+        background-color: #888;
+        border-radius: 5%;
         color: var(--dark-text);
     }
 
     .calendar-days div.current-date {
         color: var(--dark-text);
         background-color: var(--light-btn);
-        border-radius: 20%;
+        border-radius: 5%;
     }
 
     .month-list {
