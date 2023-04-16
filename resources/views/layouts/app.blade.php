@@ -236,7 +236,7 @@
         <footer class="sticky-footer">
             <div class="container">
                 <div class="copyright text-center">
-                    <a href="/about" style="text-decoration:none;">
+                    <a href="/about_us" style="text-decoration:none;">
                         <p class="text-center" style="font-size: 18px; color:#DCDCDC;">Department of the Interior and
                             Local Government</p>
                         <p class="text-center"
