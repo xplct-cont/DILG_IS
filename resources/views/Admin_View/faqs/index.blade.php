@@ -153,7 +153,6 @@
                 <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link"
                         href="{{ url('/faqs') }}"><span class="fas fa-question-circle" style="color:#234495;"></span>
                         FAQ's </a></h1>
-
             </div>
             <div>
 
@@ -188,7 +187,7 @@
 
                                 <div class="modal fade" id="faq_id{{ $faqs->id }}" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-dialog modal-xl" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header" style="background-color: #234495; color:white;">
                                                 <h5 class="modal-title" id="exampleModalLabel">Edit FAQ</h5>
@@ -205,86 +204,95 @@
                                                     @method('PUT')
 
                                                     <div class="container mx-auto">
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group">
-                                                                    <label for="">Outcome Area/Program:</label>
+                                                        <div class="col-md-12">
+                                                            <div class="row">
 
-                                                                    <select name="outcome_area" id="outcome_area"
-                                                                        class="form-control" style="color:dimgray;"
-                                                                        required>
-                                                                        <option selected>{{ $faqs->outcome_area }}</option>
-                                                                        <option
-                                                                            value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
-                                                                            ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND
-                                                                            EFFECTIVE LOCAL GOVERNANCE
-                                                                        </option>
-                                                                        <option
-                                                                            value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">
-                                                                            PEACEFUL,
-                                                                            ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES
-                                                                        </option>
-                                                                        <option value="SOCIALLY PROTECTIVE LGUS">SOCIALLY
-                                                                            PROTECTIVE LGUS</option>
-                                                                        <option
-                                                                            value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
-                                                                            ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE
-                                                                            AND DISASTER RESILIENT LGUS
-                                                                        </option>
-                                                                        <option
-                                                                            value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">
-                                                                            BUSINESS-FRIENDLY AND
-                                                                            COMPETITIVE LGUS</option>
-                                                                        <option
-                                                                            value="STRENGTHENING OF INTERNAL GOVERNANCE">
-                                                                            STRENGTHENING OF INTERNAL
-                                                                            GOVERNANCE</option>
-                                                                    </select>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="">Outcome Area/Program:</label>
+
+                                                                        <select name="outcome_area" id="outcome_area"
+                                                                            class="form-control" style="color:dimgray;"
+                                                                            required>
+                                                                            <option selected>{{ $faqs->outcome_area }}
+                                                                            </option>
+                                                                            <option
+                                                                                value="ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND EFFECTIVE LOCAL GOVERNANCE">
+                                                                                ACCOUNTABLE, TRANSPARENT, PARTICIPATIVE, AND
+                                                                                EFFECTIVE LOCAL GOVERNANCE
+                                                                            </option>
+                                                                            <option
+                                                                                value="PEACEFUL, ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES">
+                                                                                PEACEFUL,
+                                                                                ORDERLY AND SAFE LGUS STRATEGIC PRIORITIES
+                                                                            </option>
+                                                                            <option value="SOCIALLY PROTECTIVE LGUS">
+                                                                                SOCIALLY
+                                                                                PROTECTIVE LGUS</option>
+                                                                            <option
+                                                                                value="ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE ADAPTIVE AND DISASTER RESILIENT LGUS">
+                                                                                ENVIRONMENT-PROTECTIVE, CLIMATE CHANGE
+                                                                                ADAPTIVE
+                                                                                AND DISASTER RESILIENT LGUS
+                                                                            </option>
+                                                                            <option
+                                                                                value="BUSINESS-FRIENDLY AND COMPETITIVE LGUS">
+                                                                                BUSINESS-FRIENDLY AND
+                                                                                COMPETITIVE LGUS</option>
+                                                                            <option
+                                                                                value="STRENGTHENING OF INTERNAL GOVERNANCE">
+                                                                                STRENGTHENING OF INTERNAL
+                                                                                GOVERNANCE</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label for=""
+                                                                            style="color:dimgray">Program:</label>
+                                                                        <select name="program_id" id="program_id"
+                                                                            class="form-control" style="color:dimgray;"
+                                                                            required>
+                                                                            <option value="{{ $faqs->program_id }}"
+                                                                                selected>
+                                                                                {{ $faqs->program->title ?? 'None' }}
+                                                                            </option>
+                                                                            @foreach ($programs as $prog)
+                                                                                <option value="{{ $prog->id }}">
+                                                                                    {{ $prog->title ?? 'None' }}</option>
+                                                                            @endforeach
+
+                                                                        </select>
+                                                                        <a href="#" data-toggle="modal"
+                                                                            data-target="#Program"
+                                                                            style="text-decoration: none; margin-top:10px;">
+                                                                            <p class="text-danger"
+                                                                                style="font-size: 16px;">
+                                                                                &nbsp;Not in the list?
+                                                                                <span style="color:#234495;">Click Here to
+                                                                                    Add
+                                                                                    Program.</span>
+                                                                            </p>
+                                                                        </a>
+                                                                    </div>
                                                                 </div>
+
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for=""
+                                                                            style="color:dimgray">Question:</label>
+                                                                        <textarea id="" type="text" class="form-control" title="" rows="5" required
+                                                                            name="questions">{{ $faqs->questions }}</textarea>
+                                                                    </div>
+                                                                </div>
+
 
                                                                 <div class="form-group">
                                                                     <label for=""
-                                                                        style="color:dimgray">Program:</label>
-                                                                    <select name="program_id" id="program_id"
-                                                                        class="form-control" style="color:dimgray;"
-                                                                        required>
-                                                                        <option value="{{ $faqs->program_id }}" selected>
-                                                                            {{ $faqs->program->title ?? 'None' }}
-                                                                        </option>
-                                                                        @foreach ($programs as $prog)
-                                                                            <option value="{{ $prog->id }}">
-                                                                                {{ $prog->title ?? 'None' }}</option>
-                                                                        @endforeach
-
-                                                                    </select>
-                                                                    <a href="#" data-toggle="modal"
-                                                                        data-target="#Program"
-                                                                        style="text-decoration: none; margin-top:10px;">
-                                                                        <p class="text-danger" style="font-size: 16px;">
-                                                                            &nbsp;Not in the list?
-                                                                            <span style="color:#234495;">Click Here to Add
-                                                                                Program.</span>
-                                                                        </p>
-                                                                    </a>
-                                                                </div>
-
-                                                                <div class="form-group">
-                                                                    <label for=""
-                                                                        style="color:dimgray">Question:</label>
-                                                                    <textarea id="" type="text" class="form-control" title="" rows="5" required
-                                                                        name="questions">{{ $faqs->questions }}</textarea>
+                                                                        style="color:dimgray">Answer:</label>
+                                                                    <textarea id="" type="text" class="form-control" title="" rows="6" required
+                                                                        name="answers">{{ $faqs->answers }}</textarea>
                                                                 </div>
                                                             </div>
-
-                                                            <div class="form-group">
-                                                                <label for=""
-                                                                    style="color:dimgray">Answer:</label>
-                                                                <textarea id="" type="text" class="form-control" title="" rows="10" required
-                                                                    name="answers">{{ $faqs->answers }}</textarea>
-                                                            </div>
-
-
-
                                                         </div>
                                                     </div>
                                             </div>
@@ -294,7 +302,6 @@
                                             </div>
                                             </form>
                                         </div>
-
                                     </div>
                                 </div>
             </div>
