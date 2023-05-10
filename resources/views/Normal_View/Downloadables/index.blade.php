@@ -39,7 +39,7 @@
                         <option value="all">Search by Program</option>
                         @foreach ($programs as $prog)
                             <option value="{{ $prog->id }}"
-                                {{ Request::get('program_id') == 'program_id' ? 'selected' : '' }}>
+                                {{ Request::get('program_id') ==  $prog->id ? 'selected' : '' }}>
                                 {{ $prog->title ?? 'None' }}</option>
                         @endforeach
 

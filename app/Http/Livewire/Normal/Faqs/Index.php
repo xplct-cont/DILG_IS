@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class Index extends Component
 {
     public $search;
-    public $questions, $answers, $program_id, $outcome = 'all';
+    public $questions, $answers, $program_id = 'all', $outcome = 'all';
     public $faqs;
 
 
@@ -22,7 +22,7 @@ class Index extends Component
                 $query->where('outcome_area', $this->outcome);
             }
 
-            if($this->program_id){
+            if($this->program_id != 'all'){
                 $query->where('program_id', $this->program_id);
             }
             if($this->answers){
