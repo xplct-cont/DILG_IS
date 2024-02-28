@@ -13,7 +13,7 @@ class DownloadablesController extends Controller
 {
     public function index(Request $request){
         $programs = Program::all();
-        $downloadables = Downloadable::when($request->program_id != null, function($q) use ($request){
+        $downloadables = Downloadable::when($request->program_id != 'all', function($q) use ($request){
             return $q->where('program_id', $request->program_id);
         })
         ->when($request->search != null, function($q) use ($request){

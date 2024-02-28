@@ -330,11 +330,16 @@
                                     {{ date('F d, Y') }}
                                 </p>
                             </div>
+
+                            <p class="text-secondary" style="font-size: 12px;"><span> Visitor Counter </span>
+                            <a href='http://www.freevisitorcounters.com'>here</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=7b6df58795f1b38d7f8e8e7d2214693c40ed1e60'></script>
+                            <script type="text/javascript" src="https://freevisitorcounters.com/en/home/counter/1129813/t/0"></script>
                         </div>
                     </div>
                 </div>
             </div>
 
+        
 
             <div class="d-flex justify-content-start mt-5">
                 <!-- Button trigger modal -->
