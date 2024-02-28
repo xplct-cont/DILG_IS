@@ -246,63 +246,70 @@
                                             data-target="#news_id{{ $news_img->id }}"><span
                                                 class="text-warning fas fa-edit"></span></a></td>
 
-                                    <div class="modal fade" id="news_id{{ $news_img->id }}" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header" style="background-color: #234495; color:white;">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Edit News & Updates</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
+                                                <div class="modal fade" id="news_id{{ $news_img->id }}" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #234495; color:white;">
+                <h5 class="modal-title" id="exampleModalLabel">Edit News & Updates</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ url('edit_updates/' . $news_img->id) }}" method="POST"
+                    enctype="multipart/form-data" id="update-form">
+                    @csrf
+                    @method('PUT')
 
-                                                    <form action="{{ url('edit_updates/' . $news_img->id) }}" method="POST"
-                                                        enctype="multipart/form-data" id="update-form">
-                                                        @csrf
-                                                        @method('PUT')
+                    <div class="container mx-auto">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="" style="color:dimgray">Title:</label>
+                                    <input type="text" class="form-control" name="title"
+                                        value="{{ $news_img->title }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" style="color:dimgray">Caption:</label>
+                                    <textarea id="" type="text" class="form-control" title="" rows="5" required
+                                        name="caption" placeholder="Say something...">{{ $news_img->caption }}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="" style="color:dimgray">Upload Images: <span class="text-danger">(Max:
+                                            5)</span></label>
+                                    <input type="file" class="form-control" name="images[]" multiple>
+                                    <p class="mt-3 fw-light">Old photo(s):</p>
 
-                                                        <div class="container mx-auto">
-                                                            <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label for=""
-                                                                            style="color:dimgray">Title:</label>
-                                                                        <input type="text" class="form-control"
-                                                                            name="title" value="{{ $news_img->title }}">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for=""
-                                                                            style="color:dimgray">Caption:</label>
-                                                                        <textarea id="" type="text" class="form-control" title="" rows="5" required name="caption"
-                                                                            placeholder="Say something...">{{ $news_img->caption }}</textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <div class="form-group">
-                                                                        <label for="" style="color:dimgray">Upload
-                                                                            Images: <span class="text-danger">(Max:
-                                                                                5)</span></label>
-                                                                        <input type="file" class="form-control"
-                                                                            name="images[]" multiple>
-                                                                        <p class="mt-3 fw-light">Old photo(s):</p>
-                                                                        <?php foreach (json_decode($news_img->images) as $picture) { ?>
+                                    @foreach (json_decode($news_img->images) as $index => $picture)
+                                        <div class="mb-3">
+                                            <img src="{{ asset('news_updates/' . $picture) }}"
+                                                style="height:50px; width:70px" />
+                                            <div class="mt-2">
+                                                <label for="editImage{{ $index }}"
+                                                    style="color:dimgray">Edit this image:</label>
+                                                <input type="file" class="form-control" id="editImage{{ $index }}"
+                                                    name="edit_images[{{ $index }}]" optional>
+                                                <!-- Include a hidden field to store the existing image filename for reference -->
+                                                <input type="hidden" name="old_images[]" value="{{ $picture }}">
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                                                        <img src="{{ asset('news_updates/' . $picture) }}"
-                                                                            style="height:50px; width:70px" />
-                                                                        <?php } ?>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-success"><span
-                                                            class="fas fa-save"></span> Save changes</button>
-                                                </div>
-                                                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success"><span class="fas fa-save"></span> Save changes</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
 
                                                 @role('Super-Admin')
                                                     <div class="text-start mb-3">
