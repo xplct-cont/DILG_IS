@@ -290,8 +290,9 @@
                                             <div class="mt-2">
                                                 <label for="editImage{{ $index }}"
                                                     style="color:dimgray">Edit this image:</label>
+                                                <!-- Modified file input field -->
                                                 <input type="file" class="form-control" id="editImage{{ $index }}"
-                                                    name="edit_images[{{ $index }}]" optional>
+                                                    name="edit_images[{{ $index }}]" onchange="markAsModified({{ $index }})">
                                                 <!-- Include a hidden field to store the existing image filename for reference -->
                                                 <input type="hidden" name="old_images[]" value="{{ $picture }}">
                                             </div>
@@ -310,6 +311,7 @@
         </div>
     </div>
 </div>
+
 
                                                 @role('Super-Admin')
                                                     <div class="text-start mb-3">
@@ -545,123 +547,105 @@
             style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; display: none;">
             <img src="{{ asset('loading_img/load.gif') }}" style="height: 150px; width: 150px;" alt="Loading...">
         </div>
-
-
         <script>
-            setTimeout(function() {
-                $(' .alert-dismissible').fadeOut('slow');
-            }, 1000);
+    // Function to fade out alert messages after a delay
+    setTimeout(function() {
+        $('.alert-dismissible').fadeOut('slow');
+    }, 1000);
 
+    // Function to mark file input fields as modified
+    function markAsModified(index) {
+        document.getElementById('editImage' + index).setAttribute('data-modified', 'true');
+    }
 
-            // Get the file input and submit button elements for news cover images
-            const newsCoverImagesInput = document.querySelector('#news_cover_images');
-            const newsCoverImagesSubmitButton = document.querySelector('#news_cover_imagesSubmit-btn');
+    // Function to check which images are modified before form submission
+    function checkModifiedImages() {
+        var modifiedImages = [];
+        var editImageInputs = document.querySelectorAll('[id^="editImage"]');
+        editImageInputs.forEach(function(input) {
+            if (input.getAttribute('data-modified') === 'true') {
+                modifiedImages.push(input);
+            }
+        });
+        return modifiedImages;
+    }
 
-            // Disable the news cover images submit button on page load
+    // Add an event listener to file input fields to mark them as modified when changed
+    document.addEventListener('DOMContentLoaded', function() {
+        var editImageInputs = document.querySelectorAll('[id^="editImage"]');
+        editImageInputs.forEach(function(input, index) {
+            input.addEventListener('change', function() {
+                markAsModified(index);
+            });
+        });
+    });
+
+    // Get the file input and submit button elements for news cover images
+    const newsCoverImagesInput = document.querySelector('#news_cover_images');
+    const newsCoverImagesSubmitButton = document.querySelector('#news_cover_imagesSubmit-btn');
+
+    // Disable the news cover images submit button on page load
+    newsCoverImagesSubmitButton.disabled = true;
+
+    // Listen for changes to the news cover images file input
+    newsCoverImagesInput.addEventListener('change', function() {
+        // Check if the news cover images file input has an error
+        if (this.files.length > 0 && !this.files[0].name.match(/\.(jpeg|png|jpg|gif|svg)$/i)) {
+            // If the file extension is incorrect, disable the news cover images submit button
             newsCoverImagesSubmitButton.disabled = true;
+            // Show an error message
+            alert('Please select JPEG, PNG, JPG, GIF or SVG file');
+        } else {
+            // If the file extension is correct, enable the news cover images submit button
+            newsCoverImagesSubmitButton.disabled = false;
+        }
+    });
 
-            // Listen for changes to the news cover images file input
-            newsCoverImagesInput.addEventListener('change', function() {
-                // Check if the news cover images file input has an error
-                if (this.files.length > 0 && !this.files[0].name.match(/\.(jpeg|png|jpg|gif|svg)$/i)) {
-                    // If the file extension is incorrect, disable the news cover images submit button
-                    newsCoverImagesSubmitButton.disabled = true;
-                    // Show an error message
-                    alert('Please select JPEG, PNG, JPG, GIF or SVG file');
-                } else {
-                    // If the file extension is correct, enable the news cover images submit button
-                    newsCoverImagesSubmitButton.disabled = false;
-                }
-            });
+    // Get the file input and submit button elements for news updates images
+    const newsUpdatesImagesInput = document.querySelector('#news_updates_images');
+    const newsUpdatesImagesSubmitButton = document.querySelector('#news_updates_imagesSubmit-btn');
 
+    // Disable the news updates images submit button on page load
+    newsUpdatesImagesSubmitButton.disabled = true;
 
-            // Get the file input and submit button elements for news updates images
-            const newsUpdatesImagesInput = document.querySelector('#news_updates_images');
-            const newsUpdatesImagesSubmitButton = document.querySelector('#news_updates_imagesSubmit-btn');
-
-            // Disable the news updates images submit button on page load
+    // Listen for changes to the news updates images file input
+    newsUpdatesImagesInput.addEventListener('change', function() {
+        // Check if the news updates images file input has an error
+        if (this.files.length > 0 && !this.files[0].name.match(/\.(jpeg|png|jpg|gif|svg)$/i)) {
+            // If the file extension is incorrect, disable the news updates images submit button
             newsUpdatesImagesSubmitButton.disabled = true;
+            // Show an error message
+            alert('Please select JPEG, PNG, JPG, GIF or SVG file');
+        } else {
+            // If the file extension is correct, enable the news updates images submit button
+            newsUpdatesImagesSubmitButton.disabled = false;
+        }
+    });
 
-            // Listen for changes to the news updates images file input
-            newsUpdatesImagesInput.addEventListener('change', function() {
-                // Check if the news updates images file input has an error
-                if (this.files.length > 0 && !this.files[0].name.match(/\.(jpeg|png|jpg|gif|svg)$/i)) {
-                    // If the file extension is incorrect, disable the news updates images submit button
-                    newsUpdatesImagesSubmitButton.disabled = true;
-                    // Show an error message
-                    alert('Please select JPEG, PNG, JPG, GIF or SVG file');
-                } else {
-                    // If the file extension is correct, enable the news updates images submit button
-                    newsUpdatesImagesSubmitButton.disabled = false;
-                }
-            });
+    // Function to handle form submission loading state
+    function handleFormSubmission(formId, loadingId) {
+        const form = document.getElementById(formId);
+        const loading = document.getElementById(loadingId);
 
+        form.addEventListener('submit', () => {
+            loading.style.display = 'block';
+        });
 
-            const form = document.getElementById('upload-form');
-            const loading = document.getElementById('loading');
+        form.addEventListener('load', () => {
+            loading.style.display = 'none';
+        });
 
-            form.addEventListener('submit', () => {
-                loading.style.display = 'block';
-            });
+        form.addEventListener('error', () => {
+            loading.style.display = 'none';
+        });
+    }
 
-            form.addEventListener('load', () => {
-                loading.style.display = 'none';
-            });
-
-            form.addEventListener('error', () => {
-                loading.style.display = 'none';
-            });
-
-
-
-            //FOR NEWS UPDATES
-
-            const addform = document.getElementById('add-form');
-            const addloading = document.getElementById('loading');
-
-            addform.addEventListener('submit', () => {
-                addloading.style.display = 'block';
-            });
-
-            addform.addEventListener('load', () => {
-                addloading.style.display = 'none';
-            });
-
-            addform.addEventListener('error', () => {
-                addloading.style.display = 'none';
-            });
+    // Handle form submission loading state for different forms
+    handleFormSubmission('upload-form', 'loading');
+    handleFormSubmission('add-form', 'add-loading');
+    handleFormSubmission('update-form', 'update-loading');
+    handleFormSubmission('delete-form', 'delete-loading');
+</script>
 
 
-
-            const updateform = document.getElementById('update-form');
-            const updateloading = document.getElementById('loading');
-
-            updateform.addEventListener('submit', () => {
-                updateloading.style.display = 'block';
-            });
-
-            updateform.addEventListener('load', () => {
-                updateloading.style.display = 'none';
-            });
-
-            updateform.addEventListener('error', () => {
-                updateloading.style.display = 'none';
-            });
-
-
-            const deleteform = document.getElementById('delete-form');
-            const deleteloading = document.getElementById('loading');
-
-            deleteform.addEventListener('submit', () => {
-                deleteloading.style.display = 'block';
-            });
-
-            deleteform.addEventListener('load', () => {
-                deleteloading.style.display = 'none';
-            });
-
-            deleteform.addEventListener('error', () => {
-                deleteloading.style.display = 'none';
-            });
-        </script>
-    @endsection
+    @endsection 
