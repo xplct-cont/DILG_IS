@@ -29,7 +29,23 @@
                                 </div>
                             </div>
                         @endforeach
+                        
                     </div>
+
+                    <div class="col-md-6 mb-5" style="margin-top: 50px;">
+                        <p class="text-center" style="font-size: 20px; font-weight: 500;"> MESSAGE OF THE PROVINCIAL DIRECTOR </p>
+                        @foreach ($pd_messages as $msg)
+                            @php
+                                // Convert newline characters to HTML line breaks
+                                $formatted_message = nl2br($msg->message);
+                            @endphp
+                            <p class="text-justify" style="text-indent: 40px; white-space:normal; word-wrap:break-word">
+                                {!! $formatted_message !!}
+                            </p>
+                        @endforeach
+                    </div>
+
+                    
 
                     <div class="col-md-6 mb-5" style="margin-top: 50px;">
 
@@ -209,4 +225,5 @@
     .firework:nth-child(3) {
         --x: -30vmin;
         --y: -50vmin;
+    }
 </style>
