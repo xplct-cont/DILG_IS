@@ -45,21 +45,6 @@
                         @endforeach
                     </div>
 
-                    
-
-                    <div class="col-md-6 mb-5" style="margin-top: 50px;">
-
-                        <p class="text-center" style="font-size: 20px; font-weight: 500;"> MESSAGE OF THE PROVINCIAL DIRECTOR </p>
-                     
-                            @foreach ($pd_messages as $msg)
-
-                            <p class="text-justify" style="text-indent: 40px;">
-                                {{$msg->message}}
-                                
-                            @endforeach
-                        </p>
-                    </div>
-
                 </div>
             </div>
         </div>
