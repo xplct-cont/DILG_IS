@@ -90,7 +90,7 @@
                         <img class="" src="img/star.png" style="height: 150px;" alt="">
                     </div>
                     <h1 class="text-center" style="font-size: 22px;">Our Shared Values</h1>
-                    <p class="text-center">Mau ni ag gi commit nako na view sa about binsea</p>
+                    <p class="text-center">Ang DILG ay Matino, Mahusay, at Maasahan</p>
                 </div>
 
             </div>
