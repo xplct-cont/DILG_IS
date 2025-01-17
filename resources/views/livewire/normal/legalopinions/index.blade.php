@@ -2,16 +2,16 @@
     <div class="mx-auto">
         <div class="col-md-12">
             <div class="card elevation-4">
-                <div class="card-header-sm" style="background-color: #234495; color:white;">
+                <div class="card-header-sm" style="background-color: #234495; color:white; padding-left:15px; text-transform: uppercase;">
                     <p class="ml-2 mt-2" style="font-weight: 450; font-size: 22px;">Legal Opinions</p>
                 </div>
                 <div class="container mb-4">
                     <div class="col-md-12">
                         <div class="mt-3">
                             <div class="d-flex">
-                                <label for="">Legal Opinions:</label>
+                                <label for="" style="padding-top: 5px; padding-right:5px;">Search:</label>
                                 <input type="search" style="border-radius: 20px;" wire:model.debounce.400ms="search"
-                                    class="form-control input" placeholder="Search">
+                                    class="form-control input" placeholder="look for an opinion...">
                             </div>
                             <div wire:loading>
                                 Searching...
@@ -24,21 +24,23 @@
                             <table class="table-auto w-full">
                                 <thead>
                                     <tr>
-                                        <th class="px-4 py-2">Title</th>
-                                        <th class="px-4 py-2">Reference</th>
-                                        <th class="px-4 py-2">Date</th>
+                                        <th class="px-4 py-2"></th>
+                                        <th class="px-4 py-2"></th>
+                                        <th class="px-4 py-2"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($opinions as $opinion)
                                         <tr>
+                                            <td class="border px-4 py-2">{{ $loop->iteration + ($currentPage - 1) * 20 }}</td> 
                                             <td class="border px-4 py-2">
                                                 <a href="{{ $opinion['link'] }}" target="_blank" class="text-blue-600 hover:underline">
                                                     {{ $opinion['title'] }}
                                                 </a>
+                                                <br>
+                                               <strong>{{ $opinion['reference'] }}</strong> 
                                             </td>
-                                            <td class="border px-4 py-2">{{ $opinion['reference'] }}</td>
-                                            <td class="border px-4 py-2">{{ $opinion['date'] }}</td>
+                                            <td class="border px-4 py-2 text-sm">{{ $opinion['date'] }}</td>
                                         </tr>
                                     @empty
                                         <tr>
@@ -50,7 +52,7 @@
                         </div>
 
                         <!-- Pagination Links -->
-                        <div class="pagination-container">
+                        <div class="pagination-container mt-2">
                             {{ $opinions->links() }}
                         </div>                       
                     </div>

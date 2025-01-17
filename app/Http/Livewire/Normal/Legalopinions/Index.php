@@ -79,6 +79,7 @@ class Index extends Component
         // Return the view with paginated results
         return view('livewire.normal.legalopinions.index', [
             'opinions' => $paginatedResults,
+            'currentPage' => $currentPage,
         ]);
     }
 }
