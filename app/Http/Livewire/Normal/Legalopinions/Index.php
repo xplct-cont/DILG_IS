@@ -36,7 +36,6 @@ class Index extends Component
             $result = $this->scraper->scrapeLegalOpinions($url);
             Cache::put($cacheKey, $result, now()->addDay());
         } catch (\Exception $e) {
-            \App\Models\Log::error("Error scraping legal opinions: " . $e->getMessage());
             return view('Scraper.error', ['error' => 'Unable to fetch legal opinions at this time.']);
         }
     }
