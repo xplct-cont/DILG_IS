@@ -37,6 +37,7 @@ use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
 use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Bohol_IssuancesController;
 use App\Http\Controllers\Admin_View\Admin_LogsController;
+use App\Http\Controllers\Normal_View\Legal_Opinions\Legal_OpinionsController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
 use App\Http\Controllers\Normal_View\Field_Officers\Field_OfficersController;
@@ -153,6 +154,8 @@ Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
 Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->name('/latest_issuances');
 Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
+
+Route::get('/legal_opinions',[Legal_OpinionsController::class, 'index'])->name('/legal_opinions');
 
 Route::get('/downloadable_files',[DownloadablesController::class, 'index'])->name('/downloadable_files');
 Route::get('/download_downloadables/{file}',[DownloadablesController::class, 'download_downloadables']);
