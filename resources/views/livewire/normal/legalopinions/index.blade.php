@@ -50,9 +50,9 @@
                         </div>
 
                         <!-- Pagination Links -->
-                        <div class="mt-6">
-                            {{ $opinions->links('pagination::tailwind') }}
-                        </div>                        
+                        <div class="pagination-container">
+                            {{ $opinions->links() }}
+                        </div>                       
                     </div>
                 </div>
             </div>

@@ -14,7 +14,7 @@ class Index extends Component
     use WithPagination;
 
     public $search = '';
-    protected $paginationTheme = 'tailwind'; // Ensure the pagination matches Tailwind CSS styles
+    protected $paginationTheme = 'bootstrap'; // Set pagination theme to Bootstrap
 
     protected $scraper;
 
@@ -34,21 +34,24 @@ class Index extends Component
     public function render(Request $request)
     {
         $cacheKey = 'scraped_legal_opinions';
-
-        // Check if data is cached
         $result = Cache::get($cacheKey);
 
         if (!$result) {
-            $url = 'https://dilg.gov.ph/legal-opinions-archive/';
-            $result = $this->scraper->scrapeLegalOpinions($url);
-            Cache::put($cacheKey, $result, now()->addDay());
-        }    
+            try {
+                $url = 'https://dilg.gov.ph/legal-opinions-archive/';
+                $result = $this->scraper->scrapeLegalOpinions($url);
+                Cache::put($cacheKey, $result, now()->addDay());
+            } catch (\Exception $e) {
+                \App\Models\Log::error("Error scraping legal opinions: " . $e->getMessage());
+                return view('Scraper.error', ['error' => 'Unable to fetch legal opinions at this time.']);
+            }
+        }
 
-        // Convert $result to a collection
+        // Convert result to a collection
         $result = collect($result);
 
-        // Search functionality
-        $search = $request->get('search');
+        // Apply search filtering
+        $search = $this->search;
         if ($search) {
             $result = $result->filter(function ($opinion) use ($search) {
                 return stripos($opinion['title'], $search) !== false ||
@@ -62,15 +65,15 @@ class Index extends Component
             return strtotime($opinion['date']);
         });
 
-        // Pagination logic
-        $perPage = 50;
+        // Pagination logic: 10 items per page
+        $perPage = 20;
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
         $paginatedResults = new LengthAwarePaginator(
             $result->forPage($currentPage, $perPage),
             $result->count(),
             $perPage,
             $currentPage,
-            ['path' => request()->url(), 'query' => request()->query()]
+            ['path' => LengthAwarePaginator::resolveCurrentPath()]
         );
 
         // Return the view with paginated results
