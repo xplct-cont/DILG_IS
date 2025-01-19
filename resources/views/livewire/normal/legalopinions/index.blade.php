@@ -10,8 +10,10 @@
                         <div class="mt-3">
                             <div class="d-flex">
                                 <label for="" style="padding-top: 5px; padding-right:5px;">Search:</label>
-                                <input type="search" style="border-radius: 20px;" wire:model.debounce.400ms="search"
-                                    class="form-control input" placeholder="look for an opinion...">
+                                <input wire:model.debounce.400ms="search" 
+                                    type="text" 
+                                    placeholder="Search legal opinions"
+                                    class="form-control input">
                             </div>
                             <div wire:loading>
                                 Searching...

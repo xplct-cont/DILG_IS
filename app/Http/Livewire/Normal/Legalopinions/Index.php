@@ -32,54 +32,57 @@ class Index extends Component
     }
 
     public function render(Request $request)
-    {
-        $cacheKey = 'scraped_legal_opinions';
-        $result = Cache::get($cacheKey);
+{
+    $cacheKey = 'scraped_legal_opinions';
+    $result = Cache::get($cacheKey);
 
-        if (!$result) {
-            try {
-                $url = 'https://dilg.gov.ph/legal-opinions-archive/';
-                $result = $this->scraper->scrapeLegalOpinions($url);
-                Cache::put($cacheKey, $result, now()->addDay());
-            } catch (\Exception $e) {
-                \App\Models\Log::error("Error scraping legal opinions: " . $e->getMessage());
-                return view('Scraper.error', ['error' => 'Unable to fetch legal opinions at this time.']);
-            }
+    if (!$result) {
+        try {
+            $url = 'https://dilg.gov.ph/legal-opinions-archive/';
+            $result = $this->scraper->scrapeLegalOpinions($url);
+            Cache::put($cacheKey, $result, now()->addDay());
+        } catch (\Exception $e) {
+            \App\Models\Log::error("Error scraping legal opinions: " . $e->getMessage());
+            return view('Scraper.error', ['error' => 'Unable to fetch legal opinions at this time.']);
         }
-
-        // Convert result to a collection
-        $result = collect($result);
-
-        // Apply search filtering
-        $search = $this->search;
-        if ($search) {
-            $result = $result->filter(function ($opinion) use ($search) {
-                return stripos($opinion['title'], $search) !== false ||
-                       stripos($opinion['reference'], $search) !== false ||
-                       stripos($opinion['date'], $search) !== false;
-            });
-        }
-
-        // Sort results by date
-        $result = $result->sortByDesc(function ($opinion) {
-            return strtotime($opinion['date']);
-        });
-
-        // Pagination logic: 10 items per page
-        $perPage = 20;
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $paginatedResults = new LengthAwarePaginator(
-            $result->forPage($currentPage, $perPage),
-            $result->count(),
-            $perPage,
-            $currentPage,
-            ['path' => LengthAwarePaginator::resolveCurrentPath()]
-        );
-
-        // Return the view with paginated results
-        return view('livewire.normal.legalopinions.index', [
-            'opinions' => $paginatedResults,
-            'currentPage' => $currentPage,
-        ]);
     }
+
+    // Convert result to a collection and filter out invalid data
+    $result = collect($result)->filter(function ($opinion) {
+        return isset($opinion['title'], $opinion['reference'], $opinion['date']);
+    });
+
+    // Apply search filtering
+    $search = $this->search;
+    if ($search) {
+        $result = $result->filter(function ($opinion) use ($search) {
+            return stripos($opinion['title'], $search) !== false ||
+                   stripos($opinion['reference'], $search) !== false ||
+                   stripos($opinion['date'], $search) !== false;
+        });
+    }
+
+    // Sort results by date
+    $result = $result->sortByDesc(function ($opinion) {
+        return strtotime($opinion['date']);
+    });
+
+    // Pagination logic: 20 items per page
+    $perPage = 20;
+    $currentPage = LengthAwarePaginator::resolveCurrentPage();
+    $paginatedResults = new LengthAwarePaginator(
+        $result->forPage($currentPage, $perPage),
+        $result->count(),
+        $perPage,
+        $currentPage,
+        ['path' => LengthAwarePaginator::resolveCurrentPath()]
+    );
+
+    // Return the view with paginated results
+    return view('livewire.normal.legalopinions.index', [
+        'opinions' => $paginatedResults,
+        'currentPage' => $currentPage,
+    ]);
+}
+
 }
