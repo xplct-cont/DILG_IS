@@ -47,15 +47,19 @@ class Index extends Component
         }
     }
 
+    // Ensure that 'opinions' exists before proceeding
+    $opinions = $result['opinions'] ?? []; // Default to an empty array if 'opinions' is missing
+    $categories = $result['categories'] ?? []; // Default to an empty array if 'categories' is missing
+
     // Convert result to a collection and filter out invalid data
-    $result = collect($result)->filter(function ($opinion) {
+    $opinions = collect($opinions)->filter(function ($opinion) {
         return isset($opinion['title'], $opinion['reference'], $opinion['date']);
     });
 
     // Apply search filtering
     $search = $this->search;
     if ($search) {
-        $result = $result->filter(function ($opinion) use ($search) {
+        $opinions = $opinions->filter(function ($opinion) use ($search) {
             return stripos($opinion['title'], $search) !== false ||
                    stripos($opinion['reference'], $search) !== false ||
                    stripos($opinion['date'], $search) !== false;
@@ -63,16 +67,16 @@ class Index extends Component
     }
 
     // Sort results by date
-    $result = $result->sortByDesc(function ($opinion) {
+    $opinions = $opinions->sortByDesc(function ($opinion) {
         return strtotime($opinion['date']);
     });
 
-    // Pagination logic: 20 items per page
-    $perPage = 20;
+    // Pagination logic: 50 items per page
+    $perPage = 50;
     $currentPage = LengthAwarePaginator::resolveCurrentPage();
     $paginatedResults = new LengthAwarePaginator(
-        $result->forPage($currentPage, $perPage),
-        $result->count(),
+        $opinions->forPage($currentPage, $perPage),
+        $opinions->count(),
         $perPage,
         $currentPage,
         ['path' => LengthAwarePaginator::resolveCurrentPath()]
@@ -81,8 +85,11 @@ class Index extends Component
     // Return the view with paginated results
     return view('livewire.normal.legalopinions.index', [
         'opinions' => $paginatedResults,
+        'categories' => $categories, // Pass the categories array here
         'currentPage' => $currentPage,
     ]);
 }
+
+    
 
 }

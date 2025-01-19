@@ -15,67 +15,72 @@ class ScraperService
      * @return array An array of legal opinions (titles, links, references, and dates).
      */
     public function scrapeLegalOpinions(string $url, $search = null)
-    {
-        $client = new Client();
-        $allOpinions = []; // To store all scraped opinions
+{
+    $client = new Client();
+    $allOpinions = [];
+    $categories = []; // Initialize categories to an empty array
 
-        try {
-            while ($url) {
-                // Fetch the current page
-                $response = $client->request('GET', $url);
-                $html = $response->getBody()->getContents();
-                $crawler = new Crawler($html);
+    try {
+        while ($url) {
+            $response = $client->request('GET', $url);
+            $html = $response->getBody()->getContents();
+            $crawler = new Crawler($html);
 
-                // Scrape opinions from the current page
-                $opinions = $crawler->filter('table.view_details tr.altrow')->each(function (Crawler $node) {
-                    return [
-                        'title' => $node->filter('td a')->text(),
-                        'link' => $node->filter('td a')->attr('href'),
-                        'reference' => $node->filter('td strong')->text(),
-                        'date' => $node->filter('td[nowrap]')->text(),
-                    ];
-                });
+            // Scrape opinions
+            $opinions = $crawler->filter('table.view_details tr.altrow')->each(function (Crawler $node) {
+                return [
+                    'title' => $node->filter('td a')->text(),
+                    'link' => $node->filter('td a')->attr('href'),
+                    'reference' => $node->filter('td strong')->text(),
+                    'date' => $node->filter('td[nowrap]')->text(),
+                ];
+            });
 
-                // Process each opinion
-                foreach ($opinions as &$opinion) {
-                    $pdfLink = $opinion['link'];
+            // Scrape categories
+            $categories = $crawler->filter('form.myformStyle select.catBox option')->each(function (Crawler $node) {
+                return [
+                    'value' => $node->attr('value'),
+                    'text' => $node->text(),
+                ];
+            });
 
-                    // Ensure the link is complete by prepending the base URL if necessary
-                    if (!str_starts_with($pdfLink, 'http')) {
-                        $pdfLink = 'https://dilg.gov.ph' . $pdfLink;
-                    }
-
-                    $opinion['link'] = $pdfLink;
-
-                    // If a search term is provided, only keep opinions that match the search term
-                    if ($search && stripos($opinion['title'], $search) === false && stripos($opinion['reference'], $search) === false) {
-                        $opinion = null; // Remove opinions that do not match the search term
-                    }
+            // Process and filter opinions
+            foreach ($opinions as &$opinion) {
+                $pdfLink = $opinion['link'];
+                if (!str_starts_with($pdfLink, 'http')) {
+                    $pdfLink = 'https://dilg.gov.ph' . $pdfLink;
                 }
+                $opinion['link'] = $pdfLink;
 
-                // Filter out null opinions (those that didn't match the search)
-                $opinions = array_filter($opinions);
-
-                $allOpinions = array_merge($allOpinions, $opinions);
-
-                // Check for the "Next" page link
-                $nextPageNode = $crawler->filter('a[rel="next"]');
-                if ($nextPageNode->count() > 0) {
-                    $nextPageHref = $nextPageNode->attr('href');
-
-                    // Handle relative URLs
-                    $url = str_starts_with($nextPageHref, 'http') 
-                        ? $nextPageHref 
-                        : 'https://dilg.gov.ph' . $nextPageHref;
-                } else {
-                    $url = null; // Stop the loop if no "Next" page is found
+                if ($search && stripos($opinion['title'], $search) === false && stripos($opinion['reference'], $search) === false) {
+                    $opinion = null;
                 }
             }
 
-            return $allOpinions;
+            $opinions = array_filter($opinions);
+            $allOpinions = array_merge($allOpinions, $opinions);
 
-        } catch (\Exception $e) {
-            return ['error' => 'Error scraping data: ' . $e->getMessage()];
+            // Check for "Next" page
+            $nextPageNode = $crawler->filter('a[rel="next"]');
+            if ($nextPageNode->count() > 0) {
+                $nextPageHref = $nextPageNode->attr('href');
+                $url = str_starts_with($nextPageHref, 'http') ? $nextPageHref : 'https://dilg.gov.ph' . $nextPageHref;
+            } else {
+                $url = null;
+            }
         }
+
+        // Ensure the "opinions" key always exists, even if empty
+        return [
+            'opinions' => $allOpinions, // This ensures "opinions" is always defined
+            'categories' => $categories, // This ensures "categories" is always defined
+        ];
+
+    } catch (\Exception $e) {
+        return ['error' => 'Error scraping data: ' . $e->getMessage()];
     }
+}
+
+
+
 }
