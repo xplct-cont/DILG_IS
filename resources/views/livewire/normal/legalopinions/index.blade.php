@@ -20,7 +20,7 @@
                             </div>
                             <div class="d-flex align-items-center mt-3">
                                 <label for="category" class="mr-2">Category:</label>
-                                <select id="category" class="form-control" wire:model="selectedCategory">
+                                <select id="category" class="w-[50%]" style="padding: 7px;" wire:model="selectedCategory">
                                     <option value="">All Categories</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category['value'] }}">{{ $category['text'] }}</option>
