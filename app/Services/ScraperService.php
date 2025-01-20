@@ -8,74 +8,56 @@ use Symfony\Component\DomCrawler\Crawler;
 class ScraperService
 {
     /**
-     * Scrape the provided URL for legal opinions.
+     * Scrape the provided URL for legal opinions, iterating through pages.
      *
      * @param string $url The URL to scrape.
      * @param string|null $search Optional search term to filter results.
+     * @param int $page The page number to scrape.
      * @return array An array of legal opinions (titles, links, references, and dates).
      */
-    public function scrapeLegalOpinions(string $url, $search = null)
+    public function scrapeLegalOpinions(string $url, ?string $search, int $page)
     {
         $client = new Client();
-        $allOpinions = []; // To store all scraped opinions
+        $allOpinions = [];
 
         try {
-            while ($url) {
-                // Fetch the current page
-                $response = $client->request('GET', $url);
-                $html = $response->getBody()->getContents();
-                $crawler = new Crawler($html);
+            // Construct the URL to include the page number
+            $pageUrl = $url . "?page=" . $page; // Assuming the pagination URL format is like '?page=1'
 
-                // Scrape opinions from the current page
-                $opinions = $crawler->filter('table.view_details tr.altrow')->each(function (Crawler $node) {
+            // Fetch the content of the page
+            $response = $client->request('GET', $pageUrl);
+            $html = $response->getBody()->getContents();
+            $crawler = new Crawler($html);
+
+            // Extract data from the current page
+            $opinions = $crawler->filter('table.view_details tr.altrow')->each(function (Crawler $node) {
+                try {
                     return [
                         'title' => $node->filter('td a')->text(),
                         'link' => $node->filter('td a')->attr('href'),
                         'reference' => $node->filter('td strong')->text(),
                         'date' => $node->filter('td[nowrap]')->text(),
                     ];
-                });
-
-                // Process each opinion
-                foreach ($opinions as &$opinion) {
-                    $pdfLink = $opinion['link'];
-
-                    // Ensure the link is complete by prepending the base URL if necessary
-                    if (!str_starts_with($pdfLink, 'http')) {
-                        $pdfLink = 'https://dilg.gov.ph' . $pdfLink;
-                    }
-
-                    $opinion['link'] = $pdfLink;
-
-                    // If a search term is provided, only keep opinions that match the search term
-                    if ($search && stripos($opinion['title'], $search) === false && stripos($opinion['reference'], $search) === false) {
-                        $opinion = null; // Remove opinions that do not match the search term
-                    }
+                } catch (\Exception $e) {
+                    return null; // Skip rows with missing data
                 }
+            });
 
-                // Filter out null opinions (those that didn't match the search)
-                $opinions = array_filter($opinions);
+            // Remove null entries
+            $opinions = array_filter($opinions, function ($opinion) {
+                return is_array($opinion) &&
+                    isset($opinion['title'], $opinion['link'], $opinion['reference'], $opinion['date']);
+            });
 
-                $allOpinions = array_merge($allOpinions, $opinions);
-
-                // Check for the "Next" page link
-                $nextPageNode = $crawler->filter('a[rel="next"]');
-                if ($nextPageNode->count() > 0) {
-                    $nextPageHref = $nextPageNode->attr('href');
-
-                    // Handle relative URLs
-                    $url = str_starts_with($nextPageHref, 'http') 
-                        ? $nextPageHref 
-                        : 'https://dilg.gov.ph' . $nextPageHref;
-                } else {
-                    $url = null; // Stop the loop if no "Next" page is found
-                }
-            }
+            // Merge the opinions of the current page into the allOpinions array
+            $allOpinions = array_merge($allOpinions, $opinions);
 
             return $allOpinions;
 
         } catch (\Exception $e) {
-            return ['error' => 'Error scraping data: ' . $e->getMessage()];
+            // Log and return an empty array in case of an error
+            \App\Models\Log::error("Error scraping legal opinions: " . $e->getMessage());
+            return [];
         }
     }
 }

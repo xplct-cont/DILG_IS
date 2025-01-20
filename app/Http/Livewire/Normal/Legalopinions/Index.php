@@ -3,83 +3,66 @@
 namespace App\Http\Livewire\Normal\Legalopinions;
 
 use App\Services\ScraperService;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Cache;
 
 class Index extends Component
 {
     use WithPagination;
 
-    public $search = '';
-    protected $paginationTheme = 'bootstrap'; // Set pagination theme to Bootstrap
-
     protected $scraper;
 
-    // Inject the ScraperService in the constructor
-    public function __construct($id = null)
+    public function __construct()
     {
-        parent::__construct($id);
-        $this->scraper = new ScraperService();  // Initialize the scraper service
-    }
-
-    public function updatingSearch()
-    {
-        // Reset pagination when search input changes
-        $this->resetPage();
+        $this->scraper = new ScraperService();
     }
 
     public function render(Request $request)
     {
         $cacheKey = 'scraped_legal_opinions';
-        $result = Cache::get($cacheKey);
+        $search = $request->get('search');
+        $page = $this->page; // Get current page number from Livewire pagination
 
-        if (!$result) {
-            try {
-                $url = 'https://dilg.gov.ph/legal-opinions-archive/';
-                $result = $this->scraper->scrapeLegalOpinions($url);
-                Cache::put($cacheKey, $result, now()->addDay());
-            } catch (\Exception $e) {
-                \App\Models\Log::error("Error scraping legal opinions: " . $e->getMessage());
-                return view('Scraper.error', ['error' => 'Unable to fetch legal opinions at this time.']);
-            }
-        }
+        // Retrieve data from cache or scrape if not cached
+        $result = Cache::remember($cacheKey . "_page_$page", now()->addDay(), function () use ($search, $page) {
+            $url = 'https://dilg.gov.ph/legal-opinions-archive/';
+            $scrapedData = $this->scraper->scrapeLegalOpinions($url, $search, $page);
 
-        // Convert result to a collection
+            return $scrapedData;
+        });
+
+        // Flatten the data into a collection for easier manipulation
         $result = collect($result);
 
-        // Apply search filtering
-        $search = $this->search;
-        if ($search) {
-            $result = $result->filter(function ($opinion) use ($search) {
-                return stripos($opinion['title'], $search) !== false ||
-                       stripos($opinion['reference'], $search) !== false ||
-                       stripos($opinion['date'], $search) !== false;
-            });
-        }
-
-        // Sort results by date
+        // Sort the results by date
         $result = $result->sortByDesc(function ($opinion) {
             return strtotime($opinion['date']);
         });
 
-        // Pagination logic: 10 items per page
-        $perPage = 20;
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $paginatedResults = new LengthAwarePaginator(
-            $result->forPage($currentPage, $perPage),
-            $result->count(),
-            $perPage,
-            $currentPage,
-            ['path' => LengthAwarePaginator::resolveCurrentPath()]
+        // Define the number of items per page
+        $perPage = 50;
+
+        // Paginate the results manually
+        $currentPage = $this->page;
+        $offset = ($currentPage - 1) * $perPage;
+        $paginatedOpinions = $result->slice($offset, $perPage);
+
+        // Create a LengthAwarePaginator instance
+        $paginator = new LengthAwarePaginator(
+            $paginatedOpinions,  // Current page data
+            $result->count(),    // Total data count
+            $perPage,            // Items per page
+            $currentPage,        // Current page number
+            ['path' => url()->current()]  // Base URL for pagination links
         );
 
         // Return the view with paginated results
         return view('livewire.normal.legalopinions.index', [
-            'opinions' => $paginatedResults,
-            'currentPage' => $currentPage,
+            'opinions' => $paginator,  // Pass the paginator instance
+            'total' => $result->count() // Total number of results
         ]);
     }
 }
