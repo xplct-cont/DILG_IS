@@ -43,7 +43,7 @@
                                 <tbody>
                                     @forelse ($opinions as $opinion)
                                         <tr>
-                                            <td class="border px-4 py-2">{{ $loop->iteration + ($currentPage - 1) * 20 }}</td> 
+                                            <td class="border px-4 py-2">{{ $loop->iteration + ($currentPage - 1) * 50 }}</td> 
                                             <td class="border px-4 py-2">
                                                 <a href="{{ $opinion['link'] }}" target="_blank" class="text-blue-600 hover:underline">
                                                     {{ $opinion['title'] }}
