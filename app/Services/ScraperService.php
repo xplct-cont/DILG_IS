@@ -8,10 +8,11 @@ use Symfony\Component\DomCrawler\Crawler;
 class ScraperService
 {
     /**
-     * Scrape the provided URL for legal opinions.
+     * Scrape the provided URL for legal opinions, iterating through pages.
      *
      * @param string $url The URL to scrape.
      * @param string|null $search Optional search term to filter results.
+     * @param int $page The page number to scrape.
      * @return array An array of legal opinions (titles, links, references, and dates).
      */
     public function scrapeLegalOpinions(string $url, $search = null)

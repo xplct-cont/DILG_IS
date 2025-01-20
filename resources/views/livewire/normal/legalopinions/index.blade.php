@@ -32,40 +32,40 @@
                     <div class="col-md-12">
                         <!-- Table of Opinions -->
                         <div class="overflow-x-auto mt-6 bg-white shadow-md rounded-lg">
-                            <table class="table-auto w-full">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th class="px-4 py-2"></th>
-                                        <th class="px-4 py-2"></th>
-                                        <th class="px-4 py-2"></th>
+                                        <th class="px-4 py-2">#</th>
+                                        <th class="px-4 py-2">Title</th>
+                                        <th class="px-4 py-2">Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($opinions as $opinion)
                                         <tr>
-                                            <td class="border px-4 py-2">{{ $loop->iteration + ($currentPage - 1) * 20 }}</td> 
+                                            <td class="border px-4 py-2">{{ $loop->iteration }}</td> 
                                             <td class="border px-4 py-2">
-                                                <a href="{{ $opinion['link'] }}" target="_blank" class="text-blue-600 hover:underline">
+                                                <a href="{{ $opinion['link'] }}" target="_blank" class="text-primary">
                                                     {{ $opinion['title'] }}
                                                 </a>
                                                 <br>
-                                               <strong>{{ $opinion['reference'] }}</strong> 
+                                                <strong>{{ $opinion['reference'] }}</strong> 
                                             </td>
                                             <td class="border px-4 py-2 text-sm">{{ $opinion['date'] }}</td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="4" class="text-center py-4 text-gray-500">No legal opinions found.</td>
+                                            <td colspan="3" class="text-center py-4 text-muted">No legal opinions found.</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
                             </table>
                         </div>
 
-                        <!-- Pagination Links -->
-                        <div class="pagination-container mt-2">
-                            {{ $opinions->links() }}
-                        </div>                       
+                        <!-- Pagination Links (Bootstrap) -->
+                        <div class="pagination">
+                            {{ $opinions->links('pagination::bootstrap-4') }}
+                        </div>
                     </div>
                 </div>
             </div>
