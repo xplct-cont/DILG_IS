@@ -10,12 +10,24 @@
                         <div class="mt-3">
                             <div class="d-flex">
                                 <label for="" style="padding-top: 5px; padding-right:5px;">Search:</label>
-                                <input type="search" style="border-radius: 20px;" wire:model.debounce.400ms="search"
-                                    class="form-control input" placeholder="look for an opinion...">
+                                <input wire:model.debounce.400ms="search" 
+                                    type="text" 
+                                    placeholder="Search legal opinions"
+                                    class="form-control input">
                             </div>
                             <div wire:loading>
                                 Searching...
                             </div>
+                            <div class="d-flex align-items-center mt-3">
+                                <label for="category" class="mr-2">Category:</label>
+                                <select id="category" class="w-[50%]" style="padding: 7px;" wire:model="selectedCategory">
+                                    <option value="">All Categories</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category['value'] }}">{{ $category['text'] }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="col-md-12">

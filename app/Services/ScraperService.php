@@ -15,49 +15,73 @@ class ScraperService
      * @param int $page The page number to scrape.
      * @return array An array of legal opinions (titles, links, references, and dates).
      */
-    public function scrapeLegalOpinions(string $url, ?string $search, int $page)
-    {
-        $client = new Client();
-        $allOpinions = [];
+    public function scrapeLegalOpinions(string $url, $search = null)
+{
+    $client = new Client();
+    $allOpinions = [];
+    $categories = []; // Initialize categories to an empty array
 
-        try {
-            // Construct the URL to include the page number
-            $pageUrl = $url . "?page=" . $page; // Assuming the pagination URL format is like '?page=1'
-
-            // Fetch the content of the page
-            $response = $client->request('GET', $pageUrl);
+    try {
+        while ($url) {
+            $response = $client->request('GET', $url);
             $html = $response->getBody()->getContents();
             $crawler = new Crawler($html);
 
-            // Extract data from the current page
+            // Scrape opinions
             $opinions = $crawler->filter('table.view_details tr.altrow')->each(function (Crawler $node) {
-                try {
-                    return [
-                        'title' => $node->filter('td a')->text(),
-                        'link' => $node->filter('td a')->attr('href'),
-                        'reference' => $node->filter('td strong')->text(),
-                        'date' => $node->filter('td[nowrap]')->text(),
-                    ];
-                } catch (\Exception $e) {
-                    return null; // Skip rows with missing data
+                return [
+                    'title' => $node->filter('td a')->text(),
+                    'link' => $node->filter('td a')->attr('href'),
+                    'reference' => $node->filter('td strong')->text(),
+                    'date' => $node->filter('td[nowrap]')->text(),
+                ];
+            });
+
+            // Scrape categories
+            $categories = $crawler->filter('form.myformStyle select.catBox option')->each(function (Crawler $node) {
+                return [
+                    'value' => $node->attr('value'),
+                    'text' => $node->text(),
+                ];
+            });
+
+            // Process and filter opinions
+            foreach ($opinions as &$opinion) {
+                $pdfLink = $opinion['link'];
+                if (!str_starts_with($pdfLink, 'http')) {
+                    $pdfLink = 'https://dilg.gov.ph' . $pdfLink;
                 }
-            });
+                $opinion['link'] = $pdfLink;
 
-            // Remove null entries
-            $opinions = array_filter($opinions, function ($opinion) {
-                return is_array($opinion) &&
-                    isset($opinion['title'], $opinion['link'], $opinion['reference'], $opinion['date']);
-            });
+                if ($search && stripos($opinion['title'], $search) === false && stripos($opinion['reference'], $search) === false) {
+                    $opinion = null;
+                }
+            }
 
-            // Merge the opinions of the current page into the allOpinions array
+            $opinions = array_filter($opinions);
             $allOpinions = array_merge($allOpinions, $opinions);
 
-            return $allOpinions;
-
-        } catch (\Exception $e) {
-            // Log and return an empty array in case of an error
-            \App\Models\Log::error("Error scraping legal opinions: " . $e->getMessage());
-            return [];
+            // Check for "Next" page
+            $nextPageNode = $crawler->filter('a[rel="next"]');
+            if ($nextPageNode->count() > 0) {
+                $nextPageHref = $nextPageNode->attr('href');
+                $url = str_starts_with($nextPageHref, 'http') ? $nextPageHref : 'https://dilg.gov.ph' . $nextPageHref;
+            } else {
+                $url = null;
+            }
         }
+
+        // Ensure the "opinions" key always exists, even if empty
+        return [
+            'opinions' => $allOpinions, // This ensures "opinions" is always defined
+            'categories' => $categories, // This ensures "categories" is always defined
+        ];
+
+    } catch (\Exception $e) {
+        return ['error' => 'Error scraping data: ' . $e->getMessage()];
     }
+}
+
+
+
 }
