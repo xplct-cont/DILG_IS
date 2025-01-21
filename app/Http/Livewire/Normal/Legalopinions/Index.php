@@ -55,7 +55,6 @@ class Index extends Component
         if ($this->search) {
             $opinions = $opinions->filter(function ($opinion) {
                 return stripos($opinion['title'], $this->search) !== false ||
-                    stripos($opinion['category'], $this->search) !== false ||
                     stripos($opinion['reference'], $this->search) !== false ||
                     stripos($opinion['date'], $this->search) !== false;
             });
