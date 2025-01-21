@@ -88,13 +88,18 @@ public function scrapeLegalOpinions(string $url, $search = null)
     $client = new Client();
     $allOpinions = [];
     $categories = [];
+    $visitedUrls = [];
+    $pageLimit = 30; // Maximum pages to scrape
+    $currentPage = 1;
 
     try {
-        $pageLimit = 60; // Maximum pages to scrape
-        $currentPage = 1;
-
         while ($url && $currentPage <= $pageLimit) {
+            if (in_array($url, $visitedUrls)) {
+                break; // Stop if the URL has already been visited
+            }
+            $visitedUrls[] = $url;
             $currentPage++;
+
             Log::info("Scraping URL: {$url}");
 
             $response = $client->request('GET', $url);
@@ -124,7 +129,11 @@ public function scrapeLegalOpinions(string $url, $search = null)
             });
 
             $opinions = array_filter($opinions);
-            $allOpinions = array_merge($allOpinions, $opinions);
+
+            // Ensure uniqueness by using 'reference' as the key
+            foreach ($opinions as $opinion) {
+                $allOpinions[$opinion['reference']] = $opinion;
+            }
 
             if (empty($categories)) {
                 $categories = $crawler->filter('form.myformStyle select.catBox option')->each(function (Crawler $node) {
@@ -134,7 +143,6 @@ public function scrapeLegalOpinions(string $url, $search = null)
                     ];
                 });
             }
-            
 
             // Check for "Next" page
             $nextPageNode = $crawler->filter('li.pWord a'); // Updated selector
@@ -147,7 +155,7 @@ public function scrapeLegalOpinions(string $url, $search = null)
         }
 
         return [
-            'opinions' => $allOpinions,
+            'opinions' => array_values($allOpinions), // Return as a numerically indexed array
             'categories' => $categories,
         ];
 
