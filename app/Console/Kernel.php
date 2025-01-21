@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('scrape:legalopinions')->daily(); // Set to daily or any frequency you prefer
+        // $schedule->command('inspire')->hourly();
     }
 
     /**
