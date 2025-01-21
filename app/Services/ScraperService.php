@@ -254,14 +254,17 @@ public function scrapeLegalOpinions(string $url, $search = null)
     $client = new Client();
     $allOpinions = [];
     $categories = [];
-    $uniqueOpinions = [];
+    $visitedUrls = [];
+    $pageLimit = 30; // Maximum pages to scrape
+    $currentPage = 1;
 
     try {
+        $pageLimit = 60; // Maximum pages to scrape
         $currentPage = 1;
 
-        while ($url) {
-            Log::info("Scraping URL (Page {$currentPage}): {$url}");
+        while ($url && $currentPage <= $pageLimit) {
             $currentPage++;
+            Log::info("Scraping URL: {$url}");
 
             $response = $client->request('GET', $url);
             $html = $response->getBody()->getContents();
@@ -301,11 +304,7 @@ public function scrapeLegalOpinions(string $url, $search = null)
 
             // Remove null rows and avoid duplicates
             $opinions = array_filter($opinions);
-            foreach ($opinions as $opinion) {
-                if (!array_key_exists($opinion['reference'], $uniqueOpinions)) {
-                    $uniqueOpinions[$opinion['reference']] = $opinion;
-                }
-            }
+            $allOpinions = array_merge($allOpinions, $opinions);
 
             // Scrape categories once (if not already done)
             if (empty($categories)) {
@@ -316,9 +315,10 @@ public function scrapeLegalOpinions(string $url, $search = null)
                     ];
                 });
             }
+            
 
-            // Find the "Next" page link
-            $nextPageNode = $crawler->filter('li.pWord a:contains("next")'); // Adjust the selector if necessary
+            // Check for "Next" page
+            $nextPageNode = $crawler->filter('li.pWord a'); // Updated selector
             if ($nextPageNode->count() > 0) {
                 $nextPageHref = $nextPageNode->attr('href');
                 $url = str_starts_with($nextPageHref, 'http') ? $nextPageHref : 'https://dilg.gov.ph' . $nextPageHref;
@@ -329,7 +329,7 @@ public function scrapeLegalOpinions(string $url, $search = null)
         }
 
         return [
-            'opinions' => array_values($uniqueOpinions), // Return unique opinions as a flat array
+            'opinions' => $allOpinions,
             'categories' => $categories,
         ];
     } catch (\Exception $e) {
