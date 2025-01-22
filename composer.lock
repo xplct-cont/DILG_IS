@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "969e0aa30332552a6e07c322b5747625",
+    "content-hash": "857f1e5f6fc794e9a31a9839231cce41",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -648,43 +648,6 @@
                 }
             ],
             "time": "2024-12-27T00:36:43+00:00"
-        },
-        {
-            "name": "eher/oauth",
-            "version": "1.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/EHER/OAuth.git",
-                "reference": "935c1f7709d1c1457de9e250d0e5f29cac06e507"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/EHER/OAuth/zipball/935c1f7709d1c1457de9e250d0e5f29cac06e507",
-                "reference": "935c1f7709d1c1457de9e250d0e5f29cac06e507",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "eher/phpunit": "1.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Eher\\OAuth": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "OAuth 1 PHP Library",
-            "support": {
-                "issues": "https://github.com/EHER/OAuth/issues",
-                "source": "https://github.com/EHER/OAuth/tree/1.0.7"
-            },
-            "time": "2012-12-13T23:48:10+00:00"
         },
         {
             "name": "facebook/graph-sdk",
@@ -1900,52 +1863,6 @@
                 "source": "https://github.com/laravel/ui/tree/v4.6.0"
             },
             "time": "2024-11-21T15:06:41+00:00"
-        },
-        {
-            "name": "laravelia/autoposter",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/techmahedy/laravel-social-auto-poster.git",
-                "reference": "9681ad5a46992be095094df71341d16cedaa3815"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/techmahedy/laravel-social-auto-poster/zipball/9681ad5a46992be095094df71341d16cedaa3815",
-                "reference": "9681ad5a46992be095094df71341d16cedaa3815",
-                "shasum": ""
-            },
-            "require": {
-                "tumblr/tumblr": "dev-master"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Laravelia\\Autoposter\\AutoPosterServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravelia\\Autoposter\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mahedi Hasan"
-                }
-            ],
-            "description": "A Laravel package for auto posting social site",
-            "support": {
-                "issues": "https://github.com/techmahedy/laravel-social-auto-poster/issues",
-                "source": "https://github.com/techmahedy/laravel-social-auto-poster/tree/v1.0.1"
-            },
-            "time": "2023-03-05T06:49:59+00:00"
         },
         {
             "name": "league/commonmark",
@@ -6746,60 +6663,6 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.3.0"
             },
             "time": "2024-12-21T16:25:41+00:00"
-        },
-        {
-            "name": "tumblr/tumblr",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tumblr/tumblr.php.git",
-                "reference": "66ecd70dca589237dee3c2a27b36572bac318e32"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tumblr/tumblr.php/zipball/66ecd70dca589237dee3c2a27b36572bac318e32",
-                "reference": "66ecd70dca589237dee3c2a27b36572bac318e32",
-                "shasum": ""
-            },
-            "require": {
-                "eher/oauth": "^1.0.7 <1.1",
-                "guzzlehttp/guzzle": "^6.5.2 || ^7.0.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": ">=5.7.27 <10"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Tumblr\\API": "lib"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "John Crepezzi",
-                    "email": "john.crepezzi@gmail.com",
-                    "homepage": "https://github.com/seejohnrun",
-                    "role": "developer"
-                }
-            ],
-            "description": "Official Tumblr PHP Client",
-            "homepage": "https://github.com/tumblr/tumblr.php",
-            "keywords": [
-                "api",
-                "gif",
-                "sdk",
-                "tumblr"
-            ],
-            "support": {
-                "issues": "https://github.com/tumblr/tumblr.php/issues",
-                "source": "https://github.com/tumblr/tumblr.php/tree/master"
-            },
-            "time": "2023-11-28T15:05:57+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

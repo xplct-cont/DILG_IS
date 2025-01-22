@@ -182,9 +182,6 @@ Route::group(['middleware' => ['role:Super-Admin']], function () {
     Route::get('/delete_user/{id}', [Admin_UserController::class, 'delete_user']);
 });
 
-
-
-
 //Routes for Vienna
 //Admin_View Routes
 
