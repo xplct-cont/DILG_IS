@@ -49,6 +49,8 @@
                                                     {{ $opinion['title'] }}
                                                 </a>
                                                 <br>
+                                                <span>{{ $opinion['category'] ?? '' }}</span>
+                                                <br>
                                                <strong>{{ $opinion['reference'] }}</strong> 
                                             </td>
                                             <td class="border px-4 py-2 text-sm">{{ $opinion['date'] }}</td>

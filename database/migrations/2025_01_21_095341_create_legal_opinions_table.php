@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('legal_opinions', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('link')->unique();
+            $table->string('link');
+            $table->string('category')->nullable();
             $table->string('reference')->unique();
-            $table->date('date')->nullable();
+            $table->string('date')->nullable();
             $table->timestamps();
         });
     }

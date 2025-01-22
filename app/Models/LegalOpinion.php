@@ -12,6 +12,7 @@ class LegalOpinion extends Model
     protected $fillable = [
         'title',
         'link',
+        'category',
         'reference',
         'date',
     ];

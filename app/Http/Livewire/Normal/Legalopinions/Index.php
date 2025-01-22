@@ -61,9 +61,11 @@ class Index extends Component
         }
 
         if ($this->selectedCategory) {
-            $opinions = $opinions->where('category', $this->selectedCategory);
+            $opinions = $opinions->filter(function ($opinion) {
+                return stripos(trim($opinion['category']), trim($this->selectedCategory)) !== false;
+            });
         }
-
+        
         $opinions = $opinions->sortByDesc(function ($opinion) {
             return strtotime($opinion['date']);
         });
