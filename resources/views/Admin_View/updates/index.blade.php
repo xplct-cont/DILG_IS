@@ -174,6 +174,12 @@
                                                     id="news_updates_images" required multiple>
                                             </div>
 
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="shareToFacebook" name="share_to_facebook">
+                                                    <label class="form-check-label" for="shareToFacebook" style="color:dimgray">Share to Facebook</label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -216,6 +222,7 @@
                                 <th scope="col">Edit</th>
                                 <th scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete
                                 </th>
+                                <th scope="col">share</th>
                             </tr>
                         </thead>
                         <tbody class="text-center">
