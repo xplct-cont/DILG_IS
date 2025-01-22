@@ -18,10 +18,12 @@ class Index extends Component
     protected $paginationTheme = 'bootstrap';
     protected $scraper;
 
-    public function __construct($id = null)
+    // Remove the constructor
+
+    // Use the mount method to inject the service
+    public function mount(ScraperService $scraper)
     {
-        parent::__construct($id);
-        $this->scraper = new ScraperService();
+        $this->scraper = $scraper;
     }
 
     public function updatingSearch()
@@ -65,7 +67,7 @@ class Index extends Component
                 return stripos(trim($opinion['category']), trim($this->selectedCategory)) !== false;
             });
         }
-        
+
         $opinions = $opinions->sortByDesc(function ($opinion) {
             return strtotime($opinion['date']);
         });
