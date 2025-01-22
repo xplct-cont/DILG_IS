@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
+use Livewire\Livewire;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(125);
         Paginator::useBootstrap();
+        Livewire::component('normal.legalopinions.index', \App\Http\Livewire\Normal\LegalOpinions\Index::class);
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Services;
+
+use App\Models\LegalOpinion; // Ensure the model is imported
 use Illuminate\Support\Facades\Log;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
@@ -14,147 +16,104 @@ class ScraperService
      * @param string|null $search Optional search term to filter results.
      * @return array An array of legal opinions (titles, links, references, and dates).
      */
-//     public function scrapeLegalOpinions(string $url, $search = null)
-// {
-//     $client = new Client();
-//     $allOpinions = [];
-//     $categories = []; // Initialize categories to an empty array
+    public function scrapeLegalOpinions(string $url, $search = null)
+    {
+        $client = new Client();
+        $allOpinions = [];
+        $categories = [];
+        $uniqueOpinions = [];
 
-//     try {
-//         while ($url) {
-//             $response = $client->request('GET', $url);
-//             $html = $response->getBody()->getContents();
-//             $crawler = new Crawler($html);
+        try {
+            $currentPage = 1;
 
-//             // Scrape opinions
-//             $opinions = $crawler->filter('table.view_details tr.altrow')->each(function (Crawler $node) {
-//                 return [
-//                     'title' => $node->filter('td a')->text(),
-//                     'link' => $node->filter('td a')->attr('href'),
-//                     'reference' => $node->filter('td strong')->text(),
-//                     'date' => $node->filter('td[nowrap]')->text(),
-//                 ];
-//             });
+            while ($url) {
+                Log::info("Scraping URL (Page {$currentPage}): {$url}");
+                $currentPage++;
 
-//             // Scrape categories
-//             $categories = $crawler->filter('form.myformStyle select.catBox option')->each(function (Crawler $node) {
-//                 return [
-//                     'value' => $node->attr('value'),
-//                     'text' => $node->text(),
-//                 ];
-//             });
+                $response = $client->request('GET', $url);
+                $html = $response->getBody()->getContents();
+                $crawler = new Crawler($html);
 
-//             // Process and filter opinions
-//             foreach ($opinions as &$opinion) {
-//                 $pdfLink = $opinion['link'];
-//                 if (!str_starts_with($pdfLink, 'http')) {
-//                     $pdfLink = 'https://dilg.gov.ph' . $pdfLink;
-//                 }
-//                 $opinion['link'] = $pdfLink;
+                // Scrape all rows (handle both `altrow` and `altrow1`)
+                $opinions = $crawler->filter('table.view_details tr')->each(function (Crawler $node) use ($search) {
+                    try {
+                        // Extract the data from the row
+                        $title = $node->filter('td a')->count() > 0 ? $node->filter('td a')->text() : null;
+                        $link = $node->filter('td a')->count() > 0 ? $node->filter('td a')->attr('href') : null;
+                        $category = $node->filter('td strong span')->count() > 0 ? $node->filter('td strong span')->text() : null;
+                        $reference = $node->filter('td strong')->count() > 0 ? $node->filter('td strong')->text() : null;
+                        $date = $node->filter('td[nowrap]')->count() > 0 ? $node->filter('td[nowrap]')->text() : null;
 
-//                 if ($search && stripos($opinion['title'], $search) === false && stripos($opinion['reference'], $search) === false) {
-//                     $opinion = null;
-//                 }
-//             }
+                        // Skip rows without a title or link
+                        if (!$title || !$link) {
+                            return null;
+                        }
 
-//             $opinions = array_filter($opinions);
-//             $allOpinions = array_merge($allOpinions, $opinions);
+                        // Ensure links are fully qualified
+                        if (!str_starts_with($link, 'http')) {
+                            $link = 'https://dilg.gov.ph' . $link;
+                        }
 
-//             // Check for "Next" page
-//             $nextPageNode = $crawler->filter('a[rel="next"]');
-//             if ($nextPageNode->count() > 0) {
-//                 $nextPageHref = $nextPageNode->attr('href');
-//                 $url = str_starts_with($nextPageHref, 'http') ? $nextPageHref : 'https://dilg.gov.ph' . $nextPageHref;
-//             } else {
-//                 $url = null;
-//             }
-//         }
+                        // Apply the search filter (if specified)
+                        if ($search && stripos($title, $search) === false && stripos($reference, $search) === false) {
+                            return null;
+                        }
 
-//         // Ensure the "opinions" key always exists, even if empty
-//         return [
-//             'opinions' => $allOpinions, // This ensures "opinions" is always defined
-//             'categories' => $categories, // This ensures "categories" is always defined
-//         ];
-
-//     } catch (\Exception $e) {
-//         return ['error' => 'Error scraping data: ' . $e->getMessage()];
-//     }
-// }
-
-//stern
-
-public function scrapeLegalOpinions(string $url, $search = null)
-{
-    $client = new Client();
-    $allOpinions = [];
-    $categories = [];
-
-    try {
-        $pageLimit = 60; // Maximum pages to scrape
-        $currentPage = 1;
-
-        while ($url && $currentPage <= $pageLimit) {
-            $currentPage++;
-            Log::info("Scraping URL: {$url}");
-
-            $response = $client->request('GET', $url);
-            $html = $response->getBody()->getContents();
-            $crawler = new Crawler($html);
-
-            $opinions = $crawler->filter('table.view_details tr.altrow')->each(function (Crawler $node) use ($search) {
-                try {
-                    $title = $node->filter('td a')->text();
-                    $link = $node->filter('td a')->attr('href');
-                    $reference = $node->filter('td strong')->text();
-                    $date = $node->filter('td[nowrap]')->text();
-
-                    if (!str_starts_with($link, 'http')) {
-                        $link = 'https://dilg.gov.ph' . $link;
-                    }
-
-                    if ($search && stripos($title, $search) === false && stripos($reference, $search) === false) {
+                        // Return the row data
+                        return compact('title', 'link', 'category', 'reference', 'date');
+                    } catch (\Exception $e) {
+                        Log::warning("Skipping a row due to error: " . $e->getMessage());
                         return null;
                     }
-
-                    return compact('title', 'link', 'reference', 'date');
-                } catch (\Exception $e) {
-                    Log::warning("Skipping a row due to error: " . $e->getMessage());
-                    return null;
-                }
-            });
-
-            $opinions = array_filter($opinions);
-            $allOpinions = array_merge($allOpinions, $opinions);
-
-            if (empty($categories)) {
-                $categories = $crawler->filter('form.myformStyle select.catBox option')->each(function (Crawler $node) {
-                    return [
-                        'value' => $node->attr('value'),
-                        'text' => $node->text(),
-                    ];
                 });
-            }
-            
 
-            // Check for "Next" page
-            $nextPageNode = $crawler->filter('li.pWord a'); // Updated selector
-            if ($nextPageNode->count() > 0) {
-                $nextPageHref = $nextPageNode->attr('href');
-                $url = str_starts_with($nextPageHref, 'http') ? $nextPageHref : 'https://dilg.gov.ph' . $nextPageHref;
-            } else {
-                $url = null;
+                // Remove null rows and avoid duplicates
+                $opinions = array_filter($opinions);
+                foreach ($opinions as $opinion) {
+                    if (!array_key_exists($opinion['reference'], $uniqueOpinions)) {
+                        $uniqueOpinions[$opinion['reference']] = $opinion;
+
+                        // Save to the database if not already exists
+                        LegalOpinion::updateOrCreate(
+                            ['reference' => $opinion['reference']], // Unique constraint
+                            [
+                                'title' => $opinion['title'],
+                                'link' => $opinion['link'],
+                                'category' => $opinion['category'],
+                                'date' => $opinion['date'],
+                            ]
+                        );
+                    }
+                }
+
+                // Scrape categories once (if not already done)
+                if (empty($categories)) {
+                    $categories = $crawler->filter('form.myformStyle select.catBox option')->each(function (Crawler $node) {
+                        return [
+                            'value' => $node->attr('value'),
+                            'text' => $node->text(),
+                        ];
+                    });
+                }
+
+                // Find the "Next" page link
+                $nextPageNode = $crawler->filter('li.pWord a:contains("next")'); // Adjust the selector if necessary
+                if ($nextPageNode->count() > 0) {
+                    $nextPageHref = $nextPageNode->attr('href');
+                    $url = str_starts_with($nextPageHref, 'http') ? $nextPageHref : 'https://dilg.gov.ph' . $nextPageHref;
+                } else {
+                    $url = null; // No more pages
+                    Log::info('No more pages to scrape.');
+                }
             }
+
+            return [
+                'opinions' => array_values($uniqueOpinions), // Return unique opinions as a flat array
+                'categories' => $categories,
+            ];
+        } catch (\Exception $e) {
+            Log::error('Error scraping data: ' . $e->getMessage());
+            return ['error' => 'Error scraping data: ' . $e->getMessage()];
         }
-
-        return [
-            'opinions' => $allOpinions,
-            'categories' => $categories,
-        ];
-
-    } catch (\Exception $e) {
-        Log::error('Error scraping data: ' . $e->getMessage());
-        return ['error' => 'Error scraping data: ' . $e->getMessage()];
     }
-}
-
 }
