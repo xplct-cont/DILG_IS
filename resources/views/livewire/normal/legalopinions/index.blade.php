@@ -48,10 +48,12 @@
                                                 <a href="{{ $opinion['link'] }}" target="_blank" class="text-blue-600 hover:underline">
                                                     {{ $opinion['title'] }}
                                                 </a>
+                                                @if (!empty($opinion['category']))
+                                                    <br>
+                                                    <span>{{ $opinion['category'] }}</span>
+                                                @endif
                                                 <br>
-                                                <span>{{ $opinion['category'] ?? '' }}</span>
-                                                <br>
-                                               <strong>{{ $opinion['reference'] }}</strong> 
+                                                <strong>{{ $opinion['reference'] }}</strong> 
                                             </td>
                                             <td class="border px-4 py-2 text-sm">{{ $opinion['date'] }}</td>
                                         </tr>
