@@ -34,7 +34,7 @@ class ScraperService
                 $html = $response->getBody()->getContents();
                 $crawler = new Crawler($html);
 
-                // Scrape all rows (handle both `altrow` and `altrow1`)
+                // Scrape all rows (handle both altrow and altrow1)
                 $opinions = $crawler->filter('table.view_details tr')->each(function (Crawler $node) use ($search) {
                     try {
                         // Extract the data from the row
