@@ -45,27 +45,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($opinions as $opinion)
-                                        <tr>
-                                            <td class="border px-4 py-2">{{ $loop->iteration + ($currentPage - 1) * 50 }}</td> 
-                                            <td class="border px-4 py-2">
-                                                <a href="{{ $opinion['link'] }}" target="_blank" class="text-blue-600 hover:underline">
-                                                    {{ $opinion['title'] }}
-                                                </a>
-                                                @if (!empty($opinion['category']))
-                                                    <br>
-                                                    <span>{{ $opinion['category'] }}</span>
-                                                @endif
+                                    @foreach ($opinions as $opinion)
+                                    @php
+                                        $slug = Str::slug($opinion['title']);
+                                    @endphp
+                                    <tr>
+                                        <td class="border px-4 py-2">{{ $loop->iteration + ($currentPage - 1) * 50 }}</td>
+                                        <td class="border px-4 py-2">
+                                            <a href="{{ route('legal-opinion.show', ['slug' => $slug]) }}" 
+                                            class="text-blue-600 hover:underline">
+                                                {{ $opinion['title'] }}
+                                            </a>
+                                            @if (!empty($opinion['category']))
                                                 <br>
-                                                <strong>{{ $opinion['reference'] }}</strong> 
-                                            </td>
-                                            <td class="border px-4 py-2 text-sm">{{ $opinion['date'] }}</td>
-                                        </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="4" class="text-center py-4 text-gray-500">No legal opinions found.</td>
-                                        </tr>
-                                    @endforelse
+                                                <span>{{ $opinion['category'] }}</span>
+                                            @endif
+                                            <br>
+                                            <strong>{{ $opinion['reference'] }}</strong> 
+                                        </td>
+                                        <td class="border px-4 py-2 text-sm">{{ $opinion['date'] }}</td>
+                                    </tr>
+                                @endforeach
+
                                 </tbody>
                             </table>
                         </div>
