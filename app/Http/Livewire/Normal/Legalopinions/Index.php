@@ -27,7 +27,6 @@ class Index extends Component
 
     public function updatingSearch()
     {
-        \Log::info('Search updated: ' . $this->search);
         $this->resetPage();
     }
 
@@ -54,11 +53,6 @@ class Index extends Component
     $opinions = collect($result['opinions'] ?? []);
     $categories = $result['categories'] ?? [];
 
-    // Log the selected category and opinion categories for debugging
-    \Log::info('Selected Category for Filter: ' . $this->selectedCategory);
-    foreach ($opinions as $opinion) {
-        \Log::info('Opinion Category: ' . $opinion['category']);
-    }
 
     // Normalize the opinion categories
     $opinions = $opinions->map(function ($opinion) {
