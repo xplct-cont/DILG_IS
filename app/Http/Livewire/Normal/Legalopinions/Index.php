@@ -2,12 +2,9 @@
 
 namespace App\Http\Livewire\Normal\Legalopinions;
 
-use App\Services\ScraperService;
+use App\Models\LegalOpinion; // Assuming you have a LegalOpinion model
 use Livewire\Component;
 use Livewire\WithPagination;
-use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Cache;
 
 class Index extends Component
 {
@@ -16,87 +13,53 @@ class Index extends Component
     public $search = '';
     public $selectedCategory = '';
     protected $paginationTheme = 'bootstrap';
-    protected $scraper;
-    
-    // Use the mount method to inject the service
-    public function mount(ScraperService $scraper)
-    {
-        $this->scraper = app(ScraperService::class);
-    }
-    
 
     public function updatingSearch()
     {
         $this->resetPage();
     }
+    
 
     public function updatingSelectedCategory()
     {
         $this->resetPage();
     }
 
-    public function render(Request $request)
+    public function render()
 {
-    $cacheKey = 'scraped_legal_opinions';
-    $result = Cache::get($cacheKey);
+    // Query distinct categories directly from the database, ordered from last to first
+    $categories = LegalOpinion::distinct('category')
+    ->whereNotNull('category') // Optional: filters out null categories if needed
+    ->where('category', '!=', '') // Optional: filters out empty categories
+    ->orderBy('category', 'asc') // Order categories in alphabetical order (A to Z)
+    ->pluck('category');
 
-    if (!$result) {
-        try {
-            $url = 'https://dilg.gov.ph/legal-opinions-archive/';
-            $result = $this->scraper->scrapeLegalOpinions($url);
-            Cache::put($cacheKey, $result, now()->addDay());
-        } catch (\Exception $e) {
-            return view('Scraper.error', ['error' => 'Unable to fetch legal opinions at this time.']);
-        }
-    }
-
-    $opinions = collect($result['opinions'] ?? []);
-    $categories = $result['categories'] ?? [];
-
-
-    // Normalize the opinion categories
-    $opinions = $opinions->map(function ($opinion) {
-        $opinion['category'] = strtolower(trim($opinion['category'])); // Normalize to lowercase
-        return $opinion;
-    });
-
-    // Apply the category filter
+    
+    // Build the query for opinions
+    $query = LegalOpinion::query();
+    
+    // Apply category filter if selected
     if ($this->selectedCategory) {
-        $opinions = $opinions->filter(function ($opinion) {
-            return str_contains(strtolower(trim($opinion['category'])), strtolower(trim($this->selectedCategory)));
-        });
+        $query->where('category', 'like', '%' . $this->selectedCategory . '%');
     }
-
-    // Apply the search filter
+    
+    // Apply search filter
     if ($this->search) {
-        $opinions = $opinions->filter(function ($opinion) {
-            return stripos($opinion['title'], $this->search) !== false ||
-                stripos($opinion['reference'], $this->search) !== false ||
-                stripos($opinion['date'], $this->search) !== false;
+        $query->where(function ($q) {
+            $q->where('title', 'like', '%' . $this->search . '%')
+              ->orWhere('reference', 'like', '%' . $this->search . '%')
+              ->orWhere('date', 'like', '%' . $this->search . '%');
         });
     }
-
-    // Sort opinions by date
-    $opinions = $opinions->sortByDesc(function ($opinion) {
-        return strtotime($opinion['date']);
-    });
-
-    // Pagination
-    $perPage = 50;
-    $currentPage = LengthAwarePaginator::resolveCurrentPage();
-    $paginatedResults = new LengthAwarePaginator(
-        $opinions->forPage($currentPage, $perPage),
-        $opinions->count(),
-        $perPage,
-        $currentPage,
-        ['path' => LengthAwarePaginator::resolveCurrentPath()]
-    );
-
+    
+    // Paginate the opinions
+    $opinions = $query->paginate(50);
+    
     return view('livewire.normal.legalopinions.index', [
-        'opinions' => $paginatedResults,
-        'currentPage' => $currentPage,
+        'opinions' => $opinions,
         'categories' => $categories,
     ]);
 }
 
+    
 }
