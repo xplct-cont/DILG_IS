@@ -221,7 +221,7 @@
                 <p class="text-justify mt-2" style="font-size: 20px; font-weight: 500;">
                     DILG R7 - Bohol Province</p>
 
-                <div id="Container " class="mx-auto"
+                <div id="Container" class="mx-auto"
                     style="padding-bottom:56.25%; position:relative; display:block; width: 100%; max-width: 100%;">
                     <iframe id="UstreamIframe"
                         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdilgboholprovince&tabs=timeline&width=950&height=450&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
@@ -237,49 +237,6 @@
                         <iframe src="https://www.youtube.com/embed/cwAGIorJD6o" class="rounded"
                             style="height:500; width:100%;" frameborder="0">
                         </iframe>
-                    </div>
-
-                    <div class="col-md-5">
-                        <div class="cont">
-                            <div class="calendar">
-                                <div class="calendar-header">
-                                    <span class="month-picker" id="month-picker"> May </span>
-                                    <div class="year-picker" id="year-picker">
-                                        <span class="year-change" id="pre-year">
-                                            <pre><</pre>
-                                        </span>
-                                        <span id="year">2020 </span>
-                                        <span class="year-change" id="next-year">
-                                            <pre>></pre>
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div class="calendar-body">
-                                    <div class="calendar-week-days">
-                                        <div>Sun</div>
-                                        <div>Mon</div>
-                                        <div>Tue</div>
-                                        <div>Wed</div>
-                                        <div>Thu</div>
-                                        <div>Fri</div>
-                                        <div>Sat</div>
-                                    </div>
-                                    <div class="calendar-days">
-                                    </div>
-                                </div>
-                                <div class="calendar-footer">
-                                </div>
-                                <div class="date-time-formate">
-                                    <div class="day-text-formate">TODAY</div>
-                                    <div class="date-time-value">
-                                        <div class="time-formate">02:51:20</div>
-                                        <div class="date-formate">23 - july - 2022</div>
-                                    </div>
-                                </div>
-                                <div class="month-list"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -53,6 +53,311 @@
             color: rgb(53, 53, 53);
             font-size: 22px;
         }
+        .calendar {
+        height: 400px;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .calendar {
+        box-shadow: var(--shadow);
+    }
+
+    .calendar-header {
+        background: #234495;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+        color: var(--white);
+    }
+
+    .calendar-week-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        font-weight: 600;
+        cursor: pointer;
+        color: #234495;
+    }
+
+    .calendar-week-days div:hover {
+        color: black;
+        transform: scale(1.2);
+        transition: all .2s ease-in-out;
+    }
+
+    .calendar-week-days div {
+        display: grid;
+        place-items: center;
+        color: var(--bg-second);
+        height: 50px;
+    }
+
+    .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+        color: var(--color-txt);
+    }
+
+    .calendar-days div {
+        width: auto;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        position: relative;
+        cursor: pointer;
+        animation: to-top 1s forwards;
+    }
+
+    .month-picker {
+        padding: 5px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .month-picker:hover {
+        background-color: var(--color-hover);
+    }
+
+    .month-picker:hover {
+        color: var(--color-txt);
+    }
+
+    .year-picker {
+        display: flex;
+        align-items: center;
+    }
+
+    .year-change {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        margin: 0px 10px;
+        cursor: pointer;
+    }
+
+    .year-change:hover {
+        background-color: var(--light-btn);
+        transition: all .2s ease-in-out;
+        transform: scale(1.12);
+    }
+
+    .year-change:hover pre {
+        color: var(--bg-body);
+    }
+
+    .calendar-footer {
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    #year:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: all 0.2 ease-in-out;
+    }
+
+    .calendar-days div span {
+        position: absolute;
+    }
+
+    .calendar-days div:hover {
+        transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+        background-color: #888;
+        border-radius: 5%;
+        color: var(--dark-text);
+    }
+
+    .calendar-days div.current-date {
+        color: var(--dark-text);
+        background-color: var(--light-btn);
+        border-radius: 5%;
+    }
+
+    .month-list {
+        position: relative;
+        left: 0;
+        top: -50px;
+        background-color: #ebebeb;
+        color: var(--light-text);
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 5px;
+        border-radius: 20px;
+    }
+
+    .month-list>div {
+        display: grid;
+        place-content: center;
+        margin: 5px 10px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .month-list>div>div {
+        border-radius: 15px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .month-list>div>div:hover {
+        background-color: var(--light-btn);
+        color: var(--dark-text);
+        transform: scale(0.9);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .month-list.show {
+        visibility: visible;
+        pointer-events: visible;
+        transition: 0.6s ease-in-out;
+        animation: to-left .71s forwards;
+    }
+
+    .month-list.hideonce {
+        visibility: hidden;
+    }
+
+    .month-list.hide {
+        animation: to-right 1s forwards;
+        visibility: none;
+        pointer-events: none;
+    }
+
+    .date-time-formate {
+        width: max-content;
+        height: max-content;
+        font-family: Dubai Light, Century Gothic;
+        position: relative;
+        display: inline;
+        top: 50px;
+        justify-content: center;
+        color: #234495;
+    }
+
+    .day-text-formate {
+        font-family: Microsoft JhengHei UI;
+        font-size: 1.1rem;
+        padding: 4%;
+        border-right: 3px solid #234495;
+        position: absolute;
+        left: -1rem;
+    }
+
+    .date-time-value {
+        display: block;
+        height: max-content;
+        width: max-content;
+        position: relative;
+        left: 40%;
+        top: -18px;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .time-formate {
+        font-size: 1.5rem;
+    }
+
+    .time-formate.hideTime {
+        animation: hidetime 1.5s forwards;
+    }
+
+    .day-text-formate.hidetime {
+        animation: hidetime 1.5s forwards;
+    }
+
+    .date-formate.hideTime {
+        animation: hidetime 1.5s forwards;
+    }
+
+    .day-text-formate.showtime {
+        animation: showtime 1s forwards;
+    }
+
+    .time-formate.showtime {
+        animation: showtime 1s forwards;
+    }
+
+    .date-formate.showtime {
+        animation: showtime 1s forwards;
+    }
+
+    @keyframes to-top {
+        0% {
+            transform: translateY(0);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(100%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes to-left {
+        0% {
+            transform: translatex(230%);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translatex(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes to-right {
+        10% {
+            transform: translatex(0);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translatex(-150%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes showtime {
+        0% {
+            transform: translatex(250%);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translatex(0%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes hidetime {
+        0% {
+            transform: translatex(0%);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translatex(-370%);
+            opacity: 1;
+        }
+    }
+
+    @media (max-width:375px) {
+        .month-list>div {
+
+            margin: 5px 0px;
+        }
+
+    }
     </style>
 
 
@@ -84,7 +389,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-xl navbar-dark shadow-sm fixed-top" style="background-color: #234495;">
+        <nav class="navbar navbar-expand-xl navbar-dark shadow-sm fixed-top" style="background-color: #234495;">     
             <div class="container">
                 <a class="navbar-brand" style="font-size: 16px;" href="{{ url('/') }}">
                     DILG-BOHOL PROVINCE
@@ -225,9 +530,56 @@
         </nav>
 
         <main class="mt-5">
-            <div class="header" style=" padding: 20px; background: #e4e1e1; color: #030303; margin-bottom: 10px;">
+            <div class="header" style="padding: 20px; background: #e4e1e1; color: #030303; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
                 <a href="/about_us"> <img width="500" height="auto" style="max-width: 100%; height:auto;"
                         src="{{ asset('/img/dilg-bohol.png') }}"></a>
+                        <button class="btn btn-light ml-auto" style="background-color:transparent; border:none;" data-bs-toggle="modal" data-bs-target="#calendarModal">
+                            <div class="date-formate" style="font-size: 15px; font-weight:bold;">dd - mm - yyyy</div>
+                            <div class="time-formate" style="font-size: 15px; font-weight:bold;">hh:mm:ss</div>
+                        </button>
+                
+                        <div class="modal fade" id="calendarModal" tabindex="-1" aria-labelledby="calendarModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="calendarModalLabel">Calendar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="calendar">
+                                            <div class="calendar-header">
+                                                <span class="month-picker" id="month-picker"> May </span>
+                                                <div class="year-picker" id="year-picker">
+                                                    <span class="year-change" id="pre-year">
+                                                        <pre><</pre>
+                                                    </span>
+                                                    <span id="year">2020 </span>
+                                                    <span class="year-change" id="next-year">
+                                                        <pre>></pre>
+                                                    </span>
+                                                </div>
+                                            </div>
+            
+                                            <div class="calendar-body">
+                                                <div class="calendar-week-days">
+                                                    <div>Sun</div>
+                                                    <div>Mon</div>
+                                                    <div>Tue</div>
+                                                    <div>Wed</div>
+                                                    <div>Thu</div>
+                                                    <div>Fri</div>
+                                                    <div>Sat</div>
+                                                </div>
+                                                <div class="calendar-days">
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="month-list"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
             </div>
             @yield('content')
         </main>
@@ -433,7 +785,116 @@
                 style="background: #002C76; color:white;"><span class="fas fa-chevron-up"></span></button>
 
 </body>
-<script></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const isLeapYear = (year) => {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 100 === 0 && year % 400 === 0);
+    };
+
+    const getFebDays = (year) => isLeapYear(year) ? 29 : 28;
+
+    const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+
+    const calendar = document.querySelector('.calendar');
+    const monthPicker = document.querySelector('#month-picker');
+    const dayTextFormate = document.querySelector('.day-text-formate');
+    const timeFormate = document.querySelector('.time-formate');
+    const dateFormate = document.querySelector('.date-formate');
+    const monthList = calendar.querySelector('.month-list');
+    const calendarDays = document.querySelector('.calendar-days');
+    const calendarHeaderYear = document.querySelector('#year');
+    const currentDate = new Date();
+    let currentMonth = { value: currentDate.getMonth() };
+    let currentYear = { value: currentDate.getFullYear() };
+
+    const generateCalendar = (month, year) => {
+        calendarDays.innerHTML = '';
+        const daysInMonth = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        const firstDay = new Date(year, month, 1);
+        monthPicker.innerHTML = monthNames[month];
+        calendarHeaderYear.innerHTML = year;
+
+        for (let i = 0; i < daysInMonth[month] + firstDay.getDay(); i++) {
+            const day = document.createElement('div');
+            const dayOfMonth = i - firstDay.getDay() + 1;
+
+            if (i >= firstDay.getDay()) {
+                day.innerHTML = dayOfMonth;
+                if (dayOfMonth === currentDate.getDate() && year === currentDate.getFullYear() && month === currentDate.getMonth()) {
+                    day.classList.add('current-date');
+                }
+            }
+
+            calendarDays.appendChild(day);
+        }
+    };
+
+    const updateDateTime = () => {
+        const currDate = new Date();
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+        const timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+        dateFormate.textContent = new Intl.DateTimeFormat('en-US', dateOptions).format(currDate);
+
+        setInterval(() => {
+            const timer = new Date();
+            timeFormate.textContent = new Intl.DateTimeFormat('en-us', timeOptions).format(timer);
+        }, 1000);
+    };
+
+    const handleMonthPickerClick = () => {
+        monthList.classList.toggle('show');
+        dayTextFormate.classList.toggle('hidetime');
+        timeFormate.classList.toggle('hideTime');
+        dateFormate.classList.toggle('hideTime');
+    };
+
+    const handleMonthSelection = (index) => {
+        currentMonth.value = index;
+        generateCalendar(currentMonth.value, currentYear.value);
+        monthList.classList.replace('show', 'hide');
+        dayTextFormate.classList.remove('hidetime');
+        dayTextFormate.classList.add('showtime');
+        timeFormate.classList.remove('hideTime');
+        timeFormate.classList.add('showtime');
+        dateFormate.classList.remove('hideTime');
+        dateFormate.classList.add('showtime');
+    };
+
+    const handleYearChange = (increment) => {
+        currentYear.value += increment;
+        generateCalendar(currentMonth.value, currentYear.value);
+    };
+
+    const initializeMonthList = () => {
+        monthNames.forEach((month, index) => {
+            const monthElement = document.createElement('div');
+            monthElement.innerHTML = `<div>${month}</div>`;
+            monthElement.onclick = () => handleMonthSelection(index);
+            monthList.appendChild(monthElement);
+        });
+        monthList.classList.add('hideonce');
+    };
+
+    const handleYearNavigation = () => {
+        document.querySelector('#pre-year').onclick = () => handleYearChange(-1);
+        document.querySelector('#next-year').onclick = () => handleYearChange(1);
+    };
+
+    const initCalendar = () => {
+        generateCalendar(currentMonth.value, currentYear.value);
+        initializeMonthList();
+        handleYearNavigation();
+        monthPicker.addEventListener('click', handleMonthPickerClick);
+        updateDateTime();
+    };
+
+    initCalendar();
+});
+
+</script>
 @livewireScripts()
 
 </html>
