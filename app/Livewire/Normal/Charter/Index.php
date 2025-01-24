@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Livewire\Normal\Charter;
+namespace App\Livewire\Normal\Charter;
 
 use Livewire\Component;
 use App\Models\Citizens_Charter;
 use App\Models\Pdf_Upload_Cit_Charter;
-
 
 class Index extends Component
 {

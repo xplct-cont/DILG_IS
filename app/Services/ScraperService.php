@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Models\LegalOpinion; // Ensure the model is imported
+use App\Models\LegalOpinion;
 use Illuminate\Support\Facades\Log;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
@@ -18,7 +18,9 @@ class ScraperService
      */
     public function scrapeLegalOpinions(string $url, $search = null)
     {
-        $client = new Client();
+        $client = new Client([
+            'timeout' => 60,  // Increase timeout to 60 seconds (or higher as needed)
+        ]);
         $allOpinions = [];
         $categories = [];
         $uniqueOpinions = [];
