@@ -207,44 +207,58 @@
             style="background-color: #234495; color: white; border-radius: 20px; padding-left: 20px; padding-right: 20px;"
             href="#">See more...</a>
     </div>
-
-    <div class="col-md-12 mb-5">
-        <div class="row">
+    <div class="row mx-auto">
+        <div class="row mx-auto">
+            <!-- Left Side: Google Map and YouTube Video -->
             <div class="col-md-7">
                 <p class="text-center" style="font-size: 25px; font-weight: 500;">Location Map</p>
-                <iframe class="rounded"
-                    src="https://maps.google.com/maps?q=rajah sikatuna tagbilaran&t=k&z=16&ie=UTF8&iwloc=&output=embed"
-                    height="450" style="border:0; width: 100%;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="col-md-5 mb-5 mx-auto">
-                <p class="text-justify mt-2" style="font-size: 20px; font-weight: 500;">
-                    DILG R7 - Bohol Province</p>
-
-                <div id="Container" class="mx-auto"
-                    style="padding-bottom:56.25%; position:relative; display:block; width: 100%; max-width: 100%;">
-                    <iframe id="UstreamIframe"
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdilgboholprovince&tabs=timeline&width=950&height=450&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                        width="100%" height="120%" style="position:absolute; top:0; left: 0" allowfullscreen
-                        webkitallowfullscreen frameborder="0" referrerpolicy="no-referrer-when-downgrade">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1006.3807523762534!2d123.87234419926708!3d9.652350795488076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa4d0045215a9d%3A0x9061d57f8098ab66!2sDepartment%20of%20the%20Interior%20and%20Local%20Government%20-%20Bohol%20Province%20Region-7%20Office!5e1!3m2!1sen!2sph!4v1737701361487!5m2!1sen!2sph" 
+                    height="400" 
+                    class="rounded w-100 border-0" 
+                    allowfullscreen 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+        
+                <div class="mt-3">
+                    <iframe 
+                        src="https://www.youtube.com/embed/cwAGIorJD6o" 
+                        class="rounded w-100" 
+                        height="390" 
+                        frameborder="0">
                     </iframe>
                 </div>
             </div>
-
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-7 mt-3">
-                        <iframe src="https://www.youtube.com/embed/cwAGIorJD6o" class="rounded"
-                            style="height:500; width:100%;" frameborder="0">
+        
+            <!-- Right Side: DILG R7 Section -->
+            <div class="col-md-5 mb-5 d-flex flex-column">
+                <p class="text-justify mt-2" style="font-size: 20px; font-weight: 500;">
+                    DILG R7 - Bohol Province
+                </p>
+        
+                <div id="Container" class="mx-auto flex-grow-1 position-relative w-100 h-100">
+                    <div id="Container" class="mx-auto flex-grow-1 w-100 h-100">
+                        <iframe id="UstreamIframe"
+                            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdilgboholprovince&tabs=timeline&width=950&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                            width="100%" 
+                            height="800px" 
+                            class="border-0" 
+                            allowfullscreen 
+                            webkitallowfullscreen 
+                            referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </div>
-        <div class="elevation-4" style="margin-top: 30px;" id="ww_afa40588f70fd" v='1.3' loc='id'
+    
+        <div class="col-md-12 mb-5">
+        <div class="elevation-4 mt-4" id="ww_afa40588f70fd" v='1.3' loc='id'
             a='{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl5320"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
-            Weather for the Following Location: <a href="https://2ua.org/phl/tagbilaran/map/" id="ww_afa40588f70fd_u"
-                target="_blank">Tagbilaran map, Philippines</a></div>
+            Weather for the Following Location: 
+            <a href="https://2ua.org/phl/tagbilaran/map/" id="ww_afa40588f70fd_u" target="_blank">Tagbilaran map, Philippines</a>
+        </div>
         <script async src="https://app1.weatherwidget.org/js/?id=ww_afa40588f70fd"></script>
         <script>
             const isLeapYear = (year) => {
