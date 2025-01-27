@@ -13,14 +13,12 @@
                         <div class="mt-3">
                             <!-- Search Input -->
                             <div class="d-flex">
-                                <label for="search" style="padding-top: 5px; padding-right:5px;">Search:</label>
-                                <input 
-                                    id="search" 
-                                    wire:model.debounce.500ms="search" 
-                                    type="text" 
-                                    placeholder="Search legal opinions" 
-                                    class="form-control input"
-                                />
+                                <label for="" style="padding-top: 5px; padding-right:5px;">Search:</label>
+                                <input wire:model.live="search" 
+                                        type="text" 
+                                        placeholder="Search legal opinions"
+                                        class="form-control input">
+
                             </div>
                             <div wire:loading>
                                 Searching...
@@ -95,3 +93,4 @@
         </div>
     </div>
 </div>
+

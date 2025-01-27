@@ -1,7 +1,7 @@
 <div>
     <div class="container">
         <div class="row">
-            <div class="col-md-6" style=" font-weight: 400; color:#C9282D;">
+            <div class="col-md-6" style=" font-weight: 400; color:#3B6790;">
                 <p style="font-weight: 500; font-size: 18px;">EXECUTIVE BRIEF</p>
                 <p style="margin-top: 5px;">Location: 803 km. south of Manila 79 km southeast of Cebu</p>
                 <p style="margin-top: -10px;">Capital : Tagbilaran City</p>
@@ -17,7 +17,7 @@
 
             </div>
             <div class="col-md-6">
-                <p class="text-justify" style="color:dimgray;">
+                <p class="text-justify" style="color:#727D73;">
                     THE Province of Bohol is an island haven tucked away in the Filipino region of Visayas.
 
                     This is one of the largest of more than 7,000 islands that comprise the Philippines, and it
