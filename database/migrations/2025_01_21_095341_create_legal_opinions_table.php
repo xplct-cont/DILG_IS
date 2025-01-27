@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('legal_opinions', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('link');
+            $table->string('title')->nullable();
+            $table->string('link')->nullable();
             $table->string('category')->nullable();
             $table->string('reference')->unique();
             $table->string('date')->nullable();

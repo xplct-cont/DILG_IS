@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('file')->nullable();
             $table->date('date')->nullable();
             $table->string('category')->nullable();
-
             $table->timestamps();
 
         });

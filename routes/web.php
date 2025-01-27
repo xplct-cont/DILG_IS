@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Normal_View\Lgu\LguController;
 use App\Http\Controllers\Admin_View\Admin_UserController;
+use App\Http\Livewire\Normal\Legalopinions\Index;
 
 //Normal View
 use App\Http\Controllers\Admin_View\Admin_LguController;
@@ -155,9 +156,22 @@ Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->nam
 Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
 
-Route::get('/legal_opinions',[Legal_OpinionsController::class, 'index'])->name('/legal_opinions');
-Route::get('/legal-opinion/{slug}', [Legal_OpinionsController::class, 'show'])->name('legal-opinion.show');
+// Route::get('/test', function () {
+//     $livewireComponent = new Index();
+//     $livewireComponent->sendAllLegalOpinionsToTangkaraw();
 
+//     return 'Test completed!';
+// });
+Route::get('test', function () {
+    $livewireComponent = app(Index::class);
+    $livewireComponent->sendAllLegalOpinionsToTangkaraw();
+
+    return session('message', session('error', 'Test completed!'));
+});
+
+
+Route::get('/legal_opinions',[Legal_OpinionsController::class, 'index'])->name('/legal_opinions');
+Route::get('/legal-opinions/{id}', [Legal_OpinionsController::class, 'showById'])->name('opinions.showById');
 
 Route::get('/downloadable_files',[DownloadablesController::class, 'index'])->name('/downloadable_files');
 Route::get('/download_downloadables/{file}',[DownloadablesController::class, 'download_downloadables']);
@@ -232,3 +246,9 @@ Route::get('/field_officers',[Field_OfficersController::class, 'index'])->name('
 //End here
 
 
+Route::get('/test-scrape', function () {
+    $scraperService = app(\App\Services\ScraperService::class);
+    $url = 'https://dilg.gov.ph/legal-opinions-archive/';
+    $scraperService->scrapeLegalOpinions($url);
+    return 'Scraping completed!';
+});
