@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\LegalOpinion;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
-use App\Models\LegalOpinion;
+// use App\Models\LegalOpinion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
