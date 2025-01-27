@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="overflow-x-auto bg-white mt-4" style="padding: 15px; padding-left: 25px; border:1px solid rgb(201, 201, 201);">
-                            <strong>Reference Number:</strong> <span>{{ $opinion->reference }}</span>
+                           <strong>{{ $opinion->reference }}</strong>
                         </div>
                         <div class="mt-4" style="background-color: rgb(235, 235, 235); text-align: center;">
                             <img src="{{ asset('storage/' . $opinion->image) }}" alt="" style="display: block; margin: auto;"> 
