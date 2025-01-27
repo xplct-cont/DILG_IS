@@ -79,10 +79,10 @@
                                         <tr>
                                             <td class="px-4 py-2 text-sm">
                                                 <a href="{{ route('opinions.showById', ['id' => $opinion->id]) }}" class="text-blue-500">
-                                                    {{ $opinion->title }}
+                                                    » {{ $opinion->title }}
                                                 </a>
                                             </td>
-                                            <td class="px-4 py-2 text-sm" style="color: rgb(176, 176, 176);">
+                                            <td class="px-4 py-2 text-sm" style="color: gray;">
                                                 {{ $opinion->date }}
                                             </td>
                                         </tr>
