@@ -59,11 +59,10 @@
                                                 {{ $loop->iteration + ($opinions->currentPage() - 1) * $opinions->perPage() }}
                                             </td>
                                             <td class="border px-4 py-2">
-                                                <a 
-                                                    href="{{ route('legal-opinion.show', ['slug' => Str::slug($opinion->title)]) }}" 
-                                                    class="text-blue-600 hover:underline">
+                                                {{-- <a href="{{ route('opinions.showByTitle', $opinion->title) }}" style="text-decoration: none;">
                                                     {{ $opinion->title }}
-                                                </a>
+                                                </a> --}}
+                                                <a href="{{ route('opinions.showById', ['id' => $opinion->id]) }}">{{ $opinion->title }}</a>
                                                 @if (!empty($opinion->category))
                                                     <br>
                                                     <span class="text-sm text-gray-600">{{ ucfirst($opinion->category) }}</span>

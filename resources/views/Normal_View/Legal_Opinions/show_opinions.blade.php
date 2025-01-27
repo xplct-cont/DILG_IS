@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-    <livewire:normal.legalopinions.show-opinion>
+    <livewire:normal.legal-opinions.show-opinion :opinion="$opinion" />
 @endsection

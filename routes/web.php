@@ -156,8 +156,7 @@ Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
 
 Route::get('/legal_opinions',[Legal_OpinionsController::class, 'index'])->name('/legal_opinions');
-Route::get('/legal-opinion/{slug}', [Legal_OpinionsController::class, 'show'])->name('legal-opinion.show');
-
+Route::get('/legal-opinions/{id}', [Legal_OpinionsController::class, 'showById'])->name('opinions.showById');
 
 Route::get('/downloadable_files',[DownloadablesController::class, 'index'])->name('/downloadable_files');
 Route::get('/download_downloadables/{file}',[DownloadablesController::class, 'download_downloadables']);
