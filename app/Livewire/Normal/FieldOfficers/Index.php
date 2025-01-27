@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Normal\Fieldofficers;
+namespace App\Livewire\Normal\FieldOfficers;
 
 use Livewire\Component;
 use App\Models\Municipality;
@@ -34,6 +34,6 @@ class Index extends Component
     public function render()
     {
         $municipalities = Municipality::orderBy('municipality', 'ASC')->get();
-        return view('livewire.normal.fieldofficers.index', compact('municipalities'), $this->loadOfficers());
+        return view('livewire.normal.field-officers.index', compact('municipalities'), $this->loadOfficers());
     }
 }

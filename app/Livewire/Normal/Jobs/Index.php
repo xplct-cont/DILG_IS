@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Normal\Jobs;
+namespace App\Livewire\Normal\Jobs;
 
 use App\Models\Job;
 use Livewire\Component;
@@ -30,3 +30,4 @@ class Index extends Component
     }
 
 }
+

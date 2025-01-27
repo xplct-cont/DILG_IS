@@ -16,7 +16,7 @@
         "laravel/ui": "^4.2",
         "livewire/livewire": "^3.0",
         "spatie/laravel-activitylog": "^4.9",
-        "spatie/laravel-permission": "^6.0",
+        "spatie/laravel-permission": "^6.10",
         "spatie/laravel-query-builder": "^6.3",
         "symfony/console": "^7.0",
         "symfony/css-selector": "^7.2",
