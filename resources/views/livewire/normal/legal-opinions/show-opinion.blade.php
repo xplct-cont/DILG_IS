@@ -23,16 +23,6 @@
                         <div class="overflow-x-auto bg-white mt-4" style="padding: 15px; padding-left: 25px; border:1px solid rgb(201, 201, 201);">
                             <strong>Reference Number:</strong> <span>{{ $opinion->reference }}</span>
                         </div>
-
-                        <div class="mt-4 text-center">
-                            <iframe 
-                                src="{{ asset('storage/' . $opinion->attachment) }}" 
-                                width="100%" 
-                                height="600px" 
-                                style="border: 1px solid rgb(189, 188, 188);">
-                            </iframe>
-                        </div>
-                        
                         <div class="mt-4" style="background-color: rgb(235, 235, 235); text-align: center;">
                             <img src="{{ asset('storage/' . $opinion->image) }}" alt="" style="display: block; margin: auto;"> 
                         </div>
