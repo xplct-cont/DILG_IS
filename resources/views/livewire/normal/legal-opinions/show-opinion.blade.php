@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="overflow-x-auto bg-white mt-4" style="padding: 15px; padding-left: 25px; border:1px solid rgb(201, 201, 201);">
-                           <strong>{{ $opinion->reference }}</strong>
+                            <strong>Reference Number:</strong> <span>{{ $opinion->reference }}</span>
                         </div>
 
                         <div class="mt-4 text-center">
