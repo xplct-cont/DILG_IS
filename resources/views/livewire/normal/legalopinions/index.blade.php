@@ -1,6 +1,4 @@
-@extends('layouts.app')
-@section('content')
-    <div>
+<div>
     <div class="mx-auto">
         <div class="col-md-12">
             <div class="card elevation-4">
@@ -53,7 +51,7 @@
                         <div class="overflow-x-auto mt-6 bg-white shadow-md rounded-lg">
                             <table class="table-auto w-full border-collapse border border-gray-300">
                                 <tbody>
-                                    @forelse ($legal_opinions as $opinion)
+                                    @forelse ($opinions as $opinion)
                                         <tr>
                                             <td class="border px-4 py-2 text-center">
                                                 {{ $loop->iteration + ($opinions->currentPage() - 1) * $opinions->perPage() }}
@@ -95,4 +93,3 @@
         </div>
     </div>
 </div>
-@endsection
