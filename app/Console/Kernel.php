@@ -2,8 +2,8 @@
 
 namespace App\Console;
 
-use App\Services\ScraperService;
 use Illuminate\Console\Scheduling\Schedule;
+use App\Services\ScraperService;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -14,15 +14,21 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
+
+     protected $commands = [
+        \App\Console\Commands\DownloadAllLegalOpinionPDFs::class, // Register your command here
+    ];
+     
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+
+        $schedule->command('download:legal-opinions')->daily();
+        
         $schedule->call(function () {
             $scraperService = app(ScraperService::class);
             $url = 'https://dilg.gov.ph/legal-opinions-archive/';
             $scraperService->scrapeLegalOpinions($url);
         })->everyMinute();
-
     }
 
     /**
