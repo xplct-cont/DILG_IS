@@ -66,6 +66,7 @@
                                                     <span class="text-sm text-gray-600"><strong>Category:</strong> {{ ucfirst($opinion->category) }}</span>
                                                 @endif
                                                 <br>
+                                                
                                                 @if (!Str::contains($opinion->reference, 'Category:'))
                                                     <strong>Reference Number: {{ $opinion->reference }}</strong>
                                                 @endif
