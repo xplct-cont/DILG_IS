@@ -15,15 +15,9 @@ class Kernel extends ConsoleKernel
      * @return void
      */
 
-     protected $commands = [
-        \App\Console\Commands\DownloadAllLegalOpinionPDFs::class, // Register your command here
-    ];
-     
     protected function schedule(Schedule $schedule)
     {
-
-        $schedule->command('download:legal-opinions')->daily();
-        
+     
         $schedule->call(function () {
             $scraperService = app(ScraperService::class);
             $url = 'https://dilg.gov.ph/legal-opinions-archive/';

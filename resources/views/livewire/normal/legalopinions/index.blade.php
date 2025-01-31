@@ -63,10 +63,13 @@
                                                 <a href="{{ route('opinions.showById', ['id' => $opinion->id]) }}">{{ $opinion->title }}</a>
                                                 @if (!empty($opinion->category))
                                                     <br>
-                                                    <span class="text-sm text-gray-600">{{ ucfirst($opinion->category) }}</span>
+                                                    <span class="text-sm text-gray-600"><strong>Category:</strong> {{ ucfirst($opinion->category) }}</span>
                                                 @endif
                                                 <br>
-                                                <strong>{{ $opinion->reference }}</strong>
+                                                @if (!Str::contains($opinion->reference, 'Category:'))
+                                                    <strong>Reference Number: {{ $opinion->reference }}</strong>
+                                                @endif
+
                                             </td>
                                             <td class="border px-4 py-2 text-sm text-center">
                                                 {{ \Carbon\Carbon::parse($opinion->date)->format('F d, Y') }}

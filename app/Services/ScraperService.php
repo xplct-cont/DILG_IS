@@ -46,6 +46,11 @@ class ScraperService
                         $reference = $node->filter('td strong')->count() > 0 ? $node->filter('td strong')->text() : null;
                         $date = $node->filter('td[nowrap]')->count() > 0 ? $node->filter('td[nowrap]')->text() : null;
 
+                        // Remove "Reference No:" if present
+                        if ($reference) {
+                            $reference = trim(str_replace('Reference No:', '', $reference));
+                        }
+
                         // Skip rows without a title or link
                         if (!$title || !$link) {
                             return null;
