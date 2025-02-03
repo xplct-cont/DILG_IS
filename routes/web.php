@@ -246,9 +246,3 @@ Route::get('/field_officers',[Field_OfficersController::class, 'index'])->name('
 //End here
 
 
-Route::get('/test-scrape', function () {
-    $scraperService = app(\App\Services\ScraperService::class);
-    $url = 'https://dilg.gov.ph/legal-opinions-archive/';
-    $scraperService->scrapeLegalOpinions($url);
-    return 'Scraping completed!';
-});
