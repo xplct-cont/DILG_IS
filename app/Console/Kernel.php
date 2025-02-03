@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Console;
-
-use Illuminate\Console\Scheduling\Schedule;
 use App\Services\ScraperService;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -14,15 +13,19 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
-
     protected function schedule(Schedule $schedule)
     {
-     
+        // $schedule->command('inspire')->hourly();
+        // $schedule->call(function () {
+        //     $scraperService = app(\App\Services\ScraperService::class);
+        //     $url = 'https://dilg.gov.ph/legal-opinions-archive/';
+        //     $scraperService->scrapeLegalOpinions($url);
+        // })->hourly(); // Adjust the frequency as needed
         $schedule->call(function () {
             $scraperService = app(ScraperService::class);
             $url = 'https://dilg.gov.ph/legal-opinions-archive/';
             $scraperService->scrapeLegalOpinions($url);
-        })->everyMinute();
+        })->hourly();
     }
 
     /**

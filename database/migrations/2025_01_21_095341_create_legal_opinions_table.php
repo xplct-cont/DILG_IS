@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('category')->nullable();
             $table->string('reference')->unique();
             $table->string('date')->nullable();
-            $table->string('download_link')->nullable();
             $table->timestamps();
         });
     }
