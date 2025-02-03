@@ -1,6 +1,4 @@
-@extends('layouts.app')
-@section('content')
-    <div>
+<div>
     <div class="mx-auto">
         <div class="col-md-12">
             <div class="card elevation-4">
@@ -53,7 +51,7 @@
                         <div class="overflow-x-auto mt-6 bg-white shadow-md rounded-lg">
                             <table class="table-auto w-full border-collapse border border-gray-300">
                                 <tbody>
-                                    @forelse ($legal_opinions as $opinion)
+                                    @forelse ($opinions as $opinion)
                                         <tr>
                                             <td class="border px-4 py-2 text-center">
                                                 {{ $loop->iteration + ($opinions->currentPage() - 1) * $opinions->perPage() }}
@@ -65,10 +63,14 @@
                                                 <a href="{{ route('opinions.showById', ['id' => $opinion->id]) }}">{{ $opinion->title }}</a>
                                                 @if (!empty($opinion->category))
                                                     <br>
-                                                    <span class="text-sm text-gray-600">{{ ucfirst($opinion->category) }}</span>
+                                                    <span class="text-sm text-gray-600"><strong>Category:</strong> {{ ucfirst($opinion->category) }}</span>
                                                 @endif
                                                 <br>
-                                                <strong>{{ $opinion->reference }}</strong>
+                                                
+                                                @if (!Str::contains($opinion->reference, 'Category:'))
+                                                    <strong>Reference Number: {{ $opinion->reference }}</strong>
+                                                @endif
+
                                             </td>
                                             <td class="border px-4 py-2 text-sm text-center">
                                                 {{ \Carbon\Carbon::parse($opinion->date)->format('F d, Y') }}
@@ -95,4 +97,3 @@
         </div>
     </div>
 </div>
-@endsection
