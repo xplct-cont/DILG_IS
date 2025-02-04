@@ -28,7 +28,8 @@
                         </div>
                         
                          <div class="mt-4">
-                            <embed src="{{ $opinion->download_link }}" width="100%" height="500px" style="border: 1px solid #ccc;"></embed>
+                            <iframe src="/proxy/pdf?url={{ urlencode($opinion->download_link) }}" width="100%" height="1000px"></iframe>
+
                         </div>
 
                         <div class="mt-4">

@@ -1,6 +1,12 @@
 <?php
 
 use Carbon\Carbon;
+//Proxy Use
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 
 //Admin View
 use Illuminate\Support\Facades\Auth;
@@ -251,4 +257,93 @@ Route::get('/test-scrape', function () {
     $url = 'https://dilg.gov.ph/legal-opinions-archive/';
     $scraperService->scrapeLegalOpinions($url);
     return 'Scraping completed!';
+});
+
+
+//Proxy use to access the pdf viewer from the dilg main with security measures
+
+Route::get('/proxy/pdf', function () {
+    $url = request('url');
+
+    // Validate URL format and enforce HTTPS
+    $validator = Validator::make(['url' => $url], [
+        'url' => 'required|url|regex:/^https:\/\//', // Enforce HTTPS strictly
+    ]);
+
+    if ($validator->fails()) {
+        abort(400, 'Invalid or insecure URL');
+    }
+
+    // Parse the domain from the URL
+    $parsedUrl = parse_url($url);
+    $domain = $parsedUrl['host'] ?? '';
+
+    // Ensure domain is strictly allowed
+    $allowedDomains = ['dilg.gov.ph', 'dilgbohol.com'];
+
+    // Check if domain is part of the allowed domains list
+    if (!in_array($domain, $allowedDomains, true)) {
+        abort(403, 'Unauthorized domain');
+    }
+
+    // Prevent SSRF by blocking internal IPs and handling DNS resolution more rigorously
+    try {
+        $dnsRecords = dns_get_record($domain, DNS_A + DNS_AAAA);
+        if (empty($dnsRecords)) {
+            abort(403, 'DNS resolution failed');
+        }
+
+        $resolvedIps = array_column($dnsRecords, 'ip');
+
+        foreach ($resolvedIps as $resolvedIp) {
+            if (!filter_var($resolvedIp, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
+                abort(403, 'Unauthorized network');
+            }
+        }
+    } catch (\Exception $e) {
+        Log::error('DNS Resolution Error: ' . $e->getMessage());
+        abort(500, 'Failed to resolve domain');
+    }
+
+    // Generate a cache key from the URL
+    $cacheKey = 'pdf_' . md5($url);
+
+    try {
+        // Cache the response to reduce load
+        $pdfContent = Cache::remember($cacheKey, 300, function () use ($url) {
+            try {
+                $response = Http::withHeaders([
+                    'User-Agent' => 'Mozilla/5.0 (compatible; MyProxy/1.0; +https://dilgbohol.com/)'
+                ])->timeout(10)->get($url);
+
+                if ($response->failed()) {
+                    return null; // Avoid caching failed responses
+                }
+
+                return $response->body();
+            } catch (\Exception $e) {
+                return null; // Avoid caching server errors
+            }
+        });
+
+        // Check if content was successfully fetched
+        if (!$pdfContent) {
+            abort(502, 'Failed to fetch PDF');
+        }
+
+        // Limit file size (5MB)
+        if (strlen($pdfContent) > 5 * 1024 * 1024) {
+            abort(413, 'File too large');
+        }
+
+        // Return the PDF content
+        return response($pdfContent, 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline',
+        ]);
+
+    } catch (\Exception $e) {
+        Log::error('PDF Proxy Error: ' . $e->getMessage());
+        abort(500, 'Server error. Please check logs.');
+    }
 });
