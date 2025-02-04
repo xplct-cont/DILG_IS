@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
             $scraperService = app(ScraperService::class);
             $url = 'https://dilg.gov.ph/legal-opinions-archive/';
             $scraperService->scrapeLegalOpinions($url);
-        })->hourly();
+        })->everyMinute();
     }
 
     /**
