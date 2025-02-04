@@ -27,10 +27,22 @@
                             </span>
                         </div>
                         
-                         <div class="mt-4">
-                            <iframe src="/proxy/pdf?url={{ urlencode($opinion->download_link) }}" width="100%" height="1000px"></iframe>
-
+                         <!-- Loading Indicator -->
+                         <div id="loadingIndicator" class="flex justify-center items-center mt-4">
+                            <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500 border-solid"></div>
+                            <p class="ml-3 text-gray-600">Loading document...</p>
                         </div>
+
+                        <!-- Iframe -->
+                        <div class="mt-4">
+                            <iframe id="pdfIframe" src="/proxy/pdf?url={{ urlencode($opinion->download_link) }}" width="100%" height="1000px" onload="hideLoading()"></iframe>
+                        </div>
+
+                        <script>
+                            function hideLoading() {
+                                document.getElementById('loadingIndicator').style.display = 'none';
+                            }
+                        </script>
 
                         <div class="mt-4">
                             <a href="{{ $opinion->download_link }}" target="_blank" style="text-decoration: none;">
