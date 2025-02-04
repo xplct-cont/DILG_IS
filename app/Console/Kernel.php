@@ -2,6 +2,7 @@
 
 namespace App\Console;
 use App\Services\ScraperService;
+use App\Services\LegalOpinionService;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -25,6 +26,11 @@ class Kernel extends ConsoleKernel
             $scraperService = app(ScraperService::class);
             $url = 'https://dilg.gov.ph/legal-opinions-archive/';
             $scraperService->scrapeLegalOpinions($url);
+        })->everyMinute();
+
+        $schedule->call(function () {
+            $sendLegalOpinions = app(LegalOpinionService::class); // Replace with your actual controller
+            $sendLegalOpinions->sendAllLegalOpinionsToTangkaraw();
         })->everyMinute();
     }
 
