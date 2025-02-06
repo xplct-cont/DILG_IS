@@ -2,12 +2,12 @@
 
 namespace App\Services;
 
-use App\Models\LegalOpinion;
+use App\Models\RepublicAct;
 use Illuminate\Support\Facades\Log;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
-class ScraperService
+class RepublicActService
 {
     /**
      * Scrape the provided URL for legal opinions.
@@ -16,15 +16,16 @@ class ScraperService
      * @param string|null $search Optional search term to filter results.
      * @return array An array of legal opinions (titles, links, references, and dates).
      */
-    public function scrapeLegalOpinions(string $url, $search = null)
+    public function scrapeRepublicacts(string $url, $search = null)
     {
         $client = new Client([
             'timeout' => 60,  // Increase timeout to 60 seconds
-            // 'verify' => false
+            'headers' => [
+                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            ]
         ]);
-        $allOpinions = [];
-        $categories = [];
-        $uniqueOpinions = [];
+
+        $uniqueActs = [];
 
         try {
             $currentPage = 1;
@@ -37,19 +38,27 @@ class ScraperService
                 $html = $response->getBody()->getContents();
                 $crawler = new Crawler($html);
 
-                // Log the first row to check its structure
+                // Log full HTML to check if content is loaded
+                Log::info("Full HTML content: " . substr($html, 0, 500)); // Logs first 500 chars for debugging
+
+                // Check if the table exists
+                if ($crawler->filter('table.view_details')->count() === 0) {
+                    Log::warning("Table 'view_details' not found on page.");
+                    break; // Stop scraping if table is missing
+                }
+
+                // Log first row HTML
                 $firstRow = $crawler->filter('table.view_details tr')->first();
                 if ($firstRow->count() > 0) {
                     Log::info("First row HTML: " . $firstRow->html());
                 }
 
                 // Scrape all rows
-                $opinions = $crawler->filter('table.view_details tr')->each(function (Crawler $node) use ($client, $search) {
+                $acts = $crawler->filter('table.view_details tr')->each(function (Crawler $node) use ($client, $search) {
                     try {
                         // Extract main data
                         $title = $node->filter('td a')->count() > 0 ? $node->filter('td a')->text() : null;
                         $link = $node->filter('td a')->count() > 0 ? $node->filter('td a')->attr('href') : null;
-                        $category = $node->filter('td strong span')->count() > 0 ? $node->filter('td strong span')->text() : null;
                         $reference = $node->filter('td strong')->count() > 0 ? $node->filter('td strong')->text() : null;
                         $date = $node->filter('td[nowrap]')->count() > 0 ? $node->filter('td[nowrap]')->text() : null;
 
@@ -70,14 +79,13 @@ class ScraperService
                             return null;
                         }
 
-                        // **Step 2: Scrape the download link from the individual legal opinion page**
+                        // **Step 2: Scrape the download link from the individual page**
                         $downloadLink = null;
                         try {
                             $response = $client->request('GET', $link);
                             $detailHtml = $response->getBody()->getContents();
                             $detailCrawler = new Crawler($detailHtml);
 
-                            // Assuming the download button is an anchor tag with text "Download"
                             // Extract the actual PDF download link
                             $downloadNode = $detailCrawler->filter('a.btn_download');
                             if ($downloadNode->count() > 0) {
@@ -93,45 +101,41 @@ class ScraperService
                         }
 
                         // Return scraped data
-                        return compact('title', 'link', 'category', 'reference', 'date', 'downloadLink');
+                        return compact('title', 'link', 'reference', 'date', 'downloadLink');
                     } catch (\Exception $e) {
                         Log::warning("Skipping a row due to error: " . $e->getMessage());
                         return null;
                     }
                 });
 
-                $opinions = array_filter($opinions);
-                foreach ($opinions as $opinion) {
-                    if (!array_key_exists($opinion['reference'], $uniqueOpinions)) {
-                        $uniqueOpinions[$opinion['reference']] = $opinion;
+                $acts = array_filter($acts);
+                foreach ($acts as $act) {
+                    if (!array_key_exists($act['reference'], $uniqueActs)) {
+                        $uniqueActs[$act['reference']] = $act;
 
                         // **Store the download link in the database**
-                        LegalOpinion::updateOrCreate(
-                            ['reference' => $opinion['reference']], // Unique constraint
+                        RepublicAct::updateOrCreate(
+                            ['reference' => $act['reference']], // Unique constraint
                             [
-                                'title' => $opinion['title'],
-                                'link' => $opinion['link'],
-                                'category' => $opinion['category'],
-                                'date' => $opinion['date'],
-                                'download_link' => $opinion['downloadLink'], // <-- Store the download link
+                                'title' => $act['title'],
+                                'link' => $act['link'],
+                                'date' => $act['date'],
+                                'download_link' => $act['downloadLink'], // <-- Store the download link
                             ]
                         );
                     }
                 }
 
-                if (empty($categories)) {
-                    $categories = $crawler->filter('form.myformStyle select.catBox option')->each(function (Crawler $node) {
-                        return [
-                            'value' => $node->attr('value'),
-                            'text' => $node->text(),
-                        ];
-                    });
-                }
-
+                // **Improved Pagination Handling**
                 $nextPageNode = $crawler->filter('li.pWord a:contains("next")');
                 if ($nextPageNode->count() > 0) {
                     $nextPageHref = $nextPageNode->attr('href');
-                    $url = str_starts_with($nextPageHref, 'http') ? $nextPageHref : 'https://dilg.gov.ph' . $nextPageHref;
+                    if ($nextPageHref) {
+                        $url = str_starts_with($nextPageHref, 'http') ? $nextPageHref : 'https://dilg.gov.ph' . $nextPageHref;
+                    } else {
+                        Log::info('Next page link found, but no valid href attribute.');
+                        break;
+                    }
                 } else {
                     $url = null;
                     Log::info('No more pages to scrape.');
@@ -139,8 +143,7 @@ class ScraperService
             }
 
             return [
-                'opinions' => array_values($uniqueOpinions),
-                'categories' => $categories,
+                'acts' => array_values($uniqueActs),
             ];
         } catch (\Exception $e) {
             Log::error('Error scraping data: ' . $e->getMessage());
