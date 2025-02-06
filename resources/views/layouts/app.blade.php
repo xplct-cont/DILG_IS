@@ -666,7 +666,7 @@
                             <a href="https://sc.judiciary.gov.ph/" target="_blank">
                                 <p class="text-secondary"
                                     style="font-size: 12px; font-weight: 300; margin-top: -15px;">
-                                    Supereme Court</p>
+                                    Supreme Court</p>
                             </a>
                             <a href="https://ca.judiciary.gov.ph/" target="_blank">
                                 <p class="text-secondary"
