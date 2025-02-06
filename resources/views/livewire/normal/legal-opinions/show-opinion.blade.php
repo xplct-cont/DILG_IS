@@ -29,10 +29,13 @@
                         
                          <div class="mt-4">
                             <iframe src="/proxy/pdf?url={{ urlencode($opinion->download_link) }}" width="100%" height="1000px"></iframe>
-
                         </div>
 
-                        <div class="mt-4">
+                        <div>
+                            <p>Note: If the plugin fails to load, please <a href="{{$opinion->download_link}}" target="_blank" class="text-danger">click here</a> to view the PDF.</p>
+                        </div>
+
+                        {{-- <div class="mt-4">
                             <a href="{{ $opinion->download_link }}" target="_blank" style="text-decoration: none;">
                                 <span class="p-2" style="border:1px solid rgb(189, 188, 188); color:rgb(79, 79, 79);">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
@@ -42,7 +45,7 @@
                                     Download Attachment
                                 </span>
                             </a>
-                        </div>
+                        </div> --}}
 
                         <div class="border border-gray-500 mt-4"></div>
                         @php

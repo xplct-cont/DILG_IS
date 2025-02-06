@@ -20,7 +20,8 @@
         "spatie/laravel-query-builder": "^6.3",
         "symfony/console": "^7.0",
         "symfony/css-selector": "^7.2",
-        "symfony/dom-crawler": "^7.2"
+        "symfony/dom-crawler": "^7.2",
+        "thiagoalessio/tesseract_ocr": "^2.13"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
