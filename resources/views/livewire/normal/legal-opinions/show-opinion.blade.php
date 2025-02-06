@@ -54,7 +54,7 @@
                                     Download Attachment
                                 </span>
                             </a>
-                        </div>
+                        </div> --}}
 
                         <div class="border border-gray-500 mt-4"></div>
                         @php
