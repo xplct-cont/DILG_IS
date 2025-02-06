@@ -53,7 +53,7 @@ use App\Http\Controllers\Normal_View\Attached_Agencies\Attached_AgenciesControll
 use App\Http\Controllers\Normal_View\Downloadables\DownloadablesController;
 use App\Http\Controllers\Normal_View\Provincial_Officials\Provincial_OfficialsController;
 use App\Http\Controllers\Normal_View\Citizens_Charter\Citizens_CharterController;
-
+use App\Http\Controllers\Normal_View\Republic_Acts;
 
 /*
 |--------------------------------------------------------------------------
@@ -178,6 +178,9 @@ Route::get('test', function () {
 
 Route::get('/legal_opinions',[Legal_OpinionsController::class, 'index'])->name('/legal_opinions');
 Route::get('/legal-opinions/{id}', [Legal_OpinionsController::class, 'showById'])->name('opinions.showById');
+
+Route::get('/republic_acts', [Republic_Acts::class, 'index'])->name('/republic_acts');
+Route::get('/republic-acts/{id}', [Republic_Acts::class, 'showById'])->name('acts.showById');
 
 Route::get('/downloadable_files',[DownloadablesController::class, 'index'])->name('/downloadable_files');
 Route::get('/download_downloadables/{file}',[DownloadablesController::class, 'download_downloadables']);

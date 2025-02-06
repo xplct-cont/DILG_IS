@@ -3,6 +3,7 @@
 namespace App\Console;
 use App\Services\ScraperService;
 use App\Services\LegalOpinionService;
+use App\Services\RepublicActService;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -22,15 +23,25 @@ class Kernel extends ConsoleKernel
         //     $url = 'https://dilg.gov.ph/legal-opinions-archive/';
         //     $scraperService->scrapeLegalOpinions($url);
         // })->hourly(); // Adjust the frequency as needed
+
+        //Legal Opinions 
         $schedule->call(function () {
             $scraperService = app(ScraperService::class);
             $url = 'https://dilg.gov.ph/legal-opinions-archive/';
             $scraperService->scrapeLegalOpinions($url);
         })->everyMinute();
 
+        //Tangkaraw Legal Opinions Record Transfer
         $schedule->call(function () {
-            $sendLegalOpinions = app(LegalOpinionService::class); // Replace with your actual controller
+            $sendLegalOpinions = app(LegalOpinionService::class); 
             $sendLegalOpinions->sendAllLegalOpinionsToTangkaraw();
+        })->everyMinute();
+
+        //Republic Acts
+        $schedule->call(function () {
+            $republicactService = app(RepublicActService::class);
+            $url = 'https://dilg.gov.ph/issuances-archive/ra/';
+            $republicactService->scrapeRepublicacts($url);
         })->everyMinute();
     }
 
