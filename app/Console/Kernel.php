@@ -3,6 +3,7 @@
 namespace App\Console;
 use App\Services\ScraperService;
 use App\Services\LegalOpinionService;
+use App\Services\PresidentialDirectiveService;
 use App\Services\RepublicActService;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -26,23 +27,23 @@ class Kernel extends ConsoleKernel
 
         //Legal Opinions 
         $schedule->call(function () {
+            // Scrape Legal Opinions
             $scraperService = app(ScraperService::class);
-            $url = 'https://dilg.gov.ph/legal-opinions-archive/';
-            $scraperService->scrapeLegalOpinions($url);
-        })->everyMinute();
-
-        //Tangkaraw Legal Opinions Record Transfer
-        $schedule->call(function () {
-            $sendLegalOpinions = app(LegalOpinionService::class); 
+            $scraperService->scrapeLegalOpinions('https://dilg.gov.ph/legal-opinions-archive/');
+        
+            // Transfer Legal Opinions Record
+            $sendLegalOpinions = app(LegalOpinionService::class);
             $sendLegalOpinions->sendAllLegalOpinionsToTangkaraw();
-        })->everyMinute();
-
-        //Republic Acts
-        $schedule->call(function () {
+        
+            // Scrape Republic Acts
             $republicactService = app(RepublicActService::class);
-            $url = 'https://dilg.gov.ph/issuances-archive/ra/';
-            $republicactService->scrapeRepublicacts($url);
+            $republicactService->scrapeRepublicacts('https://dilg.gov.ph/issuances-archive/ra/');
+        
+            // Scrape Presidential Directives
+            $presidentialdirectiveService = app(PresidentialDirectiveService::class);
+            $presidentialdirectiveService->scrapePresidentialdirectives('https://dilg.gov.ph/issuances-archive/pd/');
         })->everyMinute();
+        
     }
 
     /**

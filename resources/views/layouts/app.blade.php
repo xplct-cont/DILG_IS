@@ -457,8 +457,8 @@
                                         href="https://dilg.gov.ph/issuances-archive/jc/">Joint Circulars</a></li>
                                 <li><a class="dropdown-item" target="_blank"
                                         href="https://dilg.gov.ph/issuances-archive/mc/">Memo Circulars</a></li>
-                                <li><a class="dropdown-item" target="_blank"
-                                        href="https://dilg.gov.ph/issuances-archive/pd/">Presidential Directives</a>
+                                <li><a class="dropdown-item"
+                                        href="{{url('presidential_directives')}}">Presidential Directives</a>
                                 </li>
                                 <li><a class="dropdown-item" target="_blank"
                                         href="https://dilg.gov.ph/issuances-archive/draft/">Draft Issuances</a></li>

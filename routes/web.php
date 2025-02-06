@@ -54,6 +54,7 @@ use App\Http\Controllers\Normal_View\Downloadables\DownloadablesController;
 use App\Http\Controllers\Normal_View\Provincial_Officials\Provincial_OfficialsController;
 use App\Http\Controllers\Normal_View\Citizens_Charter\Citizens_CharterController;
 use App\Http\Controllers\Normal_View\Republic_Acts;
+use App\Http\Controllers\Normal_View\PresidentialDirectiveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -181,6 +182,9 @@ Route::get('/legal-opinions/{id}', [Legal_OpinionsController::class, 'showById']
 
 Route::get('/republic_acts', [Republic_Acts::class, 'index'])->name('/republic_acts');
 Route::get('/republic-acts/{id}', [Republic_Acts::class, 'showById'])->name('acts.showById');
+
+Route::get('/presidential_directives', [PresidentialDirectiveController::class, 'index'])->name('/presidential_directives');
+Route::get('/presidential-directives/{id}', [PresidentialDirectiveController::class, 'showById'])->name('directives.showById');
 
 Route::get('/downloadable_files',[DownloadablesController::class, 'index'])->name('/downloadable_files');
 Route::get('/download_downloadables/{file}',[DownloadablesController::class, 'download_downloadables']);
