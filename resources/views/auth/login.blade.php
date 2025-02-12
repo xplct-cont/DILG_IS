@@ -118,13 +118,12 @@
                                 <label for="password" class="col-md-3 col-form-label text-md-left">{{ __('Password') }}</label>
                                 <div class="col-md-9">
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password" name="password" required autocomplete="current-password">
-                                <span class="d-flex justify-content-end mt-1"><i class="fas fa-eye" style="color: #C9282D;" aria-hidden="true" id="eye" onclick="togglePassword()"></i></span>
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                                </span>
-                                 @enderror
-                                   </div>
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
 </div>
                                     <div class="form-group row">
                                         <div class="col-md-9 offset-md-3">

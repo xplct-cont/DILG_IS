@@ -60,30 +60,37 @@
 
                                         <div class="form-group">
                                             <label for="municipality_id">Municipality:</label>
-
-                                            <select name="municipality_id" id="municipality_id" class="form-control"
-                                                style="color:dimgray;" required>
+                                            <select name="municipality_id" id="municipality_id" class="form-control" style="color:dimgray;" required>
                                                 <option selected>Select Municipality...</option>
                                                 @foreach ($municipalities as $municipality)
-                                                    <option value="{{ $municipality->id }}">
+                                                    <option value="{{ $municipality->id }}" {{ old('municipality_id') == $municipality->id ? 'selected' : '' }}>
                                                         {{ $municipality->municipality }}
                                                     </option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                            @error('municipality_id')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>                                        
 
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Mayor:</label>
-                                                <input type="text" class="form-control" name="mayor">
-                                            </div>
+                                                <label for="mayor" style="color:dimgray">Mayor:</label>
+                                                <input type="text" class="form-control" name="mayor" value="{{ old('mayor') }}">
+                                                @error('mayor')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>                                            
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Vice Mayor:</label>
-                                                <input type="text" class="form-control" name="vice_mayor">
+                                                <label for="vice_mayor" style="color:dimgray">Vice Mayor:</label>
+                                                <input type="text" class="form-control" name="vice_mayor" value="{{old('vice_mayor')}}">
+                                                @error('vice_mayor')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-6">

@@ -53,7 +53,7 @@ class Admin_Provincial_OfficialsController extends Controller
             $file = $request->file('profile_image');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save('/home/dilgboho/public_html/provincial_officials_images/'. $filename);
+            Image::make($file)->save(public_path('/provincial_officials_images/' . $filename));
             $prov_officials->profile_image = $filename;
           
           }

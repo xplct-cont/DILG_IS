@@ -76,12 +76,12 @@
             @endforeach
         </tbody>
     </table>
-</div>
-<div class="text-start" style="color:rgb(83, 82, 82); margin-top: 10px;">
-    Showing {{ $logs->firstItem() }} to {{ $logs->lastItem() }} of {{ $logs->total() }} entries
+    <div class="text-start" style="color:rgb(83, 82, 82); margin-top: 10px;">
+        Showing {{ $logs->firstItem() }} to {{ $logs->lastItem() }} of {{ $logs->total() }} entries
+    </div>
+
+    <div class="d-flex justify-content-end mt-2">
+        {{ $logs->onEachSide(-1)->links() }}
+    </div>
 </div>
 
-<div class="d-flex justify-content-end mt-2">
-    {{ $logs->onEachSide(-1)->links() }}
-</div>
-</div>
