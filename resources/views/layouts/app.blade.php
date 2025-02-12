@@ -460,8 +460,8 @@
                                 <li><a class="dropdown-item"
                                         href="{{url('presidential_directives')}}">Presidential Directives</a>
                                 </li>
-                                <li><a class="dropdown-item" target="_blank"
-                                        href="https://dilg.gov.ph/issuances-archive/draft/">Draft Issuances</a></li>
+                                <li><a class="dropdown-item"
+                                        href="{{url('draft_issuances')}}">Draft Issuances</a></li>
                                 <li><a class="dropdown-item"
                                         href="{{url('republic_acts')}}">Republic Acts</a></li>
                                 <li><a class="dropdown-item"
