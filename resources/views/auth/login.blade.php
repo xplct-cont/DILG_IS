@@ -26,6 +26,49 @@
         crossorigin="anonymous" />
 
     <style>
+        .input-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding-left: 40px; /* Prevents text from overlapping with the icon */
+        }
+
+        .password-icon {
+            position: absolute;
+            left: 10px; /* Adjust spacing from the right */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 25px;
+            color: gray;
+            cursor: pointer;
+        }
+
+        .input-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding-right: 40px; /* Prevents text from overlapping with the icon */
+        }
+
+        .email-icon {
+            position: absolute;
+            left: 10px; /* Adjust spacing from the right */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 25px;
+            color: gray;
+        }
+
         html {
             height: 100%;
         }
@@ -96,41 +139,64 @@
                         </div>
 
                         <div class="col-md-6">
-                            <div class="card-body p-4">
-                                <h3 class="text-center mb-4" style="font-size: 20px; font-weight: 300; color: dark-grey;"><b>Login to
+                            <div class="card-body p-4 mt-4">
+                                <h3 class="text-center mb-4" style="font-size: 20px; font-weight: 300; color:#0d0d0e;"><b>Login to
                                         your Account</b></h3>
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
 
-                                    <div class="form-group row">
-                                    <label for="email" class="col-md-3 col-form-label text-md-left">{{ __('Email') }}</label>
-                                    <div class="col-md-9">
-                                       <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter your e-mail address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                    @error('email')
-                                      <span class="invalid-feedback" role="alert">
-                                           <strong>{{ $message }}</strong>
-                                      </span>
-                                    @enderror
-                                 </div>
-                                </div>
+                                    <div class="form-group row" style="margin-top: 50px;">
+                                        <label for="email" class="col-md-3 col-form-label">
+                                            Email:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <div class="input-container">
+                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" 
+                                                    placeholder="Enter your email address" name="email" value="{{ old('email') }}" 
+                                                    required autocomplete="email" autofocus>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" 
+                                                    stroke="currentColor" class="email-icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" 
+                                                        d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                                                </svg>
+                                            </div>
+                                            @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    
 
-                                <div class="form-group row">
-                                <label for="password" class="col-md-3 col-form-label text-md-left">{{ __('Password') }}</label>
-                                <div class="col-md-9">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password" name="password" required autocomplete="current-password">
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-</div>
                                     <div class="form-group row">
-                                        <div class="col-md-9 offset-md-3">
+                                        <label for="password" class="col-md-3 col-form-label">
+                                            Password:
+                                        </label>
+                                        <div class="col-md-9">
+                                            <div class="input-container">
+                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" 
+                                                    placeholder="Enter your password" name="password" required autocomplete="current-password">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" 
+                                                    stroke="currentColor" class="password-icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" 
+                                                        d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+                                                </svg>
+                                            </div>
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group row">
+                                        <div class="col-md-23 offset-md-3">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="remember"
                                                     id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="remember" style="font-size: 18px;">
+                                                <label class="form-check-label" for="remember" style="font-size: 16px; color:rgb(49, 49, 49);">
                                                     {{ __('Remember Me') }}
                                                 </label>
                                             </div>
@@ -139,7 +205,7 @@
 
                                     
                                 <div class="row mb-0 ">
-                                    <div class="col-md-6 offset-md-5 d-flex justify-content-end">
+                                    <div class="col-md-6 offset-md-6 d-flex justify-content-end">
                                         <button type="submit" class="btn " style="background: #234495; color:white;">
                                             {{ __('Login') }} <span class="fas fa-sign-in-alt"></span>
                                         </button>

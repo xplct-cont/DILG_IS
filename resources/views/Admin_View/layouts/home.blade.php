@@ -1,7 +1,7 @@
 @extends('Admin_View.layouts.app')
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+        <div class="alert alert-success text-center text-lg alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
