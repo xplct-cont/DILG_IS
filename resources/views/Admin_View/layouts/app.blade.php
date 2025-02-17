@@ -49,45 +49,46 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- Main Header -->
-        <nav class="main-header navbar navbar-expand text-light" style="background-color: #234495;">
+        <nav class="main-header navbar navbar-expand text-light p-3" style="background-color: #234495;">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-light" data-widget="pushmenu" href="#" role="button"><i
+                    <a style="text-decoration: none; color:white;" data-widget="pushmenu" href="#" role="button"><i
                             class="fas fa-bars"></i> Menu</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" style="text-decoration: none; color:white;" data-toggle="dropdown">
                         <img src={{ '/user_profile_images/' . Auth::user()->profile_image }}
                             class="user-image img-circle elevation-2" alt="User Image"
                             style="background-color:white;  padding-top:3px; padding-bottom: 3px; padding-left: 3px; padding-right: 3px;">
                         <span class="d-none d-md-inline text-light">{{ Auth::user()->name }}</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-right"
+                        style="width: 180px; top: 42px; right: 0; position: absolute;">
                         <!-- User image -->
-                        <li class="user-header text-dark" style="background-color: white;">
-                            <img src={{ '/user_profile_images/' . Auth::user()->profile_image }}
+                        <li class="user-header text-dark text-center p-2" style="background-color: white;">
+                            <img src="{{ '/user_profile_images/' . Auth::user()->profile_image }}"
                                 class="img-circle elevation-2" alt="User Image"
-                                style=" padding-top:2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px;">
-                            <p class="text-dark">
+                                style="width: 100px; height: 100px;">
+                            <p class="text-dark mb-1" style="font-size: 14px;">
                                 {{ Auth::user()->name }}
-                                <small>{{ Auth::user()->position }}</small>
+                                <small class="d-block" style="font-size: 12px;">{{ Auth::user()->position }}</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <a href="{{ route('admin/profile') }}" class="btn btn-default btn-flat">Profile</a>
-                            <a href="#" class="btn btn-default btn-flat float-right"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <li class="user-footer text-center p-2">
+                            <a href="{{ route('admin/profile') }}" class="btn btn-sm btn-default btn-flat" style="color: green;">Profile</a>
+                            <a href="#" class="btn btn-sm btn-default btn-flat" style="color: red;"
+                                onclick="event.preventDefault(); confirmLogout();">
                                 Sign out
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                        </li>
+                        </li>    
                     </ul>
                 </li>
             </ul>
@@ -118,6 +119,14 @@
         </div>
 
     </div>
+
+    <script>
+        function confirmLogout() {
+            if (confirm('Are you sure you want to sign out?')) {
+                document.getElementById('logout-form').submit();
+            }
+        }
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
