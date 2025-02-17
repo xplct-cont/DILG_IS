@@ -43,10 +43,6 @@ class Kernel extends ConsoleKernel
             // Scrape Presidential Directives
             $presidentialdirectiveService = app(PresidentialDirectiveService::class);
             $presidentialdirectiveService->scrapePresidentialdirectives('https://dilg.gov.ph/issuances-archive/pd/');
-
-            // Scrape Draft Issuances
-            $draftissuanceService = app(DraftIssuanceService::class);
-            $draftissuanceService->scrapedraftIssuance('https://dilg.gov.ph/issuances-archive/draft/');
         })->everyMinute();
         
     }

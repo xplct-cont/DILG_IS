@@ -187,9 +187,6 @@ Route::get('/republic-acts/{id}', [Republic_Acts::class, 'showById'])->name('act
 Route::get('/presidential_directives', [PresidentialDirectiveController::class, 'index'])->name('/presidential_directives');
 Route::get('/presidential-directives/{id}', [PresidentialDirectiveController::class, 'showById'])->name('directives.showById');
 
-Route::get('/draft_issuances', [DraftIssuanceController::class, 'index'])->name('/draft_issuances');
-Route::get('/draft-issuances/{id}', [DraftIssuanceController::class, 'showById'])->name('drafts.showById');
-
 Route::get('/downloadable_files',[DownloadablesController::class, 'index'])->name('/downloadable_files');
 Route::get('/download_downloadables/{file}',[DownloadablesController::class, 'download_downloadables']);
 
