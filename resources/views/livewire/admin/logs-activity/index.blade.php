@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    <table class="table text-center table-striped elevation-4 mt-4">
+    <table class="table text-center table-bordered elevation-4 mt-4">
         <thead style="background-color:#343a40; color:white;">
             <tr>
                 <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
