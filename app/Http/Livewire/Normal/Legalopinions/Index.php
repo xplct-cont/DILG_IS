@@ -2,13 +2,9 @@
 
 namespace App\Http\Livewire\Normal\Legalopinions;
 
-use App\Services\ScraperService;
 use Livewire\Component;
-use App\Models\LegalOpinion;
 use Livewire\WithPagination;
-use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Cache;
+use App\Models\LegalOpinion;
 
 class Index extends Component
 {
@@ -16,51 +12,61 @@ class Index extends Component
 
     public $search = '';
     public $selectedCategory = '';
+    public $loFilter = ''; // Added LO- filter
     protected $paginationTheme = 'bootstrap';
 
     public function updatingSearch()
     {
         $this->resetPage();
     }
-    
 
     public function updatingSelectedCategory()
     {
         $this->resetPage();
     }
 
+    public function updatingLoFilter() // Reset pagination when LO- filter changes
+    {
+        $this->resetPage();
+    }
+
     public function render()
-{
-    // Query distinct categories directly from the database
-    $categories = LegalOpinion::distinct('category')
-        ->whereNotNull('category')
-        ->where('category', '!=', '')
-        ->orderBy('category', 'asc')
-        ->pluck('category');
+    {
+        // Fetch unique categories for dropdown
+        $categories = LegalOpinion::distinct('category')
+            ->whereNotNull('category')
+            ->where('category', '!=', '')
+            ->orderBy('category', 'asc')
+            ->pluck('category');
 
-    // Build the query for opinions
-    $query = LegalOpinion::query();
+        // Build the base query
+        $query = LegalOpinion::query();
 
-    // Apply category filter if selected
-    if ($this->selectedCategory) {
-        $query->where('category', 'like', '%' . $this->selectedCategory . '%');
+        // Apply category filter
+        if (!empty($this->selectedCategory)) {
+            $query->where('category', 'like', '%' . $this->selectedCategory . '%');
+        }
+
+        // Apply search filter
+        if (!empty($this->search)) {
+            $query->where(function ($subQuery) {
+                $subQuery->where('title', 'like', '%' . $this->search . '%')
+                    ->orWhere('reference', 'like', '%' . $this->search . '%')
+                    ->orWhere('date', 'like', '%' . $this->search . '%');
+            });
+        }
+
+        // Apply LO- filter dynamically
+        if ($this->loFilter === 'lo_only') {
+            $query->where('title', 'LIKE', 'LO-%');
+        }
+
+        // Paginate the final results
+        $opinions = $query->paginate(50);
+
+        return view('livewire.normal.legalopinions.index', [
+            'opinions' => $opinions,
+            'categories' => $categories,
+        ]);
     }
-
-    // Apply search filter
-    if ($this->search) {
-        $query->where(function ($subQuery) {
-            $subQuery->where('title', 'like', '%' . $this->search . '%')
-                ->orWhere('reference', 'like', '%' . $this->search . '%')
-                ->orWhere('date', 'like', '%' . $this->search . '%');
-        });
-    }
-
-    // Paginate the results
-    $opinions = $query->paginate(50);
-
-    return view('livewire.normal.legalopinions.index', [
-        'opinions' => $opinions,
-        'categories' => $categories,
-    ]);
-}   
 }
