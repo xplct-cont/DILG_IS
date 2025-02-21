@@ -8,10 +8,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>DILG Bohol Province</title>
+    <!-- ✅ Allow dynamic page titles -->
+    <title>@yield('title', 'DILG Bohol Province')</title>
 
-    <meta name="description"
-        content="Welcome to the official website of the Department of the Interior and Local Government Bohol Province.">
+    <!-- ✅ Allow pages to override Open Graph meta tags -->
+    @yield('meta')
+
+
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -389,7 +394,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-xl navbar-dark shadow-sm fixed-top" style="background-color: #234495;">     
+        <nav class="navbar navbar-expand-xl navbar-dark shadow-sm fixed-top" style="background-color: #234495;">
             <div class="container">
                 <a class="navbar-brand" style="font-size: 16px;" href="{{ url('/') }}">
                     DILG-BOHOL PROVINCE
@@ -535,7 +540,7 @@
                             <div class="date-formate" style="font-size: 15px; font-weight:bold;">dd - mm - yyyy</div>
                             <div class="time-formate" style="font-size: 15px; font-weight:bold;">hh:mm:ss</div>
                         </button>
-                
+
                         <div class="modal fade" id="calendarModal" tabindex="-1" aria-labelledby="calendarModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -557,7 +562,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-            
+
                                             <div class="calendar-body">
                                                 <div class="calendar-week-days">
                                                     <div>Sun</div>
@@ -571,7 +576,7 @@
                                                 <div class="calendar-days">
                                                 </div>
                                             </div>
-                                        
+
                                             <div class="month-list"></div>
                                         </div>
                                     </div>

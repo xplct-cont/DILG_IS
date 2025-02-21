@@ -44,6 +44,7 @@ use App\Http\Controllers\Admin_View\Admin_ChangePasswordController;
 use App\Http\Controllers\Admin_View\Admin_Field_OfficersController;
 use App\Http\Controllers\Admin_View\Admin_Bohol_IssuancesController;
 use App\Http\Controllers\Admin_View\Admin_LogsController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Normal_View\Legal_Opinions\Legal_OpinionsController;
 use App\Http\Controllers\Normal_View\Organization\OrganizationController;
 use App\Http\Controllers\Normal_View\Provincial_Director\DirectorController;
@@ -163,6 +164,8 @@ Route::get('/faqs',[FaqsController::class, 'index'])->name('/faqs');
 Route::get('/latest_issuances',[Bohol_IssuancesController::class, 'index'])->name('/latest_issuances');
 Route::get('/latest_issuances/{id}',[Bohol_IssuancesController::class, 'show']);
 Route::get('/download/{file}',[Bohol_IssuancesController::class, 'download']);
+
+Route::get('/news/{id}', [NewsController::class, 'show']);
 
 // Route::get('/test', function () {
 //     $livewireComponent = new Index();

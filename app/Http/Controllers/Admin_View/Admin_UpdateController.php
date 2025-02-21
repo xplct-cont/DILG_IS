@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin_View;
 
-use Facebook\Facebook;
 use App\Http\Controllers\Controller;
 use App\Models\Update;
 use App\Models\Updates_Image;
@@ -39,66 +38,28 @@ class Admin_UpdateController extends Controller
 
     $img->title = $request->input('title');
     $img->caption = $request->input('caption');
-    $img->user_id = auth()->user()->id;
+    $img->user_id = \Illuminate\Support\Facades\Auth::id();
 
+    // Validation
     $this->validate($request, [
-        'images*' => 'image|mimes:jpeg,png,jpg,gif,svg'
+        'images' => 'required|array',
+        'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
     ]);
+
+    $data = [];
 
     if ($request->hasFile('images')) {
         foreach ($request->file('images') as $image) {
-            $name = $image->getClientOriginalName();
-            $image->move('/home/dilgboho/public_html/news_updates/', $name);
+            $name = time() . '_' . $image->getClientOriginalName(); // Prevent name conflicts
+            $image->move(public_path('news_updates'), $name); // Store in /public/news_updates
             $data[] = $name;
         }
         $img->images = json_encode($data);
     }
 
     $img->save();
-
-    // Check if "Share to Facebook" checkbox was selected
-    if ($request->has('share_to_facebook')) {
-        $this->shareToFacebook($request->input('title'), $request->input('caption'));
-    }
-
-    return redirect()->back()->with('message', 'Added Successfully : Waiting for Approval!');
+    return redirect()->back()->with('message', 'Added Successfully: Waiting for Approval!');
 }
-
-    protected function shareToFacebook($title, $caption)
-    {
-        $fb = new Facebook([
-            'app_id' => config('services.facebook.app_id'),
-            'app_secret' => config('services.facebook.app_secret'),
-            'default_graph_version' => 'v12.0',
-        ]);
-
-        try {
-            // Get the access token from config or directly here
-            $accessToken = config('services.facebook.access_token');
-
-            // Prepare the message
-            $message = $title . "\n\n" . $caption . "\n\n" . 'Check out our website: https://dilgbohol.com/news_update';
-
-            // Ensure the access token is not empty
-            if (empty($accessToken)) {
-                throw new \Exception('Access token is missing or invalid.');
-            }
-
-            // Send the post request with message and access token
-            $fb->post('/me/feed', [
-                'message' => $message
-            ], $accessToken);
-
-            // Optionally, redirect with a success message
-            return redirect()->back()->with('success', 'News successfully posted to Facebook!');
-        } catch (\Facebook\Exceptions\FacebookResponseException $e) {
-            return redirect()->back()->with('error', 'Graph returned an error: ' . $e->getMessage());
-        } catch (\Facebook\Exceptions\FacebookSDKException $e) {
-            return redirect()->back()->with('error', 'Facebook SDK returned an error: ' . $e->getMessage());
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', $e->getMessage());
-        }
-    }
 
 
     public function edit_updates(Request $request, $id)
@@ -107,7 +68,7 @@ class Admin_UpdateController extends Controller
 
         $img->title = $request->input('title');
         $img->caption = $request->input('caption');
-        $img->user_id = auth()->user()->id;
+        $img->user_id = \Illuminate\Support\Facades\Auth::user()->id;
 
         $this->validate($request, [
             'edit_images.*' => 'image|mimes:jpeg,png,jpg,gif,svg'
