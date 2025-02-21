@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin_View;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use DB;
 use App\Models\Job;
 use Image;
@@ -40,29 +41,26 @@ class Admin_JobsController extends Controller
     }
 
     public function store(Request $request){
-
         $admin_jobs = new Job;
-
         $admin_jobs->position = $request->input('position');
         $admin_jobs->link = $request->input('link');
         $admin_jobs->details = $request->input('details');
         $admin_jobs->user_id = auth()->user()->id;
-
-
+    
         if($request->hasFile('hiring_img')){
-
             $file = $request->file('hiring_img');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'. $extention;
-            Image::make($file)->save('/home/dilgboho/public_html/hiring_images/'. $filename);
+            $filename = time().'.'.$file->getClientOriginalExtension();
+            
+            // Store in public storage
+            $path = 'hiring_images/'.$filename;
+            Image::make($file)->save(public_path($path));
+    
             $admin_jobs->hiring_img = $filename;
-
-          }
-
+        }
+    
         $admin_jobs->save();
-
+    
         return redirect()->back()->with('message', 'Added Successfully!');
-
     }
 
     public function update_jobs(Request $request, $id){

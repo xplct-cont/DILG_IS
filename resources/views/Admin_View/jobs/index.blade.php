@@ -95,7 +95,7 @@
 
         <div class="card mt-2">
 
-            <div class="card-header d-flex justify-content-between">
+            <div class="card-header p-2 d-flex justify-content-between">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
                 <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="dropdown-item"
                         href="{{ url('/job_vacancies') }}"><span class="fas fa-address-book"

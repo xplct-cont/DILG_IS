@@ -42,6 +42,18 @@
                                     @endforeach
                                 </select>
                             </div>
+
+                            <div class="d-flex align-items-center mt-3">
+                                <label for="lo_filter" class="mr-2">Filter LO- Opinions:</label>
+                                <select 
+                                    id="lo_filter" 
+                                    class="form-control w-50" 
+                                    wire:model.lazy="loFilter" 
+                                    style="padding: 7px;">
+                                    <option value="">All Opinions</option>
+                                    <option value="lo_only">No title Opinions</option>
+                                </select>
+                            </div>                            
                             
                         </div>
                     </div>
