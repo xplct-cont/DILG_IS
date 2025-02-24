@@ -56,9 +56,16 @@ class Index extends Component
             });
         }
 
-        // Apply LO- filter dynamically
+          // Apply LO- filter dynamically
         if ($this->loFilter === 'lo_only') {
             $query->where('title', 'LIKE', 'LO-%');
+        } elseif ($this->loFilter === 'dilg_lo') {
+            $query->where('title', 'LIKE', 'DILG LO No.%');
+        } elseif ($this->loFilter === 'both') {
+            $query->where(function ($subQuery) {
+                $subQuery->where('title', 'LIKE', 'LO-%')
+                    ->orWhere('title', 'LIKE', 'DILG LO No.%');
+            });
         }
 
         // Paginate the final results

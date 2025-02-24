@@ -51,7 +51,7 @@
                                     wire:model.lazy="loFilter" 
                                     style="padding: 7px;">
                                     <option value="">All Opinions</option>
-                                    <option value="lo_only">No title Opinions</option>
+                                    <option value="both">No title Opinions</option>
                                 </select>
                             </div>                            
                             
