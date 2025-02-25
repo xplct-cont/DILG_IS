@@ -16,5 +16,6 @@ class LegalOpinion extends Model
         'reference',
         'date',
         'download_link',
+        'extracted_texts',
     ];
 }

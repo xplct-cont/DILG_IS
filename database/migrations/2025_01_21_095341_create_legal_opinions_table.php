@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('reference')->unique();
             $table->string('date')->nullable();
             $table->string('download_link')->nullable();
+            $table->longText('extracted_texts')->nullable();
             $table->timestamps();
         });
     }
