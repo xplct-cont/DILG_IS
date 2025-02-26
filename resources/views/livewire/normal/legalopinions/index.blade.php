@@ -2,29 +2,25 @@
     <div class="mx-auto">
         <div class="col-md-12">
             <div class="card elevation-4">
-                <!-- Card Header -->
                 <div class="card-header-sm" style="background-color: #234495; color:white; padding-left:15px; text-transform: uppercase;">
                     <p class="ml-2 mt-2" style="font-weight: 450; font-size: 22px;">Legal Opinions</p>
                 </div>
 
                 <div class="container mb-4">
                     <div class="col-md-12">
-                        <!-- Search and Category Filters -->
                         <div class="mt-3">
-                            <!-- Search Input -->
                             <div class="d-flex">
-                                <label for="" style="padding-top: 5px; padding-right:5px;">Search:</label>
+                                <label for="search" style="padding-top: 5px; padding-right:5px;">Search:</label>
                                 <input wire:model.live="search" 
                                         type="text" 
+                                        id="search"
                                         placeholder="Search legal opinions"
                                         class="form-control input">
-
                             </div>
                             <div wire:loading>
                                 Searching...
                             </div>
 
-                            <!-- Category Dropdown -->
                             <div class="d-flex align-items-center mt-3">
                                 <label for="category" class="mr-2">Category:</label>
                                 <select 
@@ -43,6 +39,7 @@
                                 </select>
                             </div>
 
+                            <!-- Filter for LO- Opinions -->
                             <div class="d-flex align-items-center mt-3">
                                 <label for="lo_filter" class="mr-2">Filter LO- Opinions:</label>
                                 <select 
@@ -69,10 +66,10 @@
                                                 {{ $loop->iteration + ($opinions->currentPage() - 1) * $opinions->perPage() }}
                                             </td>
                                             <td class="border px-4 py-2">
-                                                {{-- <a href="{{ route('opinions.showByTitle', $opinion->title) }}" style="text-decoration: none;">
-                                                    {{ $opinion->title }}
-                                                </a> --}}
-                                                <a href="{{ route('opinions.showById', ['id' => $opinion->id]) }}">{{ $opinion->title }}</a>
+                                                <a href="{{ route('opinions.showById', ['id' => $opinion->id]) }}">
+                                                    {!! $opinion->highlighted_title !!}
+                                                </a>
+                                                
                                                 @if (!empty($opinion->category))
                                                     <br>
                                                     <span class="text-sm text-gray-600"><strong>Category:</strong> {{ ucfirst($opinion->category) }}</span>
@@ -82,7 +79,13 @@
                                                 @if (!Str::contains($opinion->reference, 'Category:'))
                                                     <strong>Reference Number: {{ $opinion->reference }}</strong>
                                                 @endif
-
+                                
+                                                @if (!empty($opinion->preview_text))
+                                                    <br>
+                                                    <p class="text-gray-600 text-sm mt-2 italic">
+                                                        {!! $opinion->preview_text !!}
+                                                    </p>
+                                                @endif
                                             </td>
                                             <td class="border px-4 py-2 text-sm text-center">
                                                 {{ \Carbon\Carbon::parse($opinion->date)->format('F d, Y') }}
@@ -95,11 +98,10 @@
                                             </td>
                                         </tr>
                                     @endforelse
-                                </tbody>
+                                </tbody>                                                            
                             </table>
                         </div>
 
-                        <!-- Pagination Links -->
                         <div class="pagination-container mt-4">
                             {{ $opinions->links() }}
                         </div>

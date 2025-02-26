@@ -19,14 +19,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
-        // $schedule->call(function () {
-        //     $scraperService = app(\App\Services\ScraperService::class);
-        //     $url = 'https://dilg.gov.ph/legal-opinions-archive/';
-        //     $scraperService->scrapeLegalOpinions($url);
-        // })->hourly(); // Adjust the frequency as needed
-
-        //Legal Opinions 
         $schedule->call(function () {
             // Scrape Legal Opinions
             $scraperService = app(ScraperService::class);
