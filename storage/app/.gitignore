@@ -1,3 +1,12 @@
+# Ignore everything
 *
+
+# But do not ignore these specific folders and files
 !public/
 !.gitignore
+
+# Ensure Git tracks the "Extracted Texts" folder and its contents
+!storage/
+!storage/app/
+!storage/app/Extracted Texts/
+!storage/app/Extracted Texts/**
