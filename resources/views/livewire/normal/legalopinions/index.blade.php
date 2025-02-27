@@ -41,7 +41,7 @@
 
                             <!-- Filter for LO- Opinions -->
                             <div class="d-flex align-items-center mt-3">
-                                <label for="lo_filter" class="mr-2">Filter LO- Opinions:</label>
+                                <label for="lo_filter" class="mr-2">No Title Opinions:</label>
                                 <select 
                                     id="lo_filter" 
                                     class="form-control w-50" 
@@ -66,9 +66,15 @@
                                                 {{ $loop->iteration + ($opinions->currentPage() - 1) * $opinions->perPage() }}
                                             </td>
                                             <td class="border px-4 py-2">
-                                                <a href="{{ route('opinions.showById', ['id' => $opinion->id]) }}">
-                                                    {!! $opinion->highlighted_title !!}
-                                                </a>
+                                                @if (!empty($opinion->download_link))
+                                                    <a href="{{ route('opinions.showById', ['id' => $opinion->id]) }}">
+                                                        {!! $opinion->highlighted_title !!}
+                                                    </a>
+                                                @else
+                                                    <a style="color:red;" href="{{ route('opinions.showById', ['id' => $opinion->id]) }}">
+                                                        {!! $opinion->highlighted_title !!}
+                                                    </a>
+                                                @endif
                                                 
                                                 @if (!empty($opinion->category))
                                                     <br>

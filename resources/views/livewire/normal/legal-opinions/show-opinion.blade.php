@@ -9,9 +9,15 @@
                     <div class="col-md-12">
                         <div class="mt-3">
                             <div class="d-flex">
-                                <h1 style="font-family: 'Courier New', Courier, monospace;">
-                                    {{ $opinion->title }} 
-                                </h1>
+                                @if (!empty($opinion->download_link))
+                                    <h1 style="font-family: 'Courier New', Courier, monospace;">
+                                        {{ $opinion->title }} 
+                                    </h1>
+                                @else
+                                    <h1 style="font-family: 'Courier New', Courier, monospace; color:red;">
+                                        {{ $opinion->title }} 
+                                    </h1>
+                                @endif
                             </div>
 
                             <div class="d-flex align-items-center">
@@ -28,17 +34,30 @@
                         </div>
                         
                          <!-- Loading Indicator -->
-                         <div id="loadingIndicator" class="flex justify-center items-center mt-4">
+                        <div id="loadingIndicator" class="flex justify-center items-center mt-4">
                             <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500 border-solid"></div>
                             <p class="ml-3 text-gray-600">Loading document...</p>
                         </div>
-
+                       
                         <!-- Iframe -->
                         <div class="mt-4">
-                            <iframe id="pdfIframe" src="/proxy/pdf?url={{ urlencode($opinion->download_link) }}" width="100%" height="1000px" onload="hideLoading()"></iframe>
+                            @if (!empty($opinion->download_link))
+                                <iframe id="pdfIframe" src="/proxy/pdf?url={{ urlencode($opinion->download_link) }}" width="100%" height="1000px" onload="hideLoading()"></iframe>
+                            @else
+                                <div class="text-center text-gray-500 p-4 border border-gray-300 rounded">
+                                    No document available for this legal opinion.
+                                </div>
+                            @endif
                         </div>
+                        
                         <div>
-                            <p>Note: If plugin is unsupported, kindly<a href="{{$opinion->download_link}}" class="text-danger" target="_blank"> Click here </a>to view.</p>
+                            @if(!empty($opinion->download_link))
+                                <p>Note: If plugin is unsupported, kindly<a href="{{$opinion->download_link}}" class="text-danger" target="_blank"> Click here </a>to view.</p>
+                            @else
+                                <div>
+
+                                </div>
+                            @endif
                         </div>
                         <script>
                             function hideLoading() {
