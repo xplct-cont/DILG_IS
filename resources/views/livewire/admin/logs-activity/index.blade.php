@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    <table class="table text-center table-striped elevation-4 mt-4">
+    <table class="table text-center table-bordered elevation-4 mt-4">
         <thead style="background-color:#343a40; color:white;">
             <tr>
                 <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
@@ -76,12 +76,12 @@
             @endforeach
         </tbody>
     </table>
-</div>
-<div class="text-start" style="color:rgb(83, 82, 82); margin-top: 10px;">
-    Showing {{ $logs->firstItem() }} to {{ $logs->lastItem() }} of {{ $logs->total() }} entries
+    <div class="text-start" style="color:rgb(83, 82, 82); margin-top: 10px;">
+        Showing {{ $logs->firstItem() }} to {{ $logs->lastItem() }} of {{ $logs->total() }} entries
+    </div>
+
+    <div class="d-flex justify-content-end mt-2">
+        {{ $logs->onEachSide(-1)->links() }}
+    </div>
 </div>
 
-<div class="d-flex justify-content-end mt-2">
-    {{ $logs->onEachSide(-1)->links() }}
-</div>
-</div>

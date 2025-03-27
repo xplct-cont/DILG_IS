@@ -50,31 +50,22 @@ class Admin_LguController extends Controller
         ->with('i',(request()->input('page',1)-1)*5);
     }
 
-    public function store(Request $request){
-
+    public function store(Request $request)
+    {
+        $request->validate([
+            'municipality_id' => 'required|exists:municipalities,id',
+        ]);
+    
+        if (!Municipality::where('id', $request->municipality_id)->exists()) {
+            return redirect()->back()->withErrors(['municipality_id' => 'The selected municipality does not exist.'])->withInput();
+        }
+    
         $lgus = new Lgu;
-
-        $lgus->municipality_id = $request->input('municipality_id');
-        $lgus->mayor = $request->input('mayor');
-        $lgus->vice_mayor = $request->input('vice_mayor');
-        $lgus->sb_member1 = $request->input('sb_member1');
-        $lgus->sb_member2 = $request->input('sb_member2');
-        $lgus->sb_member3 = $request->input('sb_member3');
-        $lgus->sb_member4 = $request->input('sb_member4');
-        $lgus->sb_member5 = $request->input('sb_member5');
-        $lgus->sb_member6 = $request->input('sb_member6');
-        $lgus->sb_member7 = $request->input('sb_member7');
-        $lgus->sb_member8 = $request->input('sb_member8');
-        $lgus->sb_member9 = $request->input('sb_member9');
-        $lgus->sb_member10 = $request->input('sb_member10');
-        $lgus->lb_pres = $request->input('lb_pres');
-        $lgus->psk_pres = $request->input('psk_pres');
-
+        $lgus->fill($request->all());
         $lgus->save();
-
+    
         return redirect()->back()->with('message', 'Added Successfully!');
-
-    }
+    }    
 
     public function update_lgu(Request $request, $id){
         $lgus = Lgu::find($id);

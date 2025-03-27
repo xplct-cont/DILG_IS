@@ -33,29 +33,34 @@ class Admin_UpdateController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $img = new Update;
+{
+    $img = new Update;
 
-        $img->title = $request->input('title');
-        $img->caption = $request->input('caption');
-        $img->user_id = auth()->user()->id;
+    $img->title = $request->input('title');
+    $img->caption = $request->input('caption');
+    $img->user_id = \Illuminate\Support\Facades\Auth::id();
 
-        $this->validate($request, [
-            'images*' => 'image|mimes:jpeg,png,jpg,gif,svg'
-        ]);
+    // Validation
+    $this->validate($request, [
+        'images' => 'required|array',
+        'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    ]);
 
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $name = $image->getClientOriginalName();
-                $image->move('/home/dilgboho/public_html/news_updates/', $name);
-                $data[] = $name;
-            }
-            $img->images = json_encode($data);
+    $data = [];
+
+    if ($request->hasFile('images')) {
+        foreach ($request->file('images') as $image) {
+            $name = time() . '_' . $image->getClientOriginalName(); // Prevent name conflicts
+            $image->move(public_path('news_updates'), $name); // Store in /public/news_updates
+            $data[] = $name;
         }
-
-        $img->save();
-        return redirect()->back()->with('message', 'Added Successfully : Waiting for Approval!');
+        $img->images = json_encode($data);
     }
+
+    $img->save();
+    return redirect()->back()->with('message', 'Added Successfully: Waiting for Approval!');
+}
+
 
     public function edit_updates(Request $request, $id)
     {
@@ -63,7 +68,7 @@ class Admin_UpdateController extends Controller
 
         $img->title = $request->input('title');
         $img->caption = $request->input('caption');
-        $img->user_id = auth()->user()->id;
+        $img->user_id = \Illuminate\Support\Facades\Auth::user()->id;
 
         $this->validate($request, [
             'edit_images.*' => 'image|mimes:jpeg,png,jpg,gif,svg'

@@ -63,16 +63,16 @@
         </div>
     </div>
 
-    <div class="elevation-1 p-3 rounded mt-2">
-        <div class="card-header d-flex justify-content-between mb-1">
+    <div class="card rounded mt-2">
+        <div class="card-header p-2 d-flex justify-content-between">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-            <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link"
-                    href="{{ url('/citizens_charter') }}"><span class="fas fa-users-slash" style="color:#234495;"></span>
+            <h1 class="" style="font-size: 18px; font-weight: 450;">
+                <a style="text-decoration: none; color: black;" href="{{ url('/citizens_charter') }}"><span class="fas fa-users-slash" style="color:#234495;"></span>
                     CITIZENS CHARTER </a> </h1>
         </div>
 
 
-        <table class="table text-center table-striped elevation-4">
+        <table class="table text-center table-bordered">
             <thead style="background-color:#343a40; color:white;">
                 <tr>
                     <th>Images</th>

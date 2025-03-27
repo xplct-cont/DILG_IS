@@ -16,15 +16,15 @@
         </button>
     </div>
 
-    <div class="elevation-1 p-3 rounded mt-2">
-        <div class="card-header d-flex justify-content-between mb-1">
+    <div class="card rounded mt-2">
+        <div class="card-header p-2 d-flex justify-content-between">
             <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
             <h1 class="" style="font-size: 18px; font-weight: 450;"><span class="fas fa-user-cog"
-                    style="color:#234495;"></span> Users </h1>
+                    style="color:#234495;"></span> USERS </h1>
         </div>
 
 
-        <table class="table text-center table-striped elevation-4">
+        <table class="table text-center table-bordered">
             <thead style="background-color:#343a40; color:white;">
                 <tr>
                     <th>Profile Image</th>
