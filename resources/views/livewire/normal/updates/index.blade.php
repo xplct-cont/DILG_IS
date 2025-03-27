@@ -157,26 +157,24 @@
             {{ $updates->onEachSide(-1)->links() }}
         </div>
     </div>
-</div>
-</div>
+    <style scoped>
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .image-container img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            margin: 10px;
+            padding: 5px;
+            box-shadow: 2px 2px 5px #888;
+        }
+    </style>
 </div>
 
 
-<style scoped>
-    .image-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .image-container img {
-        width: auto;
-        height: auto;
-        max-width: 100%;
-        max-height: 100%;
-        margin: 10px;
-        padding: 5px;
-        box-shadow: 2px 2px 5px #888;
-    }
-</style>

@@ -173,7 +173,6 @@
                                                 <input type="file" class="form-control" name="images[]"
                                                     id="news_updates_images" required multiple>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -191,7 +190,7 @@
 
         <div class="card mt-2">
 
-            <div class="card-header d-flex justify-content-between">
+            <div class="card-header p-2 d-flex justify-content-between">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
                 <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="dropdown-item"
                         href="{{ url('/news_update') }}"><span class="fas fa-newspaper" style="color:#234495;"></span>
@@ -216,6 +215,7 @@
                                 <th scope="col">Edit</th>
                                 <th scope="col" class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Delete
                                 </th>
+                                <th scope="col">View</th>
                             </tr>
                         </thead>
                         <tbody class="text-center">
@@ -405,6 +405,12 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <td>
+                                        <a href="{{ url('news/' . $news_img->id) }}" target="_blank" class="btn btn-secondary btn-sm">
+                                            <i class="bi bi-eye"></i>
+                                         </a>
+                                    </td>
 
                                 </tr>
                             @endforeach

@@ -147,4 +147,10 @@
         height: 45px;
         width: 45px;
     }
+
+    .nav-link:hover {
+        background-color: #343a40 !important; /* Dark color */
+        color: white !important;
+        transition: 0.1s ease-in-out;
+    }
 </style>

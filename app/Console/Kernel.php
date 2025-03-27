@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Console;
-
+use App\Services\ScraperService;
+use App\Services\DraftIssuanceService;
+use App\Services\LegalOpinionService;
+use App\Services\PresidentialDirectiveService;
+use App\Services\RepublicActService;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,7 +19,24 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            // Scrape Legal Opinions
+            $scraperService = app(ScraperService::class);
+            $scraperService->scrapeLegalOpinions('https://dilg.gov.ph/legal-opinions-archive/');
+        
+            // Transfer Legal Opinions Record
+            $sendLegalOpinions = app(LegalOpinionService::class);
+            $sendLegalOpinions->sendAllLegalOpinionsToTangkaraw();
+        
+            // Scrape Republic Acts
+            $republicactService = app(RepublicActService::class);
+            $republicactService->scrapeRepublicacts('https://dilg.gov.ph/issuances-archive/ra/');
+        
+            // Scrape Presidential Directives
+            $presidentialdirectiveService = app(PresidentialDirectiveService::class);
+            $presidentialdirectiveService->scrapePresidentialdirectives('https://dilg.gov.ph/issuances-archive/pd/');
+        })->everyMinute();
+        
     }
 
     /**

@@ -60,30 +60,37 @@
 
                                         <div class="form-group">
                                             <label for="municipality_id">Municipality:</label>
-
-                                            <select name="municipality_id" id="municipality_id" class="form-control"
-                                                style="color:dimgray;" required>
+                                            <select name="municipality_id" id="municipality_id" class="form-control" style="color:dimgray;" required>
                                                 <option selected>Select Municipality...</option>
                                                 @foreach ($municipalities as $municipality)
-                                                    <option value="{{ $municipality->id }}">
+                                                    <option value="{{ $municipality->id }}" {{ old('municipality_id') == $municipality->id ? 'selected' : '' }}>
                                                         {{ $municipality->municipality }}
                                                     </option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                            @error('municipality_id')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>                                        
 
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Mayor:</label>
-                                                <input type="text" class="form-control" name="mayor">
-                                            </div>
+                                                <label for="mayor" style="color:dimgray">Mayor:</label>
+                                                <input type="text" class="form-control" name="mayor" value="{{ old('mayor') }}">
+                                                @error('mayor')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>                                            
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="" style="color:dimgray">Vice Mayor:</label>
-                                                <input type="text" class="form-control" name="vice_mayor">
+                                                <label for="vice_mayor" style="color:dimgray">Vice Mayor:</label>
+                                                <input type="text" class="form-control" name="vice_mayor" value="{{old('vice_mayor')}}">
+                                                @error('vice_mayor')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -174,16 +181,16 @@
             </div>
         </div>
 
-        <div class="elevation-1 p-3 rounded mt-2">
-            <div class="card-header d-flex justify-content-between mb-1">
+        <div class="card rounded mt-2">
+            <div class="card-header p-2 d-flex justify-content-between">
                 <img src="/img/dilg-main.png" style="height: 40px; width: 40px;" alt="">
-                <h1 class="" style="font-size: 18px; font-weight: 450;"><a class="nav-link"
-                        href="{{ url('lgus') }}"><span class="fas fa-city" style="color:#234495;"></span> LGUs </a>
+                <h1 class="" style="font-size: 18px; font-weight: 450;">
+                    <a style="text-decoration:none; color:black;" href="{{ url('lgus') }}"><span class="fas fa-city" style="color:#234495;"></span> LGUs </a>
                 </h1>
             </div>
 
 
-            <table class="table text-center table-striped elevation-4">
+            <table class="table text-center table-bordered">
                 <thead style="background-color:#343a40; color:white;">
                     <tr>
                         <th>View/Edit</th>

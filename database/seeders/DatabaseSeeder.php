@@ -8,7 +8,7 @@ use Database\Seeders\RolesSeeder;
 use Database\Seeders\ProgramSeeder;
 use Database\Seeders\UpdatesImageSeeder;
 use Database\Seeders\AudioSeeder;
-
+use Database\Seeders\LegalOpinionsSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -34,7 +34,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UpdatesImageSeeder::class);
         $this->call(PdfCitCharterSeeder::class);
         $this->call(AudioSeeder::class);
-
-
+        $this->call(LegalOpinionsSeeder::class);
     }
 }

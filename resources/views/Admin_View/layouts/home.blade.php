@@ -1,7 +1,7 @@
 @extends('Admin_View.layouts.app')
 @section('content')
     @if ($message = Session::get('message'))
-        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+        <div class="alert alert-success text-center text-lg alert-dismissible fade show mt-2" role="alert">
             <button type="button" class="close" data-dismiss="alert" style="color:black;">×</button>
             <strong>{{ $message }}</strong>
         </div>
@@ -10,122 +10,124 @@
         DASHBOARD
     </div>
 
-    <div class="d-flex justify-content-end mb-2 ">
+    <div style="display: flex; justify-content:space-between; align-items:center; margin-top:25px; padding-left: 15px; padding-right: 15px;">
+        <div class="d-flex justify-content-end mb-2 ">
 
-        <button type="button" class="btn btn-sm" style="background-color: #343a40; color:white; font-size: 12px;"
-            data-toggle="modal" data-target="#exampleModal">
-            <span class="fas fa-plus-circle"></span> Change Home Images
+            <button type="button" class="btn btn-sm" style="background-color: #343a40; color:white; font-size: 12px;"
+                data-toggle="modal" data-target="#exampleModal">
+                <span class="fas fa-plus-circle"></span> Change Home Images
+            </button>
+    
+    
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <p style="font-size: 14px;"><span class="fas fa-exclamation-triangle text-warning"
+                                    style="font-size: 13px;"></span> Note: Please use images with same size.</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table
+                                class=" mx-auto col-md-8 elevation-3 table table-sm table-bordered table-hovered text-center">
+                                <thead class="" style="background-color: #234495; color:white;">
+    
+    
+                                    <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                        style="text-align: center">Images</th>
+                                </thead>
+                                <tbody>
+                                    @foreach ($home_images as $home_img)
+                                        <tr>
+                                            <td scope="col"
+                                                class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
+                                                style="text-align: center"> <?php foreach (json_decode($home_img->images) as $picture) { ?>
+                                                <img src="{{ asset('home_images/' . $picture) }}"
+                                                    style="height:60px; width:80px" />
+                                                <?php } ?>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+    
+                            <form action="{{ url('/add_images_hm/' . $home_img->id) }}" method="POST"
+                                enctype="multipart/form-data" id="image-form">
+                                @csrf
+                                <div class="container mx-auto">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Upload Images (Max:3)</label>
+                                                <input type="file" name="images[]" class="form-control" id="id_home_images"
+                                                    required multiple>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success" id="homeimagesSubmit-btn"><span
+                                    class="fas fa-save"></span> Save
+                                Changes</button>
+                        </div>
+                        </form>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- Audio in About Page -->
+        <button type="button" class="btn btn-sm mb-3 ml-3 " style="background-color: #343a40; color:white; font-size: 12px;"
+            data-toggle="modal" data-target="#audioModal">
+            <span class="fas fa-plus-circle"></span> Change Audio in About Page
         </button>
-
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    
+        <div class="modal fade" id="audioModal" tabindex="-1" role="dialog" aria-labelledby="audioModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-md" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <p style="font-size: 14px;"><span class="fas fa-exclamation-triangle text-warning"
-                                style="font-size: 13px;"></span> Note: Please use images with same size.</p>
+                        <p style="font-size: 18px; font-weight: 500;">Change Audio</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <table
-                            class=" mx-auto col-md-8 elevation-3 table table-sm table-bordered table-hovered text-center">
-                            <thead class="" style="background-color: #234495; color:white;">
-
-
-                                <th scope="col" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                                    style="text-align: center">Images</th>
-                            </thead>
-                            <tbody>
-                                @foreach ($home_images as $home_img)
-                                    <tr>
-                                        <td scope="col"
-                                            class="img d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"
-                                            style="text-align: center"> <?php foreach (json_decode($home_img->images) as $picture) { ?>
-                                            <img src="{{ asset('home_images/' . $picture) }}"
-                                                style="height:60px; width:80px" />
-                                            <?php } ?>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-
-                        <form action="{{ url('/add_images_hm/' . $home_img->id) }}" method="POST"
-                            enctype="multipart/form-data" id="image-form">
-                            @csrf
-                            <div class="container mx-auto">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Upload Images (Max:3)</label>
-                                            <input type="file" name="images[]" class="form-control" id="id_home_images"
-                                                required multiple>
+    
+                        @foreach ($audio as $aud)
+                            <form action="{{ url('/change_audio/' . $aud->id) }}" method="POST" enctype="multipart/form-data"
+                                id="audio-form">
+                                @csrf
+                                @method('PUT')
+                                <div class="container mx-auto">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Upload Audio (Max:1 | Type: mp3, wav)</label>
+                                                <input type="file" name="file" class="form-control" id="file_audio"
+                                                    required>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                        @endforeach
                     </div>
+    
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" id="homeimagesSubmit-btn"><span
-                                class="fas fa-save"></span> Save
+                        <button type="submit" id="audioSubmit-btn" class="btn btn-success"><span class="fas fa-save"></span>
+                            Save
                             Changes</button>
+    
                     </div>
+    
                     </form>
-
                 </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Audio in About Page -->
-    <button type="button" class="btn btn-sm mb-3 ml-3 " style="background-color: #343a40; color:white; font-size: 12px;"
-        data-toggle="modal" data-target="#audioModal">
-        <span class="fas fa-plus-circle"></span> Change Audio in About Page
-    </button>
-
-    <div class="modal fade" id="audioModal" tabindex="-1" role="dialog" aria-labelledby="audioModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p style="font-size: 18px; font-weight: 500;">Change Audio</p>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    @foreach ($audio as $aud)
-                        <form action="{{ url('/change_audio/' . $aud->id) }}" method="POST" enctype="multipart/form-data"
-                            id="audio-form">
-                            @csrf
-                            @method('PUT')
-                            <div class="container mx-auto">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Upload Audio (Max:1 | Type: mp3, wav)</label>
-                                            <input type="file" name="file" class="form-control" id="file_audio"
-                                                required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    @endforeach
-                </div>
-
-                <div class="modal-footer">
-                    <button type="submit" id="audioSubmit-btn" class="btn btn-success"><span class="fas fa-save"></span>
-                        Save
-                        Changes</button>
-
-                </div>
-
-                </form>
             </div>
         </div>
     </div>
@@ -352,7 +354,7 @@
                         <!-- small box -->
                         <div class="small-box text-secondary elevation-4">
                         <div class="ml-3"   style="width: 40%; height: 55px; display: flex; ">
-                        <a href='http://www.freevisitorcounters.com'></a>
+                        <a href='http://www.freevisitorcounters.com'>.</a>
                                  <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=7b6df58795f1b38d7f8e8e7d2214693c40ed1e60'></script>
                                  <script type="text/javascript" src="https://freevisitorcounters.com/en/home/counter/1129813/t/0"></script>
                             </div>
