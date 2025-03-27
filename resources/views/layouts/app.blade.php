@@ -418,8 +418,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <p class="text-center mb-3" style="font-size: 12px; color:dimgray;"> Contact No:
-                                    09096027312</p>
+
 
                             </div>
                         </div>

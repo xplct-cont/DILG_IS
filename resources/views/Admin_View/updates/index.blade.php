@@ -203,6 +203,7 @@
                     <table class="table table-bordered text-center">
                         <thead class="text-center" style="background-color:#343a40; color:white;">
                             <tr>
+                                <td>Action</td>
                                 <th>Status</th>
                                 <th scope="col" scope="col"
                                     class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell" style="text-align: center">
@@ -220,6 +221,33 @@
                         <tbody class="text-center">
                             @foreach ($news_images as $news_img)
                                 <tr>
+                                    <td>
+                                    @role('Super-Admin')
+                                        <div class="text-start mb-3">
+                                            @if ($news_img->status == false)
+                                                <span>
+                                                    <form action="{{ url('/approve/' . $news_img->id) }}"
+                                                        method="POST" class="d-inline-block" id="upload-form">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-sm ml-2"
+                                                            style="background-color: #234495; color:white;">Approve
+                                                            ?</button>
+                                                    </form>
+                                                </span>
+                                            @elseif ($news_img->status == true)
+                                                <span>
+                                                    <form action="{{ url('/disapprove/' . $news_img->id) }}"
+                                                        method="POST" class="d-inline-block" id="upload-form">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-sm ml-2 btn-danger"
+                                                            style="color:white;">Discard ?</button>
+                                                </span>
+                                                </form>
+                                            @endif
+                                        </div>
+                                    @endrole
+
+                                    </td>
                                     <td>
                                         @if ($news_img->status == false)
                                             <span class=" btn btn-sm btn-warning text-light">Pending <span
@@ -311,7 +339,7 @@
     </div>
 </div>
 
-                                                @role('Super-Admin')
+                                                <!-- @role('Super-Admin')
                                                     <div class="text-start mb-3">
                                                         @if ($news_img->status == false)
                                                             <span>
@@ -334,7 +362,7 @@
                                                             </form>
                                                         @endif
                                                     </div>
-                                                @endrole
+                                                @endrole -->
 
                                             </div>
                                         </div>
@@ -478,7 +506,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="submit" class="btn btn-success"><span
-                                                                class="fas fa-save"></span> Savechanges</button>
+                                                                class="fas fa-save"></span> Save Changes</button>
                                                     </div>
                                                     </form>
                                                 </div>
