@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Livewire\Normal\Faqs;
+namespace App\Http\Livewire\Normal\Faqs;
 
 use App\Models\Faq;
 use App\Models\Program;

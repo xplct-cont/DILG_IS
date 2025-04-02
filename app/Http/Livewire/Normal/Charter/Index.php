@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Livewire\Normal\Charter;
+namespace App\Http\Livewire\Normal\Charter;
 
 use Livewire\Component;
 use App\Models\Citizens_Charter;
