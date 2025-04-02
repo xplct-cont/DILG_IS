@@ -34,5 +34,8 @@ class AppServiceProvider extends ServiceProvider
         Livewire::component('normal.charter.index', \App\Http\Livewire\Normal\Charter\Index::class);
         Livewire::component('normal.field-officers.index', \App\Http\Livewire\Normal\FieldOfficers\Index::class);
         Livewire::component('normal.jobs.index', \App\Http\Livewire\Normal\Jobs\Index::class);
+        Livewire::component('republic-acts', \App\Livewire\RepublicActs::class);
+        Livewire::component('presidential-directives', \App\Livewire\PresidentialDirectives::class);
+        Livewire::component('normal.updates.index', \App\Http\Livewire\Normal\Updates\Index::class);
     }
 }
