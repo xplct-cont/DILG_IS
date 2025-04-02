@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Normal\Issuances;
+namespace app\Livewire\Normal\Issuances;
 
 use Livewire\Component;
 use App\Models\Bohol_Issuance;
