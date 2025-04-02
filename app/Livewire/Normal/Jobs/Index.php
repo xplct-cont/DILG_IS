@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Normal\Jobs;
+namespace app\Livewire\Normal\Jobs;
 
 use App\Models\Job;
 use Livewire\Component;

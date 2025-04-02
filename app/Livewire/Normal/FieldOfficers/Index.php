@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Normal\FieldOfficers;
+namespace app\Livewire\Normal\FieldOfficers;
 
 use Livewire\Component;
 use App\Models\Municipality;

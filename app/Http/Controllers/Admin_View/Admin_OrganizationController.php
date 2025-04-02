@@ -52,7 +52,7 @@ class Admin_OrganizationController extends Controller
             $file = $request->file('profile_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save(public_path('/org_profile_images/' . $filename));
+            Image::make($file)->save('/home/dilgboho/public_html/org_profile_images/'. $filename);            
             $orgs->profile_img = $filename;
 
           }

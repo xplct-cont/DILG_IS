@@ -46,16 +46,18 @@ class Admin_JobsController extends Controller
         $admin_jobs->link = $request->input('link');
         $admin_jobs->details = $request->input('details');
         $admin_jobs->user_id = auth()->user()->id;
-    
+        
         if($request->hasFile('hiring_img')){
+
             $file = $request->file('hiring_img');
-            $filename = time().'.'.$file->getClientOriginalExtension();
-            
-            // Store in public storage
-            $path = 'hiring_images/'.$filename;
-            Image::make($file)->save(public_path($path));
-    
+            $extention = $file->getClientOriginalExtension();
+            $filename = time().'.'. $extention;
+            Image::make($file)->save('/home/dilgboho/public_html/hiring_images/'. $filename);
+
+
+
             $admin_jobs->hiring_img = $filename;
+
         }
     
         $admin_jobs->save();

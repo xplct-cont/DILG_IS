@@ -61,7 +61,7 @@ class Admin_Bohol_IssuancesController extends Controller
             $file = $request->file('file');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            $request->file('file')->move('/home/dilgboho/public_html/issuance_files/', $filename);
+            $request->file('file')->move('Image::make($file)->save(public_path('/org_profile_images/' . $filename));/home/dilgboho/public_html/issuance_files/', $filename);
             $issuances->file = $filename;
 
 
