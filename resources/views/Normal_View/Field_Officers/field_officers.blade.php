@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<livewire:normal.field-officers.index>
+    <livewire:normal.field-officers.index/>
 
 @endsection
 <style scoped>
