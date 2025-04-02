@@ -55,7 +55,7 @@ class Admin_PdmuController extends Controller
             $file = $request->file('profile_img');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'. $extention;
-            Image::make($file)->save(public_path('/pdmu_profile_images/' . $filename));
+            Image::make($file)->save('/home/dilgboho/public_html/pdmu_profile_images/'. $filename);
             $pdmus->profile_img = $filename;
           
           }
